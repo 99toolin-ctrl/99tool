@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Due Date Calculator – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/health/due-date-calculator.html"/>
+<meta property="og:title" content="Due Date Calculator – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/health/due-date-calculator.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Due Date Calculator \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/health/due-date-calculator.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .due-workspace {
+      max-width: 600px;
+      margin: 2rem auto;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      border-radius: 20px;
+    }
+    .form-group { margin-bottom: 2rem; }
+    label { display: block; margin-bottom: 0.8rem; font-weight: 700; color: var(--text-muted); }
+    input[type="date"] {
+      width: 100%;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 1rem;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+    .result-card {
+      background: var(--bg-secondary);
+      padding: 2.5rem;
+      border-radius: 15px;
+      margin-top: 2rem;
+      text-align: center;
+      display: none;
+      border: 2px dashed #ff758c;
+    }
+    .date-val { font-size: 2.5rem; font-weight: 900; color: #ff758c; margin: 1rem 0; }
+    .countdown { font-size: 1.2rem; color: var(--text-muted); font-weight: 600; }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/health/due-date-calculator.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/health/due-date-calculator.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/health/due-date-calculator.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/health/due-date-calculator.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/health/due-date-calculator.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/health/due-date-calculator.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/health/due-date-calculator.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/health/due-date-calculator.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/health/due-date-calculator.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/health/due-date-calculator.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/health/due-date-calculator.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/health/due-date-calculator.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/health/due-date-calculator.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/health/due-date-calculator.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/health/due-date-calculator.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/health/due-date-calculator.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/health/due-date-calculator.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/health/due-date-calculator.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/health/due-date-calculator.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/health/due-date-calculator.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/health/due-date-calculator.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/health/due-date-calculator.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Infinite Due Date Calculator</h1>
+      <p>Estimate your pregnancy timeline with a private, clinically recognized calendar tool.</p>
+    </div>
+
+    <div class="due-workspace">
+      <div class="form-group">
+        <label>First Day of Your Last Period (LMP)</label>
+        <input type="date" id="lmp">
+      </div>
+      
+      <button onclick="calculateDueDate()" class="btn btn-primary btn-lg btn-full">Check My Due Date</button>
+
+      <div class="result-card" id="result-card">
+         <div class="small text-muted uppercase">Your Estimated Due Date</div>
+         <div class="date-val" id="due-date">N/A</div>
+         <div class="countdown" id="countdown">0 Days Remaining</div>
+         <p class="mt-4 text-muted small">This estimation uses Naegele's rule, which is the standard clinical method for determining pregnancy duration.</p>
+      </div>
+
+      <!-- CONTENT SECTION -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.due_date_calculator.what_is_title">What is the Infinite Due Date Calculator?</h2>
+        <p>The Infinite Due Date Calculator is a client-side pregnancy timeline utility designed to estimate your baby's due date. By selecting the first day of your last menstrual period (LMP), you can calculate the estimated date of delivery and track the remaining days of gestation.</p>
+        <p>This calculator processes all date offsets, leap year adjustments, and remaining day countdowns locally in your browser memory. Your personal dates and cycle details are never sent to external servers, providing a private and secure tracking experience.</p>
+
+        <h2 class="mt-4" data-i18n="tools.due_date_calculator.how_to_use_title">How to Use the Infinite Due Date Calculator</h2>
+        <ol>
+          <li><strong>Select Last Period Date:</strong> Click on the date input field and choose the first day of your last menstrual period (LMP) from the calendar.</li>
+          <li><strong>Calculate Due Date:</strong> Click the "Check My Due Date" button to run the date offset calculations.</li>
+          <li><strong>Review Your Timeline:</strong> Check the results card to see your estimated due date and a live countdown showing the days remaining.</li>
+        </ol>
+
+        <h2 class="mt-4" data-i18n="tools.due_date_calculator.key_features_title">Key Features</h2>
+        <ul>
+          <li><strong>Naegele's Rule Accuracy:</strong> Uses the standard clinical calculation of 280 days from the LMP to estimate delivery dates.</li>
+          <li><strong>Dynamic Days Countdown:</strong> Displays a countdown timer showing the precise number of days remaining until the estimated date.</li>
+          <li><strong>Simple Calendar Interface:</strong> Integration with browser native date Pickers for easy date selection.</li>
+          <li><strong>High-Visibility Results Card:</strong> Displays date estimates and countdowns clearly in a dedicated card panel.</li>
+          <li><strong>100% Client-Side Calculations:</strong> Runs entirely on your local machine to keep your health data private.</li>
+        </ul>
+
+        <h2 class="mt-4" data-i18n="tools.due_date_calculator.common_use_cases_title">Common Use Cases</h2>
+        <ul>
+          <li><strong>Pregnancy Planning:</strong> Estimate due dates during early stages to plan work leave and prep tasks.</li>
+          <li><strong>Pregnancy Progress Tracking:</strong> Check the countdown regularly to see how many days are left in your gestation.</li>
+          <li><strong>Scheduling Appointments:</strong> Align obstetrician visits and prenatal tests around your estimated gestational weeks.</li>
+          <li><strong>Gestational Math Learning:</strong> Understand how standard pregnancy timelines are mapped from the LMP.</li>
+        </ul>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section mt-5">
+        <h2 data-i18n="tools.due_date_calculator.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              How does Naegele's rule calculate the due date?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Naegele's rule is a standard clinical method that estimates the due date by adding 280 days (exactly 40 weeks) to the first day of the last menstrual period (LMP).</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              How common is it to give birth on the exact due date?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Only about 4% of babies are born on their exact due date. Most are born within a two-week window before or after the estimated date, as gestational lengths naturally vary.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Is my personal date data tracked or saved?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. 99tool.in runs all date offsets locally in your browser session using JavaScript. None of your inputs are saved to our servers.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              What if my menstrual cycle is irregular?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>This calculator assumes a standard 28-day cycle. If your cycles are irregular or longer, the estimate may vary, and a doctor can provide a more accurate dating scan.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal text-center mt-4">
+        <p>🔒 Privacy & Data Note: Last menstrual period dates, offsets, and countdowns are calculated locally in your browser. No data is stored or uploaded.</p>
+        <p class="small text-muted mt-2"><strong>Disclaimer:</strong> This tool is for informational purposes only. Always consult your obstetrician or healthcare provider for clinical dating scans and medical advice.</p>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    function calculateDueDate() {
+       const lmpInput = document.getElementById('lmp').value;
+       if (!lmpInput) return alert('Please select a date.');
+
+       const lmp = new Date(lmpInput);
+       const due = new Date(lmp);
+       due.setDate(lmp.getDate() + 280);
+
+       const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+       document.getElementById('due-date').innerText = (window.i18n && window.i18n.formatDate) ? window.i18n.formatDate(due) : due.toLocaleDateString(undefined, options);
+
+       const today = new Date();
+       const diffTime = due - today;
+       const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+       
+       if (diffDays > 0) {
+       document.getElementById('countdown').innerText = ((window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(diffDays, 0) : diffDays) + ' Days Remaining';
+       } else {
+          document.getElementById('countdown').innerText = 'Already Arrived!';
+       }
+
+       document.getElementById('result-card').style.display = 'block';
+    }
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Api Simulator – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/developer/api-simulator.html"/>
+<meta property="og:title" content="Api Simulator – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/developer/api-simulator.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Api Simulator \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/developer/api-simulator.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="api mock server, api response simulator, mock api tool, api testing tool, fake api generator" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "API Response Simulator",
+    "operatingSystem": "Any",
+    "applicationCategory": "DeveloperApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Mock JSON Responses, Status Code Simulation, Response Headers Mocking, Testing"
+  }
+  </script>
+
+  <style>
+    .simulator-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    .config-panel {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px;
+    }
+
+    .preview-panel {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px;
+      position: sticky;
+      top: 100px;
+      height: fit-content;
+    }
+
+    .editor-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .status-badge {
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.8rem;
+    }
+
+    .status-2xx { background: rgba(76, 175, 80, 0.2); color: #81c784; }
+    .status-4xx { background: rgba(229, 57, 53, 0.2); color: #ef5350; }
+    .status-5xx { background: rgba(255, 152, 0, 0.2); color: #ffb74d; }
+
+    .response-meta {
+      background: var(--dark);
+      border: 1px solid var(--border);
+      padding: 15px;
+      border-radius: var(--radius-sm);
+      margin-bottom: 20px;
+      font-family: monospace;
+      font-size: 0.85rem;
+    }
+
+    .header-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 40px;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    @media (min-width: 900px) {
+      .simulator-layout { grid-template-columns: 1fr 400px; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#developer">Developer</a> <span>/</span> 
+        <span>API Response Simulator</span>
+      </nav>
+      <h1>API Response Simulator</h1>
+      <p>Mock API responses, status codes, and headers for front-end testing. Simulate successful calls, errors, and timeouts locally.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div class="simulator-layout">
+        <div class="config-panel">
+          <h3>Simulation Configuration</h3>
+          <p class="text-muted mb-4" style="font-size: 0.85rem;">Define how your "mock API" should behave when called.</p>
+
+          <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 15px;">
+             <div class="form-group">
+                <label>HTTP Status Code</label>
+                <select id="status-code" class="form-control">
+                   <option value="200">200 OK</option>
+                   <option value="201">201 Created</option>
+                   <option value="400">400 Bad Request</option>
+                   <option value="401">401 Unauthorized</option>
+                   <option value="403">403 Forbidden</option>
+                   <option value="404">404 Not Found</option>
+                   <option value="500">500 Internal Server Error</option>
+                </select>
+             </div>
+             <div class="form-group">
+                <label>Simulation Delay (ms)</label>
+                <input type="number" id="mock-delay" class="form-control" value="500" step="100">
+             </div>
+          </div>
+
+          <div class="form-group">
+             <label>Response Headers</label>
+             <div id="headers-list">
+                <div class="header-row">
+                   <input type="text" class="form-control header-key" value="Content-Type">
+                   <input type="text" class="form-control header-val" value="application/json">
+                   <button class="btn btn-secondary btn-sm" onclick="this.parentElement.remove()">×</button>
+                </div>
+             </div>
+             <button class="btn btn-secondary btn-sm mt-1" id="add-header-btn">+ Add Header</button>
+          </div>
+
+          <div class="form-group">
+             <label>Response Body (JSON)</label>
+             <textarea id="response-body" class="form-control" style="min-height: 250px; font-family: monospace;" placeholder='{"status": "success", "data": []}'></textarea>
+          </div>
+
+          <button class="btn btn-primary btn-full" id="simulate-btn">Simulate Response</button>
+        </div>
+
+        <div class="preview-panel">
+          <h3>Response Preview</h3>
+          <div id="loader" class="text-center py-4" style="display:none;">
+             <div class="spinner mb-2"></div>
+             <p class="text-muted" style="font-size:0.8rem;">Simulating request...</p>
+          </div>
+          <div id="preview-content">
+             <div class="response-meta">
+                <div class="flex justify-between mb-2">
+                   <span>Status:</span>
+                   <span id="res-status" class="status-badge status-2xx">200 OK</span>
+                </div>
+                <div class="flex justify-between">
+                   <span>Latency:</span>
+                   <span id="res-time" class="text-muted">--ms</span>
+                </div>
+             </div>
+             
+             <label class="editor-label">Headers Received:</label>
+             <div id="res-headers" class="result-area mb-3" style="font-size: 0.75rem; min-height: 60px;">{}</div>
+
+             <label class="editor-label">Response Data:</label>
+             <pre id="res-body" class="result-area" style="max-height: 300px; overflow: auto;"></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- SEO CONTENT -->
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5">
+        <h2>Frontend Independence: Secure API Simulation Without the Wait</h2>
+        <p>We’ve all been there: you’ve spent your morning building a beautiful, responsive user interface. The components are ready, the state management is solid, and you’re ready to connect it to the world. But then the message arrives—the backend API isn't ready yet, or the staging server is down for maintenance. Your flow is broken. Your first instinct is to find an <strong>api mock server</strong> online. But as you prepare to paste your proprietary response schemas into a cloud-based "fake API," you hesitate. Do you really want to share your project's internal data structure with an anonymous third party?</p>
+
+        <p>At 99tool.in, we built our <strong>api response simulator</strong> to give developers instant autonomy without the privacy debt. By running the mock engine entirely within your browser's private sandbox, we allow you to <strong>simulate api responses</strong> with absolute data sovereignty. Whether you’re a freelance dev prototyping a new idea, an enterprise engineer hardening a frontend against error states, or a mobile developer testing sync, our <strong>mock tool</strong> ensures your schemas never leave your machine.</p>
+        
+        <div class="tool-preview-box mt-4 mb-4" style="text-align:center;">
+           <img src="../../assets/images/markdown-preview.png" alt="Clean API Response Simulator Workspace" class="tool-preview" id="tool-preview-img" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+        </div>
+
+        <h3 class="mt-4">The Logic of "Edge Case Hardening"</h3>
+        <p>A professional frontend isn't just about the "Happy Path" (200 OK); it’s about how it behaves when things go wrong. Most <strong>api response mock</strong> tools are too simple, ignoring the complexities of real-world latency and headers. Our <strong>professional api simulator</strong> takes a human-centric approach: we focus on **Failure Simulation** and **Latency Emulation**.</p>
+        
+        <p>We allow you to simulate 401 Unauthorized, 403 Forbidden, and 500 Internal Server Error states in seconds. More importantly, we’ve integrated a "Simulation Delay" feature. Does your app look broken while waiting for a slow 3-second response? Does it show a skeleton screen or a confusing blank page? Our <strong>safe api mock</strong> lets you "feel" the user experience under varied network conditions, helping you build a more resilient and empathetic application.</p>
+
+        <h3 class="mt-4">Why Mocking is the Developer’s Ethical Choice</h3>
+        <p>When you use a standard <strong>mock api tool</strong> that requires a server connection, you are creating a digital fingerprint of your application's architecture. In a world of competitive intelligence and security audits, your API schemas are a roadmap. Our 100% <strong>api utility</strong> eliminates this risk. We believe that <strong>building software</strong> should be an empowering utility, not a data-leak waiting to happen.</p>
+        
+        <p>Because the logic runs entirely in your browser memory, your endpoints and your data are invisible to the outside world. No analytics are tracked, no schemas are harvested, and no logs of your test data are kept. With 99tool.in, you have a private, professional staging environment that fits in your browser tab, giving you the freedom to build at the speed of thought.</p>
+
+        <h3 class="mt-4">How to Simulate Your API Locally (Step-by-Step)</h3>
+        <p>Creating a mock endpoint should be a 15-second task. Here is how to use our <strong>api simulator</strong> utility:</p>
+        <ul style="line-height: 1.8; margin-bottom: 20px;">
+          <li><strong>Step 1: Set the Status</strong> — Choose your target HTTP status code (e.g., 200 for success, 404 for missing). This defines the foundation of the server's response.</li>
+          <li><strong>Step 2: Emulate Reality</strong> — Enter a "Simulation Delay" (in milliseconds) to see how your UI handles real-world network latency.</li>
+          <li><strong>Step 3: Define the Payload</strong> — Paste your mock JSON body into the editor. Our system will validate the syntax locally to ensure it's a valid response.</li>
+          <li><strong>Step 4: Trigger and Observe</strong> — Click "Simulate Response." Watch the loader appearance and analyze the headers and body as if it came from a real server.</li>
+        </ul>
+
+        <h3 class="mt-4">Strategic Use Cases for Safe API Simulation</h3>
+        <p>Our <strong>mock api tool</strong> is the essential companion for modern web development:</p>
+        
+        <p><strong>For Frontend Engineers:</strong> Backend team running late? Use our <strong>api simulator</strong> to mock the data contracts you've agreed on, allowing you to finish the UI without waiting a single minute.</p>
+        
+        <p><strong>For QA and Automated Testing:</strong> Need to test a specific "Forbidden" or "Limit Exceeded" screen? Use our <strong>api mock tool</strong> to trigger those states instantly without having to manually mutate your database.</p>
+        
+        <p><strong>For Demoing Prototypes:</strong> Showing a project to a client? Use our <strong>api response simulator</strong> to ensure your demo works perfectly even if the server is down or you have no internet connection.</p>
+
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Does this mock API require a server?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. Our <strong>api simulator</strong> runs entirely within your browser's private session memory. It doesn't need to connect to an external server to simulate responses, making it the perfect tool for development in firewalled or restricted private environments.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I simulate heavy network latency?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. By adjusting the <strong>Simulation Delay</strong> (ms), you can mimic slow 3G connections, satellite links, or overloaded backend servers. This helps you test how your UI handles loading states, skeleton screens, and timeout logic.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Which HTTP status codes are supported?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>You can simulate almost any standard status code, including <strong>20x (Success)</strong>, <strong>40x (Client Errors like 401 Unauthorized or 404 Not Found)</strong>, and <strong>50x (Server Errors)</strong>. This is essential for hardening your frontend against unexpected backend failure states.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I customize response headers?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. You can add custom <strong>key-value pairs</strong> to the response headers. This is particularly useful if your frontend logic relies on specific headers like <code>X-Total-Count</code> for pagination or <code>Content-Type</code> for data parsing.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Is my JSON test data shared with anyone?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Never. All JSON schemas and response configurations stay strictly within your <strong>local browser memory</strong>. 99tool.in does not store or log your test data, ensuring your project architecture remains 100% private and proprietary.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Does this tool support file uploads?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>This simulator is designed for <strong>RESTful JSON responses</strong>. For testing file processing logic, we recommend creating a base64-encoded string within the JSON body or utilizing our specialized **File Locker** or **Security Scan** utilities.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 Privacy-First. No Cloud. 100%. Last updated: April 10, 2026.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const simulateBtn = document.getElementById('simulate-btn');
+    const loader = document.getElementById('loader');
+    const previewContent = document.getElementById('preview-content');
+    const addHeaderBtn = document.getElementById('add-header-btn');
+    const headersList = document.getElementById('headers-list');
+
+    function createHeaderRow() {
+      const row = document.createElement('div');
+      row.className = 'header-row';
+      row.innerHTML = `
+        <input type="text" class="form-control header-key" placeholder="Key">
+        <input type="text" class="form-control header-val" placeholder="Value">
+        <button class="btn btn-secondary btn-sm" onclick="this.parentElement.remove()">×</button>
+      `;
+      headersList.appendChild(row);
+    }
+
+    async function simulate() {
+      const body = document.getElementById('response-body').value;
+      const status = document.getElementById('status-code').value;
+      const delay = parseInt(document.getElementById('mock-delay').value) || 0;
+      
+      // Validation
+      try {
+        if(body.trim()) JSON.parse(body);
+      } catch (e) {
+        alert('Invalid JSON in body.');
+        return;
+      }
+
+      // UI States
+      simulateBtn.disabled = true;
+      loader.style.display = 'block';
+      previewContent.style.opacity = '0.3';
+
+      const start = Date.now();
+      
+      // Simulate delay
+      await new Promise(r => setTimeout(r, delay));
+
+      const end = Date.now();
+      const latency = end - start;
+
+      // Collect headers
+      const headers = {};
+      document.querySelectorAll('.header-row').forEach(row => {
+        const k = row.querySelector('.header-key').value.trim();
+        const v = row.querySelector('.header-val').value.trim();
+        if (k) headers[k] = v;
+      });
+
+      // Update Preview
+      document.getElementById('res-status').textContent = status;
+      document.getElementById('res-status').className = `status-badge status-${status[0]}xx`;
+      document.getElementById('res-time').textContent = `${latency}ms`;
+      document.getElementById('res-headers').textContent = JSON.stringify(headers, null, 2);
+      
+      const bodyEl = document.getElementById('res-body');
+      if (body.trim()) {
+        bodyEl.textContent = JSON.stringify(JSON.parse(body), null, 2);
+      } else {
+        bodyEl.textContent = '(Empty Response Body)';
+      }
+
+      loader.style.display = 'none';
+      previewContent.style.opacity = '1';
+      simulateBtn.disabled = false;
+    }
+
+    addHeaderBtn.onclick = createHeaderRow;
+    simulateBtn.onclick = simulate;
+
+    // Default template
+    document.getElementById('response-body').value = JSON.stringify({
+      status: "success",
+      message: "Resource loaded correctly",
+      data: {
+        id: 101,
+        user: "Antigravity",
+        role: "Assistant"
+      }
+    }, null, 2);
+  </script>
+</body>
+</html>
+

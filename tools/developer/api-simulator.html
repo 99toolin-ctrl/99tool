@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Api Simulator – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/developer/api-simulator.html"/>
+<meta property="og:title" content="Api Simulator – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/developer/api-simulator.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Api Simulator \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/developer/api-simulator.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="api mock server, api response simulator, mock api tool, api testing tool, fake api generator" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json" id="schema-org-data">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "API Response Simulator",
+    "operatingSystem": "Any",
+    "applicationCategory": "DeveloperApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Mock JSON Responses, Status Code Simulation, Response Headers Mocking, Testing"
+  }
+  </script>
+
+  <style>
+    .simulator-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    .config-panel {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px;
+    }
+
+    .preview-panel {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px;
+      position: sticky;
+      top: 100px;
+      height: fit-content;
+    }
+
+    .editor-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .status-badge {
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.8rem;
+    }
+
+    .status-2xx { background: rgba(76, 175, 80, 0.2); color: #81c784; }
+    .status-4xx { background: rgba(229, 57, 53, 0.2); color: #ef5350; }
+    .status-5xx { background: rgba(255, 152, 0, 0.2); color: #ffb74d; }
+
+    .response-meta {
+      background: var(--dark);
+      border: 1px solid var(--border);
+      padding: 15px;
+      border-radius: var(--radius-sm);
+      margin-bottom: 20px;
+      font-family: monospace;
+      font-size: 0.85rem;
+    }
+
+    .header-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 40px;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    @media (min-width: 900px) {
+      .simulator-layout { grid-template-columns: 1fr 400px; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/developer/api-simulator.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/developer/api-simulator.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/developer/api-simulator.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/developer/api-simulator.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/developer/api-simulator.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/developer/api-simulator.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/developer/api-simulator.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/developer/api-simulator.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/developer/api-simulator.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/developer/api-simulator.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/developer/api-simulator.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/developer/api-simulator.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/developer/api-simulator.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/developer/api-simulator.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/developer/api-simulator.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/developer/api-simulator.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/developer/api-simulator.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/developer/api-simulator.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/developer/api-simulator.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/developer/api-simulator.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/developer/api-simulator.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/developer/api-simulator.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#developer">Developer</a> <span>/</span> 
+        <span>API Response Simulator</span>
+      </nav>
+      <h1>API Response Simulator</h1>
+      <p>Mock API responses, status codes, and headers for front-end testing. Simulate successful calls, errors, and timeouts locally.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div class="simulator-layout">
+        <div class="config-panel">
+          <h3>Simulation Configuration</h3>
+          <p class="text-muted mb-4" style="font-size: 0.85rem;">Define how your "mock API" should behave when called.</p>
+
+          <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 15px;">
+             <div class="form-group">
+                <label>HTTP Status Code</label>
+                <select id="status-code" class="form-control">
+                   <option value="200">200 OK</option>
+                   <option value="201">201 Created</option>
+                   <option value="400">400 Bad Request</option>
+                   <option value="401">401 Unauthorized</option>
+                   <option value="403">403 Forbidden</option>
+                   <option value="404">404 Not Found</option>
+                   <option value="500">500 Internal Server Error</option>
+                </select>
+             </div>
+             <div class="form-group">
+                <label>Simulation Delay (ms)</label>
+                <input type="number" id="mock-delay" class="form-control" value="500" step="100">
+             </div>
+          </div>
+
+          <div class="form-group">
+             <label>Response Headers</label>
+             <div id="headers-list">
+                <div class="header-row">
+                   <input type="text" class="form-control header-key" value="Content-Type">
+                   <input type="text" class="form-control header-val" value="application/json">
+                   <button class="btn btn-secondary btn-sm" onclick="this.parentElement.remove()">×</button>
+                </div>
+             </div>
+             <button class="btn btn-secondary btn-sm mt-1" id="add-header-btn">+ Add Header</button>
+          </div>
+
+          <div class="form-group">
+             <label>Response Body (JSON)</label>
+             <textarea id="response-body" class="form-control" style="min-height: 250px; font-family: monospace;" placeholder='{"status": "success", "data": []}'></textarea>
+          </div>
+
+          <button class="btn btn-primary btn-full" id="simulate-btn">Simulate Response</button>
+        </div>
+
+        <div class="preview-panel">
+          <h3>Response Preview</h3>
+          <div id="loader" class="text-center py-4" style="display:none;">
+             <div class="spinner mb-2"></div>
+             <p class="text-muted" style="font-size:0.8rem;">Simulating request...</p>
+          </div>
+          <div id="preview-content">
+             <div class="response-meta">
+                <div class="flex justify-between mb-2">
+                   <span>Status:</span>
+                   <span id="res-status" class="status-badge status-2xx">200 OK</span>
+                </div>
+                <div class="flex justify-between">
+                   <span>Latency:</span>
+                   <span id="res-time" class="text-muted">--ms</span>
+                </div>
+             </div>
+             
+             <label class="editor-label">Headers Received:</label>
+             <div id="res-headers" class="result-area mb-3" style="font-size: 0.75rem; min-height: 60px;">{}</div>
+
+             <label class="editor-label">Response Data:</label>
+             <pre id="res-body" class="result-area" style="max-height: 300px; overflow: auto;"></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- SEO CONT      <!-- CONTENT SECTION -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.api_response_simulator.what_is_title">What is the API Response Simulator?</h2>
+        <p>The API Response Simulator is a client-side mock development tool designed to simulate HTTP endpoints, response headers, and JSON payloads. By configuring status codes and latency values, frontend engineers can test how their web applications handle server responses without setting up a backend server.</p>
+        <p>This simulator evaluates your JSON body and generates response payloads locally in your browser's private memory. Since no headers, status codes, or payload objects are sent to external databases, your application's API architecture and JSON structures remain private.</p>
+
+        <h2 class="mt-4" data-i18n="tools.api_response_simulator.how_to_use_title">How to Use the API Response Simulator</h2>
+        <ol>
+          <li><strong>Set the Endpoint Path:</strong> Type your mock URL path (e.g., <code>/api/v1/users</code>) into the endpoint input box.</li>
+          <li><strong>Choose the Status Code:</strong> Select your target HTTP status code (such as 200 OK, 401 Unauthorized, 404 Not Found, or 500 Internal Error) from the dropdown list.</li>
+          <li><strong>Configure Simulation Delay:</strong> Drag the delay slider to set a mock latency (from 0 to 5000 milliseconds) to test loading states and network timeouts.</li>
+          <li><strong>Assign Custom Headers:</strong> Enter header key-value pairs (like <code>Content-Type</code>: <code>application/json</code>) and click "Add Header" to include them in the simulation response.</li>
+          <li><strong>Write the JSON Body:</strong> Paste or edit your JSON response body inside the payload editor textarea.</li>
+          <li><strong>Simulate Response:</strong> Click "Simulate Response." The right panel will display the simulated response code, headers, and the formatted JSON body after the selected delay.</li>
+        </ol>
+
+        <h2 class="mt-4" data-i18n="tools.api_response_simulator.key_features_title">Key Features</h2>
+        <ul>
+          <li><strong>Realistic Latency Emulation:</strong> Simulate network delays up to 5 seconds to test UI spinner animations and skeleton screen loaders.</li>
+          <li><strong>Broad Status Code Selections:</strong> Test edge cases by simulating 2xx success codes, 4xx client errors, and 5xx backend server faults.</li>
+          <li><strong>Custom Header Additions:</strong> Append custom metadata keys (such as token authorization headers or pagination counts) to simulated responses.</li>
+          <li><strong>Local Syntax Verification:</strong> Validates JSON strings instantly to prevent formatting errors on simulated outputs.</li>
+          <li><strong>100% Client-Side Sandbox:</strong> Compiles mock payloads in browser RAM without network tracking.</li>
+        </ul>
+
+        <h2 class="mt-4" data-i18n="tools.api_response_simulator.common_use_cases_title">Common Use Cases</h2>
+        <ul>
+          <li><strong>Frontend Autonomy:</strong> Build and test user interface components before backend developers complete the actual API endpoints.</li>
+          <li><strong>Error State Validation:</strong> Verify that your application displays clear warning alerts when API endpoints return 401, 403, or 500 server errors.</li>
+          <li><strong>Offline App Demos:</strong> Run mock demos of your client-side application during presentations without relying on active staging environments or internet connections.</li>
+          <li><strong>UI Loading State Checks:</strong> Emulate slow network connections to fine-tune loading spinners and prevent layout shifting.</li>
+        </ul>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2 data-i18n="tools.api_response_simulator.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Does this simulator require a running backend server?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. The simulator operates entirely in your browser. It intercepts status selections and payload inputs locally to compile response data in your tab session, making it completely offline-capable.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Is my JSON payload data secure?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. All mock responses, headers, and JSON structures are processed locally in your browser memory. No data is sent to external databases or stored on 99tool.in servers.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Why is the simulator flagging my JSON as invalid?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>The parser requires standard JSON formatting. Ensure that your keys and string values are enclosed in double quotes (not single quotes) and that there are no trailing commas at the end of lists or objects.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I simulate API request methods like POST or PUT?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>This simulator is designed to mock the response payload and metadata returned to your frontend code, helping you verify how your app displays data. It operates independently of the request method used.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I save my configured simulated endpoints?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. The tool saves your active configurations to your browser's local storage automatically. When you return to the page, your endpoints and JSON configurations will reload.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 Privacy & Data Note: API mock configurations, headers, and JSON validations are processed locally in your browser. No data is sent to our servers.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const simulateBtn = document.getElementById('simulate-btn');
+    const loader = document.getElementById('loader');
+    const previewContent = document.getElementById('preview-content');
+    const addHeaderBtn = document.getElementById('add-header-btn');
+    const headersList = document.getElementById('headers-list');
+
+    function createHeaderRow() {
+      const row = document.createElement('div');
+      row.className = 'header-row';
+      row.innerHTML = `
+        <input type="text" class="form-control header-key" placeholder="Key">
+        <input type="text" class="form-control header-val" placeholder="Value">
+        <button class="btn btn-secondary btn-sm" onclick="this.parentElement.remove()">×</button>
+      `;
+      headersList.appendChild(row);
+    }
+
+    async function simulate() {
+      const body = document.getElementById('response-body').value;
+      const status = document.getElementById('status-code').value;
+      const delay = parseInt(document.getElementById('mock-delay').value) || 0;
+      
+      // Validation
+      try {
+        if(body.trim()) JSON.parse(body);
+      } catch (e) {
+        alert('Invalid JSON in body.');
+        return;
+      }
+
+      // UI States
+      simulateBtn.disabled = true;
+      loader.style.display = 'block';
+      previewContent.style.opacity = '0.3';
+
+      const start = Date.now();
+      
+      // Simulate delay
+      await new Promise(r => setTimeout(r, delay));
+
+      const end = Date.now();
+      const latency = end - start;
+
+      // Collect headers
+      const headers = {};
+      document.querySelectorAll('.header-row').forEach(row => {
+        const k = row.querySelector('.header-key').value.trim();
+        const v = row.querySelector('.header-val').value.trim();
+        if (k) headers[k] = v;
+      });
+
+      // Update Preview
+      document.getElementById('res-status').textContent = status;
+      document.getElementById('res-status').className = `status-badge status-${status[0]}xx`;
+       document.getElementById('res-time').textContent = ((window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(latency, 0) : latency) + 'ms';
+      document.getElementById('res-headers').textContent = JSON.stringify(headers, null, 2);
+      
+      const bodyEl = document.getElementById('res-body');
+      if (body.trim()) {
+        bodyEl.textContent = JSON.stringify(JSON.parse(body), null, 2);
+      } else {
+        bodyEl.textContent = '(Empty Response Body)';
+      }
+
+      loader.style.display = 'none';
+      previewContent.style.opacity = '1';
+      simulateBtn.disabled = false;
+    }
+
+    addHeaderBtn.onclick = createHeaderRow;
+    simulateBtn.onclick = simulate;
+
+    // Default template
+    document.getElementById('response-body').value = JSON.stringify({
+      status: "success",
+      message: "Resource loaded correctly",
+      data: {
+        id: 101,
+        user: "Antigravity",
+        role: "Assistant"
+      }
+    }, null, 2);
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

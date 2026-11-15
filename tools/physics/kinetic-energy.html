@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Kinetic Energy – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/physics/kinetic-energy.html"/>
+<meta property="og:title" content="Kinetic Energy – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/physics/kinetic-energy.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Kinetic Energy \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/physics/kinetic-energy.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .physics-workspace {
+      max-width: 600px;
+      margin: 2rem auto;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      border-radius: 20px;
+    }
+    .form-group { margin-bottom: 1.5rem; }
+    label { display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-muted); }
+    input {
+      width: 100%;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.8rem;
+      border-radius: 8px;
+    }
+    .result-card {
+      background: var(--bg-secondary);
+      padding: 2rem;
+      border-radius: 12px;
+      margin-top: 2rem;
+      text-align: center;
+      display: none;
+      border: 2px solid var(--primary);
+    }
+    .res-val { font-size: 3.5rem; font-weight: 900; color: var(--primary); }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/physics/kinetic-energy.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/physics/kinetic-energy.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/physics/kinetic-energy.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/physics/kinetic-energy.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/physics/kinetic-energy.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/physics/kinetic-energy.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/physics/kinetic-energy.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/physics/kinetic-energy.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/physics/kinetic-energy.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/physics/kinetic-energy.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/physics/kinetic-energy.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/physics/kinetic-energy.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/physics/kinetic-energy.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/physics/kinetic-energy.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/physics/kinetic-energy.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/physics/kinetic-energy.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/physics/kinetic-energy.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/physics/kinetic-energy.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/physics/kinetic-energy.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/physics/kinetic-energy.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/physics/kinetic-energy.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/physics/kinetic-energy.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Infinite Kinetic Energy Calculator</h1>
+      <p>Analyze energy of motion. Calculate Kinetic Energy (KE) in Joules using Mass and Velocity.</p>
+    </div>
+
+    <div class="physics-workspace">
+      <div class="form-group">
+        <label>Mass (m) in kg</label>
+        <input type="number" id="mass" placeholder="e.g., 10">
+      </div>
+      <div class="form-group">
+        <label>Velocity (v) in Meters per Second (m/s)</label>
+        <input type="number" id="vel" placeholder="e.g., 5">
+      </div>
+      
+      <button onclick="calculateKE()" class="btn btn-primary btn-lg btn-full">Calculate Energy</button>
+
+      <div class="result-card" id="result-card">
+         <div class="res-val" id="res">0 J</div>
+         <div class="mt-2 font-weight-bold">Kinetic Energy (Joules)</div>
+         <p class="mt-3 text-muted small">Based on the formula $KE = \frac{1}{2} m v^2$. This represents the energy an object possesses due to its motion.</p>
+      </div>
+
+      <!-- SEO CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.kinetic_energy_calculator.what_is_title">What is the Infinite Kinetic Energy Calculator?</h2>
+        <p>The Infinite Kinetic Energy Calculator is a mechanics utility that solves for the energy of motion possessed by a moving object. Kinetic energy ($KE$) is defined as the work required to accelerate a body of a given mass from a state of rest to its current velocity. In physics equations, this is expressed as $KE = \frac{1}{2} m v^2$.</p>
+        <p>This utility enables you to input mass and velocity metrics directly to determine the resulting kinetic output. It provides a clean, accurate alternative to manual arithmetic, ensuring consistency in homework checks, dynamics planning, and impact force assessments.</p>
+
+        <h3 class="mt-4">How to Use the Kinetic Energy Solver</h3>
+        <p>Follow these quick steps to calculate kinetic energy:</p>
+        <ol class="mt-2 mb-3">
+          <li>Enter the object's mass in kilograms into the "Mass (m) in kg" input field.</li>
+          <li>Enter the object's travel speed in the "Velocity (v) in Meters per Second (m/s)" input field.</li>
+          <li>Click the "Calculate Energy" button to process the parameters.</li>
+          <li>Observe the calculated energy value in Joules (J) highlighted in the green-bordered card.</li>
+        </ol>
+
+        <h3 class="mt-4">Key Features</h3>
+        <ul class="mt-2 mb-3">
+          <li><strong>Squared Velocity Tracking:</strong> Applies the exact quadratic relationship of velocity to energy changes.</li>
+          <li><strong>Standard Joules Metric:</strong> Converts product inputs into standard Joules (J) outputs automatically.</li>
+          <li><strong>Instant Result Panel:</strong> Reveals the solved value clearly in a dedicated output section.</li>
+          <li><strong>Local Browser Execution:</strong> Processes math operations instantly inside your browser memory cache.</li>
+        </ul>
+
+        <h3 class="mt-4">Common Use Cases</h3>
+        <p>This kinetic calculator is designed for the following applications:</p>
+        <ul class="mt-2 mb-3">
+          <li><strong>Vehicle Impact Force Auditing:</strong> Calculating the active energy of vehicles at specific speeds to study potential crash impacts.</li>
+          <li><strong>Ballistic Testing Calculations:</strong> Solving for the muzzle kinetic energy of projectiles based on bullet weight and velocity.</li>
+          <li><strong>Industrial Safety Design:</strong> Determining the kinetic energy of moving mechanical arms or factory equipment to design safety enclosures.</li>
+        </ul>
+
+        <h3 class="mt-4">Frequently Asked Questions</h3>
+        <div class="faq-section mt-3">
+          <p><strong>What is a Joule (J)?</strong><br>A Joule is the SI unit of work or energy. One Joule is equal to the work done by a force of one Newton moving an object through a distance of one meter ($1\text{ J} = 1\text{ N}\cdot\text{m}$).</p>
+          <p><strong>Why does doubling the speed quadruple the kinetic energy?</strong><br>Because velocity is squared in the formula ($v^2$), any increase in velocity has a exponential effect on the total energy ($2^2 = 4$).</p>
+          <p><strong>Can kinetic energy be negative?</strong><br>No. Mass is always positive, and squaring the velocity results in a positive value. Thus, kinetic energy is always a positive scalar quantity.</p>
+          <p><strong>How do I convert Joules to Kilojoules?</strong><br>To convert Joules to Kilojoules (kJ), divide the result by 1,000.</p>
+        </div>
+
+        <h3 class="mt-4">Privacy & Data Note</h3>
+        <p>All calculations are processed locally on your client machine. No physical properties, velocities, or energy output logs are uploaded, stored, or shared.</p>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    function calculateKE() {
+       const m = parseFloat(document.getElementById('mass').value);
+       const v = parseFloat(document.getElementById('vel').value);
+       
+       if (isNaN(m) || isNaN(v)) return alert('Please enter both mass and velocity.');
+
+       const ke = 0.5 * m * (v * v);
+       document.getElementById('res').innerText = ((window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(ke, 2) : ke.toFixed(2)) + ' J';
+       document.getElementById('result-card').style.display = 'block';
+    }
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>

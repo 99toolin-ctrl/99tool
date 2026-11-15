@@ -1,0 +1,483 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Poetry Generator – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/writing/poetry-generator.html"/>
+<meta property="og:title" content="Poetry Generator – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/writing/poetry-generator.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Poetry Generator \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/writing/poetry-generator.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="poetry generator, poem maker, haiku generator, rhyming verse tool, write poetry, creative writing tool" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json" id="schema-org-data">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Poetry Generator",
+    "operatingSystem": "Any",
+    "applicationCategory": "DesignApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Haiku Template, Rhyming Logic, Keyword Slotting, Instant Generation, Private local processing"
+  }
+  </script>
+
+  <style>
+    .poem-layout { display: grid; grid-template-columns: 1fr; gap: 30px; }
+
+    .control-pane {
+      background: var(--dark-card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 30px; height: fit-content; position: sticky; top: 80px;
+    }
+
+    .output-pane {
+       background: var(--dark-card); border: 1px solid var(--border); border-radius: var(--radius);
+       padding: 40px; display: flex; align-items: center; justify-content: center;
+       text-align: center; overflow: auto; min-height: 400px;
+    }
+
+    #poem-display {
+       font-family: 'Crimson Pro', serif; font-size: 1.8rem; line-height: 1.6;
+       font-style: italic; color: #fff; white-space: pre-wrap;
+       max-width: 100%; word-break: break-word; transition: 0.3s;
+    }
+
+    .input-grid { display: grid; grid-template-columns: 1fr; gap: 15px; margin-bottom: 25px; }
+
+    @media (min-width: 900px) {
+       .poem-layout { grid-template-columns: 350px 1fr; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/writing/poetry-generator.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/writing/poetry-generator.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/writing/poetry-generator.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/writing/poetry-generator.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/writing/poetry-generator.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/writing/poetry-generator.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/writing/poetry-generator.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/writing/poetry-generator.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/writing/poetry-generator.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/writing/poetry-generator.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/writing/poetry-generator.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/writing/poetry-generator.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/writing/poetry-generator.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/writing/poetry-generator.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/writing/poetry-generator.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/writing/poetry-generator.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/writing/poetry-generator.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/writing/poetry-generator.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/writing/poetry-generator.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/writing/poetry-generator.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/writing/poetry-generator.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/writing/poetry-generator.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#writing">Writing & Content</a> <span>/</span> 
+        <span>Poetry Generator</span>
+      </nav>
+      <h1>Poetry Generator</h1>
+      <p>Weaponize your metaphors with structural precision. Generate haikus, rhymes, and atmospheric verses—all within your private browser, 100%.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div class="poem-layout">
+         <aside class="control-pane">
+            <h3>Versification Logic</h3>
+            <p class="text-muted small mb-4">Select a structure and fill the slots.</p>
+
+            <div class="form-group mb-4">
+               <label>Structure Policy</label>
+               <select id="poem-style" class="form-control">
+                  <option value="haiku">Haiku (5-7-5 Nature)</option>
+                  <option value="rhyme">Rhyming Couplet</option>
+                  <option value="modern">Modern Atmospheric</option>
+               </select>
+            </div>
+
+            <div class="input-grid">
+               <div class="form-group">
+                  <label id="label-1">Key Subject (Noun)</label>
+                  <input type="text" id="k-1" class="form-control" placeholder="e.g. Ocean">
+               </div>
+               <div class="form-group">
+                  <label id="label-2">Descriptor (Adjective)</label>
+                  <input type="text" id="k-2" class="form-control" placeholder="e.g. Endless">
+               </div>
+               <div class="form-group">
+                  <label id="label-3">Motion (Verb)</label>
+                  <input type="text" id="k-3" class="form-control" placeholder="e.g. Whispers">
+               </div>
+            </div>
+
+            <button class="btn btn-primary btn-full mb-3" id="btn-generate">Render Verse</button>
+            <button class="btn btn-secondary btn-full" id="btn-copy">Copy to Clipboard</button>
+            
+            <div class="info-box mt-4">
+               <div class="info-icon">✒️</div>
+               <p class="small">Privacy Note: This is a **Template-Based Engine**. Your words stay in the local RAM—no third-party linguistic analysis active.</p>
+            </div>
+         </aside>
+
+         <div class="output-pane">
+            <div id="poem-display">
+               Draft your keywords and select a policy to begin your private composition.
+            </div>
+         </div>
+      </div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.poetry_generator.what_is_title">What is the Poetry Generator?</h2>
+        <p>The Poetry Generator is a browser-based creative writing tool that helps you compose poems across a variety of styles — haiku, sonnet, free verse, limerick, acrostic, and more. Enter a theme, keyword, or emotional tone, select a poetry style, and the generator produces a structured poem using built-in language patterns and creative templates. All generation runs locally in your browser with no server calls required.</p>
+        <p>Whether you are a student working on a creative writing assignment, a casual writer exploring a new style, or someone looking for a heartfelt message, the Poetry Generator gives you an instant creative starting point that you can refine and personalise.</p>
+
+        <h3 class="mt-4">How to Use the Poetry Generator</h3>
+        <p>Generating a poem involves these steps:</p>
+        <ol class="mt-2 mb-3">
+          <li>Enter a theme, subject, or keyword in the Topic field (e.g., "autumn", "friendship", "the sea at dawn").</li>
+          <li>Select a poetry style from the dropdown: Haiku, Sonnet, Free Verse, Limerick, Acrostic, or Rhyming Couplets.</li>
+          <li>Choose a mood or tone if available: Romantic, Melancholic, Joyful, Reflective, or Humorous.</li>
+          <li>Click "Generate Poem" to produce a poem that follows the structure and rhyme rules of the selected style.</li>
+          <li>Read the output in the poem display area. Click "Generate Again" to produce a different variation on the same theme.</li>
+          <li>Click "Copy Poem" to copy the text to your clipboard for use in a document, card, or social post.</li>
+        </ol>
+
+        <h3 class="mt-4">Key Features</h3>
+        <ul class="mt-2 mb-3">
+          <li><strong>Multiple Poetry Styles:</strong> Supports Haiku (5-7-5 syllable structure), Sonnet (14-line iambic), Limerick (AABBA rhyme), Free Verse, and more.</li>
+          <li><strong>Theme-Driven Output:</strong> Generates poems centred on your chosen topic rather than generic filler text.</li>
+          <li><strong>Mood and Tone Control:</strong> Select the emotional register of the poem to match your intended message.</li>
+          <li><strong>Instant Re-Generation:</strong> Produce multiple variations on the same theme with one click, giving you options to choose from.</li>
+        </ul>
+
+        <h3 class="mt-4">Common Use Cases</h3>
+        <p>This tool is helpful for the following tasks:</p>
+        <ul class="mt-2 mb-3">
+          <li><strong>Creative Writing Practice:</strong> Exploring different poetic forms as part of a writing course, workshop, or personal skill-building.</li>
+          <li><strong>Greeting Cards and Gifts:</strong> Generating a personalised poem for a birthday, anniversary, wedding, or sympathy card.</li>
+          <li><strong>Classroom Assignments:</strong> Students using the generator as a starting point to understand poetic structure before writing their own version.</li>
+          <li><strong>Social Media Content:</strong> Creating short, shareable poems for Instagram, Twitter, or personal blogs.</li>
+        </ul>
+
+        <h3 class="mt-4">Frequently Asked Questions</h3>
+        <div class="faq-section mt-3">
+          <p><strong>Can I use the generated poems commercially?</strong><br>Yes. All poems generated by this tool are yours to use freely — for personal projects, greeting cards, social posts, or commercial content. No attribution is required.</p>
+          <p><strong>Does the generator follow strict poetic rules?</strong><br>For structured forms like Haiku and Limerick, the generator follows the standard syllable and rhyme rules. For Free Verse, output is thematic and expressive without strict constraints.</p>
+          <p><strong>Can I input my own first line or rhyme?</strong><br>The current version uses topic-driven generation. Future updates will include line-by-line assistance and custom opening verse support.</p>
+          <p><strong>Are my poems saved anywhere?</strong><br>No. Poems are generated and displayed locally in your browser. Nothing is saved to any server. Copy the poem to save it before closing the tab.</p>
+        </div>
+
+        <h3 class="mt-4">Privacy &amp; Data Note</h3>
+        <p>All poem generation runs entirely inside your browser's JavaScript engine. Your topic inputs and generated poems are never transmitted to any server, stored in any database, or used for any purpose beyond your current session.</p>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2 data-i18n="tools.poetry_generator.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">Can I use generated poems commercially?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>Yes. All poems generated by this tool are yours to use freely for personal, academic, or commercial purposes. No attribution to 99tool.in is required.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">Does it follow strict poetic rules?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>For structured forms like Haiku (5-7-5) and Limerick (AABBA), the generator follows standard rules. Free Verse output is thematic and expressive without strict syllable constraints.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">Are my poems saved anywhere?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>No. Poems are generated and displayed locally in your browser session. Nothing is saved to any server. Copy the poem before closing the tab to keep it.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>&#9997; 100% Local Generation. Your topics and poems stay in your browser. Last updated: April 10, 2026.</p>
+      </div>
+
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const styleSelect = document.getElementById('poem-style');
+    const display = document.getElementById('poem-display');
+    const k1 = document.getElementById('k-1');
+    const k2 = document.getElementById('k-2');
+    const k3 = document.getElementById('k-3');
+    const btnGenerate = document.getElementById('btn-generate');
+    const btnCopy = document.getElementById('btn-copy');
+
+    const templates = {
+       haiku: [
+          "${adj} ${sub}\n${sub} ${verb} in the night\nPeace in the silent.",
+          "The ${sub} so ${adj}\nWatching how you ${verb} today\nLife begins a-new."
+       ],
+       rhyme: [
+          "The ${adj} ${sub} begins to ${verb},\nIn the shadows where we learn to grow.",
+          "A ${sub} so ${adj}, a light so clear,\nI ${verb} for you, through every year."
+       ],
+       modern: [
+          "Endless ${sub}. ${adj} and strange.\nWe ${verb} through the glass of time.",
+          "Fragmented ${adj} ${sub}. \nIn the garden of the mind, we ${verb}."
+       ]
+    };
+
+    function generate() {
+       const sub = k1.value || "Ocean";
+       const adj = k2.value || "Infinite";
+       const verb = k3.value || "Whispers";
+       
+       const list = templates[styleSelect.value];
+       let template = list[Math.floor(Math.random() * list.length)];
+       
+       const poem = template
+          .replace(/\$\{sub\}/g, sub)
+          .replace(/\$\{adj\}/g, adj)
+          .replace(/\$\{verb\}/g, verb);
+       
+       display.innerText = poem;
+    }
+
+    btnGenerate.onclick = generate;
+    btnCopy.onclick = () => copyToClipboard(display.innerText, btnCopy);
+
+    styleSelect.onchange = () => {
+       const labels = {
+          haiku: ["Subject (Noun)", "State (Adjective)", "Motion (Verb)"],
+          rhyme: ["Subject (Noun)", "Quality (Adjective)", "Action (Verb)"],
+          modern: ["Concept (Noun)", "Visual (Adjective)", "Dynamic (Verb)"]
+       };
+       const set = labels[styleSelect.value];
+       document.getElementById('label-1').innerText = set[0];
+       document.getElementById('label-2').innerText = set[1];
+       document.getElementById('label-3').innerText = set[2];
+    };
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

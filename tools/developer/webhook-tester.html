@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Webhook Tester – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/developer/webhook-tester.html"/>
+<meta property="og:title" content="Webhook Tester – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/developer/webhook-tester.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Webhook Tester \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/developer/webhook-tester.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="webhook tester, test webhook, webhook simulator, webhook inspector, webhook tool" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json" id="schema-org-data">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Webhook Tester",
+    "operatingSystem": "Any",
+    "applicationCategory": "DeveloperApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Payload Simulation, JSON Pretty Print, Header Inspection, Testing"
+  }
+  </script>
+
+  <style>
+    .tester-layout {
+      display: grid; grid-template-columns: 1fr; gap: 30px;
+    }
+
+    .config-panel, .console-panel {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px;
+    }
+
+    .editor-label { font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 8px; display: block; }
+
+    .header-row { display: grid; grid-template-columns: 1fr 1fr auto; gap: 10px; margin-bottom: 10px; }
+
+    .console-scroll {
+      background: var(--dark);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      height: 400px; overflow-y: auto; padding: 20px;
+      font-family: 'Fira Code', monospace; font-size: 0.85rem; line-height: 1.6;
+    }
+
+    .console-entry { border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 20px; margin-bottom: 20px; }
+    .console-meta { display: flex; justify-content: space-between; margin-bottom: 15px; font-size: 0.75rem; color: var(--text-muted); }
+
+    @media (min-width: 900px) {
+      .tester-layout { grid-template-columns: 1fr 500px; }
+    }
+
+    .token-method { background: var(--primary); color: white; padding: 2px 6px; border-radius: 4px; font-weight: 800; }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/developer/webhook-tester.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/developer/webhook-tester.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/developer/webhook-tester.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/developer/webhook-tester.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/developer/webhook-tester.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/developer/webhook-tester.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/developer/webhook-tester.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/developer/webhook-tester.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/developer/webhook-tester.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/developer/webhook-tester.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/developer/webhook-tester.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/developer/webhook-tester.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/developer/webhook-tester.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/developer/webhook-tester.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/developer/webhook-tester.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/developer/webhook-tester.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/developer/webhook-tester.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/developer/webhook-tester.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/developer/webhook-tester.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/developer/webhook-tester.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/developer/webhook-tester.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/developer/webhook-tester.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#developer">Developer</a> <span>/</span> 
+        <span>Webhook Tester</span>
+      </nav>
+      <h1>Webhook Tester</h1>
+      <p>Simulate and inspect webhook payloads without external endpoints. Test JSON data and verify header structures privately in your browser.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div class="tester-layout">
+        <div class="config-panel">
+          <h3>Simulation Parameters</h3>
+          <p class="text-muted small mb-4">Define the payload and headers to "send" to the local inspector.</p>
+
+          <div class="grid" style="grid-template-columns: 100px 1fr; gap: 15px;">
+            <div class="form-group">
+               <label>Method</label>
+               <select id="sim-method" class="form-control">
+                  <option>POST</option>
+                  <option>PUT</option>
+                  <option>PATCH</option>
+                  <option>GET</option>
+               </select>
+            </div>
+            <div class="form-group">
+               <label>Destination (Visual Only)</label>
+               <input type="text" class="form-control" disabled value="local-browser-sandbox://webhook">
+            </div>
+          </div>
+
+          <div class="form-group">
+             <label class="editor-label">Payload (JSON)</label>
+             <textarea id="sim-payload" class="form-control" style="min-height: 250px; font-family: monospace;" placeholder='{
+  "event": "user.created",
+  "data": {
+    "id": 123,
+    "email": "test@example.com"
+  }
+}'></textarea>
+          </div>
+
+          <div class="form-group">
+             <label class="editor-label">Headers</label>
+             <div id="header-rows">
+                <div class="header-row">
+                   <input type="text" class="form-control h-key" value="Content-Type">
+                   <input type="text" class="form-control h-val" value="application/json">
+                   <button class="btn btn-secondary btn-sm" onclick="this.parentElement.remove()">×</button>
+                </div>
+                <div class="header-row">
+                   <input type="text" class="form-control h-key" value="X-Webhook-Secret">
+                   <input type="text" class="form-control h-val" value="abc_123_xyz">
+                   <button class="btn btn-secondary btn-sm" onclick="this.parentElement.remove()">×</button>
+                </div>
+             </div>
+             <button class="btn btn-secondary btn-sm mt-2" onclick="addHeaderRow()">+ Add Header</button>
+          </div>
+
+          <button class="btn btn-primary btn-full mt-4" id="sim-btn">Simulate Webhook Delivery</button>
+        </div>
+
+        <div class="console-panel">
+          <h3>Local Inspector</h3>
+          <div class="console-scroll" id="console-view">
+             <div class="text-center py-5 text-muted">Awaiting local delivery simulation...</div>
+          </div>
+          <button class="btn btn-secondary btn-full mt-3" onclick="clearConsole()">Clear History</button>
+        </div>
+      </div>
+
+      <!-- CONTENT SECTION -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.webhook_tester.what_is_title">What is the Webhook Tester?</h2>
+        <p>The Webhook Tester is a client-side simulation utility developed to test and inspect webhook HTTP requests and payload schemas. By configuring mock request headers, choosing HTTP methods, and inputting body payloads, developers can inspect request processing behaviors directly in their browser.</p>
+        <p>This tester operates entirely on the client side, using local JavaScript logic to simulate request parsing and print logs. Since no server URLs are hosted, no public ports are mapped, and no JSON inputs are sent over the network, your API structures and secret tokens remain private.</p>
+
+        <h2 class="mt-4" data-i18n="tools.webhook_tester.how_to_use_title">How to Use the Webhook Tester</h2>
+        <ol>
+          <li><strong>Select HTTP Method:</strong> Choose the desired request verb (like POST, GET, PUT, PATCH, or DELETE) from the method dropdown menu.</li>
+          <li><strong>Configure Headers:</strong> Add required webhook headers (such as <code>Content-Type</code> or authentication keys) using the key-value rows. Click "Add Header" for additional inputs.</li>
+          <li><strong>Input Your JSON Payload:</strong> Paste the mock payload data into the "JSON Payload" textarea.</li>
+          <li><strong>Simulate Delivery:</strong> Click the "Simulate Webhook Delivery" button to process your mock request locally.</li>
+          <li><strong>Verify the Console Logs:</strong> Inspect the "Event Console" output to review formatted JSON hierarchies, method parameters, and header keys. Click "Clear History" to clear the logs.</li>
+        </ol>
+
+        <h2 class="mt-4" data-i18n="tools.webhook_tester.key_features_title">Key Features</h2>
+        <ul>
+          <li><strong>Multi-Method Selections:</strong> Support for POST, GET, PUT, PATCH, and DELETE request configurations.</li>
+          <li><strong>Custom Header Dictionary:</strong> Dynamically add key-value rows to simulate service authentication hashes and Content-Type variables.</li>
+          <li><strong>Formatted JSON Outputs:</strong> Pretty-prints and validates body payloads in the console to trace nested keys.</li>
+          <li><strong>Visual History Console:</strong> Lists simulated event deliveries chronologically for easy comparison.</li>
+          <li><strong>100% Secure Audits:</strong> Runs entirely in your browser sandbox without requiring public endpoints.</li>
+        </ul>
+
+        <h2 class="mt-4" data-i18n="tools.webhook_tester.common_use_cases_title">Common Use Cases</h2>
+        <ul>
+          <li><strong>Payment Notification Audits:</strong> Simulates webhook payloads from payment services (like Stripe or PayPal) to verify transaction parameters.</li>
+          <li><strong>Repository Event Testing:</strong> Test payload structures from version control platforms (such as GitHub or GitLab) for push events.</li>
+          <li><strong>E-commerce Schema Mapping:</strong> Verify shopping cart update payloads from e-commerce providers before writing integration logic.</li>
+          <li><strong>API Header Verifications:</strong> Replicate API signature validation headers to test header parsing algorithms.</li>
+        </ul>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2 data-i18n="tools.webhook_tester.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Can this tool receive real external webhooks?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. This tool is a client-side simulator. It does not open public HTTP endpoints or host temporary URLs. It is designed for manual testing where you input payload details to verify formatting and schemas.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Are my webhook payloads uploaded to 99tool.in?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. All simulation parsing, header mapping, and log formatting are executed locally in your browser memory. Your data contracts are never sent to external servers.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Does the tool validate JSON syntax?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. The simulator parses the payload input locally. If it contains invalid JSON syntax, the console output will display a parsing warning.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I configure multiple custom headers?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. You can add as many header rows as you need to simulate complex security schemes, API tokens, and custom metadata fields.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 Privacy & Data Note: Webhook simulations, header parsing, and event logs are executed locally in your browser. No external connections are established.</p>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const methodSelect = document.getElementById('sim-method');
+    const payloadText = document.getElementById('sim-payload');
+    const headerRows = document.getElementById('header-rows');
+    const consoleView = document.getElementById('console-view');
+    const simBtn = document.getElementById('sim-btn');
+
+    function addHeaderRow() {
+       const div = document.createElement('div');
+       div.className = 'header-row';
+       div.innerHTML = `
+          <input type="text" class="form-control h-key" placeholder="Key">
+          <input type="text" class="form-control h-val" placeholder="Value">
+          <button class="btn btn-secondary btn-sm" onclick="this.parentElement.remove()">×</button>
+       `;
+       headerRows.appendChild(div);
+    }
+
+    function clearConsole() {
+       consoleView.innerHTML = '<div class="text-center py-5 text-muted">Awaiting local delivery simulation...</div>';
+    }
+
+    simBtn.onclick = () => {
+       const method = methodSelect.value;
+       const rawPayload = payloadText.value.trim();
+       
+       let parsed;
+       try {
+          parsed = rawPayload ? JSON.parse(rawPayload) : null;
+       } catch (e) {
+          return alert('Invalid JSON payload. Please check your syntax.');
+       }
+
+       const headers = {};
+       headerRows.querySelectorAll('.header-row').forEach(row => {
+          const key = row.querySelector('.h-key').value.trim();
+          const val = row.querySelector('.h-val').value.trim();
+          if (key) headers[key] = val;
+       });
+
+       // Create Log Entry
+       const time = new Date().toLocaleTimeString();
+       if (consoleView.innerHTML.includes('Awaiting')) consoleView.innerHTML = '';
+       
+       const entry = document.createElement('div');
+       entry.className = 'console-entry';
+       entry.innerHTML = `
+          <div class="console-meta">
+             <span><span class="token-method">${method}</span> /webhook</span>
+             <span>${time}</span>
+          </div>
+          <div style="margin-bottom: 10px;">
+             <span class="editor-label">Headers</span>
+             <pre style="font-size: 0.75rem; color: #888;">${JSON.stringify(headers, null, 2)}</pre>
+          </div>
+          <div>
+             <span class="editor-label">Body</span>
+             <pre style="color: var(--primary-light);">${parsed ? JSON.stringify(parsed, null, 2) : '[Empty Body]'}</pre>
+          </div>
+       `;
+
+       consoleView.prepend(entry);
+    };
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Stability Test – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/network/stability-test.html"/>
+<meta property="og:title" content="Stability Test – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/network/stability-test.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Stability Test \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/network/stability-test.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    .stability-workspace {
+      margin-top: 2rem;
+      background: var(--bg-secondary);
+      border-radius: 20px;
+      padding: 2.5rem;
+      border: 1px solid var(--border);
+    }
+    .stats-summary {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .stat-pill {
+      background: var(--bg-primary);
+      padding: 1.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+    .stat-val {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--primary);
+      font-family: monospace;
+    }
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-top: 5px;
+    }
+    .chart-container {
+      background: #111;
+      padding: 1.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      height: 350px;
+      position: relative;
+    }
+    .control-panel {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .badge-live {
+      display: inline-block;
+      padding: 4px 12px;
+      background: rgba(46, 213, 115, 0.1);
+      color: #2ed573;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/network/stability-test.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/network/stability-test.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/network/stability-test.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/network/stability-test.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/network/stability-test.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/network/stability-test.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/network/stability-test.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/network/stability-test.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/network/stability-test.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/network/stability-test.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/network/stability-test.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/network/stability-test.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/network/stability-test.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/network/stability-test.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/network/stability-test.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/network/stability-test.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/network/stability-test.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/network/stability-test.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/network/stability-test.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/network/stability-test.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/network/stability-test.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/network/stability-test.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Internet Stability Monitor</h1>
+      <p>Continuous network health tracking to detect packet loss and performance dips.</p>
+    </div>
+
+    <div class="tool-container">
+      <div class="stability-workspace">
+        <div class="text-center">
+          <span id="live-badge" class="badge-live hidden">● LIVE MONITORING</span>
+        </div>
+
+        <div class="stats-summary">
+          <div class="stat-pill">
+            <div class="stat-val" id="val-cur">-</div>
+            <div class="stat-label">Current Ping</div>
+          </div>
+          <div class="stat-pill">
+            <div class="stat-val" id="val-avg">-</div>
+            <div class="stat-label">Average</div>
+          </div>
+          <div class="stat-pill">
+            <div class="stat-val" id="val-jitter">-</div>
+            <div class="stat-label">Jitter</div>
+          </div>
+          <div class="stat-pill">
+            <div class="stat-val" id="val-dropped">0</div>
+            <div class="stat-label">Dropped</div>
+          </div>
+        </div>
+
+        <div class="chart-container">
+          <canvas id="stabilityChart"></canvas>
+        </div>
+
+        <div class="control-panel">
+          <button id="start-btn" class="btn btn-primary">Start Monitoring</button>
+          <button id="stop-btn" class="btn btn-secondary" disabled>Stop</button>
+        </div>
+      </div>
+
+      <!-- SEO CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.internet_stability_monitor.what_is_title">What is the Internet Stability Monitor?</h2>
+        <p>The Internet Stability Monitor is a continuous connection auditor designed to measure ping consistency, network jitter, and packet loss rates in real-time. A standard network test only provides a single snapshot of your peak capacity. However, a stability check evaluates your connection over time to confirm that your transmission stream remains steady and free from sudden dropouts.</p>
+        <p>This checker continuously sends lightweight ping requests to reliable CDN servers. By plotting latency fluctuations on a rolling timeline graph, it identifies intermittent router dropouts or ISP routing instability that causes disconnects in real-time applications.</p>
+
+        <h3 class="mt-4">How to Use the Connection Monitor</h3>
+        <p>Monitoring your connection stability involves the following steps:</p>
+        <ol class="mt-2 mb-3">
+          <li>Ensure you are connected to the network you want to analyze.</li>
+          <li>Click the "Start Monitoring" button to begin the continuous diagnostic ping loop.</li>
+          <li>Observe the live timeline graph as it plots each ping attempt in milliseconds (ms).</li>
+          <li>Review the live metrics panel showing your current latency, running average, jitter variance, and total dropped packet counts.</li>
+          <li>Click "Stop" at any time to pause the monitor and freeze the diagnostic stats.</li>
+        </ol>
+
+        <h3 class="mt-4">Key Features of the Stability Checker</h3>
+        <ul class="mt-2 mb-3">
+          <li><strong>Continuous Monitoring Loop:</strong> Schedules precise ping checks every second to track stability over long intervals.</li>
+          <li><strong>Real-Time Graphing Timeline:</strong> Plots latency spikes and dropped packet events visually for fast troubleshooting.</li>
+          <li><strong>Precision Jitter Calculation:</strong> Evaluates standard deviation in milliseconds to measure latency consistency.</li>
+          <li><strong>Packet Loss Tracker:</strong> Identifies failed requests (timeouts) and tracks them as a percentage of total pings.</li>
+        </ul>
+
+        <h3 class="mt-4">Common Use Cases</h3>
+        <p>This diagnostic tool is recommended for the following situations:</p>
+        <ul class="mt-2 mb-3">
+          <li><strong>Gaming Lag Diagnostics:</strong> Locating the source of sudden game disconnects or "rubber-banding" by checking for local packet loss.</li>
+          <li><strong>VoIP and Call Quality Audits:</strong> Checking connection stability before starting audio or video calls, where jitter causes speech stuttering.</li>
+          <li><strong>Wi-Fi Range Testing:</strong> Auditing signal stability in different rooms to find dead zones where walls disrupt signal transmission.</li>
+        </ul>
+
+        <h3 class="mt-4">Frequently Asked Questions</h3>
+        <div class="faq-section mt-3">
+          <p><strong>What is network jitter?</strong><br>Jitter is the variance in latency over time. If your ping jumps between 20ms and 200ms, your jitter is high, causing lag. A stable connection has low, consistent jitter.</p>
+          <p><strong>What causes dropped packets?</strong><br>Dropped packets occur when data is lost in transit. This is often caused by weak Wi-Fi signals, bad network cables, router congestion, or ISP routing issues.</p>
+          <p><strong>How does this test differ from a standard speed test?</strong><br>Speed tests measure maximum capacity in a short burst. This stability checker measures connection quality over time, exposing momentary drops that speed tests miss.</p>
+          <p><strong>Is there a limit to how long I can run the monitor?</strong><br>No. The tool is designed to run continuously in your tab. The scrolling timeline graph keeps a rolling log of recent attempts to prevent browser memory issues.</p>
+        </div>
+
+        <h3 class="mt-4">Privacy & Data Note</h3>
+        <p>All ping requests and stability metrics are processed locally in your browser tab. No connection details, IP addresses, or diagnostic logs are uploaded or stored on remote servers.</p>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const startBtn = document.getElementById('start-btn');
+    const stopBtn = document.getElementById('stop-btn');
+    const liveBadge = document.getElementById('live-badge');
+    const ctx = document.getElementById('stabilityChart').getContext('2d');
+
+    let chart;
+    let intervalId;
+    let pingHistory = [];
+    let droppedCount = 0;
+    
+    function initChart() {
+      chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: [],
+          datasets: [{
+            label: 'Latency (ms)',
+            data: [],
+            borderColor: '#ff4757',
+            backgroundColor: 'rgba(255, 71, 87, 0.1)',
+            borderWidth: 2,
+            tension: 0.3,
+            fill: true,
+            pointRadius: 2
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            x: { display: false },
+            y: {
+              beginAtZero: true,
+              grid: { color: '#333' },
+              ticks: { color: '#888' }
+            }
+          },
+          plugins: {
+            legend: { display: false }
+          },
+          animation: false
+        }
+      });
+    }
+
+    async function checkPing() {
+      const startTime = performance.now();
+      try {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 2000); // 2s timeout
+        
+        await fetch('https://dns.google/resolve?name=99tool.in', { 
+           mode: 'no-cors', 
+           cache: 'no-store',
+           signal: controller.signal 
+        });
+        
+        clearTimeout(timeoutId);
+        const rtt = Math.round(performance.now() - startTime);
+        updateUI(rtt);
+      } catch (err) {
+        droppedCount++;
+        document.getElementById('val-dropped').innerText = droppedCount;
+        updateUI(null);
+      }
+    }
+
+    function updateUI(rtt) {
+      if (rtt !== null) {
+        pingHistory.push(rtt);
+        if (pingHistory.length > 50) pingHistory.shift();
+        
+       document.getElementById('val-cur').innerText = ((window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(rtt, 0) : rtt) + 'ms';
+        
+        const avg = Math.round(pingHistory.reduce((a,b) => a+b, 0) / pingHistory.length);
+       document.getElementById('val-avg').innerText = ((window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(avg, 0) : avg) + 'ms';
+        
+        // Simple Jitter (Average variation)
+        let jitterSum = 0;
+        for(let i=1; i<pingHistory.length; i++) {
+          jitterSum += Math.abs(pingHistory[i] - pingHistory[i-1]);
+        }
+        const jitter = pingHistory.length > 1 ? Math.round(jitterSum / (pingHistory.length - 1)) : 0;
+       document.getElementById('val-jitter').innerText = ((window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(jitter, 0) : jitter) + 'ms';
+
+        // Update Chart
+        chart.data.labels.push('');
+        chart.data.datasets[0].data.push(rtt);
+        if (chart.data.labels.length > 50) {
+           chart.data.labels.shift();
+           chart.data.datasets[0].data.shift();
+        }
+        chart.update();
+      }
+    }
+
+    startBtn.onclick = () => {
+      startBtn.disabled = true;
+      stopBtn.disabled = false;
+      liveBadge.classList.remove('hidden');
+      pingHistory = [];
+      droppedCount = 0;
+      document.getElementById('val-dropped').innerText = '0';
+      
+      if (chart) chart.destroy();
+      initChart();
+      
+      intervalId = setInterval(checkPing, 1000);
+      checkPing();
+    };
+
+    stopBtn.onclick = () => {
+      clearInterval(intervalId);
+      startBtn.disabled = false;
+      stopBtn.disabled = true;
+      liveBadge.classList.add('hidden');
+    };
+
+    initChart();
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>

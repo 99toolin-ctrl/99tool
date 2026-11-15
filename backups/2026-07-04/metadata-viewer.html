@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Metadata Viewer – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/image/metadata-viewer.html"/>
+<meta property="og:title" content="Metadata Viewer – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/image/metadata-viewer.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Metadata Viewer \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/image/metadata-viewer.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="image metadata viewer, exif viewer, view photo details, check gps location image, camera info tool, exif viewer" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- EXIF Library -->
+  <script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Image Metadata Viewer",
+    "operatingSystem": "Any",
+    "applicationCategory": "DesignApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "EXIF Data Extraction, GPS Mapping, Camera Info, Multi-format support"
+  }
+  </script>
+
+  <style>
+    .metadata-layout {
+      display: grid; grid-template-columns: 1fr; gap: 30px;
+    }
+
+    .preview-pane, .data-pane {
+      background: var(--dark-card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 30px;
+    }
+
+    .image-display {
+      width: 100%; max-height: 400px; background: var(--dark);
+      border-radius: var(--radius-sm); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center; overflow: hidden;
+    }
+
+    .image-display img { max-width: 100%; max-height: 100%; object-fit: contain; }
+
+    .metadata-table {
+      width: 100%; border-collapse: collapse; font-size: 0.85rem;
+    }
+
+    .metadata-table tr { border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .metadata-table tr:last-child { border-bottom: none; }
+
+    .metadata-table td { padding: 12px 0; }
+    .metadata-label { color: var(--text-muted); font-weight: 500; width: 40%; }
+    .metadata-value { color: var(--white); font-weight: 600; word-break: break-all; }
+
+    @media (min-width: 1000px) {
+      .metadata-layout { grid-template-columns: 1fr 1.2fr; }
+    }
+
+    .gps-map-btn {
+       margin-top: 15px; background: rgba(229, 57, 53, 0.1); color: var(--primary);
+       border: 1px solid var(--primary); padding: 6px 15px; border-radius: 20px;
+       font-size: 0.75rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;
+    }
+    .gps-map-btn:hover { background: var(--primary); color: white; }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#image">Image Tools</a> <span>/</span> 
+        <span>Image Metadata Viewer</span>
+      </nav>
+      <h1>Image Metadata Viewer</h1>
+      <p>Uncover the hidden technical story behind your photos. View camera settings, GPS coordinates, and timestamps without ever sending your images to the cloud.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div id="upload-stage">
+        <div class="upload-area" id="drop-zone">
+          <div class="upload-icon">ℹ️</div>
+          <h3>Select your photo</h3>
+          <p>Drag & drop or click to browse (JPG, PNG, TIFF)</p>
+          <input type="file" id="file-input" accept="image/*" class="hidden">
+        </div>
+        <div class="info-box">
+          <div class="info-icon">🔍</div>
+          <p>Most modern cameras and smartphones embed detailed EXIF data. This tool allows you to audit that data locally to ensure your privacy before sharing.</p>
+        </div>
+      </div>
+
+      <div id="result-stage" class="hidden">
+        <div class="metadata-layout">
+           <div class="preview-pane">
+              <h3>Image Preview</h3>
+              <div class="image-display mt-3">
+                 <img id="preview-img" src="" alt="Preview">
+              </div>
+              <div id="file-basic-info" class="mt-4">
+                 <p class="text-muted small mb-1" id="file-name-info">filename.jpg</p>
+                 <p class="text-white fw-bold mb-0" id="file-size-info">0 KB</p>
+              </div>
+              <button class="btn btn-secondary btn-full mt-4" onclick="location.reload()">Open Another Image</button>
+           </div>
+
+           <div class="data-pane">
+              <div class="flex justify-between items-center mb-4">
+                 <h3 class="mb-0">Technical Metadata (EXIF)</h3>
+                 <span class="text-muted small">Status: Parsed Locally</span>
+              </div>
+              
+              <div id="no-exif" class="text-muted small text-center py-5 hidden">
+                 No extended EXIF metadata found in this image.
+              </div>
+
+              <div id="exif-content">
+                 <table class="metadata-table">
+                    <tbody id="metadata-body">
+                       <!-- Data injected here -->
+                    </tbody>
+                 </table>
+              </div>
+           </div>
+        </div>
+      </div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5">
+        <h2>Uncovering the Hidden Data: Why Image Metadata Transparency Matters</h2>
+        <p>We’ve all been there: you clip a beautiful photo on your smartphone—perhaps a sunset at a secret location or a candid shot of your home office—and you prepare to post it on social media. But as you click "Upload," you hesitate. Does that photo contain your exact GPS coordinates? Does it reveal the specific time you were there, or the expensive camera model you used? You want to check the details, so you look for an <strong>image metadata viewer online</strong>. But as you prepare to upload your personal memories to a cloud-hosted info tool, you pause. Do you really want to share your project's "Visual Identity" and location history with an anonymous scraping engine?</p>
+
+        <p>At 99tool.in, we built our <strong>image metadata viewer</strong> to provide a professional-grade audit laboratory without the privacy trade-off. By utilizing native browser EXIF parsing and zero-cloud processing, we allow you to <strong>view photo details</strong> entirely within the secure sandbox of your machine. Whether you're a professional photographer auditing client delivery assets, a journalist verifying a source image, or a privacy-conscious user scrubbing location tags, our <strong>safe exif viewer</strong> ensures that your data stays where it belongs: on your device, under your total sovereignty.</p>
+        
+        <div class="tool-preview-box mt-4 mb-4" style="text-align:center;">
+           <img src="../../assets/images/markdown-preview.png" alt="High-Performance EXIF Data Dashboard featuring camera info, GPS mapping, and technical timestamps" class="tool-preview" id="tool-preview-img" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+        </div>
+
+        <h3 class="mt-4">The Logic of "Digital Fingerprints"</h3>
+        <p>Image transparency is about "Informational Awareness." Most basic <strong>online info tools</strong> only show basic file sizes. Our <strong>professional metadata viewer</strong> takes a human-centric approach: we focus on **Comprehensive EXIF Extraction** and **Privacy Highlighting**.</p>
+        
+        <p>We've integrated a high-performance parsing engine that digs deep into the <code>Exchangeable Image File Format</code> (EXIF). Our <strong>safe image validator</strong> maps out camera make, model, exposure settings (Aperture, ISO), and—crucially—geolocation data. This transparency transforms a binary file into a clear, technical record, helping you see the "Secret Story of your Photo" before you ever share it with the world.</p>
+
+        <h3 class="mt-4">Why Auditing is the Creative’s Ethical Choice</h2>
+        <p>In the age of automated data harvesting and location tracking, your photo metadata is a roadmap of your life. Using a standard <strong>metadata viewer online free</strong> service creates a digital record of what you are checking. Our 100% <strong>info utility</strong> removes this "Privacy Vulnerability" entirely from your routine.</p>
+        
+        <p>Because the parsing and rendering happen in your browser's private memory, your images are invisible to the outside world. No analytics are tracked, no location tags are harvested, and no proprietary photo details are shared with advertisers or AI engines. At 99tool.in, we believe that <strong>managing your metadata</strong> should be an empowering utility, not a data-collection opportunity. With us, you have a private, professional darkroom for your data that fits in your browser tab.</p>
+
+        <h3 class="mt-4">How to View Your Photo Data (Step-by-Step)</h3>
+        <p>Auditing the technical details of a photo should be a high-speed, 5-second task. Here is how to use our <strong>exif viewer</strong>:</p>
+        <ul style="line-height: 1.8; margin-bottom: 20px;">
+          <li><strong>Step 1: Select Your Source</strong> — Drag your photo into the local sandbox. Our system begins the private parsing process instantly without any uploads.</li>
+          <li><strong>Step 2: Review the Snapshot</strong> — Watch as the dashboard populates with your file size, name, and a visual preview for confirmation.</li>
+          <li><strong>Step 3: Audit the Technicals</strong> — Scrutinize the EXIF table. Check for GPS coordinates, camera models, and timestamps that you might want removed.</li>
+          <li><strong>Step 4: Secure Your Workflow</strong> — Once you know what's hidden in your image, you can choose to scrub the metadata (using our upcoming editor) or share with confidence.</li>
+        </ul>
+
+        <h3 class="mt-4">Strategic Use Cases for Your Local Metadata Viewer</h3>
+        <p>Our <strong>searchable image info tool</strong> is the essential companion for modern digital photography:</p>
+        
+        <p><strong>For Professional Photographers:</strong> Confirming the license and attribution tags in an export? Use our <strong>metadata viewer</strong> to ensure your contact info is correctly embedded.</p>
+        
+        <p><strong>For Privacy Advocates:</strong> Checking a photo's location data before posting to a public forum? Use our <strong>safe image tool</strong> to verify your coordinates are hidden.</p>
+        
+        <p><strong>For Smartphone Users:</strong> Wondering why a certain photo looks better than others? Use our <strong>safe data tool</strong> to check the exposure settings and learn from your best shots.</p>
+
+        <h3 class="mt-5">Explore Your Complete Image Suite</h3>
+        <p>Once you’ve audited your metadata, you might need to process the image further. Check out our <strong><a href="compress-image.html">Image Compressor</a></strong>. Or, if you need to handle multiple files, use our <strong><a href="batch-resizer.html">Batch Image Resizer</a></strong>. At 99tool.in, we are building a world-class, 100% private digital toolkit to give you total control over the future of your visuals.</p>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section mt-5">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Does this tool show GPS location?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. If your camera or smartphone has enabled <strong>Location Services</strong>, our <strong>exif viewer</strong> will extract the latitude and longitude, allowing you to see exactly where the photo was taken.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I view metadata for PNG or WebP?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>While JPG is the standard for EXIF, our tool can also detect basic file info for PNG and WebP. Note that these formats often contain significantly less metadata than RAW or high-quality JPG files.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Is my image sent to any servers?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Absolutely not. For your total security, all EXIF parsing and rendering happen within your <strong>browser session's local memory</strong>. No image data is ever uploaded, and no thumbnails are stored on our servers. Privacy is our standard.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              What exactly is EXIF data?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>EXIF (Exchangeable Image File Format) is a standard for storing interchange information in image files. It includes technical details like camera settings (Aperture, ISO), date and time of capture, and often the GPS coordinates of where the photo was taken.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I see which lens was used?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. For professional cameras (DSLR/Mirrorless), our <strong>metadata viewer</strong> can often identify the specific lens model and focal length used for the shot, helping you audit your equipment settings for specific results.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Why should I check metadata before sharing?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Sharing photos with embedded GPS data can inadvertently reveal your home address or private locations. Using a <strong>private metadata tool</strong> allows you to see what's hidden in your files so you can scrub sensitive data before it reaches the public web.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 Privacy-First. Geo-Location Detection. 100% private. Last updated: April 10, 2026.</p>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const dropZone = document.getElementById('drop-zone');
+    const fileInput = document.getElementById('file-input');
+    const uploadStage = document.getElementById('upload-stage');
+    const resultStage = document.getElementById('result-stage');
+    const previewImg = document.getElementById('preview-img');
+    const metadataBody = document.getElementById('metadata-body');
+    const noExif = document.getElementById('no-exif');
+
+    dropZone.onclick = () => fileInput.click();
+    fileInput.onchange = (e) => handleImage(e.target.files[0]);
+
+    // Init Drag and Drop using global helper
+    setupDragDrop('drop-zone', (files) => {
+       handleImage(files[0]);
+    });
+
+    function handleImage(file) {
+      if (!file) return;
+
+      document.getElementById('file-name-info').textContent = file.name;
+      document.getElementById('file-size-info').textContent = formatSize(file.size);
+
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        previewImg.src = e.target.result;
+        uploadStage.classList.add('hidden');
+        resultStage.classList.remove('hidden');
+
+        // Extract EXIF
+        EXIF.getData(file, function() {
+           const allMetaData = EXIF.getAllTags(this);
+           renderMetadata(allMetaData);
+        });
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function renderMetadata(data) {
+       metadataBody.innerHTML = '';
+       
+       const importantTags = {
+          'Make': 'Camera Maker',
+          'Model': 'Camera Model',
+          'DateTime': 'Timestamp',
+          'ExposureTime': 'Exposure Time',
+          'FNumber': 'F-Stop (Aperture)',
+          'ISOSpeedRatings': 'ISO Speed',
+          'FocalLength': 'Focal Length',
+          'Software': 'Software Used',
+          'GPSLatitude': 'GPS Latitude',
+          'GPSLongitude': 'GPS Longitude',
+          'Orientation': 'Orientation'
+       };
+
+       let foundTags = 0;
+       
+       Object.keys(importantTags).forEach(tag => {
+          if (data[tag] !== undefined) {
+             foundTags++;
+             let val = data[tag];
+             
+             // Handle complex types
+             if (tag.includes('GPS')) {
+                val = formatGPS(val, data[tag + 'Ref']);
+             }
+             if (typeof val === 'object' && val.numerator) {
+                val = val.numerator + '/' + val.denominator;
+             }
+
+             const row = `
+                <tr>
+                   <td class="metadata-label">${importantTags[tag]}</td>
+                   <td class="metadata-value">${val}</td>
+                </tr>
+             `;
+             metadataBody.insertAdjacentHTML('beforeend', row);
+          }
+       });
+
+       if (foundTags === 0) {
+          noExif.classList.remove('hidden');
+       } else {
+          noExif.classList.add('hidden');
+       }
+    }
+
+    function formatGPS(coords, ref) {
+       if (!coords || !Array.isArray(coords)) return 'Unknown';
+       const degrees = coords[0].numerator / coords[0].denominator;
+       const minutes = coords[1].numerator / coords[1].denominator;
+       const seconds = coords[2].numerator / coords[2].denominator;
+       return `${degrees.toFixed(2)}° ${minutes.toFixed(2)}' ${seconds.toFixed(2)}" ${ref || ''}`;
+    }
+
+    function formatSize(bytes) {
+      if (bytes === 0) return '0 Bytes';
+      const k = 1024;
+      const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+      const i = Math.floor(Math.log(bytes) / Math.log(k));
+      return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+    }
+  </script>
+</body>
+</html>
+

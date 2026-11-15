@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Icon Generator – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/image/icon-generator.html"/>
+<meta property="og:title" content="Icon Generator – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/image/icon-generator.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Icon Generator \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/image/icon-generator.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- JSZip -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <style>
+    .icon-layout {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    @media (max-width: 992px) {
+      .icon-layout { grid-template-columns: 1fr; }
+    }
+    
+    .preview-panel {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      min-height: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .size-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      gap: 20px;
+      width: 100%;
+      margin-top: 2rem;
+    }
+    .size-item {
+      background: var(--dark);
+      border: 1px solid var(--border);
+      padding: 15px;
+      border-radius: 12px;
+      text-align: center;
+    }
+    .img-wrap {
+       width: 100%; aspect-ratio: 1;
+       background: #111;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       border-radius: 8px;
+       margin-bottom: 8px;
+       overflow: hidden;
+    }
+    .img-wrap img { width: 100%; height: 100%; object-fit: contain; }
+    .size-label { font-size: 0.75rem; color: var(--text-muted); font-weight: 600; }
+
+    .sidebar {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      height: fit-content;
+      position: sticky;
+      top: 80px;
+    }
+    .status-box {
+       padding: 15px;
+       background: rgba(255,255,255,0.05);
+       border-radius: 8px;
+       margin-bottom: 1.5rem;
+       font-size: 0.85rem;
+       line-height: 1.5;
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>App Icon Generator</h1>
+      <p>Generate every icon size for iOS, Android, and Web in one click. 100% private and secure.</p>
+    </div>
+
+    <div class="tool-container">
+      <div class="upload-area" id="drop-zone">
+        <div class="upload-icon">💎</div>
+        <p>Drop your 1024x1024 Logo or <span class="text-primary">select file</span></p>
+        <p class="text-muted small">PNG, WEBP, or JPG (Private processing)</p>
+        <input type="file" id="image-input" accept="image/*" hidden>
+      </div>
+
+      <div id="tool-workspace" class="hidden">
+        <div class="icon-layout">
+          <div class="preview-panel">
+             <h3>Generated Asset Pack</h3>
+             <div class="size-grid" id="size-grid"></div>
+          </div>
+
+          <div class="sidebar">
+             <div class="status-box">
+                <b>Standard Output:</b>
+                <ul class="small mt-2 p-0" style="list-style:none;">
+                   <li>✓ Web (16x, 32x, 192x, 512x)</li>
+                   <li>✓ iOS (180x, 1024x)</li>
+                   <li>✓ Android (App Store icons)</li>
+                </ul>
+             </div>
+             <button id="download-zip" class="btn btn-primary w-100">Download All as ZIP (.zip)</button>
+             <button id="reset-btn" class="btn btn-secondary w-100 mt-2">Start Over</button>
+             <p class="text-center mt-3 small text-muted">All resizing happens locally in your browser</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5">
+        <h2>Scaling Your Identity in Private: Secure Local App Icon Generation</h2>
+        <p>We've all been there: you've finally perfected your brand's logo, but now you need it in twenty different sizes—iOS needs a specific resolution, Android wants another, and the web needs a tiny favicon for the browser tab. You look for an <strong>app icon generator</strong> online to help you automate the scaling process and ensure perfect compatibility. But as you look at the "Logo Analysis" and "Developer Hosting" prompts of most legacy checkers, you realize that your brand's core identity and original high-res assets are being uploaded to an anonymous database. Do you really want to share your "Master Logo" with a third-party algorithm?</p>
+
+        <p>At 99tool.in, we built our <strong>app icon generator</strong> to give you a professional asset station without the privacy debt. By utilizing high-quality browser-side resampling and local ZIP creation, we allow you to <strong>generate every icon size</strong> entirely within the secure sandbox of your own machine. Whether you’re a mobile developer preparing for an App Store submission, a designer managing multi-platform brand assets, or a webmaster optimizing PWAs, our <strong>safe icon tool</strong> ensures that your master logo stays where it belongs: on your device, under your total sovereignty.</p>
+        
+        <div class="tool-preview-box mt-4 mb-4" style="text-align:center;">
+           <img src="../../assets/images/icon-preview.png" alt="Clean App Icon Generator Interface with Multi-Scale Asset Compliance and Bi-Linear Resampling Logic Visuals" class="tool-preview" id="tool-preview-img" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+        </div>
+
+        <h3 class="mt-4">The Logic of Multi-Scale Asset Compliance</h3>
+        <p>Icon generation isn't just about shrinking a photo; it’s about "Visual Integrity." Most basic <strong>generate icons online</strong> services use blunt resizing that leads to "Interpolation Noise"—those blurry, unprofessional edges on small icons. Our <strong>professional icon maker</strong> takes a human-centric approach: we focus on **Multi-Scale Asset Compliance** and **Bi-Linear Resampling Logic**.</p>
+        
+        <p>We provide a comprehensive output pack that meets the exact requirements of modern platforms, ensuring your brand looks crisp from a 16x16 favicon to a 1024x1024 store listing. Our <strong>safe asset validator</strong> allows you to preview every size instantly before you export, ensuring that your fine lines and colors remain distinct across all resolutions. This transparency transforms a repetitive task into a professional workflow, helping you scale your identity in a private, professional environment.</p>
+
+        <h3 class="mt-4">Why Generation is the Developer’s Ethical Choice</h2>
+        <p>In the age of corporate data-mining, your brand's visual IP is your most valuable asset. When you use a standard <strong>app icon generator online free</strong> service that requires an upload, you are essentially trust-falling into an anonymous database. Even if they "generate" your icons, the original high-resolution master and your specific brand markers were processed on a remote machine. Our 100% <strong>asset utility</strong> removes this "IP Risk" entirely from your development routine.</p>
+        
+        <p>Because the scaling and bundling happen in your browser's private memory, your original images are invisible to the outside world. No analytics are tracked, no logos are harvested, and no proprietary data is shared with advertisers or AI platforms. At 99tool.in, we believe that <strong>launching your project</strong> should be an empowering utility, not a data-mining trade-off. With us, you have a private, professional deck for your assets that fits in your browser tab.</p>
+
+        <h3 class="mt-4">How to Scale Your Identity Safely (Step-by-Step)</h3>
+        <p>Preparing your assets for launch should be a high-speed, 5-second task. Here is how to use our <strong>app icon generator</strong>:</p>
+        <ul style="line-height: 1.8; margin-bottom: 20px;">
+          <li><strong>Step 1: Load Your Master</strong> — Drag your high-resolution logo (ideally 1024x1024) into the workspace. It renders instantly in our local pack without uploading a single byte.</li>
+          <li><strong>Step 2: Trigger Automatic Scaling</strong> — Our system instantly renders your logo across our verified platform sizes, ensuring compliance with iOS, Android, and Web standards.</li>
+          <li><strong>Step 3: Review Your Asset Pack</strong> — Scroll through the generated preview grid to verify that your brand's clarity is maintained across every resolution.</li>
+          <li><strong>Step 4: Export Your Launch</strong> — Click "Download All as ZIP." Our engine bundles your formatted assets into a single archive and saves it directly to your device.</li>
+        </ul>
+
+        <h3 class="mt-4">Strategic Use Cases for Your Local Icon Generator</h3>
+        <p>Our <strong>selective asset tool</strong> is the essential companion for varied professional life:</p>
+        
+        <p><strong>For App Developers & Startups:</strong> Preparing for a store submission? Use our <strong>secure icon tool</strong> to generate the full required set of sizes for iOS and Android, ensuring your app icon is sharp and compliant with one click.</p>
+        
+        <p><strong>For Webmasters & PWA Creators:</strong> Optimizing for the browser? Use our <strong>safe favicon generator</strong> to create the full set of PWA-compliant icons, ensuring your site looks professional when pinned to any device home screen.</p>
+        
+        <p><strong>For Brand Designers & Agencies:</strong> Delivering a brand guide? Use our <strong>private icon packager</strong> to provide your clients with a pre-formatted set of profile icons for every social platform, enhancing your professionalism and their launch speed.</p>
+
+        <h3 class="mt-5">Explore Your Complete Image Suite</h3>
+        <p>Once you’ve successfully scaled your assets, you might need to further polish individual pieces. Check out our <strong><a href="sharpen-image.html">Image Sharpening Tool</a></strong>. Or, if you need to compare your old and new logo versions, use our <strong><a href="compare-images.html">Image Comparison Tool</a></strong>. At 99tool.in, we are building a world-class, 100% private digital toolkit to give you total control over your visual identity.</p>
+      </section>
+ 
+      <!-- FAQ SECTION -->
+      <section class="faq-section mt-5">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Which icon sizes are generated?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Our <strong>app icon generator</strong> produces a comprehensive set of verified platform sizes, including Web favicons (16x, 32x), PWA icons (192x, 512x), iOS App Store assets (180x, 1024x), and standard Android notification and launcher resolutions.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Is my brand logo sent to 99tool.in?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Absolutely not. Your privacy is our technical foundation. All scaling, resizing, and ZIP bundling happen <strong>locally in your browser's private memory</strong>. Your proprietary master assets never leave your device, ensuring total "Identity Sovereignty."</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              What is the best input resolution?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>For the best results, we recommend uploading a high-resolution master logo of at least **1024x1024 pixels**. This ensures that our <strong>local scaling utility</strong> has enough source data to generate crisp, professional icons for every platform.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Does this tool support transparency?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. If you upload a transparent PNG logo, our <strong>safe icon generator</strong> will maintain that transparency across all generated assets. This is essential for professional-grade icons that need to sit perfectly on different OS background themes.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              How does "Bi-Linear Resampling" help?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Bi-linear resampling is a professional mathematical technique used by our <strong>icon creator</strong> to smooth pixels during scaling. It prevents the "jagged edges" common in basic resizers, ensuring your branding looks sharp even at tiny favicon sizes.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Are these icons ready for App Store submission?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. We've mapped our output to the current <strong>iOS and Android developer requirements</strong>. By downloading the full asset pack, you get all the specifically named and sized icons needed to complete your store listing and app bundle.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const imageInput = document.getElementById('image-input');
+    const dropZone = document.getElementById('drop-zone');
+    const workspace = document.getElementById('tool-workspace');
+    const sizeGrid = document.getElementById('size-grid');
+    const downloadZipBtn = document.getElementById('download-zip');
+    const resetBtn = document.getElementById('reset-btn');
+
+    const SIZES = [16, 32, 48, 64, 128, 180, 192, 512, 1024];
+    let originalImg = null;
+    let generatedCanvases = [];
+
+    dropZone.onclick = () => imageInput.click();
+    imageInput.onchange = (e) => handleFile(e.target.files[0]);
+    
+    // Init Drag and Drop using global helper
+    setupDragDrop('drop-zone', (files) => {
+       if (files.length) handleFile(files[0]);
+    });
+    
+    function handleFile(file) {
+      if (!file || !file.type.startsWith('image/')) return;
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        originalImg = new Image();
+        originalImg.onload = () => {
+          generateIcons();
+          workspace.classList.remove('hidden');
+          dropZone.classList.add('hidden');
+        };
+        originalImg.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function generateIcons() {
+       sizeGrid.innerHTML = '';
+       generatedCanvases = [];
+
+       SIZES.forEach(size => {
+          const canvas = document.createElement('canvas');
+          const ctx = canvas.getContext('2d');
+          canvas.width = size;
+          canvas.height = size;
+          
+          // Use high quality image smoothing
+          ctx.imageSmoothingEnabled = true;
+          ctx.imageSmoothingQuality = 'high';
+          ctx.drawImage(originalImg, 0, 0, size, size);
+          
+          generatedCanvases.push({ size, canvas });
+
+          // UI Preview
+          const div = document.createElement('div');
+          div.className = 'size-item';
+          div.innerHTML = `
+             <div class="img-wrap">
+                <img src="${canvas.toDataURL()}" alt="${size}x${size}">
+             </div>
+             <div class="size-label">${size} x ${size}</div>
+          `;
+          sizeGrid.appendChild(div);
+       });
+    }
+
+    downloadZipBtn.onclick = async () => {
+       const zip = new JSZip();
+       const folder = zip.folder("app_icons");
+
+       generatedCanvases.forEach(item => {
+          const data = item.canvas.toDataURL('image/png').split(',')[1];
+          folder.file(`icon_${item.size}x${item.size}.png`, data, {base64: true});
+       });
+
+       const content = await zip.generateAsync({type: "blob"});
+       const a = document.createElement('a');
+       a.href = URL.createObjectURL(content);
+       a.download = `app_icons_${Date.now()}.zip`;
+       a.click();
+    };
+
+    resetBtn.onclick = () => {
+       workspace.classList.add('hidden');
+       dropZone.classList.remove('hidden');
+       images = [];
+       generatedCanvases = [];
+    };
+  </script>
+</body>
+</html>
+

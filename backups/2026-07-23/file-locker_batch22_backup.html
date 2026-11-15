@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>File Locker – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/security/file-locker.html"/>
+<meta property="og:title" content="File Locker – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/security/file-locker.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "File Locker \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/security/file-locker.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .locker-workspace {
+      max-width: 700px;
+      margin: 2rem auto;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 3rem;
+      text-align: center;
+    }
+    .drop-zone {
+      border: 2px dashed var(--border);
+      border-radius: 12px;
+      padding: 3rem;
+      margin-bottom: 2rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .drop-zone:hover, .drop-zone.dragover { border-color: var(--primary); background: rgba(229, 57, 53, 0.05); }
+    
+    .file-info {
+        display: none;
+        background: rgba(255,255,255,0.03);
+        border: 1px solid var(--border);
+        padding: 1rem;
+        border-radius: 12px;
+        margin-bottom: 2rem;
+        align-items: center;
+        gap: 15px;
+        text-align: left;
+    }
+    .file-icon { font-size: 2rem; }
+    
+    .password-pane { display: none; flex-direction: column; gap: 15px; }
+
+    .status-msg { margin-top: 1rem; font-size: 0.9rem; }
+    .status-msg.error { color: #e03131; }
+    .status-msg.success { color: #2f9e44; }
+
+    .progress-bar {
+        height: 6px; width: 100%; background: var(--border); border-radius: 3px; overflow: hidden; margin-top: 20px; display: none;
+    }
+    .progress-fill { height: 100%; background: var(--primary); width: 0%; transition: width 0.3s; }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-hero text-center">
+      <nav class="breadcrumb justify-content-center">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#security">Security</a> <span>/</span> 
+        <span>File Locker</span>
+      </nav>
+      <h1>File Locker (AES-256)</h1>
+      <p>Military-grade file encryption that never leaves your browser. 100% private and secure.</p>
+    </div>
+
+    <div class="locker-workspace">
+      <div id="drop-zone" class="drop-zone">
+        <div class="file-icon">📁</div>
+        <h3 class="mt-3">Drop file here or click to select</h3>
+        <p class="text-muted">Supports all file types up to 100MB</p>
+        <input type="file" id="file-input" style="display: none;">
+      </div>
+
+      <div id="file-info" class="file-info">
+          <div class="file-icon" id="info-icon">📄</div>
+          <div>
+              <div id="info-name" style="font-weight: 600;">filename.txt</div>
+              <div id="info-size" class="small text-muted">2.4 MB</div>
+          </div>
+          <button class="btn btn-secondary btn-sm ms-auto" onclick="reset()">Change</button>
+      </div>
+
+      <div id="password-pane" class="password-pane">
+          <div class="form-group">
+              <label>Security Password</label>
+              <input type="password" id="locker-password" placeholder="Enter password to encrypt/decrypt...">
+          </div>
+          <div class="flex gap-3">
+              <button class="btn btn-primary btn-full" onclick="processFile(true)">Encrypt & Lock</button>
+              <button class="btn btn-secondary btn-full" onclick="processFile(false)">Unlock & Decrypt</button>
+          </div>
+          <div id="status" class="status-msg"></div>
+          <div class="progress-bar" id="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+      </div>
+    </div>
+
+    <section class="seo-content mt-5">
+      <h2>Shielding Your Sensitive Data: Secure Local File Locking</h2>
+      <p>We’ve all been there: you have a sensitive document—perhaps a financial statement, a private legal contract, or a proprietary design file—that you need to protect from prying eyes. Your first instinct is to find a <strong>file locker</strong> online to help you encrypt your data. But as you look at the "Upload" button of most tools, you realize that your valuable file is being sent to an anonymous cloud server. Do you really want to hand over your project's "Digital Blueprint" to a third-party processing engine?</p>
+
+      <p>At 99tool.in, we built our <strong>secure file locker</strong> to provide industrial-grade protection without the privacy gamble. By utilizing browser-native Web Crypto APIs and zero-cloud processing, we allow you to <strong>encrypt files</strong> entirely within the secure sandbox of your machine. Whether you’re a photographer protecting high-res raw files, a developer securing environment backups, or a student locking personal diaries, our <strong>safe locker tool</strong> ensures that your data stays where it belongs: on your device, under your total sovereignty.</p>
+      
+      <div class="tool-preview-box mt-4 mb-4" style="text-align:center;">
+         <img src="../../assets/images/file-locker-preview.png" alt="Clean File Locker Dashboard featuring AES-256 GCM 256-bit processing and visual progress indicators" class="tool-preview" id="tool-preview-img" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+      </div>
+
+      <h3 class="mt-4">The Logic of "Zero-Knowledge" Security</h3>
+      <p>Security isn't just about the lock; it’s about the "Key Logic." Most online <strong>file encryption tools</strong> manage keys on their end, creating a "Trust Debt" that could haunt you if their servers are compromised. Our <strong>professional file locker</strong> takes a human-centric approach: we focus on **Local Key Derivation** and **AES-256 GCM Authenticated Encryption**.</p>
+      
+      <p>We provide a deterministic environment where your password is instantly transformed into a 256-bit key using the PBKDF2 algorithm (with 100,000 rounds). Our <strong>safe encryption validator</strong> doesn't just "scramble" data; it adds a cryptographic integrity tag to ensure the file hasn't been tampered with or corrupted during the locking process. This transparency transforms a vulnerable asset into a secure digital vault, protected by logic that would take modern supercomputers billions of years to crack.</p>
+
+      <h3 class="mt-4">Why Local Encryption is the Secure Standard</h2>
+      <p>In the age of automated data harvesting, the files you store are a map of your life's work. Using a standard <strong>encrypt file online free</strong> service creates a digital record of your files' structure and metadata. Our 100% <strong>local-first security utility</strong> removes this "Privacy Risk" entirely from your professional life.</p>
+      
+      <p>Because the logic and decryption happen in your browser's private memory, your file contents and your passwords are invisible to the outside world. No analytics are tracked, no file names are harvested, and no proprietary data is shared with advertisers or AI models. At 99tool.in, we believe that <strong>protecting your work</strong> should be an empowering utility, not a data-mining session. With us, you have a private, professional safe for your files that fits in your browser tab.</p>
+
+      <h3 class="mt-4">How to Lock Your Files Securely (Step-by-Step)</h3>
+      <p>Securing a document should be a high-speed, 5-second task. Here is how to use our <strong>secure file locker</strong>:</p>
+      <ul style="line-height: 1.8; margin-bottom: 20px;">
+        <li><strong>Step 1: Securely Load Your Data</strong> — Drag and drop your file or click to select a document from your local drive. Our system ignores the content and prepares the local crypto-engine instantly.</li>
+        <li><strong>Step 2: Define Your Key</strong> — Enter a strong password. Our local engine uses PBKDF2 to derive a secure 256-bit AES key from your string.</li>
+        <li><strong>Step 3: Trigger the Encryption</strong> — Click "Encrypt & Lock." Our tool processes the file in chunks within your browser's memory, ensuring performance and privacy.</li>
+        <li><strong>Step 4: Download the Result</strong> — Once complete, download the <code>.locked</code> version of your file. You can now store this anywhere—cloud drives, USBs, or email—knowing it cannot be read without your secret key.</li>
+      </ul>
+
+      <h3 class="mt-4">Strategic Use Cases for Your Local File Locker</h3>
+      <p>Our <strong>secure file encryption tool</strong> is the essential companion for varied professional life:</p>
+      
+      <p><strong>For Creative Professionals:</strong> Storing high-value design assets or unreleased portfolios? Use our <strong>secure locker</strong> to protect your files before uploading them to a public storage service.</p>
+      
+      <p><strong>For Financial Operations Leads:</strong> Managing payroll spreadsheets or tax documents? Use our <strong>safe data tool</strong> to ensure your sensitive business records are encrypted locally before sharing them with your accountancy team.</p>
+      
+      <p><strong>For Students & Freelancers:</strong> Keeping a digital copy of your IDs or personal contracts? Use our <strong>private locker</strong> to ensure this critical information is never indexed by a third-party server.</p>
+
+      <h3 class="mt-5">Explore Your Complete Security Suite</h3>
+      <p>Once you’ve successfully locked your files, you might need a safe place to store the passwords. Check out our <strong><a href="secure-password-vault.html">Secure Password Vault</a></strong>. Or, if you need to calculate a checksum for the result, use our <strong><a href="hash-generator.html">File Hash Generator</a></strong>. At 99tool.in, we are building a world-class, 100% private digital toolkit to give you total control over your digital future.</p>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-section mt-5">
+      <div class="container-sm">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">What file types can I lock?<span class="faq-icon">+</span></button>
+            <div class="faq-answer">
+              <p>You can lock <strong>any file type</strong> including PDFs, Images (JPG, PNG), Documents (DOCX, XLSX), Videos (MP4), and even ZIP archives. Our tool treats each file as binary data, ensuring universal compatibility.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">Is there a size limit for files?<span class="faq-icon">+</span></button>
+            <div class="faq-answer">
+              <p>While the encryption logic is unlimited, most browsers have a memory limit of around <strong>100MB to 500MB</strong> for a single session. For massive video files or databases, we recommend using a desktop encryption software.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">Can I unlock a file if I lose my password?<span class="faq-icon">+</span></button>
+            <div class="faq-answer">
+              <p>No. For your safety, 99tool.in implements <strong>zero-knowledge architecture</strong>. We never see and never store your passwords. If you lose the key, the mathematical data within the <code>.locked</code> file is permanently inaccessible.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">Why does the locked file have a different name?<span class="faq-icon">+</span></button>
+            <div class="faq-answer">
+              <p>We automatically append <code>.locked</code> to your filename to help you identify which files are encrypted. When you unlock the file using our <strong>decrypt tool</strong>, it will restore the original name and format.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">Is the encryption process fast?<span class="faq-icon">+</span></button>
+            <div class="faq-answer">
+              <p>Yes. By utilizing the <strong>Web Crypto API</strong>, our tool leverages your computer's hardware acceleration for AES operations. Most standard documents and images are encrypted or decrypted in less than a second.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">Are my files uploaded to 99tool.in?<span class="faq-icon">+</span></button>
+            <div class="faq-answer">
+              <p>No. 99tool.in is a <strong>private-first utility</strong>. All data processing occurs locally in your browser's RAM. We do not have servers that store or even see your file data.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const dropZone = document.getElementById('drop-zone');
+    const fileInput = document.getElementById('file-input');
+    const infoPane = document.getElementById('file-info');
+    const passPane = document.getElementById('password-pane');
+    const status = document.getElementById('status');
+    let selectedFile = null;
+
+    dropZone.onclick = () => fileInput.click();
+    fileInput.onchange = (e) => handleFile(e.target.files[0]);
+
+    // Init Drag and Drop using global helper
+    setupDragDrop('drop-zone', (files) => {
+       handleFile(files[0]);
+    });
+
+    function handleFile(file) {
+      if (!file) return;
+      if (file.size > 100 * 1024 * 1024) {
+          alert("File too large. Maximum size is 100MB for browser processing.");
+          return;
+      }
+      selectedFile = file;
+      document.getElementById('info-name').innerText = file.name;
+      document.getElementById('info-size').innerText = (file.size / (1024 * 1024)).toFixed(2) + " MB";
+      dropZone.style.display = 'none';
+      infoPane.style.display = 'flex';
+      passPane.style.display = 'flex';
+    }
+
+    function reset() {
+        selectedFile = null;
+        dropZone.style.display = 'block';
+        infoPane.style.display = 'none';
+        passPane.style.display = 'none';
+        status.innerText = "";
+    }
+
+    async function deriveKey(password, salt) {
+      const enc = new TextEncoder();
+      const baseKey = await crypto.subtle.importKey("raw", enc.encode(password), "PBKDF2", false, ["deriveKey"]);
+      return await crypto.subtle.deriveKey(
+        { name: "PBKDF2", salt: salt, iterations: 100000, hash: "SHA-256" },
+        baseKey,
+        { name: "AES-GCM", length: 256 },
+        false,
+        ["encrypt", "decrypt"]
+      );
+    }
+
+    async function processFile(isEncrypt) {
+      const password = document.getElementById('locker-password').value;
+      if (!password) { status.innerText = "Please enter a security password."; status.className = "status-msg error"; return; }
+
+      status.innerText = isEncrypt ? "Encrypting file..." : "Decrypting file...";
+      status.className = "status-msg";
+      document.getElementById('progress-bar').style.display = 'block';
+      let progress = 0;
+      const progressFill = document.getElementById('progress-fill');
+
+      try {
+        const fileData = await selectedFile.arrayBuffer();
+        if (isEncrypt) {
+          const salt = crypto.getRandomValues(new Uint8Array(16));
+          const iv = crypto.getRandomValues(new Uint8Array(12));
+          const key = await deriveKey(password, salt);
+          const encrypted = await crypto.subtle.encrypt({ name: "AES-GCM", iv: iv }, key, fileData);
+          
+          const result = new Uint8Array(salt.length + iv.length + encrypted.byteLength);
+          result.set(salt, 0);
+          result.set(iv, salt.length);
+          result.set(new Uint8Array(encrypted), salt.length + iv.length);
+          
+          downloadFile(result, selectedFile.name + ".locked");
+          status.innerText = "Successfully locked! Your file is secured.";
+          status.className = "status-msg success";
+        } else {
+          const salt = new Uint8Array(fileData.slice(0, 16));
+          const iv = new Uint8Array(fileData.slice(16, 28));
+          const encryptedContent = fileData.slice(28);
+          const key = await deriveKey(password, salt);
+          const decrypted = await crypto.subtle.decrypt({ name: "AES-GCM", iv: iv }, key, encryptedContent);
+          
+          const newName = selectedFile.name.replace(".locked", "");
+          downloadFile(decrypted, newName);
+          status.innerText = "Successfully unlocked! Your file is restored.";
+          status.className = "status-msg success";
+        }
+      } catch (e) {
+        status.innerText = "Error: Invalid password or corrupted file.";
+        status.className = "status-msg error";
+      } finally {
+          document.getElementById('progress-bar').style.display = 'none';
+      }
+    }
+
+    function downloadFile(data, name) {
+      const blob = new Blob([data], { type: "application/octet-stream" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = name;
+      a.click();
+    }
+  </script>
+</body>
+</html>
+

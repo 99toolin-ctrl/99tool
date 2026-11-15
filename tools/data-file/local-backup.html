@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Local Backup – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/data-file/local-backup.html"/>
+<meta property="og:title" content="Local Backup – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/data-file/local-backup.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Local Backup \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/data-file/local-backup.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="local backup tool, browser storage backup, export localstorage, restore browser data, secure data backup" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json" id="schema-org-data">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Local Backup Tool",
+    "operatingSystem": "Any",
+    "applicationCategory": "DataApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Data Export, Configuration Import, Local Storage Migration, Secure JSON backup"
+  }
+  </script>
+
+  <style>
+    .backup-layout { display: grid; grid-template-columns: 1fr; gap: 30px; }
+
+    .backup-box { background: var(--dark-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 35px; text-align: center; }
+
+    .action-icon { font-size: 3rem; margin-bottom: 20px; }
+
+    .data-summary {
+       margin: 25px 0; background: var(--dark); border-radius: var(--radius-sm);
+       padding: 20px; border: 1px solid var(--border); text-align: left;
+    }
+
+    .stat-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .stat-row:last-child { border-bottom: none; }
+    .stat-label { color: var(--text-muted); font-size: 0.8rem; }
+    .stat-val { color: var(--white); font-weight: 700; font-size: 0.85rem; }
+
+    @media (min-width: 900px) {
+       .backup-layout { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/data-file/local-backup.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/data-file/local-backup.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/data-file/local-backup.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/data-file/local-backup.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/data-file/local-backup.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/data-file/local-backup.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/data-file/local-backup.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/data-file/local-backup.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/data-file/local-backup.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/data-file/local-backup.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/data-file/local-backup.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/data-file/local-backup.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/data-file/local-backup.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/data-file/local-backup.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/data-file/local-backup.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/data-file/local-backup.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/data-file/local-backup.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/data-file/local-backup.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/data-file/local-backup.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/data-file/local-backup.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/data-file/local-backup.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/data-file/local-backup.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#data">Data & File</a> <span>/</span> 
+        <span>Local Backup Tool</span>
+      </nav>
+      <h1>Local Backup Tool</h1>
+      <p>Securely transfer your tool configurations and local data between devices. Keep a private copy of your 99tool sanctuary without relying on external servers.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div class="backup-layout">
+         <!-- EXPORT -->
+         <div class="backup-box">
+            <div class="action-icon">📤</div>
+            <h3>Export Data</h3>
+            <p class="text-muted small">Save your current configurations and local storage to a secure JSON file.</p>
+            
+            <div class="data-summary">
+               <div class="stat-row">
+                  <span class="stat-label">Detected Tool Data:</span>
+                  <span class="stat-val" id="keys-count">0 items</span>
+               </div>
+               <div class="stat-row">
+                  <span class="stat-label">Estimated Size:</span>
+                  <span class="stat-val" id="data-size">0 KB</span>
+               </div>
+               <div class="stat-row">
+                  <span class="stat-label">Security:</span>
+                  <span class="stat-val" style="color: #4caf50;">LocalStorage Native</span>
+               </div>
+            </div>
+
+            <button class="btn btn-primary btn-full" id="export-btn">Create Backup File</button>
+         </div>
+
+         <!-- IMPORT -->
+         <div class="backup-box">
+            <div class="action-icon">📥</div>
+            <h3>Restore Data</h3>
+            <p class="text-muted small">Import a previously saved backup file to restore your settings and configurations.</p>
+            
+            <div class="upload-area mt-4" id="drop-zone" style="padding: 20px;">
+               <div class="upload-icon" style="font-size: 1.5rem;">📄</div>
+               <p style="font-size: 0.8rem;">Select .json backup file</p>
+               <input type="file" id="file-input" accept=".json" class="hidden">
+            </div>
+
+            <div id="import-preview" class="data-summary hidden">
+               <div class="stat-row">
+                  <span class="stat-label">Backup Source:</span>
+                  <span class="stat-val" id="import-name">-</span>
+               </div>
+            </div>
+
+            <button class="btn btn-secondary btn-full mt-4" id="import-btn" disabled>Restore Backup</button>
+         </div>
+      </div>
+
+      <!-- CONTENT SECTION -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.local_backup_tool.what_is_title">What is the Local Backup Tool?</h2>
+        <p>The Local Backup Tool is a client-side utility designed to manage, export, and restore configuration records and app data stored by 99tool.in inside your browser's LocalStorage. This enables you to download all your custom settings, task lists, and notes as a single backup file.</p>
+        <p>This utility works entirely on your local machine, reading your browser storage cells and compiling them into a structured JSON file. Because it processes all exports and restores locally, your private data and settings are never synchronized with a cloud server or exposed to third parties.</p>
+
+        <h2 class="mt-4" data-i18n="tools.local_backup_tool.how_to_use_title">How to Use the Local Backup Tool</h2>
+        <ol>
+          <li><strong>Audit Current Settings:</strong> Check the "LocalStorage Status" panel on the left. The tool displays the count of data keys found and the estimated memory size occupied by your browser settings.</li>
+          <li><strong>Create a Backup:</strong> Click the "Create Backup File" button. The tool compiles your settings and initiates a local download of a JSON file named with today's date.</li>
+          <li><strong>Select a File to Restore:</strong> To restore settings, drag your previously downloaded backup JSON file into the dashed area on the right, or click the area to select it from your device.</li>
+          <li><strong>Restore Your Settings:</strong> Once the backup file is loaded, click the "Restore Backup" button to import your configuration. The tool will parse the JSON and write the data back to your browser's LocalStorage.</li>
+        </ol>
+
+        <h2 class="mt-4" data-i18n="tools.local_backup_tool.key_features_title">Key Features</h2>
+        <ul>
+          <li><strong>One-Click JSON Exports:</strong> Bundles all local configuration keys and data structures into a single text file.</li>
+          <li><strong>Interactive Size Reporting:</strong> Displays the count of data values and byte sizes currently saved in your browser storage.</li>
+          <li><strong>Cross-Browser Portability:</strong> Import your JSON backup files across Chrome, Edge, Firefox, or Safari on different devices.</li>
+          <li><strong>Safe Data Merging:</strong> Updates keys during restoration without corrupting or deleting unrelated browser storage keys.</li>
+          <li><strong>100% Offline Portability:</strong> Performs backups and restorations entirely in browser memory to guarantee data privacy.</li>
+        </ul>
+
+        <h2 class="mt-4" data-i18n="tools.local_backup_tool.common_use_cases_title">Common Use Cases</h2>
+        <ul>
+          <li><strong>Device Migrations:</strong> Export your Kanban tasks, notepad text, and custom settings from a home computer and import them to a work laptop.</li>
+          <li><strong>Browser Updates:</strong> Back up your tool settings before clearing your browser cookies or upgrading your operating system to prevent data loss.</li>
+          <li><strong>Confidential Backups:</strong> Store copies of your encrypted notes or passwords on a secure external USB drive.</li>
+          <li><strong>Environment Resetting:</strong> Reset your browser environment for a clean start, knowing you have a backup file saved.</li>
+        </ul>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2 data-i18n="tools.local_backup_tool.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Does this tool back up my passwords and notes?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. The tool backs up all data stored by 99tool.in utilities (including notepad drafts or task tables) in your browser's local memory. Since the backup is a raw JSON text file, we recommend storing it in a secure directory.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Is my backup file sent to 99tool.in servers?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. All generation and restoration scripts run locally. Your browser writes the data directly to your local downloads folder, and we never receive or store copies of your backups.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I edit the backup JSON file manually?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Since it is a standard text file, you can open it in any text editor to view or edit keys. However, changing the JSON syntax or deleting braces may make the file invalid, preventing the restoration tool from reading it.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Will restoring a backup erase my current settings?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. Restoring a backup overwrites matching data keys in your browser's LocalStorage. If you want to save your current setup before restoring an older one, download a backup of your current settings first.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I use this tool to back up files from my computer?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. This tool is designed to back up the data stored by 99tool.in in your browser's LocalStorage. To compress or package local files on your computer, please use our File Compression Tool.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 Privacy & Data Note: Local data parsing, exports, and restores are executed locally in your browser. No settings or configurations are sent to our servers. Last updated: April 10, 2026.</p>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const keysCount = document.getElementById('keys-count');
+    const dataSize = document.getElementById('data-size');
+    const exportBtn = document.getElementById('export-btn');
+    const dropZone = document.getElementById('drop-zone');
+    const fileInput = document.getElementById('file-input');
+    const importBtn = document.getElementById('import-btn');
+    const importPreview = document.getElementById('import-preview');
+
+    let importData = null;
+
+    function refreshStats() {
+       let count = 0;
+       let bytes = 0;
+       for (let i = 0; i < localStorage.length; i++) {
+          const key = localStorage.key(i);
+          if (key.includes('99tool')) {
+             count++;
+             bytes += (key.length + localStorage.getItem(key).length) * 2;
+          }
+       }
+       keysCount.textContent = ((window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(count, 0) : count) + ' items';
+       dataSize.textContent = formatSize(bytes);
+    }
+
+    exportBtn.onclick = () => {
+       const backup = {};
+       for (let i = 0; i < localStorage.length; i++) {
+          const key = localStorage.key(i);
+          if (key.includes('99tool')) {
+             backup[key] = localStorage.getItem(key);
+          }
+       }
+       const blob = new Blob([JSON.stringify(backup, null, 2)], { type: 'application/json' });
+       const a = document.createElement('a');
+       a.href = URL.createObjectURL(blob);
+       a.download = `99tool-backup-${new Date().toISOString().split('T')[0]}.json`;
+       a.click();
+    };
+
+    dropZone.onclick = () => fileInput.click();
+    fileInput.onchange = (e) => handleImport(e.target.files[0]);
+
+    // Init Drag and Drop using global helper
+    setupDragDrop('drop-zone', (files) => {
+       handleImport(files[0]);
+    });
+
+    function handleImport(file) {
+       if (!file) return;
+       const reader = new FileReader();
+       reader.onload = (e) => {
+          try {
+             importData = JSON.parse(e.target.result);
+             document.getElementById('import-name').textContent = file.name;
+             importPreview.classList.remove('hidden');
+             importBtn.disabled = false;
+             importBtn.classList.remove('btn-secondary');
+             importBtn.classList.add('btn-primary');
+          } catch (err) {
+             alert('Invalid backup file.');
+          }
+       };
+       reader.readAsText(file);
+    }
+
+    importBtn.onclick = () => {
+       if (!importData) return;
+       if (confirm('This will append or overwrite your existing 99tool data with settings from this backup. Continue?')) {
+          Object.keys(importData).forEach(key => {
+             localStorage.setItem(key, importData[key]);
+          });
+          alert('Backup restored successfully! The page will now refresh.');
+          location.reload();
+       }
+    };
+
+    function formatSize(bytes) {
+       if (bytes === 0) return '0 KB';
+       if (bytes < 1024) return bytes + ' Bytes';
+       return (bytes / 1024).toFixed(2) + ' KB';
+    }
+
+    refreshStats();
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

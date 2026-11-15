@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">File Compression – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/data-file/file-compression.html"/>
+<meta property="og:title" content="File Compression – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/data-file/file-compression.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "File Compression \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/data-file/file-compression.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="file compression tool, zip files online, compress files, zip multiple files, secure compression, reduce file size" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- JSZip -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json" id="schema-org-data">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "File Compression Tool",
+    "operatingSystem": "Any",
+    "applicationCategory": "DataApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Multi-file Bundling, ZIP Generation, Storage Optimization, Processing"
+  }
+  </script>
+
+  <style>
+    .compression-layout { display: grid; grid-template-columns: 1fr; gap: 30px; }
+
+    .control-pane, .list-pane {
+      background: var(--dark-card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 30px;
+    }
+
+    .file-item {
+       background: var(--dark); border: 1px solid var(--border); padding: 12px 15px;
+       border-radius: 6px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;
+    }
+    .file-details { display: flex; flex-direction: column; }
+    .file-name { font-size: 0.85rem; color: var(--white); font-weight: 600; }
+    .file-meta { font-size: 0.75rem; color: var(--text-muted); }
+
+    @media (min-width: 900px) {
+      .compression-layout { grid-template-columns: 350px 1fr; }
+    }
+
+    #loading-overlay {
+       position: fixed; top:0; left:0; right:0; bottom:0; background: rgba(0,0,0,0.8);
+       display: flex; flex-direction: column; align-items: center; justify-content: center;
+       z-index: 1000; display: none;
+    }
+    .spinner {
+       width: 40px; height: 40px; border: 4px solid var(--border); border-top-color: var(--primary);
+       border-radius: 50%; animation: spin 1s linear infinite; margin-bottom: 20px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/data-file/file-compression.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/data-file/file-compression.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/data-file/file-compression.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/data-file/file-compression.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/data-file/file-compression.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/data-file/file-compression.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/data-file/file-compression.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/data-file/file-compression.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/data-file/file-compression.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/data-file/file-compression.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/data-file/file-compression.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/data-file/file-compression.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/data-file/file-compression.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/data-file/file-compression.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/data-file/file-compression.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/data-file/file-compression.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/data-file/file-compression.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/data-file/file-compression.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/data-file/file-compression.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/data-file/file-compression.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/data-file/file-compression.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/data-file/file-compression.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#data">Data & File</a> <span>/</span> 
+        <span>File Compression Tool</span>
+      </nav>
+      <h1>File Compression Tool</h1>
+      <p>Bundle and shrink your documentation with industrial-grade efficiency. Create secure ZIP archives instantly in your browser without sacrificing your privacy.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div id="upload-stage">
+        <div class="upload-area" id="drop-zone">
+          <div class="upload-icon">📦</div>
+          <h3>Select files to compress</h3>
+          <p>Drag & drop multiple files or click to browse</p>
+          <input type="file" id="file-input" multiple class="hidden">
+        </div>
+        <div class="info-box">
+          <div class="info-icon">🗜️</div>
+          <p>We use the **JSZip Engine** to bundle your files locally. Your data is compressed entirely within the secure browser sandbox—no uploads, no tracking, just fast results.</p>
+        </div>
+      </div>
+
+      <div id="process-stage" class="hidden">
+        <div class="compression-layout">
+           <div class="control-pane">
+              <h3>Archive Settings</h3>
+              <p class="text-muted small mb-4">Finalize your ZIP bundle.</p>
+              
+              <div class="form-group mb-4">
+                 <label>Archive Name</label>
+                 <input type="text" id="archive-name" class="form-control" value="bundle_99tool_backup">
+              </div>
+
+              <div class="data-box mb-4" style="background: var(--dark); border-radius: 6px; padding: 15px; border: 1px solid var(--border);">
+                 <div class="flex justify-between small mb-1">
+                    <span class="text-muted">Selected Files:</span>
+                    <span class="text-white fw-bold" id="count-info">0</span>
+                 </div>
+                 <div class="flex justify-between small">
+                    <span class="text-muted">Raw Total Size:</span>
+                    <span class="text-white fw-bold" id="size-info">0 KB</span>
+                 </div>
+              </div>
+
+              <button class="btn btn-primary btn-full" id="compress-btn">Compress & Download</button>
+              <button class="btn btn-secondary btn-full mt-3" onclick="location.reload()">Start New Batch</button>
+           </div>
+
+           <div class="list-pane">
+              <h3 class="mb-4">File Queue</h3>
+              <div id="file-list">
+                 <!-- Entries injected here -->
+              </div>
+           </div>
+        </div>
+      </div>
+
+      <!-- LOADING OVERLAY -->
+      <div id="loading-overlay">
+         <div class="spinner"></div>
+         <p id="loading-text">Bundling files: 0%</p>
+      </div>
+
+      <!-- CONTENT SECTION -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.file_compression.what_is_title">What is the File Compression Tool?</h2>
+        <p>The File Compression Tool is a client-side archiving utility designed to bundle multiple files into a single, standardized ZIP archive. By adding files directly to the upload queue, the tool aggregates your data and triggers a local download of the compressed package.</p>
+        <p>This utility relies on the JSZip library to compile your files inside your browser tab. Because the compression process takes place entirely in browser RAM, your files are never transmitted to external servers, protecting your sensitive PDF documents, images, and source code files from exposure.</p>
+
+        <h2 class="mt-4" data-i18n="tools.file_compression.how_to_use_title">How to Use the File Compression Tool</h2>
+        <ol>
+          <li><strong>Select Your Files:</strong> Drag and drop your files into the dotted drop zone, or click the upload area to select them using your browser's file picker.</li>
+          <li><strong>Audit the File List:</strong> Review the file queue table below the drop zone. It lists the names, sizes, and file types of all selected items, along with a running total of the raw size.</li>
+          <li><strong>Compile the ZIP:</strong> Click the "Compress & Download" button. The loading overlay will appear to show the bundling progress.</li>
+          <li><strong>Save the Archive:</strong> Once compilation completes, your browser will automatically download the newly created ZIP archive containing all your files under their original directory structure.</li>
+        </ol>
+
+        <h2 class="mt-4" data-i18n="tools.file_compression.key_features_title">Key Features</h2>
+        <ul>
+          <li><strong>Multi-File Batch Bundling:</strong> Aggregate dozens of files of different formats (PDFs, images, logs, code) into a single ZIP archive.</li>
+          <li><strong>Interactive Queue Audit:</strong> View the name, size, and file type of each item in the compression list before building the archive.</li>
+          <li><strong>Client-Side Compilation:</strong> Leverages local JSZip libraries to bundle your data in browser memory.</li>
+          <li><strong>Original File Preservation:</strong> Compiles the ZIP archive without altering, renaming, or deleting your original files.</li>
+          <li><strong>Offline Functionality:</strong> Compile archives offline without needing an active network connection.</li>
+        </ul>
+
+        <h2 class="mt-4" data-i18n="tools.file_compression.common_use_cases_title">Common Use Cases</h2>
+        <ul>
+          <li><strong>Email Attachment Preparation:</strong> Group multiple documents, screenshots, and invoices into a single ZIP folder to simplify email threads.</li>
+          <li><strong>Research Log Archiving:</strong> Package sensitive research logs, Excel databases, or clinical records into organized folders.</li>
+          <li><strong>Code Project Packaging:</strong> Bundle source files, image assets, and configuration scripts into a single zip file for deployment or sharing.</li>
+          <li><strong>SD Card Backups:</strong> Consolidate photo batches or media assets from memory cards into structured zip archives.</li>
+        </ul>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2 data-i18n="tools.file_compression.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Is there a limit on the total archive size?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>For the best performance, we recommend zipping files in batches under 150-200MB. Larger folders may exceed browser memory allocations and cause the tab to freeze or crash during compilation.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I protect my ZIP files with a password?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>This web-based tool compiles standard, unencrypted ZIP files. For secure AES password encryption, we recommend using dedicated desktop software after downloading your compiled ZIP folder.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Are my files uploaded or stored by 99tool.in?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. 99tool.in processes all file bundling locally. Your files are read into local browser RAM, structured into a ZIP, and downloaded directly to your device without leaving your system.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Will zipping my files reduce their individual quality?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. ZIP uses lossless compression algorithms. Extracting files from the downloaded ZIP folder will restore them in their original byte-for-byte condition with no quality loss.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I add folders containing subfolders?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. If your browser supports folder uploads, dragging a directory will import all contained files while preserving their subfolder paths inside the output ZIP.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 Privacy & Data Note: File compression and ZIP compilation happen locally in your browser. No file contents or metadata are sent to our servers.</p>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const dropZone = document.getElementById('drop-zone');
+    const fileInput = document.getElementById('file-input');
+    const uploadStage = document.getElementById('upload-stage');
+    const processStage = document.getElementById('process-stage');
+    const fileList = document.getElementById('file-list');
+    const countInfo = document.getElementById('count-info');
+    const sizeInfo = document.getElementById('size-info');
+    const compressBtn = document.getElementById('compress-btn');
+    const archiveNameInput = document.getElementById('archive-name');
+    const loadingOverlay = document.getElementById('loading-overlay');
+    const loadingText = document.getElementById('loading-text');
+
+    let filesQueue = [];
+
+    dropZone.onclick = () => fileInput.click();
+    fileInput.onchange = (e) => handleFiles(e.target.files);
+
+    // Init Drag and Drop using global helper
+    setupDragDrop('drop-zone', (files) => {
+       handleFiles(files);
+    });
+
+    function handleFiles(files) {
+       if (!files.length) return;
+       filesQueue = Array.from(files);
+       uploadStage.classList.add('hidden');
+       processStage.classList.remove('hidden');
+       renderQueue();
+    }
+
+    function renderQueue() {
+       let totalSize = 0;
+       fileList.innerHTML = filesQueue.map(f => {
+          totalSize += f.size;
+          return `
+             <div class="file-item">
+                <div class="file-details">
+                   <span class="file-name">${f.name}</span>
+                   <span class="file-meta">${formatSize(f.size)}</span>
+                </div>
+                <span class="text-white small fw-bold">Ready</span>
+             </div>
+          `;
+       }).join('');
+
+       countInfo.textContent = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(filesQueue.length, 0) : filesQueue.length;
+       sizeInfo.textContent = formatSize(totalSize);
+    }
+
+    compressBtn.onclick = async () => {
+       loadingOverlay.style.display = 'flex';
+       const zip = new JSZip();
+       
+       for (let i = 0; i < filesQueue.length; i++) {
+          const file = filesQueue[i];
+          loadingText.textContent = `Adding: ${Math.round((i/filesQueue.length)*100)}% (${file.name})`;
+          zip.file(file.name, file);
+       }
+
+       loadingText.textContent = 'Generating Secure ZIP Archive...';
+       try {
+          const content = await zip.generateAsync({ 
+             type: 'blob',
+             compression: "DEFLATE",
+             compressionOptions: { level: 6 }
+          });
+          
+          const link = document.createElement('a');
+          link.href = URL.createObjectURL(content);
+          link.download = `${archiveNameInput.value || '99tool_bundle'}.zip`;
+          link.click();
+       } catch (err) {
+          alert('Compression failed: ' + err.message);
+       }
+       
+       loadingOverlay.style.display = 'none';
+    };
+
+    function formatSize(bytes) {
+       if (bytes === 0) return '0 Bytes';
+       const k = 1024;
+       const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+       const i = Math.floor(Math.log(bytes) / Math.log(k));
+       return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+    }
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Code Playground – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/learning/code-playground.html"/>
+<meta property="og:title" content="Code Playground – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/learning/code-playground.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Code Playground \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/learning/code-playground.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    .playground-main {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      height: calc(100vh - 200px);
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    
+    .editors-pane {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .editor-box {
+      flex: 1;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .editor-label {
+      padding: 8px 15px;
+      background: rgba(255,255,255,0.03);
+      border-bottom: 1px solid var(--border);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--primary);
+    }
+    textarea {
+      flex: 1;
+      background: none;
+      border: none;
+      color: #eee;
+      padding: 1rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9rem;
+      resize: none;
+      outline: none;
+      line-height: 1.5;
+    }
+
+    .preview-pane {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1.5rem;
+      padding: 10px;
+      background: var(--dark-card);
+      border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+
+    @media (max-width: 992px) {
+      .playground-main { grid-template-columns: 1fr; height: auto; }
+      .editor-box { height: 300px; }
+      .preview-pane { height: 400px; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+<link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/learning/code-playground.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="text-center mb-3">
+      <h1>The Coding Journey</h1>
+      <p class="text-muted">Write HTML, CSS, and JavaScript in real-time and preview the results in a sandboxed iframe.</p>
+    </div>
+
+    <div class="playground-main">
+      <div class="editors-pane">
+        <div class="editor-box">
+          <div class="editor-label">HTML</div>
+          <textarea id="html-code" placeholder="Enter HTML here..." oninput="updatePreview()"></textarea>
+        </div>
+        <div class="editor-box">
+          <div class="editor-label">CSS</div>
+          <textarea id="css-code" placeholder="Enter CSS here..." oninput="updatePreview()"></textarea>
+        </div>
+        <div class="editor-box">
+          <div class="editor-label">JavaScript</div>
+          <textarea id="js-code" placeholder="Enter JavaScript here..." oninput="updatePreview()"></textarea>
+        </div>
+      </div>
+      <div class="preview-pane">
+        <iframe id="preview"></iframe>
+      </div>
+    </div>
+
+    <div class="toolbar">
+      <div class="flex gap-1">
+        <button onclick="loadTemplate('basic')" class="btn btn-secondary btn-sm">Basic Template</button>
+        <button onclick="loadTemplate('button')" class="btn btn-secondary btn-sm">Button Template</button>
+      </div>
+      <div class="flex gap-1">
+        <button onclick="exportFile()" class="btn btn-primary btn-sm">Export HTML</button>
+      </div>
+    </div>
+
+    <!-- CONTENT SECTION -->
+    <section class="seo-content mt-5 text-start">
+      <h2 data-i18n="tools.interactive_code_playground.what_is_title">What is The Coding Journey?</h2>
+      <p>The Coding Journey (Code Playground) is a client-side web development sandbox designed for writing, rendering, and testing frontend code. With text editors for HTML, CSS, and JavaScript alongside a live iframe preview, developers and students can experiment with styles and script logic directly in their browser.</p>
+      <p>This playground compiles and runs all code blocks locally in a sandboxed iframe. Because no inputs, custom styles, or script parameters are sent to external databases, your code ideas and interface designs remain private.</p>
+
+      <h2 class="mt-4" data-i18n="tools.interactive_code_playground.how_to_use_title">How to Use The Coding Journey</h2>
+      <ol>
+        <li><strong>Choose a Preset:</strong> Click "Basic Template" or "Button Template" to load starter HTML, CSS, and JavaScript templates.</li>
+        <li><strong>Edit HTML Structure:</strong> Enter your HTML elements (like headings, containers, or links) into the HTML panel.</li>
+        <li><strong>Write Styling Rules:</strong> Enter CSS selectors, variables, and layouts in the CSS panel to style your elements.</li>
+        <li><strong>Add Script Logic:</strong> Type your JavaScript functions and event handlers in the JavaScript panel to make the interface interactive.</li>
+        <li><strong>Inspect the Preview:</strong> Review the sandboxed iframe panel on the right to see your combined code render instantly.</li>
+        <li><strong>Export Your Project:</strong> Click "Export HTML" to download your combined work as a single, ready-to-run HTML file.</li>
+      </ol>
+
+      <h2 class="mt-4" data-i18n="tools.interactive_code_playground.key_features_title">Key Features</h2>
+      <ul>
+        <li><strong>Three-Pane Workspace:</strong> Separate inputs for HTML, CSS, and JavaScript to keep code organized.</li>
+        <li><strong>Sandboxed Iframe Previews:</strong> Renders visual components inside a sandboxed iframe to prevent script conflicts.</li>
+        <li><strong>Integrated Preset Templates:</strong> Load standard layouts and button animations with a single click.</li>
+        <li><strong>Local Code Exports:</strong> Compiles and downloads your project as a single, self-contained HTML file.</li>
+        <li><strong>100% Client-Side Engine:</strong> Stores editor states in LocalStorage and processes codes locally.</li>
+      </ul>
+
+      <h2 class="mt-4" data-i18n="tools.interactive_code_playground.common_use_cases_title">Common Use Cases</h2>
+      <ul>
+        <li><strong>UI Component Prototyping:</strong> Design and test cards, menu layouts, toggle buttons, and responsive forms quickly.</li>
+        <li><strong>Learning Web Programming:</strong> Practice HTML document structures, CSS grids, and JavaScript DOM manipulation in a sandbox.</li>
+        <li><strong>Quick Script Sandboxing:</strong> Paste and test small JavaScript snippets and check console logs privately.</li>
+        <li><strong>Offline Frontend Designing:</strong> Mock up small web layouts anywhere without installing server runtimes or IDE folders.</li>
+      </ul>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-section mt-5">
+      <h2 data-i18n="tools.interactive_code_playground.faq_title">Frequently Asked Questions</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <button class="faq-question">
+            Does the playground upload my code to a server?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>No. 99tool.in compiles and renders your HTML, CSS, and JavaScript code locally in your browser. None of your codes are stored on our servers.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Where are my active drafts saved?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Your editor code is cached in your browser's LocalStorage. If you refresh the page or return later, your code blocks will reload automatically.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Does the exported HTML file include my CSS and JS?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. The "Export HTML" option compiles your styling into a <code>&lt;style&gt;</code> block and your script into a <code>&lt;script&gt;</code> block inside a single file.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            How do I check console.log outputs?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>To inspect your JavaScript console outputs, open your browser's Developer Tools (usually by pressing F12 or right-clicking and selecting "Inspect") and go to the Console tab.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust-signal">
+      <p>🔒 Privacy & Data Note: Code rendering, iframe sandboxing, and HTML exports occur locally in your browser. No files are uploaded to our servers.</p>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const htmlEditor = document.getElementById('html-code');
+    const cssEditor = document.getElementById('css-code');
+    const jsEditor = document.getElementById('js-code');
+    const preview = document.getElementById('preview');
+
+    function updatePreview() {
+      const html = htmlEditor.value;
+      const css = cssEditor.value;
+      const js = jsEditor.value;
+
+      const output = `
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <!-- Google tag (gtag.js) -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"><\/script>
+            <script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-8WF7LH2366');
+            <\/script>
+            <style>${css}</style>
+            <!-- Favicon -->
+            <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+            <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+            <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+            <link rel="manifest" href="../../favicon/site.webmanifest">
+          
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/learning/code-playground.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+          <body>
+            ${html}
+            <script>${js}<\/script>
+          
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+        </html>
+      `;
+
+      preview.srcdoc = output;
+      
+      // Save progress
+      localStorage.setItem('99tool_playground_save', JSON.stringify({html, css, js}));
+    }
+
+    function loadTemplate(type) {
+      if (type === 'basic') {
+        htmlEditor.value = `<h1>The Coding Journey</h1>\n<p>Start your adventure here.</p>`;
+        cssEditor.value = `body { font-family: sans-serif; padding: 40px; text-align: center; background: #fafafa; }\nh1 { color: #e53935; }`;
+        jsEditor.value = `console.log("Ready to code?");`;
+      } else if (type === 'button') {
+        htmlEditor.value = `<button class="cool-btn">Hover Me</button>`;
+        cssEditor.value = `.cool-btn { padding: 15px 30px; border: 2px solid #e53935; background: none; color: #e53935; border-radius: 30px; font-weight: bold; cursor: pointer; transition: 0.3s; }\n.cool-btn:hover { background: #e53935; color: white; }`;
+        jsEditor.value = ``;
+      }
+      updatePreview();
+    }
+
+    function exportFile() {
+      const output = `
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <!-- Google tag (gtag.js) -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"><\/script>
+            <script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-8WF7LH2366');
+            <\/script>
+            <style>${cssEditor.value}</style>
+            <!-- Favicon -->
+            <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+            <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+            <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+            <link rel="manifest" href="../../favicon/site.webmanifest">
+          
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/learning/code-playground.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/learning/code-playground.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+          <body>
+            ${htmlEditor.value}
+            <script>${jsEditor.value}<\/script>
+          
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+        </html>
+      `;
+      const blob = new Blob([output], {type: 'text/html'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'playground_export.html';
+      a.click();
+    }
+
+    // Restore save
+    const saved = JSON.parse(localStorage.getItem('99tool_playground_save'));
+    if (saved) {
+      htmlEditor.value = saved.html;
+      cssEditor.value = saved.css;
+      jsEditor.value = saved.js;
+      updatePreview();
+    } else {
+      loadTemplate('basic');
+    }
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

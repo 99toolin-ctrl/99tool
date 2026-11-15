@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Spacebar Clicker – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/network/spacebar-clicker.html"/>
+<meta property="og:title" content="Spacebar Clicker – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/network/spacebar-clicker.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Spacebar Clicker \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/network/spacebar-clicker.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .space-click-workspace {
+      max-width: 600px;
+      margin: 2rem auto;
+      text-align: center;
+    }
+    .space-hit-area {
+      width: 100%;
+      height: 200px;
+      background: var(--bg-secondary);
+      border: 3px solid var(--border);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--text-muted);
+      user-select: none;
+      margin-bottom: 2rem;
+      transition: all 0.05s;
+    }
+    .space-hit-area.active {
+       background: var(--primary);
+       color: white;
+       border-color: var(--primary);
+       transform: scale(0.98);
+    }
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .stat-box {
+      background: var(--dark-card);
+      padding: 1rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+    .stat-val { font-size: 1.5rem; font-weight: 800; color: var(--primary); display: block; }
+    .stat-label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/network/spacebar-clicker.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/network/spacebar-clicker.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/network/spacebar-clicker.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/network/spacebar-clicker.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/network/spacebar-clicker.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/network/spacebar-clicker.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/network/spacebar-clicker.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/network/spacebar-clicker.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/network/spacebar-clicker.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/network/spacebar-clicker.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/network/spacebar-clicker.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/network/spacebar-clicker.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/network/spacebar-clicker.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/network/spacebar-clicker.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/network/spacebar-clicker.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/network/spacebar-clicker.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/network/spacebar-clicker.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/network/spacebar-clicker.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/network/spacebar-clicker.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/network/spacebar-clicker.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/network/spacebar-clicker.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/network/spacebar-clicker.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Infinite Spacebar Speed Test</h1>
+      <p>Challenge yourself to hit the spacebar as fast as possible in a 10-second sprint.</p>
+    </div>
+
+    <div class="space-click-workspace">
+      <div class="stats-row">
+        <div class="stat-box">
+          <span class="stat-val" id="time-left">10.0</span>
+          <span class="stat-label">Timer</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-val" id="click-count">0</span>
+          <span class="stat-label">Hits</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-val" id="cps-val">0.0</span>
+          <span class="stat-label">HPS</span>
+        </div>
+      </div>
+
+      <div class="space-hit-area" id="space-hit-area">
+         PRESS SPACEBAR
+      </div>
+
+      <button onclick="resetTest()" class="btn btn-secondary btn-lg">Retry Test</button>
+
+      <!-- SEO CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.spacebar_speed_test.what_is_title">What is the Infinite Spacebar Speed Test?</h2>
+        <p>The Infinite Spacebar Speed Test is a browser-based speed diagnostic designed to calculate your maximum tapping rate on the keyboard's spacebar key. Hits Per Second (HPS), also known as spacebar click speed, is a key metric in rhythm games, speed-run challenges, and typing sprints. The tool evaluates mechanical key actuation rates over a standard 10-second interval.</p>
+        <p>Using native browser event capture interfaces, this tool measures the time differences between key downstrokes. This provides a clean benchmark for evaluating key cap spring return speeds, stabilizer latency, and finger-tapping dexterity under timed stress.</p>
+
+        <h3 class="mt-4">How to Use the Spacebar Speed Checker</h3>
+        <p>Follow these steps to complete your clicking sprint:</p>
+        <ol class="mt-2 mb-3">
+          <li>Ensure your cursor is not focused inside a text field; click the page backdrop to ensure focus is active.</li>
+          <li>Press the Spacebar key on your physical keyboard to immediately start the 10-second countdown.</li>
+          <li>Tap the Spacebar as fast as you can, keeping your movements rhythmic and swift.</li>
+          <li>Monitor the live countdown timer and the real-time "Hits Per Second" (HPS) metric.</li>
+          <li>Analyze your final score, total key presses, and average speed at the end of the sprint.</li>
+          <li>Click the "Retry Test" button to reset the timer and start a new trial.</li>
+        </ol>
+
+        <h3 class="mt-4">Key Features of the HPS Benchmarker</h3>
+        <ul class="mt-2 mb-3">
+          <li><strong>standardized 10-Second Sprint:</strong> Provides a stable duration window to benchmark speed and muscle endurance.</li>
+          <li><strong>Tactile Display State:</strong> Features a visual target panel that updates in sync with physical key-down actions.</li>
+          <li><strong>Instant HPS Calculations:</strong> Computes hits-per-second values continuously, giving live performance feedback.</li>
+          <li><strong>Simple Retry Hook:</strong> Resets all variables with a single click or spacebar click fallback after a finished session.</li>
+        </ul>
+
+        <h3 class="mt-4">Common Use Cases</h3>
+        <p>This clicker is used in gaming and typing workflows:</p>
+        <ul class="mt-2 mb-3">
+          <li><strong>Gaming Action Speed Practice:</strong> Increasing your physical tapping rate for games that require fast, repeated spacebar inputs.</li>
+          <li><strong>Key Return travel Speed Evaluation:</strong> Testing whether heavy custom switches (e.g., custom springs) return to their resting position fast enough for rapid double-tapping.</li>
+          <li><strong>Finger Twitch Stamina Auditing:</strong> Checking how many seconds it takes for lactic acid buildup to slow your tapping speed.</li>
+        </ul>
+
+        <h3 class="mt-4">Frequently Asked Questions</h3>
+        <div class="faq-section mt-3">
+          <p><strong>What is HPS?</strong><br>Hits Per Second (HPS) measures how many times you actuate the target key within a single second during a test run.</p>
+          <p><strong>What is a good spacebar speed score?</strong><br>An average score ranges between 6 to 7 HPS. Competitive gamers and speed-typists can reach scores of 9 to 11 HPS, with some records exceeding 12 HPS.</p>
+          <p><strong>Does the size of the spacebar affect my speed?</strong><br>Yes. Due to its size and stabilizing bars, the spacebar has more mass and travel friction than smaller keys. Using light key switches can help offset this mass.</p>
+          <p><strong>Can I use a custom two-handed tapping method?</strong><br>Yes. Tapping the spacebar with alternating thumbs or index fingers is a common strategy to maximize HPS scores in speed challenges.</p>
+        </div>
+
+        <h3 class="mt-4">Privacy & Data Note</h3>
+        <p>All key inputs, millisecond timestamps, and HPS scores are calculated locally in your browser's private memory sandbox. Keystrokes are not monitored or uploaded to external servers.</p>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const area = document.getElementById('space-hit-area');
+    const clicksDisp = document.getElementById('click-count');
+    const timeDisp = document.getElementById('time-left');
+    const cpsDisp = document.getElementById('cps-val');
+
+    let hits = 0;
+    let timer = 10;
+    let isActive = false;
+    let startTime = 0;
+    let interval = null;
+
+    function resetTest() {
+       clearInterval(interval);
+       isActive = false;
+       hits = 0;
+       timer = 10;
+       clicksDisp.innerText = '0';
+       timeDisp.innerText = '10.0';
+       cpsDisp.innerText = '0.0';
+       area.classList.remove('active');
+       area.innerText = 'PRESS SPACEBAR';
+    }
+
+    window.addEventListener('keydown', (e) => {
+       if (e.code === 'Space') {
+          e.preventDefault();
+          if (timer <= 0) return;
+          if (!isActive) startTest();
+          
+          hits++;
+          clicksDisp.innerText = hits;
+          area.classList.add('active');
+          calculateHPS();
+       }
+    });
+
+    window.addEventListener('keyup', (e) => {
+       if (e.code === 'Space') {
+          area.classList.remove('active');
+       }
+    });
+
+    function startTest() {
+       isActive = true;
+       startTime = performance.now();
+       area.innerText = 'GO GO GO!';
+       
+       interval = setInterval(() => {
+          const elapsed = (performance.now() - startTime) / 1000;
+          const remaining = Math.max(0, 10 - elapsed);
+          timeDisp.innerText = remaining.toFixed(1);
+          
+          if (remaining <= 0) {
+             clearInterval(interval);
+             isActive = false;
+             area.innerText = 'FINISHED';
+             calculateHPS(true);
+          }
+       }, 50);
+    }
+
+    function calculateHPS(final = false) {
+       const elapsed = final ? 10 : Math.max(0.1, (performance.now() - startTime) / 1000);
+       const hps = (hits / elapsed).toFixed(1);
+       cpsDisp.innerText = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(hits / elapsed, 1) : (hits / elapsed).toFixed(1);
+    }
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>

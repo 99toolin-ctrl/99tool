@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Ip Finder – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/network/ip-finder.html"/>
+<meta property="og:title" content="Ip Finder – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/network/ip-finder.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Ip Finder \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/network/ip-finder.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .ip-box {
+      background: var(--bg-secondary);
+      border-radius: 16px;
+      padding: 3rem;
+      border: 1px solid var(--border);
+      text-align: center;
+      margin-top: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .ip-address {
+      font-size: 4rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      word-break: break-all;
+    }
+    .ip-details {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+      text-align: left;
+    }
+    .detail-item {
+      padding: 1rem;
+      background: var(--bg-primary);
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+    .detail-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .detail-value {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    .copy-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      padding: 8px 16px;
+      font-size: 0.8rem;
+    }
+    .refresh-btn {
+      margin-top: 2rem;
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/network/ip-finder.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/network/ip-finder.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/network/ip-finder.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/network/ip-finder.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/network/ip-finder.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/network/ip-finder.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/network/ip-finder.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/network/ip-finder.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/network/ip-finder.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/network/ip-finder.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/network/ip-finder.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/network/ip-finder.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/network/ip-finder.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/network/ip-finder.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/network/ip-finder.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/network/ip-finder.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/network/ip-finder.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/network/ip-finder.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/network/ip-finder.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/network/ip-finder.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/network/ip-finder.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/network/ip-finder.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>What is my IP Address?</h1>
+      <p>Your current network identity and location details.</p>
+    </div>
+
+    <div class="tool-container">
+      <div class="ip-box">
+        <button class="btn btn-secondary btn-sm copy-btn" id="copy-ip">Copy IP</button>
+        <div id="ip-display" class="ip-address">Loading...</div>
+        <div class="detail-label">Your Public IP Address</div>
+        
+        <div id="error-msg" class="text-danger mt-3 hidden">Unable to fetch details. Please disable ad-blockers for this tool.</div>
+
+        <div class="ip-details" id="ip-details-grid">
+          <div class="detail-item">
+             <div class="detail-label">City</div>
+             <div class="detail-value" id="val-city">-</div>
+          </div>
+          <div class="detail-item">
+             <div class="detail-label">Region</div>
+             <div class="detail-value" id="val-region">-</div>
+          </div>
+          <div class="detail-item">
+             <div class="detail-label">Country</div>
+             <div class="detail-value" id="val-country">-</div>
+          </div>
+          <div class="detail-item">
+             <div class="detail-label">ISP</div>
+             <div class="detail-value" id="val-isp">-</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center">
+        <button class="btn btn-primary refresh-btn" onclick="fetchIP()">Refresh Details</button>
+      </div>
+
+      <!-- SEO CONTENT -->
+      <section class="seo-content mt-5">
+        <h2 data-i18n="tools.what_is_my_ip.what_is_title">What is a Public IP Address?</h2>
+        <p>In the digital world, an IP (Internet Protocol) address is your device's virtual mailing address. Every time you visit a website, participate in a video call, or download a file, your device uses its <strong>public IP address</strong> to communicate with the world. Our <strong>check my ip</strong> utility allows you to see exactly what information websites see when you connect to them.</p>
+
+        <h3 class="mt-4">IPv4 vs. IPv6</h3>
+        <p>You might notice your IP looks like four numbers separated by dots (IPv4) or a long string of letters and numbers (IPv6). IPv4 is the classic standard, but because the world ran out of addresses, IPv6 was created to support billions of new devices. Our <strong>ip finder</strong> tool identifies whichever version your current network is using as its primary gateway.</p>
+
+        <h3 class="mt-4">Can People Find My Location via IP?</h3>
+        <p>An IP address doesn't show your home address or phone number, but it does show your relative location—usually the city or town of your service provider's nearest hub. When you use our <strong>what is my ip</strong> tool, we show you the <strong>geo-location</strong> data associated with your connection. This is why websites sometimes show you local weather or localized currency automatically.</p>
+
+        <h3 class="mt-4">Is My IP Private at 99tool.in?</h3>
+        <p>Absolutely. While we use external lookup APIs to display your details, 99tool.in does not store your IP address or create a database of user behaviors. Our <strong>privacy-first ip checker</strong> is built as a pass-through diagnostic tool, ensuring you can audit your network security without becoming part of a tracking campaign.</p>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    async function fetchIP() {
+      const ipDisp = document.getElementById('ip-display');
+      const errorMsg = document.getElementById('error-msg');
+      
+      ipDisp.innerText = "Scanning...";
+      errorMsg.classList.add('hidden');
+
+      try {
+        // Using ipapi.co as it is reliable and provides comprehensive JSON without keys
+        const response = await fetch('https://ipapi.co/json/');
+        const data = await response.json();
+
+        if (data.error) throw new Error(data.reason);
+
+        ipDisp.innerText = data.ip;
+        document.getElementById('val-city').innerText = data.city || 'N/A';
+        document.getElementById('val-region').innerText = data.region || 'N/A';
+        document.getElementById('val-country').innerText = data.country_name || 'N/A';
+        document.getElementById('val-isp').innerText = data.org || 'N/A';
+        
+      } catch (err) {
+        console.error(err);
+        ipDisp.innerText = "Error";
+        errorMsg.classList.remove('hidden');
+      }
+    }
+
+    document.getElementById('copy-ip').addEventListener('click', () => {
+      const ip = document.getElementById('ip-display').innerText;
+      if (ip !== 'Loading...' && ip !== 'Error') {
+        navigator.clipboard.writeText(ip);
+        alert('IP Address copied to clipboard!');
+      }
+    });
+
+    // Initial load
+    fetchIP();
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Speed Test – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/network/speed-test.html"/>
+<meta property="og:title" content="Speed Test – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/network/speed-test.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Speed Test \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/network/speed-test.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .speed-test-container {
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+    .gauge-wrapper {
+      position: relative;
+      width: 250px;
+      height: 250px;
+      margin: 0 auto 2rem;
+      border-radius: 50%;
+      background: var(--bg-secondary);
+      border: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+    .gauge-wrapper.testing {
+      border-color: var(--primary);
+      box-shadow: 0 0 20px rgba(255, 71, 87, 0.2);
+    }
+    .speed-value {
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1;
+    }
+    .speed-unit {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+    }
+    .gauge-progress {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border-radius: 50%;
+      border: 4px solid transparent;
+      border-top-color: var(--primary);
+      transform: rotate(-45deg);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .testing .gauge-progress {
+      opacity: 1;
+      animation: spin 2s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(315deg); }
+    }
+    .start-btn {
+      background: var(--primary);
+      color: white;
+      padding: 1rem 3rem;
+      font-size: 1.25rem;
+      border-radius: 50px;
+      margin-bottom: 2rem;
+      transition: all 0.2s;
+    }
+    .start-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(255, 71, 87, 0.4);
+    }
+    .start-btn:disabled {
+      background: var(--border);
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+    .status-msg {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+    .pro-tip {
+      background: rgba(255, 71, 87, 0.05);
+      border: 1px dashed var(--primary);
+      padding: 1rem;
+      border-radius: 8px;
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      display: inline-block;
+      max-width: 500px;
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/network/speed-test.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/network/speed-test.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/network/speed-test.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/network/speed-test.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/network/speed-test.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/network/speed-test.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/network/speed-test.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/network/speed-test.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/network/speed-test.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/network/speed-test.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/network/speed-test.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/network/speed-test.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/network/speed-test.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/network/speed-test.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/network/speed-test.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/network/speed-test.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/network/speed-test.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/network/speed-test.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/network/speed-test.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/network/speed-test.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/network/speed-test.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/network/speed-test.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Internet Speed Test</h1>
+      <p>Measure your browser's download performance instantly.</p>
+    </div>
+
+    <div class="tool-container speed-test-container">
+      <div class="gauge-wrapper" id="gauge">
+        <div class="gauge-progress"></div>
+        <div class="gauge-content">
+          <div class="speed-value" id="speed-display">0.0</div>
+          <div class="speed-unit">Mbps</div>
+        </div>
+      </div>
+
+      <button id="test-btn" class="btn start-btn">Start Speed Test</button>
+      
+      <div id="status" class="status-msg">Click start to begin the measurement.</div>
+
+      <div class="pro-tip">
+        <strong>Note:</strong> Browsers measure throughput at the application layer. This reflects actual file download speeds but may be lower than your hardware's raw ISP line speed due to encryption and overhead.
+      </div>
+
+      <!-- SEO CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.internet_speed_test.what_is_title">What is the Internet Speed Test?</h2>
+        <p>The Internet Speed Test is a browser-based network diagnostic tool built to measure download throughput and latency. Internet speed represents the rate at which data is transferred from remote servers to your device. Testing connection speeds regularly is important for verifying your internet service provider's (ISP) delivery quality and troubleshooting slow performance.</p>
+        <p>This utility downloads structured files from high-speed content delivery networks (CDNs) in real-time. By measuring download duration with micro-second accuracy, it translates byte streams into megabits per second (Mbps) to provide an accurate overview of your connection's current capacity.</p>
+
+        <h3 class="mt-4">How to Use the Internet Speed Tester</h3>
+        <p>Measuring your network speed is fully automated and simple:</p>
+        <ol class="mt-2 mb-3">
+          <li>Close other tabs, downloads, or video streams to ensure clean test results.</li>
+          <li>Click the "Start Speed Test" button.</li>
+          <li>Watch the live needle gauge reflect the active download speed in real-time.</li>
+          <li>Wait for the progress bar to complete the diagnostic run (takes about 10-15 seconds).</li>
+          <li>Review your final download speed in Megabits per second (Mbps) along with the completion status.</li>
+        </ol>
+
+        <h3 class="mt-4">Key Features of the Speed Tester</h3>
+        <ul class="mt-2 mb-3">
+          <li><strong>Live Speed Gauging:</strong> Dynamic digital needle dial displaying throughput fluctuations during the download.</li>
+          <li><strong>High-Speed CDN Integration:</strong> Downloads data segments from globally distributed edge servers for consistent test conditions.</li>
+          <li><strong>Cache-Busting Design:</strong> Appends randomized timestamp query flags to prevent local browser caching from distorting results.</li>
+          <li><strong>Client-Side Conversion:</strong> Safely processes bit rate conversions locally, keeping performance latency to a minimum.</li>
+        </ul>
+
+        <h3 class="mt-4">Common Use Cases</h3>
+        <p>Run this diagnostic in the following deployment scenarios:</p>
+        <ul class="mt-2 mb-3">
+          <li><strong>ISP Plan Verification:</strong> Confirming if your active internet speeds match the bandwidth tier promised in your service contract.</li>
+          <li><strong>Streaming and Gaming Audits:</strong> Checking if your bandwidth capacity supports 4K UHD streaming or lag-free online gaming.</li>
+          <li><strong>Remote Work Readiness:</strong> Checking connection capacity before joining large video conferencing calls or uploading heavy databases.</li>
+        </ul>
+
+        <h3 class="mt-4">Frequently Asked Questions</h3>
+        <div class="faq-section mt-3">
+          <p><strong>What is Mbps?</strong><br>Mbps stands for Megabits per second. It is the standard unit of measurement for network bandwidth. One Megabit is equal to one-eighth of a Megabyte (MB).</p>
+          <p><strong>How does browser-based testing differ from native app tests?</strong><br>Browsers measure speed at the application layer, reflecting the actual speeds at which websites and web apps load. Native tests measure speed at lower network layers, which can sometimes appear slightly higher.</p>
+          <p><strong>Why does my speed vary across tests?</strong><br>Network traffic changes constantly due to shared router congestion, background device activity, Wi-Fi interference, or fluctuations in route routing.</p>
+          <p><strong>What download speed is recommended for 4K streaming?</strong><br>Most streaming platforms recommend a stable download speed of at least 25 Mbps for smooth, uninterrupted 4K Ultra HD playback.</p>
+        </div>
+
+        <h3 class="mt-4">Privacy & Data Note</h3>
+        <p>All download measurements and metric calculations are performed locally in your browser session. Your IP address, connection history, and speed profiles are never stored or logged on our servers.</p>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const testBtn = document.getElementById('test-btn');
+    const speedDisplay = document.getElementById('speed-display');
+    const gauge = document.getElementById('gauge');
+    const status = document.getElementById('status');
+
+    // High speed CDN file (1MB-5MB is good for burst testing)
+    // Using a reliable JS bundle from JSDelivr
+    const TEST_FILE_URL = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@3.4.120/build/pdf.worker.min.js';
+    const FILE_SIZE_BYTES = 1000000; // Roughly 1MB
+
+    testBtn.addEventListener('click', runSpeedTest);
+
+    async function runSpeedTest() {
+      testBtn.disabled = true;
+      testBtn.innerText = "Testing...";
+      gauge.classList.add('testing');
+      status.innerText = "Connecting to global CDN node...";
+      
+      const startTime = performance.now();
+      
+      try {
+        // Prevent caching by adding a random param
+        const response = await fetch(TEST_FILE_URL + '?cache=' + startTime);
+        
+        if (!response.ok) throw new Error("Connection failed");
+
+        const reader = response.body.getReader();
+        let receivedLength = 0;
+        
+        while(true) {
+          const {done, value} = await reader.read();
+          if (done) break;
+          receivedLength += value.length;
+          
+          // Partial updates for smoother gauge
+          const intermediateTime = (performance.now() - startTime) / 1000;
+          if (intermediateTime > 0.1) {
+       const currentMbps = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber((receivedLength * 8) / (intermediateTime * 1000000), 1) : ((receivedLength * 8) / (intermediateTime * 1000000)).toFixed(1);
+            speedDisplay.innerText = currentMbps;
+          }
+        }
+
+        const endTime = performance.now();
+        const durationSeconds = (endTime - startTime) / 1000;
+        
+        // Calculation: (Bytes * 8 bits / 1,000,000 bits per Mbit) / seconds
+       const mbps = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber((receivedLength * 8) / (durationSeconds * 1000000), 1) : ((receivedLength * 8) / (durationSeconds * 1000000)).toFixed(1);
+        
+        speedDisplay.innerText = mbps;
+        status.innerText = `Test complete. Total data transferred: ${(receivedLength/1024/1024).toFixed(2)} MB.`;
+        
+      } catch (err) {
+        console.error(err);
+        status.innerText = "Error: Connection interrupted. Please try again.";
+        speedDisplay.innerText = "0.0";
+      } finally {
+        testBtn.disabled = false;
+        testBtn.innerText = "Start Speed Test";
+        gauge.classList.remove('testing');
+      }
+    }
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>

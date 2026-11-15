@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Bandwidth Calculator – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/network/bandwidth-calculator.html"/>
+<meta property="og:title" content="Bandwidth Calculator – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/network/bandwidth-calculator.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Bandwidth Calculator \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/network/bandwidth-calculator.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    .math-workspace {
+      max-width: 650px;
+      margin: 2rem auto;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      border-radius: 20px;
+    }
+    .input-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 1rem; margin-bottom: 2rem; }
+    label { display: block; margin-bottom: 0.5rem; color: var(--text-muted); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; }
+    input, select {
+      width: 100%;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 1rem;
+      border-radius: 12px;
+      font-size: 1.1rem;
+    }
+    .result-panel {
+       background: rgba(var(--primary-rgb), 0.05);
+       border: 1px solid var(--primary);
+       padding: 2rem;
+       border-radius: 16px;
+       text-align: center;
+       display: none;
+       margin-top: 2rem;
+    }
+    .res-val { font-size: 3rem; font-weight: 800; color: var(--primary); }
+    .res-label { font-size: 0.9rem; color: var(--text-muted); margin-top: 5px; text-transform: uppercase; letter-spacing: 0.05em; }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Infinite Bandwidth Calculator</h1>
+      <p>Analyze network capacity instantly. Determine required speeds for any data transfer scenario.</p>
+    </div>
+
+    <div class="math-workspace">
+      <div class="input-grid">
+         <div>
+            <label>Data to Move</label>
+            <input type="number" id="data-val" value="1" oninput="solve()">
+         </div>
+         <div>
+            <label>Unit</label>
+            <select id="data-unit" onchange="solve()">
+               <option value="MB">MB (Mega)</option>
+               <option value="GB" selected>GB (Giga)</option>
+               <option value="TB">TB (Tera)</option>
+            </select>
+         </div>
+      </div>
+
+      <div class="input-grid">
+         <div>
+            <label>Time Duration</label>
+            <input type="number" id="time-val" value="1" oninput="solve()">
+         </div>
+         <div>
+            <label>Unit</label>
+            <select id="time-unit" onchange="solve()">
+               <option value="s">Seconds</option>
+               <option value="m">Minutes</option>
+               <option value="h" selected>Hours</option>
+            </select>
+         </div>
+      </div>
+
+      <div class="result-panel" id="res-panel">
+         <div class="res-label">Required Bandwidth</div>
+         <div class="res-val" id="res-Mbps">0 Mbps</div>
+         <div class="mt-2 text-muted small" id="res-Kbps">0 Kbps</div>
+      </div>
+
+      <!-- SEO CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2>How to Calculate Internet Bandwidth?</h2>
+        <p>Bandwidth calculation is the process of determining the data rate required to transfer a specific amount of data within a given timeframe. The formula is simply **Speed = Data / Time**. Our <strong>online bandwidth calculator</strong> automates this conversion, handling complex shifts between Gigabytes (storage) and Megabits (speed). A reliable <strong>network capacity diagnostic auditor</strong> is essential for ISP selection and service level agreement (SLA) verification.</p>
+
+        <h3 class="mt-4">Bytes vs. Bits</h2>
+        <p>One of the most common mistakes in network planning is confusing Bytes (B) with Bits (b). There are 8 bits in every byte. By using our <strong>data rate diagnostic tool</strong>, we ensure that your bandwidth requirements are calculated correctly across all metric scales. This <strong>advanced network auditor</strong> is vital for planning high-definition streaming, cloud backups, and enterprise server replication.</p>
+
+        <h3 class="mt-4">Privacy and Pure Math</h2>
+        <p>At 99tool.in, all mathematical operations are executed locally in your browser sandbox. We do not store your data sizes, transfer times, or calculated speeds. This <strong>private bandwidth tool</strong> provides professional-grade results without any third-party tracking. Whether you are a gamer optimizing your ping or a systems admin planning a data migration, our <strong>secure network calculator</strong> ensures your data remains purely yours.</p>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    function solve() {
+       const dataVal = parseFloat(document.getElementById('data-val').value) || 0;
+       const dataUnit = document.getElementById('data-unit').value;
+       const timeVal = parseFloat(document.getElementById('time-val').value) || 0;
+       const timeUnit = document.getElementById('time-unit').value;
+
+       if (dataVal <= 0 || timeVal <= 0) {
+          document.getElementById('res-panel').style.display = 'none';
+          return;
+       }
+
+       // 1. Convert everything to bits and seconds
+       let bits = 0;
+       if (dataUnit === 'MB') bits = dataVal * 8 * 1024 * 1024;
+       else if (dataUnit === 'GB') bits = dataVal * 8 * 1024 * 1024 * 1024;
+       else if (dataUnit === 'TB') bits = dataVal * 8 * 1024 * 1024 * 1024 * 1024;
+
+       let seconds = 0;
+       if (timeUnit === 's') seconds = timeVal;
+       else if (timeUnit === 'm') seconds = timeVal * 60;
+       else if (timeUnit === 'h') seconds = timeVal * 3600;
+
+       // 2. Calculate bps
+       const bps = bits / seconds;
+       const mbps = bps / (1024 * 1024);
+       const kbps = bps / 1024;
+
+       // 3. Render
+       document.getElementById('res-Mbps').innerText = mbps.toFixed(2) + ' Mbps';
+       document.getElementById('res-Kbps').innerText = kbps.toLocaleString() + ' Kbps';
+       document.getElementById('res-panel').style.display = 'block';
+    }
+
+    // Auto-run first time
+    window.onload = solve;
+  </script>
+</body>
+</html>

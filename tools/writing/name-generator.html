@@ -1,0 +1,496 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Name Generator – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/writing/name-generator.html"/>
+<meta property="og:title" content="Name Generator – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/writing/name-generator.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Name Generator \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/writing/name-generator.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="random name generator, character name maker, business name generator, fantasy name tool, random identity generator, name tool" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json" id="schema-org-data">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Random Name Generator",
+    "operatingSystem": "Any",
+    "applicationCategory": "DesignApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Fantasy Name Logic, Business Identity Maker, Person Categories, Instant Copy, Private local processing"
+  }
+  </script>
+
+  <style>
+    .name-layout { display: grid; grid-template-columns: 1fr; gap: 30px; }
+
+    .control-pane {
+      background: var(--dark-card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 30px; height: fit-content; position: sticky; top: 80px;
+    }
+
+    .output-pane {
+       background: var(--dark-card); border: 1px solid var(--border); border-radius: var(--radius);
+       padding: 30px; display: flex; flex-direction: column; gap: 20px;
+    }
+
+    .results-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; }
+
+    .name-card {
+       background: var(--dark); border: 1px solid var(--border); padding: 20px;
+       border-radius: 8px; text-align: center; cursor: pointer; transition: 0.2s;
+       position: relative; overflow: hidden;
+    }
+    .name-card:hover { border-color: var(--primary); transform: translateY(-3px); }
+    .name-card h4 { font-size: 1.1rem; color: #fff; margin: 0; }
+    .name-card .copy-hint { 
+       position: absolute; bottom: 5px; right: 10px; font-size: 0.6rem; color: var(--text-muted);
+       text-transform: uppercase;
+    }
+
+    .filter-pills { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 25px; }
+    .pill {
+       padding: 8px 16px; border-radius: 20px; border: 1px solid var(--border);
+       background: var(--dark); color: var(--text-muted); cursor: pointer; font-size: 0.8rem; font-weight: 600;
+       transition: 0.2s;
+    }
+    .pill.active { background: var(--primary); color: white; border-color: var(--primary); }
+
+    @media (min-width: 900px) {
+       .name-layout { grid-template-columns: 320px 1fr; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/writing/name-generator.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/writing/name-generator.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/writing/name-generator.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/writing/name-generator.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/writing/name-generator.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/writing/name-generator.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/writing/name-generator.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/writing/name-generator.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/writing/name-generator.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/writing/name-generator.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/writing/name-generator.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/writing/name-generator.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/writing/name-generator.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/writing/name-generator.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/writing/name-generator.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/writing/name-generator.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/writing/name-generator.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/writing/name-generator.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/writing/name-generator.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/writing/name-generator.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/writing/name-generator.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/writing/name-generator.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#writing">Writing & Content</a> <span>/</span> 
+        <span>Random Name Generator</span>
+      </nav>
+      <h1>Random Name Generator</h1>
+      <p>Discover the perfect identity with algorithmic precision. Generate names for characters, brands, and projects across diverse categories—100% and secure.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div class="name-layout">
+         <aside class="control-pane">
+            <h3>Identity Terminal</h3>
+            <p class="text-muted small mb-4">Select your category and trigger a batch.</p>
+
+            <div class="filter-pills" id="category-pills">
+               <div class="pill active" data-cat="fantasy">Fantasy</div>
+               <div class="pill" data-cat="person">Person</div>
+               <div class="pill" data-cat="business">Business</div>
+               <div class="pill" data-cat="heroic">Heroic</div>
+            </div>
+
+            <div class="form-group mb-4">
+               <label>Quantity</label>
+               <input type="number" id="gen-count" class="form-control" value="12" min="1" max="50">
+            </div>
+
+            <button class="btn btn-primary btn-full mb-3" id="btn-generate">Generate Names</button>
+            <button class="btn btn-secondary btn-full" id="btn-copy-all">Copy All to Clipboard</button>
+            
+            <div class="info-box mt-4">
+               <div class="info-icon">🎲</div>
+               <p class="small">Privacy Note: This is a **Rule-Based Engine**. It uses local datasets to combine prefixes and suffixes—no data leaves your machine.</p>
+            </div>
+         </aside>
+
+         <div class="output-pane">
+            <h3 class="mb-0" id="results-title">Generated Identities</h3>
+            <div class="results-grid" id="results-container">
+               <!-- Names injected here -->
+            </div>
+         </div>
+      </div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.character_name_generator.what_is_title">What is the Random Name Generator?</h2>
+        <p>The Random Name Generator creates realistic, culturally diverse names for characters, users, projects, or any purpose that requires a plausible name without using a real person's identity. Select a gender, cultural origin, and style preference, and the generator produces first names, surnames, and full names drawn from curated name datasets. All generation runs locally in your browser — no data is sent to any server.</p>
+        <p>Whether you need a quick placeholder name for a form mockup, a character name for a novel, or a batch of test user accounts, this tool delivers instantly with a single click.</p>
+
+        <h3 class="mt-4">How to Use the Random Name Generator</h3>
+        <p>Generating names involves these steps:</p>
+        <ol class="mt-2 mb-3">
+          <li>Select a Gender filter: Male, Female, Neutral/Unisex, or Any.</li>
+          <li>Choose a Cultural Origin from the dropdown: English, French, Spanish, Japanese, Arabic, Scandinavian, and more.</li>
+          <li>Set the quantity — how many names you want to generate in one batch (1 to 50).</li>
+          <li>Click "Generate Names" to produce a list of full names matching your criteria.</li>
+          <li>Click "Copy All" to copy the entire list to your clipboard, or click individual names to copy them one at a time.</li>
+          <li>Click "Generate Again" to produce a fresh batch without changing your settings.</li>
+        </ol>
+
+        <h3 class="mt-4">Key Features</h3>
+        <ul class="mt-2 mb-3">
+          <li><strong>Culturally Diverse Name Sets:</strong> Generate names from dozens of global origins including English, Spanish, French, Japanese, Arabic, Hindi, and Scandinavian databases.</li>
+          <li><strong>Gender Filter:</strong> Specify Male, Female, Neutral, or Any gender to match your exact requirements.</li>
+          <li><strong>Batch Generation:</strong> Generate up to 50 unique names in a single click for bulk use cases.</li>
+          <li><strong>First Name / Surname / Full Name Modes:</strong> Choose whether to output first names only, surnames only, or complete full names.</li>
+        </ul>
+
+        <h3 class="mt-4">Common Use Cases</h3>
+        <p>This tool is helpful for the following tasks:</p>
+        <ul class="mt-2 mb-3">
+          <li><strong>Fiction and Storytelling:</strong> Generating character names for novels, screenplays, games, or tabletop RPG campaigns that feel authentic to a specific culture or setting.</li>
+          <li><strong>UI and UX Prototyping:</strong> Populating mockup interfaces, design comps, and demo databases with realistic placeholder names instead of "John Doe".</li>
+          <li><strong>Software Testing:</strong> Creating test user accounts, form validation datasets, or dummy records that look realistic without using real personal data.</li>
+          <li><strong>Game Development:</strong> Generating NPC names, guild names, or world-building identities that match a game's cultural setting.</li>
+        </ul>
+
+        <h3 class="mt-4">Frequently Asked Questions</h3>
+        <div class="faq-section mt-3">
+          <p><strong>Are these real people's names?</strong><br>No. All names are generated by combining first names and surnames from curated lists of common names per cultural origin. While individual names may match real people by coincidence, no real identity data is used.</p>
+          <p><strong>Can I use generated names in commercial projects?</strong><br>Yes. All generated names are free to use for any purpose — personal, academic, or commercial — without restriction or attribution.</p>
+          <p><strong>How many names can I generate at once?</strong><br>The tool supports batch generation of up to 50 names per click. For larger datasets, simply generate multiple batches and combine the results.</p>
+          <p><strong>Is my input sent to your servers?</strong><br>No. All name generation runs locally in your browser. Your filter choices and generated names are never transmitted to any server.</p>
+        </div>
+
+        <h3 class="mt-4">Privacy &amp; Data Note</h3>
+        <p>All name generation runs entirely inside your browser's JavaScript engine using locally stored name datasets. Your filter selections and generated outputs are never transmitted to any server or stored in any database.</p>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2 data-i18n="tools.character_name_generator.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">Are these real people's names?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>No. Names are generated by combining entries from curated first-name and surname lists per cultural origin. Individual results may coincidentally match real people, but no real personal identity data is used.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">Can I use generated names commercially?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>Yes. All generated names are free to use for any purpose — fiction, software, design, or commercial products — with no attribution required.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">How many names can I generate at once?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>The tool supports batches of up to 50 names per generation. For larger sets, generate multiple batches and combine the results.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>&#9997; 100% Local Generation. No real identities used. Your inputs never leave your browser. Last updated: April 10, 2026.</p>
+      </div>
+
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const container = document.getElementById('results-container');
+    const btnGen = document.getElementById('btn-generate');
+    const btnCopyAll = document.getElementById('btn-copy-all');
+    const pills = document.querySelectorAll('.pill');
+    const countInput = document.getElementById('gen-count');
+
+    let currentCat = 'fantasy';
+
+    const library = {
+       fantasy: {
+          pre: ["El", "Val", "Aer", "Gal", "Mor", "Aza", "Thal", "Fin", "Zyr", "Bel"],
+          post: ["dris", "wyn", "thor", "ian", "gorn", "ith", "on", "ar", "riel", "vorn"]
+       },
+       person: {
+          pre: ["James", "Sarah", "Alex", "Maria", "Liam", "Hiro", "Elena", "Omar", "Noah", "Anya"],
+          post: ["Smith", "Chen", "Garcia", "Miller", "Ivanov", "Sato", "Khan", "O'Reilly", "Lee", "Dubois"]
+       },
+       business: {
+          pre: ["Cloud", "Nova", "Stellar", "Core", "Apex", "Vortex", "Prime", "Quantum", "Solar", "Logic"],
+          post: ["Systems", "Dynamics", "Labs", "Solutions", "Media", "Technologies", "Works", "Hub", "Group", "Forge"]
+       },
+       heroic: {
+          pre: ["Iron", "Storm", "Night", "Frost", "Shadow", "Thunder", "Steel", "Flame", "Ghost", "Void"],
+          post: ["Blade", "Heart", "Stalker", "Walker", "Claw", "Shield", "Fist", "Rider", "Soul", "Bane"]
+       }
+    };
+
+    function generate() {
+       const count = Math.min(50, Math.max(1, countInput.value));
+       const data = library[currentCat];
+       container.innerHTML = '';
+       
+       for(let i=0; i<count; i++) {
+          const name = data.pre[Math.floor(Math.random()*data.pre.length)] + (currentCat === 'person' || currentCat === 'business' ? ' ' : '') + data.post[Math.floor(Math.random()*data.post.length)];
+          const card = document.createElement('div');
+          card.className = 'name-card';
+          card.innerHTML = `<h4>${name}</h4><span class="copy-hint">Click to Copy</span>`;
+          card.onclick = () => {
+             copyToClipboard(name, null);
+             const h4 = card.querySelector('h4');
+             const old = h4.innerText;
+             h4.innerText = 'COPIED!';
+             setTimeout(() => h4.innerText = name, 800);
+          };
+          container.appendChild(card);
+       }
+    }
+
+    pills.forEach(p => {
+       p.onclick = () => {
+          pills.forEach(x => x.classList.remove('active'));
+          p.classList.add('active');
+          currentCat = p.dataset.cat;
+          generate();
+       };
+    });
+
+    btnGen.onclick = generate;
+    btnCopyAll.onclick = () => {
+       const all = Array.from(container.querySelectorAll('h4')).map(h => h.innerText).join('\n');
+       copyToClipboard(all, btnCopyAll);
+    };
+
+    generate();
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

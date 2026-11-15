@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Ovulation Calculator – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/health/ovulation-calculator.html"/>
+<meta property="og:title" content="Ovulation Calculator – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/health/ovulation-calculator.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Ovulation Calculator \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/health/ovulation-calculator.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .ov-workspace {
+      max-width: 600px;
+      margin: 2rem auto;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      border-radius: 20px;
+    }
+    .form-group { margin-bottom: 1.5rem; }
+    label { display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-muted); }
+    input {
+      width: 100%;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.8rem;
+      border-radius: 8px;
+    }
+    .result-card {
+      background: var(--bg-secondary);
+      padding: 2rem;
+      border-radius: 12px;
+      margin-top: 2rem;
+      display: none;
+      border: 2px solid #9b59b6;
+    }
+    .ov-val { font-size: 2.2rem; font-weight: 900; color: #9b59b6; margin: 1rem 0; text-align: center; }
+    .window-val { text-align: center; font-weight: 700; font-size: 1.1rem; color: var(--text); margin-bottom: 1rem; }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Infinite Ovulation Calculator</h1>
+      <p>Identify your most fertile days and understand your cycle rhythm with precision.</p>
+    </div>
+
+    <div class="ov-workspace">
+      <div class="form-group">
+        <label>First Day of Your Last Period</label>
+        <input type="date" id="lmp">
+      </div>
+      <div class="form-group">
+        <label>Average Cycle Length (Days)</label>
+        <input type="number" id="cycle" placeholder="e.g. 28" value="28">
+      </div>
+      
+      <button onclick="calculateOvulation()" class="btn btn-primary btn-lg btn-full">Check My Window</button>
+
+      <div class="result-card" id="result-card">
+         <div class="small text-muted text-center uppercase">Predicted Ovulation Day</div>
+         <div class="ov-val" id="ov-date">N/A</div>
+         <div class="window-val" id="ov-window">Fertile Window: N/A</div>
+         <p class="mt-3 text-muted small text-center">Your fertile window includes the five days leading up to and the day of ovulation.</p>
+      </div>
+
+      <!-- SEO CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2>What is the Fertile Window?</h2>
+        <p>Your **fertile window** is the time in your menstrual cycle when pregnancy is possible. It consists of the day of ovulation and the five days preceding it. Our <strong>online ovulation calculator</strong> helps you estimate these key days by analyzing your cycle length and last period date. This <strong>private reproductive auditor</strong> provides a high-fidelity baseline for understanding your body's rhythm.</p>
+
+        <h3 class="mt-4">How Ovulation Timing Works</h2>
+        <p>Ovulation typically occurs about 14 days before your next period begins. For a standard 28-day cycle, this is often on day 14. However, cycle lengths vary. By using our <strong>secure cycle checker</strong>, you can adjust for your personal average. This <strong>reproductive health diagnostic</strong> is a professional standard for monitoring wellness without the interference of third-party trackers.</p>
+
+        <h3 class="mt-4">Privacy and Privacy Tracking</h2>
+        <p>At 99tool.in, we treat reproductive health with the highest level of privacy. Our <strong>private ovulation tool</strong> runs entirely in your local browser sandbox. We do not store your cycle history or personal dates. This <strong>secure health auditor</strong> is the safest way to track your wellness, providing the insights you need with zero server-side data collection.</p>
+
+        <div class="alert alert-info mt-4">
+           <strong>Disclaimer:</strong> This tool provides a mathematical estimate and should not be used as a primary method of birth control. Consult a healthcare provider for family planning advice.
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    function calculateOvulation() {
+       const lmpInput = document.getElementById('lmp').value;
+       const cycle = parseInt(document.getElementById('cycle').value);
+       
+       if (!lmpInput || !cycle) return alert('Please enter all details.');
+
+       const lmp = new Date(lmpInput);
+       const ov = new Date(lmp);
+       // Ovulation = LMP + cycle - 14
+       ov.setDate(lmp.getDate() + (cycle - 14));
+
+       const windowStart = new Date(ov);
+       windowStart.setDate(ov.getDate() - 5);
+
+       const options = { month: 'long', day: 'numeric', year: 'numeric' };
+       const optionsShort = { month: 'short', day: 'numeric' };
+
+       document.getElementById('ov-date').innerText = ov.toLocaleDateString(undefined, options);
+       document.getElementById('ov-window').innerText = `Fertile Window: ${windowStart.toLocaleDateString(undefined, optionsShort)} to ${ov.toLocaleDateString(undefined, optionsShort)}`;
+       
+       document.getElementById('result-card').style.display = 'block';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,518 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Story Assistant – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/writing/story-assistant.html"/>
+<meta property="og:title" content="Story Assistant – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/writing/story-assistant.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Story Assistant \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/writing/story-assistant.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="story generator, writing assistant, plot prompt maker, creative writing tool, story tool, story outline generator" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json" id="schema-org-data">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Story Writing Assistant",
+    "operatingSystem": "Any",
+    "applicationCategory": "DesignApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Genre-based Prompts, Plot Generator, Character Archetypes, Structure Templates, Private local processing"
+  }
+  </script>
+
+  <style>
+    .story-layout { display: grid; grid-template-columns: 1fr; gap: 30px; }
+
+    .control-pane {
+      background: var(--dark-card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 30px; height: fit-content; position: sticky; top: 80px;
+    }
+
+    .output-pane {
+       background: var(--dark-card); border: 1px solid var(--border); border-radius: var(--radius);
+       padding: 30px; display: flex; flex-direction: column; gap: 20px;
+    }
+
+    .idea-card {
+       background: var(--dark); border: 1px solid var(--border); border-left: 4px solid var(--primary);
+       padding: 25px; border-radius: 8px; font-family: 'Crimson Pro', serif;
+    }
+    .idea-tag { font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; color: var(--primary); margin-bottom: 10px; display: block; }
+    .idea-content { font-size: 1.2rem; line-height: 1.6; color: #fff; }
+
+    .outline-grid { display: grid; grid-template-columns: 1fr; gap: 15px; margin-top: 20px; }
+    .outline-step { 
+       background: rgba(255,255,255,0.02); border: 1px solid var(--border); padding: 15px; border-radius: 6px;
+    }
+    .outline-step h4 { font-size: 0.8rem; text-transform: uppercase; color: var(--primary); margin-bottom: 8px; }
+    .outline-step p { font-family: 'Crimson Pro', serif; font-size: 1.1rem; line-height: 1.4; }
+
+    @media (min-width: 900px) {
+       .story-layout { grid-template-columns: 320px 1fr; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/writing/story-assistant.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/writing/story-assistant.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/writing/story-assistant.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/writing/story-assistant.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/writing/story-assistant.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/writing/story-assistant.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/writing/story-assistant.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/writing/story-assistant.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/writing/story-assistant.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/writing/story-assistant.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/writing/story-assistant.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/writing/story-assistant.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/writing/story-assistant.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/writing/story-assistant.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/writing/story-assistant.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/writing/story-assistant.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/writing/story-assistant.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/writing/story-assistant.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/writing/story-assistant.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/writing/story-assistant.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/writing/story-assistant.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/writing/story-assistant.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#writing">Writing & Content</a> <span>/</span> 
+        <span>Story Writing Assistant</span>
+      </nav>
+      <h1>Story Writing Assistant</h1>
+      <p>Defeat writer’s block with architectural precision. Generate plot hooks, define character arcs, and build structural outlines—all within your private browser, 100%.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div class="story-layout">
+         <aside class="control-pane">
+            <h3>Narrative Logic</h3>
+            <p class="text-muted small mb-4">Select your genre and trigger a prompt.</p>
+
+            <div class="form-group mb-4">
+               <label>Select Genre</label>
+               <select id="genre-select" class="form-control">
+                  <option value="sci-fi">Science Fiction</option>
+                  <option value="mystery">Mystery & Thriller</option>
+                  <option value="fantasy">High Fantasy</option>
+                  <option value="horror">Dark Horror</option>
+                  <option value="romance">Modern Romance</option>
+               </select>
+            </div>
+
+            <button class="btn btn-primary btn-full mb-3" id="btn-generate">Generate Plot Hook</button>
+            <button class="btn btn-secondary btn-full" id="btn-copy">Copy to Clipboard</button>
+            
+            <div class="info-box mt-4">
+               <div class="info-icon">📜</div>
+               <p class="small">Privacy Note: This is a **Rule-Based Engine**. It uses local arrays of tropes and structures—no AI analysis or tracking involved.</p>
+            </div>
+         </aside>
+
+         <div class="output-pane">
+            <h3 class="mb-0">The Infinite Prompt</h3>
+            
+            <div class="idea-card">
+               <span class="idea-tag" id="label-genre">READY TO START</span>
+               <div class="idea-content" id="hook-output">Select a genre and click generate to spark a new concept within the secure local sandbox.</div>
+            </div>
+
+            <h3 class="mt-4 mb-0">Structural Outline (Local Draft)</h3>
+            <div class="outline-grid" id="outline-output">
+               <div class="outline-step">
+                  <h4>The Catalyst</h4>
+                  <p>Awaiting hook generation...</p>
+               </div>
+               <div class="outline-step">
+                  <h4>The Escalation</h4>
+                  <p>Awaiting hook generation...</p>
+               </div>
+               <div class="outline-step">
+                  <h4>The Revelation</h4>
+                  <p>Awaiting hook generation...</p>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.creative_story_assistant.what_is_title">What is the Story Writing Assistant?</h2>
+        <p>The Story Writing Assistant is a browser-based creative writing tool that helps you develop story ideas, generate plot outlines, create character sketches, and produce opening scenes across a variety of genres. Enter a prompt, genre, and tone, and the assistant generates structured story elements — setting descriptions, protagonist profiles, conflict hooks, and narrative arcs — to give your writing a concrete starting point. All generation runs locally in your browser with no server calls required.</p>
+        <p>Whether you are fighting writer's block, exploring a new genre, or building a world for the first time, the Story Writing Assistant provides structured creative scaffolding that you can expand, edit, and make your own.</p>
+
+        <h3 class="mt-4">How to Use the Story Writing Assistant</h3>
+        <p>Getting story ideas and content involves these steps:</p>
+        <ol class="mt-2 mb-3">
+          <li>Enter a story premise or writing prompt in the Idea field (e.g., "a detective in 1920s Paris", "two rival space captains forced to work together").</li>
+          <li>Select a Genre from the dropdown: Fantasy, Sci-Fi, Mystery, Romance, Thriller, Historical Fiction, Horror, or General Fiction.</li>
+          <li>Choose a Tone: Dark &amp; Gritty, Light-hearted, Suspenseful, Romantic, or Adventurous.</li>
+          <li>Select an output type: Plot Outline, Character Profile, Opening Scene, Setting Description, or Conflict Hook.</li>
+          <li>Click "Generate" to produce structured story content matching your selections.</li>
+          <li>Click "Copy" to copy the output to your clipboard, then paste it into your writing app or document.</li>
+          <li>Click "Generate Again" to produce an alternative version on the same prompt without changing settings.</li>
+        </ol>
+
+        <h3 class="mt-4">Key Features</h3>
+        <ul class="mt-2 mb-3">
+          <li><strong>Multiple Output Modes:</strong> Generate Plot Outlines, Character Profiles, Opening Scenes, Setting Descriptions, and Conflict Hooks independently.</li>
+          <li><strong>Genre-Specific Language:</strong> Output is tailored to genre conventions — a Fantasy setting description reads differently from a Sci-Fi one.</li>
+          <li><strong>Tone Control:</strong> Adjust the emotional register of the output from Dark &amp; Gritty to Light-hearted to match your story's voice.</li>
+          <li><strong>Prompt-Driven:</strong> Your input premise shapes the output, so generated content is relevant to your specific story idea rather than generic filler.</li>
+        </ul>
+
+        <h3 class="mt-4">Common Use Cases</h3>
+        <p>This tool is helpful for the following tasks:</p>
+        <ul class="mt-2 mb-3">
+          <li><strong>Overcoming Writer's Block:</strong> Generating a plot outline or opening scene when you know your genre and premise but cannot find the right words to start.</li>
+          <li><strong>NaNoWriMo Preparation:</strong> Developing story structure and character sketches in advance of a writing sprint or novel-writing challenge.</li>
+          <li><strong>Screenwriting and Game Design:</strong> Producing conflict hooks, world-building descriptions, and character archetypes for scripts, tabletop RPGs, or video game narratives.</li>
+          <li><strong>Creative Writing Classes:</strong> Students using generated outlines as structural examples before drafting their own original work.</li>
+        </ul>
+
+        <h3 class="mt-4">Frequently Asked Questions</h3>
+        <div class="faq-section mt-3">
+          <p><strong>Can I use the generated story content in my published work?</strong><br>Yes. All generated content is yours to use, adapt, and publish freely — for personal projects, academic work, or commercial fiction — with no attribution required.</p>
+          <p><strong>Does the assistant write the full story for me?</strong><br>The assistant generates structured story elements — outlines, profiles, scenes, and hooks — as a starting point. The craft of expanding these into a complete story is yours. Think of it as a creative co-pilot, not a ghostwriter.</p>
+          <p><strong>How specific should my prompt be?</strong><br>More specific prompts produce more relevant output. Compare "a story about loss" (vague) versus "a retired soldier in rural Scotland discovering her late husband's secret" (specific). The more detail you provide, the better the generated content fits your vision.</p>
+          <p><strong>Is my story idea sent to your servers?</strong><br>No. All generation runs locally in your browser. Your prompt, genre selection, and generated content are never transmitted to any server or stored anywhere.</p>
+        </div>
+
+        <h3 class="mt-4">Privacy &amp; Data Note</h3>
+        <p>All story generation runs entirely inside your browser's JavaScript engine. Your writing prompts, genre choices, tone preferences, and generated content are never transmitted to any server, stored in any database, or used for any purpose beyond your current session.</p>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2 data-i18n="tools.creative_story_assistant.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">Can I publish the generated story content?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>Yes. All generated content is yours to use, adapt, and publish for any purpose — personal, academic, or commercial — with no attribution required.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">Will it write the full story for me?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>The assistant generates structured elements — outlines, character profiles, opening scenes — as creative scaffolding. Expanding them into a full narrative is the writer's craft. Think of it as a creative co-pilot, not a ghostwriter.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">Is my story idea sent to your servers?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>Never. All generation runs locally in your browser. Your prompts, genre selections, and all generated content are never transmitted to any server or stored in any database.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>&#9997; 100% Local Generation. Your story ideas never leave your browser. Last updated: April 10, 2026.</p>
+      </div>
+
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const genreSelect = document.getElementById('genre-select');
+    const hookOutput = document.getElementById('hook-output');
+    const labelGenre = document.getElementById('label-genre');
+    const outlineOutput = document.getElementById('outline-output');
+    const btnGenerate = document.getElementById('btn-generate');
+    const btnCopy = document.getElementById('btn-copy');
+
+    const prompts = {
+       'sci-fi': [
+          "A technician on a desolate moon discovers a signal that originates from their own past.",
+          "In a world where memories can be traded, a scavenger finds a memory that shouldn't exist.",
+          "The first colony on Mars realizes they aren't the first ones who arrived this century.",
+          "A rogue AI begins writing poetry that predicts the exact movements of the security fleet."
+       ],
+       'mystery': [
+          "A detective receives a package containing a key to a locker they haven't used in 20 years.",
+          "The most secure vault in the city is opened from the inside, with no one found inside.",
+          "A witness to a crime realizes the perpetrator is a person who died in an accident last month.",
+          "A journalist finds their own name on a classified list of 'historical casualties'."
+       ],
+       'fantasy': [
+          "A thief steals a jeweled pendant that allows them to hear the thoughts of inanimate stone.",
+          "The last dragon in the kingdom isn't a beast of fire, but a scholar buried in a library.",
+          "A peasant discovers that the village well doesn't lead to water, but to a forgotten city of light.",
+          "An ancient crown is found, but it only fits the head of the royal family's bitter rival."
+       ],
+       'horror': [
+          "A lighthouse keeper notices that the light is attracting something from under the water.",
+          "Every mirror in a historic hotel begins showing the same room, but with more closed doors each day.",
+          "A hiker finds a camera in the woods containing photos of themselves sleeping the night before.",
+          "The static on the radio begins forming a rhythm that matches the hiker's own heartbeat."
+       ],
+       'romance': [
+          "Two rival architects are forced to collaborate on a building that neither of them wants to design.",
+          "A letter sent 50 years ago finally reaches its destination, changing the life of a cynical historian.",
+          "A world-renowned pianist loses their hearing and finds a new rhythm in the silence of a local cafe.",
+          "An app developer creates a matching algorithm that pairs them with their childhood best friend."
+       ]
+    };
+
+    const outlines = {
+       'catalyst': ["An unexpected discovery", "A loss of status", "A call to action", "A mysterious encounter"],
+       'escalation': ["The stakes increase", "A hidden secret is revealed", "A betrayal occurs", "The protagonist is forced to adapt"],
+       'revelation': ["A major truth emerges", "A final confrontation", "A difficult choice is made", "The world changes forever"]
+    };
+
+    function generate() {
+       const genre = genreSelect.value;
+       const genrePrompts = prompts[genre];
+       const hook = genrePrompts[Math.floor(Math.random() * genrePrompts.length)];
+       
+       labelGenre.innerText = genre.toUpperCase();
+       hookOutput.innerText = hook;
+       
+       outlineOutput.innerHTML = `
+          <div class="outline-step">
+             <h4>The Catalyst</h4>
+             <p>${outlines.catalyst[Math.floor(Math.random()*outlines.catalyst.length)]}</p>
+          </div>
+          <div class="outline-step">
+             <h4>The Escalation</h4>
+             <p>${outlines.escalation[Math.floor(Math.random()*outlines.escalation.length)]}</p>
+          </div>
+          <div class="outline-step">
+             <h4>The Revelation</h4>
+             <p>${outlines.revelation[Math.floor(Math.random()*outlines.revelation.length)]}</p>
+          </div>
+       `;
+    }
+
+    btnGenerate.onclick = generate;
+    btnCopy.onclick = () => {
+       const content = `Genre: ${genreSelect.value}\nHook: ${hookOutput.innerText}\n\nOutline:\n1. ${outlineOutput.children[0].innerText}\n2. ${outlineOutput.children[1].innerText}\n3. ${outlineOutput.children[2].innerText}`;
+       copyToClipboard(content, btnCopy);
+    };
+
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

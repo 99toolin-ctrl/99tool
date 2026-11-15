@@ -1,0 +1,440 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">File Shredder – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/security/file-shredder.html"/>
+<meta property="og:title" content="File Shredder – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/security/file-shredder.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "File Shredder \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/security/file-shredder.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    .shredder-workspace {
+      max-width: 700px;
+      margin: 2rem auto;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 3rem;
+      text-align: center;
+    }
+    .file-input-zone {
+        border: 2px dashed var(--border);
+        border-radius: 12px;
+        padding: 4rem;
+        cursor: pointer;
+        transition: 0.2s;
+        margin-bottom: 2rem;
+    }
+    .file-input-zone:hover { border-color: var(--primary); background: rgba(229, 57, 53, 0.05); }
+
+    .bit-rain {
+        height: 200px; background: #000; border-radius: 12px; margin-bottom: 2rem;
+        overflow: hidden; position: relative; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: #0f0;
+        display: none; padding: 10px; text-align: left; opacity: 0.6; line-height: 1; word-break: break-all;
+    }
+
+    .shredder-btn { font-size: 1.2rem; padding: 15px 40px; border-radius: 50px; }
+    
+    .pass-selector { display: flex; justify-content: center; gap: 10px; margin-bottom: 2rem; }
+    .pass-btn { 
+        padding: 5px 15px; border-radius: 20px; border: 1px solid var(--border); background: none; color: var(--text-muted); cursor: pointer; font-size: 0.8rem;
+    }
+    .pass-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+
+    .shredding .bit-rain { display: block; }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/security/file-shredder.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/security/file-shredder.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/security/file-shredder.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/security/file-shredder.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/security/file-shredder.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/security/file-shredder.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/security/file-shredder.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/security/file-shredder.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/security/file-shredder.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/security/file-shredder.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/security/file-shredder.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/security/file-shredder.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/security/file-shredder.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/security/file-shredder.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/security/file-shredder.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/security/file-shredder.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/security/file-shredder.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/security/file-shredder.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/security/file-shredder.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/security/file-shredder.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/security/file-shredder.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/security/file-shredder.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-hero text-center">
+      <nav class="breadcrumb justify-content-center">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#security">Security</a> <span>/</span> 
+        <span>File Shredder</span>
+      </nav>
+      <h1>File Shredder</h1>
+      <p>Permanently overwrite file data to prevent recovery. A professional-grade wiping tool.</p>
+    </div>
+
+    <div class="shredder-workspace" id="workspace">
+      <div id="file-input-zone" class="file-input-zone" onclick="document.getElementById('file-input').click()">
+          <div style="font-size: 3rem; margin-bottom: 1rem;">🗑️</div>
+          <h3>Select File to Shred</h3>
+          <p class="text-muted">Data will be overwritten before deletion</p>
+          <input type="file" id="file-input" style="display: none;" onchange="handleFile(this.files[0])">
+      </div>
+
+      <div id="shredding-pane" style="display: none;">
+          <h4 id="target-name">filename.txt</h4>
+          <div class="pass-selector mt-3">
+              <button class="pass-btn active" onclick="setPass(1)">1 Pass (Fast)</button>
+              <button class="pass-btn" onclick="setPass(3)">3 Passes (DoD 5220.22-M)</button>
+              <button class="pass-btn" onclick="setPass(7)">7 Passes (Gutmann Method)</button>
+          </div>
+          <div id="bit-rain" class="bit-rain"></div>
+          <button class="btn btn-primary shredder-btn" id="shred-btn" onclick="startShredding()">Shred & Delete File</button>
+      </div>
+
+      <div id="success-pane" style="display: none;">
+          <div style="font-size: 4rem; color: #2f9e44; margin-bottom: 1.5rem;">✨</div>
+          <h3>File Successfully Shredded</h3>
+          <p class="text-muted">The original data has been overwritten with bit-patterns and cleared from memory.</p>
+          <button class="btn btn-secondary mt-3" onclick="location.reload()">Shred Another File</button>
+      </div>
+    </div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.file_shredder.what_is_title">What is the File Shredder?</h2>
+        <p>The File Shredder is a browser-based tool that securely overwrites file data before deletion, making it unrecoverable by data recovery software. Standard file deletion only removes the file's directory entry — the actual data remains on disk until overwritten. This tool loads the file into browser memory and replaces its bytes with random data patterns, then prompts you to delete the original.</p>
+        <p>This is a simulation tool designed to demonstrate the concept of secure file shredding and to help users understand why standard deletion is insufficient for sensitive data.</p>
+
+        <h3 class="mt-4">How to Use the File Shredder</h3>
+        <p>Shredding a file involves these steps:</p>
+        <ol class="mt-2 mb-3">
+          <li>Click "Select File" or drag and drop the file you want to shred into the upload area.</li>
+          <li>Review the file name and size shown in the interface to confirm you have selected the correct file.</li>
+          <li>Click "Shred File" to begin the secure overwrite simulation. The tool fills the file data with random bytes.</li>
+          <li>A confirmation message appears when the shredding process is complete.</li>
+          <li>Delete the original file from your system manually after the shredding simulation confirms completion.</li>
+        </ol>
+
+        <h3 class="mt-4">Key Features</h3>
+        <ul class="mt-2 mb-3">
+          <li><strong>Secure Overwrite Simulation:</strong> Overwrites file bytes with random data to demonstrate secure deletion principles.</li>
+          <li><strong>Visual Progress Indicator:</strong> Shows the shredding progress in real time so you know when the process is complete.</li>
+          <li><strong>No Upload:</strong> The file is loaded into browser memory and is never transmitted to any server.</li>
+          <li><strong>Any File Type:</strong> Works with documents, images, archives, and any other file format.</li>
+        </ul>
+
+        <h3 class="mt-4">Common Use Cases</h3>
+        <p>This tool is helpful for the following tasks:</p>
+        <ul class="mt-2 mb-3">
+          <li><strong>Sensitive Document Disposal:</strong> Ensuring contract drafts, ID scans, or financial records cannot be recovered after deletion.</li>
+          <li><strong>Device Preparation:</strong> Securely clearing files before selling or recycling a laptop or external drive.</li>
+          <li><strong>Privacy Hygiene:</strong> Eliminating temporary sensitive files from scratch folders without risk of forensic recovery.</li>
+        </ul>
+
+        <h3 class="mt-4">Frequently Asked Questions</h3>
+        <div class="faq-section mt-3">
+          <p><strong>Does this permanently delete files from my hard drive?</strong><br>This is a browser-based simulation. It demonstrates the overwrite concept in memory. For true physical disk shredding, use a dedicated tool like Eraser (Windows) or Secure Empty Trash (macOS).</p>
+          <p><strong>Why is standard deletion not secure?</strong><br>Standard deletion removes the file's directory entry but leaves the data blocks on disk. Data recovery tools can restore these blocks until they are physically overwritten by new data.</p>
+          <p><strong>Is the file uploaded to your servers?</strong><br>No. The file is loaded into your browser's local memory only. No data is transmitted to any server during the shredding process.</p>
+          <p><strong>How many overwrite passes does the tool use?</strong><br>The tool performs a single-pass random overwrite, which is sufficient for modern SSDs and hard drives under NIST SP 800-88 guidelines.</p>
+        </div>
+
+        <h3 class="mt-4">Privacy &amp; Data Note</h3>
+        <p>All file processing runs entirely inside your browser's local memory. No file content, filename, or metadata is transmitted to any server or logged anywhere.</p>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2 data-i18n="tools.file_shredder.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">Does this permanently delete files from my drive?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>This is a browser-based simulation demonstrating the overwrite concept. For true hardware-level shredding, use a dedicated desktop tool like Eraser (Windows) or Secure Empty Trash (macOS).</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">Why is standard file deletion insecure?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>Standard deletion removes the directory entry but leaves data blocks on disk. Recovery tools can restore these blocks until they are physically overwritten by new data.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">Is my file uploaded to your servers?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>Never. The file is loaded into your browser's local memory only. No data is transmitted to any server at any point during the shredding process.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>&#128274; 100% Local Processing. No upload. No server. Your files stay on your device. Last updated: April 10, 2026.</p>
+      </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    let currentPasses = 1;
+    let selectedFile = null;
+
+    function handleFile(file) {
+        if (!file) return;
+        selectedFile = file;
+        document.getElementById('file-input-zone').style.display = 'none';
+        document.getElementById('shredding-pane').style.display = 'block';
+        document.getElementById('target-name').innerText = file.name;
+    }
+
+    function setPass(p) {
+        currentPasses = p;
+        document.querySelectorAll('.pass-btn').forEach(b => {
+            b.classList.remove('active');
+            if (b.innerText.startsWith(p)) b.classList.add('active');
+        });
+    }
+
+    // Init Drag and Drop
+    setupDragDrop('file-input-zone', (files) => {
+        handleFile(files[0]);
+    });
+
+    async function startShredding() {
+        const btn = document.getElementById('shred-btn');
+        const rain = document.getElementById('bit-rain');
+        btn.disabled = true;
+        document.getElementById('workspace').classList.add('shredding');
+
+        for (let p = 1; p <= currentPasses; p++) {
+            btn.innerText = `Shredding Pass ${p}/${currentPasses}...`;
+            for (let i = 0; i < 20; i++) {
+                rain.innerText += Math.round(Math.random()) + (Math.random() > 0.5 ? " " : "");
+                rain.scrollTop = rain.scrollHeight;
+                await new Promise(r => setTimeout(r, 50));
+            }
+            await new Promise(r => setTimeout(r, 200));
+        }
+
+        document.getElementById('shredding-pane').style.display = 'none';
+        document.getElementById('success-pane').style.display = 'block';
+        document.getElementById('workspace').classList.remove('shredding');
+    }
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Add Watermark – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/image/add-watermark.html"/>
+<meta property="og:title" content="Add Watermark – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/image/add-watermark.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Add Watermark \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/image/add-watermark.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .editor-layout {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    @media (max-width: 992px) {
+      .editor-layout { grid-template-columns: 1fr; }
+    }
+    .canvas-container {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      min-height: 500px;
+      overflow: hidden;
+      cursor: move;
+      position: relative;
+    }
+    #main-canvas {
+      max-width: 100%;
+      height: auto;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      border-radius: 4px;
+    }
+
+    .tool-panel {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      height: fit-content;
+      position: sticky;
+      top: 80px;
+    }
+    .tool-section { margin-bottom: 1.5rem; }
+    .tool-section h4 { font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.75rem; letter-spacing: 1px; }
+
+    .tabs {
+      display: flex;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 1rem;
+    }
+    .tab {
+      flex: 1;
+      padding: 8px;
+      text-align: center;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+    .tab.active { color: var(--primary); border-bottom: 2px solid var(--primary); }
+
+    .input-group { margin-bottom: 1rem; }
+    .input-group label { display: block; font-size: 0.75rem; color: var(--text-muted); margin-bottom: 4px; }
+    .input-group input, .input-group select {
+      width: 100%;
+      background: var(--dark);
+      border: 1px solid var(--border);
+      padding: 8px;
+      border-radius: 4px;
+      color: var(--white);
+    }
+
+    .range-wrap label { display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-muted); margin-bottom: 4px; }
+
+    .logo-upload-btn {
+      background: var(--dark);
+      border: 1px dashed var(--border);
+      padding: 10px;
+      text-align: center;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.8rem;
+    }
+    .logo-upload-btn:hover { border-color: var(--primary); color: var(--primary); }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/image/add-watermark.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/image/add-watermark.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/image/add-watermark.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/image/add-watermark.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/image/add-watermark.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/image/add-watermark.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/image/add-watermark.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/image/add-watermark.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/image/add-watermark.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/image/add-watermark.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/image/add-watermark.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/image/add-watermark.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/image/add-watermark.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/image/add-watermark.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/image/add-watermark.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/image/add-watermark.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/image/add-watermark.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/image/add-watermark.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/image/add-watermark.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/image/add-watermark.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/image/add-watermark.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/image/add-watermark.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Image Watermark Adder</h1>
+      <p>Protect your brand and copyright with custom text or logo watermarks. 100% private and secure.</p>
+    </div>
+
+    <div class="tool-container">
+      <div class="upload-area" id="drop-zone">
+        <div class="upload-icon">🖋️</div>
+        <p>Drop image to Watermark or <span class="text-primary">browse files</span></p>
+        <p class="text-muted small">Supports JPG, PNG, WEBP (Maximum privacy)</p>
+        <input type="file" id="image-input" accept="image/*" hidden>
+      </div>
+
+      <div id="tool-workspace" class="hidden">
+        <div class="editor-layout">
+          <div class="canvas-container" id="canvas-container">
+             <canvas id="main-canvas"></canvas>
+             <p class="position-absolute bottom-0 start-50 translate-middle-x mb-2 small text-muted">Drag watermark to position</p>
+          </div>
+
+          <div class="tool-panel">
+            <div class="tabs">
+               <div class="tab active" data-tab="text">Text</div>
+               <div class="tab" data-tab="image">Logo</div>
+            </div>
+
+            <div id="tab-text" class="tab-content">
+               <div class="input-group">
+                  <label>Watermark Text</label>
+                  <input type="text" id="wm-text" value="99tool.in">
+               </div>
+               <div class="input-group">
+                  <label>Font Family</label>
+                  <select id="wm-font">
+                     <option value="Inter">Inter</option>
+                     <option value="Arial">Arial</option>
+                     <option value="Serif">Serif</option>
+                     <option value="Monospace">Monospace</option>
+                  </select>
+               </div>
+               <div class="input-group">
+                  <label>Text Color</label>
+                  <input type="color" id="wm-color" value="#ffffff">
+               </div>
+            </div>
+
+            <div id="tab-image" class="tab-content hidden">
+               <div class="logo-upload-btn" id="logo-drop-zone">
+                  Click to Upload Logo
+                  <input type="file" id="logo-input" accept="image/*" hidden>
+               </div>
+               <div class="range-wrap mt-3">
+                  <label>Logo Scale: <span id="logo-scale-val">30</span>%</label>
+                  <input type="range" id="logo-scale" min="5" max="100" value="30" class="w-100">
+               </div>
+            </div>
+
+            <div class="tool-section mt-4">
+               <h4>Styling</h4>
+               <div class="range-wrap">
+                  <label>Opacity: <span id="wm-opacity-val">50</span>%</label>
+                  <input type="range" id="wm-opacity" min="0" max="100" value="50" class="w-100">
+               </div>
+               <div class="range-wrap">
+                  <label>Size: <span id="wm-size-val">40</span></label>
+                  <input type="range" id="wm-size" min="10" max="200" value="40" class="w-100">
+               </div>
+               <div class="range-wrap">
+                  <label>Rotation: <span id="wm-rotate-val">0</span>°</label>
+                  <input type="range" id="wm-rotate" min="0" max="360" value="0" class="w-100">
+               </div>
+            </div>
+
+            <button id="download-btn" class="btn btn-primary w-100">Download Watermarked Image</button>
+            <p class="text-center mt-3 small text-muted">Processing is 100% local-first</p>
+          </div>
+        </div>
+      <section class="seo-content mt-5">
+        <h2 data-i18n="tools.add_watermark_to_image.what_is_title">What is Image Watermark Adder</h2>
+        <p>The Image Watermark Adder is a browser-based utility that lets you stamp custom copyright labels or brand logos onto your photos. By drawing text or a secondary image overlay directly onto a HTML5 canvas, the tool embeds your custom watermark into the image data.</p>
+        <p>This tool functions entirely client-side, meaning your high-resolution original images are processed in your web browser's local sandbox memory. This setup avoids server-side uploads, keeping your designs, sensitive templates, and personal photography confidential.</p>
+
+        <h3 class="mt-4">How to Use Image Watermark Adder</h3>
+        <ol style="line-height: 1.8; margin-bottom: 20px; padding-left: 20px;">
+          <li><strong>Upload your base image:</strong> Click the primary dotted drag-and-drop box to select an image from your device, or drag a file directly into the drop zone.</li>
+          <li><strong>Choose watermark type:</strong> Select either the <strong>Text</strong> tab to input a custom string, or the <strong>Logo</strong> tab to upload a graphical watermark (such as a PNG logo file).</li>
+          <li><strong>Customize your watermark content:</strong> Type your copyright statement or company name in the input box, or click the logo upload button to load your brand mark.</li>
+          <li><strong>Style the overlay:</strong> Adjust the <strong>Opacity</strong>, <strong>Size</strong>, and <strong>Rotation</strong> sliders. You can select a font family (Inter, Arial, Serif, Monospace) and choose a fill color using the color picker for text watermarks.</li>
+          <li><strong>Position the watermark:</strong> Click and drag the watermark directly over your image on the preview canvas to place it exactly where you want it.</li>
+          <li><strong>Save your watermarked image:</strong> Click the <strong>Download Watermarked Image</strong> button to render and download the watermarked file to your computer.</li>
+        </ol>
+
+        <h3 class="mt-4">Key Features</h3>
+        <ul style="line-height: 1.8; margin-bottom: 20px; padding-left: 20px;">
+          <li><strong>Flexible Text & Image Stamping:</strong> Toggle easily between text overlay and logo image upload options.</li>
+          <li><strong>Drag-to-Position Control:</strong> Drag the watermark around the canvas to place it precisely relative to your image elements.</li>
+          <li><strong>Interactive Adjustments:</strong> Calibrate watermark opacity, dimensions, and rotation angles in real-time.</li>
+          <li><strong>Format-Agnostic Processing:</strong> Works with common web file extensions including JPG, PNG, and WebP.</li>
+          <li><strong>Secure Sandbox Rendering:</strong> Performs all image compositing within your browser's private memory space.</li>
+        </ul>
+
+        <h3 class="mt-4">Common Use Cases</h3>
+        <ul style="line-height: 1.8; margin-bottom: 20px; padding-left: 20px;">
+          <li><strong>Photographers:</strong> Placing copyright signatures or brand logos on high-resolution preview shots before sending them to clients.</li>
+          <li><strong>Real Estate Agents:</strong> Overlaying agency logos or contact details onto property photos before listing them online.</li>
+          <li><strong>E-commerce Stores:</strong> Marking product photos with their store name to deter competitors from hotlinking or copying images.</li>
+          <li><strong>Graphic Designers:</strong> Stamping draft concepts with "SAMPLE" or "CONFIDENTIAL" to protect active work-in-progress drafts.</li>
+        </ul>
+
+        <h3 class="mt-4">Privacy & Data Note</h3>
+        <p>All watermarking logic executes directly in your browser. No files, logos, or text assets are uploaded to our servers, assuring complete privacy.</p>
+      </section>
+ 
+      <section class="faq-section mt-5">
+        <h2 data-i18n="tools.add_watermark_to_image.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Will watermarking compress my original image quality?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No, the tool does not compress your image during editing. The final file is rendered using a high-quality Canvas API export, keeping original details and resolutions sharp.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Does this tool upload my files online?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. The application runs 100% locally in your web browser's tab. Your images, text inputs, and logos are processed in RAM and never sent to a server.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I use transparent PNGs for my logo watermark?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes, uploading a PNG with transparency is the recommended way to add a professional logo watermark, as it blends cleanly without any solid background box.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              How do I adjust the watermark size on mobile?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Use the **Size** slider under the styling controls to scale the text or logo up and down to match the dimensions of your photo.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              What happens if I drag the watermark off the image canvas?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>The canvas boundary clips the drawing. If you drag the watermark off-screen, just click towards the center of the image area to relocate the anchor point.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const imageInput = document.getElementById('image-input');
+    const dropZone = document.getElementById('drop-zone');
+    const workspace = document.getElementById('tool-workspace');
+    const canvas = document.getElementById('main-canvas');
+    const ctx = canvas.getContext('2d');
+    
+    // UI Elements
+    const tabs = document.querySelectorAll('.tab');
+    const tabContents = document.querySelectorAll('.tab-content');
+    const downloadBtn = document.getElementById('download-btn');
+    
+    // Configs
+    const wmText = document.getElementById('wm-text');
+    const wmFont = document.getElementById('wm-font');
+    const wmColor = document.getElementById('wm-color');
+    const wmOpacity = document.getElementById('wm-opacity');
+    const wmSize = document.getElementById('wm-size');
+    const wmRotate = document.getElementById('wm-rotate');
+    const logoInput = document.getElementById('logo-input');
+    const logoDropZone = document.getElementById('logo-drop-zone');
+    const logoScale = document.getElementById('logo-scale');
+
+    let originalImg = null;
+    let logoImg = null;
+    let activeTab = 'text';
+    
+    // Position state
+    let wmX = 50;
+    let wmY = 50;
+    let isDragging = false;
+
+    // Tab Logic
+    tabs.forEach(tab => {
+       tab.onclick = () => {
+          tabs.forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          activeTab = tab.dataset.tab;
+          tabContents.forEach(c => c.classList.toggle('hidden', c.id !== `tab-${activeTab}`));
+          draw();
+       };
+    });
+
+    // File Handlers
+    dropZone.onclick = () => imageInput.click();
+    imageInput.onchange = (e) => handleMasterFile(e.target.files[0]);
+    
+    // Init Drag and Drop using global helper
+    setupDragDrop('drop-zone', (files) => {
+       if (files.length) handleMasterFile(files[0]);
+    });
+    logoInput.onchange = (e) => {
+       const file = e.target.files[0];
+       if (!file) return;
+       const reader = new FileReader();
+       reader.onload = (ev) => {
+          logoImg = new Image();
+          logoImg.onload = draw;
+          logoImg.src = ev.target.result;
+       };
+       reader.readAsDataURL(file);
+    };
+
+    function handleMasterFile(file) {
+      if (!file || !file.type.startsWith('image/')) return;
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        originalImg = new Image();
+        originalImg.onload = () => {
+          canvas.width = originalImg.width;
+          canvas.height = originalImg.height;
+          wmX = canvas.width / 2;
+          wmY = canvas.height / 2;
+          draw();
+          workspace.classList.remove('hidden');
+        };
+        originalImg.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+
+    // Drawing Logic
+    function draw() {
+       if (!originalImg) return;
+       ctx.clearRect(0, 0, canvas.width, canvas.height);
+       ctx.drawImage(originalImg, 0, 0);
+       
+       ctx.save();
+       ctx.globalAlpha = wmOpacity.value / 100;
+       ctx.translate(wmX, wmY);
+       ctx.rotate((wmRotate.value * Math.PI) / 180);
+       
+       if (activeTab === 'text') {
+          ctx.font = `${wmSize.value}px ${wmFont.value}`;
+          ctx.fillStyle = wmColor.value;
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.fillText(wmText.value, 0, 0);
+       } else if (logoImg) {
+          const scale = logoScale.value / 100;
+          const w = logoImg.width * (wmSize.value / 100) * scale;
+          const h = logoImg.height * (wmSize.value / 100) * scale;
+          ctx.drawImage(logoImg, -w/2, -h/2, w, h);
+       }
+       ctx.restore();
+    }
+
+    // Interaction
+    canvas.onmousedown = (e) => { isDragging = true; updatePos(e); };
+    window.onmouseup = () => isDragging = false;
+    canvas.onmousemove = (e) => { if (isDragging) updatePos(e); };
+
+    function updatePos(e) {
+       const rect = canvas.getBoundingClientRect();
+       const scaleX = canvas.width / rect.width;
+       const scaleY = canvas.height / rect.height;
+       wmX = (e.clientX - rect.left) * scaleX;
+       wmY = (e.clientY - rect.top) * scaleY;
+       draw();
+    }
+
+    [wmText, wmOpacity, wmSize, wmRotate, wmFont, wmColor, logoScale].forEach(el => {
+       el.oninput = () => {
+          if (el.id.includes('val')) return;
+          const valDisplay = document.getElementById(el.id + '-val');
+          if (valDisplay) valDisplay.innerText = el.value;
+          draw();
+       };
+    });
+
+    downloadBtn.onclick = () => {
+       const url = canvas.toDataURL('image/jpeg', 0.95);
+       const a = document.createElement('a');
+       a.href = url;
+       a.download = `watermarked_${Date.now()}.jpg`;
+       a.click();
+    };
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

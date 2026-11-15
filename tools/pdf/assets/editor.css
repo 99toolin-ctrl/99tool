@@ -1,0 +1,221 @@
+/* Advanced PDF Editor - Workspace Specific Styles */
+
+:root {
+    --toolbar-h: 60px;
+    --sidebar-w: 240px;
+    --editor-bg: #1e1e1e;
+    --page-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+body.editor-active {
+    overflow: hidden;
+}
+
+/* STAGE 1: LANDING PAGE */
+.landing-page {
+    background: var(--bg-primary);
+    min-height: 100vh;
+}
+
+.hero-section {
+    padding: 6rem 0;
+    background: linear-gradient(180deg, rgba(230, 57, 70, 0.05) 0%, transparent 100%);
+}
+
+.upload-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.upload-box {
+    background: var(--dark-card);
+    border: 2px dashed var(--border);
+    border-radius: 20px;
+    padding: 4rem 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.upload-box:hover {
+    border-color: var(--primary);
+    background: rgba(230, 57, 70, 0.05);
+    transform: translateY(-5px);
+}
+
+.upload-icon {
+    font-size: 4rem;
+}
+
+/* STAGE 2: EDITOR WORKSPACE */
+.editor-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 72px); /* Subtract Header height */
+    position: relative;
+    background: var(--bg-primary);
+}
+
+.toolbar {
+    height: var(--toolbar-h);
+    background: var(--dark-card);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    gap: 0.5rem;
+    z-index: 1000;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+}
+
+.toolbar::-webkit-scrollbar {
+    height: 3px;
+}
+.toolbar::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 10px;
+}
+
+.tool-group {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    flex-shrink: 0;
+}
+
+.editor-main {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+}
+
+.thumbnail-sidebar {
+    width: var(--sidebar-w);
+    background: var(--dark-card);
+    border-right: 1px solid var(--border);
+    overflow-y: auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.thumbnail-sidebar.collapsed {
+    transform: translateX(-100%);
+    width: 0;
+    padding: 0;
+    border: none;
+}
+
+.canvas-workspace {
+    flex: 1;
+    background: var(--editor-bg);
+    overflow: auto;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+}
+
+.page-container {
+    position: relative;
+    background: white;
+    box-shadow: var(--page-shadow);
+    margin-bottom: 2rem;
+}
+
+.editing-layer {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 10;
+    touch-action: none;
+}
+
+/* COMPONENTS */
+.tool-btn {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 6px 10px; border-radius: 8px; border: 1px solid transparent;
+    background: none; color: var(--text-muted); cursor: pointer; min-width: 60px;
+}
+.tool-btn:hover { background: rgba(230, 57, 70, 0.1); color: var(--primary); }
+.tool-btn.active { background: var(--primary); color: white; }
+.tool-btn i { font-size: 1.2rem; }
+.tool-btn span { font-size: 0.65rem; margin-top: 2px; }
+
+.tool-separator { width: 1px; height: 30px; background: var(--border); margin: 0 4px; }
+
+.filename-container { background: rgba(0,0,0,0.2); border: 1px solid var(--border); }
+.filename-container input { border: none; outline: none; background: transparent; color: white; padding: 4px 0; }
+
+.config-bar {
+    position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
+    background: rgba(26,26,26,0.9); padding: 10px 20px; border-radius: 30px;
+    border: 1px solid var(--border); display: flex; gap: 20px; z-index: 2000;
+}
+
+/* OVERLAYS */
+#loading-overlay {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.9);
+    z-index: 5000; display: flex; flex-direction: column; align-items: center; justify-content: center;
+}
+
+#text-input-overlay {
+    position: absolute; z-index: 2000;
+}
+#floating-text-input {
+    background: rgba(30,30,30,0.9); border: 1px solid var(--primary); color: white;
+    padding: 8px; border-radius: 4px; min-width: 100px;
+}
+
+.hidden { display: none !important; }
+
+/* MOBILE */
+/* MOBILE REFINEMENTS */
+@media (max-width: 992px) {
+    .thumbnail-sidebar { 
+        position: absolute; 
+        height: 100%; 
+        z-index: 1500; 
+        box-shadow: 10px 0 30px rgba(0,0,0,0.5);
+    }
+    .thumbnail-sidebar.collapsed { 
+        transform: translateX(-100%); 
+        width: var(--sidebar-w); 
+        padding: 1rem; /* Keep padding for consistent internal layout */
+    }
+    
+    .canvas-workspace {
+        padding: 1rem;
+    }
+
+    .tool-btn span { display: none; }
+    .tool-btn { min-width: 44px; padding: 6px; }
+    
+    .tool-separator { margin: 0 2px; }
+
+    .filename-container { display: none !important; } /* Hide filename on very small screens to save space */
+}
+
+@media (max-width: 576px) {
+    .hero-section { padding: 3rem 1rem; }
+    .display-4 { font-size: 2rem; }
+    .upload-box { padding: 2rem 1rem; }
+    
+    .config-bar {
+        width: 90%;
+        gap: 10px;
+        padding: 8px 15px;
+        bottom: 15px;
+    }
+    .config-item label { display: none; }
+    
+    .canvas-workspace {
+        padding: 0.5rem;
+    }
+}

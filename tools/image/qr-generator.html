@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Qr Generator – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/image/qr-generator.html"/>
+<meta property="og:title" content="Qr Generator – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/image/qr-generator.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Qr Generator \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/image/qr-generator.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- QRCode.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <style>
+    .qr-layout {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    @media (max-width: 992px) {
+      .qr-layout { grid-template-columns: 1fr; }
+    }
+    
+    .qr-preview-panel {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 400px;
+      text-align: center;
+    }
+    
+    #qrcode {
+       background: #fff;
+       padding: 20px;
+       border-radius: 12px;
+       box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+       margin-bottom: 2rem;
+    }
+    #qrcode img { display: inline-block !important; }
+
+    .sidebar {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      height: fit-content;
+      position: sticky;
+      top: 80px;
+    }
+    .input-wrap { margin-bottom: 1.5rem; }
+    .input-wrap label { display: block; font-size: 0.75rem; color: var(--text-muted); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; }
+    .input-wrap textarea, .input-wrap input {
+       width: 100%;
+       background: var(--dark);
+       border: 1px solid var(--border);
+       padding: 12px;
+       border-radius: 6px;
+       color: #fff;
+       font-family: inherit;
+       font-size: 1rem;
+    }
+    
+    .color-presets {
+       display: flex;
+       gap: 10px;
+       margin-bottom: 1rem;
+    }
+    .color-dot { width: 30px; height: 30px; border-radius: 50%; cursor: pointer; border: 2px solid transparent; }
+    .color-dot.active { border-color: var(--white); transform: scale(1.1); }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/image/qr-generator.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/image/qr-generator.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/image/qr-generator.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/image/qr-generator.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/image/qr-generator.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/image/qr-generator.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/image/qr-generator.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/image/qr-generator.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/image/qr-generator.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/image/qr-generator.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/image/qr-generator.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/image/qr-generator.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/image/qr-generator.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/image/qr-generator.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/image/qr-generator.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/image/qr-generator.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/image/qr-generator.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/image/qr-generator.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/image/qr-generator.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/image/qr-generator.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/image/qr-generator.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/image/qr-generator.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Secure QR Code Generator</h1>
+      <p>Convert URLs and text into high-performance QR codes. 100% private. Zero Tracking.</p>
+    </div>
+
+    <div class="tool-container">
+      <div class="qr-layout">
+        <!-- PREVIEW -->
+        <div class="qr-preview-panel">
+           <div id="qrcode"></div>
+           <p class="text-muted small">Scanner ready. Download below for print or digital use.</p>
+           <div class="mt-4 flex gap-4 w-100 justify-center">
+              <button id="download-png" class="btn btn-primary" style="flex:1">Download PNG</button>
+           </div>
+        </div>
+
+        <!-- SETTINGS -->
+        <div class="sidebar">
+           <div class="input-wrap">
+              <label>Content (URL or Text)</label>
+              <textarea id="qr-input" rows="4" placeholder="Enter your link or text here...">https://99tool.in</textarea>
+           </div>
+
+           <div class="input-wrap">
+              <label>QR Theme Color</label>
+              <div class="color-presets">
+                 <div class="color-dot active" style="background: #000000;" data-color="#000000"></div>
+                 <div class="color-dot" style="background: #e53935;" data-color="#e53935"></div>
+                 <div class="color-dot" style="background: #2196f3;" data-color="#2196f3"></div>
+                 <div class="color-dot" style="background: #4caf50;" data-color="#4caf50"></div>
+                 <div class="color-dot" style="background: #673ab7;" data-color="#673ab7"></div>
+              </div>
+              <input type="color" id="qr-color-custom" value="#000000" class="w-100 mt-2" style="height:35px; border-radius:4px; padding:0; border:1px solid var(--border);">
+           </div>
+
+           <div class="input-wrap">
+              <label>QR Size: <span id="qr-size-val">256</span>px</label>
+              <input type="range" id="qr-size" min="128" max="1024" step="64" value="256" class="w-100">
+           </div>
+
+           <p class="text-center small text-muted">Generated locally. No data is sent to any server.</p>
+        </div>
+      </div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5">
+        <h2 data-i18n="tools.qr_code_generator.what_is_title">What is Secure QR Code Generator</h2>
+        <p>The Secure QR Code Generator is a local utility that translates website links, text documents, contact info, or raw values into scannable static QR codes. Utilizing client-side JavaScript rendering libraries, the generator draws the matrix patterns dynamically inside your browser viewport.</p>
+        <p>This translation takes place completely offline inside your web browser. No redirect URLs or third-party tracking links are generated, ensuring that your visitors scan standard destination paths directly and privately without intermediate servers.</p>
+
+        <h3 class="mt-4">How to Use Secure QR Code Generator</h3>
+        <ol style="line-height: 1.8; margin-bottom: 20px; padding-left: 20px;">
+          <li><strong>Enter your content:</strong> Type or paste your destination link or plain text into the <strong>Content</strong> text area in the right sidebar.</li>
+          <li><strong>Select a theme color:</strong> Choose a color swatch preset from the <strong>QR Theme Color</strong> section, or use the custom HTML color picker to define your exact brand color hex code.</li>
+          <li><strong>Set the output size:</strong> Drag the <strong>QR Size</strong> slider to adjust the resolution width of the generated QR code (from 128px up to 1024px).</li>
+          <li><strong>Inspect the live scanner preview:</strong> Look at the generated code in the preview workspace. Use your smartphone camera to test scan the screen to verify contrast and link correctness.</li>
+          <li><strong>Download the asset:</strong> Click the <strong>Download PNG</strong> button to save the high-resolution, transparent-background QR code image file to your local device.</li>
+        </ol>
+
+        <h3 class="mt-4">Key Features</h3>
+        <ul style="line-height: 1.8; margin-bottom: 20px; padding-left: 20px;">
+          <li><strong>Static Encoding Matrix:</strong> Creates permanent, non-expiring QR codes that carry data directly in the pattern without redirects.</li>
+          <li><strong>Granular Color Customization:</strong> Colorize the matrix dots to match your brand style while maintaining optimal contrast.</li>
+          <li><strong>Adjustable Resolution Range:</strong> Export QR codes from tiny 128px screen icons to large 1024px print-ready files.</li>
+          <li><strong>High Reed-Solomon Correction:</strong> Encodes data using Level H error correction, allowing scans even if up to 30% of the pattern is damaged.</li>
+          <li><strong>No-Cloud Generation:</strong> Runs completely in local JS, eliminating tracking risks or database log storage.</li>
+        </ul>
+
+        <h3 class="mt-4">Common Use Cases</h3>
+        <ul style="line-height: 1.8; margin-bottom: 20px; padding-left: 20px;">
+          <li><strong>Restaurant Owners:</strong> Creating table-side QR codes linking to digital PDF menus without subscription expiration concerns.</li>
+          <li><strong>Marketing Teams:</strong> Generating scan targets for print brochures, posters, business cards, or billboard designs.</li>
+          <li><strong>System Admins:</strong> Encoding local network credentials, WiFi passwords, or server configurations into scannable cards.</li>
+          <li><strong>Retail Stores:</strong> Linking customers directly to payment gateways, customer feedback forms, or social channels.</li>
+        </ul>
+
+        <h3 class="mt-4">Privacy & Data Note</h3>
+        <p>Every step of the matrix calculation and PNG rendering is executed locally. Your input data is private and never transmitted over the network.</p>
+      </section>
+ 
+      <!-- FAQ SECTION -->
+      <section class="faq-section mt-5">
+        <h2 data-i18n="tools.qr_code_generator.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Do these QR codes have a scan limit or expiration date?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. Since these are static QR codes, the link data is directly written into the black-and-white grid structure. They will function forever, free of charge, with zero scan restrictions.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Is my URL or text content sent to any external server?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No, the QR code generation library runs entirely in local RAM within your active browser tab. No information is uploaded to 99tool.in or any third-party analytics provider.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              What is error correction (Level H)?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Reed-Solomon error correction adds redundant information blocks to the code pattern. Level H (High) is the highest rating, keeping the code scannable even if parts of it are dirty, smudged, or covered.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Why is my QR code not scanning?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Ensure there is high contrast between the QR theme color and the white background. Scanning may also fail if your destination text is extremely long, making the matrix dots too small for your camera to focus on.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I update the link of a downloaded QR code?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. Because the data is physically baked into the static dot pattern, you cannot edit the URL of an existing static QR code. You must generate and download a new code if the target link changes.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const qrInput = document.getElementById('qr-input');
+    const qrContainer = document.getElementById('qrcode');
+    const qrSizeSlider = document.getElementById('qr-size');
+    const qrSizeVal = document.getElementById('qr-size-val');
+    const colorDots = document.querySelectorAll('.color-dot');
+    const customColor = document.getElementById('qr-color-custom');
+    const downloadPng = document.getElementById('download-png');
+
+    let qrCode = null;
+    let activeColor = "#000000";
+
+    function generate() {
+       const size = parseInt(qrSizeSlider.value);
+       const text = qrInput.value.trim() || "https://99tool.in";
+       
+       qrContainer.innerHTML = '';
+       qrCode = new QRCode(qrContainer, {
+          text: text,
+          width: size,
+          height: size,
+          colorDark: activeColor,
+          colorLight: "#ffffff",
+          correctLevel: QRCode.CorrectLevel.H
+       });
+    }
+
+    // Listeners
+    colorDots.forEach(dot => {
+       dot.onclick = () => {
+          colorDots.forEach(d => d.classList.remove('active'));
+          dot.classList.add('active');
+          activeColor = dot.dataset.color;
+          customColor.value = activeColor;
+          generate();
+       };
+    });
+
+    customColor.onchange = () => {
+       activeColor = customColor.value;
+       colorDots.forEach(d => d.classList.remove('active'));
+       generate();
+    };
+
+    qrInput.oninput = generate;
+    qrSizeSlider.oninput = () => {
+       qrSizeVal.innerText = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(qrSizeSlider.value, 0) : qrSizeSlider.value;
+       generate();
+    };
+
+    downloadPng.onclick = () => {
+       const img = qrContainer.querySelector('img');
+       if (!img) return;
+       const a = document.createElement('a');
+       a.href = img.src;
+       a.download = `qr_code_${Date.now()}.png`;
+       a.click();
+    };
+
+    // Initial
+    generate();
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

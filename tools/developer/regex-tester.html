@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Regex Tester – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/developer/regex-tester.html"/>
+<meta property="og:title" content="Regex Tester – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/developer/regex-tester.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Regex Tester \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/developer/regex-tester.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="regex tester, regex validator, test regex online, regex tool, regular expression debugger" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json" id="schema-org-data">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Regex Tester",
+    "operatingSystem": "Any",
+    "applicationCategory": "DeveloperApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Real-time Regex Testing, Flags Support (g, i, m), Match Highlighting"
+  }
+  </script>
+
+  <style>
+    .regex-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    .tester-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .regex-input-group {
+       background: var(--dark-card);
+       padding: 24px;
+       border-radius: var(--radius);
+       border: 1px solid var(--border);
+    }
+
+    .flags-group {
+      display: flex;
+      gap: 15px;
+      margin-top: 12px;
+    }
+
+    .flag-checkbox {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      color: var(--text-muted);
+    }
+
+    .flag-checkbox input {
+      accent-color: var(--primary);
+      width: 16px;
+      height: 16px;
+    }
+
+    .flag-checkbox:hover { color: var(--white); }
+
+    .highlight-editor {
+      position: relative;
+      min-height: 200px;
+    }
+
+    #test-string-input, #highlight-backdrop {
+      width: 100%;
+      height: 200px;
+      padding: 16px;
+      font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', monospace;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      border-radius: var(--radius-sm);
+      margin: 0;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      overflow: auto;
+    }
+
+    #test-string-input {
+      position: relative;
+      z-index: 2;
+      background: transparent !important;
+      color: transparent !important;
+      caret-color: var(--white);
+      resize: vertical;
+    }
+
+    #highlight-backdrop {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      background: var(--dark);
+      border: 1px solid var(--border);
+      color: var(--text);
+      pointer-events: none;
+    }
+
+    .match-highlight {
+      background: rgba(229, 57, 53, 0.3);
+      border-bottom: 2px solid var(--primary);
+      border-radius: 2px;
+    }
+
+    .match-highlight:nth-child(even) {
+       background: rgba(33, 150, 243, 0.3);
+       border-bottom-color: #2196f3;
+    }
+
+    .results-panel {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+
+    .match-info {
+      font-size: 0.85rem;
+      color: var(--white);
+      margin-bottom: 15px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 10px;
+    }
+
+    .group-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .group-item {
+      background: var(--dark);
+      padding: 8px 12px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      border-left: 3px solid var(--primary);
+    }
+
+    .group-label {
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-right: 8px;
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/developer/regex-tester.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/developer/regex-tester.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/developer/regex-tester.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/developer/regex-tester.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/developer/regex-tester.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/developer/regex-tester.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/developer/regex-tester.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/developer/regex-tester.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/developer/regex-tester.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/developer/regex-tester.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/developer/regex-tester.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/developer/regex-tester.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/developer/regex-tester.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/developer/regex-tester.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/developer/regex-tester.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/developer/regex-tester.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/developer/regex-tester.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/developer/regex-tester.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/developer/regex-tester.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/developer/regex-tester.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/developer/regex-tester.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/developer/regex-tester.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#developer">Developer</a> <span>/</span> 
+        <span>Regex Tester</span>
+      </nav>
+      <h1>Regex Tester & Debugger</h1>
+      <p>Test your regular expressions in real-time with match highlighting and group extraction. 100%.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div class="regex-layout">
+        <div class="tester-container">
+          <div class="regex-input-group">
+            <div class="form-group">
+              <label>Regular Expression</label>
+              <div class="flex gap-2 items-center">
+                <span style="color: var(--primary); font-weight: 800; font-size: 1.2rem;">/</span>
+                <input type="text" id="regex-pattern" class="form-control" placeholder="[a-zA-Z0-9]+" style="font-family: monospace;">
+                <span style="color: var(--primary); font-weight: 800; font-size: 1.2rem;">/</span>
+                <span id="active-flags" style="color: var(--primary-light); font-weight: 600;">gm</span>
+              </div>
+            </div>
+
+            <div class="flags-group">
+              <label class="flag-checkbox"><input type="checkbox" value="g" checked> global (g)</label>
+              <label class="flag-checkbox"><input type="checkbox" value="i"> insensitive (i)</label>
+              <label class="flag-checkbox"><input type="checkbox" value="m" checked> multiline (m)</label>
+              <label class="flag-checkbox"><input type="checkbox" value="s"> dotAll (s)</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Test String</label>
+            <div class="highlight-editor">
+               <div id="highlight-backdrop"></div>
+               <textarea id="test-string-input" spellcheck="false" placeholder="Enter text to test your regex against..."></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="results-panel">
+          <h3>Match Results</h3>
+          <div id="match-summary" class="match-info">No matches found.</div>
+          
+          <div id="group-results" class="group-list">
+             <!-- Groups injected here -->
+          </div>
+        </div>
+      </div>
+
+            <!-- CONTENT SECTION -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.regex_tester.what_is_title"></h2>
+        <p data-i18n="tools.regex_tester.what_is_content"></p>
+
+        <h2 class="mt-4" data-i18n="tools.regex_tester.how_to_use_title"></h2>
+        <ol>
+          <li data-i18n-html="tools.regex_tester.how_to_use_steps[0]"></li>
+          <li data-i18n-html="tools.regex_tester.how_to_use_steps[1]"></li>
+          <li data-i18n-html="tools.regex_tester.how_to_use_steps[2]"></li>
+          <li data-i18n-html="tools.regex_tester.how_to_use_steps[3]"></li>
+          <li data-i18n-html="tools.regex_tester.how_to_use_steps[4]"></li>
+        </ol>
+
+        <h2 class="mt-4" data-i18n="tools.regex_tester.key_features_title"></h2>
+        <ul>
+          <li data-i18n-html="tools.regex_tester.key_features[0]"></li>
+          <li data-i18n-html="tools.regex_tester.key_features[1]"></li>
+          <li data-i18n-html="tools.regex_tester.key_features[2]"></li>
+          <li data-i18n-html="tools.regex_tester.key_features[3]"></li>
+          <li data-i18n-html="tools.regex_tester.key_features[4]"></li>
+        </ul>
+
+        <h2 class="mt-4" data-i18n="tools.regex_tester.common_use_cases_title"></h2>
+        <ul>
+          <li data-i18n-html="tools.regex_tester.common_use_cases[0]"></li>
+          <li data-i18n-html="tools.regex_tester.common_use_cases[1]"></li>
+          <li data-i18n-html="tools.regex_tester.common_use_cases[2]"></li>
+          <li data-i18n-html="tools.regex_tester.common_use_cases[3]"></li>
+        </ul>
+      </section>
+
+            <!-- FAQ SECTION -->
+      <section class="faq-section mt-5">
+        <h2 data-i18n="tools.regex_tester.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              <span data-i18n="tools.regex_tester.faq[0].question"></span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p data-i18n="tools.regex_tester.faq[0].answer"></p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span data-i18n="tools.regex_tester.faq[1].question"></span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p data-i18n="tools.regex_tester.faq[1].answer"></p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span data-i18n="tools.regex_tester.faq[2].question"></span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p data-i18n="tools.regex_tester.faq[2].answer"></p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span data-i18n="tools.regex_tester.faq[3].question"></span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p data-i18n="tools.regex_tester.faq[3].answer"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 Privacy & Data Note: Regex pattern compiling, matching evaluations, and group listings occur locally in your browser. None of your data is sent to our servers.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const patternInput = document.getElementById('regex-pattern');
+    const testInput = document.getElementById('test-string-input');
+    const backdrop = document.getElementById('highlight-backdrop');
+    const flagsCheckboxes = document.querySelectorAll('.flag-checkbox input');
+    const activeFlagsDisplay = document.getElementById('active-flags');
+    const matchSummary = document.getElementById('match-summary');
+    const groupResults = document.getElementById('group-results');
+
+    function update() {
+      const pattern = patternInput.value;
+      const text = testInput.value;
+      let flags = '';
+      
+      flagsCheckboxes.forEach(cb => { if(cb.checked) flags += cb.value; });
+      activeFlagsDisplay.textContent = flags;
+
+      if (!pattern) {
+        backdrop.textContent = text;
+        matchSummary.textContent = 'Enter a pattern to start.';
+        groupResults.innerHTML = '';
+        return;
+      }
+
+      try {
+        const regex = new RegExp(pattern, flags);
+        
+        // Match summary & Highlighting
+        let matches = [];
+        if (flags.includes('g')) {
+           matches = [...text.matchAll(regex)];
+        } else {
+           const singleMatch = text.match(regex);
+           if (singleMatch) matches = [singleMatch];
+        }
+
+        matchSummary.innerHTML = `Found <strong style="color:var(--primary)">${matches.length}</strong> match${matches.length === 1 ? '' : 'es'}.`;
+        
+        // Create highlights
+        let highlightedText = '';
+        let lastIndex = 0;
+        
+        matches.forEach((match, i) => {
+            const start = match.index;
+            const content = match[0];
+            highlightedText += escapeHTML(text.substring(lastIndex, start));
+            highlightedText += `<span class="match-highlight">${escapeHTML(content)}</span>`;
+            lastIndex = start + content.length;
+        });
+        highlightedText += escapeHTML(text.substring(lastIndex));
+        backdrop.innerHTML = highlightedText + '\n'; // Add newline fix for scroll syncing
+
+        // Show group results for the first match
+        groupResults.innerHTML = '';
+        if (matches.length > 0) {
+           const firstMatch = matches[0];
+           firstMatch.forEach((val, i) => {
+              const div = document.createElement('div');
+              div.className = 'group-item';
+              div.innerHTML = `<span class="group-label">Match ${i}:</span> ${escapeHTML(val || 'undefined')}`;
+              groupResults.appendChild(div);
+           });
+           
+           // Named groups
+           if (firstMatch.groups) {
+              Object.entries(firstMatch.groups).forEach(([name, val]) => {
+                const div = document.createElement('div');
+                div.className = 'group-item';
+                div.style.borderColor = '#4caf50';
+                div.innerHTML = `<span class="group-label" style="color:#4caf50;">${name}:</span> ${escapeHTML(val)}`;
+                groupResults.appendChild(div);
+              });
+           }
+        }
+
+      } catch (e) {
+        backdrop.textContent = text;
+        matchSummary.innerHTML = `<span style="color:var(--primary)">⚠️ Invalid pattern: ${e.message}</span>`;
+        groupResults.innerHTML = '';
+      }
+    }
+
+    function escapeHTML(str) {
+      const div = document.createElement('div');
+      div.textContent = str;
+      return div.innerHTML;
+    }
+
+    // Sync scrolling
+    testInput.onscroll = () => {
+      backdrop.scrollTop = testInput.scrollTop;
+      backdrop.scrollLeft = testInput.scrollLeft;
+    };
+
+    patternInput.oninput = update;
+    testInput.oninput = update;
+    flagsCheckboxes.forEach(cb => cb.onchange = update);
+
+    // Initial update
+    update();
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

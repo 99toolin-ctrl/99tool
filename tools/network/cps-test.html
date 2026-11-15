@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Cps Test – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/network/cps-test.html"/>
+<meta property="og:title" content="Cps Test – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/network/cps-test.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Cps Test \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/network/cps-test.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .cps-workspace {
+      max-width: 600px;
+      margin: 2rem auto;
+      text-align: center;
+    }
+    .click-area {
+      width: 100%;
+      height: 300px;
+      background: var(--bg-secondary);
+      border: 3px dashed var(--border);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.1s;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+    .click-area:active {
+      transform: scale(0.98);
+      background: rgba(229, 57, 53, 0.05);
+      border-color: var(--primary);
+    }
+    .click-hint {
+       font-size: 1.5rem;
+       font-weight: 700;
+       color: var(--text-muted);
+       pointer-events: none;
+    }
+    .stats-main {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .stat-box {
+      background: var(--dark-card);
+      padding: 1rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+    .stat-val { font-size: 1.5rem; font-weight: 800; color: var(--primary); display: block; }
+    .stat-label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; }
+
+    .modes-row {
+       display: flex;
+       justify-content: center;
+       gap: 10px;
+       margin-bottom: 1.5rem;
+    }
+    .mode-btn {
+       background: var(--dark-card);
+       border: 1px solid var(--border);
+       color: var(--text);
+       padding: 8px 16px;
+       border-radius: 30px;
+       cursor: pointer;
+       font-weight: 600;
+       transition: all 0.2s;
+    }
+    .mode-btn.active {
+       background: var(--primary);
+       border-color: var(--primary);
+       color: white;
+    }
+    .click-fx {
+       position: absolute;
+       width: 10px; height: 10px;
+       background: var(--primary);
+       border-radius: 50%;
+       pointer-events: none;
+       animation: ripple 0.4s ease-out forwards;
+    }
+    @keyframes ripple {
+       to { transform: scale(8); opacity: 0; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/network/cps-test.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/network/cps-test.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/network/cps-test.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/network/cps-test.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/network/cps-test.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/network/cps-test.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/network/cps-test.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/network/cps-test.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/network/cps-test.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/network/cps-test.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/network/cps-test.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/network/cps-test.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/network/cps-test.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/network/cps-test.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/network/cps-test.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/network/cps-test.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/network/cps-test.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/network/cps-test.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/network/cps-test.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/network/cps-test.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/network/cps-test.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/network/cps-test.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Infinite CPS Tester</h1>
+      <p>Measure your raw clicking speed and track your Clicks Per Second performance.</p>
+    </div>
+
+    <div class="cps-workspace">
+      <div class="modes-row">
+         <button class="mode-btn active" data-time="1">1 Sec</button>
+         <button class="mode-btn" data-time="5">5 Sec</button>
+         <button class="mode-btn" data-time="10">10 Sec</button>
+      </div>
+
+      <div class="stats-main">
+        <div class="stat-box">
+          <span class="stat-val" id="time-left">0.00</span>
+          <span class="stat-label">Timer</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-val" id="click-count">0</span>
+          <span class="stat-label">Clicks</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-val" id="cps-val">0.0</span>
+          <span class="stat-label">CPS</span>
+        </div>
+      </div>
+
+      <div class="click-area" id="click-area">
+         <div class="click-hint">Click here to start</div>
+      </div>
+
+      <button onclick="resetTest()" class="btn btn-secondary btn-lg">Reset Test</button>
+
+      <!-- SEO CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.cps_tester.what_is_title">What is Infinite CPS Tester</h2>
+        <p>The Infinite CPS Tester is a client-side click speed performance analyzer designed to measure your Clicks Per Second (CPS) over custom durations. By logging click events inside a responsive, trackable click box, the application calculates raw finger clicking velocity, rhythm, and input consistency in real-time.</p>
+        <p>Click speed is an essential metric in competitive eSports games, where actions are mapped directly to input rates. This tool offers a neutral testing ground to benchmark your hardware switch capabilities and test different clicking techniques under precise, millisecond-accurate timer sweeps.</p>
+
+        <h3 class="mt-4">How to Use Infinite CPS Tester</h3>
+        <ol style="line-height: 1.8; margin-bottom: 20px; padding-left: 20px;">
+          <li><strong>Select your time duration:</strong> Click the duration mode buttons at the top to choose between **1 Sec**, **5 Sec**, or **10 Sec** intervals.</li>
+          <li><strong>Begin the test:</strong> Press your mouse button or tap your touch screen inside the dashed **Click here to start** box. The timer will launch on your first click.</li>
+          <li><strong>Click continuously:</strong> Click as fast as possible within the workspace. A red ripple effect will trace your cursor location inside the box.</li>
+          <li><strong>Check live outputs:</strong> Follow the dashboard boxes above the input area to read your remaining time, click count, and real-time CPS.</li>
+          <li><strong>Complete the benchmark:</strong> When the timer reaches zero, the workspace locks and displays the final click average.</li>
+          <li><strong>Reset:</strong> Click the **Reset Test** button to clear your score and run a new clicking speed benchmark.</li>
+        </ol>
+
+        <h3 class="mt-4">Key Features</h3>
+        <ul style="line-height: 1.8; margin-bottom: 20px; padding-left: 20px;">
+          <li><strong>Multi-mode Duration Selectors:</strong> Quick configuration buttons to test speeds in short bursts or sustained clicks.</li>
+          <li><strong>Interactive Ripple Feedback:</strong> Spawns absolute coordinate ripples inside the click zone to visually verify click registrations.</li>
+          <li><strong>Responsive Touch and Mouse Handlers:</strong> Dual event listeners supporting standard gaming mice and mobile multi-touch gestures.</li>
+          <li><strong>Precision Delta Calculations:</strong> Uses high-resolution browser performance timestamps to calculate speeds.</li>
+        </ul>
+
+        <h3 class="mt-4">Common Use Cases</h3>
+        <ul style="line-height: 1.8; margin-bottom: 20px; padding-left: 20px;">
+          <li><strong>Competitive Action Practice:</strong> Refining jitter, butterfly, or drag clicking styles for PvP battles or clicker games.</li>
+          <li><strong>Hardware Switch Audits:</strong> Comparing microswitch response speeds between different mice to identify the most responsive gaming gear.</li>
+          <li><strong>Endurance Diagnostics:</strong> Analyzing how much your click speed drops as you move from a 1-second sprint to longer 10-second tests.</li>
+        </ul>
+
+        <h3 class="mt-4">Frequently Asked Questions</h3>
+        <div style="line-height: 1.8; margin-bottom: 20px;">
+          <p><strong>Q: What is a good Clicks Per Second (CPS) score?</strong><br>
+          A: A standard office worker typically clicks at about 3 to 6 CPS. Competitive gamers aiming for high actions-per-minute (APM) strive to hit 10 to 15 CPS using specialized finger techniques.</p>
+          <p><strong>Q: How do different test durations impact CPS scores?</strong><br>
+          A: Shorter tests (like 1 second) measure your peak acceleration and raw muscle response. Longer tests (like 5 or 10 seconds) evaluate muscular endurance and rhythm consistency as fatigue sets in.</p>
+          <p><strong>Q: Why does the click area display ripples under my cursor?</strong><br>
+          A: The ripples serve as visual confirmation that your clicks are registering in the browser thread. If you click and no ripple appears, your browser is lagging or dropping inputs.</p>
+          <p><strong>Q: Can I run this clicking test on a tablet or phone?</strong><br>
+          A: Yes. The tester supports mobile layouts and features touch handlers that capture taps on mobile web browsers.</p>
+        </div>
+
+        <h3 class="mt-4">Privacy & Data Note</h3>
+        <p>All click coordinates, intervals, and speeds are processed locally within your browser tab. Your inputs are never logged, stored, or sent to external servers.</p>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const area = document.getElementById('click-area');
+    const clicksDisp = document.getElementById('click-count');
+    const timeDisp = document.getElementById('time-left');
+    const cpsDisp = document.getElementById('cps-val');
+    const modeBtns = document.querySelectorAll('.mode-btn');
+
+    let clicks = 0;
+    let timer = 1;
+    let currentMode = 1;
+    let startTime = 0;
+    let isActive = false;
+    let interval = null;
+
+    modeBtns.forEach(btn => {
+       btn.onclick = () => {
+          if (isActive) return;
+          modeBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentMode = parseInt(btn.dataset.time);
+          timer = currentMode;
+          timeDisp.innerText = timer.toFixed(2);
+       };
+    });
+
+    function resetTest() {
+       clearInterval(interval);
+       isActive = false;
+       clicks = 0;
+       timer = currentMode;
+       clicksDisp.innerText = '0';
+       timeDisp.innerText = timer.toFixed(2);
+       cpsDisp.innerText = '0.0';
+       area.querySelector('.click-hint').innerText = 'Click here to start';
+    }
+
+    area.addEventListener('mousedown', (e) => {
+       if (timer <= 0) return;
+       
+       if (!isActive) {
+          startTest();
+       }
+
+       clicks++;
+       clicksDisp.innerText = clicks;
+       createRipple(e);
+       calculateCPS();
+    });
+
+    // Touch support
+    area.addEventListener('touchstart', (e) => {
+       e.preventDefault();
+       if (timer <= 0) return;
+       if (!isActive) startTest();
+       clicks++;
+       clicksDisp.innerText = clicks;
+       calculateCPS();
+    });
+
+    function startTest() {
+       isActive = true;
+       startTime = performance.now();
+       area.querySelector('.click-hint').innerText = 'CLICK FAST!';
+       
+       interval = setInterval(() => {
+          const elapsed = (performance.now() - startTime) / 1000;
+          const remaining = Math.max(0, currentMode - elapsed);
+          timeDisp.innerText = remaining.toFixed(2);
+          
+          if (remaining <= 0) {
+             clearInterval(interval);
+             isActive = false;
+             area.querySelector('.click-hint').innerText = 'Test Finished!';
+             calculateCPS(true);
+          }
+       }, 10);
+    }
+
+    function calculateCPS(final = false) {
+       const elapsed = final ? currentMode : Math.max(0.1, (performance.now() - startTime) / 1000);
+       const cps = (clicks / elapsed).toFixed(1);
+       cpsDisp.innerText = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(clicks / elapsed, 1) : (clicks / elapsed).toFixed(1);
+    }
+
+    function createRipple(e) {
+       const rect = area.getBoundingClientRect();
+       const x = e.clientX - rect.left;
+       const y = e.clientY - rect.top;
+       const ripple = document.createElement('div');
+       ripple.className = 'click-fx';
+       ripple.style.left = x + 'px';
+       ripple.style.top = y + 'px';
+       area.appendChild(ripple);
+       setTimeout(() => ripple.remove(), 400);
+    }
+
+    resetTest();
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Vocabulary Builder – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/learning/vocabulary-builder.html"/>
+<meta property="og:title" content="Vocabulary Builder – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/learning/vocabulary-builder.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Vocabulary Builder \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/learning/vocabulary-builder.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .vocab-container {
+      display: grid;
+      grid-template-columns: 350px 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .add-pane {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      height: fit-content;
+      position: sticky;
+      top: 20px;
+    }
+
+    .word-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .word-card {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      position: relative;
+    }
+    .word-card h3 { color: var(--primary); margin: 0; }
+    .word-card .meaning { font-size: 1.1rem; font-weight: 500; }
+    .word-card .example { font-style: italic; color: var(--text-muted); border-left: 2px solid var(--border); padding-left: 10px; margin-top: 5px; }
+    
+    .search-bar {
+      margin-bottom: 2rem;
+      width: 100%;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 12px 20px;
+      border-radius: 30px;
+      color: white;
+    }
+
+    .delete-btn {
+      position: absolute; top: 1rem; right: 1rem;
+      background: none; border: none; color: var(--text-muted); cursor: pointer; font-size: 1.2rem;
+    }
+    .delete-btn:hover { color: #e03131; }
+
+    @media (max-width: 992px) {
+      .vocab-container { grid-template-columns: 1fr; }
+      .add-pane { position: static; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-hero text-center">
+      <nav class="breadcrumb justify-content-center">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#learning">Learning</a> <span>/</span> 
+        <span>Vocabulary Builder</span>
+      </nav>
+      <h1>Vocabulary Builder</h1>
+      <p>Build your own private dictionary. Save words you learn and master them over time.</p>
+    </div>
+
+    <input type="text" id="vocab-search" class="search-bar" placeholder="Search your word bank..." oninput="renderWords()">
+
+    <div class="vocab-container">
+      <aside class="add-pane">
+        <h3>+ Add New Word</h3>
+        <div class="form-group mt-3">
+          <label>Word</label>
+          <input type="text" id="word-input" placeholder="e.g. Ephemeral">
+        </div>
+        <div class="form-group mt-3">
+          <label>Meaning</label>
+          <textarea id="meaning-input" rows="2" placeholder="The definition..."></textarea>
+        </div>
+        <div class="form-group mt-3">
+          <label>Example Sentence</label>
+          <textarea id="example-input" rows="2" placeholder="How to use it..."></textarea>
+        </div>
+        <button class="btn btn-primary btn-full mt-4" onclick="addWord()">Save to Word Bank</button>
+      </aside>
+
+      <div class="word-list" id="word-list">
+        <!-- Words list -->
+      </div>
+    </div>
+
+    <!-- SEO CONTENT -->
+    <section class="seo-content mt-5">
+      <h2>Curate Your Personal Path to Fluency</h2>
+      <p>Language learning is not just about memorizing thousands of words; it's about mastering the ones that matter to you. Our <strong>vocabulary builder</strong> allows you to create a high-fidelity word bank that reflects your specific interests and professional needs. Whether you're preparing for the GRE, learning medical terminology, or just want to sound more articulate, our <strong>English learning tool</strong> is your private companion.</p>
+      
+      <h3 class="mt-4">Why Manual Curation Beats Pre-Made Lists</h3>
+      <p>Most <strong>vocabulary apps online</strong> overwhelm you with lists of 10,000+ words you might never use. Research in cognitive linguistics shows that you are 4x more likely to remember a word if you find it in the wild (a book, a video, or conversation) and manually record its meaning. Our <strong>word learning tool</strong> facilitates this by providing a clean, focused interface to store your discoveries.</p>
+
+      <ul style="line-height: 1.8; margin-top: 15px;">
+        <li><strong>Discovery:</strong> Come across a new word while reading.</li>
+        <li><strong>Recording:</strong> Save it privately with a meaningful context example.</li>
+        <li><strong>Review:</strong> Search and review your collection regularly to solidify the memory.</li>
+      </ul>
+
+      <h3 class="mt-4">Data Sovereignty for Learners</h3>
+      <p>Your learning progress is personal. Many <strong>vocabulary apps</strong> track your struggle points and word associations to sell targeted ads or study subscriptions. At 99tool.in, we believe in 100% privacy. Your entire word bank is stored in your browser's <code>localStorage</code>, meaning your progress stays on your machine. It’s the perfect <strong>private vocabulary manager</strong> for students who value their data security.</p>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    let words = JSON.parse(localStorage.getItem('99tool_vocab_bank')) || [];
+
+    function save() {
+      localStorage.setItem('99tool_vocab_bank', JSON.stringify(words));
+      renderWords();
+    }
+
+    function addWord() {
+      const word = document.getElementById('word-input').value.trim();
+      const meaning = document.getElementById('meaning-input').value.trim();
+      const example = document.getElementById('example-input').value.trim();
+
+      if (!word || !meaning) return;
+
+      words.unshift({ word, meaning, example, date: new Date().toLocaleDateString() });
+      
+      document.getElementById('word-input').value = '';
+      document.getElementById('meaning-input').value = '';
+      document.getElementById('example-input').value = '';
+      
+      save();
+    }
+
+    function deleteWord(idx) {
+      if(confirm("Delete this word?")) {
+        words.splice(idx, 1);
+        save();
+      }
+    }
+
+    function renderWords() {
+      const list = document.getElementById('word-list');
+      const query = document.getElementById('vocab-search').value.toLowerCase();
+      
+      const filtered = words.filter(w => 
+        w.word.toLowerCase().includes(query) || 
+        w.meaning.toLowerCase().includes(query)
+      );
+
+      list.innerHTML = filtered.length ? "" : "<div class='text-center py-5 text-muted'>No words found matching your search.</div>";
+
+      filtered.forEach((w, i) => {
+        const card = document.createElement('div');
+        card.className = 'word-card';
+        card.innerHTML = `
+          <button class="delete-btn" onclick="deleteWord(${i})">&times;</button>
+          <h3>${w.word}</h3>
+          <div class="meaning">${w.meaning}</div>
+          ${w.example ? `<div class="example">"${w.example}"</div>` : ''}
+          <div class="text-muted small mt-2">Added on ${w.date}</div>
+        `;
+        list.appendChild(card);
+      });
+    }
+
+    renderWords();
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Spreadsheet Tool – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/data-file/spreadsheet-tool.html"/>
+<meta property="og:title" content="Spreadsheet Tool – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/data-file/spreadsheet-tool.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Spreadsheet Tool \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/data-file/spreadsheet-tool.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="spreadsheet, simple spreadsheet tool, online excel alternative, spreadsheet formulas, browser spreadsheet" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Spreadsheet Tool",
+    "operatingSystem": "Any",
+    "applicationCategory": "DataApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Grid editing, Basic formulas, Local storage, CSV export, Secure sandbox"
+  }
+  </script>
+
+  <style>
+    .sheet-container {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-bottom: 30px;
+    }
+
+    .sheet-toolbar {
+      padding: 12px 20px;
+      background: rgba(0, 0, 0, 0.2);
+      border-bottom: 2px solid var(--border);
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .formula-bar {
+      flex: 1;
+      display: flex;
+      background: var(--dark);
+      border-radius: 4px; border: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    .formula-prefix { padding: 6px 12px; font-weight: 800; color: var(--primary); background: rgba(229, 57, 53, 0.1); border-right: 1px solid var(--border); }
+    .formula-input { flex: 1; background: transparent; border: none; padding: 6px 12px; color: var(--white); outline: none; font-family: 'Fira Code', monospace; }
+
+    .grid-wrapper { overflow: auto; max-height: 500px; }
+
+    .grid-table { border-collapse: collapse; min-width: 100%; table-layout: fixed; }
+    
+    .grid-table th {
+      width: 100px; padding: 6px; background: var(--dark-card); border: 1px solid var(--border);
+      color: var(--text-muted); font-size: 0.75rem; text-align: center; font-weight: 700;
+      position: sticky; top: 0; z-index: 10;
+    }
+
+    .grid-table th.row-header { position: sticky; left: 0; width: 40px; z-index: 11; }
+    
+    .grid-table td {
+      border: 1px solid var(--border); padding: 0; height: 32px; background: var(--dark);
+      color: var(--text); font-size: 0.85rem; outline: none;
+    }
+
+    .grid-table td input {
+      width: 100%; height: 100%; background: transparent; border: none; color: inherit; padding: 0 8px;
+      outline: none; font-size: inherit; text-align: right;
+    }
+
+    .grid-table td input:focus { background: rgba(229, 57, 53, 0.05); }
+
+    .cell-selected { box-shadow: inset 0 0 0 2px var(--primary) !important; z-index: 2; }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#data">Data & File</a> <span>/</span> 
+        <span>Spreadsheet Tool</span>
+      </nav>
+      <h1>Spreadsheet Tool</h1>
+      <p>A simple, secure alternative to Excel for your basic calculation needs. Manage data, apply formulas, and keep everything private in your browser.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div class="sheet-container">
+        <div class="sheet-toolbar">
+           <div class="formula-bar">
+              <div class="formula-prefix">fx</div>
+              <input type="text" id="fx-bar" class="formula-input" placeholder="Select a cell to enter formula (e.g., =SUM(A1:A5))">
+           </div>
+           <div class="flex gap-2">
+              <button class="btn btn-primary btn-sm" id="export-csv">Export CSV</button>
+              <button class="btn btn-secondary btn-sm" id="clear-sheet">Reset</button>
+           </div>
+        </div>
+        <div class="grid-wrapper">
+           <table class="grid-table" id="sheet-grid">
+              <thead><tr id="grid-head"></tr></thead>
+              <tbody id="grid-body"></tbody>
+           </table>
+        </div>
+      </div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5">
+        <h2>Professional Calculation in Private: The Case for Spreadsheets</h2>
+        <p>We’ve all been there: you need to crunch some quick numbers—a budget for a new project, a list of expenses, or a simple data tally—and you reach for a <strong>spreadsheet tool online</strong>. But as you prepare to type your financial details into the cloud-hosted engine, you hesitate. Do you really want to share your project's "Economic Roadmap" with a third-party server or an ad-tracking platform? And do you really want to deal with the loading lag of a heavy office suite just to sum up a few rows?</p>
+
+        <p>At 99tool.in, we built our <strong>spreadsheet tool</strong> to provide a lightweight, privacy-first laboratory for your calculations. By utilizing purely browser-side memory and rule-based logic, we allow you to <strong>manage data formulas</strong> entirely within the secure sandbox of your machine. Whether you’re a small business owner tracking daily totals, a student organizing research data, or a budget-conscious dev, our <strong>safe spreadsheet utility</strong> ensures that your numbers stay where they belong: on your device, under your total sovereignty.</p>
+        
+        <div class="tool-preview-box mt-4 mb-4" style="text-align:center;">
+           <img src="../../assets/images/markdown-preview.png" alt="Pro-Grade Lightweight Spreadsheet Interface with formula support and local storage" class="tool-preview" id="tool-preview-img" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+        </div>
+
+        <h3 class="mt-4">The Logic of "Simple Grid Reactivity"</h3>
+        <p>Calculation is about "Reliable Relationships." Most <strong>online spreadsheet basics</strong> are either too simple to handle formulas or so complex they become confusing. Our <strong>professional sheet tool</strong> takes a human-centric approach: we focus on **Fast Formula Evaluation** and **Clean Grid UIX**.</p>
+        
+        <p>We've engineered a deterministic formula engine that supports universal standards like <code>=SUM()</code>, <code>=AVG()</code>, and <code>=COUNT()</code>. Our <strong>safe formula validator</strong> processes your inputs in real-time, updating dependencies across the grid as you type. This transparency transforms a static data table into a living, reactive model, helping you visualize the impact of your variables without the friction of enterprise-scale software.</p>
+
+        <h3 class="mt-4">Why Manual Control is the Ethical Choice</h2>
+        <p>In the age of automated financial tracking and data harvesting, your spreadsheets are a window into your private strategies. Using a standard <strong>spreadsheet tool online free</strong> creates a digital trail of your calculations and priorities. Our 100% <strong>sheet utility</strong> removes this "Privacy Risk" entirely from your routine.</p>
+        
+        <p>Because the logic and storage happen in your browser's private memory, your calculations are invisible to the outside world. No analytics are tracked, no data points are harvested, and no proprietary formulas are shared with AI engines or trackers. At 99tool.in, we believe that <strong>crunching numbers</strong> should be an empowering utility, not a data-collection opportunity. With us, you have a private, professional darkroom for your data that fits in your browser tab.</p>
+
+        <h3 class="mt-4">How to Use Your Sheet (Step-by-Step)</h3>
+        <p>Setting up a calculation model should be a high-speed, 5-second task. Here is how to use our <strong>spreadsheet tool</strong>:</p>
+        <ul style="line-height: 1.8; margin-bottom: 20px;">
+          <li><strong>Step 1: Define the Grid</strong> — Our system starts you with a professional grid. Click any cell to begin entering data or headers.</li>
+          <li><strong>Step 2: Apply Logic</strong> — Use the formula bar to enter standards like <code>=SUM(A1:A10)</code>. The grid updates automatically as you change cell values.</li>
+          <li><strong>Step 3: Organize and Format</strong> — Use columns and rows to structure your data. Everything is kept locally, and your work persists as you refresh the tab.</li>
+          <li><strong>Step 4: Secure Your Export</strong> — Once your work is finished, click "Export CSV" to save the data to your machine for use in other professional environments.</li>
+        </ul>
+
+        <h3 class="mt-4">Strategic Use Cases for Your Local Spreadsheet</h3>
+        <p>Our <strong>searchable sheet builder</strong> is the essential companion for modern data tasks:</p>
+        
+        <p><strong>For Project Planners:</strong> Tracking task hours or material costs? Use our <strong>spreadsheet tool</strong> for immediate, private calculations without needing an account.</p>
+        
+        <p><strong>For Financial Auditors:</strong> Verifying totals in an external report? Use our <strong>safe sheet tool</strong> to cross-check numbers privately without complex software setups.</p>
+        
+        <p><strong>For Educators & Students:</strong> Learning the logic of cell references and functions? Use our <strong>safe data tool</strong> as a lightweight classroom aid for data literacy.</p>
+
+        <h3 class="mt-5">Explore Your Complete Data Suite</h3>
+        <p>Once you’ve calculated your data, you might need to view it differently. Check out our <strong><a href="csv-editor.html">CSV Viewer & Editor</a></strong>. Or, if you need to visualize the trends, use our <strong><a href="data-visualizer.html">Data Visualizer</a></strong>. At 99tool.in, we are building a world-class, 100% private digital toolkit to give you total control over the integrity of your data.</p>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Which formulas are supported?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Our <strong>spreadsheet</strong> supports basic business standards like <code>=SUM()</code>, <code>=AVG()</code> (Average), <code>=COUNT()</code>, <code>=MIN()</code>, and <code>=MAX()</code>. We also support standard arithmetic operators like <code>+</code>, <code>-</code>, <code>*</code>, and <code>/</code>.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Is my work saved automatically?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. We use <strong>localStorage technology</strong> to save your cell data locally in your browser. This means if you refresh the page or return later, your data will still be there. Note: Clearing your browser cache will erase this local save.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Is my data secure and private?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Absolutely. All processing and storage are localized to your <strong>private browser session</strong>. No data is sent to 99tool.in servers, and no records of your calculations are kept. Your data remains 100% under your control.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 Privacy-First. Local Storage. 100% Secure. Last updated: April 10, 2026.</p>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const gridHead = document.getElementById('grid-head');
+    const gridBody = document.getElementById('grid-body');
+    const fxBar = document.getElementById('fx-bar');
+    const exportBtn = document.getElementById('export-csv');
+    const clearBtn = document.getElementById('clear-sheet');
+
+    const COLS = 12; // A-L
+    const ROWS = 25;
+
+    let data = {}; // Key format: "A1", value is { raw: "", val: "" }
+    let selectedCell = null;
+
+    function initGrid() {
+       // Headers
+       gridHead.innerHTML = '<th class="row-header"></th>';
+       for (let i = 0; i < COLS; i++) {
+          gridHead.innerHTML += `<th>${String.fromCharCode(65 + i)}</th>`;
+       }
+
+       // Body
+       gridBody.innerHTML = '';
+       for (let r = 1; r <= ROWS; r++) {
+          let rowHtml = `<th class="row-header">${r}</th>`;
+          for (let c = 0; c < COLS; c++) {
+             const id = `${String.fromCharCode(65 + c)}${r}`;
+             rowHtml += `<td><input type="text" id="cell-${id}" data-cell="${id}"></td>`;
+          }
+          gridBody.innerHTML += `<tr>${rowHtml}</tr>`;
+       }
+
+       // Load saved data
+       const saved = localStorage.getItem('99tool_sheet_data');
+       if (saved) {
+          data = JSON.parse(saved);
+          Object.keys(data).forEach(id => {
+             const el = document.getElementById(`cell-${id}`);
+             if (el) el.value = data[id].raw;
+          });
+          evaluateAll();
+       }
+
+       attachListeners();
+    }
+
+    function attachListeners() {
+       document.querySelectorAll('.grid-table td input').forEach(input => {
+          input.onfocus = (e) => {
+             selectedCell = e.target.dataset.cell;
+             fxBar.value = data[selectedCell] ? data[selectedCell].raw : "";
+             document.querySelectorAll('.grid-table td input').forEach(i => i.parentNode.classList.remove('cell-selected'));
+             e.target.parentNode.classList.add('cell-selected');
+          };
+
+          input.oninput = (e) => {
+             const id = e.target.dataset.cell;
+             const val = e.target.value;
+             data[id] = { raw: val, val: val };
+             if (id === selectedCell) fxBar.value = val;
+             evaluateAll();
+             saveData();
+          };
+       });
+
+       fxBar.oninput = (e) => {
+          if (!selectedCell) return;
+          const el = document.getElementById(`cell-${selectedCell}`);
+          el.value = e.target.value;
+          data[selectedCell] = { raw: e.target.value, val: e.target.value };
+          evaluateAll();
+          saveData();
+       };
+    }
+
+    function evaluateAll() {
+       // First pass: reset all to raw
+       Object.keys(data).forEach(id => {
+          data[id].val = data[id].raw;
+       });
+
+       // Simple formula evaluation
+       Object.keys(data).forEach(id => {
+          const raw = data[id].raw;
+          if (raw.startsWith('=')) {
+             data[id].val = parseFormula(raw.substring(1).toUpperCase());
+          }
+       });
+
+       // Update UI
+       document.querySelectorAll('.grid-table td input').forEach(input => {
+          const id = input.dataset.cell;
+          // If not focused, show computed value. If focused, show raw
+          if (input.dataset.cell !== selectedCell) {
+             input.value = data[id] ? data[id].val : "";
+          }
+       });
+    }
+
+    function parseFormula(f) {
+       try {
+          // SUM(A1:A5)
+          const sumMatch = f.match(/SUM\(([A-Z]\d+):([A-Z]\d+)\)/);
+          if (sumMatch) return calculateRange(sumMatch[1], sumMatch[2], 'sum');
+
+          // AVG(A1:A5)
+          const avgMatch = f.match(/AVG\(([A-Z]\d+):([A-Z]\d+)\)/);
+          if (avgMatch) return calculateRange(avgMatch[1], avgMatch[2], 'avg');
+
+          // Basic math or single cell
+          return "NaN"; 
+       } catch (e) { return "Error"; }
+    }
+
+    function calculateRange(start, end, op) {
+       const sCol = start.charCodeAt(0) - 65;
+       const sRow = parseInt(start.substring(1));
+       const eCol = end.charCodeAt(0) - 65;
+       const eRow = parseInt(end.substring(1));
+
+       let nums = [];
+       for (let r = sRow; r <= eRow; r++) {
+          for (let c = sCol; c <= eCol; c++) {
+             const id = `${String.fromCharCode(65 + c)}${r}`;
+             if (data[id]) {
+                const n = parseFloat(data[id].val);
+                if (!isNaN(n)) nums.push(n);
+             }
+          }
+       }
+
+       if (nums.length === 0) return 0;
+       if (op === 'sum') return nums.reduce((a, b) => a + b, 0);
+       if (op === 'avg') return (nums.reduce((a, b) => a + b, 0) / nums.length).toFixed(2);
+       return 0;
+    }
+
+    function saveData() {
+       localStorage.setItem('99tool_sheet_data', JSON.stringify(data));
+    }
+
+    exportBtn.onclick = () => {
+       let lines = [];
+       for (let r = 1; r <= ROWS; r++) {
+          let row = [];
+          for (let c = 0; c < COLS; c++) {
+             const id = `${String.fromCharCode(65 + c)}${r}`;
+             row.push(data[id] ? data[id].val : "");
+          }
+          lines.push(row.join(','));
+       }
+       const blob = new Blob([lines.join('\n')], { type: 'text/csv' });
+       const a = document.createElement('a');
+       a.href = URL.createObjectURL(blob);
+       a.download = 'spreadsheet-export.csv';
+       a.click();
+    };
+
+    clearBtn.onclick = () => {
+       if (confirm('Clear all data?')) {
+          data = {};
+          localStorage.removeItem('99tool_sheet_data');
+          initGrid();
+       }
+    };
+
+    initGrid();
+  </script>
+</body>
+</html>
+

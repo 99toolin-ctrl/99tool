@@ -1,0 +1,561 @@
+{
+  "common": {
+    "privacy_note": "🔒 Datenschutz- und Sicherheitshinweis: Alle Verarbeitungen erfolgen lokal in deinem Browser. Deine Daten verlassen nie dein Gerät und werden nicht an Server gesendet.",
+    "no_signup_required": "Keine Anmeldung, Installation oder Zahlung erforderlich.",
+    "offline_ready": "Vollständig offline nutzbar, sobald die Seite geladen ist."
+  },
+  "tools": {
+    "age_calculator": {
+      "page_title": "Altersrechner – 99tool.in",
+      "meta_description": "Kostenloses Online-Tool von 99tool.in: Berechne dein genaues Alter in Jahren, Monaten und Tagen. Schnell und privat.",
+      "what_is_title": "Was ist der Infinite Altersrechner?",
+      "what_is_content": "Der Infinite Altersrechner ist ein clientseitiges Kalender-Tool, das entwickelt wurde, um dein genaues Alter vom Geburtsdatum bis zum heutigen Tag zu berechnen. Anstatt eine einfache Schätzung zu liefern, schlüsselt das Tool dein Alter präzise in Jahre, Monate und Tage auf. Dies bietet hohe Genauigkeit für Dokumente, Fristen oder Entwicklungsmeilensteine.\n\nZusätzlich führt der Rechner Unterberechnungen durch, um deine Gesamtlebensdauer in anderen Einheiten wie Monaten, Wochen, Tagen und Stunden anzuzeigen – zusammen mit einem Countdown zu deinem nächsten Geburtstag. Die gesamte Verarbeitung erfolgt lokal auf deinem Gerät, sodass dein Geburtsdatum niemals an einen Server gesendet wird.",
+      "how_to_use_title": "So verwendest du den Infinite Altersrechner",
+      "how_to_use_steps": [
+        "<strong>Geburtsdatum auswählen:</strong> Klicke auf das Datumsfeld unter \"Geburtsdatum auswählen\", um Tag, Monat und Jahr deines Geburtstags im Kalender auszuwählen.",
+        "<strong>Hauptalter überprüfen:</strong> Nach der Auswahl werden die Hauptwerte automatisch angezeigt: dein Alter in Jahren, Monaten und Tagen.",
+        "<strong>Geburtstags-Countdown prüfen:</strong> Sieh dir das hervorgehobene Banner unter deinem Alter an. Es zeigt die exakte Anzahl verbleibender Tage bis zu deinem nächsten Geburtstag.",
+        "<strong>Detaillierte Lebensstatistiken einsehen:</strong> Scrolle nach unten zur Statistikliste, um deine Gesamtlebensdauer in Monaten, Wochen, Tagen und Stunden zu sehen."
+      ],
+      "key_features_title": "Hauptmerkmale",
+      "key_features": [
+        "<strong>Detaillierte Altersaufschlüsselung:</strong> Zeigt dein exaktes Alter aufgeteilt in Jahre, Monate und Tage an und berücksichtigt Schaltjahre sowie unterschiedliche Monatslängen korrekt.",
+        "<strong>Nächster Geburtstags-Countdown:</strong> Ein dynamischer Tageszähler zeigt genau an, wie nah du deinem nächsten Geburtstags-Meilenstein bist.",
+        "<strong>Multi-Einheiten Lebensstatistiken:</strong> Rechnet dein Alter in kumulierte Monate, Wochen, Tage und Stunden um.",
+        "<strong>Automatische lokale Berechnung:</strong> Die Berechnung erfolgt sofort bei Datumsauswahl, ohne dass die Seite neu geladen oder ein Button geklickt werden muss.",
+        "<strong>Clientseitige Verarbeitung:</strong> Alle Berechnungen laufen direkt im Arbeitsspeicher deines Browsers, wodurch deine Daten geschützt bleiben."
+      ],
+      "common_use_cases_title": "Häufige Anwendungsfälle",
+      "common_use_cases": [
+        "<strong>Formular- und Antragsprüfung:</strong> Überprüfe das genaue Alter in Jahren und Monaten für Versicherungen, rechtliche Dokumente oder Visa-Anträge.",
+        "<strong>Kinder-Entwicklungsstufen:</strong> Verfolge Wachstumsphasen von Säuglingen und Kindern in exakten Monaten und Tagen.",
+        "<strong>Event- und Geburtstagsplanung:</strong> Verfolge die verbleibenden Tage bis zu Jubiläen, um Buchungen und Einladungen rechtzeitig zu planen.",
+        "<strong>Neugier und Spaß:</strong> Finde heraus, wie viele Tage oder Stunden du insgesamt schon lebst."
+      ],
+      "faq_title": "Häufig gestellte Fragen",
+      "faq": [
+        {
+          "question": "Wie berücksichtigt dieses Tool Schaltjahre?",
+          "answer": "Der Rechner nutzt das native JavaScript-Date-Objekt, das Schaltjahre (einschließlich des 29. Februars) und unterschiedliche Monatslängen (28, 30 oder 31 Tage) automatisch und präzise berücksichtigt."
+        },
+        {
+          "question": "Wird mein Geburtsdatum von 99tool.in gespeichert oder hochgeladen?",
+          "answer": "Nein. 99tool.in läuft vollständig über clientseitigen Code. Dein Geburtsdatum wird lokal im Browser verarbeitet und niemals auf Server oder in Datenbanken übertragen."
+        },
+        {
+          "question": "Kann ich das Alter bezogen auf ein vergangenes oder zukünftiges Datum berechnen?",
+          "answer": "Dieses Tool berechnet das Alter bezogen auf das heutige Datum. Für die Berechnung der Differenz zwischen zwei beliebigen Kalenderdaten nutze bitte unseren Datumsdifferenz-Rechner."
+        },
+        {
+          "question": "Warum zeigt das Tool eine Warnung an, wenn ich ein zukünftiges Datum wähle?",
+          "answer": "Altersberechnungen stellen die seit der Geburt verstrichene Zeit dar. Ein zukünftiges Datum würde zu einem negativen Alter führen, weshalb das Tool solche Eingaben blockiert."
+        },
+        {
+          "question": "Beinhaltet die Gesamtstunden-Berechnung Sommerzeit-Umstellungen?",
+          "answer": "Die Gesamtzahl der Stunden wird durch Multiplikation der verstrichenen Gesamttage mit 24 Stunden berechnet. Es handelt sich um eine mathematische Standardumrechnung ohne Berücksichtigung lokaler Zeitumstellungen."
+        }
+      ],
+      "privacy_note": "🔒 Datenschutz- und Sicherheitshinweis: Dein Geburtsdatum wird lokal in deinem Browser verarbeitet. Es werden keine personenbezogenen Daten erfasst, verfolgt oder an Server gesendet.",
+      "schema_org": {
+        "name": "Altersrechner – 99tool.in",
+        "description": "Kostenloses Online-Tool von 99tool.in: schnell, privat, keine Anmeldung erforderlich."
+      }
+    },
+    "audio_recorder": {
+      "page_title": "Audio-Recorder – 99tool.in",
+      "meta_description": "Nimm Audio direkt im Browser auf und bearbeite es. Kostenloses, privates Tool ohne Anmeldung von 99tool.in.",
+      "what_is_title": "Was ist der Audio-Recorder & Editor?",
+      "what_is_content": "Dieses webbasierte Audioaufnahme- und Bearbeitungstool ermöglicht es dir, Sprachnotizen, Sounds und Sprache in hoher Qualität direkt im Browser aufzunehmen. Entwickelt mit Fokus auf absolute Privatsphäre, verwandelt es deinen Browser in ein sicheres Tonstudio. Keine Kontoerstellung oder Registrierung erforderlich.\n\nDurch die Nutzung nativer Browser-APIs werden alle Audiodaten lokal verarbeitet. Das bedeutet, dass deine Sprachaufnahme oder geschnittene Notiz auf deinem Gerät bleibt. Der Audiostream wird niemals an externe Server gesendet, sodass deine vertraulichen Sprachaufnahmen geschützt bleiben.",
+      "how_to_use_title": "So verwendest du den Audio-Recorder & Editor",
+      "how_to_use_steps": [
+        "<strong>Exportformat auswählen:</strong> Wähle im Dropdown-Menü zwischen WebM (ideal für kleinere Dateien) oder WAV (perfekt für verlustfreie, höchste Audioqualität).",
+        "<strong>Mikrofon initialisieren:</strong> Klicke auf den Button \"Mikrofon initialisieren\". Dein Browser wird dich um Erlaubnis für den Mikrofonzugriff bitten.",
+        "<strong>Aufnahme starten:</strong> Klicke auf den roten Aufnahme-Button, um die Audioaufnahme zu starten. Der Timer beginnt zu laufen und die Wellenform zeigt deine Sprachfrequenzen in Echtzeit an.",
+        "<strong>Aufnahme stoppen:</strong> Klicke auf den quadratischen Stopp-Button, um die Aufnahme zu beenden. Das Tool verarbeitet das Audio automatisch und fügt es deiner Aufnahmeliste hinzu.",
+        "<strong>Anhören und Speichern:</strong> Klicke auf \"ABSPIELEN\", um deine Aufnahme anzuhören, oder auf \"SPEICHERN\", um die Datei direkt auf dein Gerät herunterzuladen."
+      ],
+      "key_features_title": "Hauptmerkmale",
+      "key_features": [
+        "<strong>Verlustfreie & komprimierte Formate:</strong> Exportiere deine Audiodateien entweder als unkomprimiertes WAV oder als hochoptimiertes WebM.",
+        "<strong>Echtzeit-Wellenform-Visualisierung:</strong> Eine Oszilloskop-Anzeige bietet sofortiges visuelles Feedback zu Eingabepegeln und Mikrofonaktivität.",
+        "<strong>Sichere RAM-Speicherung:</strong> Aufnahmen werden temporär im Arbeitsspeicher (Blob-URLs) statt auf externen Servern gespeichert.",
+        "<strong>Multisessions-Verlauf:</strong> Erstelle mehrere Aufnahmen in einer Sitzung und lade sie einzeln nach Bedarf herunter.",
+        "<strong>Responsive Aufnahme-Oberfläche:</strong> Ein mobiloptimiertes Design ermöglicht einfache Aufnahmen auf Smartphones, Tablets oder Desktop-PCs."
+      ],
+      "common_use_cases_title": "Häufige Anwendungsfälle",
+      "common_use_cases": [
+        "<strong>Content Creator & Podcaster:</strong> Nimm Voiceover, kurze Intros oder Skripte für Videos auf, ohne schwere Software installieren zu müssen.",
+        "<strong>Studierende & Forschende:</strong> Halte Vorlesungsnotizen, Lernmemos oder Interview-Transkripte in einer sicheren Umgebung fest.",
+        "<strong>Musiker & Sound-Designer:</strong> Halte spontane Musikideen, Gesangsskizzen oder Soundeffekte unterwegs als Rohdateien fest.",
+        "<strong>Private Diktate:</strong> Diktiere vertrauliche Notizen oder Tagebucheinträge ohne Risiko von Datenlecks in der Cloud."
+      ],
+      "faq_title": "Häufig gestellte Fragen",
+      "faq": [
+        {
+          "question": "Wird meine Audioaufnahme auf Ihren Servern gespeichert?",
+          "answer": "Nein. 99tool.in verarbeitet alle Audiodaten ausschließlich im Arbeitsspeicher (RAM) deines lokalen Browsertabs als Blob. Deine Aufnahmen erreichen nie unsere Server und werden beim Schließen des Tabs gelöscht."
+        },
+        {
+          "question": "Warum muss ich Mikrofonberechtigungen erteilen?",
+          "answer": "Dein Browser benötigt die ausdrückliche Erlaubnis, auf das Mikrofongerät zuzugreifen. Diese Berechtigung wird nativ vom Browser verwaltet und nur lokal für die Aufnahme verwendet."
+        },
+        {
+          "question": "Kann ich dieses Tool offline verwenden?",
+          "answer": "Ja. Da die Anwendung vollständig auf nativen Web-APIs und clientseitiger Verarbeitung basiert, kannst du nach dem Laden der Seite ohne Internetverbindung aufnehmen und speichern."
+        },
+        {
+          "question": "Was ist der Unterschied zwischen WebM und WAV?",
+          "answer": "WAV-Dateien sind unkomprimiert und verlustfrei, bieten höchste Qualität, sind aber größer. WebM-Dateien sind komprimiert und weboptimiert, was für schnelle Downloads und kleine Dateigrößen sorgt."
+        },
+        {
+          "question": "Gibt es ein Zeitlimit für Aufnahmen?",
+          "answer": "Es gibt kein künstliches Zeitlimit im Tool. Die Aufnahmedauer ist nur durch den verfügbaren Arbeitsspeicher (RAM) deines Geräts begrenzt."
+        }
+      ],
+      "privacy_note": "🔒 Datenschutz- und Sicherheitshinweis: Alle Audioaufnahmen und Verarbeitungen finden in deinem Browser statt. Es werden keine Dateien auf Server hochgeladen.",
+      "schema_org": {
+        "name": "Audio-Recorder & Editor",
+        "description": "Hochwertige Audioaufnahme, Echtzeit-Visualisierung, Audioschnitt, Wiedergabesteuerung, private lokale Verarbeitung."
+      }
+    },
+    "bmi_calculator": {
+      "page_title": "BMI-Rechner – 99tool.in",
+      "meta_description": "Berechne deinen Body-Mass-Index (BMI) präzise. Kostenloses, privates und schnelles Gesundheitstool von 99tool.in.",
+      "what_is_title": "Was ist der Infinite BMI-Rechner?",
+      "what_is_content": "Der Infinite BMI-Rechner ist ein clientseitiges Gesundheitstool zur Berechnung des Body-Mass-Index (BMI) basierend auf Größe und Gewicht. Durch Eingabe metrischer Werte können Nutzer ihre Gewichtskategorie bestimmen und Standard-Körperwerte prüfen.\n\nDieser Rechner führt alle mathematischen Formeln, Kategorieneinstufungen und visuellen Zeigeranpassungen lokal im Speicher deines Browsers aus. Es werden keine Größen-, Gewichts- oder BMI-Werte gespeichert oder hochgeladen.",
+      "how_to_use_title": "So verwendest du den Infinite BMI-Rechner",
+      "how_to_use_steps": [
+        "<strong>Gewicht eingeben:</strong> Trage dein Körpergewicht in Kilogramm (kg) in das entsprechende Feld ein.",
+        "<strong>Größe eingeben:</strong> Trage deine Körpergröße in Zentimetern (cm) in das entsprechende Feld ein.",
+        "<strong>Auf Berechnen klicken:</strong> Klicke auf den Button \"BMI berechnen\", um das Ergebnis lokal zu berechnen.",
+        "<strong>Ergebnis prüfen:</strong> Lese im Ergebnisbereich deinen numerischen BMI-Wert, deine Gewichtskategorie und die Skalenposition ab."
+      ],
+      "key_features_title": "Hauptmerkmale",
+      "key_features": [
+        "<strong>Unterstützung metrischer Einheiten:</strong> Gib direkt Standardwerte für Gewicht (kg) und Größe (cm) ein.",
+        "<strong>Visueller Bereichszeiger:</strong> Verschiebt einen Zeiger dynamisch über eine farbcodierte Skala zur Anzeige deiner Gewichtsklasse.",
+        "<strong>Standard-BMI-Bereiche:</strong> Wertet Eingaben nach WHO-Richtlinien aus (Untergewicht, Normalgewicht, Übergewicht, Adipositas).",
+        "<strong>Sofortiges Ergebnis-Dashboard:</strong> Zeigt numerische Werte und Kategorienamen übersichtlich in einer Karte an.",
+        "<strong>100% Clientseitige Engine:</strong> Führt alle Berechnungen lokal im Browser aus, um deine medizinischen Daten zu schützen."
+      ],
+      "common_use_cases_title": "Häufige Anwendungsfälle",
+      "common_use_cases": [
+        "<strong>Gewichtskontrolle:</strong> Verfolge Trends deines Körpergewichts regelmäßig während Fitness- oder Diätprogrammen.",
+        "<strong>Gesundheits-Checks:</strong> Überprüfe deine Gewichtskategorie schnell für medizinische Unterlagen oder Versicherungen.",
+        "<strong>Zielsetzung für den Lebensstil:</strong> Bestimme deinen Ausgangs-BMI, um realistische Fitnessziele zu setzen.",
+        "<strong>Schul- und Unterrichtsprojekte:</strong> Vermittle Lernenden Wissen über biologische Kennzahlen und BMI-Formeln."
+      ],
+      "faq_title": "Häufig gestellte Fragen",
+      "faq": [
+        {
+          "question": "Was sind die Standard-BMI-Bereiche?",
+          "answer": "Die offiziellen WHO-Kategorien lauten: Untergewicht (unter 18,5), Normalgewicht (18,5 bis 24,9), Übergewicht (25 bis 29,9) und Adipositas (30 oder höher)."
+        },
+        {
+          "question": "Berücksichtigt dieser Rechner Muskelmasse oder Knochendichte?",
+          "answer": "Nein. Der BMI ist ein allgemeiner Richtwert, der nur Größe und Gewicht nutzt. Er unterscheidet nicht zwischen Muskeln, Fett oder Knochenmasse und kann bei muskulösen Sportlern zu hoch ausfallen."
+        },
+        {
+          "question": "Werden meine Gesundheitsdaten geteilt oder hochgeladen?",
+          "answer": "Nein. Alle Berechnungen werden lokal über JavaScript auf deinem Gerät ausgeführt. 99tool.in speichert oder erfasst keine deiner Körperwerte."
+        },
+        {
+          "question": "Gibt es Alters- oder Geschlechtsanpassungen bei dieser Berechnung?",
+          "answer": "Dieses Tool berechnet den Standard-BMI für Erwachsene. Für Kinder, Jugendliche und Schwangere nutzen Ärztinnen und Ärzte spezielle Perzentilkurven."
+        }
+      ],
+      "privacy_note": "🔒 Datenschutz- und Sicherheitshinweis: Größen-, Gewichts- und BMI-Berechnungen werden lokal im Browser verarbeitet. Keine Gesundheitsdaten werden hochgeladen.\nHinweis: Dieses Tool dient nur zu Informationszwecken und ersetzt keine medizinische Beratung.",
+      "schema_org": {
+        "name": "BMI-Rechner – 99tool.in",
+        "description": "Kostenloses Online-Tool von 99tool.in: schnell, privat, keine Anmeldung erforderlich."
+      }
+    },
+    "csv_editor": {
+      "page_title": "CSV-Editor – 99tool.in",
+      "meta_description": "Öffne, bearbeite und exportiere CSV-Dateien direkt im Browser. Sicheres und kostenloses Datentool von 99tool.in.",
+      "what_is_title": "Was ist der CSV-Viewer & Editor?",
+      "what_is_content": "Der CSV-Viewer & Editor ist ein leichtes, webbasiertes Tabellen-Tool zum Öffnen, Überprüfen und Bearbeiten von CSV-Dateien (Comma-Separated Values). Statt auf schwere Office-Software zu warten, kannst du deine Datensätze direkt per Drag-and-Drop in den Browser ziehen und in einer übersichtlichen Tabelle anzeigen.\n\nDiese Anwendung ermöglicht das Bearbeiten von Zellwerten, Sortieren von Spalten, Suchen nach Datensätzen und Exportieren aktualisierter Dateien. Da die gesamte Analyse und Anzeige clientseitig im Arbeitsspeicher stattfindet, gelangen deine sensiblen Daten niemals an externe Server.",
+      "how_to_use_title": "So verwendest du den CSV-Viewer & Editor",
+      "how_to_use_steps": [
+        "<strong>Datensatz importieren:</strong> Ziehe deine CSV-Datei per Drag-and-Drop in den gestrichelten Bereich oder klicke auf \"Dateien durchsuchen\".",
+        "<strong>Zellwerte bearbeiten:</strong> Klicke direkt auf eine Tabellenzelle, um deren Inhalt zu ändern. Trage deine Änderungen ein und klicke außerhalb der Zelle zum Speichern.",
+        "<strong>Filtern und Suchen:</strong> Nutze das Suchfeld über der Tabelle, um Zeilen in Echtzeit nach bestimmten Begriffen zu filtern.",
+        "<strong>Nach Spalten sortieren:</strong> Klicke auf Spaltenköpfe, um Zeilen auf- oder absteigend alphabetisch oder numerisch zu sortieren.",
+        "<strong>Änderungen exportieren:</strong> Klicke auf \"CSV exportieren\", um die aktualisierte Datei herunterzuladen, oder auf \"Neu öffnen\" für eine neue Datei."
+      ],
+      "key_features_title": "Hauptmerkmale",
+      "key_features": [
+        "<strong>Echtzeit-Tabellenbearbeitung:</strong> Bearbeite Zellwerte direkt in einer interaktiven Tabelle mit sofortiger lokaler Speicherung.",
+        "<strong>Spaltensortierung und Suche:</strong> Analysiere Datensätze schnell durch Sortieren oder Filtern nach Schlüsselwörtern.",
+        "<strong>Schneller Client-Parser:</strong> Rendert Tausende Datenpunkte lokal in Millisekunden ohne Serververzögerung.",
+        "<strong>UTF-8-Unterstützung:</strong> Behält Sonderzeichen, Umlaute und internationale Schriftzeichen beim Import und Export bei.",
+        "<strong>Offline-Datenschutz:</strong> Funktioniert komplett offline, damit deine Daten geschützt bleiben."
+      ],
+      "common_use_cases_title": "Häufige Anwendungsfälle",
+      "common_use_cases": [
+        "<strong>E-Commerce Produktlisten:</strong> Bearbeite Beschreibungen, Preise oder Lagerbestände vor dem Import in deinen Online-Shop.",
+        "<strong>Bereinigung von Kontakten:</strong> Suche nach doppelten Einträgen oder korrigiere Formatierungsfehler in E-Mail-Listen.",
+        "<strong>Log- und Exportanalyse:</strong> Betrachte Server-Logs, Transaktionsdaten oder Systemanalysen in einer übersichtlichen Tabelle.",
+        "<strong>Datenbankvorbereitung:</strong> Prüfe und formatiere Spaltenstrukturen in Datensätzen vor dem Import in SQL-Datenbanken."
+      ],
+      "faq_title": "Häufig gestellte Fragen",
+      "faq": [
+        {
+          "question": "Gibt es ein Dateigrößen-Limit beim Upload?",
+          "answer": "Für optimale Performance empfehlen wir CSV-Dateien bis zu 10–15 MB. Sehr große Datensätze mit Hunderttausenden Zeilen können den Browser verlangsamen – dafür eignen sich Desktop-Anwendungen besser."
+        },
+        {
+          "question": "Wird durch das Bearbeiten die Originaldatei auf meinem Computer geändert?",
+          "answer": "Nein. Browser können lokale Dateien aus Sicherheitsgründen nicht direkt überschreiben. Klicke auf \"CSV exportieren\", um eine neue, aktualisierte Kopie herunterzuladen."
+        },
+        {
+          "question": "Werden meine Tabellendaten hochgeladen oder verfolgt?",
+          "answer": "Nein. 99tool.in verarbeitet alle Dateien lokal auf deinem Gerät. Deine Daten bleiben geschützt im Browser."
+        },
+        {
+          "question": "Unterstützt das Tool Semikolons oder Tabulatoren als Trennzeichen?",
+          "answer": "Diese Version ist für kommagetrennte CSV-Dateien optimiert. Semikolons oder Tabs können dazu führen, dass Spalten nicht korrekt getrennt werden."
+        },
+        {
+          "question": "Kann ich neue Zeilen oder Spalten hinzufügen?",
+          "answer": "Dieses Tool dient primär als Viewer und Werteditor für bestehende Tabellen. Zum Hinzufügen neuer Zeilen oder Spalten empfehlen wir ein vollständiges Tabellenkalkulations-Tool."
+        }
+      ],
+      "privacy_note": "🔒 Datenschutz- und Sicherheitshinweis: CSV-Datenanalyse und Tabellenanzeige erfolgen in deinem Browser. Keine Dateien oder Daten werden an Server gesendet.",
+      "schema_org": {
+        "name": "CSV-Viewer & Editor",
+        "description": "CSV-Parsing, Tabellenansicht, Zellbearbeitung, Spaltensortierung, Datenexport."
+      }
+    },
+    "image_compressor": {
+      "page_title": "Bildkomprimierung – 99tool.in",
+      "meta_description": "Reduziere die Dateigröße deiner Bilder ohne Qualitätsverlust. Schnelles, privates Tool von 99tool.in.",
+      "what_is_title": "Was ist die Smart Bildkomprimierung?",
+      "what_is_content": "Die Smart Bildkomprimierung ist ein clientseitiges Optimierungs-Tool, das entwickelt wurde, um die Dateigröße deiner Bilder zu reduzieren, während die visuelle Qualität erhalten bleibt. Durch Nutzung von Browser-Canvas-Rendering und dynamischer Komprimierungsskalierung kannst du große Bilddateien für schnellere Ladezeiten verkleinern.\n\nDiese Optimierung läuft vollständig im lokalen Speicher deines Browsers ab. Da keine Dateien auf externe Server hochgeladen werden, bleiben deine hochauflösenden Originalfotos, Grafiken und Designs vollkommen privat.",
+      "how_to_use_title": "So verwendest du die Smart Bildkomprimierung",
+      "how_to_use_steps": [
+        "<strong>Bild laden:</strong> Klicke in den gestrichelten Bereich oder ziehe deine Bilddatei (JPG, PNG oder WEBP) per Drag-and-Drop hinein.",
+        "<strong>Originalgröße prüfen:</strong> Sieh in der Spalte <strong>Original</strong> nach, wie groß deine Datei zu Beginn ist.",
+        "<strong>Komprimierungsstufe wählen:</strong> Verschiebe den Regler für die <strong>Komprimierungsstufe</strong>. Nach links verkleinert die Datei weiter, nach rechts bleibt mehr Qualität erhalten.",
+        "<strong>Zielformat wählen:</strong> Wähle im Dropdown-Menü <strong>In Format konvertieren</strong>, ob das Originalformat beibehalten oder zu JPEG oder WEBP konvertiert werden soll.",
+        "<strong>Ersparnis analysieren:</strong> Vergleiche die Vorschau von <strong>Original</strong> und <strong>Komprimiert</strong> nebeneinander. Das grüne Schild zeigt die genaue Ersparnis in Prozent.",
+        "<strong>Komprimiertes Bild herunterladen:</strong> Klicke auf <strong>Komprimiertes Bild herunterladen</strong>, um die optimierte Datei auf deinem Gerät zu speichern."
+      ],
+      "key_features_title": "Hauptmerkmale",
+      "key_features": [
+        "<strong>Vorher-Nachher-Vergleich:</strong> Vergleiche Original- und komprimierte Vorschau direkt nebeneinander, um die Schärfe zu prüfen.",
+        "<strong>Stufenloser Qualitätsregler:</strong> Passe die Komprimierungsstufe fein von 10 % bis 100 % an deine Speicherziele an.",
+        "<strong>Direkte Formatkonvertierung:</strong> Konvertiere deine Bilder sofort in moderne Formate wie WEBP oder hochkompatibles JPEG.",
+        "<strong>Echtzeit-Ersparnisrechner:</strong> Berechnet sofort die prozentuale Ersparnis bei jeder Regleranpassung.",
+        "<strong>Reine clientseitige Ausführung:</strong> Verarbeitet alles lokal über JavaScript ohne Datenspeicherung auf Servern."
+      ],
+      "common_use_cases_title": "Häufige Anwendungsfälle",
+      "common_use_cases": [
+        "<strong>Webentwickler:</strong> Komprimierung von Website-Bildern und Produktfotos zur Optimierung von Ladezeiten und SEO.",
+        "<strong>Social-Media-Manager:</strong> Verkleinern großer Fotos für Plattformen ohne sichtbare Qualitätsverluste.",
+        "<strong>Büro & Verwaltung:</strong> Reduzieren der Dateigröße von Scans oder Screenshots für E-Mail-Anhänge.",
+        "<strong>Blogger & Autoren:</strong> Erstellen optimierter, schnell ladender Bilder für mobile Leser."
+      ],
+      "faq_title": "Häufig gestellte Fragen",
+      "faq": [
+        {
+          "question": "Verliert mein Bild durch die Komprimierung an Qualität?",
+          "answer": "Wir empfehlen eine Reglereinstellung zwischen 80 % und 90 %. In diesem Bereich wird die Dateigröße deutlich reduziert, während der Unterschied für das menschliche Auge kaum wahrnehmbar ist."
+        },
+        {
+          "question": "Werden meine privaten Fotos auf einen Cloud-Server hochgeladen?",
+          "answer": "Nein. Alle Verarbeitungen, Größenänderungen und Konvertierungen finden lokal im Speicher deines Browsers statt. Es werden keine Dateien über das Netzwerk übertragen."
+        },
+        {
+          "question": "Welche Vorteile bietet die Konvertierung in WEBP?",
+          "answer": "WEBP ist ein modernes Bildformat mit effizienterer Komprimierung im Vergleich zu JPEG und PNG, was zu kleineren Dateien bei hoher Bildqualität führt."
+        },
+        {
+          "question": "Kann ich transparente PNG-Bilder komprimieren?",
+          "answer": "Ja. Um Transparenzen zu erhalten, wähle \"Originalformat beibehalten\" oder \"WEBP\". Bei einer Konvertierung zu JPEG wird der transparente Hintergrund weiß aufgefüllt."
+        },
+        {
+          "question": "Warum ist meine Datei nach der Komprimierung größer geworden?",
+          "answer": "Das kann passieren, wenn die Originaldatei bereits stark optimiert war oder wenn ein stark komprimiertes Format in ein weniger effizientes Format umgewandelt wird. Stelle den Regler etwas niedriger ein."
+        }
+      ],
+      "privacy_note": "Datenschutz- und Sicherheitshinweis: Jeder Schritt der Komprimierung und Konvertierung erfolgt lokal auf deinem Computer. Deine Dateien werden nicht auf externe Server hochgeladen.",
+      "schema_org": {
+        "name": "Bildkomprimierung – 99tool.in",
+        "description": "Kostenloses Online-Tool von 99tool.in: schnell, privat, keine Anmeldung erforderlich."
+      }
+    },
+    "markdown_previewer": {
+      "page_title": "Markdown-Vorschau – 99tool.in",
+      "meta_description": "Schreibe, bearbeite und konvertiere Markdown in Echtzeit zu HTML. Kostenloses Entwickler-Tool von 99tool.in.",
+      "what_is_title": "Was ist die Markdown-Vorschau?",
+      "what_is_content": "Die Markdown-Vorschau ist ein browserbasierter Editor zum Schreiben, Formatieren und Rendern von Markdown-Syntax in Echtzeit. Durch Schreiben links und sofortige Vorschau rechts können Entwickler READMEs, Dokumentationen und Artikel prüfen, bevor sie sie veröffentlichen.\n\nDieser Editor führt alle Umwandlungen von Markdown zu HTML lokal auf deinem Computer aus. Da keine Entwürfe oder Codeblöcke an externe Datenbanken gesendet werden, bleiben deine Dokumente vollkommen privat.",
+      "how_to_use_title": "So verwendest du die Markdown-Vorschau",
+      "how_to_use_steps": [
+        "<strong>Markdown eingeben:</strong> Schreibe oder füge deinen Markdown-Code im linken \"Editor\"-Feld ein.",
+        "<strong>Echtzeit-Vorschau beobachten:</strong> Verfolge im rechten Vorschaufeld sofort die Formatierung von Überschriften, Listen, Code-Blocks und Tabellen.",
+        "<strong>HTML-Code kopieren:</strong> Klicke auf \"HTML kopieren\" in der Vorschauleiste, um den kompilierten HTML-Code in deine Zwischenablage zu übernehmen.",
+        "<strong>Quelldatei herunterladen:</strong> Klicke auf \".md herunterladen\", um deinen Text als Standard-Markdown-Datei auf deinem Gerät zu speichern.",
+        "<strong>Editor leeren:</strong> Klicke auf \"Alles löschen\", um die Textfelder für einen neuen Entwurf zurückzusetzen."
+      ],
+      "key_features_title": "Hauptmerkmale",
+      "key_features": [
+        "<strong>Echtzeit-Geteilte-Vorschau:</strong> Wandelt Markdown-Syntax sofort beim Tippen in visuelles HTML um.",
+        "<strong>GFM-Kompatibilität:</strong> Unterstützt GitHub-Flavored-Markdown-Regeln für Tabellen, Fettschrift, Listen und Zitate.",
+        "<strong>HTML-Kopierfunktion:</strong> Speichert kompilierten HTML-Code per Klick in der Zwischenablage.",
+        "<strong>Lokaler Dateiexport:</strong> Lädt deine fertigen Texte als eigenständige <code>.md</code>-Datei herunter.",
+        "<strong>100% Clientseitiger Compiler:</strong> Rendert Inhalte offline im Browser-Cache für maximale Sicherheit."
+      ],
+      "common_use_cases_title": "Häufige Anwendungsfälle",
+      "common_use_cases": [
+        "<strong>Erstellen von Repository-READMEs:</strong> Formatiere Projektbeschreibungen und prüfe Bildlinks vor dem Commit.",
+        "<strong>API-Dokumentation:</strong> Schreibe und überprüfe API-Spezifikationen und Codebeispiele in formatierten Blöcken.",
+        "<strong>Technische Blogartikel:</strong> Entwirf Markdown-Artikel und prüfe die Überschriften-Hierarchie vor dem Import ins CMS.",
+        "<strong>Markdown lernen:</strong> Teste Markdown-Shortcuts (wie Fettformatierung, Listen und Links) in einem interaktiven Editor."
+      ],
+      "faq_title": "Häufig gestellte Fragen",
+      "faq": [
+        {
+          "question": "Ist dieser Editor mit GitHub Flavored Markdown kompatibel?",
+          "answer": "Ja. Die Vorschau unterstützt GFM-Elemente wie Aufgabenlisten, Tabellen, Zitate und hervorgehobene Codeblöcke."
+        },
+        {
+          "question": "Werden meine Entwürfe an einen Server gesendet?",
+          "answer": "Nein. 99tool.in verarbeitet alle Formatierungen lokal im Arbeitsspeicher deines Browsers. Deine Entwürfe werden nie hochgeladen."
+        },
+        {
+          "question": "Wie binde ich Bilder in der Vorschau ein?",
+          "answer": "Nutze die Standard-Syntax (<code>![](bild_url)</code>). Stelle sicher, dass die Bild-URL öffentlich erreichbar ist, damit der Browser das Bild darstellen kann."
+        },
+        {
+          "question": "Enthält die heruntergeladene .md-Datei das gerenderte HTML?",
+          "answer": "Nein. Der Button \".md herunterladen\" speichert den bearbeitbaren Markdown-Quellcode. Für das HTML nutze den Button \"HTML kopieren\"."
+        }
+      ],
+      "privacy_note": "🔒 Datenschutz- und Sicherheitshinweis: Markdown-Rendering, Zwischenablage-Aktionen und Exports finden lokal im Browser statt. Entwürfe werden nicht übertragen.",
+      "schema_org": {
+        "name": "Markdown-Vorschau",
+        "description": "Live-Ergebnis-Vorschau, GFM-Unterstützung, HTML-Export, geteilte Bildschirmanzeige."
+      }
+    },
+    "pdf_merger": {
+      "page_title": "PDF zusammenfügen – 99tool.in",
+      "meta_description": "Füge PDF-Dateien in Sekundenschnelle direkt im Browser zusammen. 100% kostenloses & privates Tool von 99tool.in.",
+      "what_is_title": "Endlich ein PDF-Tool, das deine Privatsphäre achtet",
+      "what_is_content": "Wir alle kennen die Situation: Du hast mehrere Dokumente, Scans und ein Anschreiben, die als eine einzige professionelle PDF-Datei versendet werden sollen. Der erste Reflex ist die Suche nach einem Online-Tool zum <strong>PDF zusammenfügen</strong>. Doch dann kommen Bedenken: Möchtest du vertrauliche Verträge, Zeugnisse oder Finanzdaten wirklich auf einen fremden Server hochladen?\n\nBei 99tool.in haben wir unser Tool zum <strong>PDF-Dateien kombinieren</strong> genau für dieses Datenschutzproblem entwickelt. Anders als viele bekannte Online-Dienste verarbeiten wir deine Dateien direkt auf deinem Gerät. Mithilfe moderner <code>pdf-lib</code>-Technologie läuft das <strong>PDF zusammenführen</strong> komplett im Arbeitsspeicher deines Browsers ab. Deine Dokumente verlassen dein Gerät nicht ein einziges Mal. Das sorgt für maximale Geschwindigkeit und absolute Beruhigung.",
+      "how_to_use_title": "So fügst du PDF-Dateien auf 99tool.in zusammen (Schritt für Schritt)",
+      "how_to_use_steps": [
+        "<strong>Schritt 1: Dateien auswählen</strong> — Klicke in den Bereich \"PDF auswählen\" oder ziehe deine Dateien per Drag-and-Drop hinein. Sie erscheinen sofort in einer Liste.",
+        "<strong>Schritt 2: Sicherheitsstatus prüfen</strong> — Achte auf das grüne Schild neben jeder Datei. Es bestätigt, dass der Sicherheits-Scan keine versteckten Skripte gefunden hat.",
+        "<strong>Schritt 3: Reihenfolge anpassen</strong> — Ziehe die Dateien per Drag-and-Drop an die gewünschte Position. Die oberste Datei wird Seite 1 deines neuen Dokuments.",
+        "<strong>Schritt 4: Zusammenfügen & Herunterladen</strong> — Klicke auf \"Dateien zusammenfügen\". Die Zusammenstellung erfolgt lokal in Sekunden und der Download startet automatisch."
+      ],
+      "key_features_title": "Warum manuelle, nutzerzentrierte Zusammenführung besser ist",
+      "key_features": [
+        "<strong>Visueller Arbeitsbereich:</strong> Ordne deine Dateien per Drag-and-Drop exakt in der gewünschten Reihenfolge an.",
+        "<strong>Aktiver Sicherheits-Scan:</strong> Prüft die interne Struktur der PDF vor dem Zusammenfügen auf interaktive Elemente wie /JS- oder /Action-Tags.",
+        "<strong>Reine Browser-Verarbeitung:</strong> Läuft dank pdf-lib und WebAssembly vollständig im lokalen Arbeitsspeicher.",
+        "<strong>Kein Datei-Upload:</strong> Absoluter Schutz der Privatsphäre für Verträge, Dokumente und persönliche Unterlagen."
+      ],
+      "common_use_cases_title": "Praktische Anwendungsfälle",
+      "common_use_cases": [
+        "<strong>Für Recht & Beratung:</strong> Zusammenstellen von Akten und Nachweisen ohne Gefahr von Metadaten-Lecks.",
+        "<strong>Für Schule & Studium:</strong> Zusammenfügen von Hausarbeiten, Deckblättern und Literaturverzeichnissen.",
+        "<strong>Für Immobilien & Finanzen:</strong> Bündeln von Anträgen, Nachweisen und Verträgen unter vollkommener Wahrung des Datenschutz."
+      ],
+      "faq_title": "Häufig gestellte Fragen",
+      "faq": [
+        {
+          "question": "Gibt es ein Limit, wie viele PDFs ich zusammenfügen kann?",
+          "answer": "Da das Zusammenfügen lokal auf deinem Gerät stattfindet, hängt das Limit vom Arbeitsspeicher deines Computers ab. Die meisten Geräte verarbeiten mühelos 50+ mittlere PDF-Dateien."
+        },
+        {
+          "question": "Wird die Bildqualität durch das Zusammenfügen beeinträchtigt?",
+          "answer": "Nein. Unser Tool übernimmt die Originaldaten der Seiten unverändert. Es findet keine Neu-Komprimierung statt, sodass Texte scharf und durchsuchbar bleiben."
+        },
+        {
+          "question": "Warum erhalte ich bei manchen Dateien eine Warnung?",
+          "answer": "Manche PDFs enthalten interaktive Elemente wie Formularfelder oder JavaScript. Unser Tool weist darauf hin, damit du Transparenz über den Inhalt deiner Dateien hast."
+        },
+        {
+          "question": "Werden meine Dokumente auf einen Server hochgeladen?",
+          "answer": "Nein, absolut nicht. Die gesamte Verarbeitung läuft lokal über JavaScript und WebAssembly im Browser. Es werden keinerlei Daten übertragen."
+        },
+        {
+          "question": "Kann ich passwortgeschützte PDFs zusammenfügen?",
+          "answer": "Passwortgeschützte oder verschlüsselte Dateien müssen vor dem Zusammenfügen entsperrt werden. Unser lokales Tool kann Passwortschutz nicht umgehen."
+        },
+        {
+          "question": "Funktioniert das Tool auch auf Smartphones?",
+          "answer": "Ja. Solange dein mobiler Browser moderne JavaScript-Standard-APIs unterstützt, kannst du PDFs auch auf dem Smartphone oder Tablet zusammenfügen."
+        }
+      ],
+      "privacy_note": "🔒 Sitzungsbasierte Verarbeitung. Kein Upload. Kein Tracking. Stand: April 2026.",
+      "schema_org": {
+        "name": "PDF Zusammenfügen Tool",
+        "description": "PDFs verbinden, visuelle Sortierung, Sicherheits-Scan, privates lokales Tool."
+      }
+    },
+    "password_generator": {
+      "page_title": "Passwort-Generator – 99tool.in",
+      "meta_description": "Generiere sichere, zufällige Passwörter sofort im Browser. 100% privates & lokales Tool von 99tool.in.",
+      "what_is_title": "Was ist der Sichere Passwort-Generator?",
+      "what_is_content": "Der Sichere Passwort-Generator erzeugt kryptografisch zufällige Passwörter über die Web Crypto API deines Browsers (window.crypto.getRandomValues). Dies liefert echte Zufallswerte, die herkömmlichen Math.random()-Funktionen weit überlegen sind. Alles läuft lokal in deinem Browser ab – keine Daten werden übertragen.\n\nStelle Länge und Zeichensätze (Großbuchstaben, Kleinbuchstaben, Zahlen, Sonderzeichen) ein, und das Tool generiert sofort ein sicheres Passwort nach deinen Vorgaben. Kopiere es mit einem Klick in deine Zwischenablage oder deinen Passwort-Manager.",
+      "how_to_use_title": "So verwendest du den Sicheren Passwort-Generator",
+      "how_to_use_steps": [
+        "Stelle die gewünschte Passwortlänge über den Schieberegler ein (8–128 Zeichen empfohlen).",
+        "Wähle die gewünschten Zeichensätze: Großbuchstaben (A-Z), Kleinbuchstaben (a-z), Zahlen (0-9), Sonderzeichen (!@#$...).",
+        "Klicke auf \"Neues Passwort generieren\", um ein zufälliges Passwort nach deinen Vorgaben zu erstellen.",
+        "Prüfe die Stärkeanzeige, um die Sicherheit deines neuen Passworts zu bestätigen.",
+        "Klicke auf \"Kopieren\", um das Passwort in die Zwischenablage zu übernehmen und in deinen Passwort-Manager einzufügen.",
+        "Klicke erneut auf Generieren für weitere Passwortoptionen."
+      ],
+      "key_features_title": "Hauptmerkmale",
+      "key_features": [
+        "<strong>Web Crypto API Zufall:</strong> Nutzt kryptografisch sichere Zufallsgeneratoren statt einfacher Zufallsfunktionen.",
+        "<strong>Anpassbare Optionen:</strong> Wähle Längen bis 128 Zeichen und kombiniere verschiedene Zeichensätze.",
+        "<strong>Stärkeanzeige:</strong> Zeigt die Entropie und Sicherheitsstufe jedes generierten Passworts in Echtzeit an.",
+        "<strong>Ein-Klick-Kopie:</strong> Kopiert das Passwort sofort mit visuellem Feedback in die Zwischenablage."
+      ],
+      "common_use_cases_title": "Häufige Anwendungsfälle",
+      "common_use_cases": [
+        "<strong>Konto-Registrierung:</strong> Erstelle bei jedem neuen Online-Konto ein einzigartiges, starkes Passwort.",
+        "<strong>Passwort-Wechsel:</strong> Generiere sicheren Ersatz, wenn Dienste eine regelmäßige Änderung fordern.",
+        "<strong>API-Keys & Tokens:</strong> Erzeuge zufällige Zeichenketten als Sicherheitsschlüssel für Entwicklungsprojekte."
+      ],
+      "faq_title": "Häufig gestellte Fragen",
+      "faq": [
+        {
+          "question": "Ist das generierte Passwort wirklich zufällig?",
+          "answer": "Ja. Das Tool nutzt window.crypto.getRandomValues(), welches die Entropie des Betriebssystems nutzt (CSPRNG). Dies ist der gleiche Standard wie bei moderner Verschlüsselung."
+        },
+        {
+          "question": "Welche Passwortlänge wird empfohlen?",
+          "answer": "Mindestens 16 Zeichen für Standardkonten, 20+ Zeichen für wichtige Zugänge (E-Mail, Banking). Längere Passwörter mit gemischten Zeichen sind drastisch sicherer."
+        },
+        {
+          "question": "Wird das Passwort an Server gesendet?",
+          "answer": "Niemals. Die gesamte Generierung läuft lokal im Browser. Das Passwort verlässt dein Gerät zu keinem Zeitpunkt."
+        },
+        {
+          "question": "Sollte ich mir das Passwort merken?",
+          "answer": "Nein. Generierte Passwörter sind für die Speicherung in Passwort-Managern (wie Bitwarden oder 1Password) gedacht, nicht zum Auswendiglernen."
+        }
+      ],
+      "privacy_note": "🔒 Kryptografisch sicher. 100% Lokal. Kein Serverkontakt. Stand: April 2026.",
+      "schema_org": {
+        "name": "Sicherer Passwort-Generator",
+        "description": "Zufallspasswort-Generierung, anpassbare Zeichensätze, Stärkeüberprüfung, 100% clientseitig."
+      }
+    },
+    "regex_tester": {
+      "page_title": "Regex-Tester – 99tool.in",
+      "meta_description": "Testet und debugge reguläre Ausdrücke in Echtzeit. Kostenloses & privates Entwickler-Tool von 99tool.in.",
+      "what_is_title": "Was ist der Regex-Tester & Debugger?",
+      "what_is_content": "Der Regex-Tester & Debugger ist ein clientseitiges Entwickler-Tool zum Erstellen, Testen und Reparieren regulärer Ausdrücke. Durch Eingabe eines Musters und von Match-Flags kannst du prüfen, wie Ausdrücke Testtexte durchsuchen, Gruppen erfassen und Sonderfälle behandeln.\n\nDieser Debugger führt alle Prüfungen lokal mit der nativen JavaScript-RegExp-Engine deines Browsers aus. Da keine Testtexte oder Ausdrücke über das Netzwerk gesendet werden, bleiben deine Daten geschützt.",
+      "how_to_use_title": "So verwendest du den Regex-Tester & Debugger",
+      "how_to_use_steps": [
+        "<strong>Muster eingeben:</strong> Gib deinen regulären Ausdruck (z. B. <code>[a-zA-Z0-9]+</code>) in das Eingabefeld ein.",
+        "<strong>Flags konfigurieren:</strong> Aktiviere Flags wie Global (g) für alle Treffer, Case-Insensitive (i) für Ignorieren von Groß-/Kleinschreibung oder Multiline (m).",
+        "<strong>Testtext eingeben:</strong> Füge deinen Beispieltext in das Testfeld ein. Treffer werden sofort hervorgehoben.",
+        "<strong>Erfassungsgruppen prüfen:</strong> Sieh dir in der Ergebnisleiste Details zu Treffern und Gruppen an.",
+        "<strong>Fehler beheben:</strong> Falls der Ausdruck ungültig ist, zeigt eine Fehlermeldung den Grund zur schnellen Behebung an."
+      ],
+      "key_features_title": "Hauptmerkmale",
+      "key_features": [
+        "<strong>Echtzeit-Hervorhebung:</strong> Visualisiert Treffer im Textfeld direkt während der Eingabe.",
+        "<strong>Interaktive Flag-Steuerung:</strong> Aktiviere oder deaktiviere Flags einfach per Klick.",
+        "<strong>Erfassungsgruppen-Übersicht:</strong> Zeigt Trefferpositionen und extrahierte Gruppenwerte übersichtlich an.",
+        "<strong>Integrierte Fehlerdiagnose:</strong> Gibt klare Hinweise bei Syntaxfehlern wie unvollständigen Klammern.",
+        "<strong>100% Clientseitig:</strong> Testet reguläre Ausdrücke lokal im Browser zum Schutz vertraulicher Daten."
+      ],
+      "common_use_cases_title": "Häufige Anwendungsfälle",
+      "common_use_cases": [
+        "<strong>Formular-Validierung:</strong> Prüfe Muster für E-Mail-Adressen, Telefonnummern oder Passwörter.",
+        "<strong>Log-Analyse:</strong> Erstelle Muster zur Extraktion von Zeitstempeln, IP-Adressen oder Fehlercodes aus Logdateien.",
+        "<strong>Text-Extraktion:</strong> Teste Ausdrücke zum Herausfiltern bestimmter Tags oder Variablen aus Code.",
+        "<strong>Reguläre Ausdrücke lernen:</strong> Experimentiere mit Quantifikatoren, Ankern und Gruppen in einer visuellen Umgebung."
+      ],
+      "faq_title": "Häufig gestellte Fragen",
+      "faq": [
+        {
+          "question": "Welche Regex-Engine nutzt dieses Tool?",
+          "answer": "Das Tool nutzt die native JavaScript-<code>RegExp</code>-Engine. Diese entspricht dem Verhalten in Chrome, Firefox, Safari, Edge und Node.js."
+        },
+        {
+          "question": "Werden meine Testtexte auf Server hochgeladen?",
+          "answer": "Nein. 99tool.in verarbeitet alle Ausdrücke lokal im Arbeitsspeicher deines Browsers. Deine Eingaben verlassen dein Gerät nicht."
+        },
+        {
+          "question": "Warum wird ein Syntaxfehler angezeigt?",
+          "answer": "Dies passiert bei ungültiger Syntax, z. B. unvollständigen Klammern <code>(</code>, nicht maskierten Zeichen oder doppelten Flags."
+        },
+        {
+          "question": "Unterstützt das Tool Lookarounds (Lookahead/Lookbehind)?",
+          "answer": "Ja. Die moderne JavaScript-Engine unterstützt ES2018+-Features wie positive/negative Lookaheads (<code>(?=...)</code> / <code>(?!...)</code>) und Lookbehinds (<code>(?<=...)</code> / <code>(?<!...)</code>)."
+        }
+      ],
+      "privacy_note": "🔒 Datenschutz- und Sicherheitshinweis: Regex-Prüfungen und Gruppenauswertungen laufen lokal im Browser ab. Es werden keine Daten übertragen.",
+      "schema_org": {
+        "name": "Regex-Tester",
+        "description": "Echtzeit-Regex-Testing, Flag-Unterstützung (g, i, m), Treffer-Hervorhebung."
+      }
+    },
+    "word_counter": {
+      "page_title": "Wortzähler – 99tool.in",
+      "meta_description": "Zähle Wörter, Zeichen, Sätze und Absätze in Echtzeit. Kostenloses & privates Online-Tool von 99tool.in.",
+      "what_is_title": "Was ist der Online-Wortzähler?",
+      "what_is_content": "Der Online-Wortzähler ist ein Echtzeit-Textanalyse-Tool, das Wörter, Zeichen, Sätze und Absätze zählt, während du tippst oder Text einfügst. Während cloudbasierte Editoren Texte oft extern speichern, läuft die Analyse hier komplett lokal in deinem Browser ohne Datenübertragung.\n\nDer Zähler aktualisiert sich sofort bei jedem Tastenanschlag, sodass du Textlängen für Aufsätze, Social-Media-Posts oder SEO-Texte präzise im Blick behältst.",
+      "how_to_use_title": "So verwendest du den Online-Wortzähler",
+      "how_to_use_steps": [
+        "Schreibe oder füge deinen Text direkt in das Textfeld ein.",
+        "Verfolge, wie sich Wortzahl, Zeichenzahl, Satzanzahl und Absatzanzahl in Echtzeit aktualisieren.",
+        "Nutze die Lesezeit-Schätzung, um zu sehen, wie lange das Lesen deines Textes dauert.",
+        "Passe deinen Text direkt im Feld an, bis du deine Zielvorgabe erreichst.",
+        "Klicke auf \"Löschen\", um das Feld zurückzusetzen."
+      ],
+      "key_features_title": "Hauptmerkmale",
+      "key_features": [
+        "<strong>Echtzeit-Zählung:</strong> Aktualisiert alle Zahlen bei jedem einzelnen Tastenanschlag.",
+        "<strong>Lesezeit-Schätzung:</strong> Berechnet die ungefähre Lesedauer basierend auf durchschnittlicher Lesegeschwindigkeit.",
+        "<strong>Zeichenzähler (mit & ohne Leerzeichen):</strong> Zeigt beide Werte für genaue Vorgaben an.",
+        "<strong>100% Privatsphäre:</strong> Die gesamte Logik läuft clientseitig; dein Text wird nicht hochgeladen."
+      ],
+      "common_use_cases_title": "Häufige Anwendungsfälle",
+      "common_use_cases": [
+        "<strong>Wissenschaftliche Arbeiten:</strong> Überprüfe Wortzahlen vor der Abgabe von Hausarbeiten.",
+        "<strong>SEO-Texte:</strong> Halte Zielvorgaben für Meta-Beschreibungen, Titles und Artikel ein.",
+        "<strong>Social Media:</strong> Behalte Zeichenlimits für X (Twitter), LinkedIn oder Instagram im Blick.",
+        "<strong>Freie Autoren:</strong> Prüfe Textlängen gemäß vertraglicher Vorgaben."
+      ],
+      "faq_title": "Häufig gestellte Fragen",
+      "faq": [
+        {
+          "question": "Speichert das Tool meinen Text?",
+          "answer": "Nein. Dein Text wird weder im Speicher noch auf Servern gesichert. Nach dem Schließen des Tabs ist der Text gelöscht."
+        },
+        {
+          "question": "Wie wird die Lesezeit berechnet?",
+          "answer": "Die Berechnung basiert auf einer durchschnittlichen Lesegeschwindigkeit von ca. 200–250 Wörtern pro Minute."
+        },
+        {
+          "question": "Werden Leerzeichen als Zeichen gezählt?",
+          "answer": "Ja, das Tool zeigt sowohl die Gesamtzahl inkl. Leerzeichen als auch die reine Zeichenzahl ohne Leerzeichen an."
+        },
+        {
+          "question": "Was gilt als ein Satz?",
+          "answer": "Jeder Textabschnitt, der mit einem Punkt, Ausrufezeichen oder Fragezeichen endet, wird als Satz gezählt."
+        },
+        {
+          "question": "Funktioniert das Tool auf dem Smartphone?",
+          "answer": "Ja, das Tool ist vollständig mobiloptimiert und funktioniert auf Smartphones und Tablets genauso gut wie auf dem Desktop."
+        }
+      ],
+      "privacy_note": "Datenschutz- und Sicherheitshinweis: Alle Textanalysen und Zählungen finden lokal in deinem Browser statt. Es werden keine Texte übertragen oder gespeichert.",
+      "schema_org": {
+        "name": "Online-Wortzähler",
+        "description": "Wortzahl, Zeichenzahl, Satzanzahl, Lesezeit-Schätzung."
+      }
+    }
+  }
+}

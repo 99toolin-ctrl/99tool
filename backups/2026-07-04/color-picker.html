@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Color Picker – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/image/color-picker.html"/>
+<meta property="og:title" content="Color Picker – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/image/color-picker.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Color Picker \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/image/color-picker.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .picker-layout {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    @media (max-width: 992px) {
+      .picker-layout { grid-template-columns: 1fr; }
+    }
+    .image-workspace {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem;
+      position: relative;
+      cursor: crosshair;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 400px;
+    }
+    #picker-img {
+       max-width: 100%;
+       height: auto;
+       border-radius: 4px;
+       box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+    
+    .sidebar {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      height: fit-content;
+      position: sticky;
+      top: 80px;
+    }
+
+    .active-color-box {
+      width: 100%;
+      height: 100px;
+      border-radius: 12px;
+      border: 2px solid var(--border);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: #fff;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+      font-size: 1.2rem;
+      transition: background 0.1s ease;
+    }
+
+    .code-row {
+      background: var(--dark);
+      border: 1px solid var(--border);
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .code-label { font-size: 0.75rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; }
+    .code-value { font-family: monospace; font-size: 1rem; color: var(--white); }
+    .copy-mini { 
+      background: var(--primary); color: white; border: none; padding: 4px 8px; 
+      border-radius: 4px; font-size: 0.7rem; cursor: pointer; 
+    }
+
+    .palette-history {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .palette-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .swatch {
+      width: 100%; aspect-ratio: 1; border-radius: 4px; 
+      border: 1px solid var(--border); cursor: pointer;
+    }
+
+    .magnifier {
+      position: absolute;
+      width: 100px; height: 100px;
+      border: 4px solid #fff;
+      border-radius: 50%;
+      pointer-events: none;
+      display: none;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      background-repeat: no-repeat;
+      z-index: 10;
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Image Color Picker</h1>
+      <p>Identify and extract the perfect palette from any image. Instantly. Privately.</p>
+    </div>
+
+    <div class="tool-container">
+      <div class="upload-area" id="drop-zone">
+        <div class="upload-icon">🎯</div>
+        <p>Drop image to pick colors or <span class="text-primary">select file</span></p>
+        <p class="text-muted small">JPG, PNG, WEBP (No data usage)</p>
+        <input type="file" id="image-input" accept="image/*" hidden>
+      </div>
+
+      <div id="tool-workspace" class="hidden">
+        <div class="picker-layout">
+          <div class="image-workspace" id="img-workspace">
+             <img id="picker-img" alt="Picker Target">
+             <div class="magnifier" id="magnifier"></div>
+          </div>
+
+          <div class="sidebar">
+             <div class="active-color-box" id="active-color">#FFFFFF</div>
+             
+             <div class="code-row">
+                <div>
+                   <div class="code-label">HEX</div>
+                   <div class="code-value" id="hex-val">#FFFFFF</div>
+                </div>
+                <button class="copy-mini" onclick="copyValue('hex-val')">Copy</button>
+             </div>
+             <div class="code-row">
+                <div>
+                   <div class="code-label">RGB</div>
+                   <div class="code-value" id="rgb-val">rgb(255, 255, 255)</div>
+                </div>
+                <button class="copy-mini" onclick="copyValue('rgb-val')">Copy</button>
+             </div>
+             
+             <div class="palette-history">
+                <h4 class="small uppercase font-bold text-muted">History</h4>
+                <div class="palette-grid" id="history-palette"></div>
+             </div>
+             
+             <p class="text-center mt-4 small text-muted">Click image to save color</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5">
+        <h2>Sampling Your Palette in Private: Secure Local Color Identification</h2>
+        <p>We've all been there: you see a perfect shade in an image or on a website and you need to know its exact code. You look for a <strong>color picker</strong> online to help you sample the universe and build your professional design palette. But as you look at the "Browser Permissions" and "History Tracking" of most tools, you realize that your creative inspirations, your brand choices, and your proprietary palettes are being recorded by an anonymous database. Do you really want to share your "Chromatics" with a third-party algorithm?</p>
+
+        <p>At 99tool.in, we built our <strong>image color picker</strong> to give you a professional eye-dropper without the privacy debt. By utilizing browser-side Canvas sampling and zero-cloud processing, we allow you to <strong>extract color codes from images</strong> entirely within the secure sandbox of your own machine. Whether you’re a web designer matching a hero image palette, a brand strategist auditing corporate colors, or an artist studying color theory in digital shots, our <strong>safe color tool</strong> ensures that your visual inspiration stays where it belongs: on your device, under your total sovereignty.</p>
+        
+        <div class="tool-preview-box mt-4 mb-4" style="text-align:center;">
+           <img src="../../assets/images/color-picker-preview.png" alt="Clean Color Picker Interface with Eye-Dropper Precision and Hex-to-RGB Conversion Logic Visuals" class="tool-preview" id="tool-preview-img" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+        </div>
+
+        <h3 class="mt-4">The Logic of Eye-Dropper Precision</h3>
+        <p>Chromatic analysis isn't just about clicks; it’s about "Technical Accuracy." Most basic <strong>pick color from image</strong> services use simplified algorithms that can misinterpret lighting or compression artifacts, leading to "Palette Drift." Our <strong>professional color picker</strong> takes a human-centric approach: we focus on **Eye-Dropper Precision** and **Hex-to-RGB Conversion Logic**.</p>
+        
+        <p>We provide a real-time magnifier that allows you to isolate individual pixels with surgical accuracy. Our <strong>safe chromatic validator</strong> doesn't just show a color; it tracks your sampling history and provides the exact HEX, RGB, and HSL values needed for professional development. This transparency transforms a simple click into a professional audit, helping you build your palette in a private, professional environment.</p>
+
+        <h3 class="mt-4">Why Extraction is the Designer’s Ethical Choice</h2>
+        <p>In the age of digital footprints, the way you build your palettes is a map of your creative vision. When you use a standard <strong>image color picker online free</strong> service that requires an upload, you are essentially giving away your "Visual Inspiration" for a third party to analyze or potentially use in their own training models. Our 100% <strong>extraction utility</strong> removes this "Surveillance Risk" entirely from your design routine.</p>
+        
+        <p>Because the logic and sampling happen in your browser's private memory, your source images are invisible to the outside world. No analytics are tracked, no pixels are harvested, and no creative data is shared with advertisers or AI platforms. At 99tool.in, we believe that <strong>sampling the world</strong> should be an empowering utility, not a data-mining trade-off. With us, you have a private, professional laboratory for your palette that fits in your browser tab.</p>
+
+        <h3 class="mt-4">How to Extract Your Palette (Step-by-Step)</h3>
+        <p>Finding the perfect code should be a high-speed, 5-second task. Here is how to use our <strong>color picker</strong>:</p>
+        <ul style="line-height: 1.8; margin-bottom: 20px;">
+          <li><strong>Step 1: Load Your Visual Source</strong> — Drag your photo into the workspace. It renders instantly in our local canvas without uploading a single byte to any server.</li>
+          <li><strong>Step 2: Sample the Pixel</strong> — Move your cursor over the image. Our real-time magnifier helps you pinpoint the exact shade within complex gradients or textures.</li>
+          <li><strong>Step 3: Explore the Palette</strong> — Click to select a color. The sidebar instantly updates with the HEX and RGB values, and saves the shade to your local history.</li>
+          <li><strong>Step 4: Commit Your Code</strong> — Click "Copy" on the value you need. Your palette is saved locally in your browser history, ready to be dropped into your CSS or design software.</li>
+        </ul>
+
+        <h3 class="mt-4">Strategic Use Cases for Your Local Color Tool</h3>
+        <p>Our <strong>selective color extraction tool</strong> is the essential companion for varied professional life:</p>
+        
+        <p><strong>For Web & UI Developers:</strong> Matching a component's color to a hero image? Use our <strong>secure color tool</strong> to find the exact primary shade and build a cohesive, accessible theme without leaving your browser.</p>
+        
+        <p><strong>For Brand Designers & Strategists:</strong> Auditing a client's existing assets? Use our <strong>safe color extractor</strong> to sample their logo and website, ensuring your new designs maintain absolute brand consistency.</p>
+        
+        <p><strong>For Interior & Product Designers:</strong> Sampling inspiration from a real-world photo? Use our <strong>private color tool</strong> to extract real-world hues and transform them into digital palettes for your next physical project.</p>
+
+        <h3 class="mt-5">Explore Your Complete Image Suite</h3>
+        <p>Once you’ve found your perfect colors, you might need to combine them into a final asset. Check out our <strong><a href="collage-maker.html">Image Collage Maker</a></strong>. Or, if you need to adjust the file size of your source, use our <strong><a href="compress-image.html">Image Compressor</a></strong>. At 99tool.in, we are building a world-class, 100% private digital toolkit to give you total control over your visual voice.</p>
+      </section>
+ 
+      <!-- FAQ SECTION -->
+      <section class="faq-section mt-5">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              How accurate is the eye-dropper tool?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Our <strong>image color picker</strong> uses pixel-perfect sampling logic. By utilizing a high-resolution magnifier, you can isolate and sample individual pixels with surgical precision, ensuring the HEX and RGB codes you extract are technically accurate to the source file.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Is my image sent to the 99tool.in servers?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Absolutely not. Your privacy and creative inspirations are our standard. All image rendering and pixel sampling happen <strong>locally in your browser's private memory</strong>. Your source photos never leave your device, ensuring total "Chromatic Sovereignty."</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Does this tool support HSL and CMYK?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Currently, our <strong>safe color extractor</strong> provides HEX and RGB values, which are the industry standards for web and digital design. We are working on adding HSL and CMYK outputs in a future update to support print workflows and advanced color theory.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              How many colors can I save in the history?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>The **History Palette** saves up to 20 of your most recent samples during your current session. This allows you to build a cohesive design palette from various points in an image without having to re-sample the same pixel twice.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Does the magnifier work on high-res images?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. Our <strong>professional color tool</strong> renders a high-fidelity preview of your image. The magnifier uses a 5x zoom logic to help you navigate dense textures and subtle gradients, making it the perfect tool for auditing complex visual assets.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Why use a local picker instead of a browser extension?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Many browser extensions require broad permissions to "read all data on all websites." Our <strong>private color sampler</strong> requires zero permissions and processes your files in a secure, sandboxed environment, protecting you from potential malware or data-tracking.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const imageInput = document.getElementById('image-input');
+    const dropZone = document.getElementById('drop-zone');
+    const workspace = document.getElementById('tool-workspace');
+    const pickerImg = document.getElementById('picker-img');
+    const magnifier = document.getElementById('magnifier');
+    const activeColorBox = document.getElementById('active-color');
+    const hexVal = document.getElementById('hex-val');
+    const rgbVal = document.getElementById('rgb-val');
+    const historyPalette = document.getElementById('history-palette');
+
+    let canvas = document.createElement('canvas');
+    let ctx = canvas.getContext('2d', { willReadFrequently: true });
+    let history = [];
+
+    dropZone.onclick = () => imageInput.click();
+    imageInput.onchange = (e) => handleFile(e.target.files[0]);
+    
+    // Init Drag and Drop using global helper
+    setupDragDrop('drop-zone', (files) => {
+       if (files.length) handleFile(files[0]);
+    });
+    
+    function handleFile(file) {
+      if (!file || !file.type.startsWith('image/')) return;
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        pickerImg.src = e.target.result;
+        
+        const tempImg = new Image();
+        tempImg.onload = () => {
+           canvas.width = tempImg.width;
+           canvas.height = tempImg.height;
+           ctx.drawImage(tempImg, 0, 0);
+           workspace.classList.remove('hidden');
+           magnifier.style.backgroundImage = `url(${e.target.result})`;
+        };
+        tempImg.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+
+    // Picker Logic
+    pickerImg.onmousemove = (e) => {
+       const rect = pickerImg.getBoundingClientRect();
+       const x = e.clientX - rect.left;
+       const y = e.clientY - rect.top;
+       
+       const scaleX = canvas.width / rect.width;
+       const scaleY = canvas.height / rect.height;
+       
+       const pxX = Math.floor(x * scaleX);
+       const pxY = Math.floor(y * scaleY);
+       
+       const pixel = ctx.getImageData(pxX, pxY, 1, 1).data;
+       const hex = rgbToHex(pixel[0], pixel[1], pixel[2]);
+       
+       // Update Magnifier
+       magnifier.style.display = 'block';
+       magnifier.style.left = (x - 50) + 'px';
+       magnifier.style.top = (y - 50) + 'px';
+       magnifier.style.backgroundPosition = `-${pxX * (100/canvas.width)}% -${pxY * (100/canvas.height)}%`; // Simplified for now
+       magnifier.style.backgroundSize = (canvas.width * 5) + 'px ' + (canvas.height * 5) + 'px';
+       magnifier.style.backgroundPosition = `-${(pxX * 5) - 50}px -${(pxY * 5) - 50}px`;
+    };
+
+    pickerImg.onmouseleave = () => magnifier.style.display = 'none';
+
+    pickerImg.onclick = (e) => {
+       const rect = pickerImg.getBoundingClientRect();
+       const x = e.clientX - rect.left;
+       const y = e.clientY - rect.top;
+       const scaleX = canvas.width / rect.width;
+       const scaleY = canvas.height / rect.height;
+       const pxX = Math.floor(x * scaleX);
+       const pxY = Math.floor(y * scaleY);
+       
+       const pixel = ctx.getImageData(pxX, pxY, 1, 1).data;
+       const hex = rgbToHex(pixel[0], pixel[1], pixel[2]);
+       const rgb = `rgb(${pixel[0]}, ${pixel[1]}, ${pixel[2]})`;
+       
+       updateActiveColor(hex, rgb);
+       addToHistory(hex);
+    };
+
+    function updateActiveColor(hex, rgb) {
+       activeColorBox.style.background = hex;
+       activeColorBox.innerText = hex;
+       hexVal.innerText = hex;
+       rgbVal.innerText = rgb;
+       
+       // Best contrast for text
+       const r = parseInt(hex.slice(1,3), 16);
+       const g = parseInt(hex.slice(3,5), 16);
+       const b = parseInt(hex.slice(5,7), 16);
+       activeColorBox.style.color = (r*0.299 + g*0.587 + b*0.114) > 186 ? '#000' : '#fff';
+    }
+
+    function addToHistory(hex) {
+       if (history.includes(hex)) return;
+       history.unshift(hex);
+       if (history.length > 20) history.pop();
+       renderHistory();
+    }
+
+    function renderHistory() {
+       historyPalette.innerHTML = '';
+       history.forEach(hex => {
+          const div = document.createElement('div');
+          div.className = 'swatch';
+          div.style.background = hex;
+          div.title = hex;
+          div.onclick = () => {
+             const r = parseInt(hex.slice(1,3), 16);
+             const g = parseInt(hex.slice(3,5), 16);
+             const b = parseInt(hex.slice(5,7), 16);
+             updateActiveColor(hex, `rgb(${r}, ${g}, ${b})`);
+          };
+          historyPalette.appendChild(div);
+       });
+    }
+
+    function rgbToHex(r, g, b) {
+       return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1).toUpperCase();
+    }
+
+    window.copyValue = (id) => {
+       const val = document.getElementById(id).innerText;
+       navigator.clipboard.writeText(val);
+       const btn = document.querySelector(`button[onclick="copyValue('${id}')"]`);
+       const old = btn.innerText;
+       btn.innerText = 'Copied!';
+       setTimeout(() => btn.innerText = old, 1500);
+    };
+  </script>
+</body>
+</html>
+

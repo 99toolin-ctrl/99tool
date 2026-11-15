@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Math Practice – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/learning/math-practice.html"/>
+<meta property="og:title" content="Math Practice – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/learning/math-practice.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Math Practice \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/learning/math-practice.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .math-workspace {
+      max-width: 600px;
+      margin: 2rem auto;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 3rem;
+      text-align: center;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+    }
+    .stats-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+    .problem {
+      font-size: 4rem;
+      font-weight: 800;
+      margin: 2rem 0;
+      letter-spacing: 5px;
+    }
+    .math-input {
+      background: var(--dark);
+      border: 2px solid var(--border);
+      color: white;
+      font-size: 2.5rem;
+      width: 200px;
+      text-align: center;
+      padding: 10px;
+      border-radius: 12px;
+      outline: none;
+    }
+    .math-input:focus { border-color: var(--primary); }
+    
+    .difficulty-selector {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 2rem;
+    }
+    .diff-btn {
+      padding: 8px 16px;
+      border-radius: 30px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.03);
+      cursor: pointer;
+      color: var(--text-muted);
+      transition: all 0.2s;
+    }
+    .diff-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+
+    .feedback { font-size: 1.2rem; font-weight: 600; height: 30px; margin-top: 1rem; }
+    .correct { color: #2f9e44; }
+    .wrong { color: #e03131; }
+
+    .start-btn { font-size: 1.2rem; padding: 15px 40px; border-radius: 50px; }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/learning/math-practice.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/learning/math-practice.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/learning/math-practice.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/learning/math-practice.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/learning/math-practice.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/learning/math-practice.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/learning/math-practice.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/learning/math-practice.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/learning/math-practice.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/learning/math-practice.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/learning/math-practice.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/learning/math-practice.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/learning/math-practice.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/learning/math-practice.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/learning/math-practice.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/learning/math-practice.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/learning/math-practice.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/learning/math-practice.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/learning/math-practice.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/learning/math-practice.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/learning/math-practice.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/learning/math-practice.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-hero text-center">
+      <nav class="breadcrumb justify-content-center">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#learning">Learning</a> <span>/</span> 
+        <span>Math Practice</span>
+      </nav>
+      <h1>Math Practice Tool</h1>
+      <p>Sharpen your mental arithmetic skills with instant feedback and progressive difficulty.</p>
+    </div>
+
+    <div class="math-workspace">
+      <div id="setup-view">
+        <h3>Choose Your Mastery Level</h3>
+        <div class="difficulty-selector mt-4">
+          <button class="diff-btn active" data-level="1">Beginner</button>
+          <button class="diff-btn" data-level="2">Intermediate</button>
+          <button class="diff-btn" data-level="3">Advanced</button>
+        </div>
+        <button class="btn btn-primary start-btn" onclick="startGame()">Start Practice Session</button>
+      </div>
+
+      <div id="game-view" style="display: none;">
+        <div class="stats-row">
+            <span>Score: <span id="score">0</span></span>
+            <span>Level: <span id="current-diff">Beginner</span></span>
+        </div>
+        <div class="problem" id="problem-text">12 + 8</div>
+        <input type="number" id="math-answer" class="math-input" placeholder="?" oninput="checkAnswer()">
+        <div id="feedback" class="feedback"></div>
+        <div class="mt-5">
+            <button class="btn btn-secondary btn-sm" onclick="location.reload()">End Session</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTENT SECTION -->
+    <section class="seo-content mt-5 text-start">
+      <h2 data-i18n="tools.math_practice_tool.what_is_title">What is the Math Practice Tool?</h2>
+      <p>The Math Practice Tool is a client-side arithmetic training utility developed to improve mental calculation speed and accuracy. By configuring arithmetic operations, difficulty parameters, and time constraints, users can practice answering random math questions in a clean workspace.</p>
+      <p>This math trainer processes all problem generation, input evaluations, score logs, and session timer states locally in your browser memory. No network requests are sent during the practice sessions, making the tool safe and private for student study sessions.</p>
+
+      <h2 class="mt-4" data-i18n="tools.math_practice_tool.how_to_use_title">How to Use the Math Practice Tool</h2>
+      <ol>
+        <li><strong>Choose Arithmetic Operations:</strong> Select the operations you want to practice (such as Addition, Subtraction, Multiplication, Division, or Mixed Operations).</li>
+        <li><strong>Set the Difficulty Level:</strong> Adjust the difficulty setting (Beginner, Intermediate, or Advanced) to match your skill level.</li>
+        <li><strong>Configure the Timer:</strong> Select your preferred session length (1 Minute, 2 Minutes, 5 Minutes, or Endless Mode).</li>
+        <li><strong>Start Your Practice:</strong> Click the "Start Session" button to load the game panel and start the countdown timer.</li>
+        <li><strong>Enter Your Answers:</strong> Type your answer into the "Answer Input" text field. The system evaluates your input immediately.</li>
+        <li><strong>Track Your Scores:</strong> Review your current score and level progression stats at the top of the interface. Click "End Session" to return to the options panel.</li>
+      </ol>
+
+      <h2 class="mt-4" data-i18n="tools.math_practice_tool.key_features_title">Key Features</h2>
+      <ul>
+        <li><strong>Customizable Math Focus:</strong> Practice individual arithmetic operations (Addition, Subtraction, Multiplication, Division) or select Mixed mode for a random selection of questions.</li>
+        <li><strong>Adaptive Difficulty Scale:</strong> Switch between Beginner (basic single digits), Intermediate (double digits), and Advanced (complex math) modes.</li>
+        <li><strong>Flexible Session Timers:</strong> Train against a countdown timer to build speed, or select Endless mode to practice at your own pace.</li>
+        <li><strong>Instant Input Evaluation:</strong> No submit button required—the tool checks your answers automatically as you type.</li>
+        <li><strong>100% Offline Support:</strong> Runs entirely in your browser window to keep your focus sharp and your session private.</li>
+      </ul>
+
+      <h2 class="mt-4" data-i18n="tools.math_practice_tool.common_use_cases_title">Common Use Cases</h2>
+      <ul>
+        <li><strong>Quantitative Interview Prep:</strong> Rehearse quick mental estimations and multi-digit multiplications for trading, consulting, and finance interviews.</li>
+        <li><strong>Elementary Math Homework:</strong> Help younger students master basic multiplication tables and subtraction facts in a safe workspace.</li>
+        <li><strong>Daily Brain Exercise:</strong> Spend a few minutes training with numbers to sharpen working memory, focus, and analytical skills.</li>
+        <li><strong>Exam Preparation:</strong> Build numerical confidence and speed for standardized tests where calculators are not allowed.</li>
+      </ul>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-section mt-5">
+      <h2 data-i18n="tools.math_practice_tool.faq_title">Frequently Asked Questions</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <button class="faq-question">
+            How does the automatic check function work?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>The input field monitors your keystrokes. Once you type the correct digits, the card flashes green, records a point, and automatically generates the next problem.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Does the tool save my high scores?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Your session scores are calculated in temporary memory for your current session. Refreshing the page resets the score to zero, giving you a fresh start.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Can kids use this tool safely?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. The tool contains zero advertisements, collects no user information, and runs entirely client-side, making it a safe choice for children and classrooms.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            What types of calculations are in Advanced mode?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Advanced mode generates larger numeric parameters (such as double-digit multiplication, triple-digit addition, and division questions that test remainders or clean factors).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust-signal">
+      <p>🔒 Privacy & Data Note: Math equations, user inputs, and score history are calculated locally in your browser. No data is stored or transmitted.</p>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    let score = 0;
+    let currentLevel = 1;
+    let correctAnswer = 0;
+    let sessionActive = false;
+
+    // Difficulty labels
+    const levels = { 1: "Beginner", 2: "Intermediate", 3: "Advanced" };
+
+    // Select Difficulty
+    document.querySelectorAll('.diff-btn').forEach(btn => {
+      btn.onclick = () => {
+        document.querySelectorAll('.diff-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentLevel = parseInt(btn.dataset.level);
+      };
+    });
+
+    function startGame() {
+      document.getElementById('setup-view').style.display = 'none';
+      document.getElementById('game-view').style.display = 'block';
+      document.getElementById('current-diff').innerText = levels[currentLevel];
+      sessionActive = true;
+      generateProblem();
+    }
+
+    function generateProblem() {
+      let a, b, op;
+      const ops = ['+', '-', '*', '/'];
+      
+      if (currentLevel === 1) {
+        a = Math.floor(Math.random() * 20) + 1;
+        b = Math.floor(Math.random() * 20) + 1;
+        op = ops[Math.floor(Math.random() * 2)]; // Only + and -
+      } else if (currentLevel === 2) {
+        a = Math.floor(Math.random() * 50) + 5;
+        b = Math.floor(Math.random() * 20) + 2;
+        op = ops[Math.floor(Math.random() * 3)]; // +, -, *
+      } else {
+        a = Math.floor(Math.random() * 100) + 10;
+        b = Math.floor(Math.random() * 50) + 2;
+        op = ops[Math.floor(Math.random() * 4)]; // All ops
+      }
+
+      // Ensure division yields integer
+      if (op === '/') { a = a * b; }
+      // Ensure subtraction isn't negative for beginners
+      if (op === '-' && a < b) [a, b] = [b, a];
+
+      correctAnswer = eval(`${a} ${op === '*' ? '*' : op === '/' ? '/' : op} ${b}`);
+      document.getElementById('problem-text').innerText = `${a} ${op.replace('*', '×').replace('/', '÷')} ${b}`;
+      document.getElementById('math-answer').value = '';
+      document.getElementById('math-answer').focus();
+    }
+
+    function checkAnswer() {
+      const val = parseFloat(document.getElementById('math-answer').value);
+      const feedback = document.getElementById('feedback');
+      
+      if (val === correctAnswer) {
+        score++;
+       document.getElementById('score').innerText = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(score, 0) : score;
+        feedback.innerText = "Correct! 🎉";
+        feedback.className = "feedback correct";
+        setTimeout(() => {
+          feedback.innerText = "";
+          generateProblem();
+        }, 800);
+      }
+    }
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

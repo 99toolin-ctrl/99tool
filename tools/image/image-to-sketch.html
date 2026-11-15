@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Image To Sketch – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/image/image-to-sketch.html"/>
+<meta property="og:title" content="Image To Sketch – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/image/image-to-sketch.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Image To Sketch \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/image/image-to-sketch.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .editor-layout {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    @media (max-width: 992px) {
+      .editor-layout { grid-template-columns: 1fr; }
+    }
+    .preview-container {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 450px;
+      background-image: radial-gradient(var(--border) 1px, transparent 0);
+      background-size: 20px 20px;
+    }
+    #main-canvas {
+      max-width: 100%;
+      height: auto;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+      border-radius: 4px;
+      background: #fff;
+    }
+
+    .tool-panel {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      height: fit-content;
+      position: sticky;
+      top: 80px;
+    }
+    .tool-section { margin-bottom: 2rem; }
+    .tool-section h4 { font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem; letter-spacing: 1px; }
+
+    .range-wrap label { display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-muted); margin-bottom: 4px; }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/image/image-to-sketch.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/image/image-to-sketch.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/image/image-to-sketch.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/image/image-to-sketch.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/image/image-to-sketch.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/image/image-to-sketch.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/image/image-to-sketch.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/image/image-to-sketch.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/image/image-to-sketch.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/image/image-to-sketch.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/image/image-to-sketch.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/image/image-to-sketch.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/image/image-to-sketch.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/image/image-to-sketch.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/image/image-to-sketch.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/image/image-to-sketch.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/image/image-to-sketch.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/image/image-to-sketch.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/image/image-to-sketch.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/image/image-to-sketch.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/image/image-to-sketch.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/image/image-to-sketch.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Image Sketch Generator</h1>
+      <p>Convert any photo into a professional pencil drawing or structural outline. 100% private and artistic.</p>
+    </div>
+
+    <div class="tool-container">
+      <div class="upload-area" id="drop-zone">
+        <div class="upload-icon">🎨</div>
+        <p>Drop photo to Sketch or <span class="text-primary">browse files</span></p>
+        <p class="text-muted small">Portraits, Landscapes, and Objects (No data usage)</p>
+        <input type="file" id="image-input" accept="image/*" hidden>
+      </div>
+
+      <div id="tool-workspace" class="hidden">
+        <div class="editor-layout">
+          <div class="preview-container">
+             <canvas id="main-canvas"></canvas>
+          </div>
+
+          <div class="tool-panel">
+            <div class="tool-section">
+               <h4>Artist Controls</h4>
+               <div class="range-wrap">
+                  <label>Pencil Stroke: <span id="blur-val">10</span></label>
+                  <input type="range" id="blur-radius" min="1" max="50" value="10" class="w-100">
+               </div>
+               <div class="range-wrap">
+                  <label>Shadow Intensity: <span id="opacity-val">100</span>%</label>
+                  <input type="range" id="sketch-opacity" min="0" max="100" value="100" class="w-100">
+               </div>
+               <p class="small text-muted">Adjusting the stroke changes the "fineness" of the pencil texture.</p>
+            </div>
+
+            <button id="download-btn" class="btn btn-primary w-100">Download Sketch Artwork</button>
+            <button id="reset-btn" class="btn btn-secondary w-100 mt-2">Reset to Photo</button>
+            <p class="text-center mt-3 small text-muted">Generated locally in your browser</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5">
+        <h2 data-i18n="tools.image_to_sketch.what_is_title">What is Image Sketch Generator</h2>
+        <p>The Image Sketch Generator is a lightweight, web-based utility designed to transform standard photographs into pencil-like sketches or outline drawings. Using local browser-based edge-detection algorithms, it identifies the high-contrast boundaries in your image to simulate hand-drawn graphite lines.</p>
+        <p>This tool runs entirely on your local machine, requiring no registration, subscription, or internet communication after loading. Unlike traditional filters that simply desaturate your image, it analyzes color transitions to map lines and shadow values, giving you a custom-designed look.</p>
+
+        <h3 class="mt-4">How to Use Image Sketch Generator</h3>
+        <ol style="line-height: 1.8; margin-bottom: 20px; padding-left: 20px;">
+          <li><strong>Upload your image:</strong> Click anywhere on the dashed upload area to browse files on your device, or drag and drop your photo directly into the browser window.</li>
+          <li><strong>View your sketch:</strong> Once loaded, the tool instantly processes the photo and displays the preliminary pencil sketch on the interactive canvas.</li>
+          <li><strong>Configure the pencil stroke:</strong> Adjust the <strong>Pencil Stroke</strong> slider. A lower value makes the lines thinner and sharper for a technical sketch, while higher values create broader, softer strokes.</li>
+          <li><strong>Set the shadow intensity:</strong> Drag the <strong>Shadow Intensity</strong> slider to determine how dark the graphite shading should be. Lowering this percentage yields a lighter outline, while raising it adds depth and contrast.</li>
+          <li><strong>Reset if needed:</strong> If you want to compare the sketch with your original photo, click the <strong>Reset to Photo</strong> button to view the clean original image.</li>
+          <li><strong>Download your sketch:</strong> Click the <strong>Download Sketch Artwork</strong> button to save the finalized sketch to your device as a JPG file.</li>
+        </ol>
+
+        <h3 class="mt-4">Key Features</h3>
+        <ul style="line-height: 1.8; margin-bottom: 20px; padding-left: 20px;">
+          <li><strong>Interactive Line Control:</strong> Fine-tune line weight and pencil texture using the Pencil Stroke control.</li>
+          <li><strong>Granular Shading Adjustments:</strong> Customize how much shadow contrast is blended into the sketch using the Shadow Intensity slider.</li>
+          <li><strong>Instant Reset Comparison:</strong> Quickly toggle back to the original photo with one click to inspect edge mappings.</li>
+          <li><strong>Full Local Processing:</strong> Processes standard web image formats (JPG, PNG, WebP) directly within your browser's canvas.</li>
+          <li><strong>No File Compression:</strong> Preserves the pixel dimensions of your uploaded image for high-fidelity outputs.</li>
+        </ul>
+
+        <h3 class="mt-4">Common Use Cases</h3>
+        <ul style="line-height: 1.8; margin-bottom: 20px; padding-left: 20px;">
+          <li><strong>Designers and Illustrators:</strong> Generating clean base outlines from photographic references to use as guides for digital sketching or coloring.</li>
+          <li><strong>Educators and Students:</strong> Creating simplified diagrams or coloring pages from complex photographs to print or label.</li>
+          <li><strong>Crafters and Hobbyists:</strong> Preparing reference stencils for woodburning, embroidery, or physical canvas painting.</li>
+          <li><strong>Content Creators:</strong> Transforming digital portraits or landscape photos into graphite-style graphics for social media posts or blogs.</li>
+        </ul>
+
+        <h3 class="mt-4">Privacy & Data Note</h3>
+        <p>All operations are completed locally inside your web browser. No image files or personal data are ever transmitted to our servers or stored online.</p>
+      </section>
+ 
+      <!-- FAQ SECTION -->
+      <section class="faq-section mt-5">
+        <h2 data-i18n="tools.image_to_sketch.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              How does the sketch conversion algorithm work?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>The tool converts the uploaded image to grayscale, duplicates it, inverts the colors, applies a Gaussian blur based on your pencil stroke setting, and then blends the layers using a color dodge blending mode. This technique isolates the boundaries and renders them as hand-drawn outlines.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Are my photos sent to a server?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No, none of your photos are uploaded. The edge detection and sketch rendering take place entirely within your browser tab using your machine's hardware.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              What image file types are supported?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>You can import any common web image format, including JPEG, PNG, and WebP.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Why does the sketch look completely white when the stroke is set to 1?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>A stroke setting of 1 applies a very narrow blur filter, meaning only the absolute highest contrast boundaries will be highlighted. If your image has soft lighting or gradual color gradients, try increasing the pencil stroke value to widen the edge detection.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I export my sketch with a transparent background?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No, the canvas rendering automatically utilizes a white background layer to simulate physical drawing paper. If you need transparency, you can open the downloaded image in an editor and remove the white background using a color select tool.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const imageInput = document.getElementById('image-input');
+    const dropZone = document.getElementById('drop-zone');
+    const workspace = document.getElementById('tool-workspace');
+    const canvas = document.getElementById('main-canvas');
+    const ctx = canvas.getContext('2d');
+    const blurSlider = document.getElementById('blur-radius');
+    const blurVal = document.getElementById('blur-val');
+    const opacitySlider = document.getElementById('sketch-opacity');
+    const opacityVal = document.getElementById('opacity-val');
+    const downloadBtn = document.getElementById('download-btn');
+    const resetBtn = document.getElementById('reset-btn');
+
+    let originalImg = null;
+
+    dropZone.onclick = () => imageInput.click();
+    imageInput.onchange = (e) => handleFile(e.target.files[0]);
+    
+    // Init Drag and Drop using global helper
+    setupDragDrop('drop-zone', (files) => {
+       if (files.length) handleFile(files[0]);
+    });
+    
+    function handleFile(file) {
+      if (!file || !file.type.startsWith('image/')) return;
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        originalImg = new Image();
+        originalImg.onload = () => {
+          canvas.width = originalImg.width;
+          canvas.height = originalImg.height;
+          updateSketch();
+          workspace.classList.remove('hidden');
+        };
+        originalImg.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+
+    [blurSlider, opacitySlider].forEach(el => {
+       el.oninput = () => {
+          document.getElementById(el.id.replace('-radius','').replace('sketch-','') + '-val').innerText = el.value;
+          updateSketch();
+       };
+    });
+
+    function updateSketch() {
+       if (!originalImg) return;
+       
+       const tempCanvas = document.createElement('canvas');
+       const tCtx = tempCanvas.getContext('2d');
+       tempCanvas.width = canvas.width;
+       tempCanvas.height = canvas.height;
+
+       // 1. Draw Gray
+       tCtx.filter = 'grayscale(100%)';
+       tCtx.drawImage(originalImg, 0, 0);
+       
+       ctx.clearRect(0, 0, canvas.width, canvas.height);
+       ctx.drawImage(tempCanvas, 0, 0);
+
+       // 2. Invert + Blur Layer
+       tCtx.filter = `invert(100%) blur(${blurSlider.value}px) grayscale(100%)`;
+       tCtx.drawImage(originalImg, 0, 0);
+       
+       // 3. Blend (Color Dodge)
+       ctx.save();
+       ctx.globalAlpha = opacitySlider.value / 100;
+       ctx.globalCompositeOperation = 'color-dodge';
+       ctx.drawImage(tempCanvas, 0, 0);
+       ctx.restore();
+    }
+
+    resetBtn.onclick = () => {
+       if (originalImg) {
+          ctx.filter = 'none';
+          ctx.drawImage(originalImg, 0, 0);
+       }
+    };
+
+    downloadBtn.onclick = () => {
+       const url = canvas.toDataURL('image/jpeg', 0.95);
+       const a = document.createElement('a');
+       a.href = url;
+       a.download = `sketch_${Date.now()}.jpg`;
+       a.click();
+    };
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

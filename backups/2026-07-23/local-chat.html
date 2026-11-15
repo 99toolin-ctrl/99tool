@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Local Chat – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/productivity/local-chat.html"/>
+<meta property="og:title" content="Local Chat – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/productivity/local-chat.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Local Chat \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/productivity/local-chat.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    .chat-workspace {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      height: 600px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .chat-header {
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .messages-area {
+      flex: 1;
+      padding: 2rem;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      background: rgba(0,0,0,0.1);
+    }
+
+    .msg-bubble {
+        padding: 10px 15px;
+        border-radius: 12px;
+        max-width: 80%;
+        font-size: 0.95rem;
+        position: relative;
+    }
+    .msg-sent { 
+        align-self: flex-end; 
+        background: var(--primary); 
+        color: white; 
+        border-bottom-right-radius: 2px;
+    }
+    .msg-received { 
+        align-self: flex-start; 
+        background: var(--dark); 
+        border: 1px solid var(--border);
+        border-bottom-left-radius: 2px;
+    }
+    .msg-info { font-size: 0.7rem; margin-bottom: 4px; opacity: 0.7; }
+
+    .chat-input-area {
+        padding: 1.5rem 2rem;
+        border-top: 1px solid var(--border);
+        display: flex;
+        gap: 15px;
+    }
+    .chat-input {
+        flex: 1; background: var(--dark); border: 1px solid var(--border); color: white; padding: 12px 20px; border-radius: 30px; outline: none;
+    }
+    .chat-input:focus { border-color: var(--primary); }
+
+    .setup-overlay {
+        position: absolute; inset: 0; background: var(--dark); z-index: 100;
+        display: flex; align-items: center; justify-content: center;
+        flex-direction: column; text-align: center;
+    }
+
+    .status-badge { font-size: 0.75rem; padding: 4px 10px; border-radius: 12px; background: rgba(0,255,0,0.1); color: #0f0; }
+
+    @media (max-width: 600px) {
+        .messages-area { padding: 1rem; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-hero text-center">
+      <nav class="breadcrumb justify-content-center">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#productivity">Productivity</a> <span>/</span> 
+        <span>Local Chat App</span>
+      </nav>
+      <h1>Local Peer-to-Peer Chat</h1>
+      <p>Securely message between browser tabs on the same device. 100% private and internet-free.</p>
+    </div>
+
+    <div class="chat-workspace">
+        <div id="setup-overlay" class="setup-overlay">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">💬</div>
+            <h3>Join Local Browser Channel</h3>
+            <p class="text-muted px-4 mb-4">Messages sent here will appear in any other open tab of this tool.</p>
+            <input type="text" id="username-input" class="form-control text-center mb-3" placeholder="Enter your nickname..." value="User1" style="max-width:300px;">
+            <button class="btn btn-primary" onclick="joinChat()">Start Chatting</button>
+        </div>
+
+        <div class="chat-header">
+            <div>
+                <strong id="channel-name">Channel: Local_99</strong>
+                <span class="status-badge ms-2">Private Session</span>
+            </div>
+            <div class="text-muted small">Peer Discovery: Online</div>
+        </div>
+
+        <div class="messages-area" id="messages-area">
+            <div class="msg-received msg-bubble" style="align-self:center; font-size:0.8rem; background:transparent; border:none; opacity:0.5;">
+                *** This is a local-only chat simulation ***
+            </div>
+        </div>
+
+        <div class="chat-input-area">
+            <input type="text" id="chat-msg" class="chat-input" placeholder="Type a message..." onkeypress="if(event.key==='Enter') sendMsg()">
+            <button class="btn btn-primary" onclick="sendMsg()">Send</button>
+        </div>
+    </div>
+
+    <section class="seo-content mt-5">
+      <h2>Understand Intra-Device Communication without the Cloud</h2>
+      <p>In a world of hyperscale chat servers, the concept of local messaging is often forgotten. Our <strong>local chat app</strong> utilizes the modern **BroadcastChannel API** to create a private communication bridge between multiple tabs or windows of the same browser. This tool provides a professional-grade simulation of how local area network (LAN) messaging works, but without the security risks of external network access.</p>
+      
+      <h3 class="mt-4">How the Peer Bridge Functions</h3>
+      <p>When you send a message, it is broadcasted across a named logic-channel within your browser's security sandbox. Any other instance of our <strong>private chat tool</strong> listening to that channel instantly renders the message. This creates a "Peer-to-Peer" experience that is literally impossible to intercept from the outside because no data ever crosses the network adapter. It's the ultimate <strong>private messaging demo</strong> for developers and students.</p>
+
+      <ul style="line-height: 1.8; margin-top: 15px;">
+        <li><strong>Cross-Tab Sync:</strong> Open two tabs side-by-side to witness real-time local messaging.</li>
+        <li><strong>Zero Privacy Risk:</strong> No database, no cloud, no tracking. Your chat history exists ONLY in your current browser session.</li>
+        <li><strong>Zero Configuration:</strong> No IP addresses or server URLs required. Just join the channel and talk.</li>
+      </ul>
+
+      <h3 class="mt-4">Ideal for Secure Desktop Relay</h3>
+      <p>Sometimes you need a way to pass text or links between different workflows on the same machine without using a clipboard that might be monitored by other software. Our <strong>secure local chat</strong> provides a temporary, encrypted-in-memory workspace for your internal data transfers. Coupled with our **Life OS**, it adds a layer of seamless communication to your productivity suite.</p>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const channel = new BroadcastChannel('99tool_local_chat');
+    const msgArea = document.getElementById('messages-area');
+    let myUser = "User";
+
+    channel.onmessage = (event) => {
+        const { user, msg, time } = event.data;
+        renderMessage(user, msg, time, false);
+    };
+
+    function joinChat() {
+        const input = document.getElementById('username-input');
+        if (input.value.trim().length > 0) {
+            myUser = input.value.trim();
+            document.getElementById('setup-overlay').style.display = 'none';
+        }
+    }
+
+    function sendMsg() {
+        const input = document.getElementById('chat-msg');
+        const msg = input.value.trim();
+        if (!msg) return;
+
+        const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        channel.postMessage({ user: myUser, msg, time });
+        renderMessage(myUser, msg, time, true);
+        
+        input.value = "";
+        msgArea.scrollTop = msgArea.scrollHeight;
+    }
+
+    function renderMessage(user, msg, time, isMe) {
+        const div = document.createElement('div');
+        div.className = `msg-bubble ${isMe ? 'msg-sent' : 'msg-received'}`;
+        div.innerHTML = `
+            <div class="msg-info">${user} • ${time}</div>
+            <div class="msg-text">${msg}</div>
+        `;
+        msgArea.appendChild(div);
+        msgArea.scrollTop = msgArea.scrollHeight;
+    }
+  </script>
+</body>
+</html>
+

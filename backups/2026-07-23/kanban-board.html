@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Kanban Board – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/productivity/kanban-board.html"/>
+<meta property="og:title" content="Kanban Board – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/productivity/kanban-board.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Kanban Board \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/productivity/kanban-board.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="kanban board, kanban board, task board tool, project management board, kanban tool free, drag and drop task board" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Kanban Board",
+    "operatingSystem": "Any",
+    "applicationCategory": "ProductivityApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Drag-and-drop task management, Persistent columns, Local storage sync, Visual project tracking"
+  }
+  </script>
+
+  <style>
+    .kanban-board {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      padding-bottom: 20px;
+      min-height: 500px;
+    }
+
+    .kanban-column {
+      flex: 1;
+      min-width: 300px;
+      background: var(--dark-card);
+      border-radius: var(--radius);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--border);
+    }
+
+    .column-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .column-header h3 { font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; margin: 0; color: var(--text-muted); }
+    .task-count { font-size: 0.75rem; background: var(--dark); padding: 2px 8px; border-radius: 50px; }
+
+    .kanban-tasks {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-height: 100px;
+    }
+
+    .kanban-card {
+      background: var(--dark);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      cursor: grab;
+      transition: all 0.2s;
+    }
+    .kanban-card:active { cursor: grabbing; opacity: 0.7; }
+    .kanban-card:hover { border-color: var(--primary); }
+
+    .card-footer {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: 10px;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .kanban-card:hover .card-footer { opacity: 1; }
+
+    .dragging { opacity: 0.5; }
+    .drag-over { border-color: var(--primary); background: rgba(229, 57, 53, 0.05); }
+
+    .add-task-btn {
+      width: 100%;
+      background: transparent;
+      border: 1px dashed var(--border);
+      color: var(--text-muted);
+      padding: 10px;
+      border-radius: var(--radius-sm);
+      margin-top: 16px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .add-task-btn:hover { border-color: var(--primary); color: var(--primary); }
+
+    /* Modal */
+    .modal {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8);
+      backdrop-filter: blur(5px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 20px;
+    }
+    .modal.show { display: flex; }
+    .modal-content {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      width: 100%;
+      max-width: 400px;
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#productivity">Productivity</a> <span>/</span> 
+        <span>Kanban Board</span>
+      </nav>
+      <h1>Kanban Board</h1>
+      <p>Organize your work visually. Drag, drop, and manage tasks across your project's lifecycle with 100% privacy.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div class="kanban-board">
+        <!-- TO DO -->
+        <div class="kanban-column" id="todo" ondragover="allowDrop(event)" ondrop="drop(event)" ondragleave="dragLeave(event)">
+          <div class="column-header">
+            <h3>To Do</h3>
+            <span class="task-count" id="count-todo">0</span>
+          </div>
+          <div class="kanban-tasks" id="tasks-todo"></div>
+          <button class="add-task-btn" onclick="openModal('todo')">+ Add Task</button>
+        </div>
+
+        <!-- DOING -->
+        <div class="kanban-column" id="doing" ondragover="allowDrop(event)" ondrop="drop(event)" ondragleave="dragLeave(event)">
+          <div class="column-header">
+            <h3>In Progress</h3>
+            <span class="task-count" id="count-doing">0</span>
+          </div>
+          <div class="kanban-tasks" id="tasks-doing"></div>
+          <button class="add-task-btn" onclick="openModal('doing')">+ Add Task</button>
+        </div>
+
+        <!-- DONE -->
+        <div class="kanban-column" id="done" ondragover="allowDrop(event)" ondrop="drop(event)" ondragleave="dragLeave(event)">
+          <div class="column-header">
+            <h3>Done</h3>
+            <span class="task-count" id="count-done">0</span>
+          </div>
+          <div class="kanban-tasks" id="tasks-done"></div>
+          <button class="add-task-btn" onclick="openModal('done')">+ Add Task</button>
+        </div>
+      </div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5">
+        <h2>Visualizing Your Victory in Private: Secure Local Kanban Management</h2>
+        <p>We’ve all been there: you’re managing a complex project, a high-stakes career transition, or the launch of a new independent venture. You need to see the "Big Picture" to stay organized and prevent the paralyzing feeling of being overwhelmed by a mountain of tasks. You look for a <strong>kanban board</strong> online to help you move your ideas from abstract "To-Do" items to satisfying "Done" realizations. But as you look at the "Team Collaboration" notifications and "Cloud Sync" permissions, you realize that your project structure, your internal deadlines, and your proprietary workflows are being harvested by an anonymous database. Do you really want to share your "Project DNA" with a third-party algorithm?</p>
+
+        <p>At 99tool.in, we built our <strong>kanban board</strong> to give you a professional project manager without the privacy debt. By utilizing browser-side drag-and-drop technology and local data persistence, we allow you to <strong>manage tasks visually</strong> entirely within the secure sandbox of your own machine. Whether you’re an agile developer tracking sprint items, a content creator planning a monthly calendar, or a strategic planner managing a complex move, our <strong>safe task board</strong> ensures that your project roadmap stays where it belongs: on your device, under your total sovereignty.</p>
+        
+        <div class="tool-preview-box mt-4 mb-4" style="text-align:center;">
+           <img src="../../assets/images/kanban-preview.png" alt="Clean Kanban Board Workspace with Progressive Columns" class="tool-preview" id="tool-preview-img" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+        </div>
+
+        <h3 class="mt-4">The Logic of Agile Visualization</h3>
+        <p>Organization isn't just about lists; it’s about "Flow Logic." Most basic <strong>task management tools</strong> create a "Backlog Trap," where lists grow indefinitely without any sense of movement. Our <strong>professional kanban tool</strong> takes a human-centric approach: we focus on **Spatial Progression** and **WIP Visualization**.</p>
+        
+        <p>We provide a "three-column" architecture that mirrors the natural lifecycle of work: To-Do, In Progress, and Done. Our <strong>safe project board</strong> doesn't just store text; it provides a tactile, drag-and-drop experience that signals to your brain that progress is happening. This transparency helps you manage "Work-in-Progress" (WIP) limits, preventing you from starting too many things and encouraging you to cross the finish line on the tasks that matter most.</p>
+
+        <h3 class="mt-4">Why Project Management is the Professional’s Ethical Choice</h3>
+        <p>In the age of digital surveillance, your workflows and deadlines are a roadmap of your intellectual property. When you use a standard <strong>kanban board online free</strong> service, you are essentially giving away your "Strategic Blueprint" for a third party to analyze. Our 100% <strong>project utility</strong> removes this "Privacy Risk" entirely from your management routine.</p>
+        
+        <p>Because the logic and storage happen in your browser's private sandbox, your boards and your tasks are invisible to the outside world. No analytics are tracked, no workflows are harvested, and no proprietary project data is shared with advertisers or AI models. At 99tool.in, we believe that <strong>organizing your work</strong> should be an empowering utility, not a data-mining exercise. With us, you have a private, professional war room that fits in your browser tab.</p>
+
+        <h3 class="mt-4">How to Conquer Your Project (Step-by-Step)</h3>
+        <p>Managing your workflow should be a high-speed, frictionless experience. Here is how to use our <strong>kanban board</strong>:</p>
+        <ul style="line-height: 1.8; margin-bottom: 20px;">
+          <li><strong>Step 1: Load Your Backlog</strong> — Click the "+ Add Task" button in the "To Do" column. Enter your project items one by one. Our system instantly captures them in your local browser storage.</li>
+          <li><strong>Step 2: Commit to Action</strong> — Ready to start? Click and hold a task card, then drag it into the "In Progress" column. This visual shift helps you focus on the current mission.</li>
+          <li><strong>Step 3: Celebrate Completion</strong> — Once a task is finished, drag it into the "Done" column. Watch the task counts update in real-time, providing an instant dopamine hit for your progress.</li>
+          <li><strong>Step 4: Secure Your Timeline</strong> — Use individual delete buttons to clear finished tasks or keep them on the board as a "Victory Log" of your project's history, knowing they survive browser restarts.</li>
+        </ul>
+
+        <h3 class="mt-4">Strategic Use Cases for Your Local Kanban Board</h3>
+        <p>Our <strong>project management board</strong> is the essential companion for varied professional life:</p>
+        
+        <p><strong>For Software Engineers:</strong> Managing a complex feature development? Use our <strong>kanban board</strong> to track your pull requests, bugs, and documentation tasks without the distraction of a corporate jira. </p>
+        
+        <p><strong>For Content Strategists:</strong> Planning a multi-platform social media campaign? Use our <strong>safe task board</strong> to move content pieces from "Idea" to "Draft" to "Published" without risking your content strategy to a cloud platform.</p>
+        
+        <p><strong>For Home Renovators:</strong> Coordinating contractors and materials? Use our <strong>simple kanban board</strong> to keep track of orders and timelines privately, ensuring your personal project stays on track and in your hands.</p>
+
+        <h3 class="mt-5">Explore Your Complete Productivity Suite</h3>
+        <p>Once you’ve successfully organized your project flow, you might need to track your long-term ambitions. Check out our <strong><a href="goal-tracker.html">Goal Tracker</a></strong>. Or, if you need to build consistent habits to reach those goals, use our <strong><a href="daily-habit-tracker.html">Habit Tracker</a></strong>. At 99tool.in, we are building a world-class, 100% private digital toolkit to give you total control over your digital future.</p>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Is my board saved automatically?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes! Every time you add, delete, or move a task, the entire state of your <strong>kanban board</strong> is saved to your browser's <code>localStorage</code>. You can close the tab, refresh the page, or turn off your computer, and your board will be exactly as you left it.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              How many columns can I have?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>To maintain structural clarity and high-performance, this <strong>kanban tool</strong> uses a standard three-column layout: <strong>To Do</strong>, <strong>In Progress</strong>, and <strong>Done</strong>. This configuration is proven to be the most effective for individual project management and "Second Brain" organization.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I use this for multiple projects?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>While the tool provides one comprehensive board for simplicity, you can easily manage multiple projects using prefixes in your task names (e.g., "[Client A] Draft Report" or "[Home] Paint Garage"). This allows you to see your entire workload at a glance.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Is there a limit to the number of cards?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. You can add as many tasks as you need. However, to maintain agility, we recommend moving finished tasks to the "Done" column and clearing them once they are truly complete to keep your workspace focused and fast.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Does it work on tablet and mobile?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes, the board is fully responsive. While the <strong>drag and drop task board</strong> functionality works best with a mouse or trackpad on a desktop, you can still add, view, and manage your tasks on mobile devices with ease.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              How do I back up my project data?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Currently, the board data is local to your browser. For a comprehensive backup of your entire 99tool.in productivity suite, we recommend using the **Export** feature in our <strong>Life OS</strong> tool, which captures your board state alongside your habits and goals.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 100%. Drag, drop, and conquer your tasks privately. Last updated: April 10, 2026.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ADD TASK MODAL -->
+  <div id="task-modal" class="modal">
+    <div class="modal-content">
+      <h3 class="mb-3">Add New Task</h3>
+      <div class="form-group">
+        <label>Task Description</label>
+        <textarea id="task-text" class="form-control" placeholder="What needs to be done?" style="min-height: 100px;"></textarea>
+      </div>
+      <div class="flex gap-2 mt-4">
+        <button class="btn btn-primary btn-full" id="save-task-btn">Add to Board</button>
+        <button class="btn btn-secondary" onclick="closeModal()">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    let boardData = JSON.parse(localStorage.getItem('99tool_kanban')) || {
+      todo: [],
+      doing: [],
+      done: []
+    };
+
+    let targetColumn = '';
+
+    function renderBoard() {
+      ['todo', 'doing', 'done'].forEach(col => {
+        const container = document.getElementById(`tasks-${col}`);
+        const count = document.getElementById(`count-${col}`);
+        container.innerHTML = '';
+        
+        boardData[col].forEach((task, idx) => {
+          const card = document.createElement('div');
+          card.className = 'kanban-card';
+          card.draggable = true;
+          card.id = `task-${col}-${idx}`;
+          card.innerHTML = `
+            <div class="card-text">${escapeHTML(task)}</div>
+            <div class="card-footer">
+              <button class="btn-sm btn-secondary" style="padding: 2px 8px;" onclick="deleteTask('${col}', ${idx})">×</button>
+            </div>
+          `;
+          card.ondragstart = (e) => onDragStart(e, col, idx);
+          container.appendChild(card);
+        });
+        
+        count.textContent = boardData[col].length;
+      });
+      localStorage.setItem('99tool_kanban', JSON.stringify(boardData));
+    }
+
+    // --- Drag & Drop Logic ---
+    function onDragStart(event, col, idx) {
+      event.dataTransfer.setData('sourceCol', col);
+      event.dataTransfer.setData('sourceIdx', idx);
+      event.target.classList.add('dragging');
+    }
+
+    function allowDrop(event) {
+      event.preventDefault();
+      const col = event.currentTarget;
+      col.classList.add('drag-over');
+    }
+
+    function dragLeave(event) {
+      event.currentTarget.classList.remove('drag-over');
+    }
+
+    function drop(event) {
+      event.preventDefault();
+      const targetCol = event.currentTarget.id;
+      event.currentTarget.classList.remove('drag-over');
+
+      const sourceCol = event.dataTransfer.getData('sourceCol');
+      const sourceIdx = parseInt(event.dataTransfer.getData('sourceIdx'));
+
+      if (sourceCol === targetCol) return;
+
+      const task = boardData[sourceCol].splice(sourceIdx, 1)[0];
+      boardData[targetCol].push(task);
+      
+      renderBoard();
+    }
+
+    // --- Actions ---
+    function openModal(col) {
+      targetColumn = col;
+      document.getElementById('task-modal').classList.add('show');
+      document.getElementById('task-text').focus();
+    }
+
+    function closeModal() {
+      document.getElementById('task-modal').classList.remove('show');
+      document.getElementById('task-text').value = '';
+    }
+
+    document.getElementById('save-task-btn').onclick = () => {
+      const text = document.getElementById('task-text').value.trim();
+      if (!text) return;
+      
+      boardData[targetColumn].push(text);
+      renderBoard();
+      closeModal();
+    };
+
+    window.deleteTask = (col, idx) => {
+      boardData[col].splice(idx, 1);
+      renderBoard();
+    };
+
+    function escapeHTML(str) {
+      const p = document.createElement('p');
+      p.textContent = str;
+      return p.innerHTML;
+    }
+
+    // Init
+    renderBoard();
+  </script>
+</body>
+</html>
+

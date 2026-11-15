@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Font Preview – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/design/font-preview.html"/>
+<meta property="og:title" content="Font Preview – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/design/font-preview.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Font Preview \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/design/font-preview.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="font preview tool, typography tester, text style tool, font testing online, web design typography, font tool" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@400;700;900&family=Roboto+Mono:wght@400;600&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json" id="schema-org-data">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Font Preview Tool",
+    "operatingSystem": "Any",
+    "applicationCategory": "DesignApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Live Typography Preview, Variable Weight Support, Size & Line-height adjustment, Private local processing"
+  }
+  </script>
+
+  <style>
+    .font-layout { display: grid; grid-template-columns: 1fr; gap: 30px; }
+
+    .control-pane {
+      background: var(--dark-card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 30px; height: fit-content; position: sticky; top: 80px;
+    }
+
+    .preview-pane {
+       background: var(--dark-card); border: 1px solid var(--border); border-radius: var(--radius);
+       padding: 40px; min-height: 500px; display: flex; align-items: center; justify-content: center;
+       text-align: center; overflow: auto;
+    }
+
+    #font-target {
+       max-width: 100%; word-break: break-word; outline: none; transition: 0.1s;
+    }
+
+    .font-scroller {
+       max-height: 400px; overflow-y: auto; border: 1px solid var(--border);
+       border-radius: 8px; background: var(--dark); padding: 10px; margin-bottom: 25px;
+    }
+
+    .font-item {
+       padding: 12px; border-bottom: 1px solid var(--border-light); cursor: pointer;
+       background: transparent; border-radius: 4px; margin-bottom: 5px; transition: 0.2s;
+    }
+    .font-item:hover { background: rgba(229, 57, 53, 0.05); }
+    .font-item.active { background: var(--primary); color: white; border-color: var(--primary); }
+    .font-item:last-child { border-bottom: none; }
+
+    .control-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-bottom: 20px; }
+
+    @media (min-width: 1000px) {
+      .font-layout { grid-template-columns: 380px 1fr; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/design/font-preview.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/design/font-preview.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/design/font-preview.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/design/font-preview.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/design/font-preview.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/design/font-preview.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/design/font-preview.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/design/font-preview.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/design/font-preview.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/design/font-preview.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/design/font-preview.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/design/font-preview.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/design/font-preview.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/design/font-preview.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/design/font-preview.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/design/font-preview.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/design/font-preview.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/design/font-preview.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/design/font-preview.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/design/font-preview.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/design/font-preview.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/design/font-preview.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#creative">Graphic & Design</a> <span>/</span> 
+        <span>Font Preview Tool</span>
+      </nav>
+      <h1>Font Preview Tool</h1>
+      <p>Master your project's typography with total privacy. Test font combinations, analyze visual weight, and refine styles—100% and secure.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div class="font-layout">
+         <aside class="control-pane">
+            <h3>Type Terminal</h3>
+            <p class="text-muted small mb-4">Select a family and tune the logic.</p>
+
+            <div class="form-group mb-4">
+               <label>Custom Sample Text</label>
+               <input type="text" id="sample-text" class="form-control" value="Design is the silent ambassador of your brand.">
+            </div>
+
+            <label class="small text-muted mb-2 block">FONT FAMILIES</label>
+            <div class="font-scroller" id="font-list">
+               <!-- Fonts injected here -->
+            </div>
+
+            <div class="control-row">
+               <div class="form-group">
+                  <label>Size: <span id="val-size">48</span>px</label>
+                  <input type="range" id="f-size" min="10" max="150" value="48" class="w-100">
+               </div>
+               <div class="form-group">
+                  <label>Weight: <span id="val-weight">400</span></label>
+                  <input type="range" id="f-weight" min="100" max="900" step="100" value="400" class="w-100">
+               </div>
+            </div>
+
+            <div class="form-group mb-4">
+               <label>Color & Spacing</label>
+               <div class="control-row">
+                  <input type="color" id="f-color" class="form-control" value="#ffffff">
+                  <input type="range" id="f-spacing" min="-5" max="20" value="0" step="0.5" class="w-100" title="Letter Spacing">
+               </div>
+            </div>
+
+            <button class="btn btn-primary btn-full" id="btn-copy">Copy CSS Styles</button>
+            
+            <div class="info-box mt-4">
+               <div class="info-icon">🔠</div>
+               <p class="small">Our engine leverages **CSS Variable Rendering** to ensure that your typography remains crisp and performant during local preview.</p>
+            </div>
+         </aside>
+
+         <div class="preview-pane">
+            <div id="font-target">Design is the silent ambassador of your brand.</div>
+         </div>
+      </div>
+
+      <!-- CONTENT SECTION -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.font_preview_tool.what_is_title">What is the Font Preview Tool?</h2>
+        <p>The Font Preview Tool is a client-side typography utility designed to help designers and developers test font layouts in real-time. By inputting custom phrases and adjusting styling sliders, you can evaluate how different fonts and weights look before integrating them into your designs.</p>
+        <p>This sandbox renders fonts locally using CSS properties. Since your text inputs, color preferences, and styling coordinates are handled entirely in your browser's memory, your slogans and project names remain private.</p>
+
+        <h2 class="mt-4" data-i18n="tools.font_preview_tool.how_to_use_title">How to Use the Font Preview Tool</h2>
+        <ol>
+          <li><strong>Enter Your Text:</strong> Type your target phrase, header, or slogan into the "Preview Text" box in the sidebar.</li>
+          <li><strong>Select a Font Family:</strong> Choose a font family (such as Inter, Roboto, Playfair Display, or monospace options) from the dropdown list.</li>
+          <li><strong>Adjust Style Sliders:</strong> Drag the sliders to change font size (from 12px to 120px) and font weight (from 100 to 900).</li>
+          <li><strong>Customize Colors and Styles:</strong> Select text colors and background colors using the color pickers, and check the italic checkbox to apply oblique styling.</li>
+          <li><strong>Review the Rendered Text:</strong> Inspect the resulting typography preview in the main pane to evaluate readability.</li>
+        </ol>
+
+        <h2 class="mt-4" data-i18n="tools.font_preview_tool.key_features_title">Key Features</h2>
+        <ul>
+          <li><strong>Real-Time Font Selection:</strong> Switch font families instantly to check typography shapes.</li>
+          <li><strong>Precise Weight & Size Scales:</strong> Drag sliders to fine-tune spacing, height, and weights.</li>
+          <li><strong>Interactive Color Customization:</strong> Set background and text color combinations to inspect readability.</li>
+          <li><strong>Italic Style Toggles:</strong> Enable italic styles with a checkbox to test oblique emphasis.</li>
+          <li><strong>100% Client-Side Processing:</strong> Renders text layouts locally in browser RAM for maximum security.</li>
+        </ul>
+
+        <h2 class="mt-4" data-i18n="tools.font_preview_tool.common_use_cases_title">Common Use Cases</h2>
+        <ul>
+          <li><strong>Brand Headline Previews:</strong> Test how company logos, titles, and headers look in various font faces.</li>
+          <li><strong>Readability & Contrast Checks:</strong> Verify that text color and background combinations offer sufficient contrast.</li>
+          <li><strong>Design System Planning:</strong> Coordinate paragraph font sizes and header weights for UI components.</li>
+          <li><strong>Social Media Banner Prep:</strong> Preview typography sizes for posts, email templates, and banner designs.</li>
+        </ul>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2 data-i18n="tools.font_preview_tool.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Are these fonts loaded from the web or from my computer?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>The tool uses a selection of popular Google Web Fonts which are loaded securely in the browser. It also supports standard system font stacks (sans-serif, serif, monospace) that utilize your local operating system fonts.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Are my preview phrases uploaded to 99tool.in?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. 99tool.in processes all text entries and CSS rendering locally in browser memory. Your drafts and inputs are never shared or logged.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I upload custom .ttf or .otf font files?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>This previewer uses the curated font families loaded in the selector panel. For privacy and simplicity, it does not support file uploads, but custom options may be added in the future.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Does the tool evaluate text contrast for accessibility?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>While the tool does not calculate WCAG contrast ratios automatically, the real-time color picker lets you inspect color pairings visually to ensure readability.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              How do I export the configured CSS styling?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>You can note down the values from the sliders (e.g., <code>font-size: 32px; font-weight: 700; color: #1e88e5;</code>) and apply them directly to your CSS stylesheets.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 Privacy & Data Note: Font styling, text formatting, and color previews are rendered locally in your browser. None of your text inputs are uploaded.</p>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const sampleText = document.getElementById('sample-text');
+    const fontList = document.getElementById('font-list');
+    const fontTarget = document.getElementById('font-target');
+    const fSize = document.getElementById('f-size');
+    const fWeight = document.getElementById('f-weight');
+    const fColor = document.getElementById('f-color');
+    const fSpacing = document.getElementById('f-spacing');
+    const btnCopy = document.getElementById('btn-copy');
+
+    const fonts = [
+       { name: 'Inter (System)', stack: "'Inter', sans-serif" },
+       { name: 'Anton (Impact Style)', stack: "'Anton', sans-serif" },
+       { name: 'Playfair (Elegant)', stack: "'Playfair Display', serif" },
+       { name: 'Outfit (Modern)', stack: "'Outfit', sans-serif" },
+       { name: 'Roboto Mono (Tech)', stack: "'Roboto Mono', monospace" },
+       { name: 'Serif (Generic)', stack: "serif" },
+       { name: 'Sans-Serif (Generic)', stack: "sans-serif" },
+       { name: 'Monospace (Generic)', stack: "monospace" }
+    ];
+
+    let currentFont = fonts[0].stack;
+
+    function init() {
+       fonts.forEach((f, i) => {
+          const item = document.createElement('div');
+          item.className = 'font-item';
+          item.innerText = f.name;
+          item.style.fontFamily = f.stack;
+          if (i === 0) item.classList.add('active');
+          
+          item.onclick = () => {
+             document.querySelectorAll('.font-item').forEach(x => x.classList.remove('active'));
+             item.classList.add('active');
+             currentFont = f.stack;
+             update();
+          };
+          fontList.appendChild(item);
+       });
+       update();
+    }
+
+    function update() {
+       document.getElementById('val-size').innerText = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(fSize.value, 0) : fSize.value;
+       document.getElementById('val-weight').innerText = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(fWeight.value, 0) : fWeight.value;
+       
+       fontTarget.innerText = sampleText.value;
+       fontTarget.style.fontFamily = currentFont;
+       fontTarget.style.fontSize = fSize.value + 'px';
+       fontTarget.style.fontWeight = fWeight.value;
+       fontTarget.style.color = fColor.value;
+       fontTarget.style.letterSpacing = fSpacing.value + 'px';
+    }
+
+    [sampleText, fSize, fWeight, fColor, fSpacing].forEach(el => el.oninput = update);
+
+    btnCopy.onclick = () => {
+       const css = `
+font-family: ${currentFont};
+font-size: ${fSize.value}px;
+font-weight: ${fWeight.value};
+color: ${fColor.value};
+letter-spacing: ${fSpacing.value}px;
+       `.trim();
+       copyToClipboard(css, btnCopy);
+    };
+
+    init();
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

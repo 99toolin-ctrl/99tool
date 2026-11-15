@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Quadratic Solver – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/math/quadratic-solver.html"/>
+<meta property="og:title" content="Quadratic Solver – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/math/quadratic-solver.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Quadratic Solver \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/math/quadratic-solver.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .math-workspace {
+      max-width: 600px;
+      margin: 2rem auto;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      border-radius: 20px;
+    }
+    .eqn-display {
+       font-size: 1.8rem;
+       text-align: center;
+       margin-bottom: 2rem;
+       font-weight: 700;
+       color: var(--primary);
+    }
+    .coeff-inputs {
+       display: grid;
+       grid-template-columns: repeat(3, 1fr);
+       gap: 1.5rem;
+       margin-bottom: 2rem;
+    }
+    .coeff-group { text-align: center; }
+    label { display: block; margin-bottom: 8px; color: var(--text-muted); font-size: 0.9rem; }
+    input {
+       width: 100%;
+       background: var(--bg-secondary);
+       border: 1px solid var(--border);
+       color: var(--text);
+       padding: 0.8rem;
+       border-radius: 8px;
+       font-size: 1.2rem;
+       text-align: center;
+    }
+    .result-area {
+       background: rgba(255,255,255,0.03);
+       border: 1px dashed var(--border);
+       padding: 1.5rem;
+       border-radius: 12px;
+       display: none;
+       margin-top: 2rem;
+    }
+    .root-box {
+       display: grid;
+       grid-template-columns: 1fr 1fr;
+       gap: 20px;
+       margin-top: 15px;
+    }
+    .stat {
+       background: rgba(0,0,0,0.2);
+       padding: 1rem;
+       border-radius: 8px;
+       text-align: center;
+    }
+    .stat-val { font-size: 1.5rem; font-weight: 800; color: var(--primary); }
+    .stat-lab { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; margin-top: 4px; }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/math/quadratic-solver.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/math/quadratic-solver.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/math/quadratic-solver.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/math/quadratic-solver.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/math/quadratic-solver.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/math/quadratic-solver.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/math/quadratic-solver.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/math/quadratic-solver.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/math/quadratic-solver.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/math/quadratic-solver.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/math/quadratic-solver.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/math/quadratic-solver.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/math/quadratic-solver.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/math/quadratic-solver.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/math/quadratic-solver.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/math/quadratic-solver.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/math/quadratic-solver.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/math/quadratic-solver.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/math/quadratic-solver.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/math/quadratic-solver.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/math/quadratic-solver.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/math/quadratic-solver.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Infinite Quadratic Solver</h1>
+      <p>Solve $ax^2 + bx + c = 0$ instantly. Find roots and predict equation behavior with zero effort.</p>
+    </div>
+
+    <div class="math-workspace">
+      <div class="eqn-display" id="eqn-viz">ax² + bx + c = 0</div>
+      
+      <div class="coeff-inputs">
+         <div class="coeff-group">
+            <label>a</label>
+            <input type="number" id="a" value="1" oninput="updateEqn()">
+         </div>
+         <div class="coeff-group">
+            <label>b</label>
+            <input type="number" id="b" value="5" oninput="updateEqn()">
+         </div>
+         <div class="coeff-group">
+            <label>c</label>
+            <input type="number" id="c" value="6" oninput="updateEqn()">
+         </div>
+      </div>
+
+      <button onclick="solve()" class="btn btn-primary btn-lg btn-full">Solve Equation</button>
+
+      <div class="result-area" id="res-area">
+         <div class="text-center">
+            <div id="nature" class="badge badge-primary py-2 px-3 mb-2">Real & Distinct</div>
+            <div class="small text-muted">Discriminant (Δ) = <span id="disc">0</span></div>
+         </div>
+         
+         <div class="root-box">
+            <div class="stat">
+               <div class="stat-val" id="x1">0</div>
+               <div class="stat-lab">Root X₁</div>
+            </div>
+            <div class="stat">
+               <div class="stat-val" id="x2">0</div>
+               <div class="stat-lab">Root X₂</div>
+            </div>
+         </div>
+         
+         <div class="mt-4 p-3 bg-dark rounded small text-center">
+            <strong>Formula used:</strong> x = (-b ± √Δ) / 2a
+         </div>
+      </div>
+
+      <!-- SEO CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.quadratic_solver.what_is_title">What is Infinite Quadratic Solver</h2>
+        <p>The Infinite Quadratic Solver is a client-side math utility built to solve second-degree polynomial equations of the standard form $ax^2 + bx + c = 0$. By utilizing the quadratic formula, the application computes equation roots (both real and complex) and calculates the discriminant values instantly in your browser tab.</p>
+        <p>A quadratic equation describes a parabola, where the roots indicate the points where the curve intersects the horizontal axis. This tool calculates these intersections and provides a color-coded analysis of the root nature to make algebraic studies simple and intuitive.</p>
+
+        <h3 class="mt-4">How to Use Infinite Quadratic Solver</h3>
+        <ol style="line-height: 1.8; margin-bottom: 20px; padding-left: 20px;">
+          <li><strong>Input coefficients:</strong> Enter your values for the quadratic coefficients <strong>a</strong>, <strong>b</strong>, and <strong>c</strong> in their respective input fields. Note that coefficient <strong>a</strong> cannot be zero.</li>
+          <li><strong>Verify equation display:</strong> Look at the dynamic header equation display (e.g., <code>1x² + 5x + 6 = 0</code>) to verify that your inputs align with your target equation.</li>
+          <li><strong>Run the solver:</strong> Click the <strong>Solve Equation</strong> button.</li>
+          <li><strong>Review root properties:</strong> Look at the nature badge (e.g., Real & Distinct, Real & Repeated, or Complex Roots) and check the discriminant ($\Delta$) value.</li>
+          <li><strong>Read root values:</strong> Find the computed roots $X_1$ and $X_2$ displayed in the highlights grid below the equation metadata.</li>
+        </ol>
+
+        <h3 class="mt-4">Key Features</h3>
+        <ul style="line-height: 1.8; margin-bottom: 20px; padding-left: 20px;">
+          <li><strong>Dynamic Formula Preview:</strong> Renders your coefficients into a readable equation visual in real-time as you type.</li>
+          <li><strong>Comprehensive Roots Engine:</strong> Solves for distinct real roots, single repeated real roots, and complex conjugate numbers (using $i$ notation).</li>
+          <li><strong>Color-Coded Status Badges:</strong> Instantly signals equation classification using green, blue, or orange indicators.</li>
+          <li><strong>Fully Offline Computations:</strong> Resolves formulas in browser RAM without server-side processing or page refreshes.</li>
+        </ul>
+
+        <h3 class="mt-4">Common Use Cases</h3>
+        <ul style="line-height: 1.8; margin-bottom: 20px; padding-left: 20px;">
+          <li><strong>Physics Homework:</strong> Solving projectile motion equations, trajectory heights, or displacement formulas.</li>
+          <li><strong>Engineering Math:</strong> Finding boundaries, optimization intervals, and circuit resonance coefficients.</li>
+          <li><strong>Algebra Instruction:</strong> Double-checking manual factoring, completing-the-square operations, or discriminant calculations.</li>
+        </ul>
+
+        <h3 class="mt-4">Frequently Asked Questions</h3>
+        <div style="line-height: 1.8; margin-bottom: 20px;">
+          <p><strong>Q: Why can the coefficient "a" not be equal to zero?</strong><br>
+          A: If $a=0$, the term $ax^2$ disappears, converting the equation into a first-degree linear equation ($bx + c = 0$) rather than a quadratic one. The quadratic formula involves division by $2a$, which is undefined when $a=0$.</p>
+          <p><strong>Q: What is the discriminant ($\Delta$) and what does it tell us?</strong><br>
+          A: The discriminant is calculated as $b^2 - 4ac$. It determines the nature of the roots: a positive value yields two distinct real numbers, zero yields a single repeated real root, and a negative value means the roots are complex conjugate numbers.</p>
+          <p><strong>Q: How does the tool format complex roots?</strong><br>
+          A: When the discriminant is negative, the solver splits the roots into their real and imaginary parts, displaying them in standard mathematical format (e.g., $real \pm imaginary\ i$).</p>
+          <p><strong>Q: What decimal precision is used for roots calculation?</strong><br>
+          A: The roots are calculated using double-precision floats and are formatted to 4 decimal places in the results panel for readability.</p>
+        </div>
+
+        <h3 class="mt-4">Privacy & Data Note</h3>
+        <p>All algebraic solvers and root calculations run entirely in your local browser sandbox. Your coefficient inputs and solutions are never logged, cached, or transmitted to any server.</p>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    function updateEqn() {
+       const a = document.getElementById('a').value;
+       const b = document.getElementById('b').value;
+       const c = document.getElementById('c').value;
+       document.getElementById('eqn-viz').innerText = `${a}x² + ${b}x + ${c} = 0`;
+    }
+
+    function solve() {
+       const a = parseFloat(document.getElementById('a').value);
+       const b = parseFloat(document.getElementById('b').value);
+       const c = parseFloat(document.getElementById('c').value);
+
+       if (isNaN(a) || isNaN(b) || isNaN(c)) return alert('Please enter all coefficients.');
+       if (a === 0) return alert('Coefficient "a" cannot be 0 for a quadratic equation.');
+
+       const d = (b * b) - (4 * a * c);
+       const discEl = document.getElementById('disc');
+       const natureEl = document.getElementById('nature');
+       const x1El = document.getElementById('x1');
+       const x2El = document.getElementById('x2');
+       const area = document.getElementById('res-area');
+
+       discEl.innerText = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(d, 2) : d.toFixed(2);
+       
+       if (d > 0) {
+          natureEl.innerText = "Real & Distinct";
+          natureEl.style.background = "#4caf50";
+          const x1 = (-b + Math.sqrt(d)) / (2 * a);
+          const x2 = (-b - Math.sqrt(d)) / (2 * a);
+       x1El.innerText = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(x1, 4) : x1.toFixed(4);
+       x2El.innerText = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(x2, 4) : x2.toFixed(4);
+       } else if (d === 0) {
+          natureEl.innerText = "Real & Repeated";
+          natureEl.style.background = "#2196f3";
+          const x = -b / (2 * a);
+          x1El.innerText = x.toFixed(4);
+          x2El.innerText = x.toFixed(4);
+       } else {
+          natureEl.innerText = "Complex Roots";
+          natureEl.style.background = "#ff9800";
+          const real = (-b / (2 * a)).toFixed(4);
+          const imag = (Math.sqrt(-d) / (2 * a)).toFixed(4);
+          x1El.innerText = `${real} + ${imag}i`;
+          x2El.innerText = `${real} - ${imag}i`;
+       }
+
+       area.style.display = 'block';
+    }
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>

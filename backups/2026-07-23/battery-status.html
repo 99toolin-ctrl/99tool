@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Battery Status – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/network/battery-status.html"/>
+<meta property="og:title" content="Battery Status – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/network/battery-status.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Battery Status \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/network/battery-status.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .battery-workspace {
+      margin-top: 2rem;
+      background: var(--bg-secondary);
+      border-radius: 20px;
+      padding: 3rem;
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+    .battery-pill-outer {
+      width: 140px;
+      height: 250px;
+      border: 6px solid #333;
+      border-radius: 25px;
+      margin: 0 auto 2rem;
+      position: relative;
+      padding: 8px;
+    }
+    .battery-pill-outer::after {
+      content: "";
+      position: absolute;
+      top: -15px; left: 50%;
+      transform: translateX(-50%);
+      width: 40px; height: 10px;
+      background: #333;
+      border-radius: 5px 5px 0 0;
+    }
+    .battery-fill {
+      width: 100%;
+      height: 0%; /* Fired by JS */
+      background: #2ed573;
+      border-radius: 12px;
+      transition: height 1s ease, background 1s ease;
+      position: absolute;
+      bottom: 8px;
+      left: 8px;
+      width: calc(100% - 16px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .charging-icon {
+      font-size: 2.5rem;
+      color: white;
+      display: none;
+      text-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+    .is-charging .charging-icon { display: block; }
+    
+    .percent-text {
+      font-size: 3.5rem;
+      font-weight: 900;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+    .detail-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      margin-top: 2rem;
+    }
+    .detail-card {
+      background: var(--bg-primary);
+      padding: 1.2rem;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      text-align: left;
+    }
+    .d-val { font-weight: 700; color: var(--primary); }
+    .d-label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Infinite Battery Monitor</h1>
+      <p>Analyze your device power levels, charging status, and estimated endurance.</p>
+    </div>
+
+    <div class="tool-container text-center">
+      <div class="battery-workspace" id="bat-ws">
+        <div class="battery-pill-outer">
+           <div class="battery-fill" id="bat-fill">
+              <div class="charging-icon">⚡</div>
+           </div>
+        </div>
+
+        <div class="percent-text" id="bat-percent">0%</div>
+
+        <div class="detail-grid">
+           <div class="detail-card">
+              <div class="d-label">Charging State</div>
+              <div class="d-val" id="val-charging">Disconnected</div>
+           </div>
+           <div class="detail-card">
+              <div class="d-label">Time Remaining</div>
+              <div class="d-val" id="val-time">Calculating...</div>
+           </div>
+        </div>
+      </div>
+
+      <!-- SEO CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2>What is a Battery Status Checker?</h2>
+        <p>Your battery is the lifeblood of your mobile experience. A <strong>battery status checker</strong> provides a real-time window into your hardware's power management. While your OS provides a basic percentage, our <strong>online battery monitor</strong> interprets more detailed metrics like the exact estimated seconds of endurance remaining and the current charging topology, helping you identify if your charger or cable is failing.</p>
+
+        <h3 class="mt-4">Understanding Charging and Discharge Rates</h2>
+        <p>Our <strong>battery health tool</strong> monitors how your battery behaves when plugged in and out. If your <strong>online battery checker</strong> shows that "Time to Full" is taking longer than usual, your charger might not be providing enough amperage. Conversely, if your "Time to Empty" is dropping rapidly, you might have background apps or outdated hardware draining your power. Use our <strong>power diagnostic</strong> to audit your mobile habits.</p>
+
+        <h3 class="mt-4">The Precision of the Web Battery API</h2>
+        <p>At 99tool.in, we use the standard **Web Battery API** to hook directly into your device's power controller. This allows our <strong>private battery tester</strong> to give you sub-percentage accuracy. Whether you're on a MacBook, Windows Laptop, or Android phone, our <strong>secure power tool</strong> provides a unified interface to check your status without requiring system-level permissions or third-party app installations.</p>
+
+        <h3 class="mt-4">Privacy and Power Management</h3>
+        <p>Power security is essential. Unlike some apps that track your location alongside your battery data, our <strong>minimalist battery checker</strong> only accesses power metrics. All data is processed locally in your browser and is never stored on a server. This makes 99tool.in the safest place to <strong>check battery life online</strong>, ensuring your hardware diagnostics remain your private business.</p>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const fill = document.getElementById('bat-fill');
+    const percent = document.getElementById('bat-percent');
+    const chargingVal = document.getElementById('val-charging');
+    const timeVal = document.getElementById('val-time');
+    const ws = document.getElementById('bat-ws');
+
+    async function updateBattery() {
+       if (!navigator.getBattery) {
+          percent.innerText = "N/A";
+          chargingVal.innerText = "Not Supported";
+          timeVal.innerText = "Browser Incompatible";
+          return;
+       }
+
+       const battery = await navigator.getBattery();
+
+       function refreshUI() {
+          const level = Math.round(battery.level * 100);
+          percent.innerText = level + '%';
+          fill.style.height = level + '%';
+          
+          if (level < 20) fill.style.background = '#ff4757';
+          else if (level < 50) fill.style.background = '#ffa502';
+          else fill.style.background = '#2ed573';
+
+          if (battery.charging) {
+             ws.classList.add('is-charging');
+             chargingVal.innerText = "Charging (Plugged In)";
+             const timeSec = battery.chargingTime;
+             timeVal.innerText = (timeSec === Infinity) ? "Nearly Full" : formatTime(timeSec) + " to Full";
+          } else {
+             ws.classList.remove('is-charging');
+             chargingVal.innerText = "Discharging (Battery)";
+             const timeSec = battery.dischargingTime;
+             timeVal.innerText = (timeSec === Infinity) ? "Unknown" : formatTime(timeSec) + " left";
+          }
+       }
+
+       battery.addEventListener('levelchange', refreshUI);
+       battery.addEventListener('chargingchange', refreshUI);
+       battery.addEventListener('chargingtimechange', refreshUI);
+       battery.addEventListener('dischargingtimechange', refreshUI);
+       
+       refreshUI();
+    }
+
+    function formatTime(seconds) {
+       const h = Math.floor(seconds / 3600);
+       const m = Math.floor((seconds % 3600) / 60);
+       if (h > 0) return `${h}h ${m}m`;
+       return `${m}m`;
+    }
+
+    updateBattery();
+  </script>
+</body>
+</html>

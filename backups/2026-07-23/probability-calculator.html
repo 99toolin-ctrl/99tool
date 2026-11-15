@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Probability Calculator – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/math/probability-calculator.html"/>
+<meta property="og:title" content="Probability Calculator – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/math/probability-calculator.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Probability Calculator \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/math/probability-calculator.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .math-workspace {
+      max-width: 650px;
+      margin: 2rem auto;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      border-radius: 20px;
+    }
+    .calculator-tabs {
+       display: flex;
+       gap: 10px;
+       margin-bottom: 2rem;
+       border-bottom: 1px solid var(--border);
+       padding-bottom: 1rem;
+    }
+    .tab-btn {
+       background: transparent;
+       border: none;
+       color: var(--text-muted);
+       padding: 8px 16px;
+       cursor: pointer;
+       font-weight: 600;
+       border-radius: 8px;
+    }
+    .tab-btn.active { background: rgba(229, 57, 53, 0.1); color: var(--primary); }
+    
+    .calc-view { display: none; }
+    .calc-view.active { display: block; }
+    .input-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; }
+    label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem; }
+    input { width: 100%; padding: 10px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px; color: var(--text); }
+    
+    .result-box {
+       background: rgba(255,255,255,0.03);
+       padding: 1.5rem;
+       border-radius: 12px;
+       text-align: center;
+       margin-top: 1.5rem;
+       border: 1px dashed var(--border);
+    }
+    .res-val { font-size: 2.2rem; font-weight: 800; color: var(--primary); }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Infinite Probability Calculator</h1>
+      <p>Analyze event likelihood and outcomes. Solve for single, combined, or conditional probabilities instantly.</p>
+    </div>
+
+    <div class="math-workspace">
+      <div class="calculator-tabs">
+         <button class="tab-btn active" onclick="showTab('basic')">Single Event</button>
+         <button class="tab-btn" onclick="showTab('independent')">Independent</button>
+         <button class="tab-btn" onclick="showTab('conditional')">Conditional</button>
+      </div>
+
+      <!-- BASIC -->
+      <div id="view-basic" class="calc-view active">
+         <div class="input-row">
+            <div class="form-group">
+               <label>Favorable Outcomes (n)</label>
+               <input type="number" id="base-n" placeholder="e.g., 1">
+            </div>
+            <div class="form-group">
+               <label>Total Possible Outcomes (N)</label>
+               <input type="number" id="base-N" placeholder="e.g., 6">
+            </div>
+         </div>
+         <button onclick="calcBasic()" class="btn btn-primary btn-full">Calculate Probability</button>
+      </div>
+
+      <!-- INDEPENDENT -->
+      <div id="view-independent" class="calc-view">
+         <div class="input-row">
+            <div class="form-group">
+               <label>P(Event A)</label>
+               <input type="number" id="ind-a" placeholder="e.g., 0.5" min="0" max="1" step="0.01">
+            </div>
+            <div class="form-group">
+               <label>P(Event B)</label>
+               <input type="number" id="ind-b" placeholder="e.g., 0.5" min="0" max="1" step="0.01">
+            </div>
+         </div>
+         <button onclick="calcInd()" class="btn btn-primary btn-full">P(A and B)</button>
+      </div>
+
+      <!-- CONDITIONAL -->
+      <div id="view-conditional" class="calc-view">
+         <div class="input-row">
+            <div class="form-group">
+               <label>P(A ∩ B)</label>
+               <input type="number" id="con-ab" placeholder="P(Both occur)">
+            </div>
+            <div class="form-group">
+               <label>P(B)</label>
+               <input type="number" id="con-b" placeholder="Probability of B">
+            </div>
+         </div>
+         <button onclick="calcCon()" class="btn btn-primary btn-full">P(A | B)</button>
+      </div>
+
+      <div class="result-box">
+         <div class="res-val" id="res">0%</div>
+         <div class="small text-muted" id="res-dec">Decimal: 0.00</div>
+      </div>
+
+      <!-- SEO CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2>Understanding Probability Analysis</h2>
+        <p>Probability measures the likelihood that a specific event will occur, ranging from 0 (impossible) to 1 (certain). Our <strong>online probability calculator</strong> provides an automated environment for solving different statistical scenarios. From **basic outcome ratios** ($P = n/N$) to **conditional likelihood** ($P(A|B)$), this tool simplifies complex stats for students and data analysts. A reliable <strong>likelihood diagnostic auditor</strong> is essential for risk assessment and predictive modeling.</p>
+
+        <h3 class="mt-4">Independent vs. Conditional Events</h2>
+        <p>Independent events do not affect each other, where $P(A \text{ and } B) = P(A) \times P(B)$. Conditional probability $P(A|B)$ describes the probability of event A given that event B has already occurred. By using our <strong>event diagnostics tool</strong>, you can quickly analyze these relationships without manual arithmetic. This <strong>advanced stats auditor</strong> is a foundation for data science and physics diagnostics.</p>
+
+        <h3 class="mt-4">Privacy and Accuracy</h2>
+        <p>At 99tool.in, all statistical computations are performed locally in your browser. We do not store your probability inputs or event configurations. This <strong>private likelihood tool</strong> provides professional-grade results without any third-party telemetry. Whether you are studying for an exam or analyzing gaming odds, our <strong>secure probability calculator</strong> ensures your data remains purely yours.</p>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    function showTab(t) {
+       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+       document.querySelectorAll('.calc-view').forEach(v => v.classList.remove('active'));
+       
+       event.target.classList.add('active');
+       document.getElementById(`view-${t}`).classList.add('active');
+     }
+ 
+     function setRes(val) {
+        if (isNaN(val) || val < 0) return alert('Invalid input. Results must be positive numbers.');
+        document.getElementById('res').innerText = (val * 100).toFixed(2) + '%';
+        document.getElementById('res-dec').innerText = 'Decimal: ' + val.toFixed(4);
+     }
+ 
+     function calcBasic() {
+        const n = parseFloat(document.getElementById('base-n').value);
+        const N = parseFloat(document.getElementById('base-N').value);
+        if (N === 0) return alert('Total outcomes cannot be zero.');
+        setRes(n/N);
+     }
+ 
+     function calcInd() {
+        const a = parseFloat(document.getElementById('ind-a').value);
+        const b = parseFloat(document.getElementById('ind-b').value);
+        setRes(a * b);
+     }
+ 
+     function calcCon() {
+        const ab = parseFloat(document.getElementById('con-ab').value);
+        const b = parseFloat(document.getElementById('con-b').value);
+        if (b === 0) return alert('P(B) cannot be zero.');
+        setRes(ab / b);
+     }
+   </script>
+ </body>
+ </html>

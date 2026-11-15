@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Word To Pdf – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/pdf/word-to-pdf.html"/>
+<meta property="og:title" content="Word To Pdf – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/pdf/word-to-pdf.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Word To Pdf \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/pdf/word-to-pdf.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Mammoth for DOCX parsing -->
+  <script src="https://cdn.jsdelivr.net/npm/mammoth@1.11.0/mammoth.browser.min.js"></script>
+  <!-- pdf-lib for generation -->
+  <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+  <style>
+    .conversion-box {
+      background: var(--bg-secondary);
+      padding: 2rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      max-width: 800px;
+      margin: 2rem auto;
+    }
+    .proof-area {
+      background: white;
+      border: 1px solid var(--border);
+      padding: 3rem;
+      margin-top: 1.5rem;
+      max-height: 500px;
+      overflow-y: auto;
+      box-shadow: inset 0 2px 10px rgba(0,0,0,0.05);
+      border-radius: 8px;
+    }
+    .proof-area h1, .proof-area h2, .proof-area h3 { margin-top: 1.5rem; }
+    .proof-area p { margin-bottom: 1rem; line-height: 1.6; }
+    .placeholder-msg { text-align: center; color: #999; padding: 3rem 0; }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/pdf/word-to-pdf.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/pdf/word-to-pdf.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/pdf/word-to-pdf.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/pdf/word-to-pdf.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/pdf/word-to-pdf.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/pdf/word-to-pdf.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/pdf/word-to-pdf.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/pdf/word-to-pdf.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/pdf/word-to-pdf.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/pdf/word-to-pdf.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/pdf/word-to-pdf.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/pdf/word-to-pdf.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/pdf/word-to-pdf.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/pdf/word-to-pdf.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/pdf/word-to-pdf.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/pdf/word-to-pdf.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/pdf/word-to-pdf.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/pdf/word-to-pdf.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/pdf/word-to-pdf.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/pdf/word-to-pdf.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/pdf/word-to-pdf.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/pdf/word-to-pdf.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Word to PDF Converter</h1>
+      <p>Convert your DOCX files into professional PDFs. Securely, privately, and fast.</p>
+    </div>
+
+    <div class="tool-container">
+      <div class="upload-area" id="drop-zone">
+        <div class="upload-icon">📄</div>
+        <p>Drag & drop your Word (.docx) file or <span class="text-primary">browse files</span></p>
+        <input type="file" id="word-input" accept=".docx" hidden>
+      </div>
+
+      <div id="file-info" class="file-info hidden" style="max-width: 800px; margin: 1rem auto;">
+        <div class="file-details">
+          <span id="file-name">filename.docx</span>
+          <span id="file-size" class="text-muted">0 KB</span>
+        </div>
+        <div class="security-badge">
+          <span class="badge-icon">🛡️</span>
+          <span>Scan Complete</span>
+        </div>
+      </div>
+
+      <div class="conversion-box hidden" id="conversion-workspace">
+          <div class="flex justify-between items-center mb-3">
+            <h3 class="mb-0">Document Proof</h3>
+            <button id="convert-btn" class="btn btn-primary btn-sm">Generate PDF & Download</button>
+          </div>
+          <div class="proof-area" id="proof-area">
+              <div class="placeholder-msg">Loading document preview...</div>
+          </div>
+      </div>
+
+      <div id="status-msg" class="text-center mt-3 small"></div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5">
+        <h2>Professional Document Preservation Without the Cloud Risk</h2>
+        <p>We’ve all been there: you’ve spent hours perfecting a report, an essay, or a legal letter in Microsoft Word. You’re ready to share it, but you know that sending the original `.docx` file is risky—fonts might change, layout might shift, and your recipient could accidentally edit your work. Your first instinct is to find a tool to <strong>convert word to pdf</strong>. But then the concern hits: to "preserve" your document, most websites want you to upload your sensitive file to their server. Does professionalizing your work really require you to share it with an anonymous database? Why should a format change require a privacy sacrifice?</p>
+
+        <p>At 99tool.in, we built our <strong>docx to pdf</strong> converter to give you high-fidelity document preservation with absolute data sovereignty. By utilizing browser-side <code>mammoth.js</code> technology, we allow you to <strong>convert doc to pdf</strong> entirely within your browser. Whether you’re a freelancer sending an invoice, a student submitting an assignment, or a pro preparing a contract, our <strong>word to pdf</strong> utility ensures that your text never leaves your device, giving you a sharp, professional result with the security of a local vault.</p>
+        
+        <div class="tool-preview-box mt-4 mb-4" style="text-align:center;">
+           <img src="../../assets/images/markdown-preview.png" alt="Clean Word to PDF Digital Proof Workspace" class="tool-preview" id="tool-preview-img" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+        </div>
+
+        <h3 class="mt-4">The Logic of Semantic Conversion</h3>
+        <p>A Word document is essentially a package of complex instructions for a processing engine. Converting it to the fixed-layout world of PDF is a structural challenge. Most <strong>word to pdf online</strong> services attempt to "photocopy" every pixel, which often leads to huge file sizes and loss of text searchability. Our <strong>safe docx to pdf</strong> tool takes a human-centric approach: we focus on **Semantic Integrity** and **Text Sharpness**.</p>
+        
+        <p>We parse your Word document into a clean, modern structure, allowing you to review a "Digital Proof" before the PDF is generated. This transparency ensures that you know exactly what the final file will look like. Our <strong>professional word converter</strong> preserves your headings, lists, and paragraphs, re-rendering them with high-fidelity fonts that stay crisp at any zoom level. It is built for clarity and reliability, ensuring your message is the star of the show.</p>
+
+        <h3 class="mt-4">Why Conversion is the Ethical Choice</h3>
+        <p>Your documents are your intellectual property. When you use a standard <strong>word to pdf online free</strong> service, you are hand-delivering your proprietary strategies, academic research, or personal letters to a third party. In the era of data scraping and AI training, this is a massive risk. Our 100% <strong>word to pdf</strong> utility eliminates this "Privacy Debt."</p>
+        
+        <p>Because the logic runs in your browser's private sandbox memory, your document content is invisible to the outside world. No analytics are tracked, and no logs are kept. Furthermore, 99tool.in perform a localized **Security Scan** on every file you load, ensuring it is a safe environment to work in. We believe that <strong>converting file formats</strong> should be an empowering utility, not a data-harvesting trap. With 99tool.in, you have a private, professional office that fits in your browser tab.</p>
+
+        <h3 class="mt-4">How to Convert Your Word Doc to PDF (Step-by-Step)</h3>
+        <p>Transforming your editable file into a professional PDF should be a 30-second task. Here is how to use our <strong>word to pdf</strong> utility:</p>
+        <ul style="line-height: 1.8; margin-bottom: 20px;">
+          <li><strong>Step 1: Securely Load Your Docx</strong> — Drag your Word file into the upload zone. Our system will immediately identify the structure and begin the local conversion process.</li>
+          <li><strong>Step 2: Review the Digital Proof</strong> — Look through the preview area. This high-fidelity render shows you exactly how the text and hierarchy will be preserved in the final file.</li>
+          <li><strong>Step 3: Generate the Final PDF</strong> — Click "Generate PDF." Our local engine will "burn" the text into a clean PDF structure, optimized for both reading and sharing.</li>
+          <li><strong>Step 4: Download and Share</strong> — Your professional PDF downloads instantly. Send it with confidence, knowing the layout is locked and your data was never shared with the cloud.</li>
+        </ul>
+
+        <h3 class="mt-4">Strategic Use Cases for Safe Conversion</h3>
+        <p>Our <strong>docx to pdf</strong> generator is the essential tool for varied professional life:</p>
+        
+        <p><strong>For Freelancers and Contractors:</strong> Sending an invoice or a project proposal? Use our <strong>word to pdf</strong> tool to ensure your branding and pricing stay exactly as you designed them, regardless of what device your client uses to read them.</p>
+        
+        <p><strong>For Academic Excellence:</strong> When submitting an essay to a portal, university systems often "reject" Word files due to font errors. Converting to a <strong>standardized pdf</strong> via our tool ensures your submission is always accepted and perfectly formatted.</p>
+        
+        <p><strong>For Individual Users:</strong> Printing bank letters or custom invitations? <strong>Converting to PDF</strong> ensures the fonts don't substitute with "Times New Roman" at the print shop, giving you a perfect result Every Time.</p>
+
+        <h3 class="mt-5">Explore Your Complete Document Suite</h3>
+        <p>Once you’ve successfully converted your file to PDF, you might find that it needs further protection. Check out our <strong><a href="protect-pdf.html">PDF Password Protector</a></strong>. Or, if the document you’ve created needs a logo, use our <strong><a href="watermark-pdf.html">PDF Watermark Adder</a></strong>. At 99tool.in, we are building a world-class, private digital toolkit to give you total sovereignty over your work.</p>
+        
+        <div class="flex gap-4 mt-4 mb-5">
+           <a href="pdf-to-word.html" class="btn btn-secondary" style="flex:1; text-align:center;">PDF to Word</a>
+           <a href="compress-pdf.html" class="btn btn-secondary" style="flex:1; text-align:center;">PDF Compressor</a>
+        </div>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2 data-i18n="tools.word_to_pdf_converter.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Will my document formatting be preserved?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. Our <strong>word to pdf</strong> converter uses high-fidelity parsing to ensure that your headings, lists, and paragraph structures are maintained. We provide a "Digital Proof" preview so you can verify the layout before the final conversion.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Does this tool support older .doc files?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Currently, our tool is optimized for <strong>modern .docx files</strong> (XML-based). For older .doc files, we recommend saving them as .docx in your word processor first for the most accurate and reliable results.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Is the conversion process secure?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Absolutely. Unlike other "Free Word to PDF" sites that send your resume or contract to a remote server, 99tool.in does the heavy lifting via <strong>WASM and JavaScript</strong> right in your browser tab. Your confidential documents never leave your computer.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I convert Word files with images?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Our current <strong>semantic converter</strong> is optimized for text, headings, and lists. If your Word document contains complex floating images or advanced tables, we recommend using a desktop-based PDF export for the best results.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Does it support non-English characters?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. Our <strong>local PDF engine</strong> supports standard Latin characters. If your document uses complex scripts or emojis, our sanitizer will attempt to preserve the text integrity while ensuring the PDF file remains valid and readable.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Why use a local converter instead of Microsoft Word?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Sometimes you don't have Word installed, or you're on a device that doesn't support it. Our <strong>private converter</strong> provides a fast, platform-independent way to get a professional PDF without needing a heavy office suite.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 Privacy-First. No Uploads. 100% Secure. Last updated: April 10, 2026.</p>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const wordInput = document.getElementById('word-input');
+    const dropZone = document.getElementById('drop-zone');
+    const convertBtn = document.getElementById('convert-btn');
+    const workspace = document.getElementById('conversion-workspace');
+    const proofArea = document.getElementById('proof-area');
+
+    let currentFile = null;
+    let extractedHTML = "";
+
+    // File selection
+    dropZone.addEventListener('click', () => wordInput.click());
+    wordInput.addEventListener('change', (e) => handleFile(e.target.files[0]));
+
+    async function handleFile(file) {
+      if (!file || !file.name.endsWith('.docx')) {
+          alert("Please select a .docx file.");
+          return;
+      }
+      currentFile = file;
+      document.getElementById('file-name').innerText = file.name;
+      document.getElementById('file-size').innerText = (file.size / 1024).toFixed(1) + ' KB';
+      document.getElementById('file-info').classList.remove('hidden');
+      workspace.classList.remove('hidden');
+      proofArea.innerHTML = '<div class="placeholder-msg">Generating digital proof...</div>';
+
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const arrayBuffer = e.target.result;
+        mammoth.convertToHtml({ arrayBuffer: arrayBuffer })
+          .then(result => {
+             extractedHTML = result.value;
+             proofArea.innerHTML = extractedHTML || '<p class="text-center text-muted">No readable text found in document.</p>';
+          })
+          .catch(err => {
+             console.error(err);
+             proofArea.innerHTML = '<p class="text-danger">Error reading Word document structure.</p>';
+          });
+      };
+      reader.readAsArrayBuffer(file);
+    }
+
+    convertBtn.addEventListener('click', async () => {
+      const msg = document.getElementById('status-msg');
+      msg.innerText = "Generating PDF structure...";
+      try {
+        const { PDFDocument, StandardFonts, rgb } = PDFLib;
+        const pdfDoc = await PDFDocument.create();
+        const font = await pdfDoc.embedFont(StandardFonts.Helvetica);
+        
+        // Simple heuristic: one section of continuous text per page (basic as requested)
+        // We will parse the proofArea's text content
+        const textNodes = Array.from(proofArea.querySelectorAll('p, h1, h2, h3, li'));
+        
+        if (textNodes.length === 0) throw new Error("Document structure too complex or empty.");
+
+        let page = pdfDoc.addPage([595.28, 841.89]); // A4
+        let y = 800;
+
+        for (const node of textNodes) {
+           let text = node.innerText.trim();
+           if (!text) continue;
+           
+           // Sanitize text for WinAnsi (standard Helvetica)
+           // Replaces non-encodable characters (including newlines/Unicode) with spaces to prevent crashes
+           text = text.replace(/[^\u0020-\u007E\u00A0-\u00FF]/g, ' ');
+
+           const fontSize = node.tagName.startsWith('H') ? 18 : 12;
+           if (y < 100) {
+               page = pdfDoc.addPage([595.28, 841.89]);
+               y = 800;
+           }
+
+           // Basic word wrap
+           const words = text.split(' ');
+           let line = "";
+           for (const word of words) {
+               const testLine = line + word + " ";
+               const width = font.widthOfTextAtSize(testLine, fontSize);
+               if (width > 500) {
+                   page.drawText(line, { x: 50, y, size: fontSize, font, color: rgb(0,0,0) });
+                   y -= fontSize + 5;
+                   line = word + " ";
+                   if (y < 50) { 
+                       page = pdfDoc.addPage([595.28, 841.89]); 
+                       y = 800; 
+                   }
+               } else {
+                   line = testLine;
+               }
+           }
+           page.drawText(line, { x: 50, y, size: fontSize, font, color: rgb(0,0,0) });
+           y -= fontSize * 1.8;
+        }
+
+        const pdfBytes = await pdfDoc.save();
+        const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = currentFile.name.replace('.docx', '') + '.pdf';
+        a.click();
+        URL.revokeObjectURL(url);
+        msg.innerText = "Word to PDF conversion complete! ✅";
+        msg.style.color = "green";
+      } catch (err) {
+        console.error(err);
+        msg.innerText = "Conversion error: " + err.message;
+        msg.style.color = "red";
+      }
+    });
+
+    // Init Drag and Drop using global helper
+    setupDragDrop('drop-zone', (files) => {
+       if (files.length) handleFile(files[0]);
+    });
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

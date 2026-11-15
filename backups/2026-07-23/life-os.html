@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Life Os – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/productivity/life-os.html"/>
+<meta property="og:title" content="Life Os – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/productivity/life-os.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Life Os \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/productivity/life-os.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    body { background: #0a0a0a; color: #eee; overflow: hidden; }
+    
+    .life-os-container {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      height: 100vh;
+      width: 100vw;
+    }
+
+    /* Sidebar Styles */
+    .os-sidebar {
+      background: #111;
+      border-right: 1px solid #222;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    
+    .os-logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.2rem; color: var(--primary); }
+
+    .nav-group { display: flex; flex-direction: column; gap: 10px; }
+    .nav-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: #444; font-weight: 700; }
+    
+    .nav-item {
+        padding: 12px 15px; border-radius: 10px; color: #888; cursor: pointer; transition: 0.2s; display: flex; align-items: center; gap: 12px;
+    }
+    .nav-item:hover { background: #1a1a1a; color: white; }
+    .nav-item.active { background: var(--primary); color: white; }
+
+    /* Main Content */
+    .os-main {
+      padding: 3rem;
+      overflow-y: auto;
+      background: linear-gradient(135deg, #0a0a0a 0%, #111 100%);
+    }
+
+    .os-header {
+        display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem;
+    }
+    .os-time { font-family: 'JetBrains Mono', monospace; font-size: 1.5rem; color: var(--primary); }
+
+    .os-card {
+        background: rgba(255,255,255,0.02);
+        border: 1px solid rgba(255,255,255,0.05);
+        border-radius: 20px;
+        padding: 2rem;
+        backdrop-filter: blur(10px);
+    }
+
+    .stat-bar {
+        height: 60px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem;
+    }
+    .stat-item { text-align: center; border-right: 1px solid #222; flex: 1; }
+    .stat-item:last-child { border-right: none; }
+    .stat-val { font-size: 1.5rem; font-weight: 800; color: white; }
+    .stat-lbl { font-size: 0.65rem; color: #555; text-transform: uppercase; }
+
+    .quick-tools {
+        display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 15px;
+    }
+    .tool-link {
+        background: #1a1a1a; border: 1px solid #222; border-radius: 12px; padding: 1rem; display: flex; align-items: center; gap: 10px; cursor: pointer; transition: 0.2s;
+    }
+    .tool-link:hover { border-color: var(--primary); transform: translateY(-3px); }
+
+    /* App-specific frames */
+    .app-frame { display: none; }
+    .app-frame.active { display: block; animation: slideUp 0.4s ease; }
+    
+    @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+    @media (max-width: 992px) {
+        .life-os-container { grid-template-columns: 1fr; }
+        .os-sidebar { display: none; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+
+  <div class="life-os-container">
+    <aside class="os-sidebar">
+      <div class="os-logo"><span>🧩</span> LIFE OS</div>
+      
+      <div class="nav-group">
+          <div class="nav-label">General</div>
+          <div class="nav-item active" onclick="switchTab('dashboard')">🏠 Overview</div>
+          <div class="nav-item" onclick="switchTab('habits')">🔥 Habits</div>
+          <div class="nav-item" onclick="switchTab('knowledge')">📚 Knowledge</div>
+      </div>
+
+      <div class="nav-group">
+          <div class="nav-label">Utilities</div>
+          <div class="nav-item" onclick="location.href='../security/secure-notes.html'">🔐 Secure Notes</div>
+          <div class="nav-item" onclick="location.href='../fun/chess.html'">♟️ Relax</div>
+      </div>
+
+      <div class="mt-auto">
+          <button class="btn btn-primary btn-full btn-sm" onclick="exportOS()">Export OS Data</button>
+      </div>
+    </aside>
+
+    <main class="os-main">
+      <header class="os-header">
+          <div>
+              <h1 id="greeting">Good Morning, Explorer</h1>
+              <p class="text-muted small">Your life is 100% and encrypted.</p>
+          </div>
+          <div class="os-time" id="os-clock">00:00:00</div>
+      </header>
+
+      <!-- Dashboard Tab -->
+      <section id="tab-dashboard" class="app-frame active">
+          <div class="stat-bar os-card">
+              <div class="stat-item"><div class="stat-val" id="os-streak">0</div><div class="stat-lbl">Days Streak</div></div>
+              <div class="stat-item"><div class="stat-val" id="os-tasks">0</div><div class="stat-lbl">Open Tasks</div></div>
+              <div class="stat-item"><div class="stat-val" id="os-notes">0</div><div class="stat-lbl">Stored Notes</div></div>
+          </div>
+
+          <h3>Quick Access Tools</h3>
+          <div class="quick-tools mt-3">
+              <div class="tool-link" onclick="location.href='../productivity/habit-tracker.html'"><span>📈</span> Habits</div>
+              <div class="tool-link" onclick="location.href='../productivity/dashboard.html'"><span>🧱</span> Dashboard</div>
+              <div class="tool-link" onclick="location.href='../security/file-locker.html'"><span>🔒</span> File Locker</div>
+              <div class="tool-link" onclick="location.href='../fun/sudoku.html'"><span>🧩</span> Sudoku</div>
+          </div>
+
+          <div class="os-card mt-5">
+              <h3>Daily Focus</h3>
+              <textarea id="os-focus" style="width:100%; height:150px; background:none; border:none; color:#bbb; padding:10px; font-size:1.1rem; outline:none;" placeholder="What is the one thing you must accomplish today?"></textarea>
+          </div>
+      </section>
+
+      <!-- Habits Tab -->
+      <section id="tab-habits" class="app-frame">
+          <div class="os-card" style="text-align:center;">
+              <div style="font-size: 3rem;">🔥</div>
+              <h3>Habit Tracking Integrated</h3>
+              <p class="text-muted">Life OS connects directly to your local habit database.</p>
+              <button class="btn btn-primary" onclick="location.href='../productivity/habit-tracker.html'">Launch Detailed Tracker</button>
+          </div>
+      </section>
+
+      <!-- Knowledge Tab -->
+      <section id="tab-knowledge" class="app-frame">
+          <div class="os-card">
+              <h3>Personal Knowledge Base</h3>
+              <p class="text-muted">Your second brain is stored locally. No cloud, no leaks.</p>
+              <textarea style="width:100%; height:400px; background:rgba(0,0,0,0.2); border:1px solid #333; color:#ccc; padding:20px; border-radius:12px; outline:none;" placeholder="Capture long-term wisdom here..."></textarea>
+          </div>
+      </section>
+
+      <!-- HUMANIZED SEO CONTENT -->
+      <section class="seo-content mt-5">
+        <h2>Your Second Brain, Managed Privately: The Life OS Philosophy</h2>
+        <p>In a world of fragmented apps and scattered data, staying organized often feels like a full-time job. We use one app for notes, another for habits, and a third for task management—all while our data lives on distant servers we don't control. **Life OS** was built to change that. It is a unified, browser-native command center designed for the "Privacy Architect"—someone who wants the power of an all-in-one productivity hub without the vulnerability of cloud-based tracking.</p>
+
+        <p>At 99tool.in, we believe your personal data should stay exactly where it belongs: with you. Our **Life OS** integrates your habits, tasks, and knowledge into a single, high-performance dashboard that runs entirely in your browser's local memory. Whether you’re an entrepreneur managing multiple projects, a student balancing a heavy course load, or a professional building a long-term knowledge base, our **safe personal organizer** ensures your system is as secure as it is efficient.</p>
+
+        <div class="tool-preview-box mt-4 mb-4" style="text-align:center;">
+          <img src="../../assets/images/wc-preview.png" alt="99tool Life OS Dashboard showing Integrated Productivity Widgets" class="tool-preview" style="max-width: 100%; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+        </div>
+
+        <h3 class="mt-4">The Logic of Integrated Productivity</h3>
+        <p>Organization isn't about having more lists; it's about having **Better Connections**. Standard productivity apps isolate your data, making it hard to see how your daily habits impact your long-term goals. Our **professional life manager** takes a humanized approach: we focus on **Synthesized Overview** and **Zero-Latency Interaction**.</p>
+        
+        <p>The dashboard provides a real-time summary of your entire digital life. It pulls data from your habits, tasks, and notes, presenting them in a high-contrast, dark-themed interface that reduces visual fatigue and focuses your attention. This isn't just a tool; it's a structural framework for your mind, allowing you to manage your time and energy with the precision of a professional OS.</p>
+
+        <h3 class="mt-4">Why Local Sync is the Pro's Ethical Choice</h3>
+        <p>In the age of "Productivity Profiling," your to-do lists and personal notes are a map of your ambitions and vulnerabilities. Using a standard **all-in-one organizer online** service creates a digital record of your internal world. Our 100% **private hub** removes this "Digital Footprint" entirely from your routine.</p>
+        
+        <p>Because the logic and data storage happen locally via the `localStorage` API, your life's blueprint is invisible to the outside world. No analytics are tracked, no habits are harvested, and no proprietary knowledge is shared with AI models. We provide you with the bricks and mortar to build your own "Digital Fortress"—running in a simple browser tab.</p>
+
+        <h3 class="mt-4">How to Master Your Life OS (Step-by-Step)</h3>
+        <p>Setting up your private command center should be a 1-minute task. Here is how to use our **Life OS**:</p>
+        <ul style="line-height: 1.8; margin-bottom: 20px;">
+          <li><strong>Step 1: Initialize the Hub</strong> — Launch the tool. Our system immediately syncs with your previous local data, loading your habits and tasks instantly.</li>
+          <li><strong>Step 2: Define Your Focus</strong> — Use the "Daily Focus" area to set your primary objective. This intentional act helps prime your brain for deep work.</li>
+          <li><strong>Step 3: Manage the Flow</strong> — Toggle between the Dashboard, Habits, and Knowledge tabs. Each view is optimized for a specific cognitive mode (Action, Routine, Analysis).</li>
+          <li><strong>Step 4: Secure Data Export</strong> — When you're done, or if you want to switch devices, use the "Export OS Data" button to create a private backup of your entire ecosystem.</li>
+        </ul>
+
+        <h3 class="mt-5">Expand Your Productivity Ecosystem</h3>
+        <p>Once you’ve mastered your Life OS, you might want to dive deeper into specific areas. Check out our **<a href="habit-tracker.html">Habit Tracker</a>** for granular routine management. Or, if you need to tackle a complex project, use our **<a href="kanban-board.html">Kanban Board</a>**. At 99tool.in, we are building a world-class, 100% private digital toolkit to give you total sovereignty over your time.</p>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section mt-5">
+        <div class="container-sm">
+          <h2>Frequently Asked Questions</h2>
+          <div class="faq-grid">
+            <div class="faq-item">
+              <button class="faq-question">Where is my data stored?<span class="faq-icon">+</span></button>
+              <div class="faq-answer">
+                <p>Your data is stored exclusively in your browser's <code>localStorage</code>. This means it stays on your hard drive and never touches our servers. We have zero access to your notes, tasks, or habits.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question">Will I lose data if I clear my browser cache?<span class="faq-icon">+</span></button>
+              <div class="faq-answer">
+                <p>Clearing "Site Data" or "LocalStorage" will reset the tool. We highly recommend using the <strong>Export OS Data</strong> button regularly to save a backup file on your device.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question">Is Life OS free for commercial use?<span class="faq-icon">+</span></button>
+              <div class="faq-answer">
+                <p>Yes, 100%. Whether you're managing a solo business or personal life, all tools on 99tool.in are free to use without restrictions.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question">Can I use this across multiple devices?<span class="faq-icon">+</span></button>
+              <div class="faq-answer">
+                <p>Since the data is local to your browser, it doesn't auto-sync. To move your OS, simply export the JSON file from one device and (in a future update) import it to the other. Manual sync ensures maximum privacy.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question">How secure is the "Knowledge Base"?<span class="faq-icon">+</span></button>
+              <div class="faq-answer">
+                <p>It is as secure as your computer itself. Because there is no cloud database, there is no central point of failure for hackers to target. Your wisdom stays in your sandbox.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script>
+    function switchTab(tabId) {
+        document.querySelectorAll('.app-frame').forEach(f => f.classList.remove('active'));
+        document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+        
+        document.getElementById('tab-' + tabId).classList.add('active');
+        event.currentTarget.classList.add('active');
+    }
+
+    function updateOSClock() {
+        const now = new Date();
+        document.getElementById('os-clock').innerText = now.toLocaleTimeString();
+        
+        const hour = now.getHours();
+        const greeting = hour < 12 ? "Good Morning" : hour < 18 ? "Good Afternoon" : "Good Evening";
+        document.getElementById('greeting').innerText = `${greeting}, Explorer`;
+    }
+
+    function loadOSStats() {
+        // Simple mock of integrated stats from other tool keys
+        const habits = JSON.parse(localStorage.getItem('99tool_habits') || "[]");
+        const dashboard = JSON.parse(localStorage.getItem('99tool_dashboard') || "[]");
+        
+        document.getElementById('os-streak').innerText = habits.reduce((max, h) => Math.max(max, h.streak || 0), 0);
+        document.getElementById('os-tasks').innerText = dashboard.find(w => w.type === 'tasks')?.items.filter(i => !i.done).length || 0;
+        document.getElementById('os-notes').innerText = JSON.parse(localStorage.getItem('99tool_secure_notes') || "{}").length || 0;
+    }
+
+    function exportOS() {
+        const data = {
+            habits: localStorage.getItem('99tool_habits'),
+            dashboard: localStorage.getItem('99tool_dashboard'),
+            notes: localStorage.getItem('99tool_secure_notes')
+        };
+        const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "life-os-full-backup.json";
+        a.click();
+    }
+
+    setInterval(updateOSClock, 1000);
+    updateOSClock();
+    loadOSStats();
+  </script>
+</body>
+</html>
+

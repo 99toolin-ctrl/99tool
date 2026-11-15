@@ -1,0 +1,435 @@
+<header>
+<!-- SEO START -->
+<title>Header – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/components/header.html"/>
+<meta property="og:title" content="Header – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/components/header.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Header \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/components/header.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<style>
+  /* Embedded Header Language Dropdown Styles */
+  #site-header .lang-selector-dropdown {
+    position: relative !important;
+    margin-left: 10px !important;
+  }
+  #site-header .lang-trigger,
+  #site-header #lang-dropdown-btn {
+    display: inline-flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    height: 34px !important;
+    padding: 0 12px !important;
+    border-radius: 20px !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: #ffffff !important;
+    cursor: pointer !important;
+    white-space: nowrap !important;
+    box-sizing: border-box !important;
+  }
+  #site-header .lang-trigger:hover {
+    background: rgba(255, 255, 255, 0.15) !important;
+    border-color: #e53935 !important;
+  }
+  #site-header .lang-flag-img,
+  #site-header img.lang-flag-img,
+  #site-header #current-lang-flag {
+    width: 20px !important;
+    height: 14px !important;
+    min-width: 20px !important;
+    min-height: 14px !important;
+    max-width: 20px !important;
+    max-height: 14px !important;
+    object-fit: cover !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+    border-radius: 2px !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.5) !important;
+    flex-shrink: 0 !important;
+    margin: 0 4px 0 0 !important;
+    padding: 0 !important;
+  }
+  #site-header #current-lang-name {
+    font-size: 0.85rem !important;
+    font-weight: 600 !important;
+    color: #ffffff !important;
+    line-height: 1 !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+  }
+  #site-header .lang-dropdown-menu,
+  #site-header #lang-dropdown-menu {
+    max-height: 320px !important;
+    overflow-y: auto !important;
+    width: 190px !important;
+    min-width: 190px !important;
+    padding: 8px !important;
+    border-radius: 12px !important;
+    background: #1a1a1a !important;
+    border: 1px solid #2e2e2e !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8) !important;
+  }
+  #site-header .lang-dropdown-menu a,
+  #site-header #lang-dropdown-menu a {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 10px !important;
+    padding: 8px 12px !important;
+    border-radius: 6px !important;
+    font-size: 0.85rem !important;
+    color: #999999 !important;
+    white-space: nowrap !important;
+    text-decoration: none !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  #site-header .lang-dropdown-menu a:hover,
+  #site-header .lang-dropdown-menu a.active {
+    background: rgba(229, 57, 53, 0.25) !important;
+    color: #ffffff !important;
+    padding-left: 12px !important;
+  }
+  #site-header .lang-flag-option,
+  #site-header img.lang-flag-option {
+    width: 20px !important;
+    height: 14px !important;
+    min-width: 20px !important;
+    min-height: 14px !important;
+    max-width: 20px !important;
+    max-height: 14px !important;
+    object-fit: cover !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+    border-radius: 2px !important;
+    flex-shrink: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.5) !important;
+  }
+
+  /* Embedded Mobile Off-Canvas Drawer Styles */
+  .mobile-drawer-header,
+  .mobile-drawer-footer {
+    display: none !important;
+  }
+
+  .nav-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(4px);
+    z-index: 1998;
+    opacity: 0;
+    transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+  }
+  .nav-overlay.active {
+    display: block !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  @media (max-width: 860px) {
+    .nav-links,
+    #site-header .nav-links {
+      position: fixed !important;
+      top: 0 !important;
+      right: 0 !important;
+      bottom: 0 !important;
+      width: 85vw !important;
+      max-width: 380px !important;
+      height: 100vh !important;
+      background: #141416 !important;
+      border-left: 1px solid rgba(255, 255, 255, 0.1) !important;
+      box-shadow: -10px 0 40px rgba(0, 0, 0, 0.9) !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: stretch !important;
+      justify-content: flex-start !important;
+      padding: 0 !important;
+      gap: 0 !important;
+      overflow-y: auto !important;
+      overflow-x: hidden !important;
+      z-index: 2000 !important;
+      transform: translateX(100%) !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      pointer-events: auto !important;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+    .nav-links.open,
+    #site-header .nav-links.open {
+      transform: translateX(0) !important;
+      display: flex !important;
+    }
+    .mobile-drawer-header {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      padding: 18px 20px !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+      background: #19191c !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    .mobile-drawer-brand {
+      font-size: 1.3rem !important;
+      font-weight: 800 !important;
+      color: #ffffff !important;
+    }
+    .mobile-drawer-brand .logo-text span {
+      color: #e53935 !important;
+    }
+    .mobile-drawer-close {
+      background: rgba(255, 255, 255, 0.12) !important;
+      border: 1px solid rgba(255, 255, 255, 0.2) !important;
+      color: #ffffff !important;
+      width: 36px !important;
+      height: 36px !important;
+      min-width: 36px !important;
+      min-height: 36px !important;
+      border-radius: 50% !important;
+      cursor: pointer !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      transition: all 0.2s ease !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+    .mobile-drawer-close:hover {
+      background: rgba(229, 57, 53, 0.3) !important;
+      border-color: #e53935 !important;
+    }
+    #site-header .nav-links > li:not(.mobile-drawer-header):not(.mobile-drawer-footer) {
+      width: 100% !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+      box-sizing: border-box !important;
+    }
+    #site-header .nav-links a, 
+    #site-header .dropdown-trigger {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      padding: 15px 20px !important;
+      font-size: 1.02rem !important;
+      font-weight: 600 !important;
+      color: #e4e4e7 !important;
+      text-align: left !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+      transition: background 0.2s ease, color 0.2s ease !important;
+    }
+    #site-header .nav-links a:hover,
+    #site-header .dropdown-trigger:hover {
+      background: rgba(255, 255, 255, 0.05) !important;
+      color: #ffffff !important;
+    }
+    #site-header .nav-item-dropdown {
+      width: 100% !important;
+      flex-direction: column !important;
+    }
+    #site-header .dropdown-trigger::after {
+      content: '▾' !important;
+      font-size: 0.9rem !important;
+      transition: transform 0.3s ease !important;
+    }
+    #site-header .nav-item-dropdown.active .dropdown-trigger::after {
+      transform: rotate(180deg) !important;
+    }
+    #site-header .dropdown-menu {
+      position: static !important;
+      transform: none !important;
+      width: 100% !important;
+      background: rgba(0, 0, 0, 0.3) !important;
+      border: none !important;
+      box-shadow: none !important;
+      display: none !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      padding: 6px 0 !important;
+      border-radius: 0 !important;
+    }
+    #site-header .nav-item-dropdown.active .dropdown-menu {
+      display: flex !important;
+      flex-direction: column !important;
+    }
+    #site-header .dropdown-menu a {
+      padding: 12px 20px 12px 36px !important;
+      font-size: 0.92rem !important;
+      font-weight: 500 !important;
+      color: #a1a1aa !important;
+      border-bottom: none !important;
+    }
+    #site-header .dropdown-menu a:hover {
+      color: #ffffff !important;
+      background: rgba(229, 57, 53, 0.15) !important;
+    }
+    .mobile-drawer-footer {
+      margin-top: auto !important;
+      padding: 20px !important;
+      border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+      background: #19191c !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+    .mobile-drawer-actions {
+      display: flex !important;
+      gap: 10px !important;
+      width: 100% !important;
+    }
+    .drawer-action-btn {
+      flex: 1 !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 8px !important;
+      padding: 10px 14px !important;
+      border-radius: 20px !important;
+      font-size: 0.88rem !important;
+      font-weight: 600 !important;
+      background: rgba(255, 255, 255, 0.08) !important;
+      border: 1px solid rgba(255, 255, 255, 0.15) !important;
+      color: #ffffff !important;
+      text-decoration: none !important;
+    }
+    .drawer-action-btn.highlight {
+      background: rgba(229, 57, 53, 0.2) !important;
+      border-color: #e53935 !important;
+      color: #ffffff !important;
+    }
+  }
+</style>
+
+<div class="nav-overlay" id="nav-overlay"></div>
+
+  <div class="header-inner">
+    <a href="/" class="logo" id="logo-link">
+      <span class="logo-text">99<span>tool</span>.in</span>
+    </a>
+    <nav>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li class="mobile-drawer-header">
+          <div class="mobile-drawer-brand">
+            <span class="logo-text">99<span>tool</span>.in</span>
+          </div>
+          <button class="mobile-drawer-close" id="mobile-drawer-close" aria-label="Close navigation">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </li>
+        <li><a href="/" id="nav-home">Home</a></li>
+        <li><a href="/index.html#pdf" id="nav-pdf">PDF Tools</a></li>
+        <li><a href="/index.html#image" id="nav-image">Image Tools</a></li>
+        <li><a href="/index.html#network" id="nav-testers">Global Testers</a></li>
+        <li class="nav-item-dropdown">
+          <div class="dropdown-trigger">Calculators</div>
+          <div class="dropdown-menu">
+            <a href="/index.html#daily-calculators">Daily Life</a>
+            <a href="/index.html#business">Business & Finance</a>
+            <a href="/index.html#health">Health & Fitness</a>
+            <a href="/index.html#physics">Physics & Engineering</a>
+            <a href="/index.html#math">Mathematics & Calculus</a>
+          </div>
+        </li>
+        
+        <li class="nav-item-dropdown">
+          <div class="dropdown-trigger">Tools</div>
+          <div class="dropdown-menu">
+            <a href="/index.html#productivity">Productivity</a>
+            <a href="/index.html#developer">Developer</a>
+            <a href="/index.html#data">Data & File</a>
+            <a href="/index.html#creative">Graphic & Design</a>
+            <a href="/index.html#writing">Writing & Content</a>
+            <a href="/index.html#audio">Audio & Sound</a>
+            <a href="/index.html#learning">Learning & Education</a>
+            <a href="/index.html#security">Security</a>
+            <a href="/index.html#health">Health & Fitness</a>
+            <a href="/index.html#physics">Physics & Engineering</a>
+            <a href="/index.html#math">Mathematics & Calculus</a>
+            <a href="/index.html#fun">Fun</a>
+          </div>
+        </li>
+
+        <li><a href="/about.html" id="nav-about">About</a></li>
+        <li><a href="/contact.html" id="nav-contact">Contact</a></li>
+
+        <!-- Language Selector Dropdown -->
+        <li class="nav-item-dropdown lang-selector-dropdown">
+          <div class="dropdown-trigger lang-trigger" id="lang-dropdown-btn" style="display: inline-flex; align-items: center; gap: 8px;">
+            <img src="/flags-images/USA.png" alt="Language Flag" class="lang-flag-img" id="current-lang-flag" style="width: 20px; height: 14px; min-width: 20px; min-height: 14px; object-fit: cover; display: inline-block; vertical-align: middle; flex-shrink: 0;" />
+            <span id="current-lang-name">English</span>
+          </div>
+          <div class="dropdown-menu lang-dropdown-menu" id="lang-dropdown-menu">
+            <a href="/en/index.html?lang=en" data-lang="en" style="display: flex; align-items: center; gap: 10px; white-space: nowrap;"><img src="/flags-images/USA.png" alt="USA Flag" class="lang-flag-option" style="width: 20px; height: 14px; min-width: 20px; min-height: 14px; object-fit: cover; display: inline-block; vertical-align: middle; flex-shrink: 0;" /> English</a>
+            <a href="/es/index.html?lang=es" data-lang="es" style="display: flex; align-items: center; gap: 10px; white-space: nowrap;"><img src="/flags-images/Spain.png" alt="Spain Flag" class="lang-flag-option" style="width: 20px; height: 14px; min-width: 20px; min-height: 14px; object-fit: cover; display: inline-block; vertical-align: middle; flex-shrink: 0;" /> Español</a>
+            <a href="/fr/index.html?lang=fr" data-lang="fr" style="display: flex; align-items: center; gap: 10px; white-space: nowrap;"><img src="/flags-images/France.png" alt="France Flag" class="lang-flag-option" style="width: 20px; height: 14px; min-width: 20px; min-height: 14px; object-fit: cover; display: inline-block; vertical-align: middle; flex-shrink: 0;" /> Français</a>
+            <a href="/de/index.html?lang=de" data-lang="de" style="display: flex; align-items: center; gap: 10px; white-space: nowrap;"><img src="/flags-images/Germany.png" alt="Germany Flag" class="lang-flag-option" style="width: 20px; height: 14px; min-width: 20px; min-height: 14px; object-fit: cover; display: inline-block; vertical-align: middle; flex-shrink: 0;" /> Deutsch</a>
+            <a href="/it/index.html?lang=it" data-lang="it" style="display: flex; align-items: center; gap: 10px; white-space: nowrap;"><img src="/flags-images/Italy.png" alt="Italy Flag" class="lang-flag-option" style="width: 20px; height: 14px; min-width: 20px; min-height: 14px; object-fit: cover; display: inline-block; vertical-align: middle; flex-shrink: 0;" /> Italiano</a>
+            <a href="/pt/index.html?lang=pt" data-lang="pt" style="display: flex; align-items: center; gap: 10px; white-space: nowrap;"><img src="/flags-images/Portugal.png" alt="Portugal Flag" class="lang-flag-option" style="width: 20px; height: 14px; min-width: 20px; min-height: 14px; object-fit: cover; display: inline-block; vertical-align: middle; flex-shrink: 0;" /> Português</a>
+            <a href="/ru/index.html?lang=ru" data-lang="ru" style="display: flex; align-items: center; gap: 10px; white-space: nowrap;"><img src="/flags-images/Russia.png" alt="Russia Flag" class="lang-flag-option" style="width: 20px; height: 14px; min-width: 20px; min-height: 14px; object-fit: cover; display: inline-block; vertical-align: middle; flex-shrink: 0;" /> Русский</a>
+            <a href="/ja/index.html?lang=ja" data-lang="ja" style="display: flex; align-items: center; gap: 10px; white-space: nowrap;"><img src="/flags-images/Japan.png" alt="Japan Flag" class="lang-flag-option" style="width: 20px; height: 14px; min-width: 20px; min-height: 14px; object-fit: cover; display: inline-block; vertical-align: middle; flex-shrink: 0;" /> 日本語</a>
+            <a href="/zh/index.html?lang=zh" data-lang="zh" style="display: flex; align-items: center; gap: 10px; white-space: nowrap;"><img src="/flags-images/China.png" alt="China Flag" class="lang-flag-option" style="width: 20px; height: 14px; min-width: 20px; min-height: 14px; object-fit: cover; display: inline-block; vertical-align: middle; flex-shrink: 0;" /> 中文</a>
+            <a href="/ko/index.html?lang=ko" data-lang="ko" style="display: flex; align-items: center; gap: 10px; white-space: nowrap;"><img src="/flags-images/South Korea.png" alt="South Korea Flag" class="lang-flag-option" style="width: 20px; height: 14px; min-width: 20px; min-height: 14px; object-fit: cover; display: inline-block; vertical-align: middle; flex-shrink: 0;" /> 한국어</a>
+            <a href="/ar/index.html?lang=ar" data-lang="ar" style="display: flex; align-items: center; gap: 10px; white-space: nowrap;"><img src="/flags-images/Saudi Arabia.png" alt="Saudi Arabia Flag" class="lang-flag-option" style="width: 20px; height: 14px; min-width: 20px; min-height: 14px; object-fit: cover; display: inline-block; vertical-align: middle; flex-shrink: 0;" /> العربية</a>
+            <a href="/hi/index.html?lang=hi" data-lang="hi" style="display: flex; align-items: center; gap: 10px; white-space: nowrap;"><img src="/flags-images/India.png" alt="India Flag" class="lang-flag-option" style="width: 20px; height: 14px; min-width: 20px; min-height: 14px; object-fit: cover; display: inline-block; vertical-align: middle; flex-shrink: 0;" /> हिन्दी</a>
+            <a href="/tr/index.html?lang=tr" data-lang="tr" style="display: flex; align-items: center; gap: 10px; white-space: nowrap;"><img src="/flags-images/Turkey.png" alt="Turkey Flag" class="lang-flag-option" style="width: 20px; height: 14px; min-width: 20px; min-height: 14px; object-fit: cover; display: inline-block; vertical-align: middle; flex-shrink: 0;" /> Türkçe</a>
+            <a href="/nl/index.html?lang=nl" data-lang="nl" style="display: flex; align-items: center; gap: 10px; white-space: nowrap;"><img src="/flags-images/Netherlands.png" alt="Netherlands Flag" class="lang-flag-option" style="width: 20px; height: 14px; min-width: 20px; min-height: 14px; object-fit: cover; display: inline-block; vertical-align: middle; flex-shrink: 0;" /> Nederlands</a>
+            <a href="/pl/index.html?lang=pl" data-lang="pl" style="display: flex; align-items: center; gap: 10px; white-space: nowrap;"><img src="/flags-images/Poland.png" alt="Poland Flag" class="lang-flag-option" style="width: 20px; height: 14px; min-width: 20px; min-height: 14px; object-fit: cover; display: inline-block; vertical-align: middle; flex-shrink: 0;" /> Polski</a>
+            <a href="/sv/index.html?lang=sv" data-lang="sv" style="display: flex; align-items: center; gap: 10px; white-space: nowrap;"><img src="/flags-images/Philippines.png" alt="Philippines Flag" class="lang-flag-option" style="width: 20px; height: 14px; min-width: 20px; min-height: 14px; object-fit: cover; display: inline-block; vertical-align: middle; flex-shrink: 0;" /> Swedish</a>
+            <a href="/vi/index.html?lang=vi" data-lang="vi" style="display: flex; align-items: center; gap: 10px; white-space: nowrap;"><img src="/flags-images/Vietnam.png" alt="Vietnam Flag" class="lang-flag-option" style="width: 20px; height: 14px; min-width: 20px; min-height: 14px; object-fit: cover; display: inline-block; vertical-align: middle; flex-shrink: 0;" /> Tiếng Việt</a>
+            <a href="/th/index.html?lang=th" data-lang="th" style="display: flex; align-items: center; gap: 10px; white-space: nowrap;"><img src="/flags-images/Thailand.png" alt="Thailand Flag" class="lang-flag-option" style="width: 20px; height: 14px; min-width: 20px; min-height: 14px; object-fit: cover; display: inline-block; vertical-align: middle; flex-shrink: 0;" /> ไทย</a>
+            <a href="/id/index.html?lang=id" data-lang="id" style="display: flex; align-items: center; gap: 10px; white-space: nowrap;"><img src="/flags-images/Indonesia.png" alt="Indonesia Flag" class="lang-flag-option" style="width: 20px; height: 14px; min-width: 20px; min-height: 14px; object-fit: cover; display: inline-block; vertical-align: middle; flex-shrink: 0;" /> Bahasa Indonesia</a>
+            <a href="/fa/index.html?lang=fa" data-lang="fa" style="display: flex; align-items: center; gap: 10px; white-space: nowrap;"><img src="/flags-images/Pakistan.png" alt="Pakistan Flag" class="lang-flag-option" style="width: 20px; height: 14px; min-width: 20px; min-height: 14px; object-fit: cover; display: inline-block; vertical-align: middle; flex-shrink: 0;" /> فارسی</a>
+            <a href="/uk/index.html?lang=uk" data-lang="uk" style="display: flex; align-items: center; gap: 10px; white-space: nowrap;"><img src="/flags-images/Bangladesh.png" alt="Bangladesh Flag" class="lang-flag-option" style="width: 20px; height: 14px; min-width: 20px; min-height: 14px; object-fit: cover; display: inline-block; vertical-align: middle; flex-shrink: 0;" /> Українська</a>
+          </div>
+        </li>
+
+        <li class="mobile-drawer-footer">
+          <div class="mobile-drawer-actions">
+            <a href="/" class="drawer-action-btn">
+              <span>🏠</span> Home
+            </a>
+            <a href="/contact.html" class="drawer-action-btn highlight">
+              <span>📩</span> Contact Us
+            </a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

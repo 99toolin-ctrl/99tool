@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Unlock Pdf – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/pdf/unlock-pdf.html"/>
+<meta property="og:title" content="Unlock Pdf – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/pdf/unlock-pdf.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Unlock Pdf \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/pdf/unlock-pdf.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .unlock-box {
+      background: var(--bg-secondary);
+      padding: 2rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      max-width: 500px;
+      margin: 2rem auto;
+    }
+    .disclaimer {
+      background: #fff5f5;
+      border: 1px solid #feb2b2;
+      color: #9b2c2c;
+      padding: 1rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+    .input-group {
+      margin-bottom: 1.5rem;
+    }
+    .input-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+    .input-group input {
+      width: 100%;
+      padding: 0.8rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+    }
+    #loading-overlay {
+      display: none;
+      text-align: center;
+      padding: 2rem;
+    }
+    .spinner {
+      border: 4px solid rgba(0,0,0,0.1);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border-left-color: #e53e3e;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 1rem;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/pdf/unlock-pdf.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/pdf/unlock-pdf.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/pdf/unlock-pdf.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/pdf/unlock-pdf.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/pdf/unlock-pdf.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/pdf/unlock-pdf.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/pdf/unlock-pdf.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/pdf/unlock-pdf.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/pdf/unlock-pdf.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/pdf/unlock-pdf.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/pdf/unlock-pdf.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/pdf/unlock-pdf.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/pdf/unlock-pdf.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/pdf/unlock-pdf.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/pdf/unlock-pdf.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/pdf/unlock-pdf.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/pdf/unlock-pdf.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/pdf/unlock-pdf.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/pdf/unlock-pdf.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/pdf/unlock-pdf.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/pdf/unlock-pdf.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/pdf/unlock-pdf.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>PDF Unlocker</h1>
+      <p>Remove passwords from your files for easier access. Privately and secure.</p>
+    </div>
+
+    <div class="tool-container">
+      <div class="upload-area" id="drop-zone">
+        <div class="upload-icon">🔓</div>
+        <p>Drag & drop your locked PDF or <span class="text-primary">browse files</span></p>
+        <input type="file" id="pdf-input" accept="application/pdf" hidden>
+      </div>
+
+      <div id="file-info" class="file-info hidden" style="max-width: 500px; margin: 1rem auto;">
+        <div class="file-details">
+          <span id="file-name">filename.pdf</span>
+          <span id="file-size" class="text-muted">0 KB</span>
+        </div>
+        <div class="security-badge" id="security-badge">
+          <span class="badge-icon">🛡️</span>
+          <span id="security-status">Locked Document</span>
+        </div>
+      </div>
+
+      <div id="unlock-settings" class="unlock-box hidden">
+        <div class="disclaimer">
+          <span>⚠️</span>
+          <p><strong>Legal Disclaimer:</strong> Only use this tool for PDF files you own or have explicit permission to decrypt. 99tool.in does not support or condone unauthorized access to restricted data.</p>
+        </div>
+
+        <div class="input-group">
+          <label for="password">Enter Current Password</label>
+          <input type="password" id="password" placeholder="Password required to decrypt">
+        </div>
+
+        <button id="unlock-btn" class="btn btn-primary w-100" style="background: #e53e3e; border-color: #e53e3e;">Unlock & Download PDF</button>
+      </div>
+
+      <div id="loading-overlay">
+        <div class="spinner"></div>
+        <p id="loading-text">Decryption engine starting...</p>
+      </div>
+
+      <div id="status-msg" class="text-center mt-3 small"></div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5">
+        <h2>Break Free from Password Fatigue: Secure PDF Unlocking</h2>
+        <p>We’ve all been there: you receive a recurring monthly statement, a legal document you've already signed, or an archived project report, and every time you want to check a single detail, you're forced to hunt down that one specific password. It's frustrating, time-consuming, and adds unnecessary friction to your workflow. Your first instinct is to find a tool to <strong>unlock pdf</strong> files. But then the red flags go up—to "decrypt" your file, most websites want you to upload your sensitive data and your password to their cloud. Does that feel like freedom, or like a security breach waiting to happen?</p>
+
+        <p>At 99tool.in, we built our <strong>remove pdf password</strong> utility to help you regain control of your documents without compromising your privacy. By utilizing the <strong>local, browser-based</strong> <code>QPDF-WASM</code> engine, we enable <strong>pdf decryption</strong> that happens entirely on your machine. Your file stays local. Your password stays local. Whether you're a professional managing an archive or a student organizing study materials, our <strong>pdf unlock tool</strong> provides the speed you need with the absolute privacy you deserve.</p>
+        
+        <div class="tool-preview-box mt-4 mb-4" style="text-align:center;">
+           <img src="../../assets/images/vault-preview.png" alt="Secure PDF Decryption Dashboard" class="tool-preview" id="tool-preview-img" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+        </div>
+
+        <h3 class="mt-4">The Ethics and Legality of PDF Unlocking</h3>
+        <p>PDF security is there for a reason—to protect intellectual property and sensitive personal information. That is why our <strong>pdf unlocker</strong> is designed with a "Human-Centered Legal Framework." We include a prominent disclaimer because we believe in responsible computing. We provide this <strong>remove pdf protection</strong> utility specifically for users who have the right to access their own data but want to remove the repetitive barrier of a password for easier archiving and searching.</p>
+        
+        <p>It is important to remember: our tool is not a "password cracker." We do not support brute-force attacks or unauthorized access. You must provide the correct password to <strong>decrypt pdf</strong> files using our system. This distinction is what makes 99tool.in a trusted partner for professionals who value both efficiency and the rule of digital privacy. We provide the key to a door you already own; we don't help people break into doors that aren't theirs.</p>
+
+        <h3 class="mt-4">Why Decryption is the Only Safe Way</h3>
+        <p>When you use a standard <strong>pdf unlock tool online</strong>, you are essentially trust-falling into a stranger's arms. You are handing over the encrypted file AND the password used to guard it. This is a massive "Single Point of Failure." If that website's data logs are ever exposed, your most sensitive financial or personal documents are completely vulnerable.</p>
+        
+        <p>Our <strong>safe pdf unlocker</strong> eliminates this entire risk profile. Because the heavy cryptographic lifting happens in your browser's local sandbox memory, the process is invisible to the outside world. This "Zero-Exposure" architecture is the highest standard of <strong>secure pdf decryption</strong> available today. With 99tool.in, you don't have to choose between convenience and security—you get the best of both worlds in a single cliclk.</p>
+
+        <h3 class="mt-4">How to Unlock Your PDF Safely (Step-by-Step)</h3>
+        <p>Removing a password from a document you own should be a fast, stress-free experience. Here is how to use our <strong>unlock pdf online free</strong> utility:</p>
+        <ul style="line-height: 1.8; margin-bottom: 20px;">
+          <li><strong>Step 1: Secure Your Source</strong> — Drag your locked PDF into the upload area. Our system will immediately identify the encryption type and verify that it’s ready for processing.</li>
+          <li><strong>Step 2: Enter Your Key</strong> — Type in the current password for the document. Since this is an <strong>in-browser tool</strong>, we never see what you type.</li>
+          <li><strong>Step 3: Acknowledge the Responsibility</strong> — Read our disclaimer. We trust our users to use this <strong>remove pdf password</strong> power ethically.</li>
+          <li><strong>Step 4: Unlock and Download</strong> — Click "Unlock & Download." Our local WASM engine will decrypt the file in seconds and provide a clean, unlocked version of your PDF instantly.</li>
+        </ul>
+
+        <h3 class="mt-4">When Should You Unlock a PDF?</h3>
+        <p>Our <strong>pdf unlocker</strong> is most valuable in professional scenarios that require high-speed data management:</p>
+        
+        <p><strong>For Digital Archivists:</strong> When moving older documents into a long-term storage system, passwords can cause indexing errors and prevent text searchability. Use our <strong>pdf decrypt tool</strong> to remove those barriers before final archiving.</p>
+        
+        <p><strong>For Corporate Teams:</strong> If you’ve received a protected internal report and you need to merge it with other documents for a board presentation, you must first <strong>remove the pdf password</strong>. Our tool allows you to do this without ever letting the data leave the company's local network.</p>
+        
+        <p><strong>For Individual Users:</strong> Tired of entering your birthdate every time you open your old bank statements? <strong>Unlock your pdfs</strong> once, save them in your local secure vault, and enjoy instant access whenever you need to check a transaction history.</p>
+
+        <h3 class="mt-5">Expand Your Document Strategy</h3>
+        <p>Once you’ve unlocked your document, you might need to make it more mobile-friendly. Check out our <strong><a href="compress-pdf.html">PDF Compressor</a></strong> to shrink the file size. Or, if you need to turn those unlocked pages into images for a PowerPoint, use our <strong><a href="pdf-to-image.html">PDF to Image Converter</a></strong>. At 99tool.in, we are building a complete, private, and powerful suite of utilities to simplify your digital workflow.</p>
+        
+        <div class="flex gap-4 mt-4 mb-5">
+           <a href="protect-pdf.html" class="btn btn-secondary" style="flex:1; text-align:center;">Protect PDF</a>
+           <a href="merge-pdf.html" class="btn btn-secondary" style="flex:1; text-align:center;">Merge PDF</a>
+        </div>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2 data-i18n="tools.pdf_unlocker.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Is this a password cracker?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. Our <strong>unlock pdf</strong> tool is a decryption utility, not a brute-force cracker. You must provide the correct password to remove the protection. This is designed for users who have the legal right to the content but want to remove the password for easier archiving or sharing.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I remove restrictions like printing or copying?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. If you have the required password, our <strong>pdf unlocker</strong> will remove all owner-level restrictions, allowing you to print, copy text, and modify the document without seeing a "Locked" or "Restricted" status anymore.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Is my password safe if I enter it here?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Absolutely. Because all processing is <strong>100% local</strong>, your password never travels over the network. It is used inside the WASM virtual environment in your browser RAM and is discarded instantly when the task is finished.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              What types of PDF encryption do you support?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Our <strong>secure decryption engine</strong> supports all major standard PDF encryption types, including 40-bit, 128-bit, and the modern 256-bit AES protection. As long as your PDF follows standard security protocols, we can unlock it.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I unlock multiple PDFs at once?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Currently, the tool processes one PDF at a time to ensure maximum security for each password entered. After downloading your unlocked file, you can simply refresh or upload another file to continue with your archive.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Why use a local unlocker instead of a web service?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Standard web services store your unencrypted PDF and your password in their database "for processing." A <strong>private PDF unlocker</strong> keeps your keys and your files on your device, ensuring no third party ever gains access to your decrypted content.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 Privacy-First. No Uploads. Secure Decryption. Last updated: April 10, 2026.</p>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script type="module">
+    import createModule from "https://unpkg.com/@neslinesli93/qpdf-wasm@0.3.0/dist/qpdf.js";
+
+    const pdfInput = document.getElementById('pdf-input');
+    const dropZone = document.getElementById('drop-zone');
+    const unlockBtn = document.getElementById('unlock-btn');
+    const passwordInput = document.getElementById('password');
+    const loadingOverlay = document.getElementById('loading-overlay');
+    const unlockSettings = document.getElementById('unlock-settings');
+
+    let currentFile = null;
+    let qpdfModule = null;
+
+    // Load QPDF WASM
+    async function initQPDF() {
+      if (qpdfModule) return qpdfModule;
+      loadingOverlay.style.display = 'block';
+      try {
+        qpdfModule = await createModule({
+          locateFile: () => "https://unpkg.com/@neslinesli93/qpdf-wasm@0.3.0/dist/qpdf.wasm"
+        });
+        loadingOverlay.style.display = 'none';
+        return qpdfModule;
+      } catch (err) {
+        document.getElementById('status-msg').innerText = "Failed to load decryption engine.";
+        document.getElementById('status-msg').style.color = "red";
+        throw err;
+      }
+    }
+
+    // File selection
+    dropZone.addEventListener('click', () => pdfInput.click());
+    pdfInput.addEventListener('change', (e) => handleFile(e.target.files[0]));
+
+    async function handleFile(file) {
+      if (!file || file.type !== 'application/pdf') return;
+      currentFile = file;
+      document.getElementById('file-name').innerText = file.name;
+      document.getElementById('file-size').innerText = (file.size / 1024).toFixed(1) + ' KB';
+      document.getElementById('file-info').classList.remove('hidden');
+      unlockSettings.classList.remove('hidden');
+      
+      // Check if actually encrypted
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const text = new TextDecoder().decode(e.target.result.slice(0, 5000));
+        const badge = document.getElementById('security-badge');
+        const status = document.getElementById('security-status');
+        if (text.includes('/Encrypt')) {
+            badge.style.background = '#ffdada'; badge.style.color = '#c53030';
+            status.innerText = 'Detection: Encrypted';
+            unlockBtn.disabled = false;
+        } else {
+            badge.style.background = '#d4edda'; badge.style.color = '#155724';
+            status.innerText = 'Not Encrypted (No Unlock Needed)';
+            unlockBtn.disabled = true;
+        }
+      };
+      reader.readAsArrayBuffer(file);
+    }
+
+    unlockBtn.addEventListener('click', async () => {
+      const pw = passwordInput.value;
+      if (!pw) return alert("Please enter the password.");
+
+      const msg = document.getElementById('status-msg');
+      msg.innerText = "Attempting decryption...";
+      msg.style.color = "var(--text-primary)";
+      
+      try {
+        const qpdf = await initQPDF();
+        const arrayBuffer = await currentFile.arrayBuffer();
+        const uint8Array = new Uint8Array(arrayBuffer);
+
+        const inputPath = "/input.pdf";
+        const outputPath = "/unlocked.pdf";
+        
+        qpdf.FS.writeFile(inputPath, uint8Array);
+        
+        // Command: qpdf --password=pw --decrypt input.pdf output.pdf
+        try {
+          qpdf.callMain(["--password=" + pw, "--decrypt", inputPath, outputPath]);
+        } catch (e) {
+          // QPDF might throw on wrong password
+          msg.innerText = "Wrong password. Please try again.";
+          msg.style.color = "red";
+          return;
+        }
+
+        const unlockedBytes = qpdf.FS.readFile(outputPath);
+        const blob = new Blob([unlockedBytes], { type: 'application/pdf' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'unlocked_' + currentFile.name;
+        a.click();
+        URL.revokeObjectURL(url);
+
+        msg.innerText = "PDF Unlocked successfully!";
+        msg.style.color = "green";
+        
+        // Cleanup
+        qpdf.FS.unlink(inputPath);
+        qpdf.FS.unlink(outputPath);
+
+      } catch (err) {
+        console.error(err);
+        msg.innerText = "Decryption failed. Please check password.";
+        msg.style.color = "red";
+      }
+    });
+
+    // Init Drag and Drop using global helper
+    setupDragDrop('drop-zone', (files) => {
+       if (files.length) handleFile(files[0]);
+    });
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

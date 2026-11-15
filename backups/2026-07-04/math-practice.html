@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Math Practice – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/learning/math-practice.html"/>
+<meta property="og:title" content="Math Practice – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/learning/math-practice.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Math Practice \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/learning/math-practice.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .math-workspace {
+      max-width: 600px;
+      margin: 2rem auto;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 3rem;
+      text-align: center;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+    }
+    .stats-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+    .problem {
+      font-size: 4rem;
+      font-weight: 800;
+      margin: 2rem 0;
+      letter-spacing: 5px;
+    }
+    .math-input {
+      background: var(--dark);
+      border: 2px solid var(--border);
+      color: white;
+      font-size: 2.5rem;
+      width: 200px;
+      text-align: center;
+      padding: 10px;
+      border-radius: 12px;
+      outline: none;
+    }
+    .math-input:focus { border-color: var(--primary); }
+    
+    .difficulty-selector {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 2rem;
+    }
+    .diff-btn {
+      padding: 8px 16px;
+      border-radius: 30px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.03);
+      cursor: pointer;
+      color: var(--text-muted);
+      transition: all 0.2s;
+    }
+    .diff-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+
+    .feedback { font-size: 1.2rem; font-weight: 600; height: 30px; margin-top: 1rem; }
+    .correct { color: #2f9e44; }
+    .wrong { color: #e03131; }
+
+    .start-btn { font-size: 1.2rem; padding: 15px 40px; border-radius: 50px; }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-hero text-center">
+      <nav class="breadcrumb justify-content-center">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#learning">Learning</a> <span>/</span> 
+        <span>Math Practice</span>
+      </nav>
+      <h1>Math Practice Tool</h1>
+      <p>Sharpen your mental arithmetic skills with instant feedback and progressive difficulty.</p>
+    </div>
+
+    <div class="math-workspace">
+      <div id="setup-view">
+        <h3>Choose Your Mastery Level</h3>
+        <div class="difficulty-selector mt-4">
+          <button class="diff-btn active" data-level="1">Beginner</button>
+          <button class="diff-btn" data-level="2">Intermediate</button>
+          <button class="diff-btn" data-level="3">Advanced</button>
+        </div>
+        <button class="btn btn-primary start-btn" onclick="startGame()">Start Practice Session</button>
+      </div>
+
+      <div id="game-view" style="display: none;">
+        <div class="stats-row">
+            <span>Score: <span id="score">0</span></span>
+            <span>Level: <span id="current-diff">Beginner</span></span>
+        </div>
+        <div class="problem" id="problem-text">12 + 8</div>
+        <input type="number" id="math-answer" class="math-input" placeholder="?" oninput="checkAnswer()">
+        <div id="feedback" class="feedback"></div>
+        <div class="mt-5">
+            <button class="btn btn-secondary btn-sm" onclick="location.reload()">End Session</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEO CONTENT -->
+    <section class="seo-content mt-5">
+      <h2>Build a Faster, More Precise Analytical Mind</h2>
+      <p>In the age of calculators and artificial intelligence, mental arithmetic remains one of the most vital "intellectual muscles" you can train. Our <strong>math practice tool</strong> is designed to provide a distraction-free environment for rapid-fire calculation training. Whether you are a student preparing for quantitative exams or a professional looking to increase your mental agility, our <strong>mental math trainer</strong> adapts to your speed.</p>
+      
+      <h3 class="mt-4">The Cognitive Benefits of Mental Math</h3>
+      <p>Regular practice with numbers increases your "Working Memory" capacity—the ability to hold and manipulate information in your head. Our <strong>math exercises tool</strong> triggers high-frequency neural firing by presenting problems at the edge of your current ability level. This is what psychologists call "Deliberate Practice."</p>
+
+      <ul style="line-height: 1.8; margin-top: 15px;">
+        <li><strong>Beginner:</strong> Basic addition and subtraction (1-2 digits).</li>
+        <li><strong>Intermediate:</strong> Multi-operation problems and simple multiplication.</li>
+        <li><strong>Advanced:</strong> Large digit multiplication, division, and mixed logic.</li>
+      </ul>
+
+      <h3 class="mt-4">Safe and Secure Learning for All Ages</h3>
+      <p>Education should be free of tracking and advertising. Many <strong>math learning apps</strong> online are cluttered with distracting videos or data-hungry trackers. 99tool.in offers a <strong>private math trainer</strong> that runs entirely in your browser. No internet required, no data sent, and no interruptions. It’s the perfect, focused workspace for classroom or home study.</p>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    let score = 0;
+    let currentLevel = 1;
+    let correctAnswer = 0;
+    let sessionActive = false;
+
+    // Difficulty labels
+    const levels = { 1: "Beginner", 2: "Intermediate", 3: "Advanced" };
+
+    // Select Difficulty
+    document.querySelectorAll('.diff-btn').forEach(btn => {
+      btn.onclick = () => {
+        document.querySelectorAll('.diff-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentLevel = parseInt(btn.dataset.level);
+      };
+    });
+
+    function startGame() {
+      document.getElementById('setup-view').style.display = 'none';
+      document.getElementById('game-view').style.display = 'block';
+      document.getElementById('current-diff').innerText = levels[currentLevel];
+      sessionActive = true;
+      generateProblem();
+    }
+
+    function generateProblem() {
+      let a, b, op;
+      const ops = ['+', '-', '*', '/'];
+      
+      if (currentLevel === 1) {
+        a = Math.floor(Math.random() * 20) + 1;
+        b = Math.floor(Math.random() * 20) + 1;
+        op = ops[Math.floor(Math.random() * 2)]; // Only + and -
+      } else if (currentLevel === 2) {
+        a = Math.floor(Math.random() * 50) + 5;
+        b = Math.floor(Math.random() * 20) + 2;
+        op = ops[Math.floor(Math.random() * 3)]; // +, -, *
+      } else {
+        a = Math.floor(Math.random() * 100) + 10;
+        b = Math.floor(Math.random() * 50) + 2;
+        op = ops[Math.floor(Math.random() * 4)]; // All ops
+      }
+
+      // Ensure division yields integer
+      if (op === '/') { a = a * b; }
+      // Ensure subtraction isn't negative for beginners
+      if (op === '-' && a < b) [a, b] = [b, a];
+
+      correctAnswer = eval(`${a} ${op === '*' ? '*' : op === '/' ? '/' : op} ${b}`);
+      document.getElementById('problem-text').innerText = `${a} ${op.replace('*', '×').replace('/', '÷')} ${b}`;
+      document.getElementById('math-answer').value = '';
+      document.getElementById('math-answer').focus();
+    }
+
+    function checkAnswer() {
+      const val = parseFloat(document.getElementById('math-answer').value);
+      const feedback = document.getElementById('feedback');
+      
+      if (val === correctAnswer) {
+        score++;
+        document.getElementById('score').innerText = score;
+        feedback.innerText = "Correct! 🎉";
+        feedback.className = "feedback correct";
+        setTimeout(() => {
+          feedback.innerText = "";
+          generateProblem();
+        }, 800);
+      }
+    }
+  </script>
+</body>
+</html>
+

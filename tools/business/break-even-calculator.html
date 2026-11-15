@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Break Even Calculator – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/business/break-even-calculator.html"/>
+<meta property="og:title" content="Break Even Calculator – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/business/break-even-calculator.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Break Even Calculator \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/business/break-even-calculator.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    .math-workspace {
+      max-width: 750px;
+      margin: 2rem auto;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      border-radius: 24px;
+    }
+    .input-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 2rem; }
+    label { display: block; margin-bottom: 0.5rem; color: var(--text-muted); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
+    input {
+      width: 100%;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 1rem;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    input:focus { border-color: var(--primary); outline: none; }
+    
+    .result-panel {
+       margin-top: 2rem;
+       display: none;
+    }
+    .main-metric {
+       background: rgba(var(--primary-rgb), 0.05);
+       border: 1px solid var(--primary);
+       padding: 2.5rem;
+       border-radius: 20px;
+       text-align: center;
+       margin-bottom: 20px;
+    }
+    .val-primary { font-size: 3.5rem; font-weight: 800; color: var(--primary); line-height: 1; }
+    .lab-primary { font-size: 0.9rem; color: var(--text-muted); margin-top: 10px; text-transform: uppercase; letter-spacing: 1px; }
+    
+    .sec-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .metric-card {
+       background: rgba(255,255,255,0.03);
+       border: 1px solid var(--border);
+       padding: 1.5rem;
+       border-radius: 16px;
+       text-align: center;
+    }
+    .metric-val { font-size: 1.5rem; font-weight: 700; color: var(--text); }
+    .metric-lab { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; margin-top: 4px; }
+    
+    .alert-box {
+       margin-bottom: 1.5rem;
+       padding: 12px;
+       border-radius: 8px;
+       background: rgba(229, 57, 53, 0.1);
+       border: 1px solid #e53935;
+       color: #e53935;
+       font-size: 0.85rem;
+       display: none;
+    }
+    @media (max-width: 600px) {
+       .input-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/business/break-even-calculator.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/business/break-even-calculator.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/business/break-even-calculator.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/business/break-even-calculator.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/business/break-even-calculator.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/business/break-even-calculator.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/business/break-even-calculator.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/business/break-even-calculator.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/business/break-even-calculator.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/business/break-even-calculator.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/business/break-even-calculator.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/business/break-even-calculator.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/business/break-even-calculator.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/business/break-even-calculator.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/business/break-even-calculator.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/business/break-even-calculator.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/business/break-even-calculator.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/business/break-even-calculator.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/business/break-even-calculator.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/business/break-even-calculator.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/business/break-even-calculator.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/business/break-even-calculator.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Infinite Break-Even Auditor</h1>
+      <p>Analyze the point of zero loss. Identify the sales volume required to cover your infrastructure costs instantly.</p>
+    </div>
+
+    <div class="math-workspace">
+      <div id="error-box" class="alert-box">Selling price must be higher than variable cost to reach break-even.</div>
+
+      <div class="input-grid">
+         <div>
+            <label>Total Fixed Costs ($)</label>
+            <input type="number" id="fixed-in" placeholder="e.g., 5000" oninput="solve()">
+         </div>
+         <div>
+            <label>Variable Cost / Unit ($)</label>
+            <input type="number" id="var-in" placeholder="e.g., 10" oninput="solve()">
+         </div>
+         <div>
+            <label>Selling Price / Unit ($)</label>
+            <input type="number" id="price-in" placeholder="e.g., 25" oninput="solve()">
+         </div>
+      </div>
+
+      <div class="result-panel" id="res-panel">
+         <div class="main-metric">
+            <div class="val-primary" id="res-units">0</div>
+            <div class="lab-primary">Break-Even Units Required</div>
+         </div>
+
+         <div class="sec-metrics">
+            <div class="metric-card">
+               <div class="metric-val" id="res-revenue">$0.00</div>
+               <div class="metric-lab">Break-Even Revenue</div>
+            </div>
+            <div class="metric-card">
+               <div class="metric-val" id="res-cont">0%</div>
+               <div class="metric-lab">Contribution Margin</div>
+            </div>
+         </div>
+      </div>
+
+      <!-- CONTENT SECTION -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.break_even_calculator.what_is_title">What is the Infinite Break-Even Auditor?</h2>
+        <p>The Infinite Break-Even Auditor is a financial diagnostic tool designed to compute the exact point at which a business venture's total revenue equals its total expenses. At this specific volume of sales, your company experiences zero net loss and zero net profit. Finding this threshold is a fundamental requirement for pricing strategies, operational planning, and risk management.</p>
+        <p>By inputting your fixed operational costs, variable unit costs, and target unit pricing, you get an immediate breakdown of units required to break even, target revenue, and the resulting contribution margin. All mathematical calculations run instantly in your browser tab without transmitting your private cost structures or pricing sheets to external endpoints.</p>
+
+        <h2 class="mt-4" data-i18n="tools.break_even_calculator.how_to_use_title">How to Use the Infinite Break-Even Auditor</h2>
+        <ol>
+          <li><strong>Enter Total Fixed Costs:</strong> Type in your total overhead expenses (such as rent, salaries, utilities, and insurance) in the "Total Fixed Costs" input field.</li>
+          <li><strong>Input Variable Cost per Unit:</strong> Enter the direct expenses associated with producing or delivering a single unit of your product or service in the "Variable Cost / Unit" field.</li>
+          <li><strong>Define Selling Price per Unit:</strong> Input the price you charge customers for a single unit in the "Selling Price / Unit" field.</li>
+          <li><strong>Analyze Results:</strong> As soon as you enter valid figures, the results panel will dynamically appear. It shows the number of units you must sell to break even, the matching break-even revenue, and your contribution margin percentage.</li>
+          <li><strong>Check Pricing Health:</strong> If your selling price is set equal to or lower than your variable costs, the tool will hide the metrics and display an error warning, indicating that your pricing model cannot achieve break-even status.</li>
+        </ol>
+
+        <h2 class="mt-4" data-i18n="tools.break_even_calculator.key_features_title">Key Features</h2>
+        <ul>
+          <li><strong>Live Calculation Engine:</strong> Calculations update instantly as you type, allowing for quick scenario modeling and pricing tests.</li>
+          <li><strong>Contribution Margin Ratio:</strong> Automatically calculates the percentage of each sale that contributes to covering your fixed overhead expenses.</li>
+          <li><strong>Break-Even Revenue Threshold:</strong> Displays the precise total sales value in currency required to reach cost recovery.</li>
+          <li><strong>Automated Feasibility Warnings:</strong> Instant visual warnings occur if the variable costs exceed the unit selling price.</li>
+          <li><strong>Local Browser Sandbox Execution:</strong> Ensures corporate finance sheets and startup cost estimations remain 100% private.</li>
+        </ul>
+
+        <h2 class="mt-4" data-i18n="tools.break_even_calculator.common_use_cases_title">Common Use Cases</h2>
+        <ul>
+          <li><strong>Startup Business Planning:</strong> Determine how many initial units must be sold to cover early-stage fixed costs and achieve sustainability.</li>
+          <li><strong>New Product Line Evaluation:</strong> Evaluate whether a proposed product can realistically achieve the sales volumes needed to cover developmental overhead.</li>
+          <li><strong>Pricing Strategy Tests:</strong> Model how lowering or raising unit prices affects the total quantity of sales required to stay in the green.</li>
+          <li><strong>Overhead Cost Assessments:</strong> Test how reductions in fixed overhead costs (like renegotiated rent or office scale-downs) reduce your operational risk.</li>
+        </ul>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2 data-i18n="tools.break_even_calculator.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              What are fixed costs vs. variable costs?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Fixed costs are expenses that do not change regardless of how many units you sell (e.g., rent, salaries, insurance). Variable costs are expenses that scale directly with production volume (e.g., raw materials, packaging, transaction fees).</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              What does it mean if my contribution margin is high?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>A higher contribution margin percentage means that a larger portion of each sale is available to pay off your fixed overhead expenses. Once fixed expenses are fully covered, a high contribution margin leads to rapid profitability growth.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Is my confidential business data uploaded or saved?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. 99tool.in is dedicated to client-side processing. All inputs and calculations occur locally in your browser session's RAM. No information is stored on our servers or shared with third parties.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Why does the tool show an error for my inputs?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>The tool displays an error if the unit selling price is lower than or equal to the variable cost per unit. In this scenario, you lose money on every unit sold, making it mathematically impossible to cover your fixed costs and break even.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I change the currency symbol?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>The calculations are purely numeric and work for any currency (USD, EUR, GBP, INR, etc.) even though a standard dollar symbol is used for illustration.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 Privacy & Data Note: All financial modeling is processed in your browser. None of your cost elements, margins, or pricing metrics are tracked or uploaded to any server.</p>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    function solve() {
+       const fixed = parseFloat(document.getElementById('fixed-in').value) || 0;
+       const varCost = parseFloat(document.getElementById('var-in').value) || 0;
+       const price = parseFloat(document.getElementById('price-in').value) || 0;
+       const errBox = document.getElementById('error-box');
+
+       if (fixed <= 0 || price <= 0) {
+          document.getElementById('res-panel').style.display = 'none';
+          errBox.style.display = 'none';
+          return;
+       }
+
+       if (price <= varCost) {
+          document.getElementById('res-panel').style.display = 'none';
+          errBox.style.display = 'block';
+          return;
+       }
+
+       errBox.style.display = 'none';
+
+       // 1. Break-even units
+       const units = fixed / (price - varCost);
+       const revenue = units * price;
+       const contMargin = ((price - varCost) / price) * 100;
+
+       // Render
+       document.getElementById('res-units').innerText = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(Math.ceil(units), 0) : Math.ceil(units).toLocaleString();
+       document.getElementById('res-revenue').innerText = '$' + revenue.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+       document.getElementById('res-cont').innerText = contMargin.toFixed(1) + '%';
+       
+       document.getElementById('res-panel').style.display = 'block';
+    }
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>

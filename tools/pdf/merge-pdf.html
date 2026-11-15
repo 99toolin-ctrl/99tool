@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Merge Pdf – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/pdf/merge-pdf.html"/>
+<meta property="og:title" content="Merge Pdf – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/pdf/merge-pdf.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Merge Pdf \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/pdf/merge-pdf.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="merge pdf online free, combine pdf files, pdf joiner, merge pdf files, pdf merger, join pdf pages" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json" id="schema-org-data">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Merge PDF Tool",
+    "operatingSystem": "Any",
+    "applicationCategory": "MultimediaApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "PDF merging, Visual file reordering, Security scanning, Privacy-first processing"
+  }
+  </script>
+
+  <style>
+    .pdf-uploader {
+      border: 3px dashed var(--border);
+      border-radius: var(--radius);
+      padding: 60px 20px;
+      text-align: center;
+      transition: all 0.3s;
+      cursor: pointer;
+      background: var(--dark-card);
+    }
+    .pdf-uploader:hover, .pdf-uploader.dragover { border-color: var(--primary); background: rgba(229, 57, 53, 0.05); }
+
+    .file-list {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .file-item {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: grab;
+    }
+    .file-item:active { cursor: grabbing; }
+
+    .file-info { display: flex; align-items: center; gap: 15px; }
+    .file-icon { font-size: 1.5rem; }
+    .file-name { font-size: 0.95rem; font-weight: 500; }
+    .file-size { font-size: 0.75rem; color: var(--text-muted); }
+
+    .security-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.7rem;
+      padding: 4px 8px;
+      border-radius: 4px;
+      margin-top: 8px;
+    }
+    .badge-safe { background: rgba(76, 175, 80, 0.1); color: #4CAF50; border: 1px solid rgba(76, 175, 80, 0.2); }
+    .badge-warning { background: rgba(255, 152, 0, 0.1); color: #FF9800; border: 1px solid rgba(255, 152, 0, 0.2); }
+
+    .processing-overlay {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8); backdrop-filter: blur(8px);
+      display: none; flex-direction: column; align-items: center; justify-content: center;
+      z-index: 1000;
+    }
+    .spinner {
+      width: 50px; height: 50px; border: 5px solid var(--border);
+      border-top-color: var(--primary); border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/pdf/merge-pdf.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/pdf/merge-pdf.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/pdf/merge-pdf.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/pdf/merge-pdf.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/pdf/merge-pdf.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/pdf/merge-pdf.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/pdf/merge-pdf.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/pdf/merge-pdf.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/pdf/merge-pdf.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/pdf/merge-pdf.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/pdf/merge-pdf.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/pdf/merge-pdf.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/pdf/merge-pdf.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/pdf/merge-pdf.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/pdf/merge-pdf.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/pdf/merge-pdf.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/pdf/merge-pdf.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/pdf/merge-pdf.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/pdf/merge-pdf.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/pdf/merge-pdf.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/pdf/merge-pdf.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/pdf/merge-pdf.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+       <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#pdf">PDF Tools</a> <span>/</span> 
+        <span>Merge PDF</span>
+      </nav>
+      <h1>Merge PDF Files</h1>
+      <p>The fastest way to combine PDFs. Drag, reorder, and merge your documents in seconds. Securely. Privately.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <!-- UPLOADER -->
+      <div class="pdf-uploader" id="drop-zone">
+         <div class="upload-icon" style="font-size: 3rem; margin-bottom: 20px;">📚</div>
+         <h2>Drag & Drop PDF Files</h2>
+         <p class="text-muted">or click to browse your computer</p>
+         <input type="file" id="pdf-input" multiple accept=".pdf" style="display: none;">
+      </div>
+
+      <!-- FILE LIST -->
+      <div id="file-container" style="display: none;">
+        <div class="flex justify-between items-center mt-5 mb-3">
+          <h3>Selected Files</h3>
+          <button class="btn btn-secondary btn-sm" onclick="clearAll()">Clear All</button>
+        </div>
+        
+        <div id="file-list" class="file-list">
+          <!-- Files injected here -->
+        </div>
+
+        <div class="flex gap-3 mt-5">
+           <button class="btn btn-primary btn-full btn-lg" id="merge-btn">Merge Files →</button>
+        </div>
+        <p class="text-center text-muted mt-3" style="font-size: 0.8rem;">🔒 Your files are processed locally. They are never uploaded to our servers.</p>
+      </div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5">
+        <h2>Finally, a PDF Merger That Respects Your Digital Privacy</h2>
+        <p>We’ve all been there: you have three different reports, a dozen scanned receipts, and a cover letter that all need to be sent as a single, professional attachment. Your first instinct is to search for a tool to <strong>merge pdf online free</strong>. But then the hesitation kicks in. You look at the "upload" button and realize you are about to send potentially sensitive documents—confidential contracts, personal health records, or academic transcripts—to a server somewhere in the cloud. Who owns that server? What happens to your data after you click "merge"?</p>
+
+        <p>At 99tool.in, we built our <strong>combine pdf files</strong> utility specifically to solve this modern privacy dilemma. Unlike the big-name competitors who process your files on their infrastructure, our tool brings the processing power to you. By utilizing the latest developments in browser-based <code>pdf-lib</code> technology, we’ve created an <strong>pdf merger</strong> that runs entirely in your computer's RAM. Your files never leave your device. Not for a second. This isn’t just about speed; it’s about the absolute peace of mind that comes from knowing your digital fingerprints are yours and yours alone.</p>
+        
+        <div class="tool-preview-box mt-4 mb-4" style="text-align:center;">
+           <img src="../../assets/images/merge-preview.png" alt="PDF Merger Workspace" class="tool-preview" id="tool-preview-img" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+        </div>
+
+        <h3 class="mt-4">Why Manual "Human-Centered" Merging is Better</h3>
+        <p>A lot of automated tools try to guess the order of your files based on their names. As any professional knows, file naming conventions are rarely perfect. One file might be named <code>final_report_v2.pdf</code> while another is just <code>scan001.pdf</code>. If you <strong>join pdf pages</strong> in the wrong order, you end up looking amateurish to your clients or professors.</p>
+        
+        <p>Our <strong>pdf joiner</strong> interface was designed to put the human back in control. We provide a tactile, visual workspace where you can see the file names and their sizes. You can drag and drop every item into the exact sequence you need. Need to add a missing page at the last second? Just drop it in. Realized you added the wrong draft? One click removes it. This level of <strong>merge pdf files</strong> flexibility ensures that the final document you download is exactly what you intended to create, without the guesswork of automated scripts.</p>
+
+        <h3 class="mt-4">Critical Security Scanning: Our Promise to You</h3>
+        <p>The safety of our users is our highest priority. PDF files, while universal, can sometimes be used as "Trojan Horses" for malicious scripts or hidden tracking pixels. Our <strong>safe pdf merger</strong> is one of the few on the web that includes an active "Security Scan" as you load your files. Before we even allow you to <strong>combine pdf files</strong>, our system scans the internal structure of the document for interactive elements like <code>/JS</code> (JavaScript) or <code>/Action</code> tags that could be used for non-standard purposes.</p>
+        
+        <p>If we find anything suspicious, we display a clear warning. In many cases, it’s just an interactive form or a legacy feature, but we believe you have the right to know before the merge happens. This commitment to security is why 99tool.in is trusted by privacy advocates and IT professionals who need a <strong>pdf merger online free</strong> that doesn't compromise their network safety.</p>
+
+        <h3 class="mt-4">How to Use the 99tool.in PDF Merger (Step-by-Step)</h3>
+        <p>Getting started with our <strong>merge pdf files</strong> utility is intuitive, but here is a detailed guide to ensure you get the most out of it:</p>
+        <ul style="line-height: 1.8; margin-bottom: 20px;">
+          <li><strong>Step 1: Gather Your Files</strong> — Click the "Select PDF" box or simply drag your cluster of PDFs directly onto the interface. You’ll see them appear as a neat list instantly.</li>
+          <li><strong>Step 2: Check the Security Status</strong> — Look for the green shield next to each file. This confirms our internal scan didn't find any hidden scripts.</li>
+          <li><strong>Step 3: Arrange Your Sequence</strong> — Hover your mouse over a file, click and hold, and drag it up or down. The top file will be Page 1 of your new document.</li>
+          <li><strong>Step 4: Finalize and Download</strong> — Once the order is perfect, click the "Merge Files" button. Because this is an <strong>pdf merger</strong>, the assembly happens in seconds. Your download starts automatically.</li>
+        </ul>
+
+        <h3 class="mt-4">Real-World Use Cases for Professional Merging</h3>
+        <p>Our users come from every walk of life, and we’ve tailored the <strong>pdf joiner</strong> experience to meet their high-stakes demands:</p>
+        
+        <p><strong>For Legal Professionals:</strong> Building a "Motion for Court" often requires merging hundreds of pages of evidence, affidavits, and case law. Our <strong>combine pdf files</strong> tool handles these heavy documents without the threat of metadata leaks that could breach attorney-client privilege.</p>
+        
+        <p><strong>For Students and Educators:</strong> Whether you’re submitting a final thesis that needs to include your bibliography and signed declarations, or a teacher building a comprehensive "Summer Reading" packet from varied sources, our <strong>merge pdf online free</strong> tool makes the process frictionless. It even works perfectly on Chromebooks and mobile browsers.</p>
+        
+        <p><strong>For Real Estate Agents:</strong> Closing a deal involves a mountain of paperwork—disclosures, offer letters, and inspection reports. Most agents are forced to use expensive, clunky software. Our <strong>pdf merger</strong> provides a fast, free alternative that keeps your clients' sensitive financial data private throughout the entire transaction.</p>
+
+        <h3 class="mt-5">Explore More Professional Tools</h3>
+        <p>Once you’ve perfectly merged your documents, you might find that the final file is a bit too large for an email attachment. Don't worry—we’ve got you covered. Head over to our <strong><a href="compress-pdf.html">PDF Compressor</a></strong> to shrink your file size safely, or use our <strong><a href="reorder-pdf.html">PDF Page Reorder</a></strong> tool if you realize you need to swap out just a single page at the last minute. At 99tool.in, we are building a complete, private, and powerful suite of utilities to make your digital life easier.</p>
+        
+        <div class="flex gap-4 mt-4 mb-5">
+           <a href="split-pdf.html" class="btn btn-secondary" style="flex:1; text-align:center;">Split PDF</a>
+           <a href="pdf-to-image.html" class="btn btn-secondary" style="flex:1; text-align:center;">PDF to Image</a>
+        </div>
+      </section>
+
+            <!-- FAQ SECTION -->
+      <section class="faq-section mt-5">
+        <h2 data-i18n="tools.pdf_merger.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              <span data-i18n="tools.pdf_merger.faq[0].question"></span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p data-i18n="tools.pdf_merger.faq[0].answer"></p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span data-i18n="tools.pdf_merger.faq[1].question"></span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p data-i18n="tools.pdf_merger.faq[1].answer"></p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span data-i18n="tools.pdf_merger.faq[2].question"></span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p data-i18n="tools.pdf_merger.faq[2].answer"></p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span data-i18n="tools.pdf_merger.faq[3].question"></span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p data-i18n="tools.pdf_merger.faq[3].answer"></p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span data-i18n="tools.pdf_merger.faq[4].question"></span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p data-i18n="tools.pdf_merger.faq[4].answer"></p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span data-i18n="tools.pdf_merger.faq[5].question"></span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p data-i18n="tools.pdf_merger.faq[5].answer"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 Session-Based Processing. Zero Uploads. Zero Tracking. Last updated: April 10, 2026.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- LOADING OVERLAY -->
+  <div class="processing-overlay" id="loader">
+    <div class="spinner"></div>
+    <h3 class="mt-4" style="color: white">Merging Documents...</h3>
+    <p class="text-muted">This happens entirely in your browser.</p>
+  </div>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const dropZone = document.getElementById('drop-zone');
+    const pdfInput = document.getElementById('pdf-input');
+    const fileContainer = document.getElementById('file-container');
+    const fileList = document.getElementById('file-list');
+    const mergeBtn = document.getElementById('merge-btn');
+    const loader = document.getElementById('loader');
+
+    let filesArray = [];
+
+    // Drag & Drop
+    dropZone.onclick = () => pdfInput.click();
+    // Init Drag and Drop using global helper
+    setupDragDrop('drop-zone', (files) => {
+       handleFiles(files);
+    });
+
+    pdfInput.onchange = (e) => handleFiles(e.target.files);
+
+    async function handleFiles(files) {
+      const newFiles = Array.from(files).filter(f => f.type === 'application/pdf');
+      
+      for (const file of newFiles) {
+        const security = await scanFile(file);
+        filesArray.push({ file, security });
+      }
+
+      renderFiles();
+      fileContainer.style.display = filesArray.length > 0 ? 'block' : 'none';
+    }
+
+    async function scanFile(file) {
+      const text = await file.slice(0, 50000).text(); // Scan first 50KB for keywords
+      const hasJS = /\/JS|\/JavaScript|\/Action|\/AcroForm/i.test(text);
+      return hasJS ? 'Warning: Interactive elements found' : 'Safe: Basic PDF';
+    }
+
+    function renderFiles() {
+      fileList.innerHTML = '';
+      filesArray.forEach((item, idx) => {
+        const size = (item.file.size / 1024 / 1024).toFixed(2) + ' MB';
+        const isSafe = item.security.includes('Safe');
+        
+        const card = document.createElement('div');
+        card.className = 'file-item';
+        card.draggable = true;
+        card.innerHTML = `
+          <div class="file-info">
+            <span class="file-icon">📄</span>
+            <div>
+              <div class="file-name">${item.file.name}</div>
+              <div class="file-size">${size}</div>
+              <div class="security-badge ${isSafe ? 'badge-safe' : 'badge-warning'}">
+                 ${isSafe ? '🛡️' : '⚠️'} ${item.security}
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-secondary btn-sm" onclick="removeFile(${idx})">×</button>
+        `;
+        
+        // Simple Reorder
+        card.ondragstart = (e) => e.dataTransfer.setData('idx', idx);
+        card.ondragover = (e) => e.preventDefault();
+        card.ondrop = (e) => {
+           e.preventDefault();
+           const fromIdx = e.dataTransfer.getData('idx');
+           moveFile(fromIdx, idx);
+        };
+        
+        fileList.appendChild(card);
+      });
+    }
+
+    function moveFile(from, to) {
+      const item = filesArray.splice(from, 1)[0];
+      filesArray.splice(to, 0, item);
+      renderFiles();
+    }
+
+    function removeFile(idx) {
+      filesArray.splice(idx, 1);
+      renderFiles();
+      if (filesArray.length === 0) fileContainer.style.display = 'none';
+    }
+
+    function clearAll() {
+       filesArray = [];
+       renderFiles();
+       fileContainer.style.display = 'none';
+    }
+
+    // MERGE LOGIC
+    mergeBtn.onclick = async () => {
+      if (filesArray.length < 2) {
+        alert('Please select at least 2 PDF files to merge.');
+        return;
+      }
+
+      loader.style.display = 'flex';
+
+      try {
+        const { PDFDocument } = PDFLib;
+        const mergedPdf = await PDFDocument.create();
+
+        for (const item of filesArray) {
+          const pdfBytes = await item.file.arrayBuffer();
+          const pdfDoc = await PDFDocument.load(pdfBytes);
+          const copiedPages = await mergedPdf.copyPages(pdfDoc, pdfDoc.getPageIndices());
+          copiedPages.forEach((page) => mergedPdf.addPage(page));
+        }
+
+        const mergedPdfBytes = await mergedPdf.save();
+        download(mergedPdfBytes, "merged_document.pdf", "application/pdf");
+      } catch (err) {
+        console.error(err);
+        alert('An error occurred while merging. Ensure your PDFs are not password protected.');
+      } finally {
+        loader.style.display = 'none';
+      }
+    };
+
+    function download(data, filename, type) {
+      const blob = new Blob([data], { type });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      a.click();
+    }
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

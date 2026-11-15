@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Local Chat – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/productivity/local-chat.html"/>
+<meta property="og:title" content="Local Chat – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/productivity/local-chat.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Local Chat \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/productivity/local-chat.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    .chat-workspace {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      height: 600px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .chat-header {
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .messages-area {
+      flex: 1;
+      padding: 2rem;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      background: rgba(0,0,0,0.1);
+    }
+
+    .msg-bubble {
+        padding: 10px 15px;
+        border-radius: 12px;
+        max-width: 80%;
+        font-size: 0.95rem;
+        position: relative;
+    }
+    .msg-sent { 
+        align-self: flex-end; 
+        background: var(--primary); 
+        color: white; 
+        border-bottom-right-radius: 2px;
+    }
+    .msg-received { 
+        align-self: flex-start; 
+        background: var(--dark); 
+        border: 1px solid var(--border);
+        border-bottom-left-radius: 2px;
+    }
+    .msg-info { font-size: 0.7rem; margin-bottom: 4px; opacity: 0.7; }
+
+    .chat-input-area {
+        padding: 1.5rem 2rem;
+        border-top: 1px solid var(--border);
+        display: flex;
+        gap: 15px;
+    }
+    .chat-input {
+        flex: 1; background: var(--dark); border: 1px solid var(--border); color: white; padding: 12px 20px; border-radius: 30px; outline: none;
+    }
+    .chat-input:focus { border-color: var(--primary); }
+
+    .setup-overlay {
+        position: absolute; inset: 0; background: var(--dark); z-index: 100;
+        display: flex; align-items: center; justify-content: center;
+        flex-direction: column; text-align: center;
+    }
+
+    .status-badge { font-size: 0.75rem; padding: 4px 10px; border-radius: 12px; background: rgba(0,255,0,0.1); color: #0f0; }
+
+    @media (max-width: 600px) {
+        .messages-area { padding: 1rem; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/productivity/local-chat.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/productivity/local-chat.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/productivity/local-chat.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/productivity/local-chat.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/productivity/local-chat.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/productivity/local-chat.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/productivity/local-chat.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/productivity/local-chat.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/productivity/local-chat.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/productivity/local-chat.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/productivity/local-chat.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/productivity/local-chat.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/productivity/local-chat.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/productivity/local-chat.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/productivity/local-chat.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/productivity/local-chat.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/productivity/local-chat.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/productivity/local-chat.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/productivity/local-chat.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/productivity/local-chat.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/productivity/local-chat.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/productivity/local-chat.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-hero text-center">
+      <nav class="breadcrumb justify-content-center">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#productivity">Productivity</a> <span>/</span> 
+        <span>Local Chat App</span>
+      </nav>
+      <h1>Local Peer-to-Peer Chat</h1>
+      <p>Securely message between browser tabs on the same device. 100% private and internet-free.</p>
+    </div>
+
+    <div class="chat-workspace">
+        <div id="setup-overlay" class="setup-overlay">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">💬</div>
+            <h3>Join Local Browser Channel</h3>
+            <p class="text-muted px-4 mb-4">Messages sent here will appear in any other open tab of this tool.</p>
+            <input type="text" id="username-input" class="form-control text-center mb-3" placeholder="Enter your nickname..." value="User1" style="max-width:300px;">
+            <button class="btn btn-primary" onclick="joinChat()">Start Chatting</button>
+        </div>
+
+        <div class="chat-header">
+            <div>
+                <strong id="channel-name">Channel: Local_99</strong>
+                <span class="status-badge ms-2">Private Session</span>
+            </div>
+            <div class="text-muted small">Peer Discovery: Online</div>
+        </div>
+
+        <div class="messages-area" id="messages-area">
+            <div class="msg-received msg-bubble" style="align-self:center; font-size:0.8rem; background:transparent; border:none; opacity:0.5;">
+                *** This is a local-only chat simulation ***
+            </div>
+        </div>
+
+        <div class="chat-input-area">
+            <input type="text" id="chat-msg" class="chat-input" placeholder="Type a message..." onkeypress="if(event.key==='Enter') sendMsg()">
+            <button class="btn btn-primary" onclick="sendMsg()">Send</button>
+        </div>
+    </div>
+
+    <section class="seo-content mt-5 text-start">
+      <h2 data-i18n="tools.local_peer_to_peer_chat.what_is_title">What is the Local Peer-to-Peer Chat Tool?</h2>
+      <p>The Local Peer-to-Peer Chat tool is a browser-based instant messaging utility designed to establish a communication channel between different tabs or windows of the same browser on your computer. Standard chat tools send your conversations to external cloud databases, raising privacy concerns. This utility utilizes the browser's native APIs to sync messages locally without any server-side dependencies.</p>
+      <p>By using your browser's internal broadcasting pipeline, this tool creates a secure chat space. It is designed to run completely offline, making it a safe choice for sending notes, links, or text snippets between different workflows on the same device.</p>
+
+      <h3 class="mt-4">How to Use the Local Chat Tool</h3>
+      <p>Setting up and using a private messaging session involves these steps:</p>
+      <ol class="mt-2 mb-3">
+        <li>Enter your preferred alias or name in the "Enter Username" popup card.</li>
+        <li>Click the "Start Chatting" button to enter the main chat window.</li>
+        <li>Open another tab or window of this page to connect a second user to the same session.</li>
+        <li>Type your text in the chat input field at the bottom of the interface.</li>
+        <li>Click the "Send" button or press Enter to broadcast the message instantly.</li>
+        <li>View the message bubbles, timestamps, and usernames in the scrolling messages area.</li>
+      </ol>
+
+      <h3 class="mt-4">Key Features</h3>
+      <ul class="mt-2 mb-3">
+        <li><strong>BroadcastChannel API Sync:</strong> Connects active tabs under a unified local broadcasting channel.</li>
+        <li><strong>Simulated Chat Interface:</strong> Features clean message alignments (sent vs. received) with clear timestamp badges.</li>
+        <li><strong>Private Session Badge:</strong> Confirms that the chat is running in local mode with peer discovery active.</li>
+        <li><strong>Volatile Memory Logs:</strong> Does not write to localStorage or databases; your chat logs vanish when you close the tab.</li>
+      </ul>
+
+      <h3 class="mt-4">Common Use Cases</h3>
+      <p>This messaging simulator is helpful for the following tasks:</p>
+      <ul class="mt-2 mb-3">
+        <li><strong>Intra-Device Data Relay:</strong> Transferring text snippets, links, or code blocks between different browser windows without overwriting your system clipboard.</li>
+        <li><strong>Developer API Testing:</strong> Demonstrating and testing the behavior of the browser's BroadcastChannel API.</li>
+        <li><strong>Offline Chat Demos:</strong> Simulating real-time socket-like messaging in environments without network access.</li>
+      </ul>
+
+      <h3 class="mt-4">Frequently Asked Questions</h3>
+      <div class="faq-section mt-3">
+        <p><strong>Can I chat with someone on a different computer?</strong><br>No. This tool operates within the active browser environment on your local machine using the BroadcastChannel API. It does not send packets over local networks or the internet.</p>
+        <p><strong>Are my messages saved when I refresh the page?</strong><br>No. Messages are kept in volatile tab memory. Refreshing or closing the tab will clear your chat history.</p>
+        <p><strong>How many tabs can I link at once?</strong><br>You can link as many windows or tabs of this tool as your browser supports. All instances sharing the same channel name will receive the messages.</p>
+        <p><strong>Does this tool require internet connectivity?</strong><br>No. Once loaded, the chat interface runs entirely offline, as all transmission occurs within your browser's private memory space.</p>
+      </div>
+
+      <h3 class="mt-4">Privacy & Data Note</h3>
+      <p>All messages, username selections, and timestamps are broadcast locally inside your web browser. Your conversation data never leaves your device and is not saved to any persistent storage.</p>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const channel = new BroadcastChannel('99tool_local_chat');
+    const msgArea = document.getElementById('messages-area');
+    let myUser = "User";
+
+    channel.onmessage = (event) => {
+        const { user, msg, time } = event.data;
+        renderMessage(user, msg, time, false);
+    };
+
+    function joinChat() {
+        const input = document.getElementById('username-input');
+        if (input.value.trim().length > 0) {
+            myUser = input.value.trim();
+            document.getElementById('setup-overlay').style.display = 'none';
+        }
+    }
+
+    function sendMsg() {
+        const input = document.getElementById('chat-msg');
+        const msg = input.value.trim();
+        if (!msg) return;
+
+        const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        channel.postMessage({ user: myUser, msg, time });
+        renderMessage(myUser, msg, time, true);
+        
+        input.value = "";
+        msgArea.scrollTop = msgArea.scrollHeight;
+    }
+
+    function renderMessage(user, msg, time, isMe) {
+        const div = document.createElement('div');
+        div.className = `msg-bubble ${isMe ? 'msg-sent' : 'msg-received'}`;
+        div.innerHTML = `
+            <div class="msg-info">${user} • ${time}</div>
+            <div class="msg-text">${msg}</div>
+        `;
+        msgArea.appendChild(div);
+        msgArea.scrollTop = msgArea.scrollHeight;
+    }
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Journal App – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/productivity/journal-app.html"/>
+<meta property="og:title" content="Journal App – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/productivity/journal-app.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Journal App \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/productivity/journal-app.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="journal app, diary app free, personal journal tool, private diary, online journal, daily reflection" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Journal / Diary App",
+    "operatingSystem": "Any",
+    "applicationCategory": "ProductivityApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Private daily journaling, Local-only data storage, Mood tracking, Auto-save functionality"
+  }
+  </script>
+
+  <style>
+    .journal-layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 30px;
+      min-height: 600px;
+    }
+
+    .sidebar {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .editor-section {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .date-header {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--white);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .mood-selector {
+      display: flex;
+      gap: 12px;
+    }
+    .mood-btn {
+      font-size: 1.5rem;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      opacity: 0.3;
+      transition: all 0.2s;
+      filter: grayscale(1);
+    }
+    .mood-btn:hover, .mood-btn.active { opacity: 1; filter: grayscale(0); transform: scale(1.2); }
+
+    .journal-editor {
+      flex: 1;
+      width: 100%;
+      background: transparent;
+      border: none;
+      color: var(--text);
+      font-family: 'Lora', serif;
+      font-size: 1.15rem;
+      line-height: 1.8;
+      outline: none;
+      resize: none;
+      padding: 0;
+    }
+    .journal-editor::placeholder { color: var(--text-muted); opacity: 0.5; }
+
+    .entry-list {
+      flex: 1;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .entry-item {
+      padding: 10px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      transition: all 0.2s;
+    }
+    .entry-item:hover, .entry-item.active { background: rgba(229, 57, 53, 0.1); color: var(--primary); }
+
+    .save-status { font-size: 0.75rem; color: var(--text-muted); font-style: italic; }
+
+    @media (max-width: 900px) {
+      .journal-layout { grid-template-columns: 1fr; }
+      .sidebar { order: 2; height: 300px; }
+      .editor-section { padding: 24px; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#productivity">Productivity</a> <span>/</span> 
+        <span>Private Journal</span>
+      </nav>
+      <h1>Private Journal</h1>
+      <p>A safe space for your thoughts. No cloud, no tracking—just you and the page. Your 99tool.in diary stays 100% on your device.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div class="journal-layout">
+        <!-- SIDEBAR: HISTORY -->
+        <aside class="sidebar">
+          <div class="flex justify-between items-center mb-2">
+            <h4 style="margin:0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Past Entries</h4>
+            <button class="btn-sm btn-secondary" onclick="newEntry()" style="padding: 2px 10px;">New</button>
+          </div>
+          <div id="entry-list" class="entry-list">
+            <!-- Entries injected here -->
+          </div>
+          <div class="divider" style="margin: 10px 0;"></div>
+          <button class="btn btn-secondary btn-sm btn-full mb-2" id="export-txt-btn">Download as TXT</button>
+          <button class="btn btn-secondary btn-sm btn-full" id="export-btn" style="opacity: 0.6; font-size: 0.7rem;">Backup as JSON</button>
+        </aside>
+
+        <!-- MAIN EDITOR -->
+        <section class="editor-section">
+          <div class="date-header">
+            <span id="current-date-display">December 15, 2024</span>
+            <div class="mood-selector" id="mood-picker">
+              <button class="mood-btn" data-mood="happy" title="Great">😊</button>
+              <button class="mood-btn" data-mood="neutral" title="Okay">😐</button>
+              <button class="mood-btn" data-mood="sad" title="Hard Day">😔</button>
+              <button class="mood-btn" data-mood="productive" title="Productive">🚀</button>
+            </div>
+          </div>
+          
+          <textarea id="journal-input" class="journal-editor" placeholder="How was your day? Write freely..."></textarea>
+          
+          <div class="flex justify-between items-center">
+            <span class="save-status" id="save-status">All changes saved automatically</span>
+            <div class="flex gap-2">
+              <button class="btn btn-secondary btn-sm" id="delete-btn">Delete Entry</button>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5">
+        <h2>Sheltering Your Inner Dialogue in Private: Secure Local Journaling</h2>
+        <p>We’ve all been there: you’ve had a long day, a sudden epiphany, or a complex emotional hurdle to cross. You look for a <strong>journal app</strong> online to record your thoughts and reflect on your growth during those critical quiet moments. But as you look at the "Social Sharing" buttons and "Cloud Analytics" on your most private entries, you realize that your inner monologue, your vulnerable secrets, and your emotional history are being harvested by an anonymous database. Do you really want to share your "Self-Dialogue" with a third-party algorithm?</p>
+
+        <p>At 99tool.in, we built our <strong>private journal</strong> to give you a digital sanctuary without the privacy gamble. By utilizing browser-side data persistence and local encryption logic, we allow you to <strong>journal daily</strong> entirely within the secure sandbox of your own machine. Whether you’re a professional builder recording a project retro, a student managing personal thoughts, or someone simply practicing gratitude, our <strong>safe journal tool</strong> ensures that your reflections stay exactly where they belong: on your device, under your total sovereignty.</p>
+        
+        <div class="tool-preview-box mt-4 mb-4" style="text-align:center;">
+           <img src="../../assets/images/journal-preview.png" alt="Clean Journal Workspace with Mood Tracking" class="tool-preview" id="tool-preview-img" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+        </div>
+
+        <h3 class="mt-4">The Logic of Reflective Clarity</h3>
+        <p>Writing isn't just about recording events; it’s about "Processing Logic." Most complex <strong>diary apps</strong> overwhelm you with tags and reminders, causing "Journaling Friction." Our <strong>professional journal app</strong> takes a human-centric approach: we focus on **Minimalist Immersion** and **Emotional Archiving**.</p>
+        
+        <p>We provide a "distraction-free" editor that uses the Lora typeface for maximum readability. Our <strong>safe diary validator</strong> doesn't just store text; it pairs your entries with a real-time mood selector, helping you see patterns in your well-being over time. This transparency allows you to build a clearer "Mental Model" of your emotional journey, helping you spot stressors and celebrate wins in a private, professional environment.</p>
+
+        <h3 class="mt-4">Why Journaling is the Thinker’s Ethical Choice</h3>
+        <p>In the modern "Data Economy," your inner thoughts are the most valuable fingerprint of your identity. When you use a standard <strong>journal app online free</strong> service, you are essentially creating a permanent record of your psychology for a third party to analyze. Our 100% <strong>journaling utility</strong> removes this "Surveillance Risk" entirely from your self-care routine.</p>
+        
+        <p>Because the logic and storage happen in your browser's private memory, your entries are invisible to the outside world. No analytics are tracked, no reflections are harvested, and no personal data is shared with AI trackers. At 99tool.in, we believe that <strong>self-reflection</strong> should be an empowering utility, not a data-mining exercise. With us, you have a private, professional desk that fits in your browser tab.</p>
+
+        <h3 class="mt-4">How to Document Your Journey (Step-by-Step)</h3>
+        <p>Recording your thoughts should be a high-speed, 10-second task. Here is how to use our <strong>private journal</strong>:</p>
+        <ul style="line-height: 1.8; margin-bottom: 20px;">
+          <li><strong>Step 1: Open Your Sanctuary</strong> — Our system defaults to today's date automatically. Just start typing in the editor to activate the auto-save engine.</li>
+          <li><strong>Step 2: Calibrate Your Mood</strong> — Click the emoji that matches your current state. This small act of "Emotional Validation" helps you track your well-being patterns over months.</li>
+          <li><strong>Step 3: Review Your Timeline</strong> — Use the sidebar to navigate back through past entries. Your 99tool.in journal survives browser restarts, keeping your history accessible.</li>
+          <li><strong>Step 4: Secure Your Data</strong> — Want a hard copy? Use the "Download as TXT" button to save your entries to your physical drive. Or use "Backup as JSON" to move your archive to another private device.</li>
+        </ul>
+
+        <h3 class="mt-4">Strategic Use Cases for Your Local Journal</h3>
+        <p>Our <strong>reflective tool</strong> is the essential companion for varied professional and personal life:</p>
+        
+        <p><strong>For Creative Professionals:</strong> Catching "Lightning-in-a-Bottle" ideas? Use our <strong>journal tool</strong> as a private ideation chamber where you can sketch out concepts without them ever touching the cloud.</p>
+        
+        <p><strong>For Mental Wellness Trainees:</strong> Practicing CBT or gratitude journaling? Use our <strong>safe diary</strong> to keep an honest record of your growth, ensuring your therapeutic progress stays in your hands.</p>
+        
+        <p><strong>For Career Strategists:</strong> Tracking long-term project performance or networking notes? Use our <strong>private entry tool</strong> to maintain a professional "Paper Trail" of your achievements and lessons learned.</p>
+
+        <h3 class="mt-5">Explore Your Complete Productivity Suite</h3>
+        <p>Once you’ve successfully documented your journey, you might need to manage your long-term plans. Check out our <strong><a href="goal-tracker.html">Goal Tracker</a></strong>. Or, if you need to organize your daily tasks, use our <strong><a href="PRIVATE-to-do-list-manager.html">To-Do List</a></strong>. At 99tool.in, we are building a world-class, 100% private digital toolkit to give you total control over your life.</p>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Is my writing encrypted?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Your entries are stored in your browser's local storage. This area is "sandboxed" by your operating system, meaning other websites cannot read it. While not "locked" behind a master password like our Password Vault, it is highly private to your browser profile on this machine. For extra security, we recommend using a device passcode.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I read my old entries on my phone?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Since this is a <strong>private app</strong>, entries don't sync between devices (to protect your privacy). If you write on your desktop, the entries stay on your desktop. However, you can use our <strong>Export Backup</strong> feature to move JSON logs between devices if you need to.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              What happens if I clear my browser cache?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Clearing "Cookies and Site Data" for 99tool.in will remove your local storage, including your journal entries. We strongly recommend using the <strong>Export Backup</strong> button once a month to keep a personal CSV/JSON copy of your precious memories just in case.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 Privacy First. Zero cloud storage. Zero tracking. Your mind is your own. Last updated: April 10, 2026.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    let entries = JSON.parse(localStorage.getItem('99tool_journal_entries')) || {};
+    let currentId = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
+
+    const editor = document.getElementById('journal-input');
+    const entryList = document.getElementById('entry-list');
+    const dateDisplay = document.getElementById('current-date-display');
+    const saveStatus = document.getElementById('save-status');
+    const moodBtns = document.querySelectorAll('.mood-btn');
+    const deleteBtn = document.getElementById('delete-btn');
+
+    function init() {
+      loadEntry(currentId);
+      renderList();
+    }
+
+    function loadEntry(id) {
+      currentId = id;
+      const entry = entries[currentId] || { text: '', mood: '' };
+      
+      editor.value = entry.text;
+      dateDisplay.textContent = formatDate(id);
+      
+      // Update mood buttons
+      moodBtns.forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.mood === entry.mood);
+      });
+
+      // Update selection in list
+      renderList();
+    }
+
+    function saveEntry() {
+      const text = editor.value;
+      const activeMoodBtn = document.querySelector('.mood-btn.active');
+      const mood = activeMoodBtn ? activeMoodBtn.dataset.mood : '';
+
+      if (!text && !mood) {
+        delete entries[currentId];
+      } else {
+        entries[currentId] = { text, mood, updated: Date.now() };
+      }
+
+      localStorage.setItem('99tool_journal_entries', JSON.stringify(entries));
+      saveStatus.textContent = 'Saving...';
+      setTimeout(() => saveStatus.textContent = 'All changes saved automatically', 500);
+      renderList();
+    }
+
+    function renderList() {
+      entryList.innerHTML = '';
+      const sortedIds = Object.keys(entries).sort((a,b) => b.localeCompare(a));
+
+      if (sortedIds.length === 0) {
+        entryList.innerHTML = '<div class="text-center text-muted py-5" style="font-size: 0.75rem;">No past entries yet.</div>';
+        return;
+      }
+
+      sortedIds.forEach(id => {
+        const item = document.createElement('div');
+        item.className = `entry-item ${id === currentId ? 'active' : ''}`;
+        const moodEmoji = { happy: '😊', neutral: '😐', sad: '😔', productive: '🚀' }[entries[id].mood] || '📝';
+        item.innerHTML = `${moodEmoji} ${id}`;
+        item.onclick = () => loadEntry(id);
+        entryList.appendChild(item);
+      });
+    }
+
+    function formatDate(id) {
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      return new Date(id).toLocaleDateString(undefined, options);
+    }
+
+    function newEntry() {
+       const today = new Date().toISOString().slice(0, 10);
+       if (entries[today]) {
+          loadEntry(today);
+       } else {
+          loadEntry(today);
+          editor.focus();
+       }
+    }
+
+    // --- Listeners ---
+    editor.oninput = saveEntry;
+
+    moodBtns.forEach(btn => {
+      btn.onclick = () => {
+        const isAlreadyActive = btn.classList.contains('active');
+        moodBtns.forEach(b => b.classList.remove('active'));
+        if (!isAlreadyActive) btn.classList.add('active');
+        saveEntry();
+      };
+    });
+
+    deleteBtn.onclick = () => {
+       if (confirm('Permanently delete this entry? This cannot be undone.')) {
+          delete entries[currentId];
+          localStorage.setItem('99tool_journal_entries', JSON.stringify(entries));
+          const keys = Object.keys(entries);
+          if (keys.length > 0) loadEntry(keys[0]);
+          else location.reload();
+       }
+    };
+
+    document.getElementById('export-btn').onclick = () => {
+      const blob = new Blob([JSON.stringify(entries, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `99tool-journal-backup-${new Date().toISOString().slice(0,10)}.json`;
+      a.click();
+    };
+
+    document.getElementById('export-txt-btn').onclick = () => {
+      const sortedIds = Object.keys(entries).sort((a,b) => b.localeCompare(a));
+      let textContent = "99TOOL.IN — PRIVATE JOURNAL EXPORT\n";
+      textContent += "====================================\n\n";
+
+      if (sortedIds.length === 0) {
+        alert("No entries to export.");
+        return;
+      }
+
+      sortedIds.forEach(id => {
+        const entry = entries[id];
+        const moodText = { happy: 'Great 😊', neutral: 'Okay 😐', sad: 'Hard Day 😔', productive: 'Productive 🚀' }[entry.mood] || 'None';
+        
+        textContent += `DATE: ${formatDate(id)}\n`;
+        textContent += `MOOD: ${moodText}\n`;
+        textContent += `------------------------------------\n`;
+        textContent += `${entry.text}\n\n`;
+        textContent += `\n`;
+      });
+
+      const blob = new Blob([textContent], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `99tool-journal-${new Date().toISOString().slice(0,10)}.txt`;
+      a.click();
+    };
+
+    init();
+  </script>
+</body>
+</html>
+

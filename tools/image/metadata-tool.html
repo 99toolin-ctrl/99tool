@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Metadata Tool – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/image/metadata-tool.html"/>
+<meta property="og:title" content="Metadata Tool – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/image/metadata-tool.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Metadata Tool \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/image/metadata-tool.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Exif.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/exif-js/2.3.0/exif.min.js"></script>
+  <style>
+    .metadata-layout {
+      display: grid;
+      grid-template-columns: 1fr 350px;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    @media (max-width: 992px) {
+      .metadata-layout { grid-template-columns: 1fr; }
+    }
+    .preview-box {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 300px;
+    }
+    #preview-img {
+      max-width: 100%;
+      max-height: 500px;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+    
+    .data-panel {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      height: fit-content;
+      position: sticky;
+      top: 80px;
+    }
+    .exif-list {
+      margin-top: 1.5rem;
+      list-style: none;
+      padding: 0;
+    }
+    .exif-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.85rem;
+    }
+    .exif-item:last-child { border-bottom: none; }
+    .exif-label { color: var(--text-muted); font-weight: 500; }
+    .exif-value { color: var(--white); font-weight: 600; text-align: right; }
+    
+    .privacy-status {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      font-size: 0.85rem;
+    }
+    .status-safe { background: rgba(76, 175, 80, 0.1); color: #4caf50; border: 1px solid rgba(76, 175, 80, 0.2); }
+    .status-alert { background: rgba(229, 57, 53, 0.1); color: #e53935; border: 1px solid rgba(229, 57, 53, 0.2); }
+
+    .no-data { text-align: center; padding: 3rem 0; color: var(--text-muted); }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/image/metadata-tool.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/image/metadata-tool.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/image/metadata-tool.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/image/metadata-tool.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/image/metadata-tool.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/image/metadata-tool.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/image/metadata-tool.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/image/metadata-tool.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/image/metadata-tool.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/image/metadata-tool.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/image/metadata-tool.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/image/metadata-tool.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/image/metadata-tool.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/image/metadata-tool.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/image/metadata-tool.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/image/metadata-tool.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/image/metadata-tool.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/image/metadata-tool.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/image/metadata-tool.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/image/metadata-tool.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/image/metadata-tool.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/image/metadata-tool.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Image Metadata Viewer & Remover</h1>
+      <p>Analyze hidden data in your photos and strip EXIF tags for total privacy.</p>
+    </div>
+
+    <div class="tool-container">
+      <div class="upload-area" id="drop-zone">
+        <div class="upload-icon">📷</div>
+        <p>Drop image here or <span class="text-primary">select file</span></p>
+        <p class="text-muted small">Reads EXIF, GPS, and Camera metadata 100% privately</p>
+        <input type="file" id="image-input" accept="image/*" hidden>
+      </div>
+
+      <div id="tool-workspace" class="hidden">
+        <div class="metadata-layout">
+          <div class="preview-box">
+             <img id="preview-img" alt="Preview">
+             <button id="strip-btn" class="btn btn-primary w-100">Strip Metadata & Download</button>
+             <p class="mt-2 small text-muted">Removing EXIF data creates a "Sanitized" copy of your image.</p>
+          </div>
+
+          <div class="data-panel">
+             <div id="status-box" class="privacy-status status-safe">
+                <span id="status-icon">🛡️</span>
+                <span id="status-text">No sensitive data found.</span>
+             </div>
+             
+             <h3 class="mb-0">Image Insights</h3>
+             <ul class="exif-list" id="exif-list">
+                <!-- Data injected here -->
+             </ul>
+             <div id="no-data-msg" class="no-data hidden">No EXIF properties detected.</div>
+          </div>
+        </div>
+      </div>
+
+    <!-- CONTENT SECTION -->
+    <section class="seo-content mt-5 text-start">
+      <h2 data-i18n="tools.exif_metadata_viewer.what_is_title">What is the Image Metadata Viewer & Remover?</h2>
+      <p>The Image Metadata Viewer & Remover is a client-side digital privacy utility designed to detect and strip metadata tags from image files. Users can inspect embedded details (like camera types, capture dates, and GPS parameters) and remove them to generate a sanitized file copy.</p>
+      <p>This utility parses all binary headers, highlights sensitive parameters, strips metadata containers, and creates clean downloads locally in your browser memory. None of your image files or extracted metadata are sent to external servers, providing maximum security.</p>
+
+      <h2 class="mt-4" data-i18n="tools.exif_metadata_viewer.how_to_use_title">How to Use the Image Metadata Viewer & Remover</h2>
+      <ol>
+        <li><strong>Load Your Image:</strong> Drag and drop your image file into the dotted upload area, or click to browse and select a file.</li>
+        <li><strong>Analyze Metadata:</strong> The tool scans the image's headers and displays parsed EXIF parameters in the "Image Insights" list.</li>
+        <li><strong>Review Security Status:</strong> Inspect the privacy alert banner (which flags GPS tags, timestamps, or camera details).</li>
+        <li><strong>Sanitize Your File:</strong> Click "Strip Metadata & Download" to create a fresh, metadata-free copy of your image on your computer.</li>
+      </ol>
+
+      <h2 class="mt-4" data-i18n="tools.exif_metadata_viewer.key_features_title">Key Features</h2>
+      <ul>
+        <li><strong>Real-Time Security Indicators:</strong> Shows warning status badges if sensitive details (like location data) are detected.</li>
+        <li><strong>Metadata Insights Inspector:</strong> Lists detailed tags including device manufacturers, exposure details, and timestamps.</li>
+        <li><strong>Deep-Strip Scrubbing:</strong> Generates a clean copy of your image by drawing pixel data onto a fresh canvas, removing old metadata.</li>
+        <li><strong>Browser-Side Processing:</strong> Parses binary file structures using JavaScript APIs for fast results without server uploads.</li>
+        <li><strong>High-Fidelity Retention:</strong> Retains your original image's visual clarity while removing hidden file headers.</li>
+      </ul>
+
+      <h2 class="mt-4" data-i18n="tools.exif_metadata_viewer.common_use_cases_title">Common Use Cases</h2>
+      <ul>
+        <li><strong>Social Media Privacy:</strong> Strip home location GPS coordinates and timestamps from photos before uploading them to social platforms.</li>
+        <li><strong>Corporate Document Cleanups:</strong> Sanitize product design screenshots and team photos before distributing them to clients.</li>
+        <li><strong>Asset Verification:</strong> Inspect and audit digital files to verify whether software markers or camera properties are embedded.</li>
+        <li><strong>Technical Privacy:</strong> Clean digital photos of camera serial numbers and software details to protect creator identity.</li>
+      </ul>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-section mt-5">
+      <h2 data-i18n="tools.exif_metadata_viewer.faq_title">Frequently Asked Questions</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <button class="faq-question">
+            Does stripping metadata degrade image quality?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>No. The tool draws the visual content onto a new canvas and exports it without the original EXIF and GPS headers. The visual resolution and details of your photo are preserved.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Is my personal metadata sent to any server?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>No. 99tool.in runs all file scans and sanitization locally on your device using JavaScript. Your files and metadata never leave your browser.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            What formats can be cleaned?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>The remover is optimized to scan and clean JPEG files, which commonly store EXIF and GPS tags. It also supports viewing and clean exports for standard WebP and PNG formats.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Why does the tool show "No EXIF properties detected"?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>This message means the uploaded image has already had its metadata stripped by other applications, or the original file format does not contain EXIF headers.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust-signal">
+      <p>🔒 Privacy & Data Note: Image uploads, metadata inspections, and clean download tasks are processed locally in your browser. No files are stored or uploaded.</p>
+    </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const imageInput = document.getElementById('image-input');
+    const dropZone = document.getElementById('drop-zone');
+    const workspace = document.getElementById('tool-workspace');
+    const previewImg = document.getElementById('preview-img');
+    const exifList = document.getElementById('exif-list');
+    const statusBox = document.getElementById('status-box');
+    const statusText = document.getElementById('status-text');
+    const statusIcon = document.getElementById('status-icon');
+    const noDataMsg = document.getElementById('no-data-msg');
+    const stripBtn = document.getElementById('strip-btn');
+
+    let currentFile = null;
+
+    dropZone.onclick = () => imageInput.click();
+    imageInput.onchange = (e) => handleFile(e.target.files[0]);
+    
+    // Init Drag and Drop using global helper
+    setupDragDrop('drop-zone', (files) => {
+       if (files.length) handleFile(files[0]);
+    });
+
+    function handleFile(file) {
+      if (!file || !file.type.startsWith('image/')) return;
+      currentFile = file;
+      
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        previewImg.src = e.target.result;
+        workspace.classList.remove('hidden');
+        analyzeExif(file);
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function analyzeExif(file) {
+      EXIF.getData(file, function() {
+        const allData = EXIF.getAllTags(this);
+        exifList.innerHTML = '';
+        
+        const importantTags = {
+          'Make': 'Manufacturer',
+          'Model': 'Model',
+          'DateTime': 'Date Taken',
+          'Software': 'Software',
+          'GPSLatitude': 'Latitude',
+          'GPSLongitude': 'Longitude',
+          'ExifImageWidth': 'Width',
+          'ExifImageHeight': 'Height',
+          'ApertureValue': 'Aperture',
+          'ExposureTime': 'Shutter Speed',
+          'ISOSpeedRatings': 'ISO'
+        };
+
+        let foundSensitive = false;
+        let hasData = false;
+
+        Object.entries(importantTags).forEach(([key, label]) => {
+           let value = allData[key];
+           if (value !== undefined) {
+              hasData = true;
+              if (key.includes('GPS') || key.includes('DateTime')) foundSensitive = true;
+              
+              if (Array.isArray(value)) value = value.join(', ');
+              if (typeof value === 'object') value = JSON.stringify(value);
+
+              const li = document.createElement('li');
+              li.className = 'exif-item';
+              li.innerHTML = `<span class="exif-label">${label}</span><span class="exif-value">${value}</span>`;
+              exifList.appendChild(li);
+           }
+        });
+
+        if (foundSensitive) {
+           statusBox.className = 'privacy-status status-alert';
+           statusText.innerText = 'Sensitive Metadata Found (GPS/Time)';
+           statusIcon.innerText = '⚠️';
+        } else {
+           statusBox.className = 'privacy-status status-safe';
+           statusText.innerText = 'No Sensitive Metadata Found';
+           statusIcon.innerText = '🛡️';
+        }
+
+        noDataMsg.classList.toggle('hidden', hasData);
+      });
+    }
+
+    stripBtn.onclick = () => {
+       if (!previewImg.src) return;
+       
+       const canvas = document.createElement('canvas');
+       const ctx = canvas.getContext('2d');
+       const img = new Image();
+       
+       img.onload = () => {
+          canvas.width = img.width;
+          canvas.height = img.height;
+          ctx.drawImage(img, 0, 0);
+          
+          // canvas.toDataURL strips all metadata
+          const url = canvas.toDataURL('image/jpeg', 0.95);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = `sanitized_${currentFile.name.split('.')[0]}.jpg`;
+          a.click();
+       };
+       img.src = previewImg.src;
+    };
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

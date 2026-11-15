@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Tip Calculator – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/calculators/tip-calculator.html"/>
+<meta property="og:title" content="Tip Calculator – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/calculators/tip-calculator.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Tip Calculator \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/calculators/tip-calculator.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .math-workspace {
+      max-width: 600px;
+      margin: 2rem auto;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+    .input-group { margin-bottom: 1.5rem; }
+    label { display: block; margin-bottom: 0.5rem; color: var(--text-muted); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; }
+    input {
+      width: 100%;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 1rem;
+      border-radius: 12px;
+      font-size: 1.25rem;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    input:focus { border-color: var(--primary); outline: none; }
+    
+    .tip-percent-grid {
+       display: grid;
+       grid-template-columns: repeat(4, 1fr);
+       gap: 10px;
+       margin-bottom: 1.5rem;
+    }
+    .tip-btn {
+       background: rgba(255,255,255,0.05);
+       border: 1px solid var(--border);
+       padding: 10px;
+       border-radius: 8px;
+       color: var(--text);
+       font-weight: 700;
+       cursor: pointer;
+       transition: all 0.2s;
+    }
+    .tip-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+    
+    .result-display {
+       background: rgba(var(--primary-rgb), 0.05);
+       border: 1px dashed var(--primary);
+       padding: 2rem;
+       border-radius: 16px;
+       margin-top: 2rem;
+       text-align: center;
+    }
+    .res-val { font-size: 3rem; font-weight: 800; color: var(--primary); margin-bottom: 5px; }
+    .res-lab { font-size: 0.9rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+    
+    .sub-res {
+       display: flex;
+       justify-content: space-around;
+       margin-top: 1.5rem;
+       padding-top: 1.5rem;
+       border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    .sub-item { text-align: center; }
+    .sub-val { font-size: 1.2rem; font-weight: 700; color: var(--text); }
+    .sub-lab { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/calculators/tip-calculator.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/calculators/tip-calculator.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/calculators/tip-calculator.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/calculators/tip-calculator.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/calculators/tip-calculator.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/calculators/tip-calculator.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/calculators/tip-calculator.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/calculators/tip-calculator.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/calculators/tip-calculator.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/calculators/tip-calculator.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/calculators/tip-calculator.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/calculators/tip-calculator.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/calculators/tip-calculator.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/calculators/tip-calculator.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/calculators/tip-calculator.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/calculators/tip-calculator.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/calculators/tip-calculator.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/calculators/tip-calculator.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/calculators/tip-calculator.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/calculators/tip-calculator.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/calculators/tip-calculator.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/calculators/tip-calculator.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Infinite Tip & Split Solver</h1>
+      <p>Calculated gratuity for seamless dining. Split any bill across any party size with absolute financial precision.</p>
+    </div>
+
+    <div class="math-workspace">
+      <div class="input-group">
+        <label>Total Bill Amount</label>
+        <input type="number" id="bill-amount" placeholder="0.00" oninput="solve()">
+      </div>
+
+      <label>Tip Percentage (%)</label>
+      <div class="tip-percent-grid">
+         <button class="tip-btn" onclick="setTip(10, this)">10%</button>
+         <button class="tip-btn active" onclick="setTip(15, this)">15%</button>
+         <button class="tip-btn" onclick="setTip(20, this)">20%</button>
+         <button class="tip-btn" onclick="setTip(25, this)">25%</button>
+      </div>
+      <div class="input-group">
+         <input type="number" id="tip-custom" placeholder="Custom Tip %" oninput="solve()">
+      </div>
+
+      <div class="input-group">
+        <label>Number of People</label>
+        <input type="number" id="people-count" value="1" min="1" oninput="solve()">
+      </div>
+
+      <div class="result-display">
+         <div class="res-lab">Total Per Person</div>
+         <div class="res-val" id="res-per-person">$0.00</div>
+         
+         <div class="sub-res">
+            <div class="sub-item">
+               <div class="sub-lab">Total Tip</div>
+               <div class="sub-val" id="res-total-tip">$0.00</div>
+            </div>
+            <div class="sub-item">
+               <div class="sub-lab">Grand Total</div>
+               <div class="sub-val" id="res-total-bill">$0.00</div>
+            </div>
+         </div>
+      </div>
+
+      <!-- CONTENT SECTION -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.tip_calculator.what_is_title">What is the Infinite Tip & Split Solver?</h2>
+        <p>The Infinite Tip & Split Solver is an everyday financial utility designed to calculate gratuity and split bills among groups. It handles the math for dining out, shared transport, and group activities, dividing the final tab evenly across your party size.</p>
+        <p>The tool calculates the total tip, grand total (bill plus tip), and the exact amount each person owes. All computations happen in your browser sandbox, meaning your transaction amounts, gratuity rates, and party sizes remain fully private.</p>
+
+        <h2 class="mt-4" data-i18n="tools.tip_calculator.how_to_use_title">How to Use the Infinite Tip & Split Solver</h2>
+        <ol>
+          <li><strong>Enter the Bill Amount:</strong> Type the total pre-tip transaction amount into the "Total Bill Amount" input field.</li>
+          <li><strong>Select or Input Tip Percentage:</strong> 
+            <ul>
+              <li>Click one of the preset buttons (10%, 15%, 20%, or 25%) to select a standard gratuity rate.</li>
+              <li>Or, type a custom percentage into the "Custom Tip %" field for alternative rates.</li>
+            </ul>
+          </li>
+          <li><strong>Set the Party Size:</strong> Enter the number of people sharing the expense in the "Number of People" input field.</li>
+          <li><strong>Review the Cost Breakdown:</strong> Check the results panel, which updates as you type. It displays the Total Per Person, the Total Tip amount, and the Grand Total bill.</li>
+        </ol>
+
+        <h2 class="mt-4" data-i18n="tools.tip_calculator.key_features_title">Key Features</h2>
+        <ul>
+          <li><strong>Standard Tip Presets:</strong> Quick-select buttons for 10%, 15%, 20%, and 25% to speed up calculations.</li>
+          <li><strong>Custom Gratuity Input:</strong> Support for custom rates to handle varying service quality standards.</li>
+          <li><strong>Party Division Solver:</strong> Splits both the bill and the tip evenly across any number of people.</li>
+          <li><strong>Dynamic Outputs:</strong> Results update in real time as you adjust amounts, tips, or group sizes.</li>
+          <li><strong>Client-Side Processing:</strong> Keeps your personal spending and group dinner details confidential.</li>
+        </ul>
+
+        <h2 class="mt-4" data-i18n="tools.tip_calculator.common_use_cases_title">Common Use Cases</h2>
+        <ul>
+          <li><strong>Group Dining and Restaurant Bills:</strong> Split dinner tabs and tips among friends or colleagues at the table.</li>
+          <li><strong>Shared Transport and Taxi Fares:</strong> Calculate individual shares for taxi, shuttle, or rideshare costs including driver tips.</li>
+          <li><strong>Holiday and Hotel Room Splits:</strong> Divide shared accommodation fees and service charges among travel companions.</li>
+          <li><strong>Salon and Service Provider Tipping:</strong> Determine proper gratuity for personal care services like haircuts or spa treatments.</li>
+        </ul>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2 data-i18n="tools.tip_calculator.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Does the tool save my payment details or bill history?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. 99tool.in does not log or store any transaction details. All inputs and calculations are processed locally in your browser's RAM and are cleared when you close the tab.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              How do I input a custom tip percentage?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Type your desired rate directly into the "Custom Tip %" text box. The tool will automatically deselect the preset buttons and apply your custom rate to the calculations.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Should I calculate the tip before or after sales tax?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Gratuity is traditionally calculated on the pre-tax subtotal of the bill. However, you can enter whichever total you prefer into the bill amount field to suit your preference.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              What happens if the number of people is set to zero?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>To prevent divide-by-zero errors, the script limits the party size to a minimum of 1. If you enter zero or leave it blank, it defaults to splitting the bill for 1 person.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Does this tool support multiple currencies?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. The calculator uses pure numeric values. While the interface displays dollar signs, the math works identically for Rupees, Euros, Pounds, or any other currency.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 Privacy & Data Note: All splitting and gratuity calculations occur in your browser. None of your bill amounts, tips, or group sizes are sent to our servers.</p>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    let currentTip = 15;
+
+    function setTip(val, btn) {
+       currentTip = val;
+       document.getElementById('tip-custom').value = '';
+       document.querySelectorAll('.tip-btn').forEach(b => b.classList.remove('active'));
+       if (btn) btn.classList.add('active');
+       solve();
+    }
+
+    function solve() {
+       const bill = parseFloat(document.getElementById('bill-amount').value) || 0;
+       const people = parseInt(document.getElementById('people-count').value) || 1;
+       const customTip = parseFloat(document.getElementById('tip-custom').value);
+
+       const tipPercent = (!isNaN(customTip)) ? customTip : currentTip;
+       
+       const totalTip = bill * (tipPercent / 100);
+       const totalBill = bill + totalTip;
+       const perPerson = totalBill / Math.max(1, people);
+
+       document.getElementById('res-per-person').innerText = (window.i18n && window.i18n.formatCurrency) ? window.i18n.formatCurrency(perPerson, 2) : '$' + perPerson.toFixed(2);
+       document.getElementById('res-total-tip').innerText = (window.i18n && window.i18n.formatCurrency) ? window.i18n.formatCurrency(totalTip, 2) : '$' + totalTip.toFixed(2);
+       document.getElementById('res-total-bill').innerText = (window.i18n && window.i18n.formatCurrency) ? window.i18n.formatCurrency(totalBill, 2) : '$' + totalBill.toFixed(2);
+    }
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>

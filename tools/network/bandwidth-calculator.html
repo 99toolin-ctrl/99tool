@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Bandwidth Calculator – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/network/bandwidth-calculator.html"/>
+<meta property="og:title" content="Bandwidth Calculator – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/network/bandwidth-calculator.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Bandwidth Calculator \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/network/bandwidth-calculator.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    .math-workspace {
+      max-width: 650px;
+      margin: 2rem auto;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      border-radius: 20px;
+    }
+    .input-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 1rem; margin-bottom: 2rem; }
+    label { display: block; margin-bottom: 0.5rem; color: var(--text-muted); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; }
+    input, select {
+      width: 100%;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 1rem;
+      border-radius: 12px;
+      font-size: 1.1rem;
+    }
+    .result-panel {
+       background: rgba(var(--primary-rgb), 0.05);
+       border: 1px solid var(--primary);
+       padding: 2rem;
+       border-radius: 16px;
+       text-align: center;
+       display: none;
+       margin-top: 2rem;
+    }
+    .res-val { font-size: 3rem; font-weight: 800; color: var(--primary); }
+    .res-label { font-size: 0.9rem; color: var(--text-muted); margin-top: 5px; text-transform: uppercase; letter-spacing: 0.05em; }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/network/bandwidth-calculator.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/network/bandwidth-calculator.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/network/bandwidth-calculator.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/network/bandwidth-calculator.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/network/bandwidth-calculator.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/network/bandwidth-calculator.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/network/bandwidth-calculator.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/network/bandwidth-calculator.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/network/bandwidth-calculator.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/network/bandwidth-calculator.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/network/bandwidth-calculator.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/network/bandwidth-calculator.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/network/bandwidth-calculator.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/network/bandwidth-calculator.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/network/bandwidth-calculator.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/network/bandwidth-calculator.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/network/bandwidth-calculator.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/network/bandwidth-calculator.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/network/bandwidth-calculator.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/network/bandwidth-calculator.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/network/bandwidth-calculator.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/network/bandwidth-calculator.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Infinite Bandwidth Calculator</h1>
+      <p>Analyze network capacity instantly. Determine required speeds for any data transfer scenario.</p>
+    </div>
+
+    <div class="math-workspace">
+      <div class="input-grid">
+         <div>
+            <label>Data to Move</label>
+            <input type="number" id="data-val" value="1" oninput="solve()">
+         </div>
+         <div>
+            <label>Unit</label>
+            <select id="data-unit" onchange="solve()">
+               <option value="MB">MB (Mega)</option>
+               <option value="GB" selected>GB (Giga)</option>
+               <option value="TB">TB (Tera)</option>
+            </select>
+         </div>
+      </div>
+
+      <div class="input-grid">
+         <div>
+            <label>Time Duration</label>
+            <input type="number" id="time-val" value="1" oninput="solve()">
+         </div>
+         <div>
+            <label>Unit</label>
+            <select id="time-unit" onchange="solve()">
+               <option value="s">Seconds</option>
+               <option value="m">Minutes</option>
+               <option value="h" selected>Hours</option>
+            </select>
+         </div>
+      </div>
+
+      <div class="result-panel" id="res-panel">
+         <div class="res-label">Required Bandwidth</div>
+         <div class="res-val" id="res-Mbps">0 Mbps</div>
+         <div class="mt-2 text-muted small" id="res-Kbps">0 Kbps</div>
+      </div>
+
+      <!-- SEO CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.bandwidth_calculator.what_is_title">What is Infinite Bandwidth Calculator</h2>
+        <p>The Infinite Bandwidth Calculator is an offline-first network planning utility designed to calculate the data transfer rate required to move a specific volume of data within a target timeframe. By converting raw data size units and time metrics, the tool solves the bandwidth capacity equation directly in your browser.</p>
+        <p>Whether you are planning system migrations, setting up cloud backup schedules, or auditing server replication pipes, understanding your throughput requirements is critical. This calculator eliminates unit conversion mistakes by solving data rates in Megabits per second (Mbps) and Kilobits per second (Kbps) simultaneously.</p>
+
+        <h3 class="mt-4">How to Use Infinite Bandwidth Calculator</h3>
+        <ol style="line-height: 1.8; margin-bottom: 20px; padding-left: 20px;">
+          <li><strong>Specify data size:</strong> Enter the numeric size of the files or dataset you need to transfer in the **Data to Move** input field.</li>
+          <li><strong>Select data units:</strong> Pick the corresponding file size unit (MB, GB, or TB) from the unit selection dropdown.</li>
+          <li><strong>Set the target duration:</strong> Enter the target time limit in the **Time Duration** input field.</li>
+          <li><strong>Select duration units:</strong> Pick the time measurement unit (Seconds, Minutes, or Hours) from the dropdown selection list.</li>
+          <li><strong>Analyze required bandwidth:</strong> Review the results displayed in the highlighted panel, which shows the required data rates in Mbps and Kbps.</li>
+        </ol>
+
+        <h3 class="mt-4">Key Features</h3>
+        <ul style="line-height: 1.8; margin-bottom: 20px; padding-left: 20px;">
+          <li><strong>Dynamic Calculation Loop:</strong> Automatically updates calculation outputs in real-time as you modify data size, time values, or units.</li>
+          <li><strong>Multi-scale Conversion:</strong> Seamlessly handles conversions between storage-oriented binary Bytes (MB, GB, TB) and network-oriented transfer bits.</li>
+          <li><strong>Dual Output Statistics:</strong> Renders required speeds in both Mbps and Kbps to cover different network specifications.</li>
+          <li><strong>Client-side Processing:</strong> Runs locally in browser script scopes, requiring no database updates or data tracking.</li>
+        </ul>
+
+        <h3 class="mt-4">Common Use Cases</h3>
+        <ul style="line-height: 1.8; margin-bottom: 20px; padding-left: 20px;">
+          <li><strong>Cloud Backups Planning:</strong> Calculating the network speed required to upload a 500 GB database backup within a 6-hour overnight window.</li>
+          <li><strong>SLA Compliance Auditing:</strong> Verifying if your ISP bandwidth satisfies contract agreements during bulk server migrations.</li>
+          <li><strong>Remote Work Setup:</strong> Determining if your home internet speed can handle downloading large media assets within deadline boundaries.</li>
+        </ul>
+
+        <h3 class="mt-4">Frequently Asked Questions</h3>
+        <div style="line-height: 1.8; margin-bottom: 20px;">
+          <p><strong>Q: What is the difference between Megabits (Mb) and Megabytes (MB)?</strong><br>
+          A: Megabytes (MB) represent storage capacity, while Megabits (Mb) are used to measure network transfer speeds. One Byte contains 8 bits, meaning you must multiply file size bytes by 8 when calculating raw network speed requirements.</p>
+          <p><strong>Q: Does this calculator account for network overhead like TCP packets headers?</strong><br>
+          A: No. This tool calculates the mathematical payload throughput. Real-world transfers require an additional 10% to 20% bandwidth to account for TCP/IP encapsulation overhead, network congestion, and packet retransmissions.</p>
+          <p><strong>Q: Why does the results panel disappear when I input zero values?</strong><br>
+          A: Dividing data by a transfer duration of zero is mathematically undefined. The calculator hides the results dashboard to prevent showing error values like Infinity or NaN.</p>
+          <p><strong>Q: How does the calculator define size units (binary vs decimal)?</strong><br>
+          A: The calculator uses standard binary notation where 1 KB equals 1024 Bytes, 1 MB equals 1024 KB, and 1 GB equals 1024 MB to match operating system file metrics.</p>
+        </div>
+
+        <h3 class="mt-4">Privacy & Data Note</h3>
+        <p>All bandwidth conversions and data throughput formulas are resolved locally inside your active browser tab. No parameters, dataset sizes, or calculated network speeds are shared or stored.</p>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    function solve() {
+       const dataVal = parseFloat(document.getElementById('data-val').value) || 0;
+       const dataUnit = document.getElementById('data-unit').value;
+       const timeVal = parseFloat(document.getElementById('time-val').value) || 0;
+       const timeUnit = document.getElementById('time-unit').value;
+
+       if (dataVal <= 0 || timeVal <= 0) {
+          document.getElementById('res-panel').style.display = 'none';
+          return;
+       }
+
+       // 1. Convert everything to bits and seconds
+       let bits = 0;
+       if (dataUnit === 'MB') bits = dataVal * 8 * 1024 * 1024;
+       else if (dataUnit === 'GB') bits = dataVal * 8 * 1024 * 1024 * 1024;
+       else if (dataUnit === 'TB') bits = dataVal * 8 * 1024 * 1024 * 1024 * 1024;
+
+       let seconds = 0;
+       if (timeUnit === 's') seconds = timeVal;
+       else if (timeUnit === 'm') seconds = timeVal * 60;
+       else if (timeUnit === 'h') seconds = timeVal * 3600;
+
+       // 2. Calculate bps
+       const bps = bits / seconds;
+       const mbps = bps / (1024 * 1024);
+       const kbps = bps / 1024;
+
+       // 3. Render
+       document.getElementById('res-Mbps').innerText = ((window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(mbps, 2) : mbps.toFixed(2)) + ' Mbps';
+       document.getElementById('res-Kbps').innerText = ((window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(kbps, 0) : kbps.toLocaleString()) + ' Kbps';
+       document.getElementById('res-panel').style.display = 'block';
+    }
+
+    // Auto-run first time
+    window.onload = solve;
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>

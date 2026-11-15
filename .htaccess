@@ -1,0 +1,18 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Set default directory index file to index.html
+  DirectoryIndex index.html
+
+  # Rule 1: Language root requests (e.g. /en, /en/, /es, /es/) map to index.html with lang query parameter
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)/?$ index.html?lang=$1 [QSA,L]
+
+  # Rule 2: Subpath language requests (e.g. /en/tools/calculators/age-calculator.html, /es/index.html) map to physical subpath with lang query parameter
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)/(.*)$ $2?lang=$1 [QSA,L]
+
+</IfModule>

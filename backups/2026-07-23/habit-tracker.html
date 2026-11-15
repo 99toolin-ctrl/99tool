@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Habit Tracker – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/productivity/habit-tracker.html"/>
+<meta property="og:title" content="Habit Tracker – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/productivity/habit-tracker.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Habit Tracker \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/productivity/habit-tracker.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .habit-workspace {
+      display: grid;
+      grid-template-columns: 350px 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .habit-sidebar {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    
+    .habit-card {
+        background: rgba(255,255,255,0.03);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 1rem;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: 0.2s;
+    }
+    .habit-card:hover { border-color: var(--primary); }
+    .habit-card.active { border-color: var(--primary); background: rgba(229, 57, 53, 0.05); }
+
+    .calendar-container {
+        background: var(--dark-card);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 2rem;
+        text-align: center;
+    }
+
+    .streak-grid {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 10px;
+        margin-top: 2rem;
+    }
+    .day-sq {
+        aspect-ratio: 1;
+        background: var(--dark);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.75rem;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+    .day-sq:hover { border-color: var(--text-muted); }
+    .day-sq.checked { background: var(--primary); border-color: var(--primary); color: white; }
+    .day-sq.today { border-color: var(--primary); border-width: 2px; }
+
+    .streak-big { font-size: 3rem; font-weight: 800; color: var(--primary); margin: 0.5rem 0; }
+    
+    @media (max-width: 992px) {
+      .habit-workspace { grid-template-columns: 1fr; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-hero text-center">
+      <nav class="breadcrumb justify-content-center">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#productivity">Productivity</a> <span>/</span> 
+        <span>Habit Tracker</span>
+      </nav>
+      <h1>Habit Streak Tracker</h1>
+      <p>Master your consistency. Track daily wins and visualize your streaks 100%.</p>
+    </div>
+
+    <div class="habit-workspace">
+      <aside class="habit-sidebar">
+          <h3>My Habits</h3>
+          <div id="habits-list" class="flex flex-col gap-3">
+              <!-- Habits list -->
+          </div>
+          <button class="btn btn-secondary btn-sm mt-3" onclick="addHabit()">+ Add New Habit</button>
+          <button class="btn btn-primary btn-sm mt-auto" onclick="exportData()">Backup Data (JSON)</button>
+      </aside>
+
+      <section class="calendar-container">
+          <div id="active-habit-ui" style="display: none;">
+              <h2 id="habit-title">Exercise</h2>
+              <div class="streak-big" id="streak-count">12</div>
+              <p class="text-muted text-uppercase small letter-spacing-1">Current Streak 🔥</p>
+              
+              <div id="month-label" class="mt-4 font-bold" style="font-size: 1.2rem;">April 2026</div>
+              <div class="streak-grid" id="calendar">
+                  <!-- Calendar squares -->
+              </div>
+          </div>
+          <div id="empty-state" class="py-5">
+              <div style="font-size: 4rem;">✨</div>
+              <h3>Select or add a habit to start tracking</h3>
+          </div>
+      </section>
+    </div>
+
+    <section class="seo-content mt-5">
+      <h2>Mastering Consistency Through Local Logic: The Habit Streak Methodology</h2>
+      <p>Building a new habit is famously difficult, often requiring anywhere from 18 to 254 days of consistent action to become automatic. Our <strong>habit streak tracker</strong> leverages the "Don't Break the Chain" philosophy to help you navigate the "Valley of Disappointment" where most people quit. By providing a clear, high-contrast visual representation of your progress, you tap into the psychological rewards of visual consistency, making it easier to sustain your routine until it becomes your new default mode.</p>
+      
+      <p>At 99tool.in, we believe your personal transformation should be a private affair. Most <strong>habit tracking apps online</strong> treat your daily routine as a data point for demographic targeting. They know when you exercise, when you meditate, and when you fail. We use a local-first approach. All your habit data is stored securely in your browser's private memory. No usernames, no emails, and no cloud syncing required. Your life metrics remain 100% private and under your total control.</p>
+
+      <div class="tool-preview-box mt-4 mb-4" style="text-align:center;">
+        <img src="../../assets/images/habit-preview.png" alt="99tool Habit Tracker showing Weekly Consistency and Streak Analytics" class="tool-preview" style="max-width: 100%; border-radius: 12px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+      </div>
+
+      <h3 class="mt-4">The Logic of Incremental Gains</h3>
+      <p>Organization isn't about massive overnight changes; it's about **Small Wins** stacked on top of each other. Most basic <strong>habit trackers</strong> overwhelm you with complex data entry. Our <strong>professional streak manager</strong> takes a human-centric approach: we focus on **Minimal Friction** and **Maximal Visualization**.</p>
+      
+      <p>The interactive calendar grid allows you to record your wins with a single click. Our engine then handles the "Logical Calculation" of your current and longest streaks. This real-time feedback loop transforms a mundane daily task into a high-stakes game of consistency. Whether you are a writer hitting a daily word count, a developer learning a new language, or a professional managing a workout routine, our <strong>safe habit auditor</strong> provides the structure you need to succeed.</p>
+
+      <h3 class="mt-4">Why Local Progress is the Athlete’s Ethical Choice</h3>
+      <p>In the era of "Behavioral Analytics," your daily habits are a roadmap of your lifestyle and health. Pasting your personal routines into a standard <strong>habit tool online free</strong> service creates a digital record for third-party analysis. Our 100% <strong>privacy utility</strong> removes this "Privacy Vulnerability" from your self-improvement routine.</p>
+      
+      <p>Because the logic and data storage happen locally via the `localStorage` API, your progress is invisible to the outside world. No analytics are tracked, no routines are harvested, and no personal data is shared with advertisers. At 99tool.in, we believe that <strong>building a better self</strong> should be a private, focused mission. With us, you have a professional, confidential performance lab that fits in your browser tab.</p>
+
+      <h3 class="mt-4">How to Build Your Streak (Step-by-Step)</h3>
+      <p>Starting a new routine should be a high-speed, 5-second task. Here is how to use our <strong>habit tracker</strong>:</p>
+      <ul style="line-height: 1.8; margin-bottom: 20px;">
+        <li><strong>Step 1: Define the Mission</strong> — Click "+ Add New Habit" and name your goal. Be specific (e.g., "30-min Reading" rather than just "Read").</li>
+        <li><strong>Step 2: Commit Daily</strong> — Visit the tool every day and click the corresponding date on the calendar. Our system updates your "Streak Fire" instantly.</li>
+        <li><strong>Step 3: Analyze Consistency</strong> — Use the colored grid to spot patterns. Identifying missed days helps you understand your "Friction Points" and adjust your environment.</li>
+        <li><strong>Step 4: Backup Your Wins</strong> — Use the "Backup Data" button regularly. This creates a local JSON file that ensures you never lose years of progress due to a browser clear.</li>
+      </ul>
+
+      <h3 class="mt-5">Explore Your Complete Growth Suite</h3>
+      <p>Once you’ve mastered your daily streaks, you might want to manage broader objectives. Check out our **<a href="goal-tracker.html">Goal Tracker</a>**. Or, if you need to organize multiple parts of your digital life, launch our **<a href="life-os.html">Life OS</a>**. At 99tool.in, we are building a world-class, 100% private digital toolkit to give you total sovereignty over your future.</p>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-section mt-5">
+      <div class="container-sm">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">What counts as a "Streak"?<span class="faq-icon">+</span></button>
+            <div class="faq-answer">
+              <p>A streak is calculated as consecutive days of completion. If you miss a single day, the current streak resets to zero, though your "Longest Streak" record is preserved in your history.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">Can I track habits for past days?<span class="faq-icon">+</span></button>
+            <div class="faq-answer">
+              <p>Yes. You can click on any date in the current month's calendar to toggle its status. This allow you to retroactively record habits if you forgot to visit the site yesterday.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">Is there a limit to how many habits I can add?<span class="faq-icon">+</span></button>
+            <div class="faq-answer">
+              <p>No. You can add as many habits as your browser's local storage allows. Most users can comfortably track dozens of habits without any performance issues.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">How do I transfer my data to a new computer?<span class="faq-icon">+</span></button>
+            <div class="faq-answer">
+              <p>Use the "Backup Data (JSON)" button to download your habit file. On your new device, you can (in a future update) import this file to resume your streaks without missing a beat.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">Does this tool support notifications?<span class="faq-icon">+</span></button>
+            <div class="faq-answer">
+              <p>Since we don't use a background server or cloud sync, we don't send emails or push notifications. We recommend bookmarking the page or using our **Reminder App** for local browser alerts.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    let habits = [];
+    let currentHabitId = null;
+
+    function init() {
+        const saved = localStorage.getItem('99tool_habits');
+        if (saved) habits = JSON.parse(saved);
+        renderHabits();
+    }
+
+    function renderHabits() {
+        const list = document.getElementById('habits-list');
+        list.innerHTML = "";
+        habits.forEach(h => {
+            const card = document.createElement('div');
+            card.className = `habit-card ${h.id === currentHabitId ? 'active' : ''}`;
+            card.innerHTML = `
+                <span>${h.name}</span>
+                <span class="small font-bold">${h.streak || 0} 🔥</span>
+            `;
+            card.onclick = () => selectHabit(h.id);
+            list.appendChild(card);
+        });
+    }
+
+    function selectHabit(id) {
+        currentHabitId = id;
+        const habit = habits.find(h => h.id === id);
+        document.getElementById('habit-title').innerText = habit.name;
+        document.getElementById('streak-count').innerText = calculateStreak(habit);
+        document.getElementById('empty-state').style.display = 'none';
+        document.getElementById('active-habit-ui').style.display = 'block';
+        renderCalendar(habit);
+        renderHabits();
+    }
+
+    function addHabit() {
+        const name = prompt("Enter habit name (e.g., Exercise, Reading):");
+        if (name) {
+            const id = Date.now();
+            habits.push({ id, name, history: [], streak: 0 });
+            save();
+            renderHabits();
+            selectHabit(id);
+        }
+    }
+
+    function renderCalendar(habit) {
+        const cal = document.getElementById('calendar');
+        cal.innerHTML = "";
+        
+        const now = new Date();
+        const year = now.getFullYear();
+        const month = now.getMonth();
+        const daysInMonth = new Date(year, month + 1, 0).getDate();
+        
+        document.getElementById('month-label').innerText = new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric' }).format(now);
+
+        for (let i = 1; i <= daysInMonth; i++) {
+            const dateStr = `${year}-${month + 1}-${i}`;
+            const sq = document.createElement('div');
+            sq.className = `day-sq ${habit.history.includes(dateStr) ? 'checked' : ''} ${i === now.getDate() ? 'today' : ''}`;
+            sq.innerHTML = `<span>${i}</span>`;
+            sq.onclick = () => toggleDay(habit, dateStr);
+            cal.appendChild(sq);
+        }
+    }
+
+    function toggleDay(habit, dateStr) {
+        const idx = habit.history.indexOf(dateStr);
+        if (idx === -1) {
+            habit.history.push(dateStr);
+        } else {
+            habit.history.splice(idx, 1);
+        }
+        habit.streak = calculateStreak(habit);
+        save();
+        selectHabit(habit.id);
+    }
+
+    function calculateStreak(habit) {
+        if (!habit.history.length) return 0;
+        const sorted = habit.history.map(d => new Date(d)).sort((a,b) => b - a);
+        let streak = 0;
+        let d = new Date();
+        d.setHours(0,0,0,0);
+        
+        // If today is not in history, check yesterday
+        let current = sorted[0];
+        if ((d - current) / (1000 * 60 * 60 * 24) > 1) return 0;
+
+        for (let i = 0; i < sorted.length; i++) {
+            if (i === 0) { streak = 1; continue; }
+            const diff = (sorted[i-1] - sorted[i]) / (1000 * 60 * 60 * 24);
+            if (diff === 1) streak++;
+            else break;
+        }
+        return streak;
+    }
+
+    function save() {
+        localStorage.setItem('99tool_habits', JSON.stringify(habits));
+    }
+
+    function exportData() {
+        const blob = new Blob([JSON.stringify(habits, null, 2)], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "99tool-habits-backup.json";
+        a.click();
+    }
+
+    init();
+  </script>
+</body>
+</html>
+

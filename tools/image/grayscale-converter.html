@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Grayscale Converter – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/image/grayscale-converter.html"/>
+<meta property="og:title" content="Grayscale Converter – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/image/grayscale-converter.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Grayscale Converter \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/image/grayscale-converter.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .editor-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    @media (max-width: 992px) {
+      .editor-layout { grid-template-columns: 1fr; }
+    }
+    .preview-box {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 400px;
+    }
+    #main-canvas {
+      max-width: 100%;
+      height: auto;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      border-radius: 4px;
+    }
+
+    .tool-panel {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      height: fit-content;
+      position: sticky;
+      top: 80px;
+    }
+    .tool-section { margin-bottom: 2rem; }
+    .tool-section h4 { font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem; letter-spacing: 1px; }
+
+    .range-wrap label { display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-muted); margin-bottom: 4px; }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/image/grayscale-converter.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/image/grayscale-converter.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/image/grayscale-converter.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/image/grayscale-converter.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/image/grayscale-converter.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/image/grayscale-converter.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/image/grayscale-converter.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/image/grayscale-converter.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/image/grayscale-converter.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/image/grayscale-converter.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/image/grayscale-converter.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/image/grayscale-converter.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/image/grayscale-converter.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/image/grayscale-converter.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/image/grayscale-converter.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/image/grayscale-converter.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/image/grayscale-converter.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/image/grayscale-converter.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/image/grayscale-converter.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/image/grayscale-converter.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/image/grayscale-converter.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/image/grayscale-converter.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Grayscale Image Converter</h1>
+      <p>Transform your photos into timeless black and white masterpieces. 100% private and artistic.</p>
+    </div>
+
+    <div class="tool-container">
+      <div class="upload-area" id="drop-zone">
+        <div class="upload-icon">🎞️</div>
+        <p>Drop color image or <span class="text-primary">select file</span></p>
+        <p class="text-muted small">Supports JPG, PNG, WEBP (Maximum privacy)</p>
+        <input type="file" id="image-input" accept="image/*" hidden>
+      </div>
+
+      <div id="tool-workspace" class="hidden">
+        <div class="editor-layout">
+          <div class="preview-box">
+             <canvas id="main-canvas"></canvas>
+          </div>
+
+          <div class="tool-panel">
+            <div class="tool-section">
+               <h4>Styling</h4>
+               <div class="range-wrap">
+                  <label>Contrast: <span id="contrast-val">100</span>%</label>
+                  <input type="range" id="contrast" min="50" max="200" value="100" class="w-100">
+               </div>
+               <div class="range-wrap">
+                  <label>Brightness: <span id="bright-val">100</span>%</label>
+                  <input type="range" id="brightness" min="50" max="150" value="100" class="w-100">
+               </div>
+            </div>
+
+            <button id="download-btn" class="btn btn-primary w-100">Download B&W Image</button>
+            <p class="text-center mt-3 small text-muted">Generated instantly</p>
+          </div>
+        </div>
+      <!-- HUMANIZED CONTENT -->
+    <!-- CONTENT SECTION -->
+    <section class="seo-content mt-5 text-start">
+      <h2 data-i18n="tools.grayscale_converter.what_is_title">What is the Grayscale Image Converter?</h2>
+      <p>The Grayscale Image Converter is a client-side photo styling utility designed to transform color images into high-fidelity black-and-white graphics. Using luminosity-weighted desaturation formulas, it converts pixels into grayscale tones while maintaining visual depth.</p>
+      <p>This converter processes all desaturation filters, contrast calculations, and canvas redraw operations locally in your browser memory. Your original color photos and generated monochrome files remain strictly private on your machine, never leaving your local workspace.</p>
+
+      <h2 class="mt-4" data-i18n="tools.grayscale_converter.how_to_use_title">How to Use the Grayscale Image Converter</h2>
+      <ol>
+        <li><strong>Upload Your Image:</strong> Drag and drop your image into the upload zone, or click to browse and select a file. The workspace loads the image instantly.</li>
+        <li><strong>Adjust the Contrast:</strong> Drag the Contrast slider in the sidebar panel to sculpt shadows and highlights (ranging from 50% to 200%).</li>
+        <li><strong>Tune the Brightness:</strong> Use the Brightness slider to control the overall light exposure of your black-and-white conversion.</li>
+        <li><strong>Download Your Classic:</strong> Click the "Download B&W Image" button to save your high-resolution monochrome photo directly to your computer.</li>
+      </ol>
+
+      <h2 class="mt-4" data-i18n="tools.grayscale_converter.key_features_title">Key Features</h2>
+      <ul>
+        <li><strong>Weighted Luminosity Mapping:</strong> Employs the industry-standard desaturation formula (0.299R + 0.587G + 0.114B) to match human eye brightness perception.</li>
+        <li><strong>Interactive Styling Sliders:</strong> Fine-tune contrast and brightness levels in real-time to create custom monochrome styles.</li>
+        <li><strong>High-Resolution Preservation:</strong> Maintains the original pixel dimensions of your uploaded photos for print-ready results.</li>
+        <li><strong>Client-Side Canvas Rendering:</strong> Operates entirely in browser cache using HTML5 canvas layers, enabling offline access.</li>
+        <li><strong>Instant Preview Panel:</strong> Displays desaturation adjustments immediately to simplify edits.</li>
+      </ul>
+
+      <h2 class="mt-4" data-i18n="tools.grayscale_converter.common_use_cases_title">Common Use Cases</h2>
+      <ul>
+        <li><strong>Artistic Photography Prep:</strong> Convert color portraits and landscapes into high-impact monochrome fine-art prints.</li>
+        <li><strong>Technical Documentation:</strong> Simplify screenshots and photos into black-and-white diagrams for print-ready manuals.</li>
+        <li><strong>Minimalist UI Assets:</strong> Generate desaturated graphics and icons for clean website themes.</li>
+        <li><strong>Graphic Design Drafting:</strong> Audit the tonal values and contrast distributions of layouts by removing color information.</li>
+      </ul>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-section mt-5">
+      <h2 data-i18n="tools.grayscale_converter.faq_title">Frequently Asked Questions</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <button class="faq-question">
+            How is this different from simple desaturation?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Simple desaturation averages red, green, and blue values equally, which can make images look flat. This tool uses a weighted luminosity formula that accounts for how human eyes perceive color brightness, producing richer grayscales.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Does the tool save my uploaded images?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>No. 99tool.in processes all image adjustments locally in your browser session using JavaScript. No files are stored or uploaded to our servers.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Can I convert transparent PNGs?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. The canvas rendering engine maintains the original transparency layers of PNG graphics, applying desaturation only to colored pixels.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Which file formats are supported?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>The converter accepts standard web formats including JPEG, PNG, and WebP, and exports the final black-and-white image in its original format.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust-signal">
+      <p>🔒 Privacy & Data Note: Image uploads, desaturation mapping, and download triggers are processed locally in your browser. No files are stored or uploaded.</p>
+    </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const imageInput = document.getElementById('image-input');
+    const dropZone = document.getElementById('drop-zone');
+    const workspace = document.getElementById('tool-workspace');
+    const canvas = document.getElementById('main-canvas');
+    const ctx = canvas.getContext('2d');
+    
+    // Controls
+    const contrastSlider = document.getElementById('contrast');
+    const brightnessSlider = document.getElementById('brightness');
+    const contrastVal = document.getElementById('contrast-val');
+    const brightVal = document.getElementById('bright-val');
+    const downloadBtn = document.getElementById('download-btn');
+
+    let originalImg = null;
+
+    dropZone.onclick = () => imageInput.click();
+    imageInput.onchange = (e) => handleFile(e.target.files[0]);
+    
+    // Init Drag and Drop using global helper
+    setupDragDrop('drop-zone', (files) => {
+       if (files.length) handleFile(files[0]);
+    });
+    
+    function handleFile(file) {
+      if (!file || !file.type.startsWith('image/')) return;
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        originalImg = new Image();
+        originalImg.onload = () => {
+          canvas.width = originalImg.width;
+          canvas.height = originalImg.height;
+          updateCanvas();
+          workspace.classList.remove('hidden');
+        };
+        originalImg.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+
+    [contrastSlider, brightnessSlider].forEach(el => {
+       el.oninput = () => {
+          document.getElementById(el.id + '-val').innerText = el.value;
+          updateCanvas();
+       };
+    });
+
+    function updateCanvas() {
+       if (!originalImg) return;
+       ctx.clearRect(0, 0, canvas.width, canvas.height);
+       ctx.filter = `grayscale(100%) contrast(${contrastSlider.value}%) brightness(${brightnessSlider.value}%)`;
+       ctx.drawImage(originalImg, 0, 0);
+    }
+
+    downloadBtn.onclick = () => {
+       const url = canvas.toDataURL('image/jpeg', 0.95);
+       const a = document.createElement('a');
+       a.href = url;
+       a.download = `bw_${Date.now()}.jpg`;
+       a.click();
+    };
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Power Consumption – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/physics/power-consumption.html"/>
+<meta property="og:title" content="Power Consumption – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/physics/power-consumption.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Power Consumption \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/physics/power-consumption.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .physics-workspace {
+      max-width: 650px;
+      margin: 2rem auto;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      border-radius: 20px;
+    }
+    .form-group { margin-bottom: 1.5rem; }
+    label { display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-muted); }
+    input {
+      width: 100%;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.8rem;
+      border-radius: 8px;
+    }
+    .result-grid {
+       display: grid;
+       grid-template-columns: repeat(2, 1fr);
+       gap: 1.5rem;
+       margin-top: 2rem;
+       display: none;
+    }
+    .stat-box {
+       background: rgba(255,255,255,0.03);
+       padding: 1.5rem;
+       border-radius: 12px;
+       border: 1px solid var(--border);
+       text-align: center;
+    }
+    .stat-val { font-size: 2rem; font-weight: 800; color: var(--primary); }
+    .stat-lab { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; margin-top: 5px; }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Infinite Power Consumption Auditor</h1>
+      <p>Estimate the electricity cost of your home appliances. Calculate kWh and projected bills instantly.</p>
+    </div>
+
+    <div class="physics-workspace">
+      <div class="form-group">
+        <label>Device Power Consumption (Watts)</label>
+        <input type="number" id="watts" placeholder="e.g., 1000 for a heater">
+      </div>
+      <div class="form-group">
+        <label>Usage Hours per Day</label>
+        <input type="number" id="hours" placeholder="e.g., 5">
+      </div>
+      <div class="form-group">
+        <label>Cost per Unit / kWh (optional)</label>
+        <input type="number" id="cost" placeholder="e.g., 8" value="8">
+      </div>
+      
+      <button onclick="calculateEnergy()" class="btn btn-primary btn-lg btn-full">Estimate Consumption</button>
+
+      <div class="result-grid" id="res-grid">
+         <div class="stat-box">
+            <div class="stat-val" id="kwh-day">0</div>
+            <div class="stat-lab">Daily kWh</div>
+         </div>
+         <div class="stat-box">
+            <div class="stat-val" id="cost-day">₹0</div>
+            <div class="stat-lab">Daily Cost</div>
+         </div>
+         <div class="stat-box">
+            <div class="stat-val" id="kwh-month">0</div>
+            <div class="stat-lab">Monthly kWh</div>
+         </div>
+         <div class="stat-box">
+            <div class="stat-val" id="cost-month">₹0</div>
+            <div class="stat-lab">Monthly Cost</div>
+         </div>
+      </div>
+
+      <!-- SEO CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2>How to Calculate Power Consumption</h2>
+        <p>Energy consumption ($\text{kWh}$) is calculated by multiplying the wattage of a device by the number of hours it is used, divided by 1,000. The formula is: $\text{kWh} = (\text{Watts} \times \text{Hours}) / 1000$. Our <strong>online power usage calculator</strong> automates this process to provide a clear picture of your energy footprint. This <strong>electricity auditor tool</strong> is essential for managing household utility bills and optimizing energy efficiency.</p>
+
+        <h3 class="mt-4">Estimating Electricity Costs</h2>
+        <p>Once you have the total kWh, multiply it by your local utility rate (e.g., ₹8 per unit for many Indian users) to find the total cost. By using our <strong>home appliance energy auditor</strong>, you can identify high-consumption devices and plan your usage patterns to save money. A consistent <strong>energy consumption scorecard</strong> is the first step toward a more sustainable and cost-effective home.</p>
+
+        <h3 class="mt-4">Privacy and Accuracy</h2>
+        <p>At 99tool.in, we respect your household privacy. Our <strong>private power usage tool</strong> runs local calculations in your browser session. We do not store your device wattage or usage habits. This <strong>secure electricity cost auditor</strong> provides professional estimations without any third-party telemetry or data collection.</p>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    function calculateEnergy() {
+       const w = parseFloat(document.getElementById('watts').value);
+       const h = parseFloat(document.getElementById('hours').value);
+       const c = parseFloat(document.getElementById('cost').value) || 0;
+       
+       if (!w || !h) return alert('Please enter Watts and Hours.');
+
+       const kwhDay = (w * h) / 1000;
+       const costDay = kwhDay * c;
+       
+       const kwhMonth = kwhDay * 30;
+       const costMonth = costDay * 30;
+
+       document.getElementById('kwh-day').innerText = kwhDay.toFixed(2);
+       document.getElementById('cost-day').innerText = '₹' + costDay.toFixed(2);
+       document.getElementById('kwh-month').innerText = kwhMonth.toFixed(2);
+       document.getElementById('cost-month').innerText = '₹' + costMonth.toFixed(2);
+       
+       document.getElementById('res-grid').style.display = 'grid';
+    }
+  </script>
+</body>
+</html>

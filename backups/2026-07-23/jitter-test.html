@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Jitter Test – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/network/jitter-test.html"/>
+<meta property="og:title" content="Jitter Test – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/network/jitter-test.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Jitter Test \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/network/jitter-test.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .jitter-workspace {
+      max-width: 600px;
+      margin: 2rem auto;
+      text-align: center;
+    }
+    .jitter-area {
+      width: 100%;
+      height: 300px;
+      background: var(--bg-secondary);
+      border: 3px solid #ff9f43;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.05s;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 2rem;
+      box-shadow: 0 0 20px rgba(255, 159, 67, 0.1);
+    }
+    .jitter-area:active {
+      transform: scale(0.99) rotate(0.2deg);
+      background: rgba(255, 159, 67, 0.05);
+    }
+    .jitter-hint {
+       font-size: 1.5rem;
+       font-weight: 800;
+       color: #ff9f43;
+       text-transform: uppercase;
+       letter-spacing: 2px;
+    }
+    .stats-main {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .stat-box {
+      background: var(--dark-card);
+      padding: 1rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+    .stat-val { font-size: 1.5rem; font-weight: 800; color: #ff9f43; display: block; }
+    .stat-label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; }
+
+    .jitter-vibration {
+       position: absolute;
+       inset: 0;
+       background: radial-gradient(circle, rgba(255,159,67,0.1) 0%, transparent 70%);
+       opacity: 0;
+       pointer-events: none;
+    }
+    .active .jitter-vibration {
+       animation: vibrate 0.1s infinite;
+       opacity: 1;
+    }
+    @keyframes vibrate {
+       0% { transform: translate(1px, 1px); }
+       25% { transform: translate(-1px, -1px); }
+       50% { transform: translate(1px, -1px); }
+       75% { transform: translate(-1px, 1px); }
+       100% { transform: translate(1px, 1px); }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Infinite Jitter Click Test</h1>
+      <p>Analyze your finger vibration frequency and specialized high-speed clicking throughput.</p>
+    </div>
+
+    <div class="jitter-workspace">
+      <div class="stats-main">
+        <div class="stat-box">
+          <span class="stat-val" id="time-left">10.0</span>
+          <span class="stat-label">Seconds</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-val" id="click-count">0</span>
+          <span class="stat-label">Clicks</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-val" id="cps-val">0.0</span>
+          <span class="stat-label">Jitter CPS</span>
+        </div>
+      </div>
+
+      <div class="jitter-area" id="jitter-area">
+         <div class="jitter-vibration"></div>
+         <div class="jitter-hint">Hold & Vibrate</div>
+      </div>
+
+      <button onclick="resetTest()" class="btn btn-secondary btn-lg">Reset Workout</button>
+
+      <!-- SEO CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2>What is Jitter Clicking?</h2>
+        <p>Jitter clicking is a specialized technique where a user creates rapid muscle vibrations in their hand and forearm to click the mouse as fast as possible. This method is highly popular in competitive gaming circles. Our <strong>online jitter click test</strong> is designed to handle the high-frequency interrupts generated by this technique, providing a professional auditor for your specialized clicking performance.</p>
+
+        <h3 class="mt-4">Mastering the Jitter Technique</h2>
+        <p>Unlike standard clicking, jitter clicking requires locking your arm muscles to create "tremors." While effective for reaching 10-15 CPS, it can be physically demanding. By using our <strong>jitter clicking trainer</strong>, you can measure your technique's stability over a standard 10-second interval. Avoid overstraining and use our <strong>rapid click checker</strong> to find the sweet spot between speed and physical comfort.</p>
+
+        <h3 class="mt-4">Hardware vs. Technique</h2>
+        <p>A high-quality gaming mouse with low-latency switches is essential for high jitter scores. Our <strong>mouse performance tool</strong> helps you verify if your hardware is correctly registering every tremor. If your <strong>online jitter test</strong> results show dropped clicks, it might be time to adjust your mouse's debounce settings or upgrade to optical switches that can handle thousands of activations per minute.</p>
+
+        <h3 class="mt-4">Privacy and Professionalism</h2>
+        <p>At 99tool.in, we treat your skills with professional respect. Our <strong>private jitter tester</strong> runs 100% locally in your browser session. We do not store your click patterns or metrics. This <strong>secure performance tool</strong> provides the neutral, high-fidelity environment required for serious training without any third-party tracking or intrusive advertisements.</p>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const area = document.getElementById('jitter-area');
+    const clicksDisp = document.getElementById('click-count');
+    const timeDisp = document.getElementById('time-left');
+    const cpsDisp = document.getElementById('cps-val');
+
+    let clicks = 0;
+    let timer = 10;
+    let startTime = 0;
+    let isActive = false;
+    let interval = null;
+
+    function resetTest() {
+       clearInterval(interval);
+       isActive = false;
+       clicks = 0;
+       timer = 10;
+       clicksDisp.innerText = '0';
+       timeDisp.innerText = '10.0';
+       cpsDisp.innerText = '0.0';
+       area.classList.remove('active');
+       area.querySelector('.jitter-hint').innerText = 'Hold & Vibrate';
+    }
+
+    area.addEventListener('mousedown', (e) => {
+       if (timer <= 0) return;
+       if (!isActive) startTest();
+       clicks++;
+       clicksDisp.innerText = clicks;
+       calculateCPS();
+    });
+
+    // Touch support for mobile jittering
+    area.addEventListener('touchstart', (e) => {
+       e.preventDefault();
+       if (timer <= 0) return;
+       if (!isActive) startTest();
+       clicks++;
+       clicksDisp.innerText = clicks;
+       calculateCPS();
+    });
+
+    function startTest() {
+       isActive = true;
+       startTime = performance.now();
+       area.classList.add('active');
+       area.querySelector('.jitter-hint').innerText = 'JITTERING...';
+       
+       interval = setInterval(() => {
+          const elapsed = (performance.now() - startTime) / 1000;
+          const remaining = Math.max(0, 10 - elapsed);
+          timeDisp.innerText = remaining.toFixed(1);
+          
+          if (remaining <= 0) {
+             clearInterval(interval);
+             isActive = false;
+             area.classList.remove('active');
+             area.querySelector('.jitter-hint').innerText = 'Workout Complete';
+             calculateCPS(true);
+          }
+       }, 50);
+    }
+
+    function calculateCPS(final = false) {
+       const elapsed = final ? 10 : Math.max(0.1, (performance.now() - startTime) / 1000);
+       const cps = (clicks / elapsed).toFixed(1);
+       cpsDisp.innerText = cps;
+    }
+
+    resetTest();
+  </script>
+</body>
+</html>

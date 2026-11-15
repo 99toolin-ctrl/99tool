@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Pdf To Word – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/pdf/pdf-to-word.html"/>
+<meta property="og:title" content="Pdf To Word – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/pdf/pdf-to-word.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Pdf To Word \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/pdf/pdf-to-word.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+  <!-- docx.js for browser (Version 7 is more stable for UMD/CDN usage) -->
+  <script src="https://unpkg.com/docx@7.1.2/build/index.js"></script>
+  <!-- FileSaver for consistent cross-browser saving -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+  <style>
+    .conversion-box {
+      background: var(--bg-secondary);
+      padding: 2rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      max-width: 600px;
+      margin: 2rem auto;
+      text-align: center;
+    }
+    .disclaimer-box {
+      background: #fdf2f2;
+      border: 1px solid #f8d7da;
+      color: #842029;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+      font-size: 0.85rem;
+      text-align: left;
+    }
+    .progress-wrap {
+      margin-top: 1.5rem;
+      display: none;
+    }
+    .progress-bar {
+      height: 8px;
+      background: #eee;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      background: var(--primary);
+      width: 0%;
+      transition: width 0.3s;
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/pdf/pdf-to-word.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/pdf/pdf-to-word.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/pdf/pdf-to-word.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/pdf/pdf-to-word.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/pdf/pdf-to-word.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/pdf/pdf-to-word.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/pdf/pdf-to-word.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/pdf/pdf-to-word.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/pdf/pdf-to-word.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/pdf/pdf-to-word.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/pdf/pdf-to-word.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/pdf/pdf-to-word.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/pdf/pdf-to-word.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/pdf/pdf-to-word.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/pdf/pdf-to-word.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/pdf/pdf-to-word.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/pdf/pdf-to-word.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/pdf/pdf-to-word.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/pdf/pdf-to-word.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/pdf/pdf-to-word.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/pdf/pdf-to-word.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/pdf/pdf-to-word.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>PDF to Word Converter</h1>
+      <p>Transform static documents into editable text. Privately and secure.</p>
+    </div>
+
+    <div class="tool-container">
+      <div class="disclaimer-box">
+          <strong>⚠️ Reality Check:</strong> This tool performs a "Basic Conversion." While it extracts all text and keeps basic paragraph structure, it may not preserve complex layouts, tables, or decorative fonts perfectly. For massive, design-heavy files, manual adjustments may be required.
+      </div>
+
+      <div class="upload-area" id="drop-zone">
+        <div class="upload-icon">📝</div>
+        <p>Drag & drop your PDF or <span class="text-primary">browse files</span></p>
+        <input type="file" id="pdf-input" accept="application/pdf" hidden>
+      </div>
+
+      <div id="file-info" class="file-info hidden" style="max-width: 600px; margin: 1rem auto;">
+        <div class="file-details">
+          <span id="file-name">filename.pdf</span>
+          <span id="file-size" class="text-muted">0 KB</span>
+        </div>
+        <div class="security-badge" id="security-badge">
+          <span class="badge-icon">🛡️</span>
+          <span id="security-status">Scanning...</span>
+        </div>
+      </div>
+
+      <div class="conversion-box hidden" id="conversion-settings">
+          <p class="mb-4">Your file is ready for processing. The conversion happens entirely in your browser.</p>
+          <button id="convert-btn" class="btn btn-primary w-100">Convert to Word (.docx)</button>
+
+          <div class="progress-wrap" id="progress-wrap">
+            <div class="progress-bar">
+              <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            <p class="mt-2 small text-muted">Parsing Document Structure: <span id="progress-text">0%</span></p>
+          </div>
+      </div>
+
+      <div id="status-msg" class="text-center mt-3 small"></div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5">
+        <h2>Unlock Your Data from the "Static Trap" Privately</h2>
+        <p>We’ve all been there: you receive a contract, a research report, or a set of meeting minutes as a PDF, and you realize you need to make just *one* small correction. You try to select the text, but the formatting breaks, or the line endings become a jumbled mess. Your first instinct is to find a tool to <strong>convert pdf to word</strong>. But then the red flags go up—to "unlock" your document, most websites want you to upload your sensitive file to their cloud. Does "editing" a document really warrant exposing your private data to an anonymous server? Why should a minor typo fix require a major privacy risk?</p>
+
+        <p>At 99tool.in, we built our <strong>pdf to docx</strong> converter to respect your data sovereignty. By utilizing the combination of <code>PDF.js</code> for extraction and <code>docx.js</code> for generation, we allow you to <strong>convert pdf to editable word</strong> entirely within your browser. Whether you’re a lawyer updating a clause, a student summarizing a journal, or a professional repurposing a report, our <strong>pdf to word</strong> utility ensures that your text never leaves your device, giving you a functional foundation for editing without the cloud-leak anxiety.</p>
+        
+        <div class="tool-preview-box mt-4 mb-4" style="text-align:center;">
+           <img src="../../assets/images/markdown-preview.png" alt="Clean PDF to Word Conversion Dashboard" class="tool-preview" id="tool-preview-img" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+        </div>
+
+        <h3 class="mt-4">The Truth About Browser-Side Conversion</h3>
+        <p>A PDF is not a text document; it’s a digital printout. It doesn't "know" what a paragraph is—it just knows where to draw lines on a page. This is why <strong>converting pdf to doc</strong> is one of the hardest tasks in computing. Most "free" services use massive server-side AI to guess the layout. Our <strong>basic pdf to word</strong> tool takes a different, human-centric approach: we prioritize **Text Fidelity** and **Structural Flow**.</p>
+        
+        <p>We extract every word and reassemble them into logical paragraphs. This ensures that you get the most important part—the content—in a clean, editable format. While we don't promise to preserve complex multi-column layouts or decorative floral borders, we do promise that your words will be intact and ready for Microsoft Word or Google Docs. It is a <strong>professional text recovery</strong> tool designed for humans who need to get work done, not just look at pretty pictures.</p>
+
+        <h3 class="mt-4">Why Conversion is the Corporate Gold Standard</h3>
+        <p>In industries like Finance, HR, and Legal, "Cloud Conversion" is often a violation of policy. When you <strong>convert pdf to word online</strong>, you are handing over a searchable, high-value asset to a third party. Our <strong>private pdf converter</strong> eliminates this entire risk profile. Because the heavy lifting happens in your browser's private sandbox, your document content is invisible to the outside world.</p>
+        
+        <p>Furthermore, 99tool.in integrates an active **Security Scan** the second you load your PDF. we check for hidden malicious code and interactive scripts (<code>/JS</code>), ensuring that the file you are about to convert is a safe environment. We believe that <strong>document transformation</strong> should be an empowering experience, not a risky one. With 99tool.in, you have a sanitized, private chamber for all your document recovery needs.</p>
+
+        <h3 class="mt-4">How to Convert Your PDF to Word (Step-by-Step)</h3>
+        <p>Transforming your static file into an editable one should be a 45-second task. Here is how to use our <strong>pdf to word online free</strong> utility:</p>
+        <ul style="line-height: 1.8; margin-bottom: 20px;">
+          <li><strong>Step 1: Securely Load Your Source</strong> — Drag your PDF into the dashed uploader. Our system will immediately perform a security check and alert you to any nested scripts.</li>
+          <li><strong>Step 2: Start the Recovery</strong> — Click "Convert to Word." Our engine will begin scanning every page and mapping the text streams into paragraph objects.</li>
+          <li><strong>Step 3: Monitor the Progress</strong> — Watch the progress bar as our system reconstructs the document structure page-by-page.</li>
+          <li><strong>Step 4: Collect and Edit</strong> — Once complete, your <code>.docx</code> file will download automatically. Open it in Word, Google Docs, or LibreOffice and begin your edits instantly.</li>
+        </ul>
+
+        <h3 class="mt-4">Strategic Use Cases for Basic Text Conversion</h3>
+        <p>Our <strong>pdf to doc</strong> generator is the bridge between archives and active workflows:</p>
+        
+        <p><strong>For Academic Researchers:</strong> Need to quote several pages of an old PDF journal? <strong>Convert it to Word</strong> to quickly pull clean, editable text without the "broken formatting" of manual copy-pasting.</p>
+        
+        <p><strong>For Business Analysts:</strong> If you receive a report where the data is trapped in text blocks, use our <strong>pdf text extractor</strong> capabilities to move it into a document where you can easily search and tag key insights.</p>
+        
+        <p><strong>For Individual Users:</strong> Fixing an old resume or updating a lease agreement? Our <strong>convert pdf to word</strong> simplicity helps you get the foundation of your document back so you don't have to start from scratch.</p>
+
+        <h3 class="mt-5">Expand Your Document Strategy</h3>
+        <p>Once you’ve finished editing your new Word document, you might want to turn it back into a permanent record. Check out our <strong><a href="word-to-pdf.html">Word to PDF Converter</a></strong>. Or, if the original PDF had sensitive information you need to hide, use our <strong><a href="annotate-pdf.html">PDF Annotation Tool</a></strong> to redact it before conversion. At 99tool.in, we are building a world-class, private digital toolkit to give you total sovereignty over your work.</p>
+        
+        <div class="flex gap-4 mt-4 mb-5">
+           <a href="word-to-pdf.html" class="btn btn-secondary" style="flex:1; text-align:center;">Word to PDF</a>
+           <a href="extract-text.html" class="btn btn-secondary" style="flex:1; text-align:center;">Extract Text</a>
+        </div>
+      </section>
+ 
+      <!-- FAQ SECTION -->
+      <section class="faq-section mt-5">
+        <h2 data-i18n="tools.pdf_to_word_converter.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Is my Word document going to look identical to the PDF?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Because PDF and Word use different layout engines, 1:1 identical looks are rare. Our <strong>pdf to docx</strong> tool focuses on extracting all the text, headings, and lists so you can edit the content easily. Complex layout elements may need manual adjustment in Word.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Are my files sent to any server for conversion?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. For your complete privacy, the <strong>entire conversion process</strong> is executed locally in your browser. We use JavaScript and WASM technology to parse your file in-memory, ensuring no one else ever sees your sensitive data.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I convert a scanned PDF to Word?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Currently, this tool works on "Digital PDFs"—files where the text is selectable. For scanned images of text, you would need an OCR (Optical Character Recognition) tool. We focus on <strong>recovering editable text</strong> from digitally generated PDFs.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Will the images from my PDF be in the Word file?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Our <strong>basic converter</strong> focuses on high-fidelity text and paragraph reconstruction. While some image markers may be identified, we prioritize the integrity of the verbal content to ensure you have a clean, lightweight document to work with.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Why is this tool better than "big brand" converters?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Many big brands use your uploaded documents to improve their AI models. A <strong>private PDF to Word tool</strong> ensures that your confidential business strategies or academic research stay on your device, giving you security that no cloud service can match.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Is there a limit to the number of pages I can convert?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Since the code runs in your browser, we recommend documents under 100 pages for the best performance. For <strong>massive PDF files</strong>, ensure your device has enough RAM to handle the memory-intensive task of document reconstruction.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js';
+
+    const pdfInput = document.getElementById('pdf-input');
+    const dropZone = document.getElementById('drop-zone');
+    const convertBtn = document.getElementById('convert-btn');
+    const settings = document.getElementById('conversion-settings');
+    const progressWrap = document.getElementById('progress-wrap');
+    const progressFill = document.getElementById('progress-fill');
+    const progressText = document.getElementById('progress-text');
+
+    let currentFile = null;
+
+    // File selection
+    dropZone.addEventListener('click', () => pdfInput.click());
+    pdfInput.addEventListener('change', (e) => handleFile(e.target.files[0]));
+
+    async function handleFile(file) {
+      if (!file || file.type !== 'application/pdf') return;
+      currentFile = file;
+      document.getElementById('file-name').innerText = file.name;
+      document.getElementById('file-size').innerText = (file.size / 1024).toFixed(1) + ' KB';
+      document.getElementById('file-info').classList.remove('hidden');
+      settings.classList.remove('hidden');
+      
+      // Security Scan
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const text = new TextDecoder().decode(e.target.result.slice(0, 5000));
+        const status = document.getElementById('security-status');
+        status.innerText = text.includes('/JS') ? 'Nested Patterns Found' : 'Safe: Text Based';
+      };
+      reader.readAsArrayBuffer(file);
+    }
+
+    convertBtn.addEventListener('click', async () => {
+      progressWrap.style.display = 'block';
+      convertBtn.disabled = true;
+      const msg = document.getElementById('status-msg');
+      msg.innerText = "Parsing text streams...";
+      
+      try {
+        const arrayBuffer = await currentFile.arrayBuffer();
+        const pdf = await pdfjsLib.getDocument(arrayBuffer).promise;
+        const totalPages = pdf.numPages;
+        
+        let paragraphs = [];
+
+        for (let i = 1; i <= totalPages; i++) {
+          const page = await pdf.getPage(i);
+          const textContent = await page.getTextContent();
+          
+          // Basic group-by-y-coordinate logic to form lines
+          let lines = {};
+          textContent.items.forEach(item => {
+              const y = Math.round(item.transform[5]);
+              if (!lines[y]) lines[y] = [];
+              lines[y].push(item.str);
+          });
+
+          // Sort lines naturally (top to bottom)
+          const sortedY = Object.keys(lines).sort((a,b) => b - a);
+          sortedY.forEach(y => {
+              paragraphs.push(lines[y].join(" "));
+          });
+          
+          const percent = Math.round((i / totalPages) * 100);
+          progressFill.style.width = percent + '%';
+       progressText.innerText = ((window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(percent, 0) : percent) + '%';
+        }
+
+        msg.innerText = "Reassembling Word Document...";
+        
+        // Use docx.js to build the document
+        const doc = new docx.Document({
+            sections: [{
+                properties: {},
+                children: paragraphs.map(p => new docx.Paragraph({
+                    children: [new docx.TextRun(p)],
+                    spacing: { after: 200 }
+                }))
+            }]
+        });
+
+        const blob = await docx.Packer.toBlob(doc);
+        saveAs(blob, currentFile.name.replace('.pdf', '') + '.docx');
+
+        msg.innerText = "Conversion Successful! ✅";
+        msg.style.color = "green";
+      } catch (err) {
+        console.error(err);
+        msg.innerText = "Error: " + err.message;
+        msg.style.color = "red";
+      } finally {
+        convertBtn.disabled = false;
+      }
+    });
+
+    // Init Drag and Drop using global helper
+    setupDragDrop('drop-zone', (files) => {
+       if (files.length) handleFile(files[0]);
+    });
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

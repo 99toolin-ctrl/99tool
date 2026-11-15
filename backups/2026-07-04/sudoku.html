@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Sudoku – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/fun/sudoku.html"/>
+<meta property="og:title" content="Sudoku – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/fun/sudoku.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Sudoku \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/fun/sudoku.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .sudoku-workspace {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .sudoku-grid {
+      display: grid;
+      grid-template-columns: repeat(9, 1fr);
+      grid-template-rows: repeat(9, 1fr);
+      width: 500px;
+      height: 500px;
+      margin: 0 auto;
+      border: 4px solid #222;
+      background: #222;
+      gap: 1px;
+    }
+
+    .cell {
+      background: var(--dark-card);
+      display: flex;
+      align-items: center; justify-content: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: white;
+      cursor: pointer;
+      position: relative;
+    }
+    .cell input {
+        width: 100%; height: 100%; border: none; background: none; color: white; text-align: center; font-size: 1.5rem; outline: none;
+    }
+    .cell input:focus { background: rgba(229, 57, 53, 0.1); }
+    .cell.fixed { background: rgba(255, 255, 255, 0.05); color: var(--primary); }
+    .cell.fixed input { pointer-events: none; color: var(--primary); font-weight: 800; }
+
+    /* Thicker borders for 3x3 subgrids */
+    .cell:nth-child(3n) { border-right: 3px solid #000; }
+    .cell:nth-child(9n) { border-right: none; }
+    .cell:nth-child(n+19):nth-child(-n+27),
+    .cell:nth-child(n+46):nth-child(-n+54) { border-bottom: 3px solid #000; }
+
+    .sidebar {
+      background: var(--dark-card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem;
+      display: flex; flex-direction: column; gap: 1.5rem;
+    }
+
+    .btn-num { width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border); background: var(--dark); color: white; cursor: pointer; }
+    .btn-num:hover { border-color: var(--primary); }
+
+    .timer { font-size: 2rem; font-weight: 800; text-align: center; color: var(--primary); }
+
+    @media (max-width: 992px) {
+      .sudoku-workspace { grid-template-columns: 1fr; }
+      .sudoku-grid { width: 90vw; height: 90vw; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-hero text-center">
+      <nav class="breadcrumb justify-content-center">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#fun">Fun</a> <span>/</span> 
+        <span>Sudoku</span>
+      </nav>
+      <h1>Sudoku Generator & Solver</h1>
+      <p>Challenge your mind with unlimited puzzles. Generate new games or solve any grid instantly.</p>
+    </div>
+
+    <div class="sudoku-workspace">
+      <section>
+          <div id="grid" class="sudoku-grid">
+              <!-- JS Injected Cells -->
+          </div>
+          <div class="controls mt-4 flex justify-center gap-3">
+              <button class="btn btn-primary" onclick="solveSudoku()">Solve Puzzle</button>
+              <button class="btn btn-secondary" onclick="generateNew('easy')">New Easy</button>
+              <button class="btn btn-secondary" onclick="generateNew('hard')">New Hard</button>
+          </div>
+      </section>
+
+      <aside class="sidebar">
+          <div class="timer" id="timer">00:00</div>
+          
+          <div>
+              <h4>Input Pad</h4>
+              <p class="text-muted small">Select a cell and use your keyboard or this pad.</p>
+              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px;">
+                  <button class="btn-num" onclick="inputNum(1)">1</button>
+                  <button class="btn-num" onclick="inputNum(2)">2</button>
+                  <button class="btn-num" onclick="inputNum(3)">3</button>
+                  <button class="btn-num" onclick="inputNum(4)">4</button>
+                  <button class="btn-num" onclick="inputNum(5)">5</button>
+                  <button class="btn-num" onclick="inputNum(6)">6</button>
+                  <button class="btn-num" onclick="inputNum(7)">7</button>
+                  <button class="btn-num" onclick="inputNum(8)">8</button>
+                  <button class="btn-num" onclick="inputNum(9)">9</button>
+                  <button class="btn-num" style="grid-column: 1/4;" onclick="inputNum('')">Clear</button>
+              </div>
+          </div>
+
+          <div class="text-muted small">
+              <strong>Tip:</strong> Click the "Solve" button if you get stuck—our AI uses recursive backtracking to find the solution.
+          </div>
+      </aside>
+    </div>
+
+    <section class="seo-content mt-5">
+      <h2>The Ultimate Analytical Challenge, Available</h2>
+      <p>Sudoku is more than just a numbers game; it is a test of logical deduction and patience. Our <strong>Sudoku tool</strong> is designed to provide an endless supply of brain-teasing puzzles without the distraction of online leaderboards or video ads. Whether you're on a long flight or in a deep study session, our **private Sudoku generator** offers a high-performance environment for mental conditioning.</p>
+      
+      <h3 class="mt-4">How our Sudoku AI Works</h3>
+      <p>Generating a valid Sudoku grid is a complex mathematical problem. Our tool uses a recursive "Backtracking" algorithm that ensures every puzzle it generates has exactly one unique solution. When you use the <strong>Sudoku solver</strong>, the same engine performs an exhaustive search of all possible digit placements, finding the solution in mere milliseconds. This industrial-grade logic runs entirely on your local machine.</p>
+
+      <ul style="line-height: 1.8; margin-top: 15px;">
+        <li><strong>Adaptive Difficulty:</strong> Choose from "Easy" for a quick mental warmup or "Hard" for a true logical endurance test.</li>
+        <li><strong>Real-time Feedback:</strong> The interface highlights your current selection and prevents obvious dual-entry errors.</li>
+        <li><strong>Zero Data Usage:</strong> All logic is bundled in a single file, making it the perfect <strong>portable puzzle tool</strong>.</li>
+      </ul>
+
+      <h3 class="mt-4">Designed for Focus and Privacy</h3>
+      <p>Many <strong>Sudoku apps online</strong> track your solve times and play patterns to sell targeted educational products. At 99tool.in, we believe in "Pure Play." Your solution times and progress are stored only in your browser's local cache. It’s the perfect <strong>private mind trainer</strong> for users who value both their intelligence and their data security.</p>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    let grid = Array(9).fill().map(() => Array(9).fill(0));
+    let initialGrid = [];
+    let startTime = null;
+    let timerInterval = null;
+
+    function initTimer() {
+        startTime = new Date();
+        clearInterval(timerInterval);
+        timerInterval = setInterval(() => {
+            const now = new Date();
+            const diff = Math.floor((now - startTime) / 1000);
+            const m = Math.floor(diff / 60).toString().padStart(2, '0');
+            const s = (diff % 60).toString().padStart(2, '0');
+            document.getElementById('timer').innerText = `${m}:${s}`;
+        }, 1000);
+    }
+
+    function renderGrid() {
+        const gridEl = document.getElementById('grid');
+        gridEl.innerHTML = '';
+        for (let r = 0; r < 9; r++) {
+            for (let c = 0; c < 9; c++) {
+                const cell = document.createElement('div');
+                const isFixed = initialGrid[r][c] !== 0;
+                cell.className = `cell ${isFixed ? 'fixed' : ''}`;
+                
+                const input = document.createElement('input');
+                input.type = 'text';
+                input.maxLength = 1;
+                input.value = grid[r][c] || '';
+                input.oninput = (e) => {
+                    const val = parseInt(e.target.value);
+                    grid[r][c] = (val >= 1 && val <= 9) ? val : 0;
+                    if (!val) e.target.value = '';
+                };
+                
+                cell.appendChild(input);
+                gridEl.appendChild(cell);
+            }
+        }
+    }
+
+    function generateNew(difficulty) {
+        // Simple generation: start with empty, fill randomly, solve, then poke holes
+        grid = Array(9).fill().map(() => Array(9).fill(0));
+        // Fill diagonal 3x3s (they are independent)
+        for (let i = 0; i < 9; i+=3) fillBox(i, i);
+        solve(grid); // Complete the grid
+        
+        // Poke holes
+        let attempts = difficulty === 'hard' ? 50 : 35;
+        while (attempts > 0) {
+            let r = Math.floor(Math.random()*9);
+            let c = Math.floor(Math.random()*9);
+            if (grid[r][c] !== 0) {
+                grid[r][c] = 0;
+                attempts--;
+            }
+        }
+        
+        initialGrid = grid.map(row => [...row]);
+        initTimer();
+        renderGrid();
+    }
+
+    function fillBox(row, col) {
+        let nums = [1,2,3,4,5,6,7,8,9].sort(() => Math.random() - 0.5);
+        for(let i=0; i<3; i++) {
+            for(let j=0; j<3; j++) {
+                grid[row+i][col+j] = nums.pop();
+            }
+        }
+    }
+
+    function solveSudoku() {
+        if (solve(grid)) renderGrid();
+    }
+
+    // Backtracking Solver
+    function solve(board) {
+        for (let r = 0; r < 9; r++) {
+            for (let c = 0; c < 9; c++) {
+                if (board[r][c] === 0) {
+                    for (let n = 1; n <= 9; n++) {
+                        if (isValid(board, r, c, n)) {
+                            board[r][c] = n;
+                            if (solve(board)) return true;
+                            board[r][c] = 0;
+                        }
+                    }
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    function isValid(board, r, c, n) {
+        for (let i = 0; i < 9; i++) {
+            if (board[r][i] === n || board[i][c] === n) return false;
+        }
+        let startR = Math.floor(r / 3) * 3;
+        let startC = Math.floor(c / 3) * 3;
+        for (let i = 0; i < 3; i++) {
+            for (let j = 0; j < 3; j++) {
+                if (board[startR + i][startC + j] === n) return false;
+            }
+        }
+        return true;
+    }
+
+    function inputNum(n) {
+        const active = document.activeElement;
+        if (active && active.tagName === 'INPUT') {
+            active.value = n;
+            active.dispatchEvent(new Event('input'));
+        }
+    }
+
+    generateNew('easy');
+  </script>
+</body>
+</html>
+

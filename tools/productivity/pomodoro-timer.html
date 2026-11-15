@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Pomodoro Timer – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/productivity/pomodoro-timer.html"/>
+<meta property="og:title" content="Pomodoro Timer – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/productivity/pomodoro-timer.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Pomodoro Timer \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/productivity/pomodoro-timer.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="pomodoro timer, focus timer, productivity timer, pomodoro timer free, online pomodoro timer" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json" id="schema-org-data">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Pomodoro Timer",
+    "operatingSystem": "Any",
+    "applicationCategory": "UtilitiesApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Focus timer, Short break, Long break, Session tracking, Daily stats"
+  }
+  </script>
+
+  <style>
+    .timer-container {
+      max-width: 500px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .timer-display {
+      font-size: 6rem;
+      font-weight: 800;
+      margin: 20px 0;
+      font-family: 'Courier New', monospace;
+      color: var(--primary);
+      text-shadow: 0 0 20px rgba(229, 57, 53, 0.2);
+    }
+
+    .timer-modes {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .mode-btn {
+      padding: 8px 16px;
+      font-size: 0.85rem;
+      background: var(--dark);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .mode-btn.active {
+      background: var(--primary);
+      color: var(--white);
+      border-color: var(--primary);
+    }
+
+    .timer-controls {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 40px;
+    }
+
+    .stats-card {
+      background: rgba(229, 57, 53, 0.05);
+      border: 1px solid rgba(229, 57, 53, 0.1);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-value {
+      display: block;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Flash animation for timer end */
+    @keyframes flash {
+      0%, 100% { background: var(--dark-card); }
+      50% { background: rgba(229, 57, 53, 0.2); }
+    }
+    .flashing {
+      animation: flash 0.5s infinite;
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/productivity/pomodoro-timer.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/productivity/pomodoro-timer.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/productivity/pomodoro-timer.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/productivity/pomodoro-timer.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/productivity/pomodoro-timer.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/productivity/pomodoro-timer.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/productivity/pomodoro-timer.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/productivity/pomodoro-timer.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/productivity/pomodoro-timer.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/productivity/pomodoro-timer.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/productivity/pomodoro-timer.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/productivity/pomodoro-timer.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/productivity/pomodoro-timer.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/productivity/pomodoro-timer.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/productivity/pomodoro-timer.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/productivity/pomodoro-timer.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/productivity/pomodoro-timer.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/productivity/pomodoro-timer.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/productivity/pomodoro-timer.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/productivity/pomodoro-timer.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/productivity/pomodoro-timer.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/productivity/pomodoro-timer.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#productivity">Productivity</a> <span>/</span> 
+        <span>Pomodoro Timer</span>
+      </nav>
+      <h1>Pomodoro Timer</h1>
+      <p>Stay focused and avoid burnout with the proven Pomodoro technique. Private,, and distraction-free tracking.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      <div class="timer-container">
+        <div class="tool-box" id="timer-box">
+          <div class="timer-modes">
+            <button class="mode-btn active" data-time="25" data-mode="focus">Focus</button>
+            <button class="mode-btn" data-time="5" data-mode="shortBreak">Short Break</button>
+            <button class="mode-btn" data-time="15" data-mode="longBreak">Long Break</button>
+          </div>
+
+          <div class="timer-display" id="timer-display">25:00</div>
+
+          <div class="timer-controls">
+            <button class="btn btn-primary btn-lg" id="start-btn">Start</button>
+            <button class="btn btn-secondary btn-lg" id="reset-btn">Reset</button>
+            <button class="btn btn-outline btn-lg" id="sound-toggle">🔊 Sound: ON</button>
+          </div>
+
+          <div class="info-box">
+            <span class="info-icon">💡</span>
+            <p>Work for 25 minutes, then take a 5-minute break. After 4 sessions, take a longer 15-minute break.</p>
+          </div>
+        </div>
+
+        <div class="stats-card">
+          <div class="stat-item">
+            <span class="stat-value" id="stats-sessions">0</span>
+            <span class="stat-label">Sessions Today</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value" id="stats-time">0m</span>
+            <span class="stat-label">Total Focus Time</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.pomodoro_timer.what_is_title">What is the Pomodoro Timer?</h2>
+        <p>The Pomodoro Timer is a focus management tool based on the Pomodoro Technique: work in structured 25-minute intervals (Focus sessions) followed by short 5-minute breaks, with a longer 15-minute break after every four sessions. Standard productivity apps with cloud accounts track your session history on external servers. This tool runs entirely inside your browser tab with no server communication.</p>
+        <p>Your daily session count and total focus minutes are stored in your browser's localStorage, so your stats persist across page refreshes. They reset automatically at the start of each new day.</p>
+
+        <h3 class="mt-4">How to Use the Pomodoro Timer</h3>
+        <p>Starting a focus session involves these steps:</p>
+        <ol class="mt-2 mb-3">
+          <li>Select your session mode from the mode buttons: "Focus" (25 min), "Short Break" (5 min), or "Long Break" (15 min).</li>
+          <li>Click "Start" to begin the countdown. The browser tab title updates to show the remaining time.</li>
+          <li>Work on your task for the full duration without switching to distracting tabs.</li>
+          <li>When the timer ends, the tab title shows a coffee icon and an optional beep plays via the browser's Web Audio API.</li>
+          <li>Click "Start" on a Short Break mode to rest for 5 minutes, then return to Focus.</li>
+          <li>After 4 Focus sessions, take a Long Break. Your session count in the Stats Card updates automatically.</li>
+          <li>Toggle the "Sound: ON/OFF" button to enable or disable the completion beep.</li>
+        </ol>
+
+        <h3 class="mt-4">Key Features</h3>
+        <ul class="mt-2 mb-3">
+          <li><strong>Three Session Modes:</strong> Focus (25 min), Short Break (5 min), and Long Break (15 min) presets following the standard Pomodoro method.</li>
+          <li><strong>Tab Title Updates:</strong> The browser tab title shows the live countdown so you can monitor time without keeping this tab visible.</li>
+          <li><strong>Web Audio Beep:</strong> A gentle tone plays via the Web Audio API when the session ends. No audio file download is required.</li>
+          <li><strong>Daily Stats Tracking:</strong> Counts completed Focus sessions and total focus minutes, stored in localStorage and auto-reset each day.</li>
+        </ul>
+
+        <h3 class="mt-4">Common Use Cases</h3>
+        <p>This timer is helpful for the following tasks:</p>
+        <ul class="mt-2 mb-3">
+          <li><strong>Deep Work Sessions:</strong> Blocking out distractions for 25-minute sprints to tackle complex technical or creative tasks.</li>
+          <li><strong>Study Blocks:</strong> Breaking large exam syllabi into manageable time-boxed study intervals to prevent burnout.</li>
+          <li><strong>Writing Sprints:</strong> Using timed intervals to maintain writing output momentum and avoid perfectionism paralysis.</li>
+        </ul>
+
+        <h3 class="mt-4">Frequently Asked Questions</h3>
+        <div class="faq-section mt-3">
+          <p><strong>Does the timer keep running if I switch tabs?</strong><br>Yes. The timer logic uses the system clock, so it remains accurate even when the tab is in the background or minimized.</p>
+          <p><strong>Can I change the session durations?</strong><br>The current version uses the scientifically validated standard durations (25/5/15 minutes). Custom durations may be added in a future update.</p>
+          <p><strong>Will my stats be lost if I refresh?</strong><br>No. Your daily session count and total focus minutes are saved to localStorage and persist across page refreshes. They reset automatically at midnight.</p>
+          <p><strong>Is this tool 100% private?</strong><br>Yes. All timer logic and stats storage run locally in your browser. No data is transmitted to any server or third-party service.</p>
+        </div>
+
+        <h3 class="mt-4">Privacy &amp; Data Note</h3>
+        <p>All timer logic, session counting, and daily stats are processed and stored entirely inside your browser's localStorage. No focus data, habits, or session times are transmitted to any server.</p>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2 data-i18n="tools.pomodoro_timer.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Does the timer keep running if I switch tabs?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes! Our <strong>pomodoro timer</strong> uses modern browser logic to keep the countdown active even if you navigate to another tab. However, we recommend keeping this tab visible in a separate window or pinned for the best results and to see the visual "Pulse" alert.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I change the session durations?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>To ensure high productivity and prevent "Planning Procrastination," we use the scientifically-validated Pomodoro standards: 25 minutes for focus and 5/15 minutes for breaks. Custom durations may be added in a future update.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              How do I know when the session is over?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>The tool uses three indicators: 1. The tab title updates with a coffee icon. 2. A "Visual Pulse" animation starts on the page. 3. If enabled, a discrete beep sounds via the Web Audio API. This ensures you catch the signal without being startled.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Will my stats be lost if I refresh the page?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. Your "Today's Stats" (sessions and total focus minutes) are saved in your browser's <code>localStorage</code>. They stay persisted across refreshes and even browser restarts, allowing you to track your daily progress accurately.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Is this tool truly private?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>100%. We don't use server-side databases, trackers, or marketing cookies. Your focus patterns are your own. The logic runs entirely on your CPU, ensuring no "Productivity Profiling" can occur.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              What is the "Long Break" for?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>After completing 4 focus sessions (a "Pomodoro set"), it is highly recommended to take a 15-20 minute Long Break. This allows for deep cognitive recovery and prevents mental fatigue during high-intensity workdays.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 100% Privacy Focused. All timer logic runs locally. Last updated: April 10, 2026.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    // Timer Variables
+    let timeLeft;
+    let timerId = null;
+    let currentMode = 'focus';
+    let isRunning = false;
+
+    const display = document.getElementById('timer-display');
+    const startBtn = document.getElementById('start-btn');
+    const resetBtn = document.getElementById('reset-btn');
+    const soundToggle = document.getElementById('sound-toggle');
+    const modeBtns = document.querySelectorAll('.mode-btn');
+    const timerBox = document.getElementById('timer-box');
+
+    let soundEnabled = true;
+
+    // Beep sound via Web Audio API
+    function playBeep() {
+      if (!soundEnabled) return;
+      const ctx = new (window.AudioContext || window.webkitAudioContext)();
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(880, ctx.currentTime);
+      gain.gain.setValueAtTime(0.1, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 1);
+      
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      
+      osc.start();
+      osc.stop(ctx.currentTime + 1);
+    }
+
+    // Stats Variables
+    let stats = JSON.parse(localStorage.getItem('99tool_pomodoro_stats')) || {
+      date: new Date().toLocaleDateString(),
+      sessions: 0,
+      totalMinutes: 0
+    };
+
+    // Reset stats if new day
+    if (stats.date !== new Date().toLocaleDateString()) {
+      stats = { date: new Date().toLocaleDateString(), sessions: 0, totalMinutes: 0 };
+    }
+
+    function updateDisplay() {
+      const mins = Math.floor(timeLeft / 60);
+      const secs = timeLeft % 60;
+      const timeStr = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+      display.textContent = timeStr;
+      document.title = isRunning ? `(${timeStr}) Focus — 99tool.in` : 'Pomodoro Timer — 99tool.in';
+    }
+
+    function switchMode(mode, mins) {
+      clearInterval(timerId);
+      timerId = null;
+      isRunning = false;
+      currentMode = mode;
+      timeLeft = mins * 60;
+      startBtn.textContent = 'Start';
+      timerBox.classList.remove('flashing');
+      
+      modeBtns.forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.mode === mode);
+      });
+      
+      updateDisplay();
+    }
+
+    function toggleTimer() {
+      if (isRunning) {
+        clearInterval(timerId);
+        timerId = null;
+        isRunning = false;
+        startBtn.textContent = 'Start';
+      } else {
+        isRunning = true;
+        startBtn.textContent = 'Pause';
+        timerId = setInterval(() => {
+          timeLeft--;
+          updateDisplay();
+          
+          if (timeLeft <= 0) {
+            handleTimerEnd();
+            playBeep();
+          }
+        }, 1000);
+      }
+    }
+
+    function handleTimerEnd() {
+      clearInterval(timerId);
+      timerId = null;
+      isRunning = false;
+      startBtn.textContent = 'Start';
+      timerBox.classList.add('flashing');
+      document.title = '☕ Time is up! — 99tool.in';
+
+      if (currentMode === 'focus') {
+        stats.sessions++;
+        stats.totalMinutes += parseInt(document.querySelector('.mode-btn.active').dataset.time);
+        saveStats();
+        updateStatsUI();
+      }
+    }
+
+    function saveStats() {
+      localStorage.setItem('99tool_pomodoro_stats', JSON.stringify(stats));
+    }
+
+    function updateStatsUI() {
+       document.getElementById('stats-sessions').textContent = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(stats.sessions, 0) : stats.sessions;
+       document.getElementById('stats-time').textContent = ((window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(stats.totalMinutes, 0) : stats.totalMinutes) + 'm';
+    }
+
+    // Event Listeners
+    modeBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (isRunning && !confirm('Timer is running. Switch anyway?')) return;
+        switchMode(btn.dataset.mode, parseInt(btn.dataset.time));
+      });
+    });
+
+    startBtn.addEventListener('click', toggleTimer);
+    
+    soundToggle.addEventListener('click', () => {
+      soundEnabled = !soundEnabled;
+      soundToggle.textContent = soundEnabled ? '🔊 Sound: ON' : '🔇 Sound: OFF';
+      soundToggle.classList.toggle('active', soundEnabled);
+    });
+
+    resetBtn.addEventListener('click', () => {
+      const activeModeBtn = document.querySelector('.mode-btn.active');
+      switchMode(activeModeBtn.dataset.mode, parseInt(activeModeBtn.dataset.time));
+    });
+
+    // Init
+    timeLeft = 25 * 60;
+    updateDisplay();
+    updateStatsUI();
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

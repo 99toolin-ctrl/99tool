@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Code Analyzer – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/developer/code-analyzer.html"/>
+<meta property="og:title" content="Code Analyzer – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/developer/code-analyzer.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Code Analyzer \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/developer/code-analyzer.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="code analyzer, static code analysis, code checker, code quality tool, javascript linter" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json" id="schema-org-data">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Code Analyzer",
+    "operatingSystem": "Any",
+    "applicationCategory": "DeveloperApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Rule-based Static Analysis, Best Practice Checks, Security Mistake Detection, Language Support (JS, HTML, CSS)"
+  }
+  </script>
+
+  <style>
+    .analyzer-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    .editor-pane {
+       background: var(--dark-card);
+       border: 1px solid var(--border);
+       border-radius: var(--radius);
+       padding: 24px;
+    }
+
+    .issues-pane {
+       background: var(--dark-card);
+       border: 1px solid var(--border);
+       border-radius: var(--radius);
+       padding: 24px;
+       height: fit-content;
+       position: sticky;
+       top: 100px;
+    }
+
+    .issue-card {
+       background: var(--dark);
+       border: 1px solid var(--border);
+       border-radius: var(--radius-sm);
+       padding: 12px 16px;
+       margin-bottom: 12px;
+       display: flex;
+       gap: 15px;
+       align-items: flex-start;
+       border-left: 4px solid var(--primary);
+    }
+
+    .issue-type-tag {
+       padding: 2px 8px;
+       border-radius: 4px;
+       font-size: 0.7rem;
+       font-weight: 700;
+       text-transform: uppercase;
+    }
+
+    .type-error { background: rgba(229, 57, 53, 0.2); color: #ef5350; border: 1px solid #ef5350; }
+    .type-warn { background: rgba(255, 152, 0, 0.2); color: #ffb74d; border: 1px solid #ffb74d; }
+    .type-info { background: rgba(33, 150, 243, 0.2); color: #2196f3; border: 1px solid #2196f3; }
+
+    .issue-body { flex: 1; }
+    .issue-title { font-weight: 700; font-size: 0.9rem; margin-bottom: 4px; color: var(--white); }
+    .issue-desc { font-size: 0.8rem; color: var(--text-muted); line-height: 1.4; }
+    .issue-loc { font-family: monospace; font-size: 0.75rem; margin-top: 6px; color: var(--primary-light); }
+
+    .code-input {
+       min-height: 400px;
+       font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+       font-size: 0.85rem;
+       line-height: 1.6;
+    }
+
+    @media (min-width: 900px) {
+       .analyzer-layout { grid-template-columns: 1fr 380px; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/developer/code-analyzer.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/developer/code-analyzer.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/developer/code-analyzer.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/developer/code-analyzer.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/developer/code-analyzer.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/developer/code-analyzer.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/developer/code-analyzer.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/developer/code-analyzer.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/developer/code-analyzer.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/developer/code-analyzer.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/developer/code-analyzer.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/developer/code-analyzer.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/developer/code-analyzer.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/developer/code-analyzer.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/developer/code-analyzer.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/developer/code-analyzer.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/developer/code-analyzer.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/developer/code-analyzer.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/developer/code-analyzer.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/developer/code-analyzer.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/developer/code-analyzer.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/developer/code-analyzer.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#developer">Developer</a> <span>/</span> 
+        <span>Code Analyzer</span>
+      </nav>
+      <h1>Code Analyzer & Quality Checker</h1>
+      <p>Analyze your code for common mistakes and best practices. Rule-based static checker for Javascript, HTML, and CSS. 100% local.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div class="analyzer-layout">
+        <div class="editor-pane">
+           <div class="flex justify-between items-center mb-3">
+              <label class="mb-0">Enter Code to Analyze</label>
+              <select id="lang-select" class="btn btn-secondary btn-sm" style="background: var(--dark); border-color: var(--border); appearance: auto; padding-right: 15px;">
+                 <option value="javascript">JavaScript</option>
+                 <option value="html">HTML</option>
+                 <option value="css">CSS</option>
+              </select>
+           </div>
+           <textarea id="code-input" class="form-control code-input" placeholder="Paste your code here..."></textarea>
+           <div class="flex gap-2 mt-3">
+              <button class="btn btn-primary" id="analyze-btn">Analyze Code</button>
+              <button class="btn btn-secondary" id="clear-btn">Clear</button>
+           </div>
+        </div>
+
+        <div class="issues-pane">
+          <h3>Findings</h3>
+          <div id="issue-summary" class="text-muted mb-4" style="font-size: 0.85rem;">No analysis performed yet.</div>
+          <div id="issue-list">
+             <!-- Issues injected here -->
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTENT SECTION -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.code_analyzer.what_is_title">What is the Code Analyzer & Quality Checker?</h2>
+        <p>The Code Analyzer & Quality Checker is a client-side static code analysis utility designed to inspect JavaScript, HTML, and CSS source code for errors, formatting issues, and security vulnerabilities. By scanning source scripts against a local rule database, you can audit your codebase instantly without external linting configurations.</p>
+        <p>This checker processes all script analyses locally inside your browser's private memory. Because no source codes, variable structures, or logic definitions are uploaded to external databases, your proprietary codebases and algorithms remain strictly confidential.</p>
+
+        <h2 class="mt-4" data-i18n="tools.code_analyzer.how_to_use_title">How to Use the Code Analyzer & Quality Checker</h2>
+        <ol>
+          <li><strong>Select Programming Language:</strong> Choose the language format (JavaScript, HTML, or CSS) from the language dropdown menu in the sidebar.</li>
+          <li><strong>Paste Your Source Code:</strong> Paste your raw code string into the "Code Input" textarea editor.</li>
+          <li><strong>Run the Analysis:</strong> Click the "Analyze Code" button to trigger the local rule-checking scripts.</li>
+          <li><strong>Inspect Findings:</strong> Review the summary metrics and detailed findings listed in the right panel. Findings are categorized by severity levels (such as Error, Warning, or Info).</li>
+          <li><strong>Clear the Editor:</strong> Click the "Clear" button to empty the editor and reset findings for your next script.</li>
+        </ol>
+
+        <h2 class="mt-4" data-i18n="tools.code_analyzer.key_features_title">Key Features</h2>
+        <ul>
+          <li><strong>Multi-Language Rule Sets:</strong> Performs custom audits for JavaScript syntax, HTML tags, and CSS style declarations.</li>
+          <li><strong>Vulnerability Detection:</strong> Flags security issues such as insecure <code>eval()</code> functions or dangerous <code>innerHTML</code> assignments.</li>
+          <li><strong>Semantic Quality Flags:</strong> Identifies unused variables, duplicate declarations, and missing image alt tags.</li>
+          <li><strong>Categorized Severity Reports:</strong> Groups findings into critical errors, warnings, and style hints to prioritize debugging.</li>
+          <li><strong>100% Offline Static Audits:</strong> Runs analysis logic entirely in browser RAM to safeguard your source code.</li>
+        </ul>
+
+        <h2 class="mt-4" data-i18n="tools.code_analyzer.common_use_cases_title">Common Use Cases</h2>
+        <ul>
+          <li><strong>Pre-Commit Sanity Checks:</strong> Scan code snippets for syntax errors or left-over console logs before submitting pull requests.</li>
+          <li><strong>Accessibility Auditing:</strong> Inspect HTML pages for missing accessibility attributes, document outlines, and form labels.</li>
+          <li><strong>CSS Specificity Reviews:</strong> Check stylesheet classes for rule overrides, broken declarations, and layout smells.</li>
+          <li><strong>Secure Sandbox Audits:</strong> Review code snippets containing proprietary corporate algorithms or database queries privately.</li>
+        </ul>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section mt-5">
+        <h2 data-i18n="tools.code_analyzer.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Is this a replacement for tools like ESLint or Prettier?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>This tool is designed for high-speed, configuration-free sanity checks. It does not replace comprehensive build linters like ESLint, but it offers a convenient way to inspect snippets quickly without installing dependencies.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Are my proprietary code blocks uploaded to 99tool.in?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. 99tool.in processes all static analysis, pattern matching, and error reporting locally. Your source code never leaves your computer and is wiped from memory when you close the tab.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              What types of rules are checked for JavaScript?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>The parser flags syntax errors, unused variables, duplicate keys, unsafe expressions (like <code>eval()</code> or <code>document.write()</code>), and unfinished statements.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Why does the tool warn against using !important in CSS?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Using <code>!important</code> breaks the natural CSS cascade, making overrides and stylesheets difficult to debug. The analyzer flags it to encourage managing selectors using specificity hierarchies.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Does the tool support syntax highlighting for errors?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>The findings list provides detailed explanations and line references for each issue. You can easily find the corresponding lines in the code input panel to make corrections.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 Privacy & Data Note: Code analysis and rule checks are processed locally in your browser. No source code or configuration data is sent to our servers.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const analyzeBtn = document.getElementById('analyze-btn');
+    const clearBtn = document.getElementById('clear-btn');
+    const codeInput = document.getElementById('code-input');
+    const langSelect = document.getElementById('lang-select');
+    const issueList = document.getElementById('issue-list');
+    const issueSummary = document.getElementById('issue-summary');
+
+    const rules = {
+      javascript: [
+        { name: 'Avoid "var"', level: 'warn', pattern: /\bvar\b/g, desc: 'Use "let" or "const" instead of "var" for better scoping.' },
+        { name: 'Console Log Found', level: 'info', pattern: /console\.log/g, desc: 'Ensure logs are removed before production.' },
+        { name: 'Potential eval()', level: 'error', pattern: /\beval\(/g, desc: 'eval() is a significant security risk and performance bottleneck.' },
+        { name: 'Missing Semicolon?', level: 'info', pattern: /[^;{} ]\r?\n(?! |\}|\r?\n|$)/g, desc: 'Consider adding explicit semicolons for clarity.' },
+        { name: 'Alert Statement', level: 'warn', pattern: /\balert\(/g, desc: 'Browser alerts are intrusive. Use modal components instead.' },
+        { name: 'Empty Catch Block', level: 'warn', pattern: /catch\s*\([^)]*\)\s*\{\s*\}/g, desc: 'Never silenty catch errors. Add logging or handling.' }
+      ],
+      html: [
+        { name: 'Missing alt attribute', level: 'warn', pattern: /<img(?![^>]*\balt=)[^>]*>/g, desc: 'Images should always have an alt attribute for accessibility.' },
+        { name: 'Inlined Styles', level: 'info', pattern: /style="/g, desc: 'Keep styles in CSS files for better maintainability.' },
+        { name: 'Inlined Scripts', level: 'warn', pattern: /onclick="|onload="/g, desc: 'Use addEventListener in JS instead of HTML event attributes.' },
+        { name: 'Self-Closing Tags', level: 'info', pattern: /<div\s*\/>/g, desc: 'Some tags like div cannot be self-closed in HTML5.' }
+      ],
+      css: [
+        { name: 'Important Usage', level: 'warn', pattern: /!important/g, desc: '!important makes debugging styles extremely difficult.' },
+        { name: 'Pixel Units', level: 'info', pattern: /:\s*\d+px/g, desc: 'Consider using relative units like rem/em for better responsiveness.' },
+        { name: 'ID Selectors', level: 'info', pattern: /#[a-zA-Z0-9_\-]+/g, desc: 'IDs have high specificity; use classes where possible.' }
+      ]
+    };
+
+    function analyze() {
+      const code = codeInput.value;
+      const lang = langSelect.value;
+      const activeRules = rules[lang];
+      
+      if (!code.trim()) return;
+
+      issueList.innerHTML = '';
+      let counts = { error: 0, warn: 0, info: 0 };
+
+      const lines = code.split('\n');
+
+      activeRules.forEach(rule => {
+        let match;
+        // Reset regex state
+        rule.pattern.lastIndex = 0;
+        
+        while ((match = rule.pattern.exec(code)) !== null) {
+          counts[rule.level]++;
+          
+          // Find line number
+          const lineNum = code.substring(0, match.index).split('\n').length;
+          const lineText = lines[lineNum - 1].trim();
+
+          const card = document.createElement('div');
+          card.className = 'issue-card';
+          card.style.borderLeftColor = rule.level === 'error' ? '#ef5350' : (rule.level === 'warn' ? '#ffb74d' : '#2196f3');
+          
+          card.innerHTML = `
+            <span class="issue-type-tag type-${rule.level}">${rule.level}</span>
+            <div class="issue-body">
+              <div class="issue-title">${rule.name}</div>
+              <div class="issue-desc">${rule.desc}</div>
+              <div class="issue-loc">Line ${lineNum}: "${lineText.substring(0, 40)}${lineText.length > 40 ? '...' : ''}"</div>
+            </div>
+          `;
+          issueList.appendChild(card);
+          
+          // Prevent infinite loops on zero-width matches
+          if (rule.pattern.lastIndex === match.index) rule.pattern.lastIndex++;
+        }
+      });
+
+      const total = counts.error + counts.warn + counts.info;
+      issueSummary.innerHTML = `Analysis complete. Found <strong style="color:var(--white)">${total}</strong> issues (${counts.error} Errors, ${counts.warn} Warnings).`;
+      
+      if (total === 0) {
+        issueList.innerHTML = '<div class="text-center py-5" style="color:#81c784;">✅ No issues found with current rules! Good job.</div>';
+      }
+    }
+
+    analyzeBtn.onclick = analyze;
+    clearBtn.onclick = () => {
+      codeInput.value = '';
+      issueList.innerHTML = '';
+      issueSummary.textContent = 'No analysis performed yet.';
+    };
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

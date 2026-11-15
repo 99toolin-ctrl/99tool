@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Base64 Tool – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/developer/base64-tool.html"/>
+<meta property="og:title" content="Base64 Tool – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/developer/base64-tool.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Base64 Tool \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/developer/base64-tool.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    .base64-workspace {
+      max-width: 900px;
+      margin: 2rem auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    @media (max-width: 800px) {
+       .base64-workspace { grid-template-columns: 1fr; }
+    }
+    .text-panel {
+       background: var(--dark-card);
+       border: 1px solid var(--border);
+       padding: 1.5rem;
+       border-radius: 16px;
+       display: flex;
+       flex-direction: column;
+       gap: 15px;
+    }
+    .panel-title { font-weight: 700; font-size: 0.9rem; color: var(--text-muted); text-transform: uppercase; display: flex; justify-content: space-between; align-items: center; }
+    textarea {
+       width: 100%;
+       height: 350px;
+       background: var(--bg-secondary);
+       border: 1px solid var(--border);
+       color: var(--text);
+       padding: 1rem;
+       border-radius: 12px;
+       font-size: 1rem;
+       font-family: 'JetBrains Mono', monospace;
+       resize: none;
+    }
+    textarea:focus { border-color: var(--primary); outline: none; }
+    .action-bar { display: flex; gap: 10px; }
+    .btn-icon { padding: 6px 12px; font-size: 0.8rem; }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/developer/base64-tool.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/developer/base64-tool.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/developer/base64-tool.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/developer/base64-tool.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/developer/base64-tool.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/developer/base64-tool.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/developer/base64-tool.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/developer/base64-tool.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/developer/base64-tool.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/developer/base64-tool.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/developer/base64-tool.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/developer/base64-tool.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/developer/base64-tool.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/developer/base64-tool.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/developer/base64-tool.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/developer/base64-tool.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/developer/base64-tool.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/developer/base64-tool.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/developer/base64-tool.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/developer/base64-tool.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/developer/base64-tool.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/developer/base64-tool.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Infinite Base64 Tool</h1>
+      <p>Secure, client-side encoding and decoding. Full UTF-8 support for modern data transfers.</p>
+    </div>
+
+    <div class="base64-workspace">
+      <!-- INPUT TEXT -->
+      <div class="text-panel">
+         <div class="panel-title">
+            <span>Plain Text</span>
+            <div class="action-bar">
+               <button class="btn btn-secondary btn-icon" onclick="copy('text')">Copy</button>
+               <button class="btn btn-secondary btn-icon" style="color: #ff5252;" onclick="clearP('text')">Clear</button>
+            </div>
+         </div>
+         <textarea id="plain-text" placeholder="Enter text here... Emojis 👋 are supported!" oninput="encode()"></textarea>
+      </div>
+
+      <!-- BASE64 TEXT -->
+      <div class="text-panel">
+         <div class="panel-title">
+            <span>Base64 String</span>
+            <div class="action-bar">
+               <button class="btn btn-secondary btn-icon" onclick="copy('base64')">Copy</button>
+               <button class="btn btn-secondary btn-icon" style="color: #ff5252;" onclick="clearP('base64')">Clear</button>
+            </div>
+         </div>
+         <textarea id="base64-text" placeholder="Enter base64 string here..." oninput="decode()"></textarea>
+      </div>
+    </div>
+
+      <!-- CONTENT SECTION -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.base64_tool.what_is_title">What is the Infinite Base64 Tool?</h2>
+        <p>The Infinite Base64 Tool is a client-side encoding and decoding utility developed to translate data between plain text and Base64 format. By converting binary values into ASCII string characters, you can encode config strings, SVG mockups, or API tokens directly inside your web browser.</p>
+        <p>This tool performs all encoding and decoding operations locally using browser-native byte converters. Since no plain text inputs, passwords, or encoded strings are sent over the network, your sensitive credentials and files remain completely secure.</p>
+
+        <h2 class="mt-4" data-i18n="tools.base64_tool.how_to_use_title">How to Use the Infinite Base64 Tool</h2>
+        <ol>
+          <li><strong>To Encode Text:</strong> Type or paste your raw text into the "Plain Text" editor. The right panel will display the encoded Base64 string instantly.</li>
+          <li><strong>To Decode Text:</strong> Paste your Base64 encoded string into the "Base64" editor. The left panel will instantly display the translated plain text.</li>
+          <li><strong>Copy Your Outputs:</strong> Click the "Copy" button in either panel header to copy the translated content to your clipboard.</li>
+          <li><strong>Clear Panels:</strong> Click the "Clear" button to empty the respective panels and reset the workspace.</li>
+        </ol>
+
+        <h2 class="mt-4" data-i18n="tools.base64_tool.key_features_title">Key Features</h2>
+        <ul>
+          <li><strong>Real-Time Conversion:</strong> Encodes and decodes values instantly as you type or paste text.</li>
+          <li><strong>UTF-8 Multibyte Support:</strong> Decodes and encodes special characters, emojis, and international letters without corruption.</li>
+          <li><strong>Single-Click Copying:</strong> Copy generated strings instantly to speed up development workflows.</li>
+          <li><strong>Verification Feedback:</strong> Displays error messages if you paste invalid Base64 structures during decoding.</li>
+          <li><strong>100% Offline Runtime:</strong> Runs byte translations entirely in your browser sandbox.</li>
+        </ul>
+
+        <h2 class="mt-4" data-i18n="tools.base64_tool.common_use_cases_title">Common Use Cases</h2>
+        <ul>
+          <li><strong>Embedding Visual Assets:</strong> Convert raw SVG tags or small images to Base64 strings to embed them directly in HTML/CSS sheets.</li>
+          <li><strong>API Header Testing:</strong> Generate and verify Basic Auth tokens (e.g., encoding <code>username:password</code> formats) for API queries.</li>
+          <li><strong>Webhook Payload Analysis:</strong> Decode Base64 payloads returned by email providers, payment gateways, or webhooks.</li>
+          <li><strong>Data Serialization:</strong> Encode configurations and complex parameters to safely transfer them through web forms.</li>
+        </ul>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2 data-i18n="tools.base64_tool.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Does this tool support emojis and non-English characters?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. The tool features robust UTF-8 byte conversion, preventing the formatting errors and broken characters commonly seen in basic Base64 calculators when handling emojis or foreign languages.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Are my plain text passwords or tokens sent to your servers?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. 99tool.in processes all encoding and decoding operations locally on your computer. None of your data is sent to external servers or logged in databases.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Why do I get a "Decoding Error" when translating a string?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>This message appears when the pasted string is not in valid Base64 format. Ensure there are no spaces, invalid characters, or missing padding symbols (<code>=</code>) in your input.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Is there a file size limit on what I can encode?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>You can process text blocks up to several megabytes. For extremely large datasets or large binary files (like high-res photos), we recommend using offline command-line utilities to avoid lagging the browser tab.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 Privacy & Data Note: Base64 encoding, decoding, and clipboard actions occur locally in your browser. None of your text data is sent to our servers.</p>
+      </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const plainEl = document.getElementById('plain-text');
+    const b64El = document.getElementById('base64-text');
+
+    // Robust UTF-8 Base64 Encoding
+    function encode() {
+       const text = plainEl.value;
+       if (!text) {
+          b64El.value = '';
+          return;
+       }
+       try {
+          // Use btoa with URI encoding to handle UTF-8 properly
+          const b64 = btoa(unescape(encodeURIComponent(text)));
+          b64El.value = b64;
+       } catch (e) {
+          b64El.value = "Encoding Error: Check your input characters.";
+       }
+    }
+
+    // Robust UTF-8 Base64 Decoding
+    function decode() {
+       const b64 = b64El.value.trim();
+       if (!b64) {
+          plainEl.value = '';
+          return;
+       }
+       try {
+          const text = decodeURIComponent(escape(atob(b64)));
+          plainEl.value = text;
+       } catch (e) {
+          plainEl.value = "Decoding Error: Invalid Base64 string.";
+       }
+    }
+
+    function copy(id) {
+       const el = (id === 'text') ? plainEl : b64El;
+       copyToClipboard(el.value, event.target);
+    }
+
+    function clearP(id) {
+       if (id === 'text') plainEl.value = '';
+       else b64El.value = '';
+       encode();
+    }
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>

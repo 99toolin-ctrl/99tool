@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Logo Generator – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/design/logo-generator.html"/>
+<meta property="og:title" content="Logo Generator – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/design/logo-generator.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Logo Generator \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/design/logo-generator.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="logo generator, simple logo maker, create logo, brand design tool, business logo maker, logo designer" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Simple Logo Generator",
+    "operatingSystem": "Any",
+    "applicationCategory": "DesignApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Shape Library, Icon Integration, Text Styling, Multiple Color Channels, Private local processing"
+  }
+  </script>
+
+  <style>
+    .logo-layout { display: grid; grid-template-columns: 1fr; gap: 30px; }
+
+    .control-pane {
+      background: var(--dark-card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 30px; height: fit-content; position: sticky; top: 80px;
+    }
+
+    .canvas-container {
+      background: var(--dark-card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 40px; display: flex; align-items: center; justify-content: center;
+      min-height: 500px;
+    }
+
+    #logo-canvas {
+       background: transparent; border: 1px solid var(--border);
+       box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+       max-width: 100%; height: auto;
+    }
+
+    .shape-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 25px; }
+    .shape-btn { 
+       aspect-ratio: 1; border-radius: 6px; border: 1px solid var(--border); background: var(--dark);
+       color: white; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: 0.2s;
+    }
+    .shape-btn:hover { border-color: var(--primary); }
+    .shape-btn.active { background: var(--primary); border-color: var(--primary); }
+
+    .icon-picker { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 25px; max-height: 150px; overflow-y: auto; }
+    .icon-btn { 
+       padding: 8px; border: 1px solid var(--border); background: var(--dark); border-radius: 4px;
+       font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center;
+    }
+    .icon-btn:hover { background: rgba(255,255,255,0.05); }
+    .icon-btn.active { border-color: var(--primary); background: rgba(229, 57, 53, 0.1); }
+
+    @media (min-width: 1000px) {
+      .logo-layout { grid-template-columns: 350px 1fr; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#creative">Graphic & Design</a> <span>/</span> 
+        <span>Logo Generator</span>
+      </nav>
+      <h1>Logo Generator</h1>
+      <p>Draft your brand's unique identity with mathematical simplicity. A professional, private laboratory for clean logo marks and wordmarks—100%.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div class="logo-layout">
+         <aside class="control-pane">
+            <h3>Identity Terminal</h3>
+            <p class="text-muted small mb-4">Define your mark, securely.</p>
+
+            <div class="form-group mb-4">
+               <label>Brand Name</label>
+               <input type="text" id="brand-name" class="form-control" value="NINETYNINE">
+            </div>
+
+            <label class="small text-muted mb-2 block">GEOMETRIC MARK</label>
+            <div class="shape-grid">
+               <button class="shape-btn active" data-shape="circle">⚪</button>
+               <button class="shape-btn" data-shape="square">⬜</button>
+               <button class="shape-btn" data-shape="pentagon">⬠</button>
+               <button class="shape-btn" data-shape="none">✖</button>
+            </div>
+
+            <label class="small text-muted mb-2 block">SYMBOLIC ICON</label>
+            <div class="icon-picker" id="icon-list">
+               <!-- Icons injected -->
+            </div>
+
+            <div class="form-group mb-4">
+               <label>Theme Color</label>
+               <input type="color" id="theme-color" class="form-control" value="#e53935">
+            </div>
+
+            <button class="btn btn-primary btn-full mb-3" id="btn-export">Export high-res PNG</button>
+            
+            <div class="info-box mt-4">
+               <div class="info-icon">💠</div>
+               <p class="small">Privacy Note: This is an **Rule-Based Generator**. No AI scrapers or cloud trackers analyze your brand concepts throughout the process.</p>
+            </div>
+         </aside>
+
+         <div class="canvas-pane">
+            <div class="canvas-container">
+               <canvas id="logo-canvas"></canvas>
+            </div>
+         </div>
+      </div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5">
+        <h2>Visualizing Your Legacy in Private: The Logic of Secure Logo Design</h2>
+        <p>We’ve all been there: you have a sudden spark for a new business, a private project, or a creative alias, and you need a symbol to represent it. You look for a <strong>logo generator online</strong> or a "Cloud Logo Maker" to start your draft. But as you input your specific project name and brand concept into these platforms, you recognize that your project's "First Impression" and unique identity are being archived by an anonymous database. Do you really want to share your project's "Conceptual Identity" with a third-party tracking engine or an AI data harvester?</p>
+
+        <p>At 99tool.in, we built our <strong>logo generator</strong> to provide a professional-grade design laboratory without the privacy trade-off. By utilizing native browser Canvas APIs and deterministic geometric logic, we allow you to <strong>create simple logos</strong> entirely within the secure sandbox of your machine. Whether you’re an entrepreneur drafting a startup mark, a developer building a project identity, or an enthusiast creating a custom avatar, our <strong>safe logo utility</strong> ensures that your brand stays where it belongs: on your device, under your total sovereignty.</p>
+        
+        <div class="tool-preview-box mt-4 mb-4" style="text-align:center;">
+           <img src="../../assets/images/markdown-preview.png" alt="Pro-Grade Logo Builder Terminal featuring geometric shape selection and dynamic text styling visuals" class="tool-preview" id="tool-preview-img" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+        </div>
+
+        <h3 class="mt-4">The Logic of "Clean Minimalism"</h3>
+        <p>Branding is about "Visual Clarity." Most basic <strong>online logo makers</strong> are cluttered with generic clip-art and complex AI algorithms that often result in "Visual Noise"—logos that look generic or over-complicated. Our <strong>professional logo generator</strong> takes a human-centric approach: we focus on **Deterministic Geometry** and **Balanced Wordmarks**.</p>
+        
+        <p>We've engineered a grid-based engine that maps your text and icon selections with mathematical precision, ensuring perfect alignment and symmetry. Our <strong>safe design validator</strong> provides a clean, white-label environment where you can focus on the core shapes. This transparency transforms a technical session into a meticulous creative journey, helping you build high-impact identities with total confidence and absolute privacy.</p>
+
+        <h3 class="mt-4">Why Design is the Founder’s Ethical Choice</h2>
+        <p>In the age of digital profiling and automated technical scraping, your brand idea is your primary asset. Using a standard <strong>logo tool online free</strong> service creates a digital record of the products and companies you are imagining. Our 100% <strong>design engine</strong> removes this "IP Risk" entirely from your development routine.</p>
+        
+        <p>Because the rendering and layout happen in your browser's private memory, your drafts are invisible to the outside world. No analytics are tracked, no brand names are harvested, and no proprietary data mapping is shared with AI trackers or advertisers. At 99tool.in, we believe that <strong>building a reputation</strong> should be an empowering utility, not a data-collection opportunity. With us, you have a private, professional darkroom for your project's identity that fits in your browser tab.</p>
+
+        <h3 class="mt-4">How to Draft Your Brand Safely (Step-by-Step)</h3>
+        <p>Creating a clean logo mark should be a high-speed, 5-second task. Here is how to use our <strong>logo tool</strong>:</p>
+        <ul style="line-height: 1.8; margin-bottom: 20px;">
+          <li><strong>Step 1: Declare Your Brand</strong> — Type your project name into the secure local sandbox. Our system uses local font rendering to map the characters instantly.</li>
+          <li><strong>Step 2: Define Your Geometry</strong> — Select your base shape (Circle, Square, or Icon-Only). The preview updates in real-time within the local RAM.</li>
+          <li><strong>Step 3: Tune the Aesthetic</strong> — Choose your theme color and active symbol. Our system performs the private color mapping Logic with coordinate-perfect alignment.</li>
+          <li><strong>Step 4: Secure Your Export</strong> — Click "Export high-res PNG." Our tool generates a transparent, professional-grade file and wipes the session data instantly.</li>
+        </ul>
+
+        <h3 class="mt-4">Strategic Use Cases for Your Local Logo Generator</h3>
+        <p>Our <strong>searchable design laboratory</strong> is the essential companion for modern digital hygiene:</p>
+        
+        <p><strong>For Startup Founders:</strong> Prototyping varied identities for a confidential launch? Use our <strong>logo generator</strong> to iterate without exposing your brand name to indices.</p>
+        
+        <p><strong>For Open-Source Authors:</strong> Creating a clean, modern mark for a GitHub project? Use our <strong>safe design tool</strong> for a frictionless, no-ad experience that stays responsive.</p>
+        
+        <p><strong>For Social Media Marketers:</strong> Designing variant icons for testing? Use our <strong>safe storage tool</strong> to build high-fidelity assets privately in your browser session.</p>
+
+        <h3 class="mt-5">Explore Your Complete Design Suite</h3>
+        <p>Once you’ve successfully drafted your identity, you might need to find the perfect colors for your broader palette. Check out our <strong><a href="palette-generator.html">Color Palette Generator</a></strong>. Or, if you need to build content for your project, use our <strong><a href="thumbnail-creator.html">Thumbnail Creator</a></strong>. At 99tool.in, we are building a world-class, 100% private digital toolkit to give you total control over the integrity of your information.</p>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+               Are these logos truly professional?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. Our tool is optimized for **Modern Minimalism**. By focusing on clean geometry and typography, we help you avoid the "cluttered" look of amateur online makers and produce something that looks sophisticated and balanced.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Is the export background transparent?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. Our <strong>engine</strong> generates the logo on a transparent canvas, ensuring your PNG export is ready to be dropped into any website, slide, or document immediately.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Is my brand data secure?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Absolutely. 100% of the graphic rendering and text placement happens within your <strong>browser session's local memory</strong>. No queries are sent to our servers, and no records of your brand concepts are kept. Your privacy is our priority.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 Privacy-First. Geometric Centering Logic. 100%. Last updated: April 11, 2026.</p>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const canvas = document.getElementById('logo-canvas');
+    const ctx = canvas.getContext('2d');
+    const brandInput = document.getElementById('brand-name');
+    const themeColor = document.getElementById('theme-color');
+    const btnExport = document.getElementById('btn-export');
+    const iconList = document.getElementById('icon-list');
+    const shapeBtns = document.querySelectorAll('.shape-btn');
+
+    const icons = ['⭐', '💎', '🚀', '🔥', '🛡️', '⚙️', '📈', '🌐', '🎯', '💡', '🔱', '🌿'];
+    
+    let currentShape = 'circle';
+    let currentIcon = icons[0];
+    let res = 800; // High res
+
+    function init() {
+       icons.forEach(i => {
+          const btn = document.createElement('button');
+          btn.className = 'icon-btn';
+          btn.innerText = i;
+          if(i === currentIcon) btn.classList.add('active');
+          btn.onclick = () => {
+             document.querySelectorAll('.icon-btn').forEach(x => x.classList.remove('active'));
+             btn.classList.add('active');
+             currentIcon = i;
+             draw();
+          };
+          iconList.appendChild(btn);
+       });
+
+       canvas.width = res;
+       canvas.height = res;
+       draw();
+    }
+
+    function draw() {
+       ctx.clearRect(0, 0, res, res);
+       const center = res / 2;
+       const color = themeColor.value;
+
+       // Draw Shape
+       ctx.fillStyle = color;
+       if (currentShape === 'circle') {
+          ctx.beginPath();
+          ctx.arc(center, center - 60, 200, 0, Math.PI * 2);
+          ctx.fill();
+       } else if (currentShape === 'square') {
+          ctx.fillRect(center - 180, center - 240, 360, 360);
+       } else if (currentShape === 'pentagon') {
+          ctx.beginPath();
+          for(let i=0; i<5; i++) {
+             const angle = (i * 2 * Math.PI / 5) - Math.PI/2;
+             const x = center + 220 * Math.cos(angle);
+             const y = (center - 60) + 220 * Math.sin(angle);
+             if(i===0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+          }
+          ctx.closePath();
+          ctx.fill();
+       }
+
+       // Draw Icon
+       ctx.font = '220px Arial';
+       ctx.textAlign = 'center';
+       ctx.textBaseline = 'middle';
+       ctx.fillStyle = (currentShape === 'none') ? color : 'white';
+       ctx.fillText(currentIcon, center, center - 65);
+
+       // Draw Text
+       const txt = brandInput.value.toUpperCase();
+       ctx.font = `900 80px 'Outfit', sans-serif`;
+       ctx.fillStyle = color;
+       ctx.textAlign = 'center';
+       ctx.fillText(txt, center, center + 250);
+       
+       // Slogan mockup
+       ctx.font = `500 24px 'Inter', sans-serif`;
+       ctx.fillStyle = '#888';
+       ctx.fillText('ESTABLISHED 2026', center, center + 300);
+    }
+
+    brandInput.oninput = draw;
+    themeColor.oninput = draw;
+
+    shapeBtns.forEach(b => {
+       b.onclick = () => {
+          shapeBtns.forEach(x => x.classList.remove('active'));
+          b.classList.add('active');
+          currentShape = b.dataset.shape;
+          draw();
+       };
+    });
+
+    btnExport.onclick = () => {
+       const l = document.createElement('a');
+       l.download = `logo_${Date.now()}.png`;
+       l.href = canvas.toDataURL();
+       l.click();
+    };
+
+    init();
+  </script>
+</body>
+</html>
+

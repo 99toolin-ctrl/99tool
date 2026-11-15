@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Thumbnail Creator – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/design/thumbnail-creator.html"/>
+<meta property="og:title" content="Thumbnail Creator – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/design/thumbnail-creator.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Thumbnail Creator \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/design/thumbnail-creator.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="thumbnail creator, youtube thumbnail maker, social media graphics tool, designer, create thumbnail, graphic design tool" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json" id="schema-org-data">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Thumbnail Creator",
+    "operatingSystem": "Any",
+    "applicationCategory": "DesignApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "YouTube Presets, Draggable Text, Shape Overlays, Multi-image Support, Private local processing"
+  }
+  </script>
+
+  <style>
+    .thumb-layout { display: grid; grid-template-columns: 1fr; gap: 30px; }
+
+    .control-pane {
+      background: var(--dark-card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 30px; height: fit-content; position: sticky; top: 80px;
+    }
+
+    .canvas-container {
+      background: var(--dark-card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 20px; display: flex; align-items: center; justify-content: center;
+      min-height: 500px; overflow: hidden; position: relative;
+    }
+
+    #thumb-canvas {
+      background: #000; border-radius: 4px; box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+      max-width: 100%; height: auto; cursor: crosshair;
+    }
+
+    .layer-item {
+       background: var(--dark); border-radius: 8px; border: 1px solid var(--border);
+       padding: 12px; margin-bottom: 10px; display: flex; align-items: center; gap: 10px;
+    }
+    .layer-item input { flex: 1; height: 32px; background: #000; color: white; border: 1px solid var(--border); padding: 0 8px; border-radius: 4px; }
+
+    .preset-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 20px; }
+    .preset-btn {
+       background: var(--dark); border: 1px solid var(--border); color: white; padding: 10px;
+       border-radius: 6px; font-size: 0.8rem; cursor: pointer; transition: 0.2s;
+    }
+    .preset-btn:hover { border-color: var(--primary); }
+    .preset-btn.active { background: var(--primary); border-color: var(--primary); }
+
+    .upload-area {
+      background: var(--dark); border: 2px dashed var(--border); border-radius: 10px;
+      padding: 15px; text-align: center; cursor: pointer; transition: 0.3s;
+      margin-bottom: 15px;
+    }
+    .upload-area:hover, .upload-area.drag-over { border-color: var(--primary); background: rgba(229, 57, 53, 0.05); }
+    .upload-icon { font-size: 1.5rem; margin-bottom: 5px; }
+
+    @media (min-width: 1000px) {
+      .thumb-layout { grid-template-columns: 380px 1fr; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/design/thumbnail-creator.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/design/thumbnail-creator.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/design/thumbnail-creator.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/design/thumbnail-creator.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/design/thumbnail-creator.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/design/thumbnail-creator.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/design/thumbnail-creator.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/design/thumbnail-creator.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/design/thumbnail-creator.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/design/thumbnail-creator.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/design/thumbnail-creator.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/design/thumbnail-creator.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/design/thumbnail-creator.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/design/thumbnail-creator.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/design/thumbnail-creator.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/design/thumbnail-creator.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/design/thumbnail-creator.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/design/thumbnail-creator.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/design/thumbnail-creator.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/design/thumbnail-creator.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/design/thumbnail-creator.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/design/thumbnail-creator.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#creative">Graphic & Design</a> <span>/</span> 
+        <span>Thumbnail Creator</span>
+      </nav>
+      <h1>Thumbnail Creator</h1>
+      <p>Design viral graphics with professional precision. A high-fidelity, private design dashboard for YouTube, social media, and brand assets—100%.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div class="thumb-layout">
+         <aside class="control-pane">
+            <h3>Design Terminal</h3>
+            <p class="text-muted small mb-4">Select a preset or start from scratch.</p>
+
+            <div class="preset-grid">
+               <button class="preset-btn active" data-w="1280" data-h="720">YouTube (720p)</button>
+               <button class="preset-btn" data-w="1080" data-h="1080">Instagram (Square)</button>
+               <button class="preset-btn" data-w="1080" data-h="1920">Shorts/Story</button>
+               <button class="preset-btn" data-w="1920" data-h="1080">FHD Banner</button>
+            </div>
+
+            <div class="upload-area" id="bg-drop-zone">
+               <div class="upload-icon">🌄</div>
+               <p class="small fw-bold mb-0">BG Image</p>
+               <input type="file" id="bg-input" accept="image/*" hidden>
+            </div>
+
+            <div class="upload-area" id="overlay-drop-zone">
+               <div class="upload-icon">👤</div>
+               <p class="small fw-bold mb-0">Overlay/Logo</p>
+               <input type="file" id="overlay-input" accept="image/*" hidden>
+            </div>
+
+            <div class="layer-item">
+               <span>📝</span>
+               <input type="text" id="main-text" placeholder="MAIN PUNCHLINE" value="POWER">
+            </div>
+            
+            <div class="form-group mb-4">
+               <label>Text Color</label>
+               <input type="color" id="text-color" class="form-control" value="#ffffff">
+            </div>
+
+            <button class="btn btn-primary btn-full mb-3" id="btn-download">Export high-res PNG</button>
+            
+            <div class="info-box mt-4">
+               <div class="info-icon">📺</div>
+               <p class="small">Hint: **Click and drag** elements on the canvas to find the perfect layout. All rendering happens in your browser's private session.</p>
+            </div>
+         </aside>
+
+         <div class="canvas-pane">
+            <div class="canvas-container">
+               <canvas id="thumb-canvas"></canvas>
+            </div>
+         </div>
+      </div>
+
+      <!-- CONTENT SECTION -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.thumbnail_creator.what_is_title">What is the Thumbnail Creator?</h2>
+        <p>The Thumbnail Creator is an interactive client-side design utility developed to create social media covers, YouTube banners, and presentation graphics. By selecting platform aspect ratios, adding background photos, and typing custom titles, you can compile cover graphics directly inside your browser.</p>
+        <p>This editor manages all layer coordinate calculations and image scaling locally on your computer. Because all assets and text lines are handled in your browser's RAM, your branding ideas and visual concepts remain completely private.</p>
+
+        <h2 class="mt-4" data-i18n="tools.thumbnail_creator.how_to_use_title">How to Use the Thumbnail Creator</h2>
+        <ol>
+          <li><strong>Select a Canvas Aspect Ratio:</strong> Choose a preset (YouTube Thumbnail 1280x720, Instagram Square 1080x1080, or Story 1080x1920) from the presets dropdown.</li>
+          <li><strong>Upload Your Background Image:</strong> Click the background upload button to select a base photograph or graphic from your system.</li>
+          <li><strong>Add Custom Text Lines:</strong>
+            <ul>
+              <li>Type your headline into the text box and click "Add Text" to insert it onto the canvas.</li>
+              <li>Click and drag the text elements directly on the canvas to place them.</li>
+            </ul>
+          </li>
+          <li><strong>Customize Styling Parameters:</strong> Set the font sizes, text color picker values, background colors, and backdrop overlay opacity settings.</li>
+          <li><strong>Download Your Thumbnail:</strong> Review the layout on the right preview canvas. Click "Download PNG" to export the graphic to your device.</li>
+        </ol>
+
+        <h2 class="mt-4" data-i18n="tools.thumbnail_creator.key_features_title">Key Features</h2>
+        <ul>
+          <li><strong>Varying Platform Presets:</strong> Instantly configure canvases for YouTube, Instagram, or Story layouts.</li>
+          <li><strong>Interactive Text Dragging:</strong> Place and arrange text blocks across the canvas to coordinate layouts.</li>
+          <li><strong>Color & Transparency Overlays:</strong> Set backdrop overlay colors and adjust opacity levels to make text readable.</li>
+          <li><strong>Lossless PNG Exports:</strong> Compiles and downloads your graphic design as a high-resolution PNG file.</li>
+          <li><strong>100% Client-Side Run:</strong> Executes all image scaling and composition calculations offline for data security.</li>
+        </ul>
+
+        <h2 class="mt-4" data-i18n="tools.thumbnail_creator.common_use_cases_title">Common Use Cases</h2>
+        <ul>
+          <li><strong>YouTube Video Covers:</strong> Design video thumbnails with text headlines and color overlays.</li>
+          <li><strong>Social Media Posts:</strong> Scale and design graphics for Instagram feeds, stories, and advertising layouts.</li>
+          <li><strong>Blog Banner Graphics:</strong> Create featured banners and header graphics for blogs and article posts.</li>
+          <li><strong>Workspace Slide Covers:</strong> Generate presentation headers, section slides, and card covers.</li>
+        </ul>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2 data-i18n="tools.thumbnail_creator.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Are these presets updated to current platform requirements?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. The presets use standard dimensions (1280x720 for YouTube covers, 1080x1080 for Instagram square posts, and 1080x1920 for Stories) which are optimized for modern screens.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Are my uploaded background photos sent to 99tool.in?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. 99tool.in processes all canvas layer composition, opacity changes, and image downloads locally on your device. Your graphics are never uploaded or stored online.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I delete or edit text once it is on the canvas?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>To clear the canvas and reset all layers, click the "Clear Canvas" button. This lets you re-upload your background and add new text lines quickly.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Why is the canvas element unresponsive to dragging?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Ensure that you click directly on the text characters to drag them. If the text does not move, verify that the page isn't zoomed in or out in your browser, which can offset dragging coordinates.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Does the download option support transparency?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. If you do not upload a background image, the canvas background remains transparent. Exporting will compile your text and color overlays with alpha transparency intact.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 Privacy & Data Note: Thumbnail rendering, text placements, and image resizing occur locally in your browser. None of your design files are uploaded.</p>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const canvas = document.getElementById('thumb-canvas');
+    const ctx = canvas.getContext('2d');
+    const bgInput = document.getElementById('bg-input');
+    const bgDrop = document.getElementById('bg-drop-zone');
+    const overlayInput = document.getElementById('overlay-input');
+    const overlayDrop = document.getElementById('overlay-drop-zone');
+    const mainText = document.getElementById('main-text');
+    const textColor = document.getElementById('text-color');
+    const btnDownload = document.getElementById('btn-download');
+    const presetBtns = document.querySelectorAll('.preset-btn');
+
+    let bgImg = null;
+    let overlayImg = null;
+    let overlayPos = { x: 100, y: 100, w: 200, h: 200 };
+    let textPos = { x: 640, y: 360 };
+    let isDraggingOverlay = false;
+    let isDraggingText = false;
+
+    function init() {
+       setResolution(1280, 720);
+       draw();
+    }
+
+    function setResolution(w, h) {
+       canvas.width = w;
+       canvas.height = h;
+       textPos = { x: w / 2, y: h / 2 };
+       overlayPos.x = w - 300;
+       overlayPos.y = h - 300;
+       draw();
+    }
+
+    function draw() {
+       ctx.clearRect(0, 0, canvas.width, canvas.height);
+       
+       // Draw Background
+       if (bgImg) {
+          ctx.drawImage(bgImg, 0, 0, canvas.width, canvas.height);
+       } else {
+          ctx.fillStyle = '#111';
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+       }
+
+       // Draw Overlay
+       if (overlayImg) {
+          ctx.drawImage(overlayImg, overlayPos.x, overlayPos.y, overlayPos.w, overlayPos.h);
+       }
+
+       // Draw Text
+       const txt = mainText.value.toUpperCase();
+       const fontSize = canvas.width / 12;
+       ctx.font = `bold ${fontSize}px 'Anton', 'Impact', sans-serif`;
+       ctx.textAlign = 'center';
+       ctx.fillStyle = textColor.value;
+       ctx.strokeStyle = 'black';
+       ctx.lineWidth = fontSize / 8;
+       ctx.lineJoin = 'round';
+       
+       ctx.strokeText(txt, textPos.x, textPos.y);
+       ctx.fillText(txt, textPos.x, textPos.y);
+    }
+
+    // Interaction Logic
+    function getPos(e) {
+       const rect = canvas.getBoundingClientRect();
+       const scaleX = canvas.width / rect.width;
+       const scaleY = canvas.height / rect.height;
+       return {
+          x: ((e.clientX || e.touches?.[0].clientX) - rect.left) * scaleX,
+          y: ((e.clientY || e.touches?.[0].clientY) - rect.top) * scaleY
+       };
+    }
+
+    canvas.onmousedown = (e) => {
+       const pos = getPos(e);
+       // Check if on text (rough box)
+       if (Math.abs(pos.x - textPos.x) < 300 && Math.abs(pos.y - textPos.y) < 100) {
+          isDraggingText = true;
+       } else if (pos.x >= overlayPos.x && pos.x <= overlayPos.x + overlayPos.w &&
+                  pos.y >= overlayPos.y && pos.y <= overlayPos.y + overlayPos.h) {
+          isDraggingOverlay = true;
+       }
+    };
+
+    window.onmouseup = () => { isDraggingOverlay = false; isDraggingText = false; };
+
+    canvas.onmousemove = (e) => {
+       if (!isDraggingText && !isDraggingOverlay) return;
+       const pos = getPos(e);
+       if (isDraggingText) textPos = pos;
+       if (isDraggingOverlay) {
+          overlayPos.x = pos.x - overlayPos.w / 2;
+          overlayPos.y = pos.y - overlayPos.h / 2;
+       }
+       draw();
+    };
+
+    // Inputs
+    bgDrop.onclick = () => bgInput.click();
+    overlayDrop.onclick = () => overlayInput.click();
+
+    // Init Drag and Drop using global helper
+    setupDragDrop('bg-drop-zone', (files) => {
+       if (files.length) handleBgFile(files[0]);
+    });
+    setupDragDrop('overlay-drop-zone', (files) => {
+       if (files.length) handleOverlayFile(files[0]);
+    });
+
+    bgInput.onchange = (e) => handleBgFile(e.target.files[0]);
+    overlayInput.onchange = (e) => handleOverlayFile(e.target.files[0]);
+
+    function handleBgFile(file) {
+       if (!file) return;
+       const r = new FileReader();
+       r.onload = ev => {
+          const i = new Image();
+          i.onload = () => { bgImg = i; draw(); };
+          i.src = ev.target.result;
+       };
+       r.readAsDataURL(file);
+    }
+
+    function handleOverlayFile(file) {
+       if (!file) return;
+       const r = new FileReader();
+       r.onload = ev => {
+          const i = new Image();
+          i.onload = () => { overlayImg = i; draw(); };
+          i.src = ev.target.result;
+       };
+       r.readAsDataURL(file);
+    }
+
+    mainText.oninput = draw;
+    textColor.oninput = draw;
+
+    presetBtns.forEach(b => {
+       b.onclick = () => {
+          presetBtns.forEach(x => x.classList.remove('active'));
+          b.classList.add('active');
+          setResolution(parseInt(b.dataset.w), parseInt(b.dataset.h));
+       };
+    });
+
+    btnDownload.onclick = () => {
+       const l = document.createElement('a');
+       l.download = `thumbnail_${Date.now()}.png`;
+       l.href = canvas.toDataURL('image/png');
+       l.click();
+    };
+
+    init();
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

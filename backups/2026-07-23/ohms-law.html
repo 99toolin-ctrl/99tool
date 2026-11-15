@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Ohms Law – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/physics/ohms-law.html"/>
+<meta property="og:title" content="Ohms Law – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/physics/ohms-law.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Ohms Law \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/physics/ohms-law.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .physics-workspace {
+      max-width: 650px;
+      margin: 2rem auto;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      border-radius: 20px;
+    }
+    .input-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+    .input-group { position: relative; }
+    label { display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-muted); }
+    input {
+      width: 100%;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.8rem;
+      border-radius: 8px;
+      font-size: 1.1rem;
+    }
+    .unit-label {
+      position: absolute;
+      right: 1rem;
+      bottom: 0.8rem;
+      color: var(--primary);
+      font-weight: 700;
+      pointer-events: none;
+    }
+    .result-area {
+       background: rgba(255,255,255,0.03);
+       padding: 1.5rem;
+       border-radius: 12px;
+       margin-top: 2rem;
+       text-align: center;
+       border: 1px solid var(--border);
+       display: none;
+    }
+    .res-val { font-size: 2.5rem; font-weight: 900; color: var(--primary); margin-bottom: 0.5rem; }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Infinite Ohm's Law Calculator</h1>
+      <p>Analyze electrical circuits instantly. Enter any two values to solve for the third.</p>
+    </div>
+
+    <div class="physics-workspace">
+      <div class="input-grid">
+         <div class="input-group">
+            <label>Voltage (V)</label>
+            <input type="number" id="v" placeholder="Enter Voltage">
+            <span class="unit-label">V</span>
+         </div>
+         <div class="input-group">
+            <label>Current (I)</label>
+            <input type="number" id="i" placeholder="Enter Current">
+            <span class="unit-label">A</span>
+         </div>
+         <div class="input-group">
+            <label>Resistance (R)</label>
+            <input type="number" id="r" placeholder="Enter Resistance">
+            <span class="unit-label">Ω</span>
+         </div>
+      </div>
+      
+      <div class="mt-4 d-flex gap-3">
+         <button onclick="calculate()" class="btn btn-primary btn-lg btn-full">Calculate</button>
+         <button onclick="clearFields()" class="btn btn-secondary btn-lg btn-full">Clear</button>
+      </div>
+
+      <div class="result-area" id="result-box">
+         <div class="small text-muted mb-2">Calculated Result</div>
+         <div class="res-val" id="res-val">0</div>
+         <div id="res-formula" class="font-weight-bold">V = I × R</div>
+      </div>
+
+      <!-- SEO CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2>What is Ohm's Law?</h2>
+        <p>Ohm's Law is a fundamental principle in electrical engineering that states the relationship between voltage ($V$), current ($I$), and resistance ($R$). The formula is expressed as $V = I \times R$. Our <strong>online Ohm's law calculator</strong> allows you to solve for any of these three components by providing the other two. This is an essential <strong>electrical auditor tool</strong> for students, hobbyists, and professional engineers.</p>
+
+        <h3 class="mt-4">Understanding the Components</h2>
+        <p>Voltage is the electrical pressure, current is the flow of electrons, and resistance is the opposition to that flow. By using our <strong>circuit analysis tool</strong>, you can quickly determine if an electronic component will safely handle a specific load. A standard <strong>electrical diagnostic auditor</strong> is key to preventing circuit failures and optimizing power distribution.</p>
+
+        <h3 class="mt-4">Privacy and Privacy Accuracy</h2>
+        <p>At 99tool.in, we believe in lightweight, non-intrusive utilities. Our <strong>private Ohm's law tool</strong> runs entirely in your local browser environment. No electrical configurations or data data are sent to any server. This <strong>secure physics calculator</strong> provides professional-grade results without compromising your privacy.</p>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    function calculate() {
+       const vEl = document.getElementById('v');
+       const iEl = document.getElementById('i');
+       const rEl = document.getElementById('r');
+       
+       const v = parseFloat(vEl.value);
+       const i = parseFloat(iEl.value);
+       const r = parseFloat(rEl.value);
+
+       const box = document.getElementById('result-box');
+       const valEl = document.getElementById('res-val');
+       const formEl = document.getElementById('res-formula');
+
+       let result = "";
+       let formula = "";
+
+       if (!isNaN(v) && !isNaN(i)) {
+          // Solv for R
+          const res = v / i;
+          result = res.toFixed(3) + " Ω";
+          formula = `R = V / I (${v} / ${i})`;
+          rEl.value = res.toFixed(3);
+       } else if (!isNaN(v) && !isNaN(r)) {
+          // Solv for I
+          const res = v / r;
+          result = res.toFixed(3) + " A";
+          formula = `I = V / R (${v} / ${r})`;
+          iEl.value = res.toFixed(3);
+       } else if (!isNaN(i) && !isNaN(r)) {
+          // Solv for V
+          const res = i * r;
+          result = res.toFixed(3) + " V";
+          formula = `V = I × R (${i} × ${r})`;
+          vEl.value = res.toFixed(3);
+       } else {
+          return alert('Please enter at least two values.');
+       }
+
+       valEl.innerText = result;
+       formEl.innerText = formula;
+       box.style.display = 'block';
+    }
+
+    function clearFields() {
+       document.getElementById('v').value = '';
+       document.getElementById('i').value = '';
+       document.getElementById('r').value = '';
+       document.getElementById('result-box').style.display = 'none';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Ip Subnet Calculator – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/network/ip-subnet-calculator.html"/>
+<meta property="og:title" content="Ip Subnet Calculator – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/network/ip-subnet-calculator.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Ip Subnet Calculator \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/network/ip-subnet-calculator.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    .network-workspace {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+    .input-row { display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem; margin-bottom: 2rem; }
+    label { display: block; margin-bottom: 0.5rem; color: var(--text-muted); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; }
+    input, select {
+      width: 100%;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 1rem;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    
+    .report-grid {
+       display: grid;
+       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+       gap: 1.5rem;
+       margin-top: 2rem;
+       display: none;
+    }
+    .report-card {
+       background: rgba(255,255,255,0.03);
+       border: 1px solid var(--border);
+       padding: 1.5rem;
+       border-radius: 16px;
+    }
+    .val-block { margin-top: 10px; font-weight: 800; color: var(--primary); font-size: 1.25rem; font-family: 'JetBrains Mono', monospace; word-break: break-all; }
+    .label-block { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700; }
+    
+    .binary-viz {
+       margin-top: 2rem;
+       padding: 1.5rem;
+       background: rgba(0,0,0,0.3);
+       border-radius: 12px;
+       font-family: 'JetBrains Mono', monospace;
+       font-size: 0.85rem;
+       display: none;
+       overflow-x: auto;
+    }
+    .bin-line { display: flex; gap: 10px; margin-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 4px; }
+    .bin-label { width: 140px; color: var(--text-muted); flex-shrink: 0; }
+    .bin-val { color: var(--primary); }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/network/ip-subnet-calculator.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/network/ip-subnet-calculator.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/network/ip-subnet-calculator.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/network/ip-subnet-calculator.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/network/ip-subnet-calculator.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/network/ip-subnet-calculator.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/network/ip-subnet-calculator.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/network/ip-subnet-calculator.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/network/ip-subnet-calculator.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/network/ip-subnet-calculator.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/network/ip-subnet-calculator.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/network/ip-subnet-calculator.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/network/ip-subnet-calculator.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/network/ip-subnet-calculator.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/network/ip-subnet-calculator.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/network/ip-subnet-calculator.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/network/ip-subnet-calculator.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/network/ip-subnet-calculator.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/network/ip-subnet-calculator.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/network/ip-subnet-calculator.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/network/ip-subnet-calculator.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/network/ip-subnet-calculator.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Infinite IP Subnet & CIDR Solver</h1>
+      <p>Precision network planning and diagnostic auditor. Calculate usable ranges and binary masks instantly.</p>
+    </div>
+
+    <div class="network-workspace">
+      <div class="input-row">
+         <div>
+            <label>IP Address</label>
+            <input type="text" id="ip-in" placeholder="e.g., 192.168.1.10">
+         </div>
+         <div>
+            <label>Subnet (CIDR)</label>
+            <select id="cidr-in">
+               <option value="32">/32 (Host)</option>
+               <option value="31">/31</option>
+               <option value="30">/30</option>
+               <option value="29">/29</option>
+               <option value="28">/28</option>
+               <option value="27">/27</option>
+               <option value="26">/26</option>
+               <option value="25">/25</option>
+               <option value="24" selected>/24 (Standard)</option>
+               <option value="23">/23</option>
+               <option value="22">/22</option>
+               <option value="21">/21</option>
+               <option value="20">/20</option>
+               <option value="19">/19</option>
+               <option value="18">/18</option>
+               <option value="17">/17</option>
+               <option value="16">/16 (Class B)</option>
+               <option value="8">/8 (Class A)</option>
+            </select>
+         </div>
+      </div>
+
+      <button onclick="calculate()" class="btn btn-primary btn-lg btn-full">Generate Network Report</button>
+
+      <div class="report-grid" id="report">
+         <div class="report-card">
+            <div class="label-block">Network Address</div>
+            <div class="val-block" id="res-net">0.0.0.0</div>
+         </div>
+         <div class="report-card">
+            <div class="label-block">Broadcast Address</div>
+            <div class="val-block" id="res-broad">0.0.0.0</div>
+         </div>
+         <div class="report-card">
+            <div class="label-block">Usable IP Range</div>
+            <div class="val-block" id="res-range">0.0.0.0 - 0.0.0.0</div>
+         </div>
+         <div class="report-card">
+            <div class="label-block">Subnet Mask</div>
+            <div class="val-block" id="res-mask">0.0.0.0</div>
+         </div>
+         <div class="report-card">
+            <div class="label-block">Total Usable Hosts</div>
+            <div class="val-block" id="res-hosts">0</div>
+         </div>
+         <div class="report-card">
+            <div class="label-block">Network Class</div>
+            <div class="val-block" id="res-class">C</div>
+         </div>
+      </div>
+
+      <div class="binary-viz" id="bin-viz">
+         <div class="bin-line"><span class="bin-label">IP Address:</span><span class="bin-val" id="bin-ip"></span></div>
+         <div class="bin-line"><span class="bin-label">Subnet Mask:</span><span class="bin-val" id="bin-mask"></span></div>
+         <div class="bin-line" style="border:none;"><span class="bin-label">Network:</span><span class="bin-val" id="bin-net"></span></div>
+      </div>
+
+      <!-- SEO CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.ip_subnet_solver.what_is_title">What is the Infinite IP Subnet & CIDR Solver?</h2>
+        <p>The Infinite IP Subnet & CIDR Solver is an offline-first network planning utility designed to calculate routing ranges, broadcast addresses, and binary subnet masks. IP subnetting is the process of partitioning a single physical network into smaller, logical sub-networks (subnets). This division increases security, isolates network traffic, and prevents excessive broadcast collisions on local networks.</p>
+        <p>This calculator handles the complex binary bit-shifting calculations automatically, mapping out usable IP ranges and subnet boundaries. It also provides a visual binary breakdown of the network prefix and host bits, making it a valuable tool for learning or auditing IP allocations.</p>
+
+        <h3 class="mt-4">How to Use the Subnet Calculator</h3>
+        <p>Analyzing and planning your IP subnets involves a few quick inputs:</p>
+        <ol class="mt-2 mb-3">
+          <li>Enter a valid IPv4 address in the "IP Address" field.</li>
+          <li>Select the desired subnet prefix length (CIDR value from /1 to /32) from the dropdown list.</li>
+          <li>The tool instantly computes the network report below the form.</li>
+          <li>Review the subnet mask, network address, broadcast address, and total usable host count.</li>
+          <li>Examine the "Binary Representation" grid at the bottom to inspect the exact network and host bit dividing line.</li>
+        </ol>
+
+        <h3 class="mt-4">Key Features of the CIDR Solver</h3>
+        <ul class="mt-2 mb-3">
+          <li><strong>Instant Calculations:</strong> Computes routing properties in real-time as you modify addresses or prefix selections.</li>
+          <li><strong>Binary Bit Visualization:</strong> Translates octets into binary strings, visually highlighting the dividing line between network and host space.</li>
+          <li><strong>Usability Ranges:</strong> Clearly separates the reserved network and broadcast boundaries from the assignable client host range.</li>
+          <li><strong>Standard Network Classifying:</strong> Identifies standard legacy network classes (Class A, B, or C) for your reference.</li>
+        </ul>
+
+        <h3 class="mt-4">Common Use Cases</h3>
+        <p>This utility is ideal for netmask calculations in standard deployment configurations:</p>
+        <ul class="mt-2 mb-3">
+          <li><strong>VLAN Architecture Planning:</strong> Partitioning corporate network infrastructure into isolated segments for departments or virtual local area networks.</li>
+          <li><strong>Cloud VPC Subnet Mapping:</strong> Planning subnet ranges for cloud infrastructure environments (such as AWS, Google Cloud, or Microsoft Azure).</li>
+          <li><strong>Technical Exam Preparation:</strong> Practicing decimal-to-binary bit boundaries calculations for network certifications (like CCNA, Network+, or CCNP).</li>
+        </ul>
+
+        <h3 class="mt-4">Frequently Asked Questions</h3>
+        <div class="faq-section mt-3">
+          <p><strong>What is CIDR notation?</strong><br>Classless Inter-Domain Routing (CIDR) represents the subnet mask size as a slash followed by the count of active network bits (e.g., <code>/24</code> stands for 24 ones in binary, or <code>255.255.255.0</code>).</p>
+          <p><strong>Why are two IP addresses subtracted from the total host count?</strong><br>Every subnet reserves two addresses for routing logic: the first address (Network ID) to identify the subnet itself, and the last address (Broadcast ID) to send data to all hosts on the subnet.</p>
+          <p><strong>What is the difference between Classful and Classless subnetting?</strong><br>Classful subnetting divides networks strictly by Class A (/8), Class B (/16), or Class C (/24). Classless subnetting allows masks of any length (e.g. /22 or /27), maximizing address usage efficiency.</p>
+          <p><strong>Can this tool calculate IPv6 ranges?</strong><br>This calculator is specifically designed for IPv4 addressing. IPv6 ranges require a dedicated hexadecimal calculator due to their 128-bit structure.</p>
+        </div>
+
+        <h3 class="mt-4">Privacy & Data Note</h3>
+        <p>All network calculation logic and binary parsing operations are performed locally in your browser's private sandbox memory. No IP configurations or subnet strategies are sent over the network.</p>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    function calculate() {
+       const ipStr = document.getElementById('ip-in').value.trim();
+       const cidr = parseInt(document.getElementById('cidr-in').value);
+
+       if (!/^(\d{1,3}\.){3}\d{1,3}$/.test(ipStr)) {
+          return alert('Please enter a valid IP address (e.g., 192.168.1.1)');
+       }
+
+       const octets = ipStr.split('.').map(Number);
+       if (octets.some(o => o > 255)) return alert('Octets must be between 0 and 255.');
+
+       // 1. IP to 32-bit uint
+       const ipInt = (octets[0] << 24 | octets[1] << 16 | octets[2] << 8 | octets[3]) >>> 0;
+       
+       // 2. Subnet Mask
+       const maskInt = (cidr === 0) ? 0 : (~0 << (32 - cidr)) >>> 0;
+       
+       // 3. Network & Broadcast
+       const netInt = (ipInt & maskInt) >>> 0;
+       const broadInt = (netInt | ~maskInt) >>> 0;
+
+       // 4. Counts
+       let hostCount = (cidr >= 31) ? 0 : (Math.pow(2, 32 - cidr) - 2);
+       
+       // Classes
+       let netClass = 'E';
+       if (octets[0] < 128) netClass = 'A';
+       else if (octets[0] < 192) netClass = 'B';
+       else if (octets[0] < 224) netClass = 'C';
+       else if (octets[0] < 240) netClass = 'D';
+
+       // Display Report
+       document.getElementById('res-net').innerText = intToIp(netInt);
+       document.getElementById('res-broad').innerText = intToIp(broadInt);
+       document.getElementById('res-mask').innerText = intToIp(maskInt);
+       document.getElementById('res-hosts').innerText = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(hostCount, 0) : hostCount.toLocaleString();
+       document.getElementById('res-class').innerText = netClass;
+       
+       if (cidr <= 30) {
+          document.getElementById('res-range').innerText = `${intToIp(netInt + 1)} - ${intToIp(broadInt - 1)}`;
+       } else {
+          document.getElementById('res-range').innerText = "N/A (Point-to-Point)";
+       }
+
+       // Binary Viz
+       document.getElementById('bin-ip').innerText = intToBin(ipInt);
+       document.getElementById('bin-mask').innerText = intToBin(maskInt);
+       document.getElementById('bin-net').innerText = intToBin(netInt);
+
+       document.getElementById('report').style.display = 'grid';
+       document.getElementById('bin-viz').style.display = 'block';
+    }
+
+    function intToIp(i) {
+       return [
+          (i >>> 24) & 0xFF,
+          (i >>> 16) & 0xFF,
+          (i >>> 8) & 0xFF,
+          i & 0xFF
+       ].join('.');
+    }
+
+    function intToBin(i) {
+       let s = (i >>> 0).toString(2).padStart(32, '0');
+       return s.replace(/(.{8})/g, '$1 ').trim();
+    }
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>

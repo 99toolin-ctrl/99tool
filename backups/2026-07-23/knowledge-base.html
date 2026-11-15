@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Knowledge Base – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/productivity/knowledge-base.html"/>
+<meta property="og:title" content="Knowledge Base – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/productivity/knowledge-base.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Knowledge Base \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/productivity/knowledge-base.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="personal knowledge base, knowledge base, personal wiki, note organization tool, knowledge management tool, wiki notes" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Personal Knowledge Base",
+    "operatingSystem": "Any",
+    "applicationCategory": "ProductivityApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Wiki-style internal linking, Markdown support, Instant global search, Persistent storage"
+  }
+  </script>
+
+  <style>
+    .wiki-layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .wiki-sidebar {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+
+    .wiki-main {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 40px;
+      min-height: 600px;
+      position: relative;
+    }
+
+    .wiki-content {
+      font-family: 'IBM Plex Sans', sans-serif;
+      line-height: 1.7;
+      color: var(--text);
+    }
+    .wiki-content p { margin-bottom: 1.2rem; }
+    .wiki-content h2, .wiki-content h3 { margin-top: 2rem; color: var(--white); }
+    .wiki-content a.internal-link { color: var(--primary); text-decoration: none; border-bottom: 1px dashed var(--primary); }
+    .wiki-content a.internal-link:hover { background: rgba(229, 57, 53, 0.1); }
+    .wiki-content a.broken-link { color: #f44336; border-bottom: 1px dashed #f44336; border-radius: 2px; }
+
+    .wiki-editor textarea {
+      width: 100%;
+      min-height: 500px;
+      background: transparent;
+      border: none;
+      color: var(--text);
+      font-family: 'Fira Code', monospace;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      resize: none;
+      outline: none;
+    }
+
+    .sidebar-list {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .sidebar-item {
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      color: var(--text-muted);
+      transition: all 0.2s;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .sidebar-item:hover, .sidebar-item.active { background: rgba(229, 57, 53, 0.1); color: var(--primary); }
+
+    .search-input {
+      width: 100%;
+      background: var(--dark);
+      border: 1px solid var(--border);
+      padding: 10px 14px;
+      border-radius: 6px;
+      color: var(--white);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 900px) {
+      .wiki-layout { grid-template-columns: 1fr; }
+      .wiki-sidebar { height: 300px; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#productivity">Productivity</a> <span>/</span> 
+        <span>Knowledge Base</span>
+      </nav>
+      <h1>Personal Knowledge Base</h1>
+      <p>Build your second brain. Connect your ideas with internal links and build a structured library of information that stays 100% on your machine.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div class="wiki-layout">
+        <!-- SIDEBAR -->
+        <aside class="wiki-sidebar">
+          <input type="search" id="wiki-search" class="search-input" placeholder="Search pages...">
+          <div class="flex justify-between items-center mt-2">
+            <h4 style="margin:0; font-size: 0.8rem; text-transform: uppercase;">Pages</h4>
+            <button class="btn-sm btn-secondary" onclick="createNewPage()" style="padding: 2px 8px;">New</button>
+          </div>
+          <div id="sidebar-list" class="sidebar-list">
+            <!-- Pages here -->
+          </div>
+        </aside>
+
+        <!-- MAIN AREA -->
+        <article class="wiki-main">
+          <div id="view-mode">
+            <div class="flex justify-between items-start mb-4">
+               <h2 id="page-title" style="margin: 0; font-size: 2rem; color: var(--white);">Welcome</h2>
+               <div class="flex gap-2">
+                  <button class="btn btn-secondary btn-sm" onclick="enterEditMode()">Edit Page</button>
+                  <button class="btn btn-secondary btn-sm" onclick="deleteCurrentPage()">×</button>
+               </div>
+            </div>
+            <div id="render-area" class="wiki-content">
+              <!-- Rendered markdown -->
+            </div>
+          </div>
+
+          <div id="edit-mode" style="display: none;">
+            <div class="flex justify-between items-center mb-4">
+               <input type="text" id="edit-title" style="background: transparent; border: none; font-size: 2rem; color: var(--white); font-weight: 700; width: 100%;" placeholder="Page Title">
+               <div class="flex gap-2">
+                 <button class="btn btn-primary btn-sm" onclick="savePage()">Save</button>
+                 <button class="btn btn-secondary btn-sm" onclick="exitEditMode()">Cancel</button>
+               </div>
+            </div>
+            <div class="wiki-editor">
+               <textarea id="wiki-editor" placeholder="Write your thoughts... Use [[Link Name]] to create internal links."></textarea>
+            </div>
+            <p class="text-muted mt-3" style="font-size: 0.8rem;">Markdown Tip: # Header, **bold**, *italic*, 1. List</p>
+          </div>
+        </article>
+      </div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5">
+        <h2>Preserving Your Private Wiki in Private: Secure Local Knowledge Management</h2>
+        <p>We’ve all been there: you’re building a complex project, learning a new discipline, or managing deep research across dozens of topics. You have snippets of code, curated lists of links, and private documentation that you need to organize into a cohesive whole. You look for a <strong>knowledge base</strong> online to act as your "Second Brain" and help you connect the dots. But as you look at the "Universal Search" and "Cloud Indexing" features of most note apps, you realize that your internal project logic, personal discoveries, and proprietary research are being indexed by an anonymous database. Do you really want to share your "Intellectual Property" with a third-party algorithm?</p>
+
+        <p>At 99tool.in, we built our <strong>knowledge base</strong> to give you a professional librarian without the privacy gamble. By utilizing browser-side markdown rendering and local data persistence, we allow you to <strong>build a personal wiki</strong> entirely within the secure sandbox of your own machine. Whether you’re a graduate student managing a thesis library, a software engineer documenting internal system architecture, or a creative building a complex story world, our <strong>safe knowledge tool</strong> ensures that your insights stay where they belong: on your device, under your total sovereignty.</p>
+        
+        <div class="tool-preview-box mt-4 mb-4" style="text-align:center;">
+           <img src="../../assets/images/kb-preview.png" alt="Clean Knowledge Base Workspace with Wiki-Style Linking" class="tool-preview" id="tool-preview-img" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+        </div>
+
+        <h3 class="mt-4">The Logic of Hierarchical Retrieval</h3>
+        <p>Information is only knowledge if it’s retrievable. Most basic <strong>note organization tools</strong> create "Data Graveyards," where notes go to be forgotten. Our <strong>professional knowledge base</strong> takes a human-centric approach: we focus on **Wiki-Style Linking** and **Instant Global Search**.</p>
+        
+        <p>We provide a "bi-directional" link architecture using simple `[[Bracket Syntax]]`. When you link two thoughts together, you're creating a meaningful connection that mimics how the human brain actually stores information. Our <strong>safe wiki validator</strong> doesn't just store text; it provides a real-time rendered environment where your links are live and your headers are clean. This transparency transforms a collection of messy notes into a structured, searchable manual for your mind.</p>
+
+        <h3 class="mt-4">Why Wiking is the Researcher’s Ethical Choice</h2>
+        <p>In the age of digital surveillance, the way you think and connect ideas is a valuable fingerprint. When you use a standard <strong>knowledge base online free</strong> service, you are essentially giving away your "Discovery Path" for a third party to analyze. Our 100% <strong>knowledge utility</strong> removes this "Privacy Risk" entirely from your research routine.</p>
+        
+        <p>Because the logic and storage happen in your browser's private sandbox, your connections and your documentation are invisible to the outside world. No analytics are tracked, no links are harvested, and no proprietary research data is shared with AI trackers. At 99tool.in, we believe that <strong>building a second brain</strong> should be an empowering utility, not a data-mining exercise. With us, you have a private, professional library that fits in your browser tab.</p>
+
+        <h3 class="mt-4">How to Build Your Private Library (Step-by-Step)</h3>
+        <p>Organizing your knowledge should be a high-speed, 10-second task. Here is how to use our <strong>knowledge base</strong>:</p>
+        <ul style="line-height: 1.8; margin-bottom: 20px;">
+          <li><strong>Step 1: Define Your Page</strong> — Click "New" in the sidebar and enter a title (e.g., "Project X Architecture" or "Italian Grammar"). This is the root of your new knowledge node.</li>
+          <li><strong>Step 2: Document with Markdown</strong> — Write your notes using standard Markdown. Use headers, bold text, and lists to make your information readable and structured.</li>
+          <li><strong>Step 3: Connect the Dots</strong> — Use the `[[Link Name]]` syntax to reference other pages. If the page doesn't exist, our system will prompt you to create it, allowing your wiki to grow organically.</li>
+          <li><strong>Step 4: Instant Recall</strong> — Use the search bar in the sidebar to filter your library in real-time. Find any note or connection in seconds, knowing your data survives browser restarts.</li>
+        </ul>
+
+        <h3 class="mt-4">Strategic Use Cases for Your Local Knowledge Base</h3>
+        <p>Our <strong>personal wiki</strong> is the essential companion for varied professional life:</p>
+        
+        <p><strong>For Technical Writers:</strong> Building an internal documentation library? Use our <strong>knowledge base</strong> to map out system flows and API endpoints privately without risking proprietary data to a cloud wiki.</p>
+        
+        <p><strong>For PhD Candidates:</strong> Managing a massive literature review? Use our <strong>safe note tool</strong> to link sources, quotes, and personal takes, ensuring your research logic remains your exclusive property.</p>
+        
+        <p><strong>For Game Designers:</strong> Building a complex world lore? Use our <strong>wiki-style notes</strong> to keep track of characters, locations, and quest lines through interconnected pages that grow as fast as your imagination.</p>
+
+        <h3 class="mt-5">Explore Your Complete Productivity Suite</h3>
+        <p>Once you’ve successfully built your second brain, you might need to manage your tactical tasks. Check out our <strong><a href="kanban-board.html">Kanban Board</a></strong>. Or, if you need to track your daily progress, use our <strong><a href="daily-habit-tracker.html">Habit Tracker</a></strong>. At 99tool.in, we are building a world-class, 100% private digital toolkit to give you total control over your intellectual life.</p>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Is there a limit to how many pages I can create?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. You can create literally thousands of interconnected pages in our <strong>wiki</strong>. Because it is purely text-based, your entire <strong>knowledge management tool</strong> library takes up very little space in your browser's memory, ensuring lightning-fast search and retrieval.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I use Markdown for formatting?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. Our <strong>knowledge base</strong> supports basic Markdown conventions including headers (#), bold (**), italics (*), and lists. Combined with our <strong>personal wiki</strong> linking, this allows you to create professionally formatted, interconnected documentation.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              How do I back up my knowledge base?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Because privacy is paramount, we don't sync your notes to any cloud. To back up your library, you can use the "Export all data" feature found in our main site settings (coming soon) or manually copy the <code>localStorage</code> contents. We are working on a dedicated JSON export for the Knowledge Base in a future update.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 100% Local. No login. No sync. Just pure information at your fingertips. Last updated: April 10, 2026.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    let pages = JSON.parse(localStorage.getItem('99tool_wiki_v1')) || {
+      "Welcome": "# Welcome to your Knowledge Base\n\nThis is your private, wiki. Start by exploring these features:\n\n1. **Internal Links**: Use [[Brackets]] to create links to other pages.\n2. **Markdown**: Use headers, bold, and lists to organize your thoughts.\n3. **Search**: Find anything instantly using the sidebar search.\n\nYou can [[Edit This Page]] to get started!"
+    };
+
+    let currentPage = 'Welcome';
+
+    const renderArea = document.getElementById('render-area');
+    const sidebarList = document.getElementById('sidebar-list');
+    const editArea = document.getElementById('wiki-editor');
+    const editTitle = document.getElementById('edit-title');
+    const pageTitle = document.getElementById('page-title');
+    const searchInput = document.getElementById('wiki-search');
+
+    function init() {
+      loadPage(currentPage);
+      renderSidebar();
+    }
+
+    function loadPage(name) {
+      currentPage = name;
+      const content = pages[currentPage] || "# New Page\nWrite something for this page...";
+      pageTitle.textContent = currentPage;
+      renderArea.innerHTML = simpleMarkdown(content);
+      renderSidebar();
+    }
+
+    function simpleMarkdown(text) {
+      let html = text
+        .replace(/^# (.*$)/gim, '<h2>$1</h2>')
+        .replace(/^## (.*$)/gim, '<h3>$1</h3>')
+        .replace(/\*\*(.*)\*\*/gim, '<strong>$1</strong>')
+        .replace(/\*(.*)\*/gim, '<em>$1</em>')
+        .replace(/^\d+\. (.*$)/gim, '<li>$1</li>')
+        .replace(/^\- (.*$)/gim, '<li>$1</li>')
+        .replace(/\n\n/g, '</p><p>')
+        .replace(/\[\[(.*?)\]\]/g, (match, p1) => {
+           const exists = !!pages[p1.trim()];
+           return `<a href="#" class="internal-link ${exists ? '' : 'broken-link'}" onclick="handleLinkClick('${p1.trim()}'); return false;">${p1.trim()}</a>`;
+        });
+      return `<p>${html}</p>`.replace(/<li>/g, '<ul><li>').replace(/<\/li>\n/g, '</li></ul>');
+    }
+
+    window.handleLinkClick = (name) => {
+      if (!pages[name]) {
+        if (confirm(`Page "${name}" does not exist. Create it now?`)) {
+          pages[name] = `# ${name}\n\nThis page was created via a link.`;
+          saveToDisk();
+          loadPage(name);
+        }
+      } else {
+        loadPage(name);
+      }
+    };
+
+    function savePage() {
+      const newTitle = editTitle.value.trim();
+      const content = editArea.value;
+
+      if (!newTitle) return;
+
+      if (newTitle !== currentPage) {
+        delete pages[currentPage];
+      }
+      pages[newTitle] = content;
+      currentPage = newTitle;
+
+      saveToDisk();
+      exitEditMode();
+      loadPage(currentPage);
+    }
+
+    function deleteCurrentPage() {
+      if (confirm(`Permanently delete page "${currentPage}"?`)) {
+        delete pages[currentPage];
+        saveToDisk();
+        currentPage = Object.keys(pages)[0] || 'Welcome';
+        if (!pages[currentPage]) pages['Welcome'] = "# Welcome";
+        loadPage(currentPage);
+      }
+    }
+
+    function saveToDisk() {
+      localStorage.setItem('99tool_wiki_v1', JSON.stringify(pages));
+    }
+
+    function renderSidebar(filter = '') {
+      sidebarList.innerHTML = '';
+      const list = Object.keys(pages).sort();
+      
+      list.forEach(name => {
+        if (name.toLowerCase().includes(filter.toLowerCase())) {
+          const item = document.createElement('div');
+          item.className = `sidebar-item ${name === currentPage ? 'active' : ''}`;
+          item.textContent = name;
+          item.onclick = () => loadPage(name);
+          sidebarList.appendChild(item);
+        }
+      });
+    }
+
+    function enterEditMode() {
+      document.getElementById('view-mode').style.display = 'none';
+      document.getElementById('edit-mode').style.display = 'block';
+      editTitle.value = currentPage;
+      editArea.value = pages[currentPage];
+    }
+
+    function exitEditMode() {
+      document.getElementById('view-mode').style.display = 'block';
+      document.getElementById('edit-mode').style.display = 'none';
+    }
+
+    function createNewPage() {
+      currentPage = 'Untitled';
+      pages[currentPage] = '# Untitled Page\n\nStart writing...';
+      enterEditMode();
+    }
+
+    searchInput.oninput = (e) => renderSidebar(e.target.value);
+
+    init();
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Word Counter – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/productivity/word-counter.html"/>
+<meta property="og:title" content="Word Counter – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/productivity/word-counter.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Word Counter \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/productivity/word-counter.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="word counter, character counter, online word count, reading time calculator" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json" id="schema-org-data">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Online Word Counter",
+    "operatingSystem": "Any",
+    "applicationCategory": "UtilitiesApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Word count, character count, sentence count, reading time estimation"
+  }
+  </script>
+
+  <style>
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .stat-card {
+      background: var(--dark);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 14px;
+      text-align: center;
+    }
+    .stat-card .stat-value {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--primary);
+      display: block;
+    }
+    .stat-card .stat-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+      display: block;
+    }
+    #word-input {
+      min-height: 200px;
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/productivity/word-counter.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/productivity/word-counter.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/productivity/word-counter.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/productivity/word-counter.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/productivity/word-counter.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/productivity/word-counter.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/productivity/word-counter.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/productivity/word-counter.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/productivity/word-counter.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/productivity/word-counter.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/productivity/word-counter.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/productivity/word-counter.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/productivity/word-counter.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/productivity/word-counter.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/productivity/word-counter.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/productivity/word-counter.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/productivity/word-counter.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/productivity/word-counter.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/productivity/word-counter.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/productivity/word-counter.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/productivity/word-counter.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/productivity/word-counter.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <!-- HERO -->
+  <section class="tool-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../index.html">Home</a>
+        <span>›</span>
+        <a href="../../index.html#productivity">Productivity</a>
+        <span>›</span>
+        <span>Word Counter</span>
+      </div>
+      <h1>Online Word Counter</h1>
+      <p>Count words, characters, sentences, and paragraphs — plus estimate reading time. Free &amp; instant.</p>
+    </div>
+  </section>
+
+  <!-- TOOL -->
+  <main class="tool-main">
+    <div class="container-sm">
+      <div class="tool-box">
+        <div class="form-group">
+          <label for="word-input">Paste or type your text below</label>
+          <textarea class="form-control" id="word-input" placeholder="Start typing or paste text here..."></textarea>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-value" id="wc-words">0</span>
+            <span class="stat-label">Words</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value" id="wc-chars">0</span>
+            <span class="stat-label">Characters</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value" id="wc-chars-no-space">0</span>
+            <span class="stat-label">Chars (no space)</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value" id="wc-sentences">0</span>
+            <span class="stat-label">Sentences</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value" id="wc-paragraphs">0</span>
+            <span class="stat-label">Paragraphs</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value" id="wc-read-time">0 min</span>
+            <span class="stat-label">Read Time</span>
+          </div>
+        </div>
+
+        <div class="flex mt-3" style="justify-content: flex-end;">
+          <button class="btn btn-secondary btn-sm" onclick="clearText()">Clear</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- HUMANIZED CONTENT -->
+  <section class="seo-content mt-5 text-start">
+    <div class="container">
+      <h2 data-i18n="tools.online_word_counter.what_is_title">What is the Online Word Counter?</h2>
+      <p>The Online Word Counter is a real-time text analysis tool that counts words, characters, sentences, and paragraphs as you type or paste content. Cloud-based text editors often store your documents on external servers. This tool performs all analysis locally inside your browser with no data transmission.</p>
+      <p>The counter updates instantly on every keystroke, letting you monitor text length for essays, social media posts, SEO content, or any format with a character or word limit. Your text never leaves your device.</p>
+
+      <h3 class="mt-4">How to Use the Online Word Counter</h3>
+      <p>Analyzing your text involves these steps:</p>
+      <ol class="mt-2 mb-3">
+        <li>Type or paste your text directly into the editor box at the top of the page.</li>
+        <li>Watch the Word Count, Character Count, Sentence Count, and Paragraph Count update in real time.</li>
+        <li>Use the "Reading Time" indicator to estimate how long it will take an average reader to consume your content.</li>
+        <li>Edit your text directly in the box to adjust length until you meet your target.</li>
+        <li>Click "Clear" to reset the editor for a fresh analysis.</li>
+      </ol>
+
+      <h3 class="mt-4">Key Features</h3>
+      <ul class="mt-2 mb-3">
+        <li><strong>Real-Time Counting:</strong> Updates word, character, sentence, and paragraph counts on every keystroke.</li>
+        <li><strong>Reading Time Estimate:</strong> Calculates approximate reading duration based on standard adult reading speed.</li>
+        <li><strong>Character Count (with &amp; without spaces):</strong> Displays both totals for platforms like Twitter that count spaces differently.</li>
+        <li><strong>Zero-Upload Privacy:</strong> All counting logic runs client-side; your text is never sent to any server.</li>
+      </ul>
+
+      <h3 class="mt-4">Common Use Cases</h3>
+      <p>This tool is helpful for the following tasks:</p>
+      <ul class="mt-2 mb-3">
+        <li><strong>Academic Essays:</strong> Verifying word count against submission limits for university assignments before upload.</li>
+        <li><strong>SEO Content Writing:</strong> Targeting specific character counts for meta descriptions, title tags, and article lengths.</li>
+        <li><strong>Social Media Posts:</strong> Staying within Twitter/X or LinkedIn character limits before publishing.</li>
+        <li><strong>Freelance Writing:</strong> Auditing deliverable length against contractual word-count specifications.</li>
+      </ul>
+
+      <h3 class="mt-4">Frequently Asked Questions</h3>
+      <div class="faq-section mt-3">
+        <p><strong>Does this tool save my text?</strong><br>No. Your text is not saved to localStorage or any server. Once you clear the editor or close the tab, the content is gone.</p>
+        <p><strong>How is "reading time" calculated?</strong><br>The reading time estimate is based on an average adult reading speed of approximately 200–250 words per minute.</p>
+        <p><strong>Does it count spaces as characters?</strong><br>Yes. The tool displays both the total character count (including spaces) and the count without spaces so you can match whichever platform limit applies.</p>
+        <p><strong>What counts as a "sentence"?</strong><br>Any sequence ending with a period, exclamation mark, or question mark is counted as a sentence.</p>
+      </div>
+
+      <h3 class="mt-4">Privacy &amp; Data Note</h3>
+      <p>All text analysis, character counting, and reading time calculations are processed entirely inside your browser. Your content is never stored, transmitted, or seen by any server.</p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="container-sm">
+      <h2 data-i18n="tools.online_word_counter.faq_title">Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">Does this tool save what I write?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>Absolutely not. Your privacy is paramount. Everything happens locally in your browser tab. Once you close it, your text is gone forever from our end (because it was never here in the first place!).</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">What is a good reading speed count?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>We use an average estimate of 200 words per minute, which is standard for most adults. It gives you a rough idea of how long it will take someone to finish your article.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Can I use this for social media character limits?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>Definitely! Whether it's for X (Twitter), LinkedIn, or Instagram captions, the character counter (with and without spaces) is your best friend for staying within those limits.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Is there a limit to how much text I can paste?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>We haven't found a limit yet! Whether it's a short tweet or a full thesis chapter, the tool is built to handle it effortlessly.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Does it work on my phone?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>Yes, the tool is fully responsive. You can count words on the go from your smartphone or tablet just as easily as on a desktop.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const input = document.getElementById('word-input');
+
+    function updateStats() {
+      const text = input.value;
+      const words = text.trim() === '' ? 0 : text.trim().split(/\s+/).filter(Boolean).length;
+      const chars = text.length;
+      const charsNoSpace = text.replace(/\s/g, '').length;
+      const sentences = text.split(/[.!?]+/).filter(s => s.trim().length > 0).length;
+      const paragraphs = text.split(/\n{2,}/).filter(p => p.trim().length > 0).length;
+      const readTime = Math.max(1, Math.round(words / 200));
+
+       document.getElementById('wc-words').textContent = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(words, 0) : words.toLocaleString();
+       document.getElementById('wc-chars').textContent = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(chars, 0) : chars.toLocaleString();
+       document.getElementById('wc-chars-no-space').textContent = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(charsNoSpace, 0) : charsNoSpace.toLocaleString();
+       document.getElementById('wc-sentences').textContent = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(sentences, 0) : sentences.toLocaleString();
+       document.getElementById('wc-paragraphs').textContent = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(paragraphs, 0) : paragraphs.toLocaleString();
+      document.getElementById('wc-read-time').textContent = (words === 0 ? '0' : readTime) + ' min';
+    }
+
+    input.addEventListener('input', updateStats);
+
+    function clearText() {
+      input.value = '';
+      updateStats();
+    }
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

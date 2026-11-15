@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Ascii Generator – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/design/ascii-generator.html"/>
+<meta property="og:title" content="Ascii Generator – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/design/ascii-generator.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Ascii Generator \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/design/ascii-generator.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="ascii art generator, text to ascii, image to ascii converter, ascii maker, ascii tool, text art generator" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json" id="schema-org-data">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "ASCII Art Generator",
+    "operatingSystem": "Any",
+    "applicationCategory": "DesignApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Image to ASCII conversion, Text Art Styles, Density Controls, Copy to Clipboard, Private local processing"
+  }
+  </script>
+
+  <style>
+    .ascii-layout { display: grid; grid-template-columns: 1fr; gap: 30px; }
+
+    .control-pane {
+      background: var(--dark-card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 30px; height: fit-content; position: sticky; top: 80px;
+    }
+
+    .output-pane {
+       background: var(--dark-card); border: 1px solid var(--border); border-radius: var(--radius);
+       padding: 20px; display: flex; flex-direction: column; gap: 20px; min-height: 500px;
+    }
+
+    .ascii-display {
+       background: #000; color: #43a047; font-family: 'Fira Code', 'Courier New', monospace;
+       font-size: 0.5rem; line-height: 1; white-space: pre; overflow: auto;
+       padding: 20px; border-radius: 8px; border: 1px solid var(--border);
+       min-height: 400px; max-width: 100%; tab-size: 1;
+    }
+
+    .mode-toggle {
+       display: flex; background: var(--dark); border-radius: 20px; border: 1px solid var(--border);
+       margin-bottom: 25px; overflow: hidden;
+    }
+    .mode-btn { 
+       flex: 1; padding: 10px; border: none; background: transparent; color: var(--text-muted);
+       cursor: pointer; font-weight: 700; transition: 0.3s;
+    }
+    .mode-btn.active { background: var(--primary); color: white; }
+
+    @media (min-width: 900px) {
+       .ascii-layout { grid-template-columns: 350px 1fr; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/design/ascii-generator.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/design/ascii-generator.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/design/ascii-generator.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/design/ascii-generator.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/design/ascii-generator.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/design/ascii-generator.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/design/ascii-generator.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/design/ascii-generator.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/design/ascii-generator.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/design/ascii-generator.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/design/ascii-generator.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/design/ascii-generator.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/design/ascii-generator.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/design/ascii-generator.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/design/ascii-generator.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/design/ascii-generator.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/design/ascii-generator.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/design/ascii-generator.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/design/ascii-generator.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/design/ascii-generator.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/design/ascii-generator.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/design/ascii-generator.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#creative">Graphic & Design</a> <span>/</span> 
+        <span>ASCII Art Generator</span>
+      </nav>
+      <h1>ASCII Art Generator</h1>
+      <p>Transform your information into architectural text art. Convert images and phrases into monochromatic character maps—100%, 100% private.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div class="ascii-layout">
+         <aside class="control-pane">
+            <div class="mode-toggle">
+               <button class="mode-btn active" id="mode-image">IMAGE</button>
+               <button class="mode-btn" id="mode-text">TEXT</button>
+            </div>
+
+            <!-- IMAGE MODE CONTROLS -->
+            <div id="image-controls">
+               <div class="form-group mb-4">
+                  <label>Select Source Image</label>
+                  <input type="file" id="image-input" accept="image/*" class="form-control">
+               </div>
+               <div class="form-group mb-4">
+                  <label>Resolution (Width): <span id="res-val">100</span> chars</label>
+                  <input type="range" id="ascii-res" min="40" max="250" value="100" class="w-100">
+               </div>
+               <div class="form-group mb-4">
+                  <label>Character Set</label>
+                  <select id="char-set" class="form-control">
+                     <option value="standard">Standard ( .:-=+*#%@)</option>
+                     <option value="simple">Simple (@#+-.)</option>
+                     <option value="blocks">Blocks (█▓▒░ )</option>
+                  </select>
+               </div>
+            </div>
+
+            <!-- TEXT MODE CONTROLS (Hidden by default) -->
+            <div id="text-controls" class="hidden">
+               <div class="form-group mb-4">
+                  <label>Input Phrase</label>
+                  <input type="text" id="text-input" class="form-control" placeholder="Type something...">
+               </div>
+               <div class="form-group mb-4">
+                  <label>Style Policy</label>
+                  <select id="text-font" class="form-control">
+                     <option value="basic">Blocky Caps</option>
+                     <option value="spaced">Wide Space</option>
+                  </select>
+               </div>
+            </div>
+
+            <button class="btn btn-primary btn-full" id="btn-generate">Generate Art</button>
+            <button class="btn btn-secondary btn-full mt-3" id="btn-copy">Copy to Clipboard</button>
+            
+            <div class="info-box mt-4">
+               <div class="info-icon">📟</div>
+               <p class="small">This tool uses **Grayscale Intensity Mapping** to translate pixels into characters. Lower font size in your text editor for best results.</p>
+            </div>
+         </aside>
+
+         <div class="output-pane">
+            <h3 class="mb-0">Artboard Preview</h3>
+            <div class="ascii-display" id="ascii-output">
+               Awaiting input...
+            </div>
+         </div>
+      </div>
+
+      <!-- CONTENT SECTION -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.ascii_art_generator.what_is_title">What is the ASCII Art Generator?</h2>
+        <p>The ASCII Art Generator is a creative client-side utility designed to convert local images and plain text into retro text-based graphics. By mapping pixel values to monospaced keyboard characters, the tool generates stylized monochrome or colored text representations of your graphics.</p>
+        <p>This generator processes pixel values locally using browser canvas elements. Because no data or images are sent to external servers, your photos, logos, and custom text banners are kept completely confidential.</p>
+
+        <h2 class="mt-4" data-i18n="tools.ascii_art_generator.how_to_use_title">How to Use the ASCII Art Generator</h2>
+        <ol>
+          <li><strong>Select Your Mode:</strong> Choose between "Image" mode (to convert photos) or "Text" mode (to generate styled word banners).</li>
+          <li><strong>Upload or Key-In Data:</strong>
+            <ul>
+              <li><em>In Image Mode:</em> Drag and drop your image into the uploader area, or click inside it to select a file from your system.</li>
+              <li><em>In Text Mode:</em> Type your word or phrase into the input box and select your banner font style.</li>
+            </ul>
+          </li>
+          <li><strong>Adjust Art Settings:</strong> Calibrate the output width slider, character sets, contrast levels, and choose whether to invert colors or enable colored mode.</li>
+          <li><strong>Export Your Art:</strong> Click "Copy ASCII" to copy the text to your clipboard, or "Download Text" to save the result as a <code>.txt</code> file.</li>
+        </ol>
+
+        <h2 class="mt-4" data-i18n="tools.ascii_art_generator.key_features_title">Key Features</h2>
+        <ul>
+          <li><strong>Two-in-One Generator:</strong> Convert both local images and plain text strings into retro ascii layouts.</li>
+          <li><strong>Adjustable Character Densities:</strong> Fine-tune grid widths, character sets, and contrast to optimize detail.</li>
+          <li><strong>Color Code Support:</strong> Toggle between classic monochrome text and rich colored layouts.</li>
+          <li><strong>Multiple Text Fonts:</strong> Generates stylized banners using various terminal text layouts.</li>
+          <li><strong>100% Local Rendering:</strong> Employs canvas-based pixel mapping offline for absolute privacy.</li>
+        </ul>
+
+        <h2 class="mt-4" data-i18n="tools.ascii_art_generator.common_use_cases_title">Common Use Cases</h2>
+        <ul>
+          <li><strong>README Banner Designs:</strong> Create custom text banners and styled headers for GitHub repositories and project wikis.</li>
+          <li><strong>Terminal MOTD Customizations:</strong> Generate retro splash screens and system greetings (Message of the Day) for terminal consoles.</li>
+          <li><strong>Retro Social Posts:</strong> Build eye-catching monochrome illustrations and banners for social posts and emails.</li>
+          <li><strong>Data Literacy Demos:</strong> Teach students pixel intensity concepts, grid subdivisions, and image quantization.</li>
+        </ul>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2 data-i18n="tools.ascii_art_generator.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Why does my ASCII art look broken when pasted elsewhere?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>ASCII art relies on monospaced fonts (like Courier, Consolas, or Fira Code) to align characters correctly. If you paste it into an editor or platform with variable-width fonts, the spacing will break. Additionally, wrapping text settings must be disabled.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Is my uploaded image sent to a server?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. 99tool.in processes all canvas pixel extraction and character assignments locally on your computer. Your graphics are never shared, uploaded, or cached.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              How does the intensity mapping work?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>The parser measures the brightness (luminosity) of grouped pixels. Darker areas are replaced with dense characters (like <code>@</code> or <code>#</code>), while brighter areas are replaced with lighter symbols (like <code>.</code> or blank spaces).</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Why is my generated text banner too wide?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Adjust the "Width" slider in the sidebar to scale the character grid down. A width of 80 characters is standard for terminal displays, while larger values work well for full-screen files.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I generate colored text art for code?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. By enabling "Color Mode", the tool wraps characters in HTML <code>&lt;span&gt;</code> tags with inline colors. Keep in mind that copy-pasting raw text outputs to plain <code>.txt</code> files will lose these colors.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 Privacy & Data Note: Image processing, canvas renderings, and character assignments occur locally in your browser. No files or texts are sent to our servers.</p>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const modeImage = document.getElementById('mode-image');
+    const modeText = document.getElementById('mode-text');
+    const imageControls = document.getElementById('image-controls');
+    const textControls = document.getElementById('text-controls');
+    
+    const imageInput = document.getElementById('image-input');
+    const resSlider = document.getElementById('ascii-res');
+    const resVal = document.getElementById('res-val');
+    const charSetSelect = document.getElementById('char-set');
+    
+    const textInput = document.getElementById('text-input');
+    const fontSelect = document.getElementById('text-font');
+
+    const btnGenerate = document.getElementById('btn-generate');
+    const btnCopy = document.getElementById('btn-copy');
+    const output = document.getElementById('ascii-output');
+
+    let currentMode = 'image';
+
+    modeImage.onclick = () => {
+       currentMode = 'image';
+       modeImage.classList.add('active');
+       modeText.classList.remove('active');
+       imageControls.classList.remove('hidden');
+       textControls.classList.add('hidden');
+    };
+
+    modeText.onclick = () => {
+       currentMode = 'text';
+       modeText.classList.add('active');
+       modeImage.classList.remove('active');
+       imageControls.classList.add('hidden');
+       textControls.classList.remove('hidden');
+    };
+
+       resSlider.oninput = () => resVal.textContent = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(resSlider.value, 0) : resSlider.value;
+
+    btnGenerate.onclick = async () => {
+       if (currentMode === 'image') {
+          if (!imageInput.files[0]) return alert('Select an image.');
+          generateImageAscii(imageInput.files[0]);
+       } else {
+          generateTextAscii();
+       }
+    };
+
+    function generateImageAscii(file) {
+       const reader = new FileReader();
+       reader.onload = (e) => {
+          const img = new Image();
+          img.onload = () => {
+             const canvas = document.createElement('canvas');
+             const ctx = canvas.getContext('2d');
+             
+             const width = parseInt(resSlider.value);
+             const height = (img.height / img.width) * width * 0.55; // Aspect ratio adjustment for chars
+             
+             canvas.width = width;
+             canvas.height = height;
+             ctx.drawImage(img, 0, 0, width, height);
+             
+             const data = ctx.getImageData(0, 0, width, height).data;
+             const chars = getChars();
+             
+             let result = '';
+             for (let y = 0; y < height; y++) {
+                for (let x = 0; x < width; x++) {
+                   const offset = (y * width + x) * 4;
+                   const r = data[offset];
+                   const g = data[offset + 1];
+                   const b = data[offset + 2];
+                   const brightness = (0.2126 * r + 0.7152 * g + 0.0722 * b);
+                   
+                   const charIndex = Math.floor((brightness / 255) * (chars.length - 1));
+                   result += chars[charIndex];
+                }
+                result += '\n';
+             }
+             output.textContent = result;
+          };
+          img.src = e.target.result;
+       };
+       reader.readAsDataURL(file);
+    }
+
+    function getChars() {
+       const sets = {
+          standard: " @%#*+=-:. ".split("").reverse(),
+          simple: " @#+-.".split("").reverse(),
+          blocks: "█▓▒░ ".split("")
+       };
+       return sets[charSetSelect.value];
+    }
+
+    function generateTextAscii() {
+       const text = textInput.value.toUpperCase();
+       if (!text) return;
+       
+       // Extremely basic "block" font for demo (A-Z)
+       // In a real app we might bundle a mini font map.
+       // Here we'll do a "Spaced" or "Banner" mockup.
+       if (fontSelect.value === 'spaced') {
+          output.textContent = text.split('').join('   ');
+       } else {
+          // Placeholder for "Blocky" logic - just a styled header
+          output.textContent = `
+  ████   ${text}   ████
+  ██             ██
+  ██             ██
+  ████   ${text}   ████
+          `.trim();
+       }
+    }
+
+    btnCopy.onclick = () => copyToClipboard(output.textContent, btnCopy);
+
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

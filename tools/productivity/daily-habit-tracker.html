@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Daily Habit Tracker – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/productivity/daily-habit-tracker.html"/>
+<meta property="og:title" content="Daily Habit Tracker – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/productivity/daily-habit-tracker.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Daily Habit Tracker \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/productivity/daily-habit-tracker.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="daily habit tracker, habit tracker online free, daily routine tracker, habit tracking app, habit tracker, simple habit tracker" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json" id="schema-org-data">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Daily Habit Tracker",
+    "operatingSystem": "Any",
+    "applicationCategory": "UtilitiesApplication",
+    "offers": {
+      "@type": "Offer",
+      "offerCount": "1",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Streak tracking, daily routine management, persistence"
+  }
+  </script>
+  <style>
+    .habit-input-group {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    .habit-list {
+      display: grid;
+      gap: 16px;
+    }
+    .habit-card {
+      background: var(--dark);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: border-color var(--transition);
+    }
+    .habit-card:hover {
+      border-color: var(--primary);
+    }
+    .habit-info {
+      flex: 1;
+    }
+    .habit-name {
+      display: block;
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+    .habit-stats {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    .streak-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      color: #ff9800;
+      font-weight: 700;
+    }
+    .habit-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .done-toggle {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 2px solid var(--border);
+      background: transparent;
+      color: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.2rem;
+      transition: all var(--transition);
+    }
+    .done-toggle:hover {
+      border-color: var(--primary);
+    }
+    .done-toggle.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: var(--white);
+    }
+    .delete-habit {
+      background: none;
+      border: none;
+      color: var(--grey);
+      cursor: pointer;
+      font-size: 1.1rem;
+      padding: 4px;
+      transition: color var(--transition);
+    }
+    .delete-habit:hover {
+      color: var(--primary);
+    }
+    .empty-state {
+      text-align: center;
+      padding: 40px 0;
+      color: var(--text-muted);
+    }
+    .tool-preview {
+      margin-top: 40px;
+      text-align: center;
+      padding-bottom: 20px;
+    }
+    .tool-preview p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+    .tool-preview img {
+      max-width: 100%;
+      height: auto;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      margin: 0 auto;
+    }
+    .trust-signal {
+      text-align: center;
+      padding: 24px 0;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      margin-top: 40px;
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/productivity/daily-habit-tracker.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/productivity/daily-habit-tracker.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/productivity/daily-habit-tracker.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/productivity/daily-habit-tracker.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/productivity/daily-habit-tracker.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/productivity/daily-habit-tracker.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/productivity/daily-habit-tracker.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/productivity/daily-habit-tracker.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/productivity/daily-habit-tracker.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/productivity/daily-habit-tracker.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/productivity/daily-habit-tracker.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/productivity/daily-habit-tracker.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/productivity/daily-habit-tracker.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/productivity/daily-habit-tracker.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/productivity/daily-habit-tracker.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/productivity/daily-habit-tracker.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/productivity/daily-habit-tracker.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/productivity/daily-habit-tracker.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/productivity/daily-habit-tracker.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/productivity/daily-habit-tracker.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/productivity/daily-habit-tracker.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/productivity/daily-habit-tracker.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <!-- HERO -->
+  <section class="tool-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../index.html">Home</a>
+        <span>›</span>
+        <a href="../../index.html#productivity">Productivity</a>
+        <span>›</span>
+        <span>Daily Habit Tracker</span>
+      </div>
+      <h1>Daily Habit Tracker</h1>
+      <p>Build better routines and stay consistent. Professional-grade habit tracking, 100% and private.</p>
+    </div>
+  </section>
+
+  <!-- TOOL -->
+  <main class="tool-main">
+    <div class="container-sm">
+      <div class="tool-box">
+        <div class="habit-input-group">
+          <input type="text" id="habit-input" class="form-control" placeholder="Add a new habit (e.g., Morning Run)" autocomplete="off" />
+          <button id="add-habit" class="btn btn-primary">Start</button>
+        </div>
+
+        <div id="habit-list" class="habit-list">
+          <!-- Habits will appear here -->
+        </div>
+
+        <div id="empty-state" class="empty-state">
+          <p>No habits added yet. Start by typing a habit above!</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tool Preview -->
+    <div class="tool-preview container-sm">
+      <p>Here's what it looks like:</p>
+      <img src="../../assets/images/habit-tracker-preview.png" alt="Daily Habit Tracker Preview" loading="lazy" />
+    </div>
+  </main>
+
+  <!-- HUMANIZED CONTENT -->
+  <section class="seo-content mt-5 text-start">
+    <div class="container-sm">
+      <h2 data-i18n="tools.daily_habit_tracker.what_is_title">What is the Daily Habit Tracker?</h2>
+      <p>The Daily Habit Tracker is a private routine planner designed to help you build and maintain positive habits. Developing new habits requires consistent effort and clear visualization of your progress. Many online trackers sync your routine patterns to remote databases. By contrast, this tool runs entirely locally within your browser sandbox, keeping your personal routines secure.</p>
+      <p>By logging your daily progress, this tracker computes active streak durations. It uses your browser's local memory to save your habits, helping you track your progress without the need for an external account.</p>
+
+      <h3 class="mt-4">How to Use the Daily Habit Tracker</h3>
+      <p>Starting and tracking your daily habits takes a few simple steps:</p>
+      <ol class="mt-2 mb-3">
+        <li>Enter the name of your new routine in the text field at the top of the tracker dashboard (e.g., "Drink 3L Water" or "Read 15 Pages").</li>
+        <li>Click the "Start" button or press Enter on your keyboard to create the habit card.</li>
+        <li>Once you complete your habit for the day, click the circular checkmark button on the right side of the card. The button will show a checkmark and lock to indicate completion.</li>
+        <li>Observe the "🔥 day streak" badge and the total completion counter update immediately.</li>
+        <li>Click the trash bin icon (🗑) to delete a habit card and its progress data from your local dashboard.</li>
+      </ol>
+
+      <h3 class="mt-4">Key Features of the Habit Solver</h3>
+      <ul class="mt-2 mb-3">
+        <li><strong>Automatic Streak Calculations:</strong> Tracks daily consecutive check-ins and resets your streak if a day is missed.</li>
+        <li><strong>Locking Check-In System:</strong> Disables the completion toggle once a habit is marked done for the day to prevent accidental updates.</li>
+        <li><strong>Cumulative Progress Counts:</strong> Logs total completions alongside active streaks, giving you a complete overview of your long-term success.</li>
+        <li><strong>Clean Empty States:</strong> Displays helpful setup prompts when no active habits are registered in the tracker database.</li>
+      </ul>
+
+      <h3 class="mt-4">Common Use Cases</h3>
+      <p>This routine dashboard is helpful for tracking the following activities:</p>
+      <ul class="mt-2 mb-3">
+        <li><strong>Study & Skill Tracking:</strong> Building daily coding habits, practicing flashcards, or learning languages consistently.</li>
+        <li><strong>Physical Fitness Routines:</strong> Logging daily stretching, yoga sessions, or outdoor runs.</li>
+        <li><strong>Wellness Habits:</strong> Tracking daily hydration goals, meditation sessions, or journaling practices.</li>
+      </ul>
+
+      <h3 class="mt-4">Frequently Asked Questions</h3>
+      <div class="faq-section mt-3">
+        <p><strong>How is my streak calculated?</strong><br>The tool compares the current date with the timestamp of your last completion. If you check off your habit on consecutive calendar days, your streak grows. If more than 24 hours pass without a check-in, the streak resets to 0.</p>
+        <p><strong>Can I access my habits on another device?</strong><br>No. To maintain complete privacy, all habit data is saved directly in your current browser's local storage. Your data does not sync across different browsers or devices.</p>
+        <p><strong>Will clearing my browser cache delete my streaks?</strong><br>Yes. Clearing your browser's site cookies and site data will delete your saved habits and reset all streaks.</p>
+        <p><strong>Can I mark a habit done for a previous day?</strong><br>No. The tracker is designed to log habits on the active calendar date to encourage real-time consistency and prevent retrospective logging.</p>
+      </div>
+
+      <h3 class="mt-4">Privacy & Data Note</h3>
+      <p>All habits, timestamps, and streak statistics are processed locally in your browser's workspace. Your daily goals and accomplishments are never uploaded or tracked on remote servers.</p>
+    </div>
+  </section>
+
+  <div class="container trust-signal">
+    Last updated: April 11, 2026
+  </div>
+
+  <div id="site-footer"></div>
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const habitInput = document.getElementById('habit-input');
+    const addHabitBtn = document.getElementById('add-habit');
+    const habitList = document.getElementById('habit-list');
+    const emptyState = document.getElementById('empty-state');
+
+    let habits = JSON.parse(localStorage.getItem('99tool_habits')) || [];
+
+    function saveHabits() {
+      localStorage.setItem('99tool_habits', JSON.stringify(habits));
+    }
+
+    function getTodayStr() {
+      return new Date().toLocaleDateString();
+    }
+
+    function getYesterdayStr() {
+      const d = new Date();
+      d.setDate(d.getDate() - 1);
+      return d.toLocaleDateString();
+    }
+
+    function render() {
+      habitList.innerHTML = '';
+      const today = getTodayStr();
+      const yesterday = getYesterdayStr();
+
+      habits.forEach((habit, index) => {
+        // Streak calculation logic
+        if (habit.lastDate !== today && habit.lastDate !== yesterday && habit.lastDate !== "") {
+           habit.streak = 0; // Reset streak if missed more than a day
+        }
+
+        const isDoneToday = habit.lastDate === today;
+
+        const card = document.createElement('div');
+        card.className = 'habit-card';
+        card.innerHTML = `
+          <div class="habit-info">
+            <span class="habit-name">${habit.name}</span>
+            <div class="habit-stats">
+              <span class="streak-badge">🔥 ${habit.streak} day streak</span>
+              <span>Total: ${habit.total || 0}</span>
+            </div>
+          </div>
+          <div class="habit-actions">
+            <button class="done-toggle ${isDoneToday ? 'active' : ''}" onclick="toggleHabit(${index})" ${isDoneToday ? 'disabled' : ''}>
+              ${isDoneToday ? '✓' : ''}
+            </button>
+            <button class="delete-habit" onclick="deleteHabit(${index})" aria-label="Delete habit">🗑</button>
+          </div>
+        `;
+        habitList.appendChild(card);
+      });
+
+      emptyState.style.display = habits.length === 0 ? 'block' : 'none';
+      saveHabits();
+    }
+
+    function addHabit() {
+      const name = habitInput.value.trim();
+      if (name) {
+        habits.push({
+          name: name,
+          streak: 0,
+          lastDate: "",
+          total: 0
+        });
+        habitInput.value = '';
+        render();
+      }
+    }
+
+    window.toggleHabit = function(index) {
+      const today = getTodayStr();
+      const habit = habits[index];
+      
+      if (habit.lastDate === today) return; // Already done
+
+      if (habit.lastDate === getYesterdayStr() || habit.lastDate === "") {
+        habit.streak += 1;
+      } else {
+        habit.streak = 1; // Safeguard reset
+      }
+
+      habit.lastDate = today;
+      habit.total = (habit.total || 0) + 1;
+      render();
+    };
+
+    window.deleteHabit = function(index) {
+      if (confirm('Delete this habit and all its streaks?')) {
+        habits.splice(index, 1);
+        render();
+      }
+    };
+
+    addHabitBtn.addEventListener('click', addHabit);
+    habitInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') addHabit();
+    });
+
+    render();
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

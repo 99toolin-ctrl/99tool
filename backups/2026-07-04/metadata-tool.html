@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Metadata Tool – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/image/metadata-tool.html"/>
+<meta property="og:title" content="Metadata Tool – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/image/metadata-tool.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Metadata Tool \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/image/metadata-tool.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Exif.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/exif-js/2.3.0/exif.min.js"></script>
+  <style>
+    .metadata-layout {
+      display: grid;
+      grid-template-columns: 1fr 350px;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    @media (max-width: 992px) {
+      .metadata-layout { grid-template-columns: 1fr; }
+    }
+    .preview-box {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 300px;
+    }
+    #preview-img {
+      max-width: 100%;
+      max-height: 500px;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+    
+    .data-panel {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      height: fit-content;
+      position: sticky;
+      top: 80px;
+    }
+    .exif-list {
+      margin-top: 1.5rem;
+      list-style: none;
+      padding: 0;
+    }
+    .exif-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.85rem;
+    }
+    .exif-item:last-child { border-bottom: none; }
+    .exif-label { color: var(--text-muted); font-weight: 500; }
+    .exif-value { color: var(--white); font-weight: 600; text-align: right; }
+    
+    .privacy-status {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      font-size: 0.85rem;
+    }
+    .status-safe { background: rgba(76, 175, 80, 0.1); color: #4caf50; border: 1px solid rgba(76, 175, 80, 0.2); }
+    .status-alert { background: rgba(229, 57, 53, 0.1); color: #e53935; border: 1px solid rgba(229, 57, 53, 0.2); }
+
+    .no-data { text-align: center; padding: 3rem 0; color: var(--text-muted); }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Image Metadata Viewer & Remover</h1>
+      <p>Analyze hidden data in your photos and strip EXIF tags for total privacy.</p>
+    </div>
+
+    <div class="tool-container">
+      <div class="upload-area" id="drop-zone">
+        <div class="upload-icon">📷</div>
+        <p>Drop image here or <span class="text-primary">select file</span></p>
+        <p class="text-muted small">Reads EXIF, GPS, and Camera metadata 100% privately</p>
+        <input type="file" id="image-input" accept="image/*" hidden>
+      </div>
+
+      <div id="tool-workspace" class="hidden">
+        <div class="metadata-layout">
+          <div class="preview-box">
+             <img id="preview-img" alt="Preview">
+             <button id="strip-btn" class="btn btn-primary w-100">Strip Metadata & Download</button>
+             <p class="mt-2 small text-muted">Removing EXIF data creates a "Sanitized" copy of your image.</p>
+          </div>
+
+          <div class="data-panel">
+             <div id="status-box" class="privacy-status status-safe">
+                <span id="status-icon">🛡️</span>
+                <span id="status-text">No sensitive data found.</span>
+             </div>
+             
+             <h3 class="mb-0">Image Insights</h3>
+             <ul class="exif-list" id="exif-list">
+                <!-- Data injected here -->
+             </ul>
+             <div id="no-data-msg" class="no-data hidden">No EXIF properties detected.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5">
+        <h2>Uncovering the Invisible Footprint in Private: Secure Local Metadata Analysis</h2>
+        <p>We've all been there: you've captured a stunning photo, but you're worried about the hidden details it might be carrying—GPS coordinates of your home, timestamps of your daily routine, or technical serial numbers that identify your specific device. You look for a <strong>metadata viewer</strong> online to help you audit the invisible footprint of your photography and ensure your safety before sharing. But as you look at the "Technical Analysis" and "Forensic Storage" prompts of most legacy checkers, you realize that your sensitive data, your location history, and your personal habits are being scanned by an anonymous database. Do you really want to share your "Visual Fingerprint" with a third-party algorithm?</p>
+
+        <p>At 99tool.in, we built our <strong>image metadata tool</strong> to give you a professional forensic station without the privacy debt. By utilizing browser-side binary analysis and local pixel sanitization, we allow you to <strong>view and remove EXIF data</strong> entirely within the secure sandbox of your own machine. Whether you’re a journalist protecting a source, a traveler securing their location, or a professional cleaner, our <strong>safe metadata tool</strong> ensures that your original fingerprints stay where they belong: on your device, under your total sovereignty.</p>
+        
+        <div class="tool-preview-box mt-4 mb-4" style="text-align:center;">
+           <img src="../../assets/images/metadata-preview.png" alt="Clean Metadata Tool Interface with EXIF/IPTC Data Transparency and Deep-Strip Pixel Sanitization Visuals" class="tool-preview" id="tool-preview-img" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+        </div>
+
+        <h3 class="mt-4">The Logic of Technical Data Transparency</h3>
+        <p>Metadata analysis isn't just about reading tags; it’s about "Privacy Awareness." Most basic <strong>view EXIF data online</strong> services provide a raw dump of confusing numbers, leading to "Audit Fatigue"—that feeling when you know there's data there, but you don't know if it's dangerous. Our <strong>professional metadata analyzer</strong> takes a human-centric approach: we focus on **EXIF/IPTC Data Transparency** and **Deep-Strip Pixel Sanitization**.</p>
+        
+        <p>We provide a clear, color-coded dashboard that translates technical hex codes into human-readable insights, alerting you immediately if GPS or personal signatures are found. Our <strong>safe sanitization validator</strong> doesn't just "hide" tags; it creates a fresh pixel-copy of your image that is binary-clean of all original history. This transparency transforms a technical check into a professional security protocol, helping you audit your footprint in a private, professional environment.</p>
+
+        <h3 class="mt-4">Why Sanitization is the Expert’s Ethical Choice</h2>
+        <p>In the age of digital surveillance, your "Geographic History" is a high-value asset for data brokers. When you use a standard <strong>EXIF data remover online free</strong> service that requires an upload, you are essentially trust-falling into an anonymous database. Even if they "strip" the tags, the original file and its specific location markers were processed on a remote machine. Our 100% <strong>forensic utility</strong> removes this "Exposure Risk" entirely from your digital routine.</p>
+        
+        <p>Because the analysis and stripping happen in your browser's private memory, your images are invisible to the outside world. No analytics are tracked, no coordinates are harvested, and no proprietary data is shared with advertisers or AI platforms. At 99tool.in, we believe that <strong>securing your history</strong> should be an empowering utility, not a data-mining trade-off. With us, you have a private, professional desk for your privacy that fits in your browser tab.</p>
+
+        <h3 class="mt-4">How to Audit Your Footprint Safely (Step-by-Step)</h3>
+        <p>Sanitizing your visual story should be a high-speed, 5-second task. Here is how to use our <strong>image metadata tool</strong>:</p>
+        <ul style="line-height: 1.8; margin-bottom: 20px;">
+          <li><strong>Step 1: Load Your Asset</strong> — Drag your photo into the workspace. Our system immediately begins a local scan of the binary structure without uploading a single byte.</li>
+          <li><strong>Step 2: Inspect the Insights</strong> — Review the "Digital Signature" dashboard. Any high-risk items like GPS coordinates or device IDs will be highlighted for your attention.</li>
+          <li><strong>Step 3: Evaluate the Risk</strong> — Compare the revealed data against your sharing needs. If you detect sensitive details, our system is ready to neutralize them.</li>
+          <li><strong>Step 4: Strip and Secure</strong> — Click "Strip Metadata." Our tool generates a clean, sanitized copy of your image and saves it directly to your device, ready for safe sharing.</li>
+        </ul>
+
+        <h3 class="mt-4">Strategic Use Cases for Your Local Forensic Tool</h3>
+        <p>Our <strong>selective privacy tool</strong> is the essential companion for varied professional life:</p>
+        
+        <p><strong>For Social Media Users & Influencers:</strong> Posting from home? Use our <strong>secure metadata tool</strong> to strip location tags from your photos, ensuring you don't accidentally leak your private address to the world.</p>
+        
+        <p><strong>For Professional Photographers & Techs:</strong> Protecting your settings? Use our <strong>safe EXIF remover</strong> to sanitize your master shots before sharing on portfolio sites, keeping your proprietary lighting and camera techniques confidential.</p>
+        
+        <p><strong>For Online Sellers & Estate Managers:</strong> Managing inventory? Use our <strong>private forensic tool</strong> to clean product shots of all technical signatures, ensuring your business operations and storage locations remain private.</p>
+
+        <h3 class="mt-5">Explore Your Complete Image Suite</h3>
+        <p>Once you’ve successfully sanitized your metadata, you might need to adjust the final composition. Check out our <strong><a href="crop-image.html">Image Cropper</a></strong>. Or, if you need to perform the same privacy check on multiple files, use our <strong><a href="resize-image.html">Bulk Image Resizer</a></strong>. At 99tool.in, we are building a world-class, 100% private digital toolkit to give you total control over your visual privacy.</p>
+      </section>
+ 
+      <!-- FAQ SECTION -->
+      <section class="faq-section mt-5">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Does stripping metadata change my photo?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Technically, yes. Our <strong>metadata remover</strong> creates a "Sanitized" copy of your image by re-rendering the pixels onto a fresh canvas. This process removes all hidden binary tags (EXIF, GPS, IPTC) while keeping the visual content intact.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Is my sensitive data sent to 99tool.in?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Absolutely not. Your privacy and location history are our standard. All binary analysis and deep-strip sanitization happen <strong>locally in your browser's private memory</strong>. Your original files never leave your device.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              What kind of data can be found in a photo?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Modern photos often contain **GPS coordinates**, the exact date/time of capture, your camera or phone model, and even the software used to edit them. Our <strong>safe forensic utility</strong> helps you audit and remove this "Digital Signature" before you share your work online.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Does removing metadata affect image quality?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Our <strong>professional cleaning tool</strong> uses high-fidelity rendering to ensure the visual quality of your photo remains high. While re-encoding (like saving a JPG) has a minor impact on file size, the resulting image will be visually indistinguishable from your original, minus the tracking data.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I save my cleaned image as a PNG?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Currently, our <strong>safe data tool</strong> exports sanitized copies as high-quality JPEGs. This ensures maximum compatibility and effectively strips all legacy metadata containers found in the original source file.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Why use a local tool instead of an online scrubber?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Most online scrubbers actually harvest the very data you're trying to hide for their own analytics. A <strong>private metadata tool</strong> removes this risk entirely. It's faster (no uploads), safer (no data leakage), and gives you total sovereignty over your original visuals.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const imageInput = document.getElementById('image-input');
+    const dropZone = document.getElementById('drop-zone');
+    const workspace = document.getElementById('tool-workspace');
+    const previewImg = document.getElementById('preview-img');
+    const exifList = document.getElementById('exif-list');
+    const statusBox = document.getElementById('status-box');
+    const statusText = document.getElementById('status-text');
+    const statusIcon = document.getElementById('status-icon');
+    const noDataMsg = document.getElementById('no-data-msg');
+    const stripBtn = document.getElementById('strip-btn');
+
+    let currentFile = null;
+
+    dropZone.onclick = () => imageInput.click();
+    imageInput.onchange = (e) => handleFile(e.target.files[0]);
+    
+    // Init Drag and Drop using global helper
+    setupDragDrop('drop-zone', (files) => {
+       if (files.length) handleFile(files[0]);
+    });
+
+    function handleFile(file) {
+      if (!file || !file.type.startsWith('image/')) return;
+      currentFile = file;
+      
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        previewImg.src = e.target.result;
+        workspace.classList.remove('hidden');
+        analyzeExif(file);
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function analyzeExif(file) {
+      EXIF.getData(file, function() {
+        const allData = EXIF.getAllTags(this);
+        exifList.innerHTML = '';
+        
+        const importantTags = {
+          'Make': 'Manufacturer',
+          'Model': 'Model',
+          'DateTime': 'Date Taken',
+          'Software': 'Software',
+          'GPSLatitude': 'Latitude',
+          'GPSLongitude': 'Longitude',
+          'ExifImageWidth': 'Width',
+          'ExifImageHeight': 'Height',
+          'ApertureValue': 'Aperture',
+          'ExposureTime': 'Shutter Speed',
+          'ISOSpeedRatings': 'ISO'
+        };
+
+        let foundSensitive = false;
+        let hasData = false;
+
+        Object.entries(importantTags).forEach(([key, label]) => {
+           let value = allData[key];
+           if (value !== undefined) {
+              hasData = true;
+              if (key.includes('GPS') || key.includes('DateTime')) foundSensitive = true;
+              
+              if (Array.isArray(value)) value = value.join(', ');
+              if (typeof value === 'object') value = JSON.stringify(value);
+
+              const li = document.createElement('li');
+              li.className = 'exif-item';
+              li.innerHTML = `<span class="exif-label">${label}</span><span class="exif-value">${value}</span>`;
+              exifList.appendChild(li);
+           }
+        });
+
+        if (foundSensitive) {
+           statusBox.className = 'privacy-status status-alert';
+           statusText.innerText = 'Sensitive Metadata Found (GPS/Time)';
+           statusIcon.innerText = '⚠️';
+        } else {
+           statusBox.className = 'privacy-status status-safe';
+           statusText.innerText = 'No Sensitive Metadata Found';
+           statusIcon.innerText = '🛡️';
+        }
+
+        noDataMsg.classList.toggle('hidden', hasData);
+      });
+    }
+
+    stripBtn.onclick = () => {
+       if (!previewImg.src) return;
+       
+       const canvas = document.createElement('canvas');
+       const ctx = canvas.getContext('2d');
+       const img = new Image();
+       
+       img.onload = () => {
+          canvas.width = img.width;
+          canvas.height = img.height;
+          ctx.drawImage(img, 0, 0);
+          
+          // canvas.toDataURL strips all metadata
+          const url = canvas.toDataURL('image/jpeg', 0.95);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = `sanitized_${currentFile.name.split('.')[0]}.jpg`;
+          a.click();
+       };
+       img.src = previewImg.src;
+    };
+  </script>
+</body>
+</html>
+

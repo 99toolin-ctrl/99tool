@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">File Search – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/data-file/file-search.html"/>
+<meta property="og:title" content="File Search – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/data-file/file-search.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "File Search \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/data-file/file-search.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="file search tool, search text in files, find keyword, multiple file search, secure file search, document search engine" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json" id="schema-org-data">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "File Search Tool",
+    "operatingSystem": "Any",
+    "applicationCategory": "DataApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Multi-file Keyword Search, Contextual Snippets, Rapid Indexing, Private local processing"
+  }
+  </script>
+
+  <style>
+    .search-layout { display: grid; grid-template-columns: 1fr; gap: 30px; }
+
+    .search-pane, .results-pane {
+      background: var(--dark-card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 30px;
+    }
+
+    .match-card {
+       background: var(--dark); border: 1px solid var(--border); border-radius: var(--radius-sm);
+       padding: 20px; margin-bottom: 20px;
+    }
+
+    .match-header {
+       display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.05);
+       padding-bottom: 10px; margin-bottom: 15px;
+    }
+    .match-file { font-size: 0.85rem; color: var(--primary); font-weight: 700; }
+    .match-count { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; }
+
+    .match-snippet {
+       font-family: 'Fira Code', monospace; font-size: 0.75rem; color: var(--white);
+       line-height: 1.6; background: rgba(0,0,0,0.3); padding: 10px; border-radius: 4px; border-left: 3px solid var(--border);
+       margin-top: 10px; word-break: break-all;
+    }
+    .highlight { background: rgba(229, 57, 53, 0.3); color: white; padding: 2px 0; font-weight: 700; }
+
+    @media (min-width: 900px) {
+       .search-layout { grid-template-columns: 350px 1fr; }
+    }
+
+    #loading-overlay {
+       position: fixed; top:0; left:0; right:0; bottom:0; background: rgba(0,0,0,0.8);
+       display: flex; flex-direction: column; align-items: center; justify-content: center;
+       z-index: 1000; display: none;
+    }
+    .spinner {
+       width: 40px; height: 40px; border: 4px solid var(--border); border-top-color: var(--primary);
+       border-radius: 50%; animation: spin 1s linear infinite; margin-bottom: 20px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/data-file/file-search.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/data-file/file-search.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/data-file/file-search.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/data-file/file-search.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/data-file/file-search.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/data-file/file-search.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/data-file/file-search.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/data-file/file-search.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/data-file/file-search.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/data-file/file-search.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/data-file/file-search.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/data-file/file-search.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/data-file/file-search.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/data-file/file-search.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/data-file/file-search.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/data-file/file-search.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/data-file/file-search.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/data-file/file-search.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/data-file/file-search.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/data-file/file-search.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/data-file/file-search.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/data-file/file-search.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#data">Data & File</a> <span>/</span> 
+        <span>File Search Tool</span>
+      </nav>
+      <h1>File Search Tool</h1>
+      <p>Locate critical information across dozens of documents instantly. Perform deep-text searching with contextual snippets—all while keeping your data 100% private.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div id="upload-stage">
+        <div class="upload-area" id="drop-zone">
+          <div class="upload-icon">🔍</div>
+          <h3>Select files to search</h3>
+          <p>Drag & drop multiple text/code files or click to browse</p>
+          <input type="file" id="file-input" multiple class="hidden">
+        </div>
+        <div class="info-box">
+          <div class="info-icon">⚡</div>
+          <p>This tool is an **Search Engine**. It reads your selected files into a temporary local index to perform rapid keyword searches. No data ever leaves your computer.</p>
+        </div>
+      </div>
+
+      <div id="search-stage" class="hidden">
+        <div class="search-layout">
+           <div class="search-pane">
+              <h3>Search Engine</h3>
+              <p class="text-muted small mb-4">Finding information across ${filesCount} documents.</p>
+              
+              <div class="form-group mb-4">
+                 <label>Search Keyword</label>
+                 <input type="text" id="search-query" class="form-control" placeholder="Enter keyword or phrase...">
+              </div>
+
+              <div class="form-group mb-4">
+                 <label>Case Sensitivity</label>
+                 <select id="case-mode" class="form-control">
+                    <option value="insensitive">Ignore Case</option>
+                    <option value="sensitive">Match Case</option>
+                 </select>
+              </div>
+
+              <div id="index-info" class="data-box mb-4" style="background: var(--dark); border-radius: 6px; padding: 15px; border: 1px solid var(--border);">
+                  <div class="flex justify-between small mb-1">
+                    <span class="text-muted">Files Indexed:</span>
+                    <span class="text-white fw-bold" id="indexed-files">0</span>
+                 </div>
+              </div>
+
+              <button class="btn btn-primary btn-full" id="run-search">Find All Occurrences</button>
+              <button class="btn btn-secondary btn-full mt-3" onclick="location.reload()">Reset Search</button>
+           </div>
+
+           <div class="results-pane">
+              <h3 class="mb-4">Search Results</h3>
+              <div id="search-results">
+                 <div class="text-center py-5 text-muted">Awaiting your search query...</div>
+              </div>
+           </div>
+        </div>
+      </div>
+
+      <!-- LOADING OVERLAY -->
+      <div id="loading-overlay">
+         <div class="spinner"></div>
+         <p id="loading-text">Indexing files: 0%</p>
+      </div>
+
+      <!-- CONTENT SECTION -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.file_search.what_is_title">What is the File Search Tool?</h2>
+        <p>The File Search Tool is a local text-scanning utility designed to search for specific words, lines, or programming variables across multiple files simultaneously. By importing a batch of text files and typing your query, you can locate all occurrences, complete with file names and highlighted context snippets.</p>
+        <p>This utility processes all search strings locally inside your browser session. Since it does not upload your documents, server logs, or source code files to a cloud index, your corporate data and personal archives remain completely confidential.</p>
+
+        <h2 class="mt-4" data-i18n="tools.file_search.how_to_use_title">How to Use the File Search Tool</h2>
+        <ol>
+          <li><strong>Select Your Files:</strong> Drag and drop your files into the dotted drop zone, or click inside the zone to browse and upload them. The loading overlay will index the text files locally.</li>
+          <li><strong>Enter Your Search Query:</strong> Type the keyword, variable name, or phrase you want to find into the "Search Query" input box.</li>
+          <li><strong>Configure Case Settings:</strong> Check the "Case Sensitive" box if you want the search to distinguish between uppercase and lowercase letters.</li>
+          <li><strong>Execute the Search:</strong> Click the "Search Files" button. The tool will parse each file's lines and display the matching instances.</li>
+          <li><strong>Inspect the Snippets:</strong> Review the results list. Clicking on matching rows displays the line numbers and contextual text blocks where the query word appears.</li>
+        </ol>
+
+        <h2 class="mt-4" data-i18n="tools.file_search.key_features_title">Key Features</h2>
+        <ul>
+          <li><strong>Multi-File Parallel Scanning:</strong> Search for strings across dozens of files at the same time in milliseconds.</li>
+          <li><strong>Contextual Line Previews:</strong> Shows the exact line number and surrounding text where the match occurred.</li>
+          <li><strong>Case Sensitivity Toggle:</strong> Choose between strict character matching or flexible searches.</li>
+          <li><strong>Dynamic Local Indexer:</strong> Reads file contents locally using browser FileReader APIs for fast offline execution.</li>
+          <li><strong>Total Data Isolation:</strong> Keeps your logs, codes, and documents secure by preventing network transfers.</li>
+        </ul>
+
+        <h2 class="mt-4" data-i18n="tools.file_search.common_use_cases_title">Common Use Cases</h2>
+        <ul>
+          <li><strong>Source Code Troubleshooting:</strong> Locate where variables, functions, or CSS classes are referenced across script files.</li>
+          <li><strong>Server Log Audits:</strong> Scan server log exports for specific IP addresses, warning codes, or timestamp markers.</li>
+          <li><strong>Text File Reference Mining:</strong> Search through text notes, essays, or config files for draft flags, reference codes, or name tags.</li>
+          <li><strong>Configuration File Inspections:</strong> Check for specific keys or parameters inside JSON, YAML, or XML files.</li>
+        </ul>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2 data-i18n="tools.file_search.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Does this tool support PDF or Word documents?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>This utility is optimized for plain-text formats like .txt, .csv, .json, .log, .md, and coding scripts (.html, .css, .js, .py, .cpp, etc.). Binary documents (like PDFs, DOCX, or Excel sheets) are not parsed by this text scanner.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Is my search history or query sent to a server?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. All text parsing, indexing, and matching operations execute locally inside your browser sandbox. No queries, filenames, or file contents are sent over the network.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Why does zipping or loading show an indexing progress?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>To enable instant searching, the browser reads the text contents of all imported files into RAM when you upload them. The loading progress shows how many files have been successfully read.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              What is the limit on file counts?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>The tool can search dozens of text files. For lists containing hundreds of large files (over 50MB combined), we recommend searching in smaller batches to avoid browser memory lags.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Does it support Regular Expression (Regex) queries?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>This version is designed for simple, direct string queries. For regex pattern matching, we recommend copying the file contents and using our specialized Regex Tester.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 Privacy & Data Note: File reading, indexing, and text searching are processed locally. No files, queries, or results are sent to our servers.</p>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const dropZone = document.getElementById('drop-zone');
+    const fileInput = document.getElementById('file-input');
+    const uploadStage = document.getElementById('upload-stage');
+    const searchStage = document.getElementById('search-stage');
+    const indexedFilesEl = document.getElementById('indexed-files');
+    const searchQuery = document.getElementById('search-query');
+    const caseMode = document.getElementById('case-mode');
+    const runSearchBtn = document.getElementById('run-search');
+    const searchResults = document.getElementById('search-results');
+    const loadingOverlay = document.getElementById('loading-overlay');
+    const loadingText = document.getElementById('loading-text');
+
+    let fileIndex = []; // { name, content }
+
+    dropZone.onclick = () => fileInput.click();
+    fileInput.onchange = (e) => indexFiles(e.target.files);
+
+    // Init Drag and Drop using global helper
+    setupDragDrop('drop-zone', (files) => {
+       indexFiles(files);
+    });
+    
+    async function indexFiles(files) {
+       if (!files.length) return;
+       loadingOverlay.style.display = 'flex';
+       
+       fileIndex = [];
+       for (let i = 0; i < files.length; i++) {
+          const file = files[i];
+          loadingText.textContent = `Indexing: ${Math.round((i/files.length)*100)}% (${file.name})`;
+          try {
+             const content = await file.text();
+             fileIndex.push({ name: file.name, content: content });
+          } catch (e) { console.error("Could not skip binary file", file.name); }
+       }
+
+       indexedFilesEl.textContent = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(fileIndex.length, 0) : fileIndex.length;
+       uploadStage.classList.add('hidden');
+       searchStage.classList.remove('hidden');
+       loadingOverlay.style.display = 'none';
+    }
+
+    runSearchBtn.onclick = () => {
+       const query = searchQuery.value.trim();
+       if (!query) return;
+
+       const isSensitive = caseMode.value === 'sensitive';
+       const regex = new RegExp(escapeRegex(query), isSensitive ? 'g' : 'gi');
+       
+       let resultsHtml = '';
+       let totalMatches = 0;
+
+       fileIndex.forEach(file => {
+          const matches = [...file.content.matchAll(regex)];
+          if (matches.length > 0) {
+             totalMatches += matches.length;
+             resultsHtml += `
+                <div class="match-card">
+                   <div class="match-header">
+                      <span class="match-file">${file.name}</span>
+                      <span class="match-count">${matches.length} MATCHES</span>
+                   </div>
+                   ${matches.slice(0, 5).map(m => {
+                      const start = Math.max(0, m.index - 40);
+                      const end = Math.min(file.content.length, m.index + query.length + 40);
+                      let snippet = file.content.substring(start, end);
+                      
+                      // Handle Highlight
+                      const qStart = m.index - start;
+                      const qEnd = qStart + m[0].length;
+                      snippet = escapeHtml(snippet.substring(0, qStart)) + 
+                                '<span class="highlight">' + escapeHtml(snippet.substring(qStart, qEnd)) + '</span>' + 
+                                escapeHtml(snippet.substring(qEnd));
+
+                      return `<div class="match-snippet">...${snippet}...</div>`;
+                   }).join('')}
+                   ${matches.length > 5 ? `<div class="text-muted small mt-2">Showing first 5 matches...</div>` : ''}
+                </div>
+             `;
+          }
+       });
+
+       searchResults.innerHTML = resultsHtml || `<div class="text-center py-5 text-muted">No occurrences of "${query}" found across indexed files.</div>`;
+    };
+
+    function escapeRegex(string) {
+       return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+
+    function escapeHtml(text) {
+       const div = document.createElement('div');
+       div.textContent = text;
+       return div.innerHTML;
+    }
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

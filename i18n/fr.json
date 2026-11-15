@@ -1,0 +1,561 @@
+{
+  "common": {
+    "privacy_note": "🔒 Note sur la confidentialité et les données : Tout le traitement s'effectue localement dans votre navigateur. Vos données ne quittent jamais votre appareil et ne sont envoyées à aucun serveur.",
+    "no_signup_required": "Aucune inscription, installation ou paiement requis.",
+    "offline_ready": "Fonctionne entièrement hors ligne une fois la page chargée."
+  },
+  "tools": {
+    "age_calculator": {
+      "page_title": "Calculateur d'Âge – 99tool.in",
+      "meta_description": "Outil en ligne gratuit par 99tool.in : calculez votre âge exact en années, mois et jours. Rapide et privé.",
+      "what_is_title": "Qu'est-ce que le Calculateur d'Âge Infini ?",
+      "what_is_content": "Le Calculateur d'Âge Infini est un utilitaire de calendrier côté client conçu pour calculer votre âge exact depuis votre date de naissance jusqu'au moment présent. Plutôt que de fournir une simple estimation, l'outil détaille votre âge en années, mois et jours. Cela offre une grande précision pour les documents, la planification ou le suivi du développement.\n\nDe plus, le calculateur effectue des sous-calculs pour afficher votre durée de vie totale selon d'autres métriques, telles que le nombre total de mois, de semaines, de jours et d'heures vécus, ainsi qu'un compte à rebours jusqu'à votre prochain anniversaire. Tout le traitement s'effectue localement sur votre machine, garantissant que votre date de naissance n'est jamais envoyée à un serveur.",
+      "how_to_use_title": "Comment utiliser le Calculateur d'Âge Infini",
+      "how_to_use_steps": [
+        "<strong>Sélectionnez votre date de naissance :</strong> Cliquez sur le champ sélecteur de date sous \"Sélectionner la date de naissance\" pour choisir votre jour, mois et année de naissance.",
+        "<strong>Consultez votre âge principal :</strong> Une fois la date sélectionnée, les métriques principales s'affichent automatiquement, montrant votre âge en années, mois et jours.",
+        "<strong>Vérifiez le compte à rebours d'anniversaire :</strong> Regardez la bannière en surbrillance sous votre âge. Elle vous indique le nombre exact de jours restant avant votre prochain anniversaire.",
+        "<strong>Examinez les statistiques de vie détaillées :</strong> Défilez vers le bas jusqu'à la liste des statistiques pour voir votre durée de vie totale exprimée en mois totaux, semaines totales, jours totaux et heures totales vécues."
+      ],
+      "key_features_title": "Caractéristiques clés",
+      "key_features": [
+        "<strong>Répartition détaillée de l'âge :</strong> Affiche votre âge précis divisé en années, mois et jours, en ajustant correctement les années bissextiles et les mois de longueurs différentes.",
+        "<strong>Compte à rebours du prochain anniversaire :</strong> Un compteur de jours dynamique indique exactement à quel point vous êtes proche de votre prochain anniversaire.",
+        "<strong>Statistiques de vie multi-unités :</strong> Convertit votre âge en mois, semaines, jours et heures cumulés.",
+        "<strong>Déclenchement local automatique :</strong> Les calculs s'exécutent automatiquement lors de la sélection de la date sans recharger la page.",
+        "<strong>Traitement côté client :</strong> Les calculs s'exécutent directement dans la mémoire RAM du navigateur, gardant vos données d'anniversaire privées."
+      ],
+      "common_use_cases_title": "Cas d'utilisation courants",
+      "common_use_cases": [
+        "<strong>Vérification de formulaires et de demandes :</strong> Vérifiez l'âge exact en années et en mois pour les polices d'assurance, les démarches juridiques ou les demandes de visa.",
+        "<strong>Étapes de croissance de l'enfant :</strong> Suivez les étapes de développement des bébés et des enfants en mois et jours précis.",
+        "<strong>Planification d'événements et d'anniversaires :</strong> Suivez le nombre exact de jours restants avant les célébrations marquantes pour gérer les réservations.",
+        "<strong>Curiosité et divertissement :</strong> Vérifiez combien de jours ou d'heures au total vous avez vécus."
+      ],
+      "faq_title": "Foire aux questions",
+      "faq": [
+        {
+          "question": "Comment cet outil prend-il en compte les années bissextiles ?",
+          "answer": "Le calculateur utilise l'objet Date natif de JavaScript, qui prend automatiquement en compte les années bissextiles (y compris le 29 février) et les variations de longueur des mois (28, 30 ou 31 jours) pour garantir la précision."
+        },
+        {
+          "question": "Ma date de naissance est-elle téléchargée ou stockée par 99tool.in ?",
+          "answer": "Non. 99tool.in fonctionne entièrement avec du code côté client. Votre date de naissance est traitée dans l'onglet local de votre navigateur et n'est jamais envoyée à un serveur ou une base de données."
+        },
+        {
+          "question": "Puis-je calculer l'âge par rapport à une date passée ou future ?",
+          "answer": "Cet outil spécifique calcule votre âge par rapport à la date actuelle (aujourd'hui). Si vous devez trouver la différence entre deux dates arbitraires du calendrier, veuillez utiliser notre Calculateur de Différence de Dates."
+        },
+        {
+          "question": "Pourquoi l'outil affiche-t-il un avertissement si je choisis une date future ?",
+          "answer": "Les calculs d'âge représentent le temps écoulé depuis la naissance. Sélectionner une date future entraînerait un âge négatif, l'outil bloque donc cette entrée pour maintenir des résultats logiques."
+        },
+        {
+          "question": "Le calcul du nombre total d'heures inclut-il les changements d'heure ?",
+          "answer": "La statistique du nombre total d'heures est calculée en multipliant le nombre total de jours écoulés par 24 heures. Il s'agit d'une conversion mathématique standard qui ne s'ajuste pas aux changements d'heure locaux."
+        }
+      ],
+      "privacy_note": "🔒 Note sur la confidentialité et les données : Votre date de naissance est traitée localement dans votre navigateur. Aucune donnée d'identification personnelle n'est collectée, suivie ou envoyée à nos serveurs.",
+      "schema_org": {
+        "name": "Calculateur d'Âge – 99tool.in",
+        "description": "Outil en ligne gratuit par 99tool.in : rapide, privé, sans inscription requise."
+      }
+    },
+    "audio_recorder": {
+      "page_title": "Enregistreur Audio – 99tool.in",
+      "meta_description": "Enregistrez et éditez du son dans votre navigateur. Outil gratuit, privé et sans inscription par 99tool.in.",
+      "what_is_title": "Qu'est-ce que l'Enregistreur et Éditeur Audio ?",
+      "what_is_content": "Cet outil d'enregistrement et d'édition audio basé sur le Web vous permet d'enregistrer des notes vocales, des sons et des discours de haute fidélité directement depuis votre navigateur. Conçu avec une confidentialité absolue à l'esprit, il transforme le navigateur de votre appareil en un studio d'enregistrement sécurisé. Il ne nécessite aucune création de compte ni inscription.\n\nEn tirant parti des API natives du navigateur, l'utilitaire traite toutes les données audio localement. Cela signifie que que vous enregistriez un extrait vocal ou que vous tailliez une note, votre fichier reste sur votre machine locale. Le flux audio n'est jamais envoyé à des serveurs distants, vous garantissant une confidentialité totale pour vos enregistrements vocaux sensibles.",
+      "how_to_use_title": "Comment utiliser l'Enregistreur et Éditeur Audio",
+      "how_to_use_steps": [
+        "<strong>Sélectionnez votre format d'exportation :</strong> Choisissez entre WebM (idéal pour des fichiers plus petits et un traitement rapide) ou WAV (parfait pour un audio sans perte de haute qualité) dans le menu déroulant.",
+        "<strong>Initialisez le microphone :</strong> Cliquez sur le bouton \"Initialiser le microphone\". Votre navigateur vous demandera d'accorder les autorisations d'accès au microphone.",
+        "<strong>Commencez l'enregistrement :</strong> Cliquez sur le bouton cercle rouge pour démarrer la capture audio. Le minuteur commence à compter et le canevas affiche une forme d'onde en temps réel représentant vos fréquences vocales.",
+        "<strong>Arrêtez la session :</strong> Cliquez sur le bouton d'arrêt carré pour terminer l'enregistrement. L'outil traite automatiquement l'audio et l'ajoute à votre liste d'enregistrements.",
+        "<strong>Écoutez et enregistrez :</strong> Cliquez sur le bouton \"JOUER\" pour écouter votre extrait, ou sur le bouton \"ENREGISTRER\" pour le télécharger directement sur votre appareil."
+      ],
+      "key_features_title": "Caractéristiques clés",
+      "key_features": [
+        "<strong>Sorties sans perte et compressées :</strong> Exportez vos fichiers audio au format WAV brut ou au format WebM hautement optimisé.",
+        "<strong>Visualiseur de forme d'onde en temps réel :</strong> Un canevas d'oscilloscope offre un retour visuel instantané sur les niveaux d'entrée et l'activité du microphone.",
+        "<strong>Blobs RAM sécurisés :</strong> Les enregistrements sont sauvegardés temporairement en utilisant la mémoire système (URL Blob) plutôt qu'un stockage sur serveur.",
+        "<strong>Historique multi-session :</strong> Capturez plusieurs enregistrements en une seule session et prévisualisez-les ou téléchargez-les individuellement selon vos besoins.",
+        "<strong>Disposition d'enregistrement adaptative :</strong> Une interface optimisée pour les mobiles facilite l'enregistrement de notes sur smartphones, tablettes ou ordinateurs."
+      ],
+      "common_use_cases_title": "Cas d'utilisation courants",
+      "common_use_cases": [
+        "<strong>Créateurs de contenu et podcasteurs :</strong> Enregistrez des voix off, des extraits rapides ou des narrations pour des vidéos sans logiciels lourds.",
+        "<strong>Étudiants et chercheurs :</strong> Capturez des notes de cours, des mémos d'étude ou des transcriptions d'entretiens dans un environnement sécurisé.",
+        "<strong>Musiciens et designers sonores :</strong> Enregistrez des idées musicales rapides, des répétitions vocales ou des effets sonores sur le vif.",
+        "<strong>Dictées privées :</strong> Dictée de notes confidentielles ou de journaux sans crainte de fuite de données dans le cloud."
+      ],
+      "faq_title": "Foire aux questions",
+      "faq": [
+        {
+          "question": "Mon enregistrement audio est-il sauvegardé sur vos serveurs ?",
+          "answer": "Non. 99tool.in traite toutes les données audio entièrement dans la mémoire (RAM) de l'onglet de votre navigateur local sous forme de Blob. Vos enregistrements vocaux ne touchent jamais nos serveurs et sont effacés à la fermeture de l'onglet."
+        },
+        {
+          "question": "Pourquoi dois-je accorder les autorisations de microphone ?",
+          "answer": "Votre navigateur nécessite une autorisation explicite pour accéder au matériel d'entrée audio de votre appareil. Cette autorisation est gérée nativement par votre navigateur et n'est utilisée que localement pour l'enregistrement."
+        },
+        {
+          "question": "Puis-je utiliser cet outil hors ligne ?",
+          "answer": "Oui. Étant donné que l'interface repose entièrement sur des API Web natives du navigateur et un traitement côté client, une fois la page chargée, vous pouvez enregistrer et télécharger de l'audio sans connexion Internet."
+        },
+        {
+          "question": "Quelle est la différence entre WebM et WAV ?",
+          "answer": "Les fichiers WAV sont non compressés et sans perte, offrant la meilleure fidélité audio mais des fichiers plus volumineux. Les fichiers WebM sont compressés et optimisés pour le Web, offrant des téléchargements rapides et une taille réduite."
+        },
+        {
+          "question": "Y a-t-il une limite de temps pour enregistrer ?",
+          "answer": "Il n'y a pas de limite arbitraire fixée par l'outil. La durée d'enregistrement n'est limitée que par la mémoire système (RAM) disponible sur votre appareil."
+        }
+      ],
+      "privacy_note": "🔒 Note sur la confidentialité et les données : Toute la capture et le traitement audio s'effectuent dans votre navigateur Web. Aucun fichier n'est téléversé sur nos serveurs, gardant vos enregistrements vocaux totalement confidentiels.",
+      "schema_org": {
+        "name": "Enregistreur et Éditeur Audio",
+        "description": "Enregistrement de haute qualité, visualiseur en temps réel, découpage audio, contrôle de lecture, traitement local privé."
+      }
+    },
+    "bmi_calculator": {
+      "page_title": "Calculateur d'IMC – 99tool.in",
+      "meta_description": "Calculez votre Indice de Masse Corporelle (IMC) avec précision. Outil de santé gratuit, privé et rapide par 99tool.in.",
+      "what_is_title": "Qu'est-ce que le Calculateur d'IMC Infini ?",
+      "what_is_content": "Le Calculateur d'IMC Infini est un utilitaire de santé côté client conçu pour calculer l'Indice de Masse Corporelle (IMC) à partir des données de taille et de poids. En entrant des paramètres métriques, les utilisateurs peuvent déterminer leur catégorie de poids corporel et examiner les indicateurs standard.\n\nCe calculateur traite tous les multiplicateurs numériques, la logique de correspondance des catégories et les ajustements du pointeur localement dans la mémoire de votre navigateur. Aucune valeur de taille, de poids ou d'IMC n'est stockée ni envoyée à un serveur, garantissant une confidentialité totale.",
+      "how_to_use_title": "Comment utiliser le Calculateur d'IMC Infini",
+      "how_to_use_steps": [
+        "<strong>Entrez votre poids :</strong> Indiquez votre poids corporel en kilogrammes (kg) dans la case de saisie du poids.",
+        "<strong>Entrez votre taille :</strong> Indiquez votre taille en centimètres (cm) dans la case de saisie de la taille.",
+        "<strong>Cliquez sur Calculer :</strong> Appuyez sur le bouton \"Calculer l'IMC\" pour exécuter le moteur mathématique local.",
+        "<strong>Consultez votre résultat :</strong> Regardez le panneau \"Résultat\" pour voir votre valeur d'IMC numérique, votre catégorie de poids et le pointeur de plage."
+      ],
+      "key_features_title": "Caractéristiques clés",
+      "key_features": [
+        "<strong>Prise en charge des unités métriques :</strong> Saisissez directement les valeurs standard de poids (kg) et de taille (cm).",
+        "<strong>Pointeur visuel de plage :</strong> Déplace dynamiquement un pointeur sur une barre à code couleur pour afficher votre classification de poids.",
+        "<strong>Plages d'IMC standard :</strong> Évalue les entrées par rapport aux références de l'OMS (Insuffisance pondérale, Normal, Surpoids, Obésité).",
+        "<strong>Tableau de bord de résultats instantané :</strong> Affiche les scores numériques et les noms de catégories dans un bloc en surbrillance.",
+        "<strong>Moteur 100 % côté client :</strong> Effectue toutes les opérations mathématiques localement dans votre navigateur pour protéger vos données médicales."
+      ],
+      "common_use_cases_title": "Cas d'utilisation courants",
+      "common_use_cases": [
+        "<strong>Suivi du contrôle du poids :</strong> Surveillez régulièrement les tendances de masse corporelle lors de programmes de perte de poids ou de remise en forme.",
+        "<strong>Évaluations de santé et de forme :</strong> Vérifiez rapidement votre catégorie générale de masse corporelle pour des formulaires médicaux ou d'assurance.",
+        "<strong>Fixation d'objectifs de santé :</strong> Établissez un IMC de base pour définir des objectifs physiques réalistes.",
+        "<strong>Activités scientifiques scolaires :</strong> Enseignez aux étudiants les métriques du corps humain et les formules d'IMC."
+      ],
+      "faq_title": "Foire aux questions",
+      "faq": [
+        {
+          "question": "Quelles sont les plages d'IMC standard ?",
+          "answer": "Les classifications standard de l'OMS sont : Insuffisance pondérale (moins de 18,5), Poids normal (18,5 à 24,9), Surpoids (25 à 29,9) et Obésité (30 ou plus)."
+        },
+        {
+          "question": "Ce calculateur prend-il en compte la masse musculaire ou la densité osseuse ?",
+          "answer": "Non. L'IMC est un indice d'évaluation général qui n'utilise que la taille et le poids. Il ne distingue pas le muscle, la graisse ou la masse osseuse, et peut surestimer la graisse corporelle chez les athlètes musclés."
+        },
+        {
+          "question": "Mes données médicales sont-elles partagées ou téléversées ?",
+          "answer": "Non. Tous les calculs sont exécutés sur votre appareil via JavaScript local. 99tool.in ne stocke, ne collecte ni ne partage vos dimensions physiques."
+        },
+        {
+          "question": "Y a-t-il des ajustements selon l'âge ou le sexe ?",
+          "answer": "Cet outil calcule l'indice d'IMC standard pour adultes. Pour les enfants, adolescents et femmes enceintes, les médecins utilisent des courbes de percentiles spécialisées qui prennent en compte l'âge et le développement."
+        }
+      ],
+      "privacy_note": "🔒 Note sur la confidentialité et les données : Les calculs de taille, poids et IMC sont traités localement dans votre navigateur. Aucune donnée personnelle de santé n'est téléversée.\nAvertissement : Cet outil est fourni à titre informatif uniquement et ne remplace pas un avis médical professionnel.",
+      "schema_org": {
+        "name": "Calculateur d'IMC – 99tool.in",
+        "description": "Outil en ligne gratuit par 99tool.in : rapide, privé, sans inscription requise."
+      }
+    },
+    "csv_editor": {
+      "page_title": "Éditeur CSV – 99tool.in",
+      "meta_description": "Ouvrez, éditez et exportez des fichiers CSV dans votre navigateur. Outil de données sécurisé, privé et gratuit par 99tool.in.",
+      "what_is_title": "Qu'est-ce que le Visualiseur et Éditeur CSV ?",
+      "what_is_content": "Le Visualiseur et Éditeur CSV est un outil léger de feuille de calcul basé sur le Web conçu pour ouvrir, inspecter et modifier des fichiers de valeurs séparées par des virgules (CSV). Au lieu d'attendre l'ouverture d'un logiciel de bureautique lourd, vous pouvez glisser vos jeux de données directement dans l'onglet de votre navigateur pour les afficher dans un tableau propre et interactif.\n\nCet utilitaire vous permet de modifier les valeurs des cellules, de trier les colonnes, de rechercher des enregistrements spécifiques et d'exporter les fichiers mis à jour. Étant donné que toute l'analyse des fichiers et l'affichage des tableaux s'effectuent côté client dans la mémoire RAM du navigateur, vos contacts clients sensibles, livres de comptes et sauvegardes de données ne sont jamais exposés à des serveurs externes.",
+      "how_to_use_title": "Comment utiliser le Visualiseur et Éditeur CSV",
+      "how_to_use_steps": [
+        "<strong>Importez votre jeu de données :</strong> Glissez votre fichier CSV directement dans la zone de dépôt pointillée, ou cliquez sur \"Parcourir les fichiers\" pour en sélectionner un sur votre disque dur.",
+        "<strong>Éditez les valeurs des cellules :</strong> Cliquez directement sur n'importe quelle cellule du tableau pour modifier son contenu. Saisissez vos modifications et cliquez en dehors de la cellule pour enregistrer localement.",
+        "<strong>Filtrez et recherchez :</strong> Utilisez la zone de recherche située au-dessus du tableau pour rechercher des lignes spécifiques ou filtrer les correspondances en temps réel.",
+        "<strong>Triez par colonnes :</strong> Cliquez sur les en-têtes de colonnes pour trier les lignes du tableau par ordre alphabétique ou numérique, croissant ou décroissant.",
+        "<strong>Exportez vos modifications :</strong> Cliquez sur \"Exporter CSV\" pour télécharger la feuille de calcul mise à jour sur votre ordinateur, ou sur \"Ouvrir un nouveau\" pour vider le tableau et charger un autre fichier."
+      ],
+      "key_features_title": "Caractéristiques clés",
+      "key_features": [
+        "<strong>Édition en grille en temps réel :</strong> Éditez les valeurs des cellules directement dans un tableau interactif avec sauvegarde locale instantanée.",
+        "<strong>Tri de colonnes et recherche :</strong> Analysez rapidement les jeux de données en ordonnant les enregistrements ou en filtrant les lignes correspondant à vos mots-clés.",
+        "<strong>Analyseur côté client haute vitesse :</strong> Affiche des milliers de points de données localement en quelques millisecondes sans latence de serveur.",
+        "<strong>Prise en charge des caractères UTF-8 :</strong> Conserve les accents, les symboles spéciaux et les caractères non latins lors de l'importation et de l'exportation.",
+        "<strong>Isolation des données hors ligne :</strong> Fonctionne entièrement hors ligne pour garantir que vos fichiers restent sécurisés."
+      ],
+      "common_use_cases_title": "Cas d'utilisation courants",
+      "common_use_cases": [
+        "<strong>Mises à jour d'inventaire e-commerce :</strong> Éditez les descriptions de produits, les prix ou les stocks dans les feuilles d'inventaire avant de les importer sur votre boutique.",
+        "<strong>Nettoyage de contacts clients :</strong> Recherchez les entrées en double ou corrigez les erreurs de formatage dans les listes d'abonnés e-mail.",
+        "<strong>Inspection de journaux et d'exportations :</strong> Visualisez les exportations de journaux de serveur, l'historique des transactions ou les rapports d'analyse système dans un tableau clair.",
+        "<strong>Vérification d'intégration de base de données :</strong> Vérifiez et formatez la disposition des colonnes dans les feuilles de données avant de les charger dans des bases de données SQL."
+      ],
+      "faq_title": "Foire aux questions",
+      "faq": [
+        {
+          "question": "Y a-t-il une limite de taille pour le fichier que je peux téléverser ?",
+          "answer": "Pour une expérience fluide, nous recommandons d'utiliser cet éditeur pour des fichiers CSV allant jusqu'à 10-15 Mo. Les jeux de données très volumineux contenant des centaines de milliers de lignes peuvent ralentir l'affichage du navigateur, les applications de bureau étant alors plus adaptées."
+        },
+        {
+          "question": "La modification d'une cellule met-elle à jour mon fichier source sur mon ordinateur ?",
+          "answer": "Non. Les navigateurs ne peuvent pas modifier directement les fichiers locaux en raison de contraintes de sécurité. Vos modifications sont enregistrées dans la session mémoire active du navigateur. Pour appliquer ces modifications, cliquez sur le bouton \"Exporter CSV\" pour télécharger une nouvelle copie mise à jour."
+        },
+        {
+          "question": "Les lignes de ma feuille de calcul sont-elles téléversées ou suivies ?",
+          "answer": "Non. 99tool.in traite tous les fichiers localement. Vos données, cellules de tableau et exportations restent dans l'environnement sécurisé de votre navigateur, protégeant votre confidentialité."
+        },
+        {
+          "question": "Cet outil prend-il en charge les points-virgules ou les tabulations comme séparateurs ?",
+          "answer": "Cette version est optimisée pour les fichiers standard séparés par des virgules (.csv). Les points-virgules ou les tabulations peuvent entraîner un regroupement incorrect des colonnes dans le tableau."
+        },
+        {
+          "question": "Puis-je ajouter de nouvelles lignes ou colonnes ?",
+          "answer": "Cet outil est conçu comme un visualiseur et un éditeur de valeurs pour des tableaux existants. Pour ajouter de nouvelles colonnes ou lignes, nous vous recommandons d'utiliser notre outil de feuille de calcul complet côté client."
+        }
+      ],
+      "privacy_note": "🔒 Note sur la confidentialité et les données : L'analyse des données CSV et l'affichage des tableaux s'effectuent dans votre navigateur. Aucun fichier ni valeur de cellule n'est envoyé à nos serveurs.",
+      "schema_org": {
+        "name": "Visualiseur et Éditeur CSV",
+        "description": "Analyse CSV, vue en tableau, édition de cellules, tri de colonnes, exportation de données."
+      }
+    },
+    "image_compressor": {
+      "page_title": "Compresseur d'Images – 99tool.in",
+      "meta_description": "Réduisez la taille de vos images sans perte de qualité. Compresseur d'images rapide, sécurisé et gratuit par 99tool.in.",
+      "what_is_title": "Qu'est-ce que le Compresseur d'Images Intelligent ?",
+      "what_is_content": "Le Compresseur d'Images Intelligent est un utilitaire d'optimisation côté client conçu pour réduire la taille de fichier de vos images tout en conservant leurs détails visuels intacts. En utilisant le rendu Canvas du navigateur et un redimensionnement dynamique de la compression, l'outil vous permet de réduire les fichiers d'images lourds pour améliorer les performances Web.\n\nCette optimisation s'effectue entièrement dans la mémoire sécurisée de votre navigateur local. Aucun fichier n'étant téléversé sur un serveur externe, vos photos haute résolution originales, graphiques bruts et créations restent totalement privés et sécurisés.",
+      "how_to_use_title": "Comment utiliser le Compresseur d'Images Intelligent",
+      "how_to_use_steps": [
+        "<strong>Chargez votre image :</strong> Cliquez dans la zone de dépôt pointillée ou glissez-déposez votre fichier d'image (JPG, PNG ou WEBP) dans le navigateur.",
+        "<strong>Examinez la taille originale :</strong> Consultez la colonne <strong>Original</strong> dans le tableau de comparaison pour voir la taille initiale de votre fichier.",
+        "<strong>Sélectionnez le niveau de compression :</strong> Faites glisser le curseur de <strong>Niveau de compression</strong> pour ajuster le pourcentage de qualité. Déplacer le curseur vers \"Fichier le plus petit\" (gauche) réduit davantage la taille, tandis que le déplacer vers \"Meilleure qualité\" (droite) préserve les détails.",
+        "<strong>Choisissez le format cible :</strong> Dans le menu déroulant <strong>Convertir au format</strong>, choisissez de conserver le format d'origine ou de transcoder en JPEG (haute compatibilité) ou WEBP (compression maximale).",
+        "<strong>Analysez l'économie réalisée :</strong> Comparez les aperçus <strong>Original</strong> et <strong>Compressé</strong> côte à côte. Le badge vert indique le pourcentage exact d'espace économisé.",
+        "<strong>Téléchargez l'image optimisée :</strong> Cliquez sur le bouton <strong>Télécharger l'image compressée</strong> pour enregistrer le nouveau fichier compressé sur votre appareil local."
+      ],
+      "key_features_title": "Caractéristiques clés",
+      "key_features": [
+        "<strong>Comparaison de qualité côte à côte :</strong> Comparez dynamiquement les aperçus original et compressé pour vous assurer que le texte et les textures restent lisibles.",
+        "<strong>Curseur de qualité précis :</strong> Ajustez finement le niveau de compression de 10 % à 100 % selon vos objectifs de stockage.",
+        "<strong>Conversion de format à la volée :</strong> Transcodez instantanément vos fichiers vers des formats modernes comme WEBP ou très compatibles comme JPEG.",
+        "<strong>Calculateur d'économie en temps réel :</strong> Calcule instantanément le pourcentage de réduction de taille de fichier lors des ajustements.",
+        "<strong>Exécution 100 % côté client :</strong> Traite tout en JavaScript local, garantissant zéro registre de données ou stockage distant."
+      ],
+      "common_use_cases_title": "Cas d'utilisation courants",
+      "common_use_cases": [
+        "<strong>Développeurs Web :</strong> Compression d'images principales de sites Web, de textures d'arrière-plan et d'éléments de produits pour optimiser la vitesse de chargement et le SEO.",
+        "<strong>Gestionnaires de réseaux sociaux :</strong> Formatage et réduction de photos lourdes pour respecter les limites de téléversement des plateformes sans distorsion visuelle.",
+        "<strong>Administrateurs de bureau :</strong> Réduction de la taille de documents scannés ou de captures d'écran pour ne pas dépasser les limites de pièces jointes par e-mail.",
+        "<strong>Blogueurs et rédacteurs de contenu :</strong> Création d'images optimisées et rapides à charger pour les lecteurs mobiles afin de réduire le taux de rebond."
+      ],
+      "faq_title": "Foire aux questions",
+      "faq": [
+        {
+          "question": "Mon image va-t-elle perdre en qualité lors de la compression ?",
+          "answer": "Nous recommandons de maintenir le curseur entre 80 % et 90 % pour un usage classique. Dans cette plage, la taille du fichier est nettement réduite, tandis que les modifications visuelles sont généralement imperceptibles à l'œil humain."
+        },
+        {
+          "question": "Mes photos privées sont-elles téléversées sur un serveur cloud ?",
+          "answer": "Absolument pas. Tout le traitement, le redimensionnement et le transcodage de format s'effectuent localement dans la mémoire privée de votre navigateur. Aucun fichier n'est envoyé sur le réseau."
+        },
+        {
+          "question": "Quel est l'intérêt de convertir au format WEBP ?",
+          "answer": "WEBP est un format d'image moderne offrant une compression avec et sans perte supérieure aux formats traditionnels comme JPEG et PNG, ce qui donne des fichiers plus petits avec une meilleure fidélité."
+        },
+        {
+          "question": "Puis-je compresser des images PNG transparentes ?",
+          "answer": "Oui. Pour conserver la transparence, sélectionnez \"Conserver le format d'origine\" ou convertissez en \"WEBP\". Convertir des images transparentes en JPEG remplacera les zones transparentes par un fond blanc uni."
+        },
+        {
+          "question": "Pourquoi la taille de mon fichier a-t-elle augmenté après compression ?",
+          "answer": "Cela peut se produire si le fichier d'origine était déjà très optimisé, ou si vous convertissez un format très compressé vers un format moins efficace (comme JPEG vers WEBP avec un réglage de qualité à 100 %). Baissez le curseur pour résoudre cela."
+        }
+      ],
+      "privacy_note": "Note sur la confidentialité et les données : Chaque étape de la compression des pixels et du transcodage de format s'effectue localement sur votre ordinateur. Vos fichiers ne sont jamais stockés ni traités sur des serveurs externes.",
+      "schema_org": {
+        "name": "Compresseur d'Images – 99tool.in",
+        "description": "Outil en ligne gratuit par 99tool.in : rapide, privé, sans inscription requise."
+      }
+    },
+    "markdown_previewer": {
+      "page_title": "Visualiseur Markdown – 99tool.in",
+      "meta_description": "Écrivez, éditez et convertissez du Markdown en HTML en temps réel. Outil gratuit et privé pour développeurs par 99tool.in.",
+      "what_is_title": "Qu'est-ce que le Visualiseur Markdown ?",
+      "what_is_content": "Le Visualiseur Markdown est un éditeur côté navigateur conçu pour écrire, formater et rendre la syntaxe Markdown en temps réel. En écrivant le balisage sur la gauche et en examinant le rendu stylisé sur la droite, les développeurs peuvent contrôler leurs fichiers lisez-moi, guides techniques et articles avant de les publier sur des dépôts de production.\n\nCet éditeur exécute toutes les traductions de Markdown vers HTML localement sur votre ordinateur. Étant donné qu'aucune chaîne de texte, bloc de code ou configuration système n'est téléversé vers des bases de données externes, vos fichiers de documents et plans restent totalement sécurisés.",
+      "how_to_use_title": "Comment utiliser le Visualiseur Markdown",
+      "how_to_use_steps": [
+        "<strong>Saisissez votre Markdown :</strong> Écrivez ou collez votre syntaxe Markdown brute dans le panneau \"Éditeur\" situé à gauche.",
+        "<strong>Observez le rendu en direct :</strong> Consultez le panneau \"Aperçu en direct\" à droite pour revoir instantanément vos en-têtes, listes, extraits de code et tableaux formatés.",
+        "<strong>Copiez le code HTML :</strong> Cliquez sur le bouton \"Copier le HTML\" dans l'en-tête du panneau d'aperçu pour copier le balisage HTML compilé dans votre presse-papiers.",
+        "<strong>Téléchargez votre fichier source :</strong> Cliquez sur \"Télécharger .md\" pour exporter votre espace de travail au format Markdown standard directement sur votre appareil.",
+        "<strong>Effacez l'espace de travail :</strong> Cliquez sur \"Tout effacer\" pour vider les éditeurs de texte et commencer un nouveau brouillon."
+      ],
+      "key_features_title": "Caractéristiques clés",
+      "key_features": [
+        "<strong>Rendu en panneau divisé en direct :</strong> Traduit votre balisage brut en formatage HTML visuel au fur et à mesure que vous tapez.",
+        "<strong>Compatibilité avec le format GFM :</strong> Prend en charge les règles standard de GitHub Flavored Markdown pour les tableaux, textes en gras, listes et citations.",
+        "<strong>Copieur de sortie HTML :</strong> Enregistre les éléments HTML compilés dans votre presse-papiers pour une intégration Web instantanée.",
+        "<strong>Exportation de fichiers locaux :</strong> Télécharge vos brouillons terminés sous forme de fichier <code>.md</code> indépendant.",
+        "<strong>Compilateur 100 % côté client :</strong> Rend les styles visuels hors ligne dans le cache du navigateur pour protéger votre texte."
+      ],
+      "common_use_cases_title": "Cas d'utilisation courants",
+      "common_use_cases": [
+        "<strong>Rédaction de README pour dépôts :</strong> Formatez les fichiers de description de projet et vérifiez les références d'images avant de publier les mises à jour.",
+        "<strong>Aperçu de documentation d'API :</strong> Rédigez et prévisualisez les spécifications d'API, les listes de points d'accès et les exemples de requêtes.",
+        "<strong>Rédaction de blogs techniques :</strong> Structurez des articles en Markdown et prévisualisez les hiérarchies d'en-têtes avant de les exporter vers votre CMS.",
+        "<strong>Apprentissage de la syntaxe Markdown :</strong> Apprenez et testez les raccourcis Markdown (comme le gras, les listes et les liens) dans un éditeur interactif."
+      ],
+      "faq_title": "Foire aux questions",
+      "faq": [
+        {
+          "question": "Cet éditeur est-il compatible avec GitHub Flavored Markdown ?",
+          "answer": "Oui. Le visualiseur prend en charge les éléments GFM standard, y compris les listes de tâches imbriquées, les tableaux Markdown, les citations et les blocs de code."
+        },
+        {
+          "question": "Mes brouillons sont-ils envoyés à un serveur ?",
+          "answer": "Non. 99tool.in traite toutes les compilations Markdown et générations HTML localement dans la mémoire de votre navigateur. Vos brouillons et configurations ne sont jamais téléversés."
+        },
+        {
+          "question": "Comment afficher des images dans l'aperçu en direct ?",
+          "answer": "Vous pouvez faire référence à n'importe quelle image hébergée en utilisant la syntaxe standard (<code>![](url_image)</code>). Assurez-vous que le lien est accessible publiquement pour que votre navigateur puisse l'afficher dans le panneau d'aperçu."
+        },
+        {
+          "question": "Le fichier .md exporté inclut-il le HTML rendu ?",
+          "answer": "Non. En cliquant sur \"Télécharger .md\", vous exportez le code source Markdown brut modifiable. Pour obtenir le HTML compilé, cliquez sur le bouton \"Copier le HTML\" dans le panneau d'aperçu."
+        }
+      ],
+      "privacy_note": "🔒 Note sur la confidentialité et les données : Le rendu Markdown, les actions du presse-papiers et les exportations s'effectuent localement dans votre navigateur. Aucun de vos brouillons n'est envoyé à nos serveurs.",
+      "schema_org": {
+        "name": "Visualiseur Markdown",
+        "description": "Aperçu des résultats en direct, prise en charge de GFM, exportation en HTML, écran divisé multi-panneaux."
+      }
+    },
+    "pdf_merger": {
+      "page_title": "Fusionner PDF – 99tool.in",
+      "meta_description": "Combinez et fusionnez des fichiers PDF en quelques secondes dans votre navigateur. Outil 100 % privé et gratuit par 99tool.in.",
+      "what_is_title": "Enfin un outil de fusion PDF qui me respecte",
+      "what_is_content": "Nous sommes tous passés par là : vous avez trois rapports différents, une douzaine de reçus scannés et une lettre de motivation qui doivent tous être envoyés sous forme d'une seule pièce jointe professionnelle. Votre premier réflexe est de chercher un outil pour <strong>fusionner des pdf en ligne gratuitement</strong>. Mais ensuite, l'hésitation s'installe. Vous regardez le bouton \"téléverser\" et réalisez que vous vous apprêtez à envoyer des documents potentiellement sensibles (contrats confidentiels, dossiers médicaux personnels ou relevés de notes académiques) vers un serveur quelque part dans le cloud. À qui appartient ce serveur ? Qu'advient-il de vos données après avoir cliqué sur \"fusionner\" ?\n\nChez 99tool.in, nous avons créé notre utilitaire pour <strong>combiner des fichiers pdf</strong> spécifiquement pour résoudre ce dilemme moderne de confidentialité. Contrairement aux concurrents réputés qui traitent vos fichiers sur leur infrastructure, notre outil vous apporte la puissance de traitement directement. En utilisant les derniers développements de la technologie <code>pdf-lib</code> basée sur le navigateur, nous avons créé un outil de <strong>fusion pdf</strong> qui s'exécute entièrement dans la mémoire RAM de votre ordinateur. Vos fichiers ne quittent jamais votre appareil. Pas une seconde. Ce n'est pas seulement une question de rapidité ; c'est la tranquillité d'esprit absolue d'avoir le contrôle total de vos données.",
+      "how_to_use_title": "Comment utiliser l'outil de fusion PDF de 99tool.in (étape par étape)",
+      "how_to_use_steps": [
+        "<strong>Étape 1 : Rassemblez vos fichiers</strong> — Cliquez sur le cadre \"Sélectionner les PDF\" ou glissez simplement votre groupe de PDF directement sur l'interface. Vous les verrez apparaître instantanément sous forme de liste propre.",
+        "<strong>Étape 2 : Vérifiez le statut de sécurité</strong> — Recherchez le bouclier vert à côté de chaque fichier. Cela confirme que notre analyse interne n'a trouvé aucun script caché.",
+        "<strong>Étape 3 : Organisez votre séquence</strong> — Survolez un fichier avec la souris, cliquez et maintenez enfoncé, puis glissez-le vers le haut ou vers le bas. Le fichier du haut sera la page 1 de votre nouveau document.",
+        "<strong>Étape 4 : Finalisez et téléchargez</strong> — Une fois l'ordre parfait, cliquez sur le bouton \"Fusionner les fichiers\". Comme il s'agit d'un outil de <strong>fusion pdf</strong> local, l'assemblage se fait en quelques secondes. Votre téléchargement démarre automatiquement."
+      ],
+      "key_features_title": "Pourquoi la fusion manuelle centrée sur l'utilisateur est meilleure",
+      "key_features": [
+        "<strong>Espace de travail visuel tactile :</strong> Glissez-déposez chaque élément dans la séquence exacte dont vous avez besoin.",
+        "<strong>Analyse de sécurité active :</strong> Analyse la structure interne du document à la recherche d'éléments interactifs comme les balises /JS ou /Action avant la fusion.",
+        "<strong>Assemblage pur dans le navigateur :</strong> S'exécute entièrement dans la mémoire RAM via pdf-lib et WebAssembly.",
+        "<strong>Zéro téléversement de fichier :</strong> Protection absolue de la confidentialité pour les contrats confidentiels, les dossiers médicaux et les documents juridiques."
+      ],
+      "common_use_cases_title": "Cas d'utilisation réels pour une fusion professionnelle",
+      "common_use_cases": [
+        "<strong>Pour les professionnels du droit :</strong> Constitution de dossiers judiciaires en combinant des pièces justificatives, des affidavits et des jurisprudences sans fuite de métadonnées.",
+        "<strong>Pour les étudiants et enseignants :</strong> Soumission de thèses finales devant inclure des bibliographies et des déclarations signées ou création de livrets de lecture.",
+        "<strong>Pour les agents immobiliers :</strong> Regroupement des divulgations, lettres d'offre et rapports d'inspection tout en gardant privées les données financières des clients."
+      ],
+      "faq_title": "Foire aux questions",
+      "faq": [
+        {
+          "question": "Y a-t-il une limite au nombre de PDF que je peux fusionner ?",
+          "answer": "Étant donné que la fusion s'effectue localement en utilisant les ressources de votre navigateur, la limite dépend de la mémoire RAM de votre ordinateur. La plupart des ordinateurs modernes peuvent facilement gérer plus de 50 PDF de taille moyenne. Pour fusionner des fichiers PDF très volumineux, nous recommandons de procéder par petits lots pour des performances optimales."
+        },
+        {
+          "question": "La fusion altère-t-elle la qualité de mes images ?",
+          "answer": "Non. Notre outil d'assemblage PDF conserve intactes les données d'origine de chaque page grâce à la bibliothèque pdf-lib. Nous ne compressons ni ne réaffichons les pages pendant le processus de fusion, garantissant que votre texte reste recherchable et vos images en haute résolution."
+        },
+        {
+          "question": "Pourquoi ai-je un \"Avertissement de sécurité\" sur certains fichiers ?",
+          "answer": "Certains PDF contiennent des éléments interactifs comme du JavaScript ou des actions automatisées (AcroForms). Notre outil de fusion sécurisé les signale pour vous informer, car ces éléments peuvent parfois être utilisés pour le suivi. Dans la plupart des cas, il s'agit simplement de fonctionnalités de formulaires avancées, mais nous prônons la transparence."
+        },
+        {
+          "question": "Mes documents sont-ils téléversés sur un serveur ?",
+          "answer": "Absolument pas. Pour une sécurité maximale, tout le traitement est effectué via WASM et JavaScript directement dans l'onglet de votre navigateur. Vos fichiers sont lus dans la mémoire locale, fusionnés et téléchargés. Aucune donnée n'est transmise à notre infrastructure."
+        },
+        {
+          "question": "Puis-je fusionner des PDF protégés par mot de passe ?",
+          "answer": "La fusion de fichiers chiffrés ou protégés par mot de passe nécessite qu'ils soient d'abord déverrouillés. Notre outil de fusion actuel dans le navigateur ne peut pas contourner les restrictions de sécurité des PDF. Veuillez vous assurer que vos fichiers sont déchiffrés avant d'essayer de les combiner."
+        },
+        {
+          "question": "Cet outil est-il compatible avec les appareils mobiles ?",
+          "answer": "Oui. Tant que votre navigateur mobile prend en charge les API JavaScript modernes, vous pouvez combiner des PDF sur iPhone, iPad ou Android. Notez que les fichiers très volumineux peuvent être limités par la mémoire disponible sur votre appareil mobile."
+        }
+      ],
+      "privacy_note": "🔒 Traitement basé sur la session. Zéro téléversement. Zéro suivi. Dernière mise à jour : 10 avril 2026.",
+      "schema_org": {
+        "name": "Outil de Fusion PDF",
+        "description": "Fusion de PDF, réorganisation visuelle des fichiers, analyse de sécurité, traitement axé sur la confidentialité."
+      }
+    },
+    "password_generator": {
+      "page_title": "Générateur de Mots de Passe – 99tool.in",
+      "meta_description": "Générez des mots de passe forts et aléatoires instantanément. Outil 100 % privé et local par 99tool.in.",
+      "what_is_title": "Qu'est-ce que le Générateur de Mots de Passe Sécurisés ?",
+      "what_is_content": "Le Générateur de Mots de Passe Sécurisés crée des mots de passe hautement aléatoires du point de vue cryptographique en utilisant l'API Web Crypto de votre navigateur (window.crypto.getRandomValues). Cela produit un résultat aléatoire authentique qui est statistiquement supérieur aux mots de passe choisis par des humains ou à ceux générés par des outils basés sur Math.random(). Tout le processus s'exécute localement dans votre navigateur : rien n'est transmis à aucun serveur.\n\nConfigurez la longueur de votre mot de passe, les jeux de caractères (majuscules, minuscules, chiffres, symboles) et l'outil génère instantanément un mot de passe qui répond à vos exigences exactes. Copiez-le dans votre presse-papiers et stockez-le dans un gestionnaire de mots de passe.",
+      "how_to_use_title": "Comment utiliser le Générateur de Mots de Passe Sécurisés",
+      "how_to_use_steps": [
+        "Définissez la longueur de mot de passe souhaitée à l'aide du curseur ou du champ de saisie (de 8 à 128 caractères recommandés).",
+        "Cochez les cases des jeux de caractères : Majuscules (A-Z), Minuscules (a-z), Chiffres (0-9), Symboles (!@#$...).",
+        "Cliquez sur \"Générer le mot de passe\" pour créer un mot de passe aléatoire cryptographiquement sûr correspondant à vos réglages.",
+        "Consultez l'indicateur de force pour confirmer que le mot de passe généré répond à vos exigences de sécurité.",
+        "Cliquez sur \"Copier\" pour copier le mot de passe dans votre presse-papiers, puis collez-le immédiatement dans votre gestionnaire de mots de passe.",
+        "Cliquez à nouveau sur \"Générer\" pour produire un nouveau mot de passe sans modifier vos réglages."
+      ],
+      "key_features_title": "Caractéristiques clés",
+      "key_features": [
+        "<strong>Aléatoire via API Web Crypto :</strong> Utilise une génération de nombres aléatoires sécurisée sur le plan cryptographique — et non Math.random().",
+        "<strong>Sortie configurable :</strong> Définissez la longueur (jusqu'à 128 caractères) et choisissez parmi 4 combinaisons de jeux de caractères.",
+        "<strong>Indicateur de force :</strong> Affiche l'entropie et l'évaluation de la force de chaque mot de passe généré en temps réel.",
+        "<strong>Copie en un clic :</strong> Copie instantanément le mot de passe généré dans votre presse-papiers avec une confirmation visuelle."
+      ],
+      "common_use_cases_title": "Cas d'utilisation courants",
+      "common_use_cases": [
+        "<strong>Création de compte :</strong> Génération d'un mot de passe unique et fort chaque fois que vous créez un nouveau compte en ligne.",
+        "<strong>Renouvellement de mot de passe :</strong> Création d'un mot de passe de remplacement lorsqu'un site vous oblige à mettre à jour vos identifiants.",
+        "<strong>Modèles de clés d'API :</strong> Génération de chaînes aléatoires pouvant servir de clés d'API, de jetons ou de secrets de développement."
+      ],
+      "faq_title": "Foire aux questions",
+      "faq": [
+        {
+          "question": "Le mot de passe généré est-il vraiment aléatoire ?",
+          "answer": "Oui. L'outil utilise window.crypto.getRandomValues(), qui puise l'entropie dans le générateur de nombres aléatoires cryptographiquement sûr du système d'exploitation (CSPRNG). C'est la même source d'entropie utilisée par TLS et les bibliothèques cryptographiques modernes."
+        },
+        {
+          "question": "Quelle longueur mon mot de passe doit-il avoir ?",
+          "answer": "Un minimum de 16 caractères pour les comptes standard, et 20+ pour les comptes critiques (e-mail, banque). Les mots de passe plus longs avec des jeux de caractères variés sont exponentiellement plus difficiles à pirater."
+        },
+        {
+          "question": "Le mot de passe est-il envoyé à vos serveurs ?",
+          "answer": "Jamais. Toute la génération s'effectue localement dans votre navigateur. Le mot de passe ne quitte jamais votre appareil et n'est stocké ni enregistré nulle part de notre côté."
+        },
+        {
+          "question": "Dois-je mémoriser le mot de passe généré ?",
+          "answer": "Non. Les mots de passe générés sont conçus pour être stockés dans un gestionnaire de mots de passe, pas pour être mémorisés. Utilisez un outil comme Bitwarden, 1Password ou notre Coffre-fort de mots de passe pour les conserver en sécurité."
+        }
+      ],
+      "privacy_note": "🔒 Sécurisé cryptographiquement. 100 % Local. Zéro contact avec un serveur. Dernière mise à jour : 10 avril 2026.",
+      "schema_org": {
+        "name": "Générateur de Mots de Passe Sécurisés",
+        "description": "Génération de mots de passe aléatoires, jeux de caractères personnalisables, vérification de la force par entropie, 100 % côté client."
+      }
+    },
+    "regex_tester": {
+      "page_title": "Testeur de Regex – 99tool.in",
+      "meta_description": "Testez et débugguez des expressions régulières en temps réel. Outil gratuit et privé pour développeurs par 99tool.in.",
+      "what_is_title": "Qu'est-ce que le Testeur et Débuggeur de Regex ?",
+      "what_is_content": "Le Testeur et Débuggeur de Regex est un espace de travail de développement côté client conçu pour composer, tester et dépanner des expressions régulières. En saisissant un motif et des drapeaux de correspondance, les développeurs peuvent contrôler la façon dont les règles d'expression parcourent le texte d'exemple, capturent des groupes et gèrent les cas limites directement dans leur navigateur Web.\n\nCe débuggeur exécute toute la compilation des expressions et la correspondance des motifs localement en utilisant le moteur RegExp natif JavaScript du navigateur. Comme aucun bloc de texte de test, journal propriétaire ou règle personnalisée n'est envoyé sur le réseau, vos architectures sources et vos chaînes restent confidentielles.",
+      "how_to_use_title": "Comment utiliser le Testeur et Débuggeur de Regex",
+      "how_to_use_steps": [
+        "<strong>Saisissez votre motif :</strong> Tapez votre expression régulière (par exemple, <code>[a-zA-Z0-9]+</code>) dans la barre de saisie du motif.",
+        "<strong>Configurez les drapeaux :</strong> Activez des drapeaux comme Global (g) pour rechercher toutes les correspondances, Insensible à la casse (i) pour ignorer les majuscules, ou Multiligne (m) pour les ancres de ligne.",
+        "<strong>Collez votre texte de test :</strong> Saisissez votre chaîne d'exemple dans la zone de texte \"Texte de test\". Les correspondances seront immédiatement mises en surbrillance.",
+        "<strong>Inspectez les groupes de capture :</strong> Examinez le panneau latéral \"Résultats des correspondances\" pour voir les détails des correspondances complètes et des groupes de capture numérotés ou nommés.",
+        "<strong>Corrigez les problèmes de syntaxe :</strong> Si votre expression est incorrecte, consultez le message d'erreur affiché sous la barre de motif pour identifier et corriger les erreurs de syntaxe."
+      ],
+      "key_features_title": "Caractéristiques clés",
+      "key_features": [
+        "<strong>Rendu de surbrillance en temps réel :</strong> Visualise les correspondances dans le bloc de test au fur et à mesure que vous tapez ou modifiez le motif de l'expression.",
+        "<strong>Contrôle interactif des drapeaux :</strong> Activez facilement les drapeaux Global, Insensible à la casse et Multiligne pour modifier les règles d'évaluation.",
+        "<strong>Carte détaillée des groupes de capture :</strong> Détaille les emplacements des correspondances complètes ainsi que les index de groupes spécifiques et les valeurs extraites.",
+        "<strong>Débogage d'erreurs intégré :</strong> Affiche des avertissements de validation descriptifs pour aider à isoler les crochets non fermés ou les caractères non valides.",
+        "<strong>Compilateur 100 % côté client :</strong> Teste les expressions régulières hors ligne dans l'onglet du navigateur pour protéger la confidentialité."
+      ],
+      "common_use_cases_title": "Cas d'utilisation courants",
+      "common_use_cases": [
+        "<strong>Validation des entrées utilisateur :</strong> Validez les motifs pour les structures d'e-mails, les numéros de téléphone, les mots de passe et les champs de nom d'utilisateur.",
+        "<strong>Audit et analyse de journaux :</strong> Créez des motifs pour extraire des horodatages, des adresses IP ou des codes d'état HTTP à partir de journaux de serveur.",
+        "<strong>Flux de travail d'extraction de texte :</strong> Testez des motifs qui extraient des balises spécifiques, des clés de métadonnées ou des variables à partir de fichiers de code source.",
+        "<strong>Apprentissage des expressions régulières :</strong> Expérimentez avec les ancres, les quantificateurs, la logique d'inspection avant/arrière et les groupements dans un bac à sable visuel."
+      ],
+      "faq_title": "Foire aux questions",
+      "faq": [
+        {
+          "question": "Quel moteur d'expressions régulières cet outil utilise-t-il ?",
+          "answer": "Cet outil utilise le moteur <code>RegExp</code> natif de JavaScript. Ce moteur correspond au comportement des environnements Chrome, Edge, Safari, Firefox et Node.js."
+        },
+        {
+          "question": "Mes chaînes de test sont-elles téléversées sur un serveur ?",
+          "answer": "Non. 99tool.in traite toutes les compilations d'expressions et évaluations de motifs localement dans la mémoire de votre navigateur. Vos chaînes de test ne sont jamais envoyées sur le réseau."
+        },
+        {
+          "question": "Pourquoi l'outil affiche-t-il une erreur de syntaxe regex ?",
+          "answer": "Ce message apparaît lorsque l'expression est mathématiquement non valide, comme avoir des parenthèses non fermées <code>(</code>, des barres de fraction non échappées ou des drapeaux en double."
+        },
+        {
+          "question": "Le débuggeur prend-il en charge les assertions arrière et avant ?",
+          "answer": "Oui. Le moteur natif du navigateur prend en charge les fonctionnalités regex modernes d'ES2018+, y compris les assertions avant positives et négatives (<code>(?=...)</code> / <code>(?!...)</code>) et les assertions arrière (<code>(?<=...)</code> / <code>(?<!...)</code>)."
+        }
+      ],
+      "privacy_note": "🔒 Note sur la confidentialité et les données : La compilation des motifs regex, l'évaluation des correspondances et la liste des groupes s'effectuent localement dans votre navigateur. Aucune de vos données n'est envoyée à nos serveurs.",
+      "schema_org": {
+        "name": "Testeur de Regex",
+        "description": "Test de Regex en temps réel, prise en charge des drapeaux (g, i, m), mise en surbrillance des correspondances."
+      }
+    },
+    "word_counter": {
+      "page_title": "Compteur de Mots – 99tool.in",
+      "meta_description": "Comptez les mots, caractères, phrases et paragraphes en temps réel. Outil gratuit et privé par 99tool.in.",
+      "what_is_title": "Qu'est-ce que le Compteur de Mots en Ligne ?",
+      "what_is_content": "Le Compteur de Mots en Ligne est un outil d'analyse de texte en temps réel qui compte les mots, les caractères, les phrases et les paragraphes au fur et à mesure que vous tapez ou collez du contenu. Les éditeurs de texte basés sur le cloud stockent souvent vos documents sur des serveurs externes. Cet outil effectue toute l'analyse localement dans votre navigateur sans aucune transmission de données.\n\nLe compteur se met à jour instantanément à chaque frappe au clavier, vous permettant de surveiller la longueur du texte pour des dissertations, des publications sur les réseaux sociaux, du contenu SEO ou tout format ayant une limite de caractères ou de mots. Votre texte ne quitte jamais votre appareil.",
+      "how_to_use_title": "Comment utiliser le Compteur de Mots en Ligne",
+      "how_to_use_steps": [
+        "Tapez ou collez votre texte directement dans la zone de l'éditeur en haut de la page.",
+        "Observez le nombre de mots, le nombre de caractères, le nombre de phrases et le nombre de paragraphes se mettre à jour en temps réel.",
+        "Utilisez l'indicateur \"Temps de lecture\" pour estimer le temps qu'il faudra à un lecteur moyen pour lire votre contenu.",
+        "Éditez votre texte directement dans la zone pour ajuster la longueur jusqu'à atteindre votre objectif.",
+        "Cliquez sur \"Effacer\" pour réinitialiser l'éditeur et effectuer une nouvelle analyse."
+      ],
+      "key_features_title": "Caractéristiques clés",
+      "key_features": [
+        "<strong>Comptage en temps réel :</strong> Met à jour les décomptes de mots, caractères, phrases et paragraphes à chaque frappe.",
+        "<strong>Estimation du temps de lecture :</strong> Calcule la durée de lecture approximative basée sur la vitesse de lecture moyenne d'un adulte.",
+        "<strong>Comptage des caractères (avec et sans espaces) :</strong> Affiche les deux totaux pour des plateformes comme Twitter qui comptent les espaces différemment.",
+        "<strong>Confidentialité sans téléversement :</strong> Toute la logique de comptage s'exécute côté client ; votre texte n'est jamais envoyé à un serveur."
+      ],
+      "common_use_cases_title": "Cas d'utilisation courants",
+      "common_use_cases": [
+        "<strong>Dissertations académiques :</strong> Vérification du nombre de mots par rapport aux limites imposées pour les devoirs universitaires avant le rendu.",
+        "<strong>Rédaction de contenu SEO :</strong> Ciblez des décomptes de caractères spécifiques pour les méta-descriptions, les balises de titre et la longueur des articles.",
+        "<strong>Publications sur les réseaux sociaux :</strong> Respectez les limites de caractères de Twitter/X ou LinkedIn avant de publier.",
+        "<strong>Rédaction indépendante :</strong> Contrôlez la longueur des livrables par rapport aux spécifications contractuelles de nombre de mots."
+      ],
+      "faq_title": "Foire aux questions",
+      "faq": [
+        {
+          "question": "Cet outil sauvegarde-t-il ce que j'écris ?",
+          "answer": "Absolument pas. Votre confidentialité est primordiale. Tout se passe localement dans l'onglet de votre navigateur. Une fois que vous le fermez, votre texte disparaît pour toujours de notre côté (car il n'a jamais été chez nous !)."
+        },
+        {
+          "question": "Qu'est-ce qu'une bonne vitesse de lecture ?",
+          "answer": "Nous utilisons une estimation moyenne de 200 mots par minute, ce qui est la norme pour la plupart des adultes. Cela vous donne une idée approximative du temps qu'il faudra à quelqu'un pour lire votre article."
+        },
+        {
+          "question": "Puis-je l'utiliser pour les limites de caractères des réseaux sociaux ?",
+          "answer": "Absolument ! Que ce soit pour X (Twitter), LinkedIn ou les légendes Instagram, le compteur de caractères (avec et sans espaces) est votre meilleur allié pour respecter ces limites."
+        },
+        {
+          "question": "Y a-t-il une limite à la quantité de texte que je peux coller ?",
+          "answer": "Nous n'avons pas encore trouvé de limite ! Qu'il s'agisse d'un court tweet ou d'un chapitre entier de thèse, l'outil est conçu pour le gérer sans effort."
+        },
+        {
+          "question": "Cela fonctionne-t-il sur mon téléphone ?",
+          "answer": "Oui, l'outil est entièrement adaptatif. Vous pouvez compter les mots en déplacement depuis votre smartphone ou votre tablette aussi facilement que sur un ordinateur de bureau."
+        }
+      ],
+      "privacy_note": "Note sur la confidentialité et les données : Toute l'analyse de texte, le comptage des caractères et les calculs du temps de lecture sont traités entièrement dans votre navigateur. Votre contenu n'est jamais stocké, transmis ni vu par aucun serveur.",
+      "schema_org": {
+        "name": "Compteur de Mots en Ligne",
+        "description": "Décompte des mots, décompte des caractères, décompte des phrases, estimation du temps de lecture."
+      }
+    }
+  }
+}

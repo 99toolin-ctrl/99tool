@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Crop Image – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/image/crop-image.html"/>
+<meta property="og:title" content="Crop Image – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/image/crop-image.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Crop Image \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/image/crop-image.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Cropper.js -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
+  <style>
+    .editor-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    @media (max-width: 992px) {
+      .editor-layout { grid-template-columns: 1fr; }
+    }
+    .cropper-area {
+      background: #0d0d0d;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      min-height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    #image-to-crop { max-width: 100%; display: block; }
+    
+    .sidebar-controls {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      height: fit-content;
+      position: sticky;
+      top: 80px;
+    }
+    
+    .ratio-group {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-bottom: 2rem;
+    }
+    .ratio-btn {
+      background: var(--dark);
+      border: 1px solid var(--border);
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      transition: all var(--transition);
+    }
+    .ratio-btn:hover { border-color: var(--primary); }
+    .ratio-btn.active { background: var(--primary); border-color: var(--primary); color: white; }
+
+    .tool-actions {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-bottom: 2rem;
+    }
+    .action-icon-btn {
+      background: var(--dark);
+      border: 1px solid var(--border);
+      width: 100%;
+      aspect-ratio: 1;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.2rem;
+      transition: all var(--transition);
+    }
+    .action-icon-btn:hover { border-color: var(--primary); color: var(--primary); }
+
+    .result-preview {
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    #preview-thumbnail {
+       width: 100%;
+       height: 150px;
+       object-fit: contain;
+       background: #000;
+       border-radius: 8px;
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Precision Image Cropper</h1>
+      <p>Frame your stories perfectly. Fast, free, and completely private.</p>
+    </div>
+
+    <div class="tool-container">
+      <div class="upload-area" id="drop-zone">
+        <div class="upload-icon">✂️</div>
+        <p>Drop image here or <span class="text-primary">browse files</span></p>
+        <p class="text-muted small">JPG, PNG, WEBP supported</p>
+        <input type="file" id="image-input" accept="image/*" hidden>
+      </div>
+
+      <div id="tool-workspace" class="hidden">
+        <div class="editor-layout">
+          <div class="cropper-area">
+            <img id="image-to-crop" alt="To Crop">
+          </div>
+
+          <div class="sidebar-controls">
+            <h4 class="mb-3">Aspect Ratio</h4>
+            <div class="ratio-group">
+               <div class="ratio-btn" data-ratio="NaN">Free</div>
+               <div class="ratio-btn active" data-ratio="1">1:1 (Square)</div>
+               <div class="ratio-btn" data-ratio="1.77777777778">16:9</div>
+               <div class="ratio-btn" data-ratio="0.8">4:5</div>
+               <div class="ratio-btn" data-ratio="0.66666666667">2:3</div>
+               <div class="ratio-btn" data-ratio="1.33333333333">4:3</div>
+            </div>
+
+            <h4 class="mb-3">Flip & Rotate</h4>
+            <div class="tool-actions">
+               <div class="action-icon-btn" onclick="cropper.rotate(-90)" title="Rotate Left">↺</div>
+               <div class="action-icon-btn" onclick="cropper.rotate(90)" title="Rotate Right">↻</div>
+               <div class="action-icon-btn" onclick="flipH()" title="Flip Horizontal">↔</div>
+               <div class="action-icon-btn" onclick="flipV()" title="Flip Vertical">↕</div>
+            </div>
+
+            <button id="download-btn" class="btn btn-primary w-100">Download Cropped Image</button>
+            <p class="text-center mt-3 small text-muted">Processing is 100% private</p>
+
+            <div class="result-preview hidden" id="preview-panel">
+               <p class="small text-muted mb-2">Result Dimensions: <span id="crop-dims">0x0</span></p>
+               <div id="img-preview-box"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5">
+        <h2>Defining Your Focus in Private: Secure Local Image Cropping</h2>
+        <p>We've all been there: you have a high-impact photo, but the edges contain details that distract from the main subject—a stray hand, a messy background, or a sensitive logo. You look for an <strong>image cropper</strong> online to help you refine the focus and balance the frame. But as you look at the "Image Analysis" and "SaaS Storage" prompts of most checkers, you realize that your original, uncropped imagery is being scanned and recorded by an anonymous database. Do you really want to share your "Raw Frames" with a third-party algorithm?</p>
+
+        <p>At 99tool.in, we built our <strong>image cropper</strong> to give you a professional framing workstation without the privacy debt. By utilizing browser-side processing and zero-cloud rendering, we allow you to <strong>crop photos accurately</strong> entirely within the secure sandbox of your own machine. Whether you’re an influencer perfecting a profile shot, an e-commerce owner standardizing product thumbnails, or a developer creating UI assets, our <strong>safe cropping tool</strong> ensures that your original frames stay where they belong: on your device, under your total sovereignty.</p>
+        
+        <div class="tool-preview-box mt-4 mb-4" style="text-align:center;">
+           <img src="../../assets/images/crop-preview.png" alt="Clean Image Cropper Interface with Aspect Ratio Precision and Lossless Framing Logic Visuals" class="tool-preview" id="tool-preview-img" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+        </div>
+
+        <h3 class="mt-4">The Logic of Aspect Ratio Precision</h3>
+        <p>Visual composition isn't just about cutting; it’s about "Framing Logic." Most basic <strong>crop image online</strong> services provide clumsy handles that make it hard to maintain consistent dimensions, leading to "Aspect Drift"—that annoying feeling when your photos don't quite fit the container. Our <strong>professional image cropper</strong> takes a human-centric approach: we focus on **Aspect Ratio Precision** and **Lossless Framing Logic**.</p>
+        
+        <p>We provide a suite of professional presets (1:1 for social, 16:9 for cinema, etc.) coupled with an interactive grid system that helps you align your subject according to the rules of design. Our <strong>safe framing validator</strong> doesn't just snip edges; it ensures your export maintains high-fidelity resolution and exact geometric compliance. This transparency transforms a quick edit into a professional polish, helping you define your focus in a private, professional environment.</p>
+
+        <h3 class="mt-4">Why Cropping is the Creator’s Ethical Choice</h2>
+        <p>In the age of digital footprints, every photo you frame is a trace of your aesthetic vision. When you use a standard <strong>image cropper online free</strong> service that requires an upload, you are essentially trust-falling into an anonymous database. Even if you "crop out" the sensitive parts, the original "Raw Frame" was processed on a remote server. Our 100% <strong>framing utility</strong> removes this "Visual Risk" entirely from your creative routine.</p>
+        
+        <p>Because the logic and rendering happen in your browser's private memory, your original images are invisible to the outside world. No analytics are tracked, no frames are harvested, and no proprietary data is shared with advertisers or AI platforms. At 99tool.in, we believe that <strong>framing your story</strong> should be an empowering utility, not a data-mining trade-off. With us, you have a private, professional desk for your focus that fits in your browser tab.</p>
+
+        <h3 class="mt-4">How to Refine Your Focus (Step-by-Step)</h3>
+        <p>Perfecting a frame should be a high-speed, 5-second task. Here is how to use our <strong>image cropper</strong>:</p>
+        <ul style="line-height: 1.8; margin-bottom: 20px;">
+          <li><strong>Step 1: Load Your Frame</strong> — Drag your photo into the workspace. It renders instantly in our local editor without uploading a single byte to any server.</li>
+          <li><strong>Step 2: Define Your Boundaries</strong> — Select a professional aspect ratio or use the "Free" mode to manually define your frame. Our interactive grid helps you find the perfect balance.</li>
+          <li><strong>Step 3: Commit the Refinement</strong> — Zoom, rotate, or flip your image within the crop box to find the exact angle that tells your story best.</li>
+          <li><strong>Step 4: Export Your Focus</strong> — Click "Download Cropped Image." Our engine snips the high-res pixels locally and saves the final file directly to your device.</li>
+        </ul>
+
+        <h3 class="mt-4">Strategic Use Cases for Your Local Cropper</h3>
+        <p>Our <strong>selective framing tool</strong> is the essential companion for varied professional life:</p>
+        
+        <p><strong>For Social Media Influencers:</strong> Standardizing your feed? Use our <strong>secure cropping tool</strong> to frame all your shots in a consistent 4:5 or 1:1 ratio, ensuring a professional, cohesive look across your entire profile.</p>
+        
+        <p><strong>For E-Commerce Store Owners:</strong> Managing product listings? Use our <strong>safe image cropper</strong> to center and frame your merchandise, creating a trustworthy and high-end shopping experience for your customers.</p>
+        
+        <p><strong>For Professional Recrutiers & Admin:</strong> Managing headshots? Use our <strong>private cropper</strong> to refine the framing of employee photos, ensuring a uniform and polished appearance for company directories and LinkedIn profiles.</p>
+
+        <h3 class="mt-5">Explore Your Complete Image Suite</h3>
+        <p>Once you’ve successfully framed your focus, you might need to adjust the file size. Check out our <strong><a href="compress-image.html">Image Compressor</a></strong>. Or, if you need to perform the same refinement on multiple files, use our <strong><a href="resize-image.html">Bulk Image Resizer</a></strong>. At 99tool.in, we are building a world-class, 100% private digital toolkit to give you total control over your visual identity.</p>
+      </section>
+ 
+      <!-- FAQ SECTION -->
+      <section class="faq-section mt-5">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Is the original image quality preserved?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. Our <strong>precision cropper</strong> uses high-fidelity canvas rendering to ensure that your cropped output maintains the maximum possible resolution and clarity of the original file, without adding unnecessary compression artifacts.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Are my photos uploaded to your server?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Absolutely not. Your privacy is our standard. 100% of the image rendering and framing logic happen <strong>locally in your browser's private memory</strong>. Your original "Raw Frames" never leave your device.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Which aspect ratios are supported?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>We provide a suite of professional presets including <strong>1:1 (Square)</strong> for profile shots, <strong>16:9</strong> for cinematic layouts, and <strong>4:5/2:3</strong> for social media feeds. You can also use the **Free Mode** to manually define any custom frame.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I rotate or flip my image?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. Our <strong>safe cropping tool</strong> includes integrated rotate and flip (horizontal/vertical) functions. This allows you to correct the orientation or perspective of your shot before you commit to the final crop.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Is there a limit on the file resolution?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Because our <strong>professional framing tool</strong> runs on your local hardware, it is limited only by your browser's memory. Most modern browsers can handle high-res smartphone photos and professional DSLR shots up to 4096px easily.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Why use a local cropper instead of a cloud editor?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Most cloud editors harvest your "Uncropped Source" imagery for data-mining or AI training. A <strong>private cropping utility</strong> removes this risk entirely. It's faster (no uploads), safer (no data leakage), and gives you total sovereignty over your visual voice.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const imageInput = document.getElementById('image-input');
+    const dropZone = document.getElementById('drop-zone');
+    const workspace = document.getElementById('tool-workspace');
+    const imageToCrop = document.getElementById('image-to-crop');
+    const downloadBtn = document.getElementById('download-btn');
+    const ratioBtns = document.querySelectorAll('.ratio-btn');
+    const previewPanel = document.getElementById('preview-panel');
+    const cropDims = document.getElementById('crop-dims');
+
+    let cropper = null;
+    let flipH_val = 1;
+    let flipV_val = 1;
+
+    dropZone.onclick = () => imageInput.click();
+    imageInput.onchange = (e) => handleFile(e.target.files[0]);
+    
+    // Init Drag and Drop using global helper
+    setupDragDrop('drop-zone', (files) => {
+       if (files.length) handleFile(files[0]);
+    });
+
+    function handleFile(file) {
+      if (!file || !file.type.startsWith('image/')) return;
+      
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        if (cropper) cropper.destroy();
+        imageToCrop.src = e.target.result;
+        workspace.classList.remove('hidden');
+        
+        cropper = new Cropper(imageToCrop, {
+          aspectRatio: 1,
+          viewMode: 1,
+          autoCropArea: 0.8,
+          responsive: true,
+          restore: false,
+          checkCrossOrigin: false,
+          crop(event) {
+            cropDims.innerText = Math.round(event.detail.width) + ' x ' + Math.round(event.detail.height);
+          }
+        });
+      };
+      reader.readAsDataURL(file);
+    }
+
+    ratioBtns.forEach(btn => {
+      btn.onclick = () => {
+        ratioBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const ratio = parseFloat(btn.dataset.ratio);
+        cropper.setAspectRatio(ratio);
+      };
+    });
+
+    window.flipH = () => {
+       flipH_val *= -1;
+       cropper.scaleX(flipH_val);
+    };
+
+    window.flipV = () => {
+       flipV_val *= -1;
+       cropper.scaleY(flipV_val);
+    };
+
+    downloadBtn.onclick = () => {
+      if (!cropper) return;
+      
+      const canvas = cropper.getCroppedCanvas({
+        maxWidth: 4096,
+        maxHeight: 4096,
+        fillColor: '#fff',
+        imageSmoothingEnabled: true,
+        imageSmoothingQuality: 'high',
+      });
+
+      const url = canvas.toDataURL('image/jpeg', 0.95);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `cropped_${Date.now()}.jpg`;
+      a.click();
+    };
+  </script>
+</body>
+</html>

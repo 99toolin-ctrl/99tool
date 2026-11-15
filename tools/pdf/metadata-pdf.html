@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Metadata Pdf – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/pdf/metadata-pdf.html"/>
+<meta property="og:title" content="Metadata Pdf – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/pdf/metadata-pdf.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Metadata Pdf \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/pdf/metadata-pdf.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+  <style>
+    .metadata-form {
+      background: var(--bg-secondary);
+      padding: 2rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      max-width: 600px;
+      margin: 2rem auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .input-group label {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--text-primary);
+    }
+    .input-group input, .input-group textarea {
+      padding: 0.75rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: inherit;
+    }
+    .input-group textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+    .full-width { grid-column: 1 / -1; }
+    .save-btn-container {
+      grid-column: 1 / -1;
+      margin-top: 1rem;
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/pdf/metadata-pdf.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/pdf/metadata-pdf.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/pdf/metadata-pdf.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/pdf/metadata-pdf.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/pdf/metadata-pdf.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/pdf/metadata-pdf.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/pdf/metadata-pdf.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/pdf/metadata-pdf.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/pdf/metadata-pdf.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/pdf/metadata-pdf.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/pdf/metadata-pdf.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/pdf/metadata-pdf.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/pdf/metadata-pdf.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/pdf/metadata-pdf.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/pdf/metadata-pdf.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/pdf/metadata-pdf.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/pdf/metadata-pdf.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/pdf/metadata-pdf.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/pdf/metadata-pdf.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/pdf/metadata-pdf.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/pdf/metadata-pdf.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/pdf/metadata-pdf.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>PDF Metadata Editor</h1>
+      <p>Clean or update document properties privately. Professional info management, 100% in-browser.</p>
+    </div>
+
+    <div class="tool-container">
+      <div class="upload-area" id="drop-zone">
+        <div class="upload-icon">🏷️</div>
+        <p>Drag & drop your PDF or <span class="text-primary">browse files</span></p>
+        <input type="file" id="pdf-input" accept="application/pdf" hidden>
+      </div>
+
+      <div id="file-info" class="file-info hidden" style="max-width: 600px; margin: 1rem auto;">
+        <div class="file-details">
+          <span id="file-name">filename.pdf</span>
+          <span id="file-size" class="text-muted">0 KB</span>
+        </div>
+        <div class="security-badge" id="security-badge">
+          <span class="badge-icon">🛡️</span>
+          <span id="security-status">Scanning...</span>
+        </div>
+      </div>
+
+      <div id="metadata-editor" class="metadata-form hidden">
+        <div class="input-group full-width">
+          <label for="title">Document Title</label>
+          <input type="text" id="title" placeholder="e.g. Annual Report 2024">
+        </div>
+        <div class="input-group">
+          <label for="author">Author / Creator</label>
+          <input type="text" id="author" placeholder="e.g. John Doe">
+        </div>
+        <div class="input-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" placeholder="e.g. Business Strategy">
+        </div>
+        <div class="input-group full-width">
+          <label for="keywords">Keywords (Comma separated)</label>
+          <textarea id="keywords" placeholder="e.g. business, fiscal, growth"></textarea>
+        </div>
+        <div class="input-group">
+          <label for="creator">Application Name (Creator)</label>
+          <input type="text" id="creator" placeholder="e.g. Microsoft Word">
+        </div>
+        <div class="input-group">
+          <label for="producer">PDF Producer</label>
+          <input type="text" id="producer" placeholder="e.g. PDF-Lib Engine">
+        </div>
+        
+        <div class="save-btn-container">
+          <button id="save-btn" class="btn btn-primary w-100">Update Metadata & Download</button>
+        </div>
+      </div>
+
+      <div id="status-msg" class="text-center mt-3 small"></div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5">
+        <h2>Clean Your Digital Fingerprints with PDF Metadata Editing</h2>
+        <p>We’ve all been there: you’ve finished a high-stakes whitepaper, a job application, or a sensitive legal document, and you're ready to hit "Send." But a nagging thought stops you—what does the "hidden" data say? Often, when you export a PDF from Word or Google Docs, it carries the name of your computer, the original template title, or the timestamp of when you first started the project. Your first instinct is to find a tool to <strong>edit pdf metadata</strong>. But when that document contains trade secrets, private research, or personal resumes, do you really want to "upload" it to a random cloud server just to change a title? Does exposing your file content to another database feel like cleaning it, or like leaving another trail?</p>
+
+        <p>At 99tool.in, we built our <strong>pdf info editor</strong> to give you total control over your document's "Identity Card" without the privacy compromise. By utilizing browser-side <code>pdf-lib</code> technology, we allow you to <strong>edit pdf title and author</strong> directly in your browser. Whether you’re a professional scrubbing internal names from a client deliverable, or a student optimizing a thesis for an online portal, our <strong>pdf metadata editor</strong> ensures your data never leaves your device, giving you a clean, professional finish every time.</p>
+        
+        <div class="tool-preview-box mt-4 mb-4" style="text-align:center;">
+           <img src="../../assets/images/vault-preview.png" alt="Clea PDF Metadata Workspace" class="tool-preview" id="tool-preview-img" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+        </div>
+
+        <h3 class="mt-4">The Importance of Document "Hidden" Data</h3>
+        <p>Metadata is the DNA of your digital document. It helps search engines find your content, assists library systems in categorization, and—most importantly—provides the first impression in a recipient's status bar. A PDF titled "Document1" or "Template_v3_Final_Final" looks unprofessional. Our <strong>change pdf info</strong> utility allows you to replace those placeholders with <strong>SEO-friendly titles and clear author names</strong>.</p>
+        
+        <p>Moreover, metadata can be a liability. If you are sending a document to a competitor, you don't want the "Creator" tag to show the name of the software you use or the person who originally drafted it years ago. Our <strong>pdf properties editor</strong> allows for "Deep Cleaning." You can wipe the subject, producer, and keywords clean in seconds, or replace them with data that reinforces your brand and authority. This human-centric approach to <strong>document management</strong> ensures that your PDF tells the exact story you want it to tell, and nothing more.</p>
+
+        <h3 class="mt-4">Why Metadata Editing is a Security Requirement</h3>
+        <p>In many industries, the metadata itself is confidential. The "Keywords" or "Subject" field might contain internal project codes or client names. Using a standard <strong>edit pdf properties online</strong> service means you are trusting a third party with this searchable summary of your work. Our <strong>private pdf metadata tool</strong> eliminates this risk profile entirely.</p>
+        
+        <p>Because the logic runs in your browser's private sandbox, we never see your file, your author name, or your computer's identity. Furthermore, 99tool.in includes an active **Security Scan** as you load your file. We look for malicious hidden scripts or interactive elements that shouldn't be there. We believe that professional <strong>pdf info editing</strong> should be more than just changing a title—it should be about ensuring your document is as safe to share as it is to read.</p>
+
+        <h3 class="mt-4">How to Edit Your PDF Metadata (Step-by-Step)</h3>
+        <p>Scrubbing or updating your document info should be a 30-second task. Here is how to use our <strong>edit pdf metadata</strong> utility:</p>
+        <ul style="line-height: 1.8; margin-bottom: 20px;">
+          <li><strong>Step 1: Securely Load Your File</strong> — Drag your PDF into the upload area. Our system will immediately perform a security check and extract the current metadata fields for you to review.</li>
+          <li><strong>Step 2: Update the Narrative</strong> — Change the <strong>Title, Author, and Subject</strong>. Add keywords to help with searchability, or clear the "Producer" field to hide your creation tools.</li>
+          <li><strong>Step 3: Audit the Changes</strong> — Double-check for typos. Remember, this information is what search engines and library systems will see!</li>
+          <li><strong>Step 4: Finalize and Export</strong> — Click "Update Metadata & Download." Our local engine will rebuild the PDF header in seconds and start your clean download automatically.</li>
+        </ul>
+
+        <h3 class="mt-4">When Should You Audit Your Metadata?</h3>
+        <p>Our <strong>pdf info editor</strong> is the silent protector for high-stakes digital distribution:</p>
+        
+        <p><strong>For Job Seekers:</strong> When sending a resume, ensure the "Author" is *you* and not the person who helped you with the original template. A clean, professional <strong>pdf title</strong> makes a massive difference to recruiters.</p>
+        
+        <p><strong>For Corporate Communication:</strong> Before releasing an annual report or a press release, use our <strong>pdf properties editor</strong> to ensure the "Keywords" are optimized for search engines and that all internal department markers are removed.</p>
+        
+        <p><strong>For Legal and Academic Professionals:</strong> Ensure your citations and filings have the correct bibiliographic info (Subject, Creator) so that they are indexed correctly in databases like LexisNexis or JSTOR by using our <strong>pdf info changer</strong>.</p>
+
+        <h3 class="mt-5">Explore Your Complete Document Suite</h3>
+        <p>Once you’ve cleaned your metadata, you might need to protect the file further. Check out our <strong><a href="protect-pdf.html">PDF Password Protector</a></strong> to add a layer of encryption. Or, if the document orientation is wrong after an export, use our <strong><a href="rotate-pdf.html">PDF Page Rotator</a></strong>. At 99tool.in, we are building a world-class, private digital toolkit to give you total sovereignty over your work.</p>
+        
+        <div class="flex gap-4 mt-4 mb-5">
+           <a href="protect-pdf.html" class="btn btn-secondary" style="flex:1; text-align:center;">Protect PDF</a>
+           <a href="reorder-pdf.html" class="btn btn-secondary" style="flex:1; text-align:center;">Reorder PDF</a>
+        </div>
+      </section>
+ 
+      <!-- FAQ SECTION -->
+      <section class="faq-section mt-5">
+        <h2 data-i18n="tools.pdf_metadata_editor.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              What is PDF Metadata?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Metadata is "data about data." In a PDF, it includes hidden fields like Title, Author, Subject, and the name of the software used to create the file. This info is visible in the <strong>Document Properties</strong> of any PDF reader.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Is my document content safe?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. Our <strong>metadata editor</strong> works 100% locally in your browser. Your document is never uploaded to a server, meaning your sensitive information and your file's identity remain completely private on your device.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Does changing metadata affect the layout?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. This tool only modifies the <strong>header information</strong> of the PDF. The text, images, and vectors on your pages are untouched, ensuring that your document's visual integrity remains exactly as it was.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I remove existing metadata?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Absolutely. To "scrub" your document, simply delete the text in all fields before clicking save. This will <strong>wipe the digital fingerprints</strong> (like your computer name or original software) from the file before you share it.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              What are PDF Keywords used for?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Keywords are used by <strong>search engines and library systems</strong> to index your PDF. Adding relevant, SEO-optimized keywords can help your document rank better if you plan to publish it on the web.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I edit encrypted or protected PDFs?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>If a PDF is password-protected, you must first use our <strong>PDF Unlocker</strong> to remove the restrictions. Once the file is unsecured, you can freely edit its title, author, and other metadata fields.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const pdfInput = document.getElementById('pdf-input');
+    const dropZone = document.getElementById('drop-zone');
+    const saveBtn = document.getElementById('save-btn');
+    const editor = document.getElementById('metadata-editor');
+
+    let currentFile = null;
+
+    // File selection
+    dropZone.addEventListener('click', () => pdfInput.click());
+    pdfInput.addEventListener('change', (e) => handleFile(e.target.files[0]));
+
+    async function handleFile(file) {
+      if (!file || file.type !== 'application/pdf') return;
+      currentFile = file;
+      document.getElementById('file-name').innerText = file.name;
+      document.getElementById('file-size').innerText = (file.size / 1024).toFixed(1) + ' KB';
+      document.getElementById('file-info').classList.remove('hidden');
+      editor.classList.add('hidden');
+      
+      // Security Scan
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const text = new TextDecoder().decode(e.target.result.slice(0, 5000));
+        const status = document.getElementById('security-status');
+        status.innerText = text.includes('/JS') ? 'Nested Patterns Found' : 'Safe: Metadata Only';
+      };
+      reader.readAsArrayBuffer(file);
+
+      loadMetadata(file);
+    }
+
+    async function loadMetadata(file) {
+      try {
+        const { PDFDocument } = PDFLib;
+        const arrayBuffer = await file.arrayBuffer();
+        const pdfDoc = await PDFDocument.load(arrayBuffer);
+
+        document.getElementById('title').value = pdfDoc.getTitle() || "";
+        document.getElementById('author').value = pdfDoc.getAuthor() || "";
+        document.getElementById('subject').value = pdfDoc.getSubject() || "";
+        document.getElementById('keywords').value = (pdfDoc.getKeywords() || "").replace(/;/g, ',');
+        document.getElementById('creator').value = pdfDoc.getCreator() || "";
+        document.getElementById('producer').value = pdfDoc.getProducer() || "";
+
+        editor.classList.remove('hidden');
+      } catch (err) {
+        console.error(err);
+        document.getElementById('status-msg').innerText = "Error reading metadata: " + err.message;
+        document.getElementById('status-msg').style.color = "red";
+      }
+    }
+
+    saveBtn.addEventListener('click', async () => {
+      document.getElementById('status-msg').innerText = "Updating metadata...";
+      try {
+        const { PDFDocument } = PDFLib;
+        const arrayBuffer = await currentFile.arrayBuffer();
+        const pdfDoc = await PDFDocument.load(arrayBuffer);
+
+        pdfDoc.setTitle(document.getElementById('title').value);
+        pdfDoc.setAuthor(document.getElementById('author').value);
+        pdfDoc.setSubject(document.getElementById('subject').value);
+        pdfDoc.setKeywords(document.getElementById('keywords').value.split(',').map(s => s.trim()));
+        pdfDoc.setCreator(document.getElementById('creator').value);
+        pdfDoc.setProducer(document.getElementById('producer').value);
+
+        const pdfBytes = await pdfDoc.save();
+        const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'edited_' + currentFile.name;
+        a.click();
+        URL.revokeObjectURL(url);
+        document.getElementById('status-msg').innerText = "Metadata updated successfully!";
+        document.getElementById('status-msg').style.color = "green";
+      } catch (err) {
+        console.error(err);
+        document.getElementById('status-msg').innerText = "Error updating PDF: " + err.message;
+        document.getElementById('status-msg').style.color = "red";
+      }
+    });
+
+    // Init Drag and Drop using global helper
+    setupDragDrop('drop-zone', (files) => {
+      if (files.length) handleFile(files[0]);
+    });
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

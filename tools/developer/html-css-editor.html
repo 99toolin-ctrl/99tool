@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- SEO START -->
+  <title id="page-title">HTML/CSS Live Editor – 99tool.in</title>
+  <meta id="page-description" name="description" content="Free online HTML/CSS live editor. Write HTML and CSS, see instant live preview, export your project as a single HTML file. No signup required."/>
+  <link rel="canonical" href="https://99tool.in/tools/developer/html-css-editor.html"/>
+  <meta property="og:title" content="HTML/CSS Live Editor – 99tool.in"/>
+  <meta property="og:description" content="Write HTML and CSS, see instant live preview. Export as a single HTML file. Free and private."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://99tool.in/tools/developer/html-css-editor.html"/>
+  <meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+  <script type="application/ld+json" id="schema-org-data">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "HTML/CSS Live Editor – 99tool.in",
+    "description": "Free online HTML/CSS live editor. Write HTML and CSS, see instant live preview, export your project as a single HTML file. No signup required.",
+    "url": "https://99tool.in/tools/developer/html-css-editor.html",
+    "publisher": {"@type": "Organization","name": "99tool.in","logo": {"@type": "ImageObject","url": "https://99tool.in/favicon/favicon-32x32.png"}}
+  }
+  </script>
+  <!-- SEO END -->
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8WF7LH2366');
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="keywords" content="html css editor, live code previewer, code editor, web playground, real-time html editor" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <style>
+    .editor-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      height: 85vh;
+      margin-top: 20px;
+    }
+
+    .code-panes {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .editor-pane {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .pane-header {
+      padding: 10px 16px;
+      background: rgba(0,0,0,0.3);
+      border-bottom: 1px solid var(--border);
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .code-input {
+      flex: 1;
+      width: 100%;
+      border: none;
+      background: transparent;
+      color: #e0e0e0;
+      padding: 15px;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      resize: none;
+      outline: none;
+    }
+
+    .preview-pane {
+      background: white;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+    }
+
+    #preview-frame {
+      flex: 1;
+      width: 100%;
+      border: none;
+      background: white;
+      min-height: 300px;
+    }
+
+    @media (min-width: 1000px) {
+      .editor-layout {
+        grid-template-columns: 450px 1fr;
+      }
+      .code-panes {
+        grid-template-rows: none;
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .action-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+      padding: 0 5px 10px;
+    }
+
+    #update-status {
+      font-size: 0.75rem;
+      padding: 4px 0;
+    }
+  </style>
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/developer/html-css-editor.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="text-center mb-3">
+      <h1>HTML/CSS Live Editor</h1>
+      <p class="text-muted">Write HTML and CSS, see instant live preview. Export your project as a single HTML file.</p>
+    </div>
+
+    <div class="editor-layout">
+      <div class="code-panes">
+        <section class="editor-pane">
+          <div class="pane-header">
+            <span>HTML</span>
+            <span id="html-count">0 chars</span>
+          </div>
+          <textarea id="htmlArea" class="code-input" placeholder="Enter your HTML here..."></textarea>
+        </section>
+
+        <section class="editor-pane">
+          <div class="pane-header">
+            <span>CSS</span>
+            <span id="css-count">0 chars</span>
+          </div>
+          <textarea id="cssArea" class="code-input" placeholder="Enter your CSS here..."></textarea>
+        </section>
+      </div>
+
+      <section class="editor-pane preview-pane">
+        <div class="pane-header">
+          <span>Live Preview</span>
+          <span id="update-status">● Ready</span>
+        </div>
+        <iframe id="preview-frame"></iframe>
+      </section>
+    </div>
+
+    <div class="action-bar">
+      <div id="char-counts" class="text-muted" style="font-size:0.8rem;"></div>
+      <div class="flex gap-1">
+        <button id="copy-btn" class="btn btn-secondary btn-sm">Copy HTML</button>
+        <button id="export-btn" class="btn btn-primary btn-sm">Export HTML</button>
+        <button id="reset-btn" class="btn btn-outline btn-sm">Reset</button>
+      </div>
+    </div>
+
+      <!-- CONTENT SECTION -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.html_css_live_editor.what_is_title">What is the HTML/CSS Live Editor?</h2>
+        <p>The HTML/CSS Live Editor is a client-side development sandbox designed to code and preview HTML structures and CSS styles in real-time. By writing markup on the left and style rules in the center, you can visually audit design layouts in an adjacent iframe sandbox.</p>
+        <p>This editor compiles and renders your styles and layouts locally inside your browser's private frame. Since no source codes, class maps, or preview contents are uploaded to database servers, your visual layouts and proprietary structures remain secure.</p>
+
+        <h2 class="mt-4" data-i18n="tools.html_css_live_editor.how_to_use_title">How to Use the HTML/CSS Live Editor</h2>
+        <ol>
+          <li><strong>Write Your HTML:</strong> Paste or type your HTML elements (such as divs, headers, and paragraphs) into the left editor panel.</li>
+          <li><strong>Apply Your CSS:</strong> Enter your CSS style declarations (like classes, variables, and animations) in the middle editor panel.</li>
+          <li><strong>Observe the Live Preview:</strong> The right panel contains a sandboxed iframe that renders your combined code instantly.</li>
+          <li><strong>Copy or Export Code:</strong> Click "Copy HTML" to copy the combined document to your clipboard, or click "Export HTML" to download a complete, styled HTML file.</li>
+          <li><strong>Reset Workspace:</strong> Click "Reset" to clear the editors and restore the default cards template.</li>
+        </ol>
+
+        <h2 class="mt-4" data-i18n="tools.html_css_live_editor.key_features_title">Key Features</h2>
+        <ul>
+          <li><strong>Live Iframe Previewing:</strong> Compiles HTML and CSS changes dynamically in a secure iframe sandbox.</li>
+          <li><strong>One-Click Code Copies:</strong> Copies the combined HTML/CSS document to your clipboard for deployment.</li>
+          <li><strong>Exportable Code Sheets:</strong> Downloads your styled work as a standalone, responsive HTML file.</li>
+          <li><strong>LocalStorage Recovery:</strong> Automatically saves your active code configurations so they reload when you reopen the page.</li>
+          <li><strong>100% Offline Sandbox:</strong> Renders visual previews locally to ensure complete code security.</li>
+        </ul>
+
+        <h2 class="mt-4" data-i18n="tools.html_css_live_editor.common_use_cases_title">Common Use Cases</h2>
+        <ul>
+          <li><strong>UI Component Prototyping:</strong> Design and test navigation bars, card structures, buttons, and form layouts quickly.</li>
+          <li><strong>CSS Animation Testing:</strong> Verify keyframe transitions, hover effects, and responsive alignments without launching project builds.</li>
+          <li><strong>HTML Structure Learning:</strong> Experiment with semantic tags, flexbox containers, and grid hierarchies in a clean sandbox.</li>
+          <li><strong>Quick Offline Code Mockups:</strong> Edit and audit small code blocks without setting up local IDE folders.</li>
+        </ul>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section mt-5">
+        <h2 data-i18n="tools.html_css_live_editor.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Does this live editor upload my code to a server?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. 99tool.in compiles and displays your HTML and CSS code locally using sandboxed iframe elements. Your code remains private and does not leave your machine.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              How do I link external stylesheets or fonts?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>You can add standard HTML <code>&lt;link&gt;</code> tags or CSS <code>@import</code> rules inside your editors to reference external stylesheets and fonts (like Google Fonts).</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Are my code modifications saved if I refresh the page?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. The editor automatically caches your active code blocks in LocalStorage. Refreshing the browser or switching tabs will not lose your configurations.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Does the exported HTML include the CSS?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. Clicking "Export HTML" builds a single standalone file containing your HTML layout with your CSS code embedded inside a head <code>&lt;style&gt;</code> block.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 Privacy & Data Note: Live previews, code compilations, and HTML exports are processed locally in your browser. No files are uploaded to our servers.</p>
+      </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const htmlArea = document.getElementById('htmlArea');
+    const cssArea = document.getElementById('cssArea');
+    const previewFrame = document.getElementById('preview-frame');
+    const exportBtn = document.getElementById('export-btn');
+    const resetBtn = document.getElementById('reset-btn');
+    const copyBtn = document.getElementById('copy-btn');
+    const updateStatus = document.getElementById('update-status');
+    const htmlCount = document.getElementById('html-count');
+    const cssCount = document.getElementById('css-count');
+
+    function buildPreviewDoc() {
+      return `<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>${cssArea.value}</style>
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/developer/html-css-editor.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>${htmlArea.value}
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>`;
+    }
+
+    function updatePreview() {
+      try {
+        previewFrame.srcdoc = buildPreviewDoc();
+        updateStatus.textContent = '● Synced';
+        updateStatus.style.color = '#28a745';
+        localStorage.setItem('99tool_live_html', htmlArea.value);
+        localStorage.setItem('99tool_live_css', cssArea.value);
+      } catch (e) {
+        updateStatus.textContent = '● Error';
+        updateStatus.style.color = '#dc3545';
+      }
+       htmlCount.textContent = ((window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(htmlArea.value.length, 0) : htmlArea.value.length) + ' chars';
+       cssCount.textContent = ((window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(cssArea.value.length, 0) : cssArea.value.length) + ' chars';
+    }
+
+    let debounceTimer;
+    function debouncedUpdate() {
+      updateStatus.textContent = '● Compiling...';
+      updateStatus.style.color = '#ffc107';
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(updatePreview, 300);
+    }
+
+    htmlArea.addEventListener('input', debouncedUpdate);
+    cssArea.addEventListener('input', debouncedUpdate);
+
+    copyBtn.addEventListener('click', () => {
+      const text = buildPreviewDoc();
+      navigator.clipboard.writeText(text).then(() => {
+        copyBtn.textContent = 'Copied!';
+        setTimeout(() => { copyBtn.textContent = 'Copy HTML'; }, 1800);
+      }).catch(() => {
+        alert('Copy failed. Try selecting manually.');
+      });
+    });
+
+    exportBtn.addEventListener('click', () => {
+      const fullHtml = `<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Project</title>
+<style>
+${cssArea.value}
+</style>
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/developer/html-css-editor.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/developer/html-css-editor.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+${htmlArea.value}
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>`;
+      const blob = new Blob([fullHtml], { type: 'text/html' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'my-project.html';
+      a.click();
+      URL.revokeObjectURL(url);
+    });
+
+    resetBtn.addEventListener('click', () => {
+      if (confirm('Reset all code to defaults? This will erase your current work.')) {
+        htmlArea.value = `<div class="card">
+  <h1>Hello 99tool!</h1>
+  <p>Start editing HTML on the left and CSS in the middle to see live preview on the right.</p>
+</div>`;
+        cssArea.value = `body {
+  font-family: system-ui, sans-serif;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background: #f0f0f0;
+}
+.card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  max-width: 500px;
+  text-align: center;
+}
+.card h1 { color: #e53935; margin-bottom: 0.5rem; }
+.card p { color: #555; line-height: 1.6; }`;
+        updatePreview();
+      }
+    });
+
+    window.addEventListener('load', () => {
+      const savedHtml = localStorage.getItem('99tool_live_html');
+      const savedCss = localStorage.getItem('99tool_live_css');
+      if (savedHtml) htmlArea.value = savedHtml;
+      if (savedCss) cssArea.value = savedCss;
+      updatePreview();
+    });
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>

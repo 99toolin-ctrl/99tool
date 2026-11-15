@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Dictionary – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/learning/dictionary.html"/>
+<meta property="og:title" content="Dictionary – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/learning/dictionary.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Dictionary \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/learning/dictionary.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .dictionary-workspace {
+      max-width: 800px;
+      margin: 2rem auto;
+    }
+    .search-box {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      padding: 10px 30px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+    .search-box input {
+      flex: 1;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.2rem;
+      outline: none;
+    }
+    
+    .result-pane {
+      margin-top: 2rem;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2.5rem;
+      display: none;
+      position: relative;
+    }
+    .word-header { display: flex; align-items: baseline; gap: 15px; margin-bottom: 1.5rem; }
+    .word-header h2 { font-size: 3rem; color: var(--primary); margin: 0; }
+    .phonetic { font-style: italic; color: var(--text-muted); font-size: 1.2rem; }
+    
+    .definition-block { margin-top: 2rem; }
+    .pos { display: inline-block; padding: 4px 12px; border-radius: 20px; background: rgba(229, 57, 53, 0.1); color: var(--primary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; }
+    .definition { font-size: 1.1rem; line-height: 1.6; margin-bottom: 10px; }
+    .example { font-style: italic; color: var(--text-muted); border-left: 3px solid var(--border); padding-left: 15px; }
+
+    .history-pane { margin-top: 3rem; opacity: 0.7; }
+    .history-list { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
+    .history-chip { padding: 6px 15px; background: var(--dark-card); border: 1px solid var(--border); border-radius: 20px; font-size: 0.85rem; cursor: pointer; }
+    .history-chip:hover { border-color: var(--primary); }
+
+    .no-result { text-align: center; padding: 3rem; color: var(--text-muted); font-style: italic; }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-hero text-center">
+      <nav class="breadcrumb justify-content-center">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#learning">Learning</a> <span>/</span> 
+        <span>Dictionary</span>
+      </nav>
+      <h1>Dictionary</h1>
+      <p>Instant access to thousands of word meanings without an internet connection.</p>
+    </div>
+
+    <div class="dictionary-workspace">
+      <div class="search-box">
+        <i>🔍</i>
+        <input type="text" id="dict-search" placeholder="Type a word to search..." autocomplete="off">
+        <button class="btn btn-primary btn-sm" onclick="searchWord()">Search</button>
+      </div>
+
+      <div id="result-pane" class="result-pane">
+        <div class="word-header">
+           <h2 id="res-word">Definition</h2>
+           <span class="phonetic" id="res-phonetic">/def.ɪ.nɪʃ.ən/</span>
+        </div>
+        
+        <div class="definition-block">
+            <span class="pos" id="res-pos">Noun</span>
+            <div class="definition" id="res-def">A statement of the exact meaning of a word, especially in a dictionary.</div>
+            <div class="example" id="res-example">"This dictionary has clear definitions."</div>
+        </div>
+
+        <button class="btn btn-secondary btn-sm mt-5" onclick="saveToVocab()" title="Save to Vocabulary Builder">Save to Vocabulary Builder +</button>
+      </div>
+
+      <div id="no-result" class="no-result" style="display: none;">
+         Word not found in database. Try a common root word.
+      </div>
+
+      <div class="history-pane">
+         <h4>Recent Searches</h4>
+         <div class="history-list" id="history-list"></div>
+      </div>
+    </div>
+
+    <!-- SEO CONTENT -->
+    <section class="seo-content mt-5">
+      <h2>The Advantage of a Locally Indexed Dictionary</h2>
+      <p>When you are in deep study mode, the last thing you need is to open a browser tab, navigate to a heavy dictionary website, and get barraged by auto-playing video ads. Our <strong>dictionary tool</strong> offers a distraction-free alternative. By indexing a high-utility database of several thousand common English words directly in your browser's local cache, we provide instant definitions for 99% of your daily reading needs without requiring an internet connection.</p>
+      
+      <h3 class="mt-4">Designed for Speed and Privacy</h3>
+      <p>Search engines and <strong>online dictionaries</strong> often track your search history to build profiles on your interests or literacy levels. At 99tool.in, your curiosity is private. Our <strong>word search</strong> utility does not transmit your queries anywhere. Your "Recent Searches" are stored only in your local <code>localStorage</code>, allowing you to quickly revisit words you’ve recently encountered.</p>
+
+      <ul style="line-height: 1.8; margin-top: 15px;">
+        <li><strong>Instant Response:</strong> No network latency means results appear as you type.</li>
+        <li><strong>Private History:</strong> Revisit your learning path without being tracked.</li>
+        <li><strong>Cross-Tool Integration:</strong> Seamlessly save definitions to your <strong>Vocabulary Builder</strong> word bank.</li>
+      </ul>
+
+      <h3 class="mt-4">How to Use the Explorer</h3>
+      <ul style="line-height: 1.8;">
+        <li><strong>Step 1:</strong> Type any common English word into the focal search bar.</li>
+        <li><strong>Step 2:</strong> View the part of speech, phonetic transcription, and usage examples.</li>
+        <li><strong>Step 3:</strong> Click recent "History Chips" to flip back and forth between related concepts instantly.</li>
+      </ul>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    // Lightweight local database (Sample)
+    // In a real build, this would be a larger JSON or fetched once.
+    const dictionary = {
+      "agile": { p: "/ˈædʒ.aɪl/", pos: "Adj", def: "Able to move quickly and easily; thinking in a quick way.", ex: "He was too agile for the heavy defenders." },
+      "benevolent": { p: "/bəˈnev.əl.ənt/", pos: "Adj", def: "Kind and helpful; wanting to do good.", ex: "The company has a benevolent policy toward its retirees." },
+      "catalyst": { p: "/ˈkæt.əl.ɪst/", pos: "Noun", def: "Something that causes an event to happen quickly.", ex: "The new law was the catalyst for massive change." },
+      "diligent": { p: "/ˈdɪl.ɪ.dʒənt/", pos: "Adj", def: "Done in a careful and hard-working way.", ex: "A diligent student always reviews her notes." },
+      "ephemeral": { p: "/ɪˈfem.ər.əl/", pos: "Adj", def: "Lasting for a very short time.", ex: "Fame in the world of social media is often ephemeral." },
+      "fortitude": { p: "/ˈfɔː.tɪ.tjuːd/", pos: "Noun", def: "Strength of mind that enables one to endure adversity.", ex: "She showed great fortitude during the crisis." },
+      "gregarious": { p: "/ɡrɪˈɡeə.ri.əs/", pos: "Adj", def: "Liking to be with other people; sociable.", ex: "Most dolphins are gregarious animals." },
+      "hinder": { p: "/ˈhɪn.dər/", pos: "Verb", def: "To limit the ability of someone to do something.", ex: "High winds hindered the fire-fighting efforts." },
+      "innovate": { p: "/ˈɪn.ə.veɪt/", pos: "Verb", def: "To introduce changes and new ideas.", ex: "Small companies often innovate faster than giants." },
+      "juxtapose": { p: "/ˌdʒʌk.stəˈpəʊz/", pos: "Verb", def: "To put things side by side for comparison.", ex: "The exhibition juxtaposes modern and ancient art." }
+    };
+
+    let history = JSON.parse(localStorage.getItem('99tool_dict_history')) || [];
+
+    function searchWord() {
+      const q = document.getElementById('dict-search').value.trim().toLowerCase();
+      if (!q) return;
+
+      const result = dictionary[q];
+      const pane = document.getElementById('result-pane');
+      const noRes = document.getElementById('no-result');
+
+      if (result) {
+        pane.style.display = 'block';
+        noRes.style.display = 'none';
+        
+        document.getElementById('res-word').innerText = q;
+        document.getElementById('res-phonetic').innerText = result.p;
+        document.getElementById('res-pos').innerText = result.pos;
+        document.getElementById('res-def').innerText = result.def;
+        document.getElementById('res-example').innerText = `"${result.ex}"`;
+
+        addToHistory(q);
+      } else {
+        pane.style.display = 'none';
+        noRes.style.display = 'block';
+      }
+    }
+
+    function addToHistory(word) {
+      if (history.includes(word)) return;
+      history.unshift(word);
+      if (history.length > 10) history.pop();
+      localStorage.setItem('99tool_dict_history', JSON.stringify(history));
+      renderHistory();
+    }
+
+    function renderHistory() {
+      const list = document.getElementById('history-list');
+      list.innerHTML = "";
+      history.forEach(word => {
+        const chip = document.createElement('div');
+        chip.className = 'history-chip';
+        chip.innerText = word;
+        chip.onclick = () => {
+          document.getElementById('dict-search').value = word;
+          searchWord();
+        };
+        list.appendChild(chip);
+      });
+    }
+
+    function saveToVocab() {
+       const word = document.getElementById('res-word').innerText;
+       const def = document.getElementById('res-def').innerText;
+       const ex = document.getElementById('res-example').innerText;
+
+       let bank = JSON.parse(localStorage.getItem('99tool_vocab_bank')) || [];
+       bank.unshift({ word, meaning: def, example: ex, date: new Date().toLocaleDateString() });
+       localStorage.setItem('99tool_vocab_bank', JSON.stringify(bank));
+       alert(`"${word}" saved to your Vocabulary Builder!`);
+    }
+
+    // Trigger on Enter
+    document.getElementById('dict-search').onkeypress = (e) => { if (e.key === 'Enter') searchWord(); };
+
+    renderHistory();
+  </script>
+</body>
+</html>
+

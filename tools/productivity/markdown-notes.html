@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Markdown Notes – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/productivity/markdown-notes.html"/>
+<meta property="og:title" content="Markdown Notes – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/productivity/markdown-notes.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Markdown Notes \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/productivity/markdown-notes.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="markdown notes, markdown editor online, note taking app free, simple markdown editor, markdown note taking app" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+  
+  <!-- Marked.js for Markdown Parsing -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json" id="schema-org-data">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Markdown Note-Taking App",
+    "operatingSystem": "Any",
+    "applicationCategory": "UtilitiesApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Real-time Markdown preview, Auto-save to browser, Export as .md, Dark mode interface"
+  }
+  </script>
+
+  <style>
+    .editor-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      height: 600px;
+      margin-top: 20px;
+    }
+
+    .editor-pane, .preview-pane {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .pane-header {
+      padding: 10px 16px;
+      background: #1a1a1a;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #md-input {
+      flex: 1;
+      width: 100%;
+      border: none;
+      background: transparent;
+      color: #e0e0e0;
+      padding: 20px;
+      font-family: 'Fira Code', 'Courier New', monospace;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      resize: none;
+      outline: none;
+    }
+
+    #md-preview {
+      flex: 1;
+      padding: 24px;
+      overflow-y: auto;
+      color: #e0e0e0;
+      line-height: 1.7;
+    }
+
+    /* Markdown Preview Styles */
+    #md-preview h1, #md-preview h2, #md-preview h3 { margin-top: 24px; margin-bottom: 12px; color: var(--white); }
+    #md-preview h1 { font-size: 1.8rem; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+    #md-preview h2 { font-size: 1.4rem; }
+    #md-preview code { background: #1a1a1a; padding: 2px 5px; border-radius: 4px; font-family: 'Fira Code', monospace; color: var(--primary); }
+    #md-preview pre { background: #0c0c0c; padding: 16px; border-radius: 8px; overflow-x: auto; margin: 16px 0; border: 1px solid var(--border); }
+    #md-preview pre code { background: transparent; padding: 0; color: #fff; }
+    #md-preview blockquote { border-left: 4px solid var(--primary); padding-left: 16px; margin: 16px 0; color: var(--text-muted); font-style: italic; }
+    #md-preview img { max-width: 100%; border-radius: 4px; }
+    #md-preview ul, #md-preview ol { padding-left: 20px; margin: 16px 0; }
+    #md-preview li { margin-bottom: 8px; }
+
+    .editor-footer {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .status-badge {
+      font-size: 0.7rem;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: rgba(76, 175, 80, 0.1);
+      color: #4caf50;
+    }
+
+    @media (max-width: 992px) {
+      .editor-wrapper {
+        grid-template-columns: 1fr;
+        height: auto;
+      }
+      .editor-pane, .preview-pane { height: 400px; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/productivity/markdown-notes.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/productivity/markdown-notes.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/productivity/markdown-notes.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/productivity/markdown-notes.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/productivity/markdown-notes.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/productivity/markdown-notes.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/productivity/markdown-notes.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/productivity/markdown-notes.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/productivity/markdown-notes.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/productivity/markdown-notes.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/productivity/markdown-notes.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/productivity/markdown-notes.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/productivity/markdown-notes.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/productivity/markdown-notes.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/productivity/markdown-notes.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/productivity/markdown-notes.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/productivity/markdown-notes.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/productivity/markdown-notes.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/productivity/markdown-notes.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/productivity/markdown-notes.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/productivity/markdown-notes.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/productivity/markdown-notes.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#productivity">Productivity</a> <span>/</span> 
+        <span>Markdown Notes</span>
+      </nav>
+      <h1>Markdown Notes</h1>
+      <p>A fast, secure, and private way to write Markdown notes. No accounts, no cloud, just you and your thoughts.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div class="editor-wrapper">
+        <div class="editor-pane">
+          <div class="pane-header">
+            <span>Editor (Markdown)</span>
+            <div class="flex gap-2 items-center">
+              <select id="template-select" class="form-control" style="padding: 2px 8px; font-size: 0.7rem; width: auto; height: auto;">
+                <option value="">Choose Template</option>
+                <option value="daily">Daily Log</option>
+                <option value="meeting">Meeting Minutes</option>
+                <option value="project">Project Plan</option>
+              </select>
+              <span id="save-status" class="status-badge">Auto-saved</span>
+            </div>
+          </div>
+          <textarea id="md-input" placeholder="# Start writing your notes here...
+Use **bold**, *italics*, or `code snippets`."></textarea>
+        </div>
+
+        <div class="preview-pane">
+          <div class="pane-header">
+            <span>Live Preview</span>
+          </div>
+          <div id="md-preview"></div>
+        </div>
+      </div>
+
+      <div class="editor-footer">
+        <button class="btn btn-secondary" id="clear-btn">Clear All</button>
+        <button class="btn btn-primary" id="download-btn">Download .md</button>
+      </div>
+
+      <div class="info-box mt-4">
+        <span class="info-icon">📑</span>
+        <p><strong>Pro Tip:</strong> All your notes are saved automatically to your browser. You can close the tab and come back anytime — your work will stay right here.</p>
+      </div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.markdown_notes.what_is_title">What is the Markdown Notes Editor?</h2>
+        <p>The Markdown Notes editor is a dual-pane writing environment that lets you compose formatted documents using Markdown syntax and see a live rendered preview side by side. Standard note apps store your content on remote servers. This tool handles all rendering inside your browser with no server contact.</p>
+        <p>It auto-saves your notes as you type using your browser's local storage, so you can close the tab and return later without losing work. Your text and formatting choices stay private on your own device.</p>
+
+        <h3 class="mt-4">How to Use the Markdown Notes Editor</h3>
+        <p>Writing and formatting notes involves these steps:</p>
+        <ol class="mt-2 mb-3">
+          <li>Select a starting template (Daily Log, Meeting Minutes, or Project Plan) from the Template dropdown, or start writing directly.</li>
+          <li>Type your content into the left editor pane. Use Markdown syntax: # for headers, **bold**, *italic*, and - for list items.</li>
+          <li>Watch the Live Preview pane on the right render your formatted output in real time.</li>
+          <li>Your notes auto-save to localStorage as you type — a green "Auto-saved" badge confirms each save.</li>
+          <li>Click "Download .md" to save your current note as a .md file on your computer.</li>
+          <li>Click "Clear All" to reset the editor. Confirm the dialog to prevent accidental data loss.</li>
+        </ol>
+
+        <h3 class="mt-4">Key Features</h3>
+        <ul class="mt-2 mb-3">
+          <li><strong>Split-Pane Layout:</strong> Displays the raw editor and rendered HTML preview simultaneously.</li>
+          <li><strong>GFM Markdown Engine:</strong> Uses the Marked.js library to parse GitHub Flavored Markdown including line breaks and code blocks.</li>
+          <li><strong>Starter Templates:</strong> Provides pre-structured Daily Log, Meeting Minutes, and Project Plan templates.</li>
+          <li><strong>.md File Export:</strong> Downloads a clean, timestamped Markdown file to your local file system.</li>
+        </ul>
+
+        <h3 class="mt-4">Common Use Cases</h3>
+        <p>This editor is helpful for the following tasks:</p>
+        <ul class="mt-2 mb-3">
+          <li><strong>Technical Documentation:</strong> Writing internal README files, API guides, or design specs before committing to version control.</li>
+          <li><strong>Meeting Minutes:</strong> Capturing structured action items and decisions during or after meetings using the built-in template.</li>
+          <li><strong>Private Drafting:</strong> Writing sensitive essays, proposals, or research notes in a sandboxed editor with no cloud exposure.</li>
+        </ul>
+
+        <h3 class="mt-4">Frequently Asked Questions</h3>
+        <div class="faq-section mt-3">
+          <p><strong>Where are my notes stored?</strong><br>Your notes are saved to your browser's localStorage. They persist across tab closes and browser restarts, but clearing site data will erase them.</p>
+          <p><strong>Can I open my downloaded .md file in another editor?</strong><br>Yes. The exported file is a standard .md file compatible with VS Code, Obsidian, Typora, and any plain text editor.</p>
+          <p><strong>Does this support tables or code blocks?</strong><br>Yes. The Marked.js engine supports GFM features including fenced code blocks, inline code, and standard Markdown tables.</p>
+          <p><strong>What happens if I click "Clear All"?</strong><br>A confirmation dialog appears before clearing. Once confirmed, both the editor content and the localStorage entry are erased permanently.</p>
+        </div>
+
+        <h3 class="mt-4">Privacy &amp; Data Note</h3>
+        <p>All note content, formatting choices, and file exports are processed locally inside your browser. Your notes are stored in browser local storage and never transmitted to any server.</p>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2 data-i18n="tools.markdown_notes.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Where are my notes actually stored?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Your notes are stored in your browser's <strong>localStorage</strong>. They are never sent to 99tool.in servers or any third-party cloud. They live purely on your device until you decide to clear your browser cache.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I use this as a secret diary?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>While this <strong>markdown notes</strong> tool is extremely private because no data is transmitted, anyone with access to your computer's browser could see the notes. For maximum security, download your notes and clear the editor before leaving a shared device.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              How do I back up my notes?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Use the <strong>Download .md</strong> button at any time. This saves your current note as a standard Markdown file on your computer, which you can open in VS Code, Obsidian, or any text editor.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 100% Privacy Focused. No data is stored on our servers. Last updated: April 10, 2026.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const input = document.getElementById('md-input');
+    const preview = document.getElementById('md-preview');
+    const saveStatus = document.getElementById('save-status');
+    const clearBtn = document.getElementById('clear-btn');
+    const downloadBtn = document.getElementById('download-btn');
+    const templateSelect = document.getElementById('template-select');
+
+    const templates = {
+      daily: `# Daily Log - ${new Date().toLocaleDateString()}\n\n## 🎯 Focus for Today\n- \n\n## ✅ Completed\n- \n\n## 📝 Notes\n- `,
+      meeting: `# Meeting Minutes: [Project Name]\n\n**Date:** ${new Date().toLocaleDateString()}\n**Attendees:** \n\n## 📋 Agenda\n- \n\n## 💬 Discussion\n- \n\n## ✅ Action Items\n- [ ] `,
+      project: `# Project Plan: [Title]\n\n## 📖 Overview\n\n## 🛠️ Requirements\n- \n\n## ⏳ Timeline\n- [ ] Phase 1\n- [ ] Phase 2\n\n## 🔗 Resources\n- `
+    };
+
+    // Init Marked
+    marked.setOptions({
+      breaks: true,
+      gfm: true,
+      headerIds: false,
+      mangle: false
+    });
+
+    function updatePreview() {
+      const text = input.value;
+      preview.innerHTML = marked.parse(text);
+      localStorage.setItem('99tool_markdown_notes', text);
+      
+      saveStatus.textContent = 'Auto-saved';
+      saveStatus.style.background = 'rgba(76, 175, 80, 0.1)';
+      saveStatus.style.color = '#4caf50';
+    }
+
+    input.addEventListener('input', () => {
+      saveStatus.textContent = 'Saving...';
+      saveStatus.style.background = 'rgba(255, 193, 7, 0.1)';
+      saveStatus.style.color = '#ffc107';
+      updatePreview();
+    });
+
+    // Load saved content
+    const saved = localStorage.getItem('99tool_markdown_notes');
+    if (saved) {
+      input.value = saved;
+      updatePreview();
+    } else {
+      input.value = "# Hello World\n\nStart writing your **Markdown** notes here.\n\n### Features:\n- 100%\n- Privacy First\n- Live Preview";
+      updatePreview();
+    }
+
+    clearBtn.addEventListener('click', () => {
+      if (confirm('Are you sure you want to clear all notes? This cannot be undone.')) {
+        input.value = '';
+        updatePreview();
+      }
+    });
+
+    downloadBtn.addEventListener('click', () => {
+      const blob = new Blob([input.value], { type: 'text/markdown' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `notes-${new Date().toISOString().slice(0,10)}.md`;
+      a.click();
+      URL.revokeObjectURL(url);
+    });
+
+    templateSelect.addEventListener('change', () => {
+      const val = templateSelect.value;
+      if (val && templates[val]) {
+        if (input.value.trim() !== "" && !confirm("This will overwrite your current note. Continue?")) {
+          templateSelect.value = "";
+          return;
+        }
+        input.value = templates[val];
+        updatePreview();
+      }
+    });
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

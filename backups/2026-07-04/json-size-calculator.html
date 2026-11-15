@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Json Size Calculator – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/developer/json-size-calculator.html"/>
+<meta property="og:title" content="Json Size Calculator – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/developer/json-size-calculator.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Json Size Calculator \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/developer/json-size-calculator.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    .size-workspace {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      border-radius: 20px;
+    }
+    textarea {
+       width: 100%;
+       height: 300px;
+       background: var(--bg-secondary);
+       border: 1px solid var(--border);
+       color: var(--text);
+       padding: 1.2rem;
+       border-radius: 12px;
+       font-size: 1rem;
+       font-family: 'JetBrains Mono', monospace;
+       margin-bottom: 2rem;
+    }
+    textarea:focus { border-color: var(--primary); outline: none; }
+    
+    .stats-container {
+       display: grid;
+       grid-template-columns: repeat(3, 1fr);
+       gap: 1.5rem;
+    }
+    .stat-card {
+       background: rgba(255,255,255,0.03);
+       border: 1px solid var(--border);
+       padding: 1.5rem;
+       border-radius: 12px;
+       text-align: center;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+    }
+    .stat-val { font-size: 1.8rem; font-weight: 800; color: var(--primary); margin-bottom: 5px; }
+    .stat-lab { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700; }
+    
+    .btn-bar { display: flex; gap: 10px; margin-bottom: 1rem; }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Infinite JSON Size Auditor</h1>
+      <p>Precision measurement for data payloads. Understand your JSON weight instantly for API optimization.</p>
+    </div>
+
+    <div class="size-workspace">
+      <div class="btn-bar">
+         <button class="btn btn-secondary btn-sm" onclick="formatJSON()">Minify for True Size</button>
+         <button class="btn btn-secondary btn-sm" style="color: #ff5252;" onclick="clearAll()">Clear All</button>
+      </div>
+      <textarea id="json-input" placeholder="Paste your RAW JSON here..." oninput="calculateSize()"></textarea>
+
+      <div class="stats-container">
+         <div class="stat-card">
+            <div class="stat-val" id="res-b">0</div>
+            <div class="stat-lab">Bytes (B)</div>
+         </div>
+         <div class="stat-card">
+            <div class="stat-val" id="res-kb">0.00</div>
+            <div class="stat-lab">Kilobytes (KB)</div>
+         </div>
+         <div class="stat-card">
+            <div class="stat-val" id="res-mb">0.00</div>
+            <div class="stat-lab">Megabytes (MB)</div>
+         </div>
+      </div>
+
+      <!-- SEO CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2>Why Calculate JSON Size?</h2>
+        <p>JSON size directly impacts network latency, rendering performance, and cloud storage costs. Our <strong>online JSON size calculator</strong> provides bit-level accuracy by using high-fidelity Blob measurement. Whether you are optimizing a massive dataset for an API or checking mobile app payload limits, knowing the exact weight in Bytes, KB, and MB is critical. An automated <strong>payload diagnostic auditor</strong> is key to maintaining a high-performance web infrastructure.</p>
+
+        <h3 class="mt-4">Minification and Serialization</h2>
+        <p>Whitespace and indentation can significantly increase the weight of your data. By using our <strong>minification diagnostic tool</strong>, you can instantly see how removing unused characters reduces your payload size. This <strong>advanced data auditor</strong> is essential for optimizing RESTful endpoints and decreasing time-to-first-byte (TTFB) for your users. A reliable <strong>JSON weight calculator</strong> is the first step in cost-effective data management.</p>
+
+        <h3 class="mt-4">Privacy and Secure Analysis</h2>
+        <p>At 99tool.in, all data analysis is performed locally in your browser sandbox. Your JSON strings are never transmitted or stored on any server. This <strong>private size calculator</strong> provides professional-grade results without any risk of data exposure. Whether you are handling sensitive user metrics or local configuration files, our <strong>secure JSON tool</strong> ensures your data remains purely yours.</p>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const inputEl = document.getElementById('json-input');
+
+    function calculateSize() {
+       const raw = inputEl.value;
+       if (!raw) {
+          updateStats(0);
+          return;
+       }
+       
+       // Blob size handles multi-byte UTF-8 correctly
+       const size = new Blob([raw]).size;
+       updateStats(size);
+    }
+
+    function updateStats(size) {
+       const kb = size / 1024;
+       const mb = kb / 1024;
+
+       document.getElementById('res-b').innerText = size.toLocaleString();
+       document.getElementById('res-kb').innerText = kb.toFixed(2);
+       document.getElementById('res-mb').innerText = mb.toFixed(3);
+    }
+
+    function formatJSON() {
+       try {
+          const parsed = JSON.parse(inputEl.value);
+          inputEl.value = JSON.stringify(parsed); // Minified by default
+          calculateSize();
+       } catch (e) {
+          alert('Invalid JSON! Please check your syntax before minifying.');
+       }
+    }
+
+    function clearAll() {
+       inputEl.value = '';
+       calculateSize();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Fps Test – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/network/fps-test.html"/>
+<meta property="og:title" content="Fps Test – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/network/fps-test.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Fps Test \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/network/fps-test.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .fps-workspace {
+      margin-top: 2rem;
+      background: var(--bg-secondary);
+      border-radius: 20px;
+      padding: 3rem;
+      border: 1px solid var(--border);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .fps-display {
+      position: relative;
+      z-index: 10;
+    }
+    #fps-count {
+      font-size: 6rem;
+      font-weight: 900;
+      color: var(--primary);
+      text-shadow: 0 0 20px rgba(var(--primary-rgb), 0.3);
+      line-height: 1;
+    }
+    .fps-label {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    .fps-canvas {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      opacity: 0.15;
+      z-index: 5;
+      pointer-events: none;
+    }
+    .stats-row {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+      z-index: 10;
+      position: relative;
+    }
+    .min-max {
+      font-family: monospace;
+      font-size: 1rem;
+      background: rgba(0,0,0,0.3);
+      padding: 5px 15px;
+      border-radius: 5px;
+      border: 1px solid var(--border);
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Infinite FPS Tester</h1>
+      <p>Analyze your hardware refresh rate and animation stability in real-time.</p>
+    </div>
+
+    <div class="tool-container text-center">
+      <div class="fps-workspace">
+        <canvas id="fps-canvas" class="fps-canvas"></canvas>
+        
+        <div class="fps-display">
+          <div id="fps-count">0</div>
+          <div class="fps-label">Frames Per Second</div>
+        </div>
+
+        <div class="stats-row">
+           <div class="min-max">MIN: <span id="fps-min">0</span></div>
+           <div class="min-max">MAX: <span id="fps-max">0</span></div>
+        </div>
+      </div>
+
+      <!-- SEO CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2>What does an FPS Test measure?</h2>
+        <p>FPS stands for <strong>Frames Per Second</strong>. It is a measure of how many distinct images your device can render and display in one second. A high FPS ensures that motion looks smooth and fluid. Our <strong>online FPS tester</strong> uses a high-frequency JavaScript loop to detect your browser's "heartbeat," allowing you to see if your monitor is actually running at its rated 60Hz, 120Hz, or 144Hz.</p>
+
+        <h3 class="mt-4">Why is Frame Rate Important?</h2>
+        <p>Whether you are gaming or just scrolling through a long article, "stuttering" occurs when the FPS drops or becomes inconsistent. Our <strong>online frame rate checker</strong> tracks your "Min" and "Max" values to help you detect these performance dips. If your <strong>FPS diagnostic</strong> shows a low number, it might mean your GPU is under heavy load, or your browser's hardware acceleration is disabled in settings.</p>
+
+        <h3 class="mt-4">Testing High Refresh Rate Monitors</h2>
+        <p>Modern gaming monitors often advertise 144Hz or 240Hz, but Windows or your browser might still be capped at 60Hz. By using our <strong>browser FPS tool</strong>, you can verify your active refresh rate instantly. If the number doesn't climb above 60, check your display settings. Our <strong>hardware refresh rate tester</strong> provides a reliable, neutral measurement that isn't influenced by gaming software or drivers.</p>
+
+        <h3 class="mt-4">Privacy and Animation Stress Testing</h2>
+        <p>Our <strong>private FPS test</strong> uses an invisible canvas animation to keep the rendering engine active without requiring huge video files. This ensures a clean, reliable benchmark that respects your privacy. At 99tool.in, we believe that <strong>checking device performance</strong> shouldn't require intrusive permissions. Simply open the tool, and our local engine will report your hardware's capabilities in real-time.</p>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const fpsCount = document.getElementById('fps-count');
+    const fpsMin = document.getElementById('fps-min');
+    const fpsMax = document.getElementById('fps-max');
+    const canvas = document.getElementById('fps-canvas');
+    const ctx = canvas.getContext('2d');
+
+    let lastTime = performance.now();
+    let frameTimes = [];
+    let minFps = 999;
+    let maxFps = 0;
+
+    // Background animation points
+    let points = [];
+    for(let i=0; i<50; i++) {
+       points.push({ x: Math.random(), y: Math.random(), vx: Math.random()*0.002-0.001, vy: Math.random()*0.002-0.001 });
+    }
+
+    function animate(now) {
+       const delta = now - lastTime;
+       lastTime = now;
+       
+       if (delta > 0) {
+          const fps = Math.round(1000 / delta);
+          frameTimes.push(fps);
+          if (frameTimes.length > 30) frameTimes.shift();
+          
+          const avgFps = Math.round(frameTimes.reduce((a,b)=>a+b, 0) / frameTimes.length);
+          fpsCount.innerText = avgFps;
+
+          if (avgFps > 5 && avgFps < minFps) { minFps = avgFps; fpsMin.innerText = minFps; }
+          if (avgFps > maxFps) { maxFps = avgFps; fpsMax.innerText = maxFps; }
+       }
+
+       // Draw subtle bg
+       canvas.width = canvas.offsetWidth;
+       canvas.height = canvas.offsetHeight;
+       ctx.clearRect(0,0,canvas.width, canvas.height);
+       ctx.fillStyle = 'rgba(255, 71, 87, 0.5)';
+       
+       points.forEach(p => {
+          p.x += p.vx; p.y += p.vy;
+          if (p.x < 0 || p.x > 1) p.vx *= -1;
+          if (p.y < 0 || p.y > 1) p.vy *= -1;
+          ctx.beginPath();
+          ctx.arc(p.x * canvas.width, p.y * canvas.height, 3, 0, Math.PI*2);
+          ctx.fill();
+       });
+
+       requestAnimationFrame(animate);
+    }
+    
+    requestAnimationFrame(animate);
+  </script>
+</body>
+</html>

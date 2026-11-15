@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Probability Calculator – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/math/probability-calculator.html"/>
+<meta property="og:title" content="Probability Calculator – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/math/probability-calculator.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Probability Calculator \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/math/probability-calculator.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .math-workspace {
+      max-width: 650px;
+      margin: 2rem auto;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      border-radius: 20px;
+    }
+    .calculator-tabs {
+       display: flex;
+       gap: 10px;
+       margin-bottom: 2rem;
+       border-bottom: 1px solid var(--border);
+       padding-bottom: 1rem;
+    }
+    .tab-btn {
+       background: transparent;
+       border: none;
+       color: var(--text-muted);
+       padding: 8px 16px;
+       cursor: pointer;
+       font-weight: 600;
+       border-radius: 8px;
+    }
+    .tab-btn.active { background: rgba(229, 57, 53, 0.1); color: var(--primary); }
+    
+    .calc-view { display: none; }
+    .calc-view.active { display: block; }
+    .input-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; }
+    label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem; }
+    input { width: 100%; padding: 10px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px; color: var(--text); }
+    
+    .result-box {
+       background: rgba(255,255,255,0.03);
+       padding: 1.5rem;
+       border-radius: 12px;
+       text-align: center;
+       margin-top: 1.5rem;
+       border: 1px dashed var(--border);
+    }
+    .res-val { font-size: 2.2rem; font-weight: 800; color: var(--primary); }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/math/probability-calculator.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/math/probability-calculator.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/math/probability-calculator.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/math/probability-calculator.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/math/probability-calculator.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/math/probability-calculator.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/math/probability-calculator.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/math/probability-calculator.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/math/probability-calculator.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/math/probability-calculator.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/math/probability-calculator.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/math/probability-calculator.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/math/probability-calculator.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/math/probability-calculator.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/math/probability-calculator.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/math/probability-calculator.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/math/probability-calculator.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/math/probability-calculator.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/math/probability-calculator.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/math/probability-calculator.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/math/probability-calculator.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/math/probability-calculator.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Infinite Probability Calculator</h1>
+      <p>Analyze event likelihood and outcomes. Solve for single, combined, or conditional probabilities instantly.</p>
+    </div>
+
+    <div class="math-workspace">
+      <div class="calculator-tabs">
+         <button class="tab-btn active" onclick="showTab('basic')">Single Event</button>
+         <button class="tab-btn" onclick="showTab('independent')">Independent</button>
+         <button class="tab-btn" onclick="showTab('conditional')">Conditional</button>
+      </div>
+
+      <!-- BASIC -->
+      <div id="view-basic" class="calc-view active">
+         <div class="input-row">
+            <div class="form-group">
+               <label>Favorable Outcomes (n)</label>
+               <input type="number" id="base-n" placeholder="e.g., 1">
+            </div>
+            <div class="form-group">
+               <label>Total Possible Outcomes (N)</label>
+               <input type="number" id="base-N" placeholder="e.g., 6">
+            </div>
+         </div>
+         <button onclick="calcBasic()" class="btn btn-primary btn-full">Calculate Probability</button>
+      </div>
+
+      <!-- INDEPENDENT -->
+      <div id="view-independent" class="calc-view">
+         <div class="input-row">
+            <div class="form-group">
+               <label>P(Event A)</label>
+               <input type="number" id="ind-a" placeholder="e.g., 0.5" min="0" max="1" step="0.01">
+            </div>
+            <div class="form-group">
+               <label>P(Event B)</label>
+               <input type="number" id="ind-b" placeholder="e.g., 0.5" min="0" max="1" step="0.01">
+            </div>
+         </div>
+         <button onclick="calcInd()" class="btn btn-primary btn-full">P(A and B)</button>
+      </div>
+
+      <!-- CONDITIONAL -->
+      <div id="view-conditional" class="calc-view">
+         <div class="input-row">
+            <div class="form-group">
+               <label>P(A ∩ B)</label>
+               <input type="number" id="con-ab" placeholder="P(Both occur)">
+            </div>
+            <div class="form-group">
+               <label>P(B)</label>
+               <input type="number" id="con-b" placeholder="Probability of B">
+            </div>
+         </div>
+         <button onclick="calcCon()" class="btn btn-primary btn-full">P(A | B)</button>
+      </div>
+
+      <div class="result-box">
+         <div class="res-val" id="res">0%</div>
+         <div class="small text-muted" id="res-dec">Decimal: 0.00</div>
+      </div>
+
+      <!-- SEO CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.probability_calculator.what_is_title">What is Infinite Probability Calculator</h2>
+        <p>The Infinite Probability Calculator is an offline-first statistics tool built to calculate the likelihood of occurrence for individual, joint, or dependent events. It provides three calculation modes to analyze ratios, independent probabilities, and conditional dependencies instantly in your browser.</p>
+        <p>Probability values describe the likelihood of occurrences, ranging from 0% (impossible event) to 100% (certain event). This calculator simplifies formulas, converting favorable outcome ratios, intersection rates, and conditional formulas into decimal and percentage representations in real-time.</p>
+
+        <h3 class="mt-4">How to Use Infinite Probability Calculator</h3>
+        <ol style="line-height: 1.8; margin-bottom: 20px; padding-left: 20px;">
+          <li><strong>Select your calculation type:</strong> Click on the top tabs to choose between **Single Event**, **Independent**, or **Conditional** modes.</li>
+          <li><strong>Fill in the fields:</strong>
+            <ul style="padding-left: 20px; margin-bottom: 10px; list-style-type: circle;">
+              <li>For <em>Single Event</em>, enter your favorable outcomes ($n$) and total possible outcomes ($N$).</li>
+              <li>For <em>Independent</em>, enter the probabilities of Event A ($P(A)$) and Event B ($P(B)$) as decimals between 0 and 1.</li>
+              <li>For <em>Conditional</em>, enter the probability of both occurring ($P(A \cap B)$) and the probability of condition B ($P(B)$).</li>
+            </ul>
+          </li>
+          <li><strong>Solve the formula:</strong> Click the calculate button corresponding to your active tab.</li>
+          <li><strong>Review the statistics:</strong> Inspect the percentage result and decimal precision output in the highlighted dashboard below the inputs.</li>
+        </ol>
+
+        <h3 class="mt-4">Key Features</h3>
+        <ul style="line-height: 1.8; margin-bottom: 20px; padding-left: 20px;">
+          <li><strong>Multi-Tab Analytical Layout:</strong> Separate calculators for ratio-based outcomes, joint independent evaluations, and conditional probabilities.</li>
+          <li><strong>Dual Representation Outputs:</strong> Displays calculations in percentage formats alongside highly precise decimal scales.</li>
+          <li><strong>Safety Threshold Logic:</strong> Built-in alert validations that check for zero divisors and inputs outside the mathematically sound $[0, 1]$ range.</li>
+          <li><strong>Local Browser Calculations:</strong> Performs math routines client-side without sharing variables over the internet.</li>
+        </ul>
+
+        <h3 class="mt-4">Common Use Cases</h3>
+        <ul style="line-height: 1.8; margin-bottom: 20px; padding-left: 20px;">
+          <li><strong>Math and Stats Education:</strong> Checking textbook probabilities, card games ratios, or coin-flip outcomes.</li>
+          <li><strong>Risk & Finance Modeling:</strong> Computing composite failure rates or evaluating risk scenarios based on independent likelihoods.</li>
+          <li><strong>Data Science Audits:</strong> Formulating conditional matrices for Bayesian calculations and algorithms.</li>
+        </ul>
+
+        <h3 class="mt-4">Frequently Asked Questions</h3>
+        <div style="line-height: 1.8; margin-bottom: 20px;">
+          <p><strong>Q: What is the difference between independent and conditional events?</strong><br>
+          A: Independent events are outcomes that do not impact one another, where the combined probability is simply $P(A) \times P(B)$. Conditional events are dependent; the probability of event A changes based on whether event B has already occurred ($P(A|B) = P(A \cap B) / P(B)$).</p>
+          <p><strong>Q: Why does the basic calculator warn me about zero outcomes?</strong><br>
+          A: A total outcome value of zero is mathematically undefined. You cannot divide favorable outcomes by a sample space size of zero.</p>
+          <p><strong>Q: Can I input percentage values directly?</strong><br>
+          A: No. Standard statistical inputs require decimal probabilities between 0 and 1. For instance, to input a 50% probability, enter `0.5` in the input field.</p>
+          <p><strong>Q: How do I calculate the union probability (P(A or B))?</strong><br>
+          A: For independent events, the union is calculated using the formula $P(A) + P(B) - (P(A) \times P(B))$. This tool specializes in the intersection $P(A \cap B)$ and conditional relationships.</p>
+        </div>
+
+        <h3 class="mt-4">Privacy & Data Note</h3>
+        <p>All probability parameters and mathematical event structures are evaluated locally within your active browser tab. Your inputs are never transmitted over the network or saved to any database.</p>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    function showTab(t) {
+       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+       document.querySelectorAll('.calc-view').forEach(v => v.classList.remove('active'));
+       
+       event.target.classList.add('active');
+       document.getElementById(`view-${t}`).classList.add('active');
+    }
+
+    function setRes(val) {
+       if (isNaN(val) || val < 0) return alert('Invalid input. Results must be positive numbers.');
+       document.getElementById('res').innerText = ((window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(val * 100, 2) : (val * 100).toFixed(2)) + '%';
+       document.getElementById('res-dec').innerText = 'Decimal: ' + ((window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(val, 4) : val.toFixed(4));
+    }
+
+    function calcBasic() {
+       const n = parseFloat(document.getElementById('base-n').value);
+       const N = parseFloat(document.getElementById('base-N').value);
+       if (N === 0) return alert('Total outcomes cannot be zero.');
+       setRes(n/N);
+    }
+
+    function calcInd() {
+       const a = parseFloat(document.getElementById('ind-a').value);
+       const b = parseFloat(document.getElementById('ind-b').value);
+       setRes(a * b);
+    }
+
+    function calcCon() {
+       const ab = parseFloat(document.getElementById('con-ab').value);
+       const b = parseFloat(document.getElementById('con-b').value);
+       if (b === 0) return alert('P(B) cannot be zero.');
+       setRes(ab / b);
+    }
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Drawing App – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/design/drawing-app.html"/>
+<meta property="og:title" content="Drawing App – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/design/drawing-app.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Drawing App \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/design/drawing-app.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="drawing app, online sketch tool, digital canvas, draw, private drawing tool, brush tool" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json" id="schema-org-data">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Simple Drawing App",
+    "operatingSystem": "Any",
+    "applicationCategory": "DesignApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Brush strokes, Color Picker, Eraser, PNG Export, Private local processing"
+  }
+  </script>
+
+  <style>
+    .draw-layout { display: grid; grid-template-columns: 1fr; gap: 30px; }
+
+    .control-pane {
+      background: var(--dark-card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 30px; height: fit-content; position: sticky; top: 80px;
+    }
+
+    .canvas-container {
+      background: var(--dark-card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 10px; display: flex; align-items: center; justify-content: center;
+      min-height: 500px; overflow: hidden; position: relative;
+    }
+
+    #drawing-canvas {
+      background: white; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      max-width: 100%; cursor: crosshair; touch-action: none;
+    }
+
+    .tool-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 20px; }
+    
+    .tool-btn {
+       background: var(--dark); border: 1px solid var(--border); color: white; padding: 12px;
+       border-radius: 8px; font-weight: 600; cursor: pointer; transition: 0.2s;
+       display: flex; flex-direction: column; align-items: center; gap: 5px; font-size: 0.7rem;
+    }
+    .tool-btn:hover { border-color: var(--primary); background: rgba(229, 57, 53, 0.05); }
+    .tool-btn.active { background: var(--primary); border-color: var(--primary); }
+
+    .color-swatch { width: 100%; height: 40px; border-radius: 4px; border: 2px solid var(--border); cursor: pointer; padding: 0; }
+
+    @media (min-width: 900px) {
+      .draw-layout { grid-template-columns: 280px 1fr; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/design/drawing-app.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/design/drawing-app.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/design/drawing-app.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/design/drawing-app.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/design/drawing-app.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/design/drawing-app.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/design/drawing-app.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/design/drawing-app.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/design/drawing-app.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/design/drawing-app.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/design/drawing-app.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/design/drawing-app.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/design/drawing-app.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/design/drawing-app.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/design/drawing-app.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/design/drawing-app.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/design/drawing-app.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/design/drawing-app.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/design/drawing-app.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/design/drawing-app.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/design/drawing-app.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/design/drawing-app.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#creative">Graphic & Design</a> <span>/</span> 
+        <span>Simple Drawing App</span>
+      </nav>
+      <h1>Drawing App</h1>
+      <p>Sketch your vision into reality, entirely in your browser. A high-fidelity, private digital canvas for professionals and creators alike—100%.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div class="draw-layout">
+         <aside class="control-pane">
+            <h3>Articulated Controls</h3>
+            <p class="text-muted small mb-4">Refine your stroke and palette.</p>
+
+            <div class="tool-grid">
+               <button class="tool-btn active" id="btn-brush">
+                  <span style="font-size: 1.2rem;">🖌️</span>
+                  Brush
+               </button>
+               <button class="tool-btn" id="btn-eraser">
+                  <span style="font-size: 1.2rem;">🧽</span>
+                  Eraser
+               </button>
+            </div>
+
+            <div class="form-group mb-4">
+               <label>Brush Color</label>
+               <input type="color" id="brush-color" class="color-swatch" value="#e53935">
+            </div>
+
+            <div class="form-group mb-4">
+               <label>Stroke Size: <span id="size-val">5</span>px</label>
+               <input type="range" id="brush-size" min="1" max="50" value="5" class="w-100">
+            </div>
+
+            <button class="btn btn-secondary btn-full mb-3" id="btn-clear">Clear Canvas</button>
+            <button class="btn btn-primary btn-full" id="btn-download">Export as PNG</button>
+            
+            <div class="info-box mt-4">
+               <div class="info-icon">🔓</div>
+               <p class="small">This canvas lives in your RAM only. Closing the tab wipes all data. Download your work to save it permanently.</p>
+            </div>
+         </aside>
+
+          <div class="canvas-pane">
+             <div class="canvas-container">
+                <canvas id="drawing-canvas"></canvas>
+             </div>
+          </div>
+       </div>
+
+      <!-- CONTENT SECTION -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.drawing_app.what_is_title">What is the Drawing App?</h2>
+        <p>The Drawing App is an interactive client-side sketching canvas designed to let you draw, sketch, and wireframe layouts directly inside your web browser. Equipped with basic brush controls and colors, it acts as a digital whiteboard for quick ideas.</p>
+        <p>This drawing application operates on a local browser canvas element. Because all strokes, pointer coordinates, and canvas drawings are rendered in local memory, your designs, wireframes, and handwritten notes are never sent to external servers.</p>
+
+        <h2 class="mt-4" data-i18n="tools.drawing_app.how_to_use_title">How to Use the Drawing App</h2>
+        <ol>
+          <li><strong>Choose Your Tool:</strong> Select the "Brush" tool to draw lines, or the "Eraser" tool to clean up segments of your sketch.</li>
+          <li><strong>Select a Brush Size:</strong> Adjust the "Brush Size" slider in the sidebar to control the thickness of your strokes (from 1px to 50px).</li>
+          <li><strong>Pick a Color:</strong> Click the custom color picker to select a custom hue, or click one of the preset color circles to apply pre-selected shades.</li>
+          <li><strong>Create Your Design:</strong> Click and drag your cursor (or stylus pen) across the central white canvas to begin drawing.</li>
+          <li><strong>Clear or Save Your Work:</strong> Click the "Clear Canvas" button to wipe the board clean. Click "Export as PNG" to download your drawing as an image file.</li>
+        </ol>
+
+        <h2 class="mt-4" data-i18n="tools.drawing_app.key_features_title">Key Features</h2>
+        <ul>
+          <li><strong>Lag-Free Stroke Tracking:</strong> Uses hardware acceleration to render smooth lines and curves without delay.</li>
+          <li><strong>Brush and Eraser Toggles:</strong> Switch tools quickly to edit fine details or delete mistakes.</li>
+          <li><strong>Custom and Preset Colors:</strong> Create sketches using color palettes with a built-in color selector.</li>
+          <li><strong>Transparent PNG Exporting:</strong> Downloads your artwork as high-resolution PNG image files with transparent backgrounds.</li>
+          <li><strong>100% Client-Side Run:</strong> Keeps your designs and ideas secure by processing drawings entirely in local RAM.</li>
+        </ul>
+
+        <h2 class="mt-4" data-i18n="tools.drawing_app.common_use_cases_title">Common Use Cases</h2>
+        <ul>
+          <li><strong>UI/UX Wireframing:</strong> Sketch application mockups, website wireframes, or structural user flows privately.</li>
+          <li><strong>Educational Screen Sharing:</strong> Illustrate equations, diagrams, or conceptual maps during online presentations or meetings.</li>
+          <li><strong>Creative Ideas and Drafts:</strong> Jot down quick design drafts, color coordinate tests, or logo ideas.</li>
+          <li><strong>Confidential Diagramming:</strong> Create project timelines or workflow diagrams without using cloud whiteboard tools.</li>
+        </ul>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2 data-i18n="tools.drawing_app.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Does this tool support graphic tablets or styluses?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. The canvas listener supports standard pointer events, making it compatible with computer mice, laptop trackpads, tablet styluses (like Wacom pens), and mobile touch screens.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Are my sketches uploaded to a server?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. 99tool.in processes all canvas strokes and image exports locally. No drawing data, coordinates, or exported files are sent over the network.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Will refreshing the page delete my progress?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. For your privacy, the canvas lives entirely in your browser's RAM and does not persist across page reloads. Make sure to download your work as a PNG before reloading or closing the tab.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I upload an existing image to draw on top of it?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>This is a clean, blank-canvas whiteboard. To import, edit, crop, or annotate existing photographs, we recommend using our specialized Image Editor.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Why does my exported PNG have a transparent background?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>The canvas exports without a solid white background color, allowing you to overlay your drawings on top of dark themes, web pages, or design mockups without boxy borders.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 Privacy & Data Note: Canvas drawing, color selections, and image generations occur locally in your browser. No drawing files are sent to our servers.</p>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const canvas = document.getElementById('drawing-canvas');
+    const ctx = canvas.getContext('2d');
+    const btnBrush = document.getElementById('btn-brush');
+    const btnEraser = document.getElementById('btn-eraser');
+    const btnClear = document.getElementById('btn-clear');
+    const btnDownload = document.getElementById('btn-download');
+    const colorInput = document.getElementById('brush-color');
+    const sizeInput = document.getElementById('brush-size');
+    const sizeVal = document.getElementById('size-val');
+
+    let painting = false;
+    let mode = 'brush'; // 'brush' or 'eraser'
+
+    // Set Canvas size
+    function initCanvas() {
+       const container = canvas.parentElement;
+       canvas.width = 1200; // Fixed high res logic
+       canvas.height = 800;
+       
+       ctx.lineCap = 'round';
+       ctx.lineJoin = 'round';
+       ctx.fillStyle = 'white';
+       ctx.fillRect(0, 0, canvas.width, canvas.height);
+    }
+
+    initCanvas();
+
+    function startPos(e) {
+       painting = true;
+       draw(e);
+    }
+
+    function endPos() {
+       painting = false;
+       ctx.beginPath();
+    }
+
+    function draw(e) {
+       if (!painting) return;
+
+       const rect = canvas.getBoundingClientRect();
+       const scaleX = canvas.width / rect.width;
+       const scaleY = canvas.height / rect.height;
+
+       const x = ((e.clientX || (e.touches && e.touches[0].clientX)) - rect.left) * scaleX;
+       const y = ((e.clientY || (e.touches && e.touches[0].clientY)) - rect.top) * scaleY;
+
+       ctx.strokeStyle = (mode === 'eraser') ? 'white' : colorInput.value;
+       ctx.lineWidth = sizeInput.value;
+
+       ctx.lineTo(x, y);
+       ctx.stroke();
+       ctx.beginPath();
+       ctx.moveTo(x, y);
+    }
+
+    // Input Listeners
+    canvas.addEventListener('mousedown', startPos);
+    canvas.addEventListener('mouseup', endPos);
+    canvas.addEventListener('mousemove', draw);
+    
+    canvas.addEventListener('touchstart', (e) => { e.preventDefault(); startPos(e.touches[0]); });
+    canvas.addEventListener('touchend', endPos);
+    canvas.addEventListener('touchmove', (e) => { e.preventDefault(); draw(e.touches[0]); });
+
+    btnBrush.onclick = () => { mode = 'brush'; btnBrush.classList.add('active'); btnEraser.classList.remove('active'); };
+    btnEraser.onclick = () => { mode = 'eraser'; btnEraser.classList.add('active'); btnBrush.classList.remove('active'); };
+    btnClear.onclick = () => { if(confirm('Clear entire canvas?')) ctx.fillRect(0, 0, canvas.width, canvas.height); };
+    
+       sizeInput.oninput = () => sizeVal.textContent = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(sizeInput.value, 0) : sizeInput.value;
+
+    btnDownload.onclick = () => {
+       const link = document.createElement('a');
+       link.download = `sketch_${Date.now()}.png`;
+       link.href = canvas.toDataURL();
+       link.click();
+    };
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

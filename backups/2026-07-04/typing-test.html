@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Typing Test – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/learning/typing-test.html"/>
+<meta property="og:title" content="Typing Test – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/learning/typing-test.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Typing Test \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/learning/typing-test.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    .typing-workspace {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 3rem;
+    }
+    .stats-main {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .stat-box {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      padding: 1rem;
+      border-radius: 12px;
+      text-align: center;
+    }
+    .stat-val { font-size: 2rem; font-weight: 800; color: var(--primary); display: block; }
+    .stat-label { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+
+    .text-display {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.4rem;
+      line-height: 1.8;
+      background: var(--dark);
+      padding: 2rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      margin-bottom: 2rem;
+      color: #666;
+      position: relative;
+      user-select: none;
+    }
+    .char { position: relative; }
+    .char.correct { color: #eee; }
+    .char.wrong { color: #e03131; background: rgba(224, 49, 49, 0.1); }
+    .char.current { color: var(--primary); border-bottom: 2px solid var(--primary); }
+
+    .typing-input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+    
+    .start-overlay {
+      position: absolute; inset: 0;
+      background: rgba(0,0,0,0.8);
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 12px; z-index: 10;
+      cursor: pointer;
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-hero text-center">
+      <nav class="breadcrumb justify-content-center">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#learning">Learning</a> <span>/</span> 
+        <span>Typing Speed Test</span>
+      </nav>
+      <h1>Typing Speed Test</h1>
+      <p>Measure your baseline WPM and accuracy with this professional-grade tester.</p>
+    </div>
+
+    <div class="typing-workspace">
+      <div class="stats-main">
+        <div class="stat-box">
+          <span class="stat-val" id="wpm">0</span>
+          <span class="stat-label">WPM</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-val" id="accuracy">100%</span>
+          <span class="stat-label">Accuracy</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-val" id="timer">60</span>
+          <span class="stat-label">Time Remaining</span>
+        </div>
+      </div>
+
+      <div class="text-display" id="display-area">
+        <div class="start-overlay" id="start-overlay" onclick="startTest()">
+          <button class="btn btn-primary">Click to Start Test</button>
+        </div>
+        <!-- Words go here -->
+      </div>
+      
+      <input type="text" id="typing-input" class="typing-input" autocomplete="off">
+      <p class="text-center text-muted small">Type the highlighted text as fast as you can. Mistakes slow you down!</p>
+    </div>
+
+    <!-- SEO CONTENT -->
+    <section class="seo-content mt-5">
+      <h2>Professional Typing Analysis Without the Lag</h2>
+      <p>In a digital world where professional communication happens through a keyboard, your typing speed is a direct bottleneck to your productivity. Our <strong>typing speed test</strong> provides a high-fidelity environment to measure and improve your performance. By removing the network lag and distracting ads found on most <strong>WPM testers online</strong>, we provide a consistent baseline to track your growth.</p>
+      
+      <h3 class="mt-4">Understanding WPM and Accuracy Metrics</h3>
+      <p>Speed is irrelevant without precision. Our tool calculates <strong>Words Per Minute (WPM)</strong> using the standard formula: <code>(Total Characters / 5) / Time</code>. However, we also place a heavy emphasis on <strong>Accuracy</strong>. Professional touch-typists aim for consistent speeds of 60-80 WPM with at least 98% accuracy. Training with our <strong>typing practice tool</strong> helps you build the muscle memory required to hit these benchmarks.</p>
+
+      <ul style="line-height: 1.8; margin-top: 15px;">
+        <li><strong>60-Second Challenge:</strong> A standard endurance test for consistent typing.</li>
+        <li><strong>Character Highlighting:</strong> Real-time visual feedback on every keystroke.</li>
+        <li><strong>WPM Formula:</strong> Standards-compliant calculation for professional results.</li>
+      </ul>
+
+      <h3 class="mt-4">High Performance, Low Profile</h3>
+      <p>Typing tests require perfect responsiveness. Any micro-stutter caused by background analytics or trackers on <strong>typing apps</strong> can throw off your rhythm. At 99tool.in, we prioritize performance. Our <strong>private typing test</strong> runs entirely locally, ensuring that every millisecond of your performance is recorded accurately. Whether you are prepping for a data entry role or just want to out-type your coworkers, this is your professional playground.</p>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const sampleText = "Spaced repetition is a learning technique that incorporates increasing intervals of time between subsequent review of previously learned material in order to exploit the psychological spacing effect. The efficiency of learning is significantly increased by focusing on material that is difficult to remember. At 99tool we believe in private learning without trackers. Speed and accuracy are the keys to professional excellence in a modern digital workspace.";
+    
+    let timer = 60;
+    let isActive = false;
+    let interval = null;
+    let charIdx = 0;
+    let mistakes = 0;
+    let charsTyped = 0;
+
+    const display = document.getElementById('display-area');
+    const input = document.getElementById('typing-input');
+    const timerText = document.getElementById('timer');
+    const wpmText = document.getElementById('wpm');
+    const accText = document.getElementById('accuracy');
+
+    // Initialize display
+    function initDisplay() {
+      const chars = sampleText.split('');
+      display.innerHTML = '<div class="start-overlay" id="start-overlay" onclick="startTest()"><button class="btn btn-primary">Click to Start Test</button></div>';
+      chars.forEach((c, i) => {
+        const span = document.createElement('span');
+        span.className = 'char';
+        span.innerText = c;
+        display.appendChild(span);
+      });
+      charIdx = 0;
+      updateCursor();
+    }
+
+    function startTest() {
+      if (isActive) return;
+      initDisplay();
+      document.getElementById('start-overlay').style.display = 'none';
+      input.focus();
+      isActive = true;
+      mistakes = 0;
+      charsTyped = 0;
+      timer = 60;
+      
+      interval = setInterval(() => {
+        timer--;
+        timerText.innerText = timer;
+        if (timer <= 0) endTest();
+        calculateStats();
+      }, 1000);
+    }
+
+    function calculateStats() {
+      const timeSpent = (60 - timer) / 60;
+      if (timeSpent === 0) return;
+      const wpm = Math.round((charsTyped / 5) / timeSpent);
+      const acc = Math.round(((charsTyped - mistakes) / charsTyped) * 100) || 100;
+      
+      wpmText.innerText = wpm;
+      accText.innerText = acc + "%";
+    }
+
+    function updateCursor() {
+      const spans = display.querySelectorAll('.char');
+      spans.forEach(s => s.classList.remove('current'));
+      if (spans[charIdx]) spans[charIdx].classList.add('current');
+    }
+
+    input.oninput = (e) => {
+      if (!isActive) return;
+      const spans = display.querySelectorAll('.char');
+      const typedChar = input.value.slice(-1);
+      const targetChar = sampleText[charIdx];
+
+      if (typedChar === targetChar) {
+        spans[charIdx].classList.add('correct');
+      } else {
+        spans[charIdx].classList.add('wrong');
+        mistakes++;
+      }
+      
+      charsTyped++;
+      charIdx++;
+      input.value = "";
+      
+      if (charIdx >= sampleText.length) endTest();
+      updateCursor();
+    };
+
+    function endTest() {
+      isActive = false;
+      clearInterval(interval);
+      input.blur();
+      calculateStats();
+      const finalWpm = wpmText.innerText;
+      const finalAcc = accText.innerText;
+      alert(`Test Complete!\nWPM: ${finalWpm}\nAccuracy: ${finalAcc}`);
+      initDisplay();
+    }
+
+    initDisplay();
+  </script>
+</body>
+</html>
+

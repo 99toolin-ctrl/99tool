@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">View Pdf – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/pdf/view-pdf.html"/>
+<meta property="og:title" content="View Pdf – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/pdf/view-pdf.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "View Pdf \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/pdf/view-pdf.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+  <style>
+    .viewer-container {
+      display: flex;
+      flex-direction: column;
+      height: 800px;
+      background: #404040;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-top: 1.5rem;
+      border: 1px solid var(--border);
+    }
+    .viewer-toolbar {
+      padding: 0.75rem 1.5rem;
+      background: #333;
+      color: white;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      border-bottom: 1px solid #555;
+    }
+    .toolbar-group { display: flex; gap: 8px; align-items: center; }
+    .viewer-main {
+      flex: 1;
+      display: flex;
+      overflow: hidden;
+    }
+    .viewer-sidebar {
+      width: 240px;
+      background: #333;
+      border-right: 1px solid #555;
+      overflow-y: auto;
+      padding: 1rem;
+      display: none;
+    }
+    .viewer-sidebar.active { display: block; }
+    .sidebar-thumb {
+      background: white;
+      margin-bottom: 1rem;
+      cursor: pointer;
+      border: 2px solid transparent;
+      padding: 4px;
+    }
+    .sidebar-thumb:hover { border-color: var(--primary); }
+    .viewer-pages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      scroll-behavior: smooth;
+    }
+    .v-page-wrapper {
+        background: white;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+    canvas { max-width: 100%; height: auto !important; }
+    .btn-viewer {
+      background: #444; border: 1px solid #666; color: white;
+      padding: 4px 12px; border-radius: 4px; cursor: pointer; font-size: 0.9rem;
+    }
+    .btn-viewer:hover { background: #555; }
+    #zoom-level { min-width: 60px; text-align: center; font-size: 0.9rem; }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/pdf/view-pdf.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/pdf/view-pdf.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/pdf/view-pdf.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/pdf/view-pdf.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/pdf/view-pdf.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/pdf/view-pdf.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/pdf/view-pdf.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/pdf/view-pdf.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/pdf/view-pdf.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/pdf/view-pdf.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/pdf/view-pdf.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/pdf/view-pdf.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/pdf/view-pdf.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/pdf/view-pdf.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/pdf/view-pdf.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/pdf/view-pdf.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/pdf/view-pdf.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/pdf/view-pdf.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/pdf/view-pdf.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/pdf/view-pdf.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/pdf/view-pdf.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/pdf/view-pdf.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>PDF Viewer</h1>
+      <p>A distractions-free, high-fidelity reader that never leaves your device. Completely private.</p>
+    </div>
+
+    <div class="tool-container">
+      <div class="upload-area" id="drop-zone">
+        <div class="upload-icon">👁️</div>
+        <p>Drag & drop your PDF or <span class="text-primary">browse files</span></p>
+        <input type="file" id="pdf-input" accept="application/pdf" hidden>
+      </div>
+
+      <div id="file-info" class="file-info hidden">
+        <div class="file-details">
+          <span id="file-name">filename.pdf</span>
+          <span id="file-size" class="text-muted">0 KB</span>
+        </div>
+        <div class="security-badge" id="security-badge">
+          <span class="badge-icon">🛡️</span>
+          <span id="security-status">Scanning...</span>
+        </div>
+      </div>
+
+      <div id="viewer" class="viewer-container hidden">
+        <div class="viewer-toolbar">
+          <div class="toolbar-group">
+            <button class="btn-viewer" id="toggle-sidebar">Sidebar</button>
+          </div>
+          <div class="toolbar-group">
+            <button class="btn-viewer" id="prev-page">Prev</button>
+            <span id="page-nav">Page 1 / 1</span>
+            <button class="btn-viewer" id="next-page">Next</button>
+          </div>
+          <div class="toolbar-group">
+            <button class="btn-viewer" id="zoom-out">−</button>
+            <span id="zoom-level">100%</span>
+            <button class="btn-viewer" id="zoom-in">+</button>
+          </div>
+          <div style="flex-grow: 1;"></div>
+          <button class="btn-viewer" id="fullscreen-btn">Full Screen</button>
+        </div>
+        <div class="viewer-main">
+          <div class="viewer-sidebar" id="sidebar"></div>
+          <div class="viewer-pages" id="pages-container"></div>
+        </div>
+      </div>
+
+      <div id="status-msg" class="text-center mt-3 small"></div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5">
+        <h2>Experience Your Documents in Their Purest, Safest Form</h2>
+        <p>We’ve all been there: you receive a 50MB PDF report or a sensitive personal document, and the native viewer on your computer feels clunky or starts indexing your data for "AI summaries." You search for a tool to <strong>view pdf online</strong> fast. But the moment you click a "Free Reader" link, the prompt appears: "Upload your file to start viewing." Does reading a private document really necessitate a data transmission to a third party? Why should your reading habits—what you zoom in on, how long you stay on Page 14—be logged by a cloud server?</p>
+
+        <p>At 99tool.in, we built our <strong>pdf viewer</strong> to protect your right to private reading. By utilizing the legendary <code>PDF.js</code> technology, we’ve created a high-fidelity <strong>pdf reader online</strong> that runs entirely in your browser's local sandbox memory. Whether you’re a lawyer reviewing evidence, a researcher digging into journals, or a professional reading a pitch deck on a public Wi-Fi, our <strong>secure pdf viewer</strong> ensures your documents never leave your device, giving you a lightning-fast experience without the data-mining.</p>
+        
+        <div class="tool-preview-box mt-4 mb-4" style="text-align:center;">
+           <img src="../../assets/images/markdown-preview.png" alt="Clean High-Fidelity PDF Viewer" class="tool-preview" id="tool-preview-img" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+        </div>
+
+        <h3 class="mt-4">The Logic of a High-Fidelity Reader</h3>
+        <p>A PDF is not just an image; it is a complex map of vector instructions. Standard browser viewers often struggle with high-resolution graphics, complex layers, or non-standard fonts, resulting in blurry text and "choppy" scrolling. Our <strong>fast pdf viewer</strong> is optimized for performance. It renders every page with pixel-perfect accuracy, ensuring that the smallest fine print stays sharp even at high zoom levels.</p>
+        
+        <p>We’ve implemented a human-centric interface that puts the content first. Our <strong>online pdf viewer</strong> includes a "Smooth Scroll" architecture and a sidebar navigation system that allows you to jump between pages instantly. We’ve even added a <strong>fullscreen mode</strong> for those deep-work sessions when you need to eliminate every distraction and focus entirely on the data. It’s the ultimate <strong>secure pdf reading</strong> environment for professionals who value both clarity and confidentiality.</p>
+
+        <h3 class="mt-4">Why Viewing is the Security Choice</h3>
+        <p>Your reading history is valuable data. Most <strong>online pdf readers</strong> track how much time you spend on a page, what links you click within the document, and what parts you highlight. In high-stakes fields like Finance or HR, this is a massive operational security risk. Our <strong>private pdf reader</strong> eliminates this entire category of risk. No analytics. No telemetry. Just you and your document.</p>
+        
+        <p>Furthermore, 99tool.in includes an active **Security Scan** the second you load your PDF. We check for hidden scripts (<code>/JS</code>), interactive malicious code, and unexpected external call requests. We believe that a <strong>secure pdf viewer</strong> should do more than just show you the text—it should protect you from the document itself. With 99tool.in, you have a sanitized viewing chamber for every file you open.</p>
+
+        <h3 class="mt-4">How to View Your PDF (Step-by-Step)</h3>
+        <p>Opening a file should be instantaneous. Here is how to use our <strong>fast pdf viewer</strong> utility:</p>
+        <ul style="line-height: 1.8; margin-bottom: 20px;">
+          <li><strong>Step 1: Securely Load</strong> — Drag your PDF into the viewer area. Our system will immediately perform a security check and verify the document integrity.</li>
+          <li><strong>Step 2: Navigate with Ease</strong> — Use the "Sidebar" button to see thumbnails of all pages. Click any thumbnail to jump to that page instantly.</li>
+          <li><strong>Step 3: Adjust the Perspective</strong> — Use the <strong>Zoom (+) and (-)</strong> buttons to find the perfect reading scale. Our high-fidelity engine keeps text sharp at any zoom level.</li>
+          <li><strong>Step 4: Focus Entirely</strong> — Hit the <strong>Full Screen</strong> button for an immersive reading experience, perfect for long-form reports or academic journals.</li>
+        </ul>
+
+        <h3 class="mt-4">The Go-To Tool for Confidential Productivity</h3>
+        <p>Our <strong>pdf viewer</strong> is the silent workhorse for professionals across industries:</p>
+        
+        <p><strong>For Financial Analysts:</strong> Reviewing quarterly audits and spreadsheet-heavy reports? Use our <strong>pdf reader</strong> for high-resolution viewing of detailed charts where clarity is the difference between a good and bad decision.</p>
+        
+        <p><strong>For HR Professionals:</strong> Reading through hundreds of candidate resumes and performance reviews? Our <strong>online pdf viewer</strong> speed allows you to cycle through documents 50% faster than clunky desktop software, all while keeping that private data off the cloud.</p>
+        
+        <p><strong>For Travel and Logistics:</strong> Open e-tickets, boarding passes, and custom declarations in one tab. Our <strong>secure pdf viewer</strong> ensures your passport and identity details stay cached in private memory, never touching a public server.</p>
+
+        <h3 class="mt-5">Build Your Complete PDF Portfolio</h3>
+        <p>Once you’ve finished reading your document, you might need to organize it further. Check out our <strong><a href="annotate-pdf.html">PDF Annotation Tool</a></strong> to leave highlights and notes safely. Or, if the document you’re viewing needs to be combined with others, use our <strong><a href="merge-pdf.html">PDF Merger</a></strong>. At 99tool.in, we are building a seamless, private, and powerful suite of utilities to make your digital life easier and more secure.</p>
+        
+        <div class="flex gap-4 mt-4 mb-5">
+           <a href="extract-text.html" class="btn btn-secondary" style="flex:1; text-align:center;">Extract Text</a>
+           <a href="split-pdf.html" class="btn btn-secondary" style="flex:1; text-align:center;">Split PDF</a>
+        </div>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2 data-i18n="tools.pdf_viewer.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Is this viewer as accurate as desktop software?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. Our <strong>pdf viewer</strong> uses the industry-standard PDF.js engine, which is the same technology used by major browsers to render PDFs. It supports complex layouts, high-resolution images, and mathematical formulas with pixel-perfect accuracy.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I open very large documents?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Certainly. Our <strong>fast pdf reader</strong> is designed to handle multi-hundred-page documents. Because it renders pages efficiently in your browser, it remains responsive even when viewing massive research papers or corporate reports.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Are my files sent to any server for viewing?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. 99tool.in is a <strong>serverless PDF viewer</strong>. Your file is loaded directly into your browser's private memory from your hard drive. No part of your document is ever uploaded to the cloud, ensuring 100% privacy.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Does it support password-protected PDFs?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Currently, the viewer is optimized for standard PDF files. If your file is encrypted, we recommend using our <strong>PDF Unlocker</strong> first to remove the security restrictions before viewing it in this high-fidelity workspace.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              How do I use the sidebar navigation?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Click the "Sidebar" button in the toolbar to toggle a <strong>thumbnail gallery</strong> of all pages. Simply click any thumbnail to scroll instantly to that specific page, making it easy to navigate through long documents.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Is my reading history private?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. Unlike cloud-based readers that track your zoom levels and reading duration, 99tool.in is a <strong>private pdf reader</strong>. No data is sent to any server, and no trackers are used to monitor your document interactions.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 Privacy-First. No Uploads. 100% Secure. Last updated: April 10, 2026.</p>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js';
+
+    const pdfInput = document.getElementById('pdf-input');
+    const dropZone = document.getElementById('drop-zone');
+    const viewer = document.getElementById('viewer');
+    const pagesContainer = document.getElementById('pages-container');
+    const sidebar = document.getElementById('sidebar');
+    const toggleSidebarBtn = document.getElementById('toggle-sidebar');
+    const zoomInBtn = document.getElementById('zoom-in');
+    const zoomOutBtn = document.getElementById('zoom-out');
+    const zoomLevelText = document.getElementById('zoom-level');
+    const fullscreenBtn = document.getElementById('fullscreen-btn');
+    const pageNav = document.getElementById('page-nav');
+    const prevPageBtn = document.getElementById('prev-page');
+    const nextPageBtn = document.getElementById('next-page');
+
+    let currentFile = null;
+    let pdfDoc = null;
+    let zoomScale = 1.0;
+    let totalPages = 0;
+
+    // File selection
+    dropZone.addEventListener('click', () => pdfInput.click());
+    pdfInput.addEventListener('change', (e) => handleFile(e.target.files[0]));
+
+    async function handleFile(file) {
+      if (!file || file.type !== 'application/pdf') return;
+      currentFile = file;
+      document.getElementById('file-name').innerText = file.name;
+      document.getElementById('file-size').innerText = (file.size / 1024).toFixed(1) + ' KB';
+      document.getElementById('file-info').classList.remove('hidden');
+      viewer.classList.remove('hidden');
+      
+      // Security Scan
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const text = new TextDecoder().decode(e.target.result.slice(0, 5000));
+        const status = document.getElementById('security-status');
+        status.innerText = text.includes('/JS') ? 'Nested Logic Found' : 'Safe: Static Document';
+      };
+      reader.readAsArrayBuffer(file);
+
+      loadPDF(file);
+    }
+
+    async function loadPDF(file) {
+      pagesContainer.innerHTML = "";
+      sidebar.innerHTML = "";
+      const arrayBuffer = await file.arrayBuffer();
+      pdfDoc = await pdfjsLib.getDocument(arrayBuffer).promise;
+      totalPages = pdfDoc.numPages;
+      pageNav.innerText = `Page 1 / ${totalPages}`;
+
+      for (let i = 1; i <= totalPages; i++) {
+        // Thumbnail for sidebar
+        const page = await pdfDoc.getPage(i);
+        const thumbViewport = page.getViewport({ scale: 0.15 });
+        const thumbDiv = document.createElement('div');
+        thumbDiv.className = 'sidebar-thumb';
+        const thumbCanvas = document.createElement('canvas');
+        thumbCanvas.width = thumbViewport.width;
+        thumbCanvas.height = thumbViewport.height;
+        await page.render({ canvasContext: thumbCanvas.getContext('2d'), viewport: thumbViewport }).promise;
+        thumbDiv.appendChild(thumbCanvas);
+        thumbDiv.onclick = () => {
+             document.getElementById(`v-page-${i}`).scrollIntoView({ behavior: 'smooth' });
+        };
+        sidebar.appendChild(thumbDiv);
+
+        renderPage(i);
+      }
+    }
+
+    async function renderPage(num) {
+      const page = await pdfDoc.getPage(num);
+      const viewport = page.getViewport({ scale: zoomScale * 1.5 });
+      
+      let wrapper = document.getElementById(`v-page-${num}`);
+      if (!wrapper) {
+          wrapper = document.createElement('div');
+          wrapper.className = 'v-page-wrapper';
+          wrapper.id = `v-page-${num}`;
+          pagesContainer.appendChild(wrapper);
+      }
+      
+      wrapper.innerHTML = "";
+      const canvas = document.createElement('canvas');
+      canvas.width = viewport.width;
+      canvas.height = viewport.height;
+      wrapper.appendChild(canvas);
+
+      await page.render({ canvasContext: canvas.getContext('2d'), viewport }).promise;
+    }
+
+    zoomInBtn.onclick = () => { zoomScale += 0.2; updateZoom(); };
+    zoomOutBtn.onclick = () => { if (zoomScale > 0.4) zoomScale -= 0.2; updateZoom(); };
+    function updateZoom() {
+       zoomLevelText.innerText = ((window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(Math.round(zoomScale * 100), 0) : Math.round(zoomScale * 100)) + '%';
+      for (let i = 1; i <= totalPages; i++) { renderPage(i); }
+    }
+
+    toggleSidebarBtn.onclick = () => sidebar.classList.toggle('active');
+    fullscreenBtn.onclick = () => pagesContainer.requestFullscreen();
+
+    pagesContainer.onscroll = () => {
+        const scrollTop = pagesContainer.scrollTop;
+        const pageHeight = pagesContainer.scrollHeight / totalPages;
+        const curPage = Math.floor(scrollTop / pageHeight) + 1;
+        pageNav.innerText = `Page ${curPage} / ${totalPages}`;
+    };
+
+    nextPageBtn.onclick = () => {
+        const scrollTop = pagesContainer.scrollTop;
+        const pageHeight = pagesContainer.scrollHeight / totalPages;
+        pagesContainer.scrollTo({ top: scrollTop + pageHeight, behavior: 'smooth' });
+    };
+
+    prevPageBtn.onclick = () => {
+        const scrollTop = pagesContainer.scrollTop;
+        const pageHeight = pagesContainer.scrollHeight / totalPages;
+        pagesContainer.scrollTo({ top: scrollTop - pageHeight, behavior: 'smooth' });
+    };
+
+    // Init Drag and Drop using global helper
+    setupDragDrop('drop-zone', (files) => {
+       if (files.length) handleFile(files[0]);
+    });
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

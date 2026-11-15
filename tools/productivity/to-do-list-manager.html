@@ -1,0 +1,625 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">To Do List Manager – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/productivity/to-do-list-manager.html"/>
+<meta property="og:title" content="To Do List Manager – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/productivity/to-do-list-manager.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "To Do List Manager \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/productivity/to-do-list-manager.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="to do list manager, free to do list app, simple todo list tool, no login task manager, private to-do list, browser-based to-do" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json" id="schema-org-data">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "To-Do List Manager",
+    "operatingSystem": "Any",
+    "applicationCategory": "UtilitiesApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Task management, storage, task filtering, persistence"
+  }
+  </script>
+  <style>
+    .todo-input-group {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .todo-input-group input {
+      flex: 1;
+    }
+    .todo-list {
+      list-style: none;
+      padding: 0;
+    }
+    .todo-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px;
+      background: var(--dark);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      margin-bottom: 10px;
+      transition: transform var(--transition);
+    }
+    .todo-item:hover {
+      border-color: var(--primary);
+    }
+    .todo-item.completed span {
+      text-decoration: line-through;
+      color: var(--text-muted);
+    }
+    .todo-item input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+      accent-color: var(--primary);
+    }
+    .todo-item span {
+      flex: 1;
+      font-size: 0.95rem;
+    }
+    .todo-item .delete-task {
+      cursor: pointer;
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      transition: color var(--transition);
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .todo-item .delete-task:hover {
+      color: var(--primary);
+    }
+    .todo-filters {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .filter-btn-group {
+      display: flex;
+      gap: 5px;
+    }
+    .filter-btn {
+      background: var(--dark);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+    .filter-btn.active {
+      background: var(--primary);
+      color: var(--white);
+      border-color: var(--primary);
+    }
+    .clear-completed {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+    .clear-completed:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+    .tool-preview {
+      margin-top: 40px;
+      text-align: center;
+      padding-bottom: 20px;
+    }
+    .tool-preview p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+    .tool-preview img {
+      max-width: 100%;
+      height: auto;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      margin: 0 auto;
+    }
+    .trust-signal {
+      text-align: center;
+      padding: 24px 0;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      margin-top: 40px;
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/productivity/to-do-list-manager.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/productivity/to-do-list-manager.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/productivity/to-do-list-manager.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/productivity/to-do-list-manager.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/productivity/to-do-list-manager.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/productivity/to-do-list-manager.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/productivity/to-do-list-manager.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/productivity/to-do-list-manager.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/productivity/to-do-list-manager.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/productivity/to-do-list-manager.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/productivity/to-do-list-manager.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/productivity/to-do-list-manager.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/productivity/to-do-list-manager.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/productivity/to-do-list-manager.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/productivity/to-do-list-manager.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/productivity/to-do-list-manager.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/productivity/to-do-list-manager.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/productivity/to-do-list-manager.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/productivity/to-do-list-manager.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/productivity/to-do-list-manager.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/productivity/to-do-list-manager.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/productivity/to-do-list-manager.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <!-- HERO -->
+  <section class="tool-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../index.html">Home</a>
+        <span>›</span>
+        <a href="../../index.html#productivity">Productivity</a>
+        <span>›</span>
+        <span>To-Do List Manager</span>
+      </div>
+      <h1>To-Do List Manager</h1>
+      <p>Organize your day with this simple todo list tool. 100% private,-first, and saves automatically.</p>
+    </div>
+  </section>
+
+  <!-- TOOL -->
+  <main class="tool-main">
+    <div class="container-sm">
+      <div class="tool-box">
+        <div class="todo-input-group">
+          <input type="text" id="todo-input" class="form-control" placeholder="What needs to be done?" autocomplete="off" />
+          <button id="add-todo" class="btn btn-primary">Add</button>
+        </div>
+
+        <ul id="todo-list" class="todo-list">
+          <!-- Tasks will appear here -->
+        </ul>
+
+        <div class="todo-filters" id="todo-filters" style="display: none;">
+          <span id="items-left" style="font-size: 0.8rem; color: var(--text-muted);">0 items left</span>
+          <div class="filter-btn-group">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="active">Active</button>
+            <button class="filter-btn" data-filter="completed">Completed</button>
+          </div>
+          <button id="clear-completed" class="clear-completed">Clear completed</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tool Preview -->
+    <div class="tool-preview container-sm">
+      <p>Here's what it looks like:</p>
+      <img src="../../assets/images/todo-preview.png" alt="To-Do List Preview" loading="lazy" />
+    </div>
+  </main>
+
+  <!-- HUMANIZED CONTENT -->
+  <section class="seo-content mt-5 text-start">
+    <div class="container">
+      <h2 data-i18n="tools.todo_list_manager.what_is_title">What is the To-Do List Manager?</h2>
+      <p>The To-Do List Manager is a private task management tool that lets you add, complete, filter, and delete tasks without any account or cloud synchronization. Standard task managers sync your to-do items to external servers, where they can be analyzed or stored permanently. This tool saves all task data exclusively in your browser's localStorage.</p>
+      <p>Tasks persist across page refreshes and browser restarts. Use the "Active," "Completed," and "All" filters to view your list by status. When you are done with completed items, "Clear Completed" removes them permanently.</p>
+
+      <h3 class="mt-4">How to Use the To-Do List Manager</h3>
+      <p>Managing your tasks involves these steps:</p>
+      <ol class="mt-2 mb-3">
+        <li>Type a task description in the input field at the top of the task panel (e.g., "Finish project report").</li>
+        <li>Press Enter or click "Add" to add the task to your list instantly.</li>
+        <li>Click the checkbox next to a task to mark it as complete. A strikethrough style confirms the status change.</li>
+        <li>Use the filter buttons — "All", "Active", "Completed" — to narrow your view by task status.</li>
+        <li>Click "Clear Completed" to permanently remove all completed tasks from the list.</li>
+        <li>Click the × button next to any task to delete it individually.</li>
+      </ol>
+
+      <h3 class="mt-4">Key Features</h3>
+      <ul class="mt-2 mb-3">
+        <li><strong>Instant Task Entry:</strong> Add tasks with a single keystroke (Enter) and see them appear in your list immediately.</li>
+        <li><strong>Status Filters:</strong> Toggle between All, Active, and Completed views to reduce visual clutter.</li>
+        <li><strong>Items Left Counter:</strong> Shows the number of uncompleted tasks at a glance below the list.</li>
+        <li><strong>LocalStorage Persistence:</strong> Your task list survives browser refreshes and restarts with no login required.</li>
+      </ul>
+
+      <h3 class="mt-4">Common Use Cases</h3>
+      <p>This tool is helpful for the following tasks:</p>
+      <ul class="mt-2 mb-3">
+        <li><strong>Daily Task Management:</strong> Capturing your top priorities each morning and tracking progress through the day without a cloud subscription.</li>
+        <li><strong>Shopping &amp; Errand Lists:</strong> Keeping a running personal list accessible on any browser without needing a phone app.</li>
+        <li><strong>Project Checklists:</strong> Tracking deliverables, review steps, or launch tasks for a project in a simple, shareable checklist format.</li>
+      </ul>
+
+      <h3 class="mt-4">Frequently Asked Questions</h3>
+      <div class="faq-section mt-3">
+        <p><strong>Are my tasks stored on your servers?</strong><br>No. All task data is stored exclusively in your browser's localStorage. No tasks are transmitted to any server or cloud service.</p>
+        <p><strong>Is there a limit to how many tasks I can add?</strong><br>No hard limit is set. You can add hundreds of tasks. For practical productivity, we recommend focusing on your most important 3–5 items per day.</p>
+        <p><strong>What happens if I clear my browser data?</strong><br>Clearing site data for 99tool.in removes your localStorage, which will erase your task list. Copy or screenshot important tasks before a browser reset.</p>
+        <p><strong>Can I set due dates or priorities?</strong><br>The current version focuses on simplicity with a flat list and completion status. Priority tags and due date support are planned for a future update.</p>
+      </div>
+
+      <h3 class="mt-4">Privacy &amp; Data Note</h3>
+      <p>All task entries, completion states, and filters are processed and stored entirely inside your browser's localStorage. No task data is sent to any server, read by any third party, or stored in any external database.</p>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="faq-section">
+    <div class="container-sm">
+      <h2 data-i18n="tools.todo_list_manager.faq_title">Frequently Asked Questions</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <button class="faq-question">Are my tasks stored on your servers?<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>Not a single byte. We don't have a database for your tasks. Everything is saved directly in your browser's private memory (<code>localStorage</code>). Your daily agenda stays exactly where it belongs: on your device.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Is there a limit to how many items I can add?<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>There is no software-defined limit. You can add hundreds of tasks. For maximum productivity, we recommend focusing on your "Top 3-5" high-impact items for the day.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Why did my list disappear?<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>Since data is stored locally, clearing "Site Data" or "LocalStorage" for 99tool.in will erase the list. We recommend copying important tasks before clearing your browser.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Does it work on mobile phones?<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>Yes. The tool is fully responsive and works on mobile browsers, making it ideal for keeping a quick task list handy while on the go.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container trust-signal">
+    <p>🔒 100% Privacy Focused. No data is stored on our servers. Last updated: April 10, 2026.</p>
+  </div>
+
+  <div id="site-footer"></div>
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const todoInput = document.getElementById('todo-input');
+    const addTodoBtn = document.getElementById('add-todo');
+    const todoList = document.getElementById('todo-list');
+    const todoFilters = document.getElementById('todo-filters');
+    const itemsLeft = document.getElementById('items-left');
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const clearCompletedBtn = document.getElementById('clear-completed');
+
+    let todos = JSON.parse(localStorage.getItem('99tool_todos')) || [];
+    let currentFilter = 'all';
+
+    function saveTodos() {
+      localStorage.setItem('99tool_todos', JSON.stringify(todos));
+    }
+
+    function render() {
+      todoList.innerHTML = '';
+      let filteredTodos = todos;
+      
+      if (currentFilter === 'active') {
+        filteredTodos = todos.filter(t => !t.completed);
+      } else if (currentFilter === 'completed') {
+        filteredTodos = todos.filter(t => t.completed);
+      }
+
+      filteredTodos.forEach((todo, index) => {
+        const li = document.createElement('li');
+        li.className = `todo-item ${todo.completed ? 'completed' : ''}`;
+        li.innerHTML = `
+          <input type="checkbox" ${todo.completed ? 'checked' : ''} onchange="toggleTodo(${index})">
+          <span>${todo.text}</span>
+          <button class="delete-task" onclick="deleteTodo(${index})" aria-label="Delete task">&times;</button>
+        `;
+        todoList.appendChild(li);
+      });
+
+      const activeCount = todos.filter(t => !t.completed).length;
+       const formattedCount = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(activeCount, 0) : activeCount;
+       itemsLeft.textContent = `${formattedCount} item${activeCount !== 1 ? 's' : ''} left`;
+      
+      // Fix: Only show counter/filters if there are tasks
+      if (todos.length > 0) {
+        todoFilters.style.display = 'flex';
+      } else {
+        todoFilters.style.display = 'none';
+      }
+      
+      saveTodos();
+    }
+
+    function addTodo() {
+      const text = todoInput.value.trim();
+      if (text) {
+        todos.push({ text, completed: false });
+        todoInput.value = '';
+        render();
+      }
+    }
+
+    window.toggleTodo = function(index) {
+      // Find actual index if filtered
+      if (currentFilter !== 'all') {
+         const filtered = todos.filter(t => {
+            if (currentFilter === 'active') return !t.completed;
+            if (currentFilter === 'completed') return t.completed;
+            return true;
+         });
+         const item = filtered[index];
+         const realIndex = todos.indexOf(item);
+         todos[realIndex].completed = !todos[realIndex].completed;
+      } else {
+        todos[index].completed = !todos[index].completed;
+      }
+      render();
+    };
+
+    window.deleteTodo = function(index) {
+       if (currentFilter !== 'all') {
+         const filtered = todos.filter(t => {
+            if (currentFilter === 'active') return !t.completed;
+            if (currentFilter === 'completed') return t.completed;
+            return true;
+         });
+         const item = filtered[index];
+         const realIndex = todos.indexOf(item);
+         todos.splice(realIndex, 1);
+      } else {
+        todos.splice(index, 1);
+      }
+      render();
+    };
+
+    addTodoBtn.addEventListener('click', addTodo);
+    todoInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') addTodo();
+    });
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentFilter = btn.dataset.filter;
+        render();
+      });
+    });
+
+    clearCompletedBtn.addEventListener('click', () => {
+      todos = todos.filter(t => !t.completed);
+      render();
+    });
+
+    render();
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

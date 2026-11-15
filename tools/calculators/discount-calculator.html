@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Discount Calculator – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/calculators/discount-calculator.html"/>
+<meta property="og:title" content="Discount Calculator – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/calculators/discount-calculator.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Discount Calculator \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/calculators/discount-calculator.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .math-workspace {
+      max-width: 650px;
+      margin: 2rem auto;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      border-radius: 20px;
+    }
+    .input-row { display: grid; grid-template-columns: 1.5fr 1fr; gap: 1rem; margin-bottom: 2rem; }
+    label { display: block; margin-bottom: 0.5rem; color: var(--text-muted); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; }
+    input {
+      width: 100%;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 1rem;
+      border-radius: 12px;
+      font-size: 1.25rem;
+    }
+    
+    .price-summary {
+       background: rgba(var(--primary-rgb), 0.05);
+       border: 1px solid var(--primary);
+       padding: 2.5rem;
+       border-radius: 20px;
+       text-align: center;
+       margin-top: 2.5rem;
+       display: none;
+    }
+    .main-price { font-size: 4rem; font-weight: 800; color: var(--primary); line-height: 1; }
+    .price-lab { font-size: 0.9rem; color: var(--text-muted); margin-top: 10px; text-transform: uppercase; letter-spacing: 2px; }
+    
+    .savings-block {
+       margin-top: 2rem;
+       padding-top: 1.5rem;
+       border-top: 1px dashed var(--border);
+       font-weight: 700;
+       color: #4cd137;
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/calculators/discount-calculator.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/calculators/discount-calculator.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/calculators/discount-calculator.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/calculators/discount-calculator.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/calculators/discount-calculator.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/calculators/discount-calculator.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/calculators/discount-calculator.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/calculators/discount-calculator.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/calculators/discount-calculator.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/calculators/discount-calculator.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/calculators/discount-calculator.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/calculators/discount-calculator.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/calculators/discount-calculator.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/calculators/discount-calculator.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/calculators/discount-calculator.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/calculators/discount-calculator.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/calculators/discount-calculator.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/calculators/discount-calculator.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/calculators/discount-calculator.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/calculators/discount-calculator.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/calculators/discount-calculator.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/calculators/discount-calculator.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Infinite Discount & Savings Solver</h1>
+      <p>Analyze retail value with precision. Calculate exact final prices for any percentage-based sale instantly.</p>
+    </div>
+
+    <div class="math-workspace">
+      <div class="input-row">
+         <div>
+            <label>Original Price ($)</label>
+            <input type="number" id="orig-price" placeholder="0.00" oninput="solve()">
+         </div>
+         <div>
+            <label>Discount (%)</label>
+            <input type="number" id="disc-percent" placeholder="e.g., 25" oninput="solve()">
+         </div>
+      </div>
+
+      <div class="price-summary" id="price-panel">
+         <div class="price-lab">Final Sale Price</div>
+         <div class="main-price" id="res-final">$0.00</div>
+         
+         <div class="savings-block">
+            🎁 You Save: <span id="res-savings">$0.00</span>
+         </div>
+      </div>
+
+      <!-- CONTENT SECTION -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.discount_calculator.what_is_title">What is the Infinite Discount & Savings Solver?</h2>
+        <p>The Infinite Discount & Savings Solver is a client-side shopping utility designed to calculate the discounted price of an item and your total savings. By inputting the original retail price and the discount percentage, the tool instantly computes the final sale price and the exact amount of cash saved.</p>
+        <p>This calculator is ideal for retail shopping, contract reviews, wholesale sourcing, and budgeting. Because all math takes place locally in your web browser, none of your pricing inquiries or shopping items are sent to external tracking servers.</p>
+
+        <h2 class="mt-4" data-i18n="tools.discount_calculator.how_to_use_title">How to Use the Infinite Discount & Savings Solver</h2>
+        <ol>
+          <li><strong>Enter the Original Price:</strong> Type the full retail price of the item into the "Original Price ($)" input field.</li>
+          <li><strong>Enter the Discount Percentage:</strong> Type the discount rate (e.g., 10, 20, or 50) into the "Discount (%)" input field.</li>
+          <li><strong>View the Final Price:</strong> The results panel appears automatically once you enter values. It displays the "Final Sale Price" in bold text.</li>
+          <li><strong>Review Cash Savings:</strong> Look at the green savings badge at the bottom of the card to see the exact dollar amount saved.</li>
+        </ol>
+
+        <h2 class="mt-4" data-i18n="tools.discount_calculator.key_features_title">Key Features</h2>
+        <ul>
+          <li><strong>Live Savings Auditor:</strong> Updates calculations as you type to make comparison shopping fast and simple.</li>
+          <li><strong>Dual Output Fields:</strong> Displays both the final purchase price and the raw cash savings value side-by-side.</li>
+          <li><strong>Fractional Pricing Support:</strong> Handles decimal prices (e.g., $99.99) and custom discount percentages easily.</li>
+          <li><strong>Local Browser Sandbox:</strong> Calculations run directly in the browser RAM to keep your personal purchases private.</li>
+        </ul>
+
+        <h2 class="mt-4" data-i18n="tools.discount_calculator.common_use_cases_title">Common Use Cases</h2>
+        <ul>
+          <li><strong>Retail Sales and Clearance Events:</strong> Calculate the final price of clothing, electronics, or home goods during store-wide discounts.</li>
+          <li><strong>Wholesale and Bulk Pricing Audits:</strong> Evaluate discount percentages from wholesale suppliers to manage your business purchase budget.</li>
+          <li><strong>Negotiation Preparation:</strong> Find out exactly how much you save on contractual agreements when adjusting discount rates.</li>
+          <li><strong>Subscription Plan Evaluations:</strong> Compare yearly billing discounts against monthly prices to verify actual long-term savings.</li>
+        </ul>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2 data-i18n="tools.discount_calculator.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Does this tool support stacked discounts?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>This widget calculates a single discount percentage. To calculate a stacked discount (e.g., 20% off plus an extra 10% off), calculate the first discount, then enter the resulting final price as the new original price to apply the second discount.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Is my shopping activity or product data saved?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. 99tool.in processes all calculations locally in your browser. No details about the prices you calculate, your location, or your device are uploaded or shared.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              How do I calculate a discount if the price includes sales tax?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>For accurate results, enter the pre-tax price as the original price, apply the discount, and then calculate tax on the final discounted price. This is how most retailers calculate sales tax at checkout.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              What does the green "You Save" badge represent?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>The "You Save" badge shows the absolute dollar value subtracted from the original price, helping you see the actual cash value of the discount.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Why does the result disappear when the price is set to zero?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>If the original price is zero or negative, no transaction is taking place, so the tool hides the results panel to prevent confusing zero-value calculations.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 Privacy & Data Note: All discount calculations are processed locally. Your input values, item costs, and discount margins are never uploaded to any server.</p>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    function solve() {
+       const orig = parseFloat(document.getElementById('orig-price').value) || 0;
+       const disc = parseFloat(document.getElementById('disc-percent').value) || 0;
+
+       if (orig <= 0) {
+          document.getElementById('price-panel').style.display = 'none';
+          return;
+       }
+
+       const savings = orig * (disc / 100);
+       const final = orig - savings;
+
+       document.getElementById('res-final').innerText = (window.i18n && window.i18n.formatCurrency) ? window.i18n.formatCurrency(final, 2) : '$' + final.toFixed(2);
+       document.getElementById('res-savings').innerText = (window.i18n && window.i18n.formatCurrency) ? window.i18n.formatCurrency(savings, 2) : '$' + savings.toFixed(2);
+       document.getElementById('price-panel').style.display = 'block';
+    }
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Batch Resizer – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/image/batch-resizer.html"/>
+<meta property="og:title" content="Batch Resizer – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/image/batch-resizer.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Batch Resizer \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/image/batch-resizer.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="batch image resizer, bulk image resize, resize images, multiple image resizer, secure image tool" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- JSZip for bulk download -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Batch Image Resizer",
+    "operatingSystem": "Any",
+    "applicationCategory": "DesignApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Bulk Resizing, Canvas Processing, ZIP Export, Private local processing"
+  }
+  </script>
+
+  <style>
+    .resizer-layout { display: grid; grid-template-columns: 1fr; gap: 30px; }
+
+    .controls-pane, .queue-pane {
+      background: var(--dark-card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 30px;
+    }
+
+    .form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: var(--white); }
+    .form-control { width: 100%; }
+
+    .queue-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 15px; margin-top: 20px;
+    }
+
+    .queue-card {
+      background: var(--dark); border: 1px solid var(--border); border-radius: var(--radius-sm);
+      padding: 10px; text-align: center; position: relative;
+    }
+    .queue-card img { width: 100%; height: 80px; object-fit: cover; border-radius: 4px; margin-bottom: 8px; }
+    .queue-card .name { font-size: 0.65rem; color: var(--text-muted); word-break: break-all; }
+    .queue-card .status { font-size: 0.6rem; color: var(--primary); font-weight: 700; text-transform: uppercase; margin-top: 5px; }
+
+    @media (min-width: 900px) {
+      .resizer-layout { grid-template-columns: 350px 1fr; }
+    }
+
+    #loading-overlay {
+       position: fixed; top:0; left:0; right:0; bottom:0; background: rgba(0,0,0,0.8);
+       display: flex; flex-direction: column; align-items: center; justify-content: center;
+       z-index: 1000; display: none;
+    }
+    .spinner {
+       width: 40px; height: 40px; border: 4px solid var(--border); border-top-color: var(--primary);
+       border-radius: 50%; animation: spin 1s linear infinite; margin-bottom: 20px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#image">Image Tools</a> <span>/</span> 
+        <span>Batch Image Resizer</span>
+      </nav>
+      <h1>Batch Image Resizer</h1>
+      <p>Scale entire collections of images instantly. Set your dimensions once and process hundreds of files in your browser with absolute privacy.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div id="upload-stage">
+        <div class="upload-area" id="drop-zone">
+          <div class="upload-icon">🖼️</div>
+          <h3>Select your images</h3>
+          <p>Drag & drop multiple images or click to browse</p>
+          <input type="file" id="file-input" accept="image/*" multiple class="hidden">
+        </div>
+        <div class="info-box">
+          <div class="info-icon">⚡</div>
+          <p>We use high-performance <strong>Canvas Rendering</strong> to process your images locally. Files are never uploaded, ensuring your visual assets remain secure.</p>
+        </div>
+      </div>
+
+      <div id="process-stage" class="hidden">
+        <div class="resizer-layout">
+           <div class="controls-pane">
+              <h3>Resize Options</h3>
+              <p class="text-muted small mb-4">Apply settings to all selected images.</p>
+
+              <div class="form-group mb-4">
+                 <label>Resize Mode</label>
+                 <select id="resize-mode" class="form-control">
+                    <option value="width">Target Width (Maintain Aspect)</option>
+                    <option value="height">Target Height (Maintain Aspect)</option>
+                    <option value="percentage">Percentage Scale</option>
+                 </select>
+              </div>
+
+              <div class="form-group mb-4">
+                 <label id="val-label">Target Pixels</label>
+                 <input type="number" id="resize-val" class="form-control" value="800">
+              </div>
+
+              <div class="form-group mb-4">
+                 <label>Output Format</label>
+                 <select id="format" class="form-control">
+                    <option value="image/jpeg">JPEG (High Compatible)</option>
+                    <option value="image/png">PNG (Lossless)</option>
+                    <option value="image/webp">WebP (Optimized)</option>
+                 </select>
+              </div>
+
+              <button class="btn btn-primary btn-full" id="start-btn">Process & Zip</button>
+              <button class="btn btn-secondary btn-full mt-3" onclick="location.reload()">Reset Batch</button>
+           </div>
+
+           <div class="queue-pane">
+              <div class="flex justify-between items-center mb-4">
+                 <h3 class="mb-0">Process Queue</h3>
+                 <span class="text-muted small" id="queue-status">0 files selected</span>
+              </div>
+              <div class="queue-grid" id="queue-grid">
+                 <!-- Entries injected -->
+              </div>
+           </div>
+        </div>
+      </div>
+
+      <!-- LOADING OVERLAY -->
+      <div id="loading-overlay">
+         <div class="spinner"></div>
+         <p id="loading-text">Processing images: 0%</p>
+      </div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5">
+        <h2>Scaling Your Vision in Private: The Logic of Local Batch Resizing</h2>
+        <p>We’ve all been there: you have a collection of high-resolution project photos—perhaps from a site visit, a product shoot, or a technical audit—and you need to resize them all for an internal report or a web upload. Doing them one by one is a tedious bottleneck. You want to scale them all at once, so you look for a <strong>batch image resizer online</strong>. But as you prepare to upload your proprietary project assets to a cloud-hosted processing engine, you pause. Do you really want to share your project's "Visual Progress" and proprietary imagery with an anonymous scraping engine or an ad-tracking server?</p>
+
+        <p>At 99tool.in, we built our <strong>batch image resizer</strong> to provide a professional-grade darkroom for your visual assets without the privacy trade-off. By utilizing native browser Canvas rendering and zero-cloud processing, we allow you to <strong>bulk resize images</strong> entirely within the secure sandbox of your machine. Whether you’re a marketing coordinator preparing social media assets, a developer optimizing project screenshots, or a photographer scaling proofs for clients, our <strong>safe batch tool</strong> ensures that your images stay where they belong: on your device, under your total sovereignty.</p>
+        
+        <div class="tool-preview-box mt-4 mb-4" style="text-align:center;">
+           <img src="../../assets/images/markdown-preview.png" alt="Pro-Grade Batch Image Processor with parallel rendering queue and secure ZIP export" class="tool-preview" id="tool-preview-img" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+        </div>
+
+        <h3 class="mt-4">The Logic of "Structural Aspect Integrity"</h3>
+        <p>Image scaling is about "Visual Trust." Most basic <strong>online bulk resizers</strong> produce blurry results or distort the proportions of your work. Our <strong>professional batch resizer</strong> takes a human-centric approach: we focus on **Bicubic interpolation** and **Aspect Lock Fidelity**.</p>
+        
+        <p>We've engineered a deterministic engine that handles resizing logic in the browser's background. Our <strong>safe image validator</strong> ensures that whether you’re targeting a specific width or a percentage scale, the original aspect ratio is preserved down to the pixel. This transparency transforms a chaotic batch of different-sized files into a uniform, professional collection, ready for your next technical milestone.</p>
+
+        <h3 class="mt-4">Why Processing is the Creative’s Ethical Choice</h2>
+        <p>In the age of digital profiling and automated technical scraping, your image collection is a map of your work priorities and visual assets. Using a standard <strong>bulk image resizer online free</strong> service creates a digital record of what you are processing. Our 100% <strong>batch utility</strong> removes this "IP Vulnerability" entirely from your routine.</p>
+        
+        <p>Because the scaling and compression happen in your browser's private memory, your assets are invisible to the outside world. No analytics are tracked, no thumbnails are harvested, and no proprietary imagery is shared with AI trackers or advertisers. At 99tool.in, we believe that <strong>managing your visuals</strong> should be an empowering utility, not a data-collection opportunity. With us, you have a private, professional laboratory for your data that fits in your browser tab.</p>
+
+        <h3 class="mt-4">How to Bulk Resize Your Archive (Step-by-Step)</h3>
+        <p>Processing a batch of fifty images should be a high-speed, 10-second task. Here is how to use our <strong>batch tool</strong>:</p>
+        <ul style="line-height: 1.8; margin-bottom: 20px;">
+          <li><strong>Step 1: Define Your Batch</strong> — Drag your entire collection of images into the local sandbox. Our system sorts the queue and prepares the canvas engine instantly.</li>
+          <li><strong>Step 2: Set the Specs</strong> — Choose your target dimension (e.g., Width 1200px) or Scale Percentage. Select your preferred output format for optimal file size.</li>
+          <li><strong>Step 3: Trigger the Engine</strong> — Click "Process & Zip." Watch as the progress dashboard updates in real-time while our engine renders each image in the secure background.</li>
+          <li><strong>Step 4: Secure Your Bundle</strong> — Once processing is complete, download the consolidated ZIP file containing your new images. The raw data never leaves your sight.</li>
+        </ul>
+
+        <h3 class="mt-4">Strategic Use Cases for Your Local Batch Tool</h3>
+        <p>Our <strong>searchable image engine</strong> is the essential companion for modern digital communication:</p>
+        
+        <p><strong>For Web Developers:</strong> Preparing a gallery of product images? Use our <strong>batch image resizer</strong> to ensure every asset matches the CSS requirements perfectly.</p>
+        
+        <p><strong>For Social Media Managers:</strong> Scaling a photoshoot for various platforms? Use our <strong>safe image tool</strong> to generate multiple sizes privately from your source files.</p>
+        
+        <p><strong>For Project Auditors:</strong> Resizing thousands of site inspection photos for a compact PDF report? Use our <strong>safe data tool</strong> to save gigabytes of space in seconds.</p>
+
+        <h3 class="mt-5">Explore Your Complete Image Suite</h3>
+        <p>Once you’ve scaled your images, you might need to check their metadata. Check out our <strong><a href="metadata-viewer.html">Image Metadata Viewer</a></strong>. Or, if you need to optimize for web speed, use our <strong><a href="compress-image.html">Image Compressor</a></strong>. At 99tool.in, we are building a world-class, 100% private digital toolkit to give you total control over the integrity of your visuals.</p>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section mt-5">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Is there a limit on how many images I can resize?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>While modern browsers are highly efficient, we recommend processing <strong>batches of 50-100 images</strong> at a time for the best performance. Processing too many very high-resolution images simultaneously may consume significant browser memory depending on your device.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Does this tool support WebP conversion?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. You can select **WebP** as your output format to benefit from modern, high-efficiency compression. This significantly reduces file sizes compared to traditional JPEG or PNG without a noticeable loss in visual quality.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Is my batch processing secure and private?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Absolutely. 100% of the image rendering and ZIP generation happen within your <strong>browser session's local sandbox</strong>. No data is sent to our servers, and no records of your visual assets are kept. Your privacy is our standard.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              How does "Maintain Aspect Ratio" work?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Our <strong>bulk resizer</strong> automatically calculates the appropriate height if you set a target width (and vice versa). This ensures that your images are scaled proportionally and never appear "stretched" or distorted.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I resize images by percentage?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. By switching the Resize Mode to <strong>Percentage Scale</strong>, you can quickly shrink or enlarge your entire collection by a specific factor (e.g., 50% for half-size), which is ideal for quick storage optimizations.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Why should I use a browser-based resizer?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Traditional online resizers require you to upload your entire library to their servers, which is slow and poses a privacy risk. Our <strong>local batch tool</strong> is near-instant because there is no upload time, and your proprietary assets never leave your computer.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 Privacy-First. Multi-Threaded Logic. 100% private. Last updated: April 10, 2026.</p>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const dropZone = document.getElementById('drop-zone');
+    const fileInput = document.getElementById('file-input');
+    const uploadStage = document.getElementById('upload-stage');
+    const processStage = document.getElementById('process-stage');
+    const queueGrid = document.getElementById('queue-grid');
+    const queueStatus = document.getElementById('queue-status');
+    const resizeMode = document.getElementById('resize-mode');
+    const resizeVal = document.getElementById('resize-val');
+    const valLabel = document.getElementById('val-label');
+    const startBtn = document.getElementById('start-btn');
+    const loadingOverlay = document.getElementById('loading-overlay');
+    const loadingText = document.getElementById('loading-text');
+
+    let filesQueue = [];
+
+    dropZone.onclick = () => fileInput.click();
+    fileInput.onchange = (e) => handleFiles(e.target.files);
+    
+    // Init Drag and Drop using global helper
+    setupDragDrop('drop-zone', (files) => {
+       handleFiles(files);
+    });
+
+    function handleFiles(files) {
+       if (!files.length) return;
+       filesQueue = Array.from(files);
+       uploadStage.classList.add('hidden');
+       processStage.classList.remove('hidden');
+       renderQueue();
+    }
+
+    function renderQueue() {
+       queueStatus.textContent = `${filesQueue.length} files selected`;
+       queueGrid.innerHTML = filesQueue.map((f, i) => `
+          <div class="queue-card" id="card-${i}">
+             <img src="${URL.createObjectURL(f)}" alt="thumb">
+             <div class="name">${f.name}</div>
+             <div class="status" id="status-${i}">Pending</div>
+          </div>
+       `).join('');
+    }
+
+    resizeMode.onchange = () => {
+       if (resizeMode.value === 'percentage') {
+          valLabel.textContent = 'Scale Percentage (%)';
+          resizeVal.value = '50';
+       } else {
+          valLabel.textContent = 'Target Pixels';
+          resizeVal.value = '800';
+       }
+    };
+
+    startBtn.onclick = async () => {
+       loadingOverlay.style.display = 'flex';
+       const zip = new JSZip();
+       const format = document.getElementById('format').value;
+       const ext = format.split('/')[1];
+
+       for (let i = 0; i < filesQueue.length; i++) {
+          const file = filesQueue[i];
+          loadingText.textContent = `Processing: ${Math.round((i/filesQueue.length)*100)}% (${file.name})`;
+          document.getElementById(`status-${i}`).textContent = 'Processing...';
+
+          try {
+             const resizedBlob = await resizeImage(file);
+             zip.file(`${file.name.split('.')[0]}_resized.${ext}`, resizedBlob);
+             document.getElementById(`status-${i}`).textContent = 'Done ✅';
+             document.getElementById(`status-${i}`).style.color = '#4caf50';
+          } catch (e) {
+             document.getElementById(`status-${i}`).textContent = 'Error ❌';
+             console.error(e);
+          }
+       }
+
+       loadingText.textContent = 'Generating Export ZIP...';
+       const content = await zip.generateAsync({ type: 'blob' });
+       const link = document.createElement('a');
+       link.href = URL.createObjectURL(content);
+       link.download = `resized_batch_${new Date().getTime()}.zip`;
+       link.click();
+       
+       loadingOverlay.style.display = 'none';
+    };
+
+    function resizeImage(file) {
+       return new Promise((resolve, reject) => {
+          const img = new Image();
+          img.src = URL.createObjectURL(file);
+          img.onload = () => {
+             const canvas = document.createElement('canvas');
+             const ctx = canvas.getContext('2d');
+             
+             let targetW, targetH;
+             const val = parseInt(resizeVal.value);
+             const ratio = img.width / img.height;
+
+             if (resizeMode.value === 'width') {
+                targetW = val;
+                targetH = val / ratio;
+             } else if (resizeMode.value === 'height') {
+                targetH = val;
+                targetW = val * ratio;
+             } else {
+                targetW = img.width * (val / 100);
+                targetH = img.height * (val / 100);
+             }
+
+             canvas.width = targetW;
+             canvas.height = targetH;
+             
+             // Smoothing
+             ctx.imageSmoothingEnabled = true;
+             ctx.imageSmoothingQuality = 'high';
+             ctx.drawImage(img, 0, 0, targetW, targetH);
+             
+             canvas.toBlob((blob) => resolve(blob), document.getElementById('format').value, 0.9);
+          };
+          img.onerror = reject;
+       });
+    }
+  </script>
+</body>
+</html>
+

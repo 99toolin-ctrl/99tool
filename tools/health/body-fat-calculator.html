@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Body Fat Calculator – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/health/body-fat-calculator.html"/>
+<meta property="og:title" content="Body Fat Calculator – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/health/body-fat-calculator.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Body Fat Calculator \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/health/body-fat-calculator.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .fat-workspace {
+      max-width: 600px;
+      margin: 2rem auto;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      border-radius: 20px;
+    }
+    .form-group { margin-bottom: 1.2rem; }
+    label { display: block; margin-bottom: 0.4rem; font-weight: 600; color: var(--text-muted); font-size: 0.9rem; }
+    input, select {
+      width: 100%;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.7rem;
+      border-radius: 8px;
+    }
+    .result-card {
+      background: var(--bg-secondary);
+      padding: 2rem;
+      border-radius: 12px;
+      margin-top: 2rem;
+      text-align: center;
+      display: none;
+      border: 2px solid var(--primary);
+    }
+    .fat-val { font-size: 3.5rem; font-weight: 900; color: var(--primary); }
+    .female-only { display: none; }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/health/body-fat-calculator.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/health/body-fat-calculator.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/health/body-fat-calculator.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/health/body-fat-calculator.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/health/body-fat-calculator.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/health/body-fat-calculator.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/health/body-fat-calculator.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/health/body-fat-calculator.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/health/body-fat-calculator.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/health/body-fat-calculator.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/health/body-fat-calculator.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/health/body-fat-calculator.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/health/body-fat-calculator.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/health/body-fat-calculator.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/health/body-fat-calculator.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/health/body-fat-calculator.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/health/body-fat-calculator.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/health/body-fat-calculator.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/health/body-fat-calculator.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/health/body-fat-calculator.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/health/body-fat-calculator.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/health/body-fat-calculator.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Infinite Body Fat Calculator</h1>
+      <p>Estimate your body composition using the standardized U.S. Navy Method.</p>
+    </div>
+
+    <div class="fat-workspace">
+      <div class="form-group">
+        <label>Gender</label>
+        <select id="gender" onchange="toggleGenderFields()">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Height (cm)</label>
+        <input type="number" id="height" placeholder="e.g. 175">
+      </div>
+      <div class="form-group">
+        <label>Neck (cm) - measured just below Adam's apple</label>
+        <input type="number" id="neck" placeholder="e.g. 38">
+      </div>
+      <div class="form-group">
+        <label>Waist (cm) - measured at navel for men, narrowest point for women</label>
+        <input type="number" id="waist" placeholder="e.g. 85">
+      </div>
+      <div class="form-group female-only" id="hip-group">
+        <label>Hips (cm) - measured at widest point</label>
+        <input type="number" id="hip" placeholder="e.g. 95">
+      </div>
+      
+      <button onclick="calculateFat()" class="btn btn-primary btn-lg btn-full">Estimate Body Fat</button>
+
+      <div class="result-card" id="result-card">
+         <div class="fat-val" id="fat-res">0%</div>
+         <div class="mt-2 font-weight-bold">Estimated Body Fat Percentage</div>
+         <p class="mt-3 text-muted small">This estimation is based on body circumference measurements and may vary by ±3% compared to DXA scans.</p>
+      </div>
+
+      <!-- CONTENT SECTION -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.body_fat_calculator.what_is_title">What is the Infinite Body Fat Calculator?</h2>
+        <p>The Infinite Body Fat Calculator is a client-side body composition utility designed to estimate body fat percentage using circumference measurements. Based on the widely recognized U.S. Navy Method, it uses height, neck, waist, and hip dimensions to calculate fat mass ratios without clinical scans.</p>
+        <p>This calculator processes all logarithmic formulas, circumference equations, and gender adjustments locally in your browser memory. Your measurements and calculated percentages are never uploaded, ensuring complete data security.</p>
+
+        <h2 class="mt-4" data-i18n="tools.body_fat_calculator.how_to_use_title">How to Use the Infinite Body Fat Calculator</h2>
+        <ol>
+          <li><strong>Select Gender:</strong> Choose Male or Female from the dropdown menu. Selecting Female displays the required Hips input box.</li>
+          <li><strong>Enter Height:</strong> Input your height in centimeters (cm).</li>
+          <li><strong>Measure & Enter Neck Circumference:</strong> Measure your neck just below the larynx and input the value.</li>
+          <li><strong>Measure & Enter Waist Circumference:</strong> Measure your waist horizontally at the navel level for men, or at the narrowest point for women.</li>
+          <li><strong>Measure & Enter Hip Circumference (Females Only):</strong> Measure the hips at the widest point and enter the value.</li>
+          <li><strong>Calculate Body Fat:</strong> Click the "Estimate Body Fat" button to run the formulas locally and view your results card.</li>
+        </ol>
+
+        <h2 class="mt-4" data-i18n="tools.body_fat_calculator.key_features_title">Key Features</h2>
+        <ul>
+          <li><strong>U.S. Navy Method Formula:</strong> Employs the gold-standard mathematical formulas for body fat estimations.</li>
+          <li><strong>Dynamic Fields Toggle:</strong> Automatically toggles the hip input box depending on gender selections to keep forms clean.</li>
+          <li><strong>Instant Percentage Outputs:</strong> Renders calculated values immediately in a distinct results panel.</li>
+          <li><strong>Responsive Field Structure:</strong> Scales smoothly for easy use on smartphones, tablets, and computers.</li>
+          <li><strong>100% Client-Side Calculations:</strong> Runs locally in browser RAM to protect your physical measurements.</li>
+        </ul>
+
+        <h2 class="mt-4" data-i18n="tools.body_fat_calculator.common_use_cases_title">Common Use Cases</h2>
+        <ul>
+          <li><strong>Tracking Body Composition:</strong> Monitor the ratio of fat mass to lean muscle mass during weight training programs.</li>
+          <li><strong>Bulking & Cutting Cycles:</strong> Calculate body fat percentages to decide when to start fat loss or muscle gain phases.</li>
+          <li><strong>Fitness Progress Auditing:</strong> Get a more detailed health overview than weight alone can provide.</li>
+          <li><strong>General Wellness Tracking:</strong> Ensure body fat levels remain within healthy ranges for cardiovascular wellness.</li>
+        </ul>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section mt-5">
+        <h2 data-i18n="tools.body_fat_calculator.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              How does the U.S. Navy body fat formula work?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>The formula uses logarithmic equations based on differences in circumferences:
+              <br>For Men: <code>495 / (1.0324 - 0.19077 * log10(waist - neck) + 0.15456 * log10(height)) - 450</code>
+              <br>For Women: <code>495 / (1.29579 - 0.35004 * log10(waist + hip - neck) + 0.22100 * log10(height)) - 450</code></p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              How accurate is the circumference method?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>For most individuals, the U.S. Navy circumference method is accurate to within ±3% of clinical measurements like DXA scans or hydrostatic weighing, provided measurements are taken carefully.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              What are the healthy body fat ranges?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Typical healthy ranges are 14% to 24% for men and 21% to 31% for women. Athletes often maintain lower ranges (6% to 13% for men and 14% to 20% for women).</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Why do women require a hip measurement?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Biological fat distribution patterns differ by gender. The formula accounts for these variations by using waist-to-neck measurements for men, and adding hip measurements for women.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal text-center mt-4">
+        <p>🔒 Privacy & Data Note: Biological parameters, measurements, and body fat ratios are computed locally in your browser. No data is stored or uploaded.</p>
+        <p class="small text-muted mt-2"><strong>Disclaimer:</strong> This tool is a mathematical estimation. For clinical measurements, consult a healthcare professional or request a DXA scan.</p>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    function toggleGenderFields() {
+       const g = document.getElementById('gender').value;
+       document.getElementById('hip-group').style.display = (g === 'female') ? 'block' : 'none';
+    }
+
+    function calculateFat() {
+       const g = document.getElementById('gender').value;
+       const h = parseFloat(document.getElementById('height').value);
+       const n = parseFloat(document.getElementById('neck').value);
+       const w = parseFloat(document.getElementById('waist').value);
+       const hip = parseFloat(document.getElementById('hip').value);
+       
+       if (!h || !n || !w || (g === 'female' && !hip)) return alert('Please enter all required measurements.');
+
+       let fat = 0;
+       if (g === 'male') {
+          // Navy Men: 495 / (1.03248 - 0.19077 * log10(waist - neck) + 0.15456 * log10(height)) - 450
+          fat = 495 / (1.03248 - 0.19077 * Math.log10(w - n) + 0.15456 * Math.log10(h)) - 450;
+       } else {
+          // Navy Women: 495 / (1.29579 - 0.35004 * log10(waist + hip - neck) + 0.22100 * log10(height)) - 450
+          fat = 495 / (1.29579 - 0.35004 * Math.log10(w + hip - n) + 0.22100 * Math.log10(h)) - 450;
+       }
+
+       document.getElementById('fat-res').innerText = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(Math.max(0, fat), 1) + '%' : Math.max(0, fat).toFixed(1) + '%';
+       document.getElementById('result-card').style.display = 'block';
+    }
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>

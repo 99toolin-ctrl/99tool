@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Voltage Current – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/physics/voltage-current.html"/>
+<meta property="og:title" content="Voltage Current – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/physics/voltage-current.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Voltage Current \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/physics/voltage-current.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .physics-workspace {
+      max-width: 650px;
+      margin: 2rem auto;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      border-radius: 20px;
+    }
+    .input-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+    .input-group { position: relative; }
+    label { display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-muted); }
+    input {
+      width: 100%;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.8rem;
+      border-radius: 8px;
+      font-size: 1.1rem;
+    }
+    .unit-label {
+      position: absolute;
+      right: 1rem;
+      bottom: 0.8rem;
+      color: var(--primary);
+      font-weight: 700;
+      pointer-events: none;
+    }
+    .result-area {
+       background: rgba(255,255,255,0.03);
+       padding: 1.5rem;
+       border-radius: 12px;
+       margin-top: 2rem;
+       text-align: center;
+       border: 1px solid var(--border);
+       display: none;
+    }
+    .res-val { font-size: 2.5rem; font-weight: 900; color: var(--primary); margin-bottom: 0.5rem; }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Infinite Power (P=VI) Solver</h1>
+      <p>Analyze power consumption and load requirements. Solve for Watts, Volts, or Amps instantly.</p>
+    </div>
+
+    <div class="physics-workspace">
+      <div class="input-grid">
+         <div class="input-group">
+            <label>Power (P)</label>
+            <input type="number" id="p" placeholder="Enter Watts">
+            <span class="unit-label">W</span>
+         </div>
+         <div class="input-group">
+            <label>Voltage (V)</label>
+            <input type="number" id="v" placeholder="Enter Volts">
+            <span class="unit-label">V</span>
+         </div>
+         <div class="input-group">
+            <label>Current (I)</label>
+            <input type="number" id="i" placeholder="Enter Amps">
+            <span class="unit-label">A</span>
+         </div>
+      </div>
+      
+      <div class="mt-4 d-flex gap-3">
+         <button onclick="calculate()" class="btn btn-primary btn-lg btn-full">Solve Missing Value</button>
+         <button onclick="clearFields()" class="btn btn-secondary btn-lg btn-full">Clear</button>
+      </div>
+
+      <div class="result-area" id="result-box">
+         <div class="small text-muted mb-2">Calculated Load</div>
+         <div class="res-val" id="res-val">0</div>
+         <div id="res-formula" class="font-weight-bold">P = V × I</div>
+      </div>
+
+      <!-- SEO CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2>What is the P=VI Formula?</h2>
+        <p>The **Power Formula ($P = V \times I$)** defines the relationship between electrical power (Watts), potential difference (Voltage), and flow rate (Current). It is the standard calculation used to determine the electrical load of a device or the capacity needed for a circuit breaker. Our <strong>online voltage and current solver</strong> provides an automated way to audit these metrics for any electrical project.</p>
+
+        <h3 class="mt-4">How to Practical Load Auditing works</h2>
+        <p>If you know the wattage of an appliance and your household voltage (e.g., 230V in India or 110V in the US), you can calculate the current ($I$) required. This helps you select the correct fuse or wire gauge. Using our <strong>electrical power auditor</strong> ensures your configurations are safe and meet standardized engineering benchmarks.</p>
+
+        <h3 class="mt-4">Privacy and Privacy Accuracy</h2>
+        <p>At 99tool.in, we prioritize lightweight performance. Our <strong>private power calculator</strong> operates entirely in your local browser sandbox. No configurations or electrical data are stored on any server. This <strong>secure load checking tool</strong> provides the precision required for professional audits while maintaining your absolute privacy.</p>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    function calculate() {
+       const pEl = document.getElementById('p');
+       const vEl = document.getElementById('v');
+       const iEl = document.getElementById('i');
+       
+       const p = parseFloat(pEl.value);
+       const v = parseFloat(vEl.value);
+       const i = parseFloat(iEl.value);
+
+       const box = document.getElementById('result-box');
+       const valEl = document.getElementById('res-val');
+       const formEl = document.getElementById('res-formula');
+
+       let result = "";
+       let formula = "";
+
+       if (!isNaN(p) && !isNaN(v)) {
+          // Solv for I
+          const res = p / v;
+          result = res.toFixed(3) + " A";
+          formula = `I = P / V (${p} / ${v})`;
+          iEl.value = res.toFixed(3);
+       } else if (!isNaN(p) && !isNaN(i)) {
+          // Solv for V
+          const res = p / i;
+          result = res.toFixed(3) + " V";
+          formula = `V = P / I (${p} / ${i})`;
+          vEl.value = res.toFixed(3);
+       } else if (!isNaN(v) && !isNaN(i)) {
+          // Solv for P
+          const res = v * i;
+          result = res.toFixed(3) + " W";
+          formula = `P = V × I (${v} × ${i})`;
+          pEl.value = res.toFixed(3);
+       } else {
+          return alert('Please enter at least two values.');
+       }
+
+       valEl.innerText = result;
+       formEl.innerText = formula;
+       box.style.display = 'block';
+    }
+
+    function clearFields() {
+       document.getElementById('p').value = '';
+       document.getElementById('v').value = '';
+       document.getElementById('i').value = '';
+       document.getElementById('result-box').style.display = 'none';
+    }
+  </script>
+</body>
+</html>

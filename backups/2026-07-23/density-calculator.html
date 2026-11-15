@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Density Calculator – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/physics/density-calculator.html"/>
+<meta property="og:title" content="Density Calculator – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/physics/density-calculator.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Density Calculator \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/physics/density-calculator.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .physics-workspace {
+      max-width: 600px;
+      margin: 2rem auto;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      border-radius: 20px;
+    }
+    .form-group { margin-bottom: 1.5rem; }
+    label { display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-muted); }
+    input {
+      width: 100%;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.8rem;
+      border-radius: 8px;
+    }
+    .result-card {
+      background: var(--bg-secondary);
+      padding: 2rem;
+      border-radius: 12px;
+      margin-top: 2rem;
+      text-align: center;
+      display: none;
+      border: 2px solid var(--primary);
+    }
+    .res-val { font-size: 3.5rem; font-weight: 900; color: var(--primary); }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Infinite Density Calculator</h1>
+      <p>Analyze material properties. Calculate Density (ρ) using Mass and Volume.</p>
+    </div>
+
+    <div class="physics-workspace">
+      <div class="form-group">
+        <label>Mass (m) in kg</label>
+        <input type="number" id="mass" placeholder="e.g., 20">
+      </div>
+      <div class="form-group">
+        <label>Volume (V) in Cubic Meters (m³)</label>
+        <input type="number" id="vol" placeholder="e.g., 0.05">
+      </div>
+      
+      <button onclick="calculateDensity()" class="btn btn-primary btn-lg btn-full">Calculate Density</button>
+
+      <div class="result-card" id="result-card">
+         <div class="res-val" id="res">0 kg/m³</div>
+         <div class="mt-2 font-weight-bold">Measured Density (ρ)</div>
+         <p class="mt-3 text-muted small">Based on the formula $\rho = m / V$. Density is a measure of mass per unit volume of a substance.</p>
+      </div>
+
+      <!-- SEO CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2>What is Density?</h2>
+        <p>In physics and chemistry, **Density ($\rho$)** is the mass of a substance per unit of volume ($\rho = m / V$). It describes how compact or concentrated the particles in a material are. Our <strong>online density calculator</strong> provides a high-fidelity environment for analyzing material properties instantly. This is an essential <strong>material auditor tool</strong> for students and laboratory researchers.</p>
+
+        <h3 class="mt-4">Understanding Material Identity</h2>
+        <p>Every substance has a unique density that identifies it. For example, water has a density of approximately $1000\text{kg/m}^3$ at standard temperature. By using our <strong>mass-volume auditor</strong>, you can verify if a material is pure or if it matches its documented physical properties. A consistent <strong>material diagnostic tool</strong> is vital for quality control and academic research.</p>
+
+        <h3 class="mt-4">Privacy and Minimalist Performance</h2>
+        <p>At 99tool.in, we prioritize secure, local operations. Our <strong>private density tool</strong> runs entirely in your local browser sandbox. No mass or volume measurements are stored or transmitted. This <strong>secure physics auditor</strong> provides professional-grade results without any third-party data collection.</p>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    function calculateDensity() {
+       const m = parseFloat(document.getElementById('mass').value);
+       const v = parseFloat(document.getElementById('vol').value);
+       
+       if (isNaN(m) || isNaN(v) || v === 0) return alert('Please enter both mass and a non-zero volume.');
+
+       const d = m / v;
+       document.getElementById('res').innerText = d.toFixed(2) + ' kg/m³';
+       document.getElementById('result-card').style.display = 'block';
+    }
+  </script>
+</body>
+</html>

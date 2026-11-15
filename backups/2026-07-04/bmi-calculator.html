@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Bmi Calculator – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/health/bmi-calculator.html"/>
+<meta property="og:title" content="Bmi Calculator – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/health/bmi-calculator.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Bmi Calculator \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/health/bmi-calculator.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .bmi-workspace {
+      max-width: 600px;
+      margin: 2rem auto;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      border-radius: 20px;
+    }
+    .form-group { margin-bottom: 1.5rem; }
+    label { display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-muted); }
+    input[type="number"] {
+      width: 100%;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.8rem;
+      border-radius: 8px;
+    }
+    .result-card {
+      background: var(--bg-secondary);
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin-top: 2rem;
+      text-align: center;
+      display: none;
+    }
+    .bmi-val { font-size: 3rem; font-weight: 900; color: var(--primary); }
+    .bmi-cat { font-size: 1.2rem; font-weight: 700; margin-top: 0.5rem; }
+    
+    .range-bar {
+       height: 10px;
+       background: #ddd;
+       border-radius: 10px;
+       margin-top: 1.5rem;
+       position: relative;
+    }
+    .range-pointer {
+       position: absolute;
+       top: -10px;
+       width: 4px; height: 30px;
+       background: var(--primary);
+       border-radius: 4px;
+       transition: left 0.5s ease;
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Infinite BMI Calculator</h1>
+      <p>Analyze your Body Mass Index with precision using our privacy-first health diagnostic.</p>
+    </div>
+
+    <div class="bmi-workspace">
+      <div class="form-group">
+        <label>Weight (kg)</label>
+        <input type="number" id="weight" placeholder="e.g. 70" step="0.1">
+      </div>
+      <div class="form-group">
+        <label>Height (cm)</label>
+        <input type="number" id="height" placeholder="e.g. 175">
+      </div>
+      
+      <button onclick="calculateBMI()" class="btn btn-primary btn-lg btn-full">Calculate BMI</button>
+
+      <div class="result-card" id="result-card">
+         <div class="bmi-val" id="bmi-val">0.0</div>
+         <div class="bmi-cat" id="bmi-cat">Normal</div>
+         <div class="range-bar">
+            <div class="range-pointer" id="pointer" style="left: 0%;"></div>
+         </div>
+         <p class="mt-3 text-muted small">BMI ranges: Underweight (<18.5), Normal (18.5-24.9), Overweight (25-29.9), Obese (>30)</p>
+      </div>
+
+      <!-- SEO CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2>What is BMI?</h2>
+        <p>BMI stands for **Body Mass Index**. It is a simple calculation that results in a single number used to determine if a person is at a healthy weight for their height. Our <strong>online BMI calculator</strong> provides a professional-grade baseline to help you understand your body composition category.</p>
+
+        <h3 class="mt-4">Interpreting Your BMI Results</h2>
+        <p>A BMI of 18.5 to 24.9 is generally considered "Normal" or healthy. Scores below or above this range may indicate potential health risks. However, use this <strong>private health auditor</strong> with context; BMI does not account for muscle mass or bone density. A professional athlete and a sedentary individual might have the same BMI but different body compositions.</p>
+
+        <h3 class="mt-4">Privacy and Accuracy</h2>
+        <p>At 99tool.in, we treat your health data with absolute care. Our <strong>secure BMI analyzer</strong> runs entirely in your local browser sandbox. No weight or height data is stored on a server or shared with third parties. This <strong>privacy-first calculator</strong> is the safest way to audit your physical metrics from the comfort of your own environment.</p>
+
+        <div class="alert alert-info mt-4">
+           <strong>Disclaimer:</strong> This tool is for informational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment.
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    function calculateBMI() {
+       const w = parseFloat(document.getElementById('weight').value);
+       const h = parseFloat(document.getElementById('height').value) / 100;
+       
+       if (!w || !h) return alert('Please enter valid measurements.');
+
+       const bmi = (w / (h * h)).toFixed(1);
+       const card = document.getElementById('result-card');
+       const valEl = document.getElementById('bmi-val');
+       const catEl = document.getElementById('bmi-cat');
+       const pointer = document.getElementById('pointer');
+
+       valEl.innerText = bmi;
+       card.style.display = 'block';
+
+       let cat = '';
+       let color = '';
+       let pos = 0;
+
+       if (bmi < 18.5) {
+          cat = 'Underweight';
+          color = '#3498db';
+          pos = (bmi / 18.5) * 20;
+       } else if (bmi < 25) {
+          cat = 'Normal Weight';
+          color = '#2ecc71';
+          pos = 20 + ((bmi - 18.5) / 6.5) * 30;
+       } else if (bmi < 30) {
+          cat = 'Overweight';
+          color = '#f1c40f';
+          pos = 50 + ((bmi - 25) / 5) * 20;
+       } else {
+          cat = 'Obese';
+          color = '#e74c3c';
+          pos = Math.min(100, 70 + ((bmi - 30) / 10) * 30);
+       }
+
+       catEl.innerText = cat;
+       catEl.style.color = color;
+       pointer.style.left = pos + '%';
+       pointer.style.background = color;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Collage Maker – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/image/collage-maker.html"/>
+<meta property="og:title" content="Collage Maker – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/image/collage-maker.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Collage Maker \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/image/collage-maker.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .collage-layout {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    @media (max-width: 992px) {
+      .collage-layout { grid-template-columns: 1fr; }
+    }
+    .collage-preview {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 500px;
+      overflow: hidden;
+    }
+    #main-canvas {
+      max-width: 100%;
+      height: auto;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+      background: #fff;
+    }
+
+    .tool-panel {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      height: fit-content;
+      position: sticky;
+      top: 80px;
+    }
+    .tool-section { margin-bottom: 2rem; }
+    .tool-section h4 { font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem; letter-spacing: 1px; }
+
+    .grid-presets {
+       display: grid;
+       grid-template-columns: repeat(3, 1fr);
+       gap: 10px;
+       margin-bottom: 1.5rem;
+    }
+    .grid-btn {
+       aspect-ratio: 1;
+       background: var(--dark);
+       border: 1px solid var(--border);
+       border-radius: 8px;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       cursor: pointer;
+       font-size: 1.5rem;
+       transition: all 0.2s ease;
+    }
+    .grid-btn:hover { border-color: var(--primary); }
+    .grid-btn.active { border-color: var(--primary); background: rgba(229,57,53,0.1); color: var(--primary); }
+
+    .image-slots {
+       display: flex;
+       flex-direction: column;
+       gap: 10px;
+       margin-top: 1rem;
+    }
+    .slot {
+       background: var(--dark);
+       border: 1px solid var(--border);
+       padding: 8px 12px;
+       border-radius: 6px;
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       font-size: 0.8rem;
+    }
+    .slot-remove { cursor: pointer; color: var(--primary); font-weight: bold; }
+
+    .range-wrap label { display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-muted); margin-bottom: 4px; }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/image/collage-maker.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/image/collage-maker.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/image/collage-maker.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/image/collage-maker.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/image/collage-maker.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/image/collage-maker.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/image/collage-maker.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/image/collage-maker.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/image/collage-maker.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/image/collage-maker.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/image/collage-maker.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/image/collage-maker.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/image/collage-maker.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/image/collage-maker.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/image/collage-maker.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/image/collage-maker.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/image/collage-maker.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/image/collage-maker.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/image/collage-maker.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/image/collage-maker.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/image/collage-maker.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/image/collage-maker.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Photo Collage Maker</h1>
+      <p>Combine your favorite memories into stunning grids. Fast, private, and 100% local-first.</p>
+    </div>
+
+    <div class="tool-container">
+      <div class="upload-area" id="drop-zone">
+        <div class="upload-icon">🧩</div>
+        <p>Drop multiple images to start or <span class="text-primary">browse files</span></p>
+        <p class="text-muted small">Combine photos of any size (JPG, PNG, WEBP)</p>
+        <input type="file" id="image-input" accept="image/*" multiple hidden>
+      </div>
+
+      <div id="tool-workspace" class="hidden">
+        <div class="collage-layout">
+          <div class="collage-preview">
+             <canvas id="main-canvas"></canvas>
+          </div>
+
+          <div class="tool-panel">
+            <div class="tool-section">
+               <h4>Layout</h4>
+               <div class="grid-presets">
+                  <div class="grid-btn active" data-layout="1x2" title="Side by Side">🌓</div>
+                  <div class="grid-btn" data-layout="2x1" title="Top and Bottom">⏳</div>
+                  <div class="grid-btn" data-layout="2x2" title="Four Square">🪟</div>
+                  <div class="grid-btn" data-layout="3x1" title="Triple Vertical">🚦</div>
+                  <div class="grid-btn" data-layout="1x3" title="Triple Horizontal">🛤️</div>
+               </div>
+            </div>
+
+            <div class="tool-section">
+               <h4>Composition</h4>
+               <div class="range-wrap">
+                  <label>Spacing: <span id="spacing-val">10</span>px</label>
+                  <input type="range" id="spacing" min="0" max="100" value="10" class="w-100">
+               </div>
+               <div class="range-wrap">
+                  <label>Border Radius: <span id="radius-val">0</span>px</label>
+                  <input type="range" id="border-radius" min="0" max="50" value="0" class="w-100">
+               </div>
+               <div class="input-group">
+                  <label class="small text-muted mb-2 block">Background Color</label>
+                  <input type="color" id="bg-color" value="#ffffff" class="w-100" style="height:35px; border-radius:4px; border:1px solid var(--border); background:var(--dark);">
+               </div>
+            </div>
+
+            <div class="tool-section">
+               <h4>Images</h4>
+               <div class="image-slots" id="image-slots"></div>
+            </div>
+
+            <button id="download-btn" class="btn btn-primary w-100">Download Collage</button>
+            <p class="text-center mt-3 small text-muted">Generated 100% locally</p>
+          </div>
+              <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5">
+        <h2 data-i18n="tools.photo_collage_maker.what_is_title">What is Photo Collage Maker</h2>
+        <p>The Photo Collage Maker is a local-first canvas compilation utility that allows you to arrange multiple images into customized grid layouts. By dropping your photos into the tool, you can select standard configurations, customize spacing/rounding, and download a unified composition in seconds.</p>
+        <p>This grid layout rendering is performed entirely client-side using the HTML5 Canvas API in your browser. Since no images are uploaded to any external server, your private memories, family photos, or proprietary project graphics remain completely safe and secure.</p>
+
+        <h3 class="mt-4">How to Use Photo Collage Maker</h3>
+        <ol style="line-height: 1.8; margin-bottom: 20px; padding-left: 20px;">
+          <li><strong>Load your photos:</strong> Click inside the dashed upload zone to select multiple files from your device, or drag and drop your photos directly into the browser.</li>
+          <li><strong>Select your layout preset:</strong> Under the <strong>Layout</strong> section in the right sidebar, choose your desired grid style, such as Side-by-Side (🌓), Top-and-Bottom (⏳), Four Square (🪟), Triple Vertical (🚦), or Triple Horizontal (🛤️).</li>
+          <li><strong>Adjust the spacing:</strong> Drag the <strong>Spacing</strong> slider to set the thickness of the margins between each photo in the grid.</li>
+          <li><strong>Smooth the corners:</strong> Drag the <strong>Border Radius</strong> slider to round the edges of each cropped frame in the layout.</li>
+          <li><strong>Pick a background color:</strong> Click the <strong>Background Color</strong> picker to choose a color to fill the gaps between your photos.</li>
+          <li><strong>Manage your queue:</strong> Review your loaded photos listed under the <strong>Images</strong> section in the sidebar. Click the red <strong>×</strong> icon next to any filename to remove it from the collage.</li>
+          <li><strong>Download your collage:</strong> Click the <strong>Download Collage</strong> button to export the finished high-resolution PNG image directly to your local computer.</li>
+        </ol>
+
+        <h3 class="mt-4">Key Features</h3>
+        <ul style="line-height: 1.8; margin-bottom: 20px; padding-left: 20px;">
+          <li><strong>Multiple Grid Layouts:</strong> Choose from five versatile preset arrangements to display up to 4 photos cleanly.</li>
+          <li><strong>Smart Cover Fitting:</strong> Automatically crops and centers each photo to fill its designated cell without stretching or distortion.</li>
+          <li><strong>Custom Spacing & Rounding:</strong> Adjust gaps and corner smoothness dynamically with visual sliders.</li>
+          <li><strong>Dynamic Slot Management:</strong> Add or remove photos from your layout queue on the fly with instant canvas updates.</li>
+          <li><strong>High-Resolution PNG Export:</strong> Renders the compiled collage at a high-fidelity 2000x2000 pixel output size.</li>
+        </ul>
+
+        <h3 class="mt-4">Common Use Cases</h3>
+        <ul style="line-height: 1.8; margin-bottom: 20px; padding-left: 20px;">
+          <li><strong>Social Media Enthusiasts:</strong> Combining travel snapshots, holiday memories, or event highlights into cohesive grid posts.</li>
+          <li><strong>E-commerce Sellers:</strong> Displaying different angles, details, or color options of a product in a single high-impact image.</li>
+          <li><strong>Real Estate Agents:</strong> Presenting a multi-room preview or a before-and-after renovation layout.</li>
+          <li><strong>Designers:</strong> Organizing quick mood boards or visual comparison sets for client presentations.</li>
+        </ul>
+
+        <h3 class="mt-4">Privacy & Data Note</h3>
+        <p>Every step of the grid rendering and image clipping is done locally on your computer. Your files are never stored or processed on external servers.</p>
+      </section>
+ 
+      <!-- FAQ SECTION -->
+      <section class="faq-section mt-5">
+        <h2 data-i18n="tools.photo_collage_maker.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              What file types are supported by the collage maker?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>You can upload any standard web image format, including JPEG, PNG, WEBP, and GIF (which will be rendered as a static first frame).</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Does this tool limit the number of photos I can add?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>You can load as many photos as you want into the slot manager. However, the collage will only display the number of photos supported by your active layout (for example, up to 4 images for the Four Square layout).</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              How are my photos fitted into the grid cells?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Our layout engine uses an "aspect-ratio cover" algorithm. It automatically scales and centers each photo to fully cover its cell, ensuring no gaps appear within the individual frames.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Are my high-resolution photos sent to any server?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. All rendering, clipping, and canvas compilation processes happen entirely in your browser's private memory. Your files never leave your machine.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Why is the layout not showing my updated images?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>If images fail to load, ensure they are valid image files and that your browser has sufficient system memory. If you run into issues, you can remove slots or reload the tab to reset.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const imageInput = document.getElementById('image-input');
+    const dropZone = document.getElementById('drop-zone');
+    const workspace = document.getElementById('tool-workspace');
+    const canvas = document.getElementById('main-canvas');
+    const ctx = canvas.getContext('2d');
+    
+    // Configs
+    const gridBtns = document.querySelectorAll('.grid-btn');
+    const spacingSlider = document.getElementById('spacing');
+    const radiusSlider = document.getElementById('border-radius');
+    const bgColorPicker = document.getElementById('bg-color');
+    const imageSlotsContainer = document.getElementById('image-slots');
+    const downloadBtn = document.getElementById('download-btn');
+
+    let images = []; // { img, file }
+    let activeLayout = '1x2';
+    const CANVAS_DIM = 2000; // High res base
+
+    gridBtns.forEach(btn => {
+       btn.onclick = () => {
+          gridBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          activeLayout = btn.dataset.layout;
+          draw();
+       };
+    });
+
+    dropZone.onclick = () => imageInput.click();
+    imageInput.onchange = (e) => handleFiles(e.target.files);
+    
+    // Init Drag and Drop using global helper
+    setupDragDrop('drop-zone', (files) => {
+       handleFiles(files);
+    });
+    
+    function handleFiles(files) {
+      const validFiles = Array.from(files).filter(f => f.type.startsWith('image/'));
+      if (validFiles.length === 0) return;
+
+      for (const file of validFiles) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          const img = new Image();
+          img.onload = () => {
+            images.push({ img, file });
+            renderSlots();
+            draw();
+            workspace.classList.remove('hidden');
+          };
+          img.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+
+    function renderSlots() {
+       imageSlotsContainer.innerHTML = '';
+       images.forEach((item, index) => {
+          const div = document.createElement('div');
+          div.className = 'slot';
+          div.innerHTML = `
+             <span>${item.file.name.substring(0, 15)}...</span>
+             <span class="slot-remove" onclick="removeImage(${index})">×</span>
+          `;
+          imageSlotsContainer.appendChild(div);
+       });
+    }
+
+    window.removeImage = (idx) => {
+       images.splice(idx, 1);
+       renderSlots();
+       draw();
+       if (images.length === 0) workspace.classList.add('hidden');
+    };
+
+    function draw() {
+       if (images.length === 0) return;
+       
+       canvas.width = CANVAS_DIM;
+       canvas.height = CANVAS_DIM;
+       ctx.fillStyle = bgColorPicker.value;
+       ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+       const spacing = parseInt(spacingSlider.value) * (CANVAS_DIM / 1000);
+       const radius = parseInt(radiusSlider.value) * (CANVAS_DIM / 1000);
+
+       const config = getLayoutConfig(activeLayout);
+       
+       config.forEach((box, i) => {
+          if (!images[i]) return;
+          
+          const rx = box.x * CANVAS_DIM + spacing/2;
+          const ry = box.y * CANVAS_DIM + spacing/2;
+          const rw = box.w * CANVAS_DIM - spacing;
+          const rh = box.h * CANVAS_DIM - spacing;
+
+          drawClippedImage(images[i].img, rx, ry, rw, rh, radius);
+       });
+    }
+
+    function getLayoutConfig(type) {
+       switch(type) {
+          case '1x2': return [{x:0, y:0, w:0.5, h:1}, {x:0.5, y:0, w:0.5, h:1}];
+          case '2x1': return [{x:0, y:0, w:1, h:0.5}, {x:0, y:0.5, w:1, h:0.5}];
+          case '2x2': return [{x:0, y:0, w:0.5, h:0.5}, {x:0.5, y:0, w:0.5, h:0.5}, {x:0, y:0.5, w:0.5, h:0.5}, {x:0.5, y:0.5, w:0.5, h:0.5}];
+          case '3x1': return [{x:0, y:0, w:0.33, h:1}, {x:0.33, y:0, w:0.33, h:1}, {x:0.66, y:0, w:0.34, h:1}];
+          case '1x3': return [{x:0, y:0, w:1, h:0.33}, {x:0, y:0.33, w:1, h:0.33}, {x:0, y:0.66, w:1, h:0.34}];
+          default: return [{x:0, y:0, w:1, h:1}];
+       }
+    }
+
+    function drawClippedImage(img, x, y, w, h, r) {
+       ctx.save();
+       // Round corners
+       if (r > 0) {
+          ctx.beginPath();
+          ctx.moveTo(x + r, y);
+          ctx.lineTo(x + w - r, y);
+          ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+          ctx.lineTo(x + w, y + h - r);
+          ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+          ctx.lineTo(x + r, y + h);
+          ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+          ctx.lineTo(x, y + r);
+          ctx.quadraticCurveTo(x, y, x + r, y);
+          ctx.closePath();
+          ctx.clip();
+       }
+
+       // Cover aspect ratio logic
+       const imgRatio = img.width / img.height;
+       const targetRatio = w / h;
+       let sw, sh, sx, sy;
+
+       if (imgRatio > targetRatio) {
+          sh = img.height;
+          sw = img.height * targetRatio;
+          sx = (img.width - sw) / 2;
+          sy = 0;
+       } else {
+          sw = img.width;
+          sh = img.width / targetRatio;
+          sx = 0;
+          sy = (img.height - sh) / 2;
+       }
+
+       ctx.drawImage(img, sx, sy, sw, sh, x, y, w, h);
+       ctx.restore();
+    }
+
+    [spacingSlider, radiusSlider, bgColorPicker].forEach(el => {
+       el.oninput = () => {
+          const valDisplay = document.getElementById(el.id + '-val');
+          if (valDisplay) valDisplay.innerText = el.value;
+          draw();
+       };
+    });
+
+    downloadBtn.onclick = () => {
+       const url = canvas.toDataURL('image/png');
+       const a = document.createElement('a');
+       a.href = url;
+       a.download = `collage_${Date.now()}.png`;
+       a.click();
+    };
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Date Difference – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/calculators/date-difference.html"/>
+<meta property="og:title" content="Date Difference – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/calculators/date-difference.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Date Difference \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/calculators/date-difference.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .math-workspace {
+      max-width: 700px;
+      margin: 2rem auto;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      border-radius: 20px;
+    }
+    .input-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem; }
+    label { display: block; margin-bottom: 0.5rem; color: var(--text-muted); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; }
+    input[type="date"] {
+      width: 100%;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 1rem;
+      border-radius: 12px;
+      font-size: 1.1rem;
+    }
+    
+    .result-panel {
+       margin-top: 2rem;
+       display: none;
+    }
+    .main-res {
+       background: rgba(var(--primary-rgb), 0.1);
+       border: 1px solid var(--primary);
+       padding: 2rem;
+       border-radius: 16px;
+       text-align: center;
+       margin-bottom: 1.5rem;
+    }
+    .res-val { font-size: 3.5rem; font-weight: 800; color: var(--primary); line-height: 1; }
+    .res-lab { font-size: 1rem; color: var(--text-muted); margin-top: 5px; }
+    
+    .secondary-res {
+       display: grid;
+       grid-template-columns: repeat(3, 1fr);
+       gap: 1rem;
+    }
+    .sec-card {
+       background: rgba(255,255,255,0.03);
+       border: 1px solid var(--border);
+       padding: 1rem;
+       border-radius: 12px;
+       text-align: center;
+    }
+    .sec-val { font-size: 1.25rem; font-weight: 700; color: var(--text); }
+    .sec-lab { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; margin-top: 4px; }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/calculators/date-difference.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/calculators/date-difference.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/calculators/date-difference.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/calculators/date-difference.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/calculators/date-difference.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/calculators/date-difference.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/calculators/date-difference.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/calculators/date-difference.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/calculators/date-difference.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/calculators/date-difference.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/calculators/date-difference.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/calculators/date-difference.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/calculators/date-difference.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/calculators/date-difference.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/calculators/date-difference.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/calculators/date-difference.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/calculators/date-difference.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/calculators/date-difference.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/calculators/date-difference.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/calculators/date-difference.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/calculators/date-difference.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/calculators/date-difference.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Infinite Date Difference Solver</h1>
+      <p>Calculate the exact gap between any two moments in history or future. Precision duration auditing made simple.</p>
+    </div>
+
+    <div class="math-workspace">
+      <div class="input-grid">
+         <div>
+            <label>Start Date</label>
+            <input type="date" id="start-date" onchange="runCalc()">
+         </div>
+         <div>
+            <label>End Date</label>
+            <input type="date" id="end-date" onchange="runCalc()">
+         </div>
+      </div>
+
+      <div class="result-panel" id="res-panel">
+         <div class="main-res">
+            <div class="res-val" id="res-total-days">0</div>
+            <div class="res-lab">Total Days Difference</div>
+         </div>
+
+         <div class="secondary-res">
+            <div class="sec-card">
+               <div class="sec-val" id="res-ymd">0 - 0 - 0</div>
+               <div class="sec-lab">Y - M - D</div>
+            </div>
+            <div class="sec-card">
+               <div class="sec-val" id="res-weeks">0</div>
+               <div class="sec-lab">Weeks</div>
+            </div>
+            <div class="sec-card">
+               <div class="sec-val" id="res-months">0</div>
+               <div class="sec-lab">Total Months</div>
+            </div>
+         </div>
+      </div>
+
+      <!-- CONTENT SECTION -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.date_difference.what_is_title">What is the Infinite Date Difference Solver?</h2>
+        <p>The Infinite Date Difference Solver is a client-side date-arithmetic tool designed to calculate the exact calendar span between two selected dates. Rather than providing a basic day count, the solver outputs the interval across multiple metrics, including total days, years/months/days breakdowns, decimal weeks, and cumulative months.</p>
+        <p>Understanding the precise gap between dates is essential for contract agreements, academic planning, shipping logistics, and timeline auditing. Because this tool executes entirely within your browser's local sandbox, none of your calendar entries or timeline inputs are uploaded to external databases.</p>
+
+        <h2 class="mt-4" data-i18n="tools.date_difference.how_to_use_title">How to Use the Infinite Date Difference Solver</h2>
+        <ol>
+          <li><strong>Select the Start Date:</strong> Click the "Start Date" calendar input field and pick your starting date point.</li>
+          <li><strong>Select the End Date:</strong> Click the "End Date" calendar input field and choose your target end date point.</li>
+          <li><strong>Review the Primary Output:</strong> Look at the main results display. The tool shows the absolute "Total Days Difference" value. If your end date is placed chronologically before the start date, the script automatically swaps them to keep the duration positive.</li>
+          <li><strong>Examine the Secondary Breakdown:</strong> View the cards beneath the main counter. They detail the duration formatted as Years-Months-Days (Y-M-D), decimal Weeks, and Total Months.</li>
+        </ol>
+
+        <h2 class="mt-4" data-i18n="tools.date_difference.key_features_title">Key Features</h2>
+        <ul>
+          <li><strong>Bi-directional Input Syncing:</strong> Automatically balances start and end points to prevent negative intervals.</li>
+          <li><strong>Multiple Unit Outputs:</strong> Converts time gaps into raw days, detailed Y-M-D lists, weeks, and total months.</li>
+          <li><strong>Precise Leap Year Math:</strong> Correctly tracks varying month lengths and leap years to guarantee accuracy.</li>
+          <li><strong>Automatic Dynamic Calculations:</strong> The metrics refresh instantly as you select dates without requiring manual submits.</li>
+          <li><strong>Local Browser Execution:</strong> Keeps your personal timelines and schedule records fully confidential.</li>
+        </ul>
+
+        <h2 class="mt-4" data-i18n="tools.date_difference.common_use_cases_title">Common Use Cases</h2>
+        <ul>
+          <li><strong>Project Timeline Auditing:</strong> Calculate the exact calendar duration of a business project or sprint window to plan milestones.</li>
+          <li><strong>Tenancy and Lease Agreements:</strong> Find the exact number of days or months between lease start and end dates to calculate prorated rent values.</li>
+          <li><strong>Academic Semester Tracking:</strong> Keep track of study intervals or count down the days remaining in a school term.</li>
+          <li><strong>Event Planning:</strong> Measure time intervals between successive organizational stages to build realistic milestone schedules.</li>
+        </ul>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2 data-i18n="tools.date_difference.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Does the day calculation include the end date?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>The tool calculates the absolute calendar difference between two points (End Date minus Start Date). It does not include the start day itself in the count, representing the elapsed duration between the two dates.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              How does the tool handle leap years?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>The underlying Javascript engine uses UTC millisecond values to compute the absolute difference. This automatically accounts for leap years, leap days, and differing days in each calendar month.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Are my project schedules or dates uploaded to your servers?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. None of your inputs or calculations leave your computer. All date conversions take place in your browser session's local RAM to ensure your planning privacy.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              What happens if I select the same start and end date?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Selecting identical dates will return a value of zero across all fields, indicating no calendar duration has elapsed between the two points.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Does this tool account for time zones or daylight saving shifts?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>The calculator compares dates based on midnight local time. It is designed to count calendar days rather than tracking minute-level adjustments caused by regional daylight saving changes.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 Privacy & Data Note: Date values are processed locally in your browser. Your timelines, dates, and calculations are never uploaded or tracked on our servers.</p>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    function runCalc() {
+       const sStr = document.getElementById('start-date').value;
+       const eStr = document.getElementById('end-date').value;
+       if (!sStr || !eStr) return;
+
+       let d1 = new Date(sStr);
+       let d2 = new Date(eStr);
+       
+       // Handle order (always positive)
+       if (d2 < d1) {
+          let temp = d1;
+          d1 = d2;
+          d2 = temp;
+       }
+
+       // 1. Total Days
+       const diffTime = Math.abs(d2 - d1);
+       const totalDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+       
+       // 2. Y-M-D Breakdown
+       let years = d2.getFullYear() - d1.getFullYear();
+       let months = d2.getMonth() - d1.getMonth();
+       let days = d2.getDate() - d1.getDate();
+
+       if (days < 0) {
+          months--;
+          const lastMonth = new Date(d2.getFullYear(), d2.getMonth(), 0);
+          days += lastMonth.getDate();
+       }
+       if (months < 0) {
+          years--;
+          months += 12;
+       }
+
+       // 3. Render
+       document.getElementById('res-total-days').innerText = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(totalDays, 0) : totalDays.toLocaleString();
+       document.getElementById('res-ymd').innerText = `${years}y ${months}m ${days}d`;
+       document.getElementById('res-weeks').innerText = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(totalDays / 7, 1) : (totalDays / 7).toFixed(1);
+       document.getElementById('res-months').innerText = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(years * 12 + months, 0) : (years * 12 + months);
+       
+       document.getElementById('res-panel').style.display = 'block';
+    }
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>

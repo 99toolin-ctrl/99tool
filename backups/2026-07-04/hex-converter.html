@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Hex Converter – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/developer/hex-converter.html"/>
+<meta property="og:title" content="Hex Converter – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/developer/hex-converter.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Hex Converter \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/developer/hex-converter.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    .math-workspace {
+      max-width: 650px;
+      margin: 2rem auto;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      border-radius: 20px;
+    }
+    .conv-group { margin-bottom: 2rem; position: relative; }
+    label { display: block; margin-bottom: 0.5rem; color: var(--text-muted); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
+    input {
+      width: 100%;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 1.2rem;
+      border-radius: 12px;
+      font-size: 1.5rem;
+      font-family: 'JetBrains Mono', monospace;
+      transition: all 0.2s;
+    }
+    input:focus { border-color: var(--primary); outline: none; background: rgba(0,0,0,0.3); }
+    
+    .base-badge {
+       position: absolute;
+       right: 15px;
+       top: 40px;
+       background: rgba(229, 57, 53, 0.1);
+       color: var(--primary);
+       padding: 4px 8px;
+       border-radius: 4px;
+       font-size: 0.7rem;
+       font-weight: 800;
+    }
+    
+    .status-msg { font-size: 0.8rem; color: #ff5252; margin-top: 5px; display: none; }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Hex ↔ Dec ↔ Bin Converter</h1>
+      <p>Instant base synchronization. Convert between standard computing bases in real-time as you type.</p>
+    </div>
+
+    <div class="math-workspace">
+      <div class="conv-group">
+        <label>Decimal (Base 10)</label>
+        <input type="text" id="dec-in" placeholder="e.g., 255" oninput="sync('dec')">
+        <span class="base-badge">DEC</span>
+        <div id="dec-err" class="status-msg">Invalid Decimal</div>
+      </div>
+
+      <div class="conv-group">
+        <label>Hexadecimal (Base 16)</label>
+        <input type="text" id="hex-in" placeholder="e.g., FF" oninput="sync('hex')">
+        <span class="base-badge">HEX</span>
+        <div id="hex-err" class="status-msg">Invalid Hexadecimal</div>
+      </div>
+
+      <div class="conv-group">
+        <label>Binary (Base 2)</label>
+        <input type="text" id="bin-in" placeholder="e.g., 11111111" oninput="sync('bin')">
+        <span class="base-badge">BIN</span>
+        <div id="bin-err" class="status-msg">Invalid Binary</div>
+      </div>
+
+      <button onclick="clearAll()" class="btn btn-secondary btn-sm" style="float: right;">Clear All</button>
+      <div style="clear: both;"></div>
+
+      <!-- SEO CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2>What is Hex and Binary Conversion?</h2>
+        <p>In computing, numbers are often represented in different bases. **Decimal** is the human-standard base-10, **Binary** is the processor-standard base-2, and **Hexadecimal** is the programmer-standard base-16. Our <strong>online base converter</strong> allows you to jump between these systems instantly. Featuring a 3-way synchronization engine, it simplifies memory address debugging and color code analysis. An automated <strong>numerical base auditor</strong> is the foundation of efficient software engineering.</p>
+
+        <h3 class="mt-4">Why use Hexadecimal?</h2>
+        <p>Hexadecimal is used because it provides a human-friendly way to represent binary data. One hex digit represents exactly four bits (a nibble). By using our <strong>hex conversion diagnostic tool</strong>, you can quickly translate cryptic memory dumps or CSS colors into decimal or binary equivalents. A reliable <strong>base-16 math auditor</strong> is essential for security research and firmware development diagnostics.</p>
+
+        <h3 class="mt-4">Privacy and Professional Accuracy</h2>
+        <p>At 99tool.in, all number conversions are performed locally in your browser. We do not store your numeric values or conversion logs. This <strong>private base converter</strong> provides professional-grade results without any third-party tracking. Whether you are a student learning number systems or a developer debugging a network packet, our <strong>secure base calculator</strong> ensures your data remains purely yours.</p>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const decEl = document.getElementById('dec-in');
+    const hexEl = document.getElementById('hex-in');
+    const binEl = document.getElementById('bin-in');
+
+    function sync(source) {
+       let decValue;
+       hideErrors();
+
+       try {
+          if (source === 'dec') {
+             const val = decEl.value.trim();
+             if (!val) return clearRest('dec');
+             if (!/^-?\d+$/.test(val)) throw new Error('dec');
+             decValue = BigInt(val);
+          } else if (source === 'hex') {
+             const val = hexEl.value.trim();
+             if (!val) return clearRest('hex');
+             if (!/^[0-9a-fA-F]+$/.test(val)) throw new Error('hex');
+             decValue = BigInt('0x' + val);
+          } else if (source === 'bin') {
+             const val = binEl.value.trim();
+             if (!val) return clearRest('bin');
+             if (!/^[01]+$/.test(val)) throw new Error('bin');
+             decValue = BigInt('0b' + val);
+          }
+
+          if (source !== 'dec') decEl.value = decValue.toString(10);
+          if (source !== 'hex') hexEl.value = decValue.toString(16).toUpperCase();
+          if (source !== 'bin') binEl.value = decValue.toString(2);
+
+       } catch (e) {
+          showError(e.message);
+       }
+    }
+
+    function clearRest(keep) {
+       if (keep !== 'dec') decEl.value = '';
+       if (keep !== 'hex') hexEl.value = '';
+       if (keep !== 'bin') binEl.value = '';
+    }
+
+    function clearAll() {
+       decEl.value = '';
+       hexEl.value = '';
+       binEl.value = '';
+       hideErrors();
+    }
+
+    function showError(type) {
+       const err = document.getElementById(type + '-err');
+       if (err) err.style.display = 'block';
+    }
+
+    function hideErrors() {
+       document.querySelectorAll('.status-msg').forEach(e => e.style.display = 'none');
+    }
+  </script>
+</body>
+</html>

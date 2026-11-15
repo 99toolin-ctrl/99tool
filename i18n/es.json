@@ -1,0 +1,561 @@
+{
+  "common": {
+    "privacy_note": "🔒 Nota de Privacidad y Datos: Todo el procesamiento se realiza localmente en tu navegador. Tus datos nunca salen de tu dispositivo y nunca se envían a ningún servidor.",
+    "no_signup_required": "Sin registro, instalación ni pago requerido.",
+    "offline_ready": "Funciona completamente sin conexión una vez que la página carga."
+  },
+  "tools": {
+    "age_calculator": {
+      "page_title": "Calculadora de Edad – 99tool.in",
+      "meta_description": "Herramienta gratuita en línea de 99tool.in: calcula tu edad exacta en años, meses y días. Rápida y privada.",
+      "what_is_title": "¿Qué es la Calculadora de Edad Infinita?",
+      "what_is_content": "La Calculadora de Edad Infinita es una utilidad de calendario para el cliente diseñada para calcular tu edad exacta desde tu fecha de nacimiento hasta el momento actual. En lugar de proporcionar una simple estimación, la herramienta detalla tu edad en años, meses y días. Esto proporciona alta precisión para documentos, programación o seguimiento del desarrollo.\n\nAdemás, la calculadora realiza subcálculos para mostrar tu tiempo total de vida en otras métricas, como meses, semanas, días y horas totales vividas, junto con una cuenta regresiva para tu próximo cumpleaños. Todo el procesamiento ocurre localmente en tu máquina, asegurando que tu fecha de nacimiento nunca se envíe a un servidor.",
+      "how_to_use_title": "Cómo usar la Calculadora de Edad Infinita",
+      "how_to_use_steps": [
+        "<strong>Selecciona tu fecha de nacimiento:</strong> Haz clic en el campo selector de fecha bajo \"Seleccionar Fecha de Nacimiento\" para elegir tu día, mes y año de nacimiento en la interfaz del calendario.",
+        "<strong>Revisa tu edad principal:</strong> Una vez seleccionada la fecha, las métricas principales se muestran automáticamente, indicando tu edad en Años, Meses y Días.",
+        "<strong>Consulta la cuenta regresiva de cumpleaños:</strong> Observa el banner destacado directamente debajo de tu edad. Te indica el número exacto de días que faltan para tu próximo cumpleaños.",
+        "<strong>Examina estadísticas detalladas de vida:</strong> Desplázate hacia abajo hasta la lista de estadísticas para ver tu tiempo total de vida expresado en Meses Totales, Semanas Totales, Días Totales y Horas Totales vividas."
+      ],
+      "key_features_title": "Características clave",
+      "key_features": [
+        "<strong>Desglose de edad detallado:</strong> Muestra tu edad precisa dividida en años, meses y días, ajustando correctamente los años bisiestos y los meses de diferentes duraciones.",
+        "<strong>Cuenta regresiva para el próximo cumpleaños:</strong> El contador dinámico de días muestra exactamente qué tan cerca estás de tu próximo hito de cumpleaños.",
+        "<strong>Estadísticas de vida multimodales:</strong> Convierte tu edad en meses, semanas, días u horas acumuladas.",
+        "<strong>Activación local automática:</strong> Los cálculos se ejecutan automáticamente al seleccionar la fecha sin necesidad de actualizar la página o presionar botones de envío.",
+        "<strong>Procesamiento en el lado del cliente:</strong> Los cálculos se ejecutan directamente en la memoria RAM del navegador, manteniendo privados los detalles de tu cumpleaños."
+      ],
+      "common_use_cases_title": "Casos de uso comunes",
+      "common_use_cases": [
+        "<strong>Verificación de formularios y solicitudes:</strong> Verifica edades exactas en años y meses para pólizas de seguro, trámites legales o solicitudes de visado.",
+        "<strong>Hitos de crecimiento infantil:</strong> Realiza un seguimiento de las etapas de crecimiento de bebés y niños en meses y días precisos.",
+        "<strong>Planificación de eventos y cumpleaños:</strong> Haz un seguimiento del número exacto de días que faltan para celebraciones importantes y gestiona reservas e invitaciones.",
+        "<strong>Curiosidad y diversión:</strong> Comprueba cuántos días u horas totales has vivido."
+      ],
+      "faq_title": "Preguntas frecuentes",
+      "faq": [
+        {
+          "question": "¿Cómo tiene en cuenta esta herramienta los años bisiestos?",
+          "answer": "La calculadora utiliza el objeto Date nativo de JavaScript, que tiene en cuenta automáticamente los años bisiestos (incluido el 29 de febrero) y las distintas duraciones de los meses (28, 30 o 31 días) para garantizar la precisión."
+        },
+        {
+          "question": "¿99tool.in sube o almacena mi fecha de nacimiento?",
+          "answer": "No. 99tool.in funciona completamente con código en el lado del cliente. Tu fecha de nacimiento se procesa en la pestaña local de tu navegador y nunca se sube a ningún servidor o base de datos, manteniendo tus datos seguros."
+        },
+        {
+          "question": "¿Puedo calcular la edad en relación con una fecha pasada o futura?",
+          "answer": "Esta herramienta específica calcula tu edad en relación con la fecha actual (hoy). Si necesitas encontrar la diferencia entre dos fechas arbitrarias del calendario, utiliza nuestro Resolutor de Diferencia de Fechas."
+        },
+        {
+          "question": "¿Por qué la herramienta muestra una advertencia si elijo una fecha futura?",
+          "answer": "Los cálculos de edad representan el tiempo transcurrido desde el nacimiento. Seleccionar una fecha futura daría como resultado una edad negativa, por lo que la herramienta bloquea esta entrada para mantener resultados lógicos."
+        },
+        {
+          "question": "¿El cálculo total de horas incluye cambios de horario de verano?",
+          "answer": "La estadística de horas totales se calcula multiplicando los días totales transcurridos por 24 horas. Proporciona una conversión matemática estándar en lugar de ajustarse a los cambios locales de horario de verano."
+        }
+      ],
+      "privacy_note": "🔒 Nota de Privacidad y Datos: Tu fecha de nacimiento se procesa localmente en tu navegador. Nunca se recopilan, rastrean ni envían datos de identificación personal a nuestros servidores.",
+      "schema_org": {
+        "name": "Calculadora de Edad – 99tool.in",
+        "description": "Herramienta gratuita en línea de 99tool.in: rápida, privada, sin necesidad de registro."
+      }
+    },
+    "audio_recorder": {
+      "page_title": "Grabadora de Audio – 99tool.in",
+      "meta_description": "Graba y edita sonido en tu navegador. Herramienta gratuita, privada y sin registro de 99tool.in.",
+      "what_is_title": "¿Qué es la Grabadora y Editora de Audio?",
+      "what_is_content": "Esta herramienta de grabación y edición de audio basada en la web te permite grabar notas de voz, sonidos y discursos de alta fidelidad directamente desde tu navegador. Diseñada pensando en la privacidad absoluta, convierte el navegador de tu dispositivo en un estudio de grabación seguro. No requiere creación de cuenta ni registro para ser utilizada.\n\nAl aprovechar las API nativas del navegador, la utilidad procesa todos los datos de audio de forma local. Esto significa que ya sea que estés grabando un clip de voz o recortando una nota, tu archivo permanece en tu máquina local. La transmisión de audio nunca se envía a servidores remotos, brindándote completa confidencialidad para grabaciones de voz sensibles.",
+      "how_to_use_title": "Cómo usar la Grabadora y Editora de Audio",
+      "how_to_use_steps": [
+        "<strong>Selecciona tu formato de exportación:</strong> Elige entre WebM (ideal para archivos más pequeños y procesamiento rápido) o WAV (perfecto para audio sin pérdidas y de alta calidad) en el menú desplegable.",
+        "<strong>Inicializa el micrófono:</strong> Haz clic en el botón \"Inicializar Micrófono\". Tu navegador te pedirá conceder permisos de acceso al micrófono.",
+        "<strong>Comienza a grabar:</strong> Haz clic en el botón con el círculo rojo para comenzar a capturar audio. El temporizador comenzará a contar y el visualizador mostrará una forma de onda en tiempo real que representa tus frecuencias vocales.",
+        "<strong>Detén la sesión:</strong> Haz clic en el botón de parada cuadrado para finalizar la grabación. La herramienta procesará automáticamente el audio y lo añadirá a tu lista de grabaciones.",
+        "<strong>Previsualiza y guarda:</strong> Haz clic en el botón \"REPRODUCIR\" en la tarjeta de grabación generada para escuchar tu clip, o haz clic en el botón \"GUARDAR\" para descargarlo directamente a tu dispositivo."
+      ],
+      "key_features_title": "Características clave",
+      "key_features": [
+        "<strong>Salidas sin pérdidas y comprimidas:</strong> Exporta tus archivos de audio en formato WAV nativo o en formato WebM altamente optimizado.",
+        "<strong>Visualizador de forma de onda en tiempo real:</strong> Un lienzo de osciloscopio ofrece retroalimentación visual instantánea sobre los niveles de entrada y la actividad del micrófono.",
+        "<strong>Blobs en RAM seguros:</strong> Las grabaciones se guardan temporalmente utilizando la memoria del sistema (URL Blob) en lugar del almacenamiento en servidor.",
+        "<strong>Historial multisesión:</strong> Captura múltiples grabaciones en una sola sesión y previsualízalas o descárgalas individualmente según sea necesario.",
+        "<strong>Diseño de grabación adaptable:</strong> Una interfaz optimizada para móviles facilita la grabación de notas en teléfonos inteligentes, tabletas o sistemas de escritorio."
+      ],
+      "common_use_cases_title": "Casos de uso comunes",
+      "common_use_cases": [
+        "<strong>Creadores de contenido y podcasters:</strong> Graba locuciones, fragmentos rápidos o borradores de narración para videos sin necesidad de software de escritorio pesado.",
+        "<strong>Estudiantes e investigadores:</strong> Captura notas de clases, memos de estudio o transcripciones de entrevistas en un entorno seguro.",
+        "<strong>Músicos y diseñadores de sonido:</strong> Graba ideas musicales rápidas, ejecuciones vocales o efectos de sonido sobre la marcha para guardarlos como archivos sin procesar.",
+        "<strong>Dictados privados:</strong> Dicta notas confidenciales o diarios sin temor a filtraciones de datos en la nube o recolección biométrica."
+      ],
+      "faq_title": "Preguntas frecuentes",
+      "faq": [
+        {
+          "question": "¿Mi grabación de audio se guarda en sus servidores?",
+          "answer": "No. 99tool.in procesa todos los datos de audio en la memoria (RAM) de la pestaña de tu navegador local como un Blob. Tus grabaciones de voz nunca tocan nuestros servidores y se eliminan al cerrar la pestaña."
+        },
+        {
+          "question": "¿Por qué necesito conceder permisos de micrófono?",
+          "answer": "Tu navegador requiere permiso explícito para acceder al hardware de entrada de audio de tu dispositivo. Este permiso es gestionado de forma nativa por tu navegador y solo se utiliza localmente para grabar."
+        },
+        {
+          "question": "¿Puedo usar esta herramienta sin conexión?",
+          "answer": "Sí. Dado que la interfaz se basa completamente en API Web nativas del navegador y procesamiento en el lado del cliente, una vez cargada la página, puedes grabar y descargar audio sin conexión a Internet."
+        },
+        {
+          "question": "¿Cuál es la diferencia entre WebM y WAV?",
+          "answer": "Los archivos WAV no están comprimidos y son sin pérdidas, ofreciendo la mayor fidelidad de audio pero con archivos más grandes. Los archivos WebM están comprimidos y optimizados para la web, proporcionando descargas rápidas y un tamaño reducido."
+        },
+        {
+          "question": "¿Hay un límite de tiempo para grabar?",
+          "answer": "No hay un límite arbitrario establecido por la herramienta. La duración de la grabación solo está limitada por la memoria del sistema (RAM) disponible en tu dispositivo."
+        }
+      ],
+      "privacy_note": "🔒 Nota de Privacidad y Datos: Toda la captura y procesamiento de audio ocurren dentro de tu navegador web. No se suben archivos a nuestros servidores, manteniendo tus grabaciones de voz completamente confidenciales.",
+      "schema_org": {
+        "name": "Grabadora y Editora de Audio",
+        "description": "Grabación de alta calidad, visualizador en tiempo real, recorte de audio, control de reproducción, procesamiento local privado."
+      }
+    },
+    "bmi_calculator": {
+      "page_title": "Calculadora de IMC – 99tool.in",
+      "meta_description": "Calcula tu Índice de Masa Corporal (IMC) con precisión. Herramienta de salud gratuita, privada y rápida de 99tool.in.",
+      "what_is_title": "¿Qué es la Calculadora de IMC Infinita?",
+      "what_is_content": "La Calculadora de IMC Infinita es una utilidad de salud en el lado del cliente diseñada para calcular el Índice de Masa Corporal (IMC) utilizando valores de altura y peso. Al ingresar parámetros métricos, los usuarios pueden determinar su categoría de peso corporal y revisar los indicadores de masa estándar.\n\nEsta calculadora procesa todos los multiplicadores numéricos, la lógica de coincidencia de categorías y los ajustes del puntero de coordenadas localmente en la memoria de tu navegador. No se almacenan ni se suben valores de altura, peso o IMC calculado, garantizando completa confidencialidad.",
+      "how_to_use_title": "Cómo usar la Calculadora de IMC Infinita",
+      "how_to_use_steps": [
+        "<strong>Ingresa tu peso:</strong> Introduce tu peso corporal en kilogramos (kg) en la casilla de entrada de peso.",
+        "<strong>Ingresa tu altura:</strong> Introduce tu altura en centímetros (cm) en la casilla de entrada de altura.",
+        "<strong>Haz clic en Calcular:</strong> Presiona el botón \"Calcular IMC\" para ejecutar el motor matemático local.",
+        "<strong>Revisa tu estado:</strong> Consulta el panel de \"Resultado\" para ver tu valor numérico de IMC, tu categoría de peso y el puntero de rango destacado."
+      ],
+      "key_features_title": "Características clave",
+      "key_features": [
+        "<strong>Soporte de unidades métricas:</strong> Introduce directamente valores estándar de peso (kg) y altura (cm).",
+        "<strong>Puntero visual de rango:</strong> Desplaza un puntero dinámicamente a través de una barra codificada por colores para mostrar tu clasificación de peso.",
+        "<strong>Rangos estándar de IMC:</strong> Evalúa las entradas según las referencias de la OMS (Bajo peso, Normal, Sobrepeso, Obesidad).",
+        "<strong>Panel de resultados instantáneo:</strong> Muestra puntuaciones numéricas y nombres de categorías en un bloque destacado.",
+        "<strong>Motor 100% en el lado del cliente:</strong> Realiza todas las operaciones matemáticas localmente en tu navegador para proteger tus datos médicos."
+      ],
+      "common_use_cases_title": "Casos de uso comunes",
+      "common_use_cases": [
+        "<strong>Auditorías de control de peso:</strong> Monitorea las tendencias de masa corporal regularmente durante programas de pérdida de peso o acondicionamiento físico.",
+        "<strong>Evaluaciones de salud y condición física:</strong> Comprueba rápidamente tu categoría general de masa corporal para formularios médicos o de seguros.",
+        "<strong>Seguimiento de metas de estilo de vida:</strong> Establece un IMC base para fijar objetivos realistas de salud física.",
+        "<strong>Actividades científicas escolares:</strong> Enseña a los estudiantes sobre métricas del cuerpo humano, constantes biológicas y fórmulas de IMC."
+      ],
+      "faq_title": "Preguntas frecuentes",
+      "faq": [
+        {
+          "question": "¿Cuáles son los rangos estándar de IMC?",
+          "answer": "Las clasificaciones estándar de la OMS son: Bajo peso (menos de 18,5), Peso normal (18,5 a 24,9), Sobrepeso (25 a 29,9) u Obesidad (30 o más)."
+        },
+        {
+          "question": "¿Esta calculadora tiene en cuenta la masa muscular o la densidad ósea?",
+          "answer": "No. El IMC es un índice de evaluación general que solo utiliza altura y peso. No distingue entre músculo, grasa o masa ósea, y puede sobreestimar la grasa corporal en atletas musculosos."
+        },
+        {
+          "question": "¿Se comparten o suben mis datos médicos?",
+          "answer": "No. Todos los cálculos se ejecutan en tu dispositivo mediante JavaScript local. 99tool.in no almacena, recopila ni comparte tus dimensiones físicas."
+        },
+        {
+          "question": "¿Existen ajustes por edad o género en este cálculo?",
+          "answer": "Esta herramienta calcula el índice de IMC estándar para adultos. Para niños, adolescentes y mujeres embarazadas, los médicos utilizan tablas de percentiles especializadas que tienen en cuenta la edad y el desarrollo."
+        }
+      ],
+      "privacy_note": "🔒 Nota de Privacidad y Datos: Los cálculos de altura, peso e IMC se procesan localmente en tu navegador. No se suben datos personales de salud.\nAviso legal: Esta herramienta es solo para fines informativos y no sustituye el asesoramiento, diagnóstico o tratamiento médico profesional.",
+      "schema_org": {
+        "name": "Calculadora de IMC – 99tool.in",
+        "description": "Herramienta gratuita en línea de 99tool.in: rápida, privada, sin necesidad de registro."
+      }
+    },
+    "csv_editor": {
+      "page_title": "Editor de CSV – 99tool.in",
+      "meta_description": "Abre, edita y exporta archivos CSV en tu navegador. Herramienta de datos segura, privada y gratuita de 99tool.in.",
+      "what_is_title": "¿Qué es el Visor y Editor de CSV?",
+      "what_is_content": "El Visor y Editor de CSV es una herramienta ligera de hoja de cálculo basada en la web diseñada para abrir, inspeccionar y modificar archivos de valores separados por comas (CSV). En lugar de esperar a que se inicie un software de oficina pesado, puedes arrastrar tus conjuntos de datos directamente a la pestaña de tu navegador para representarlos en un diseño de tabla limpio e interactivo.\n\nEsta utilidad te permite editar valores de celdas, ordenar entradas de columnas, buscar registros específicos y exportar archivos actualizados. Dado que todo el análisis de archivos y la renderización de tablas ocurren en el lado del cliente en la memoria RAM del navegador, tus contactos sensibles de clientes, libros contables y volcados de datos nunca se exponen a servidores externos.",
+      "how_to_use_title": "Cómo usar el Visor y Editor de CSV",
+      "how_to_use_steps": [
+        "<strong>Importa tu conjunto de datos:</strong> Arrastra tu archivo CSV directamente a la zona de carga punteada o haz clic en \"Examinar archivos\" para seleccionar uno de tu disco duro local.",
+        "<strong>Edita los valores de las celdas:</strong> Haz clic directamente en cualquier celda de la tabla para modificar su contenido. Escribe tus cambios y haz clic fuera de la celda para guardar las actualizaciones localmente.",
+        "<strong>Filtra y busca:</strong> Utiliza la casilla de búsqueda sobre la cuadrícula de la tabla para buscar filas específicas o filtrar coincidencias en tiempo real.",
+        "<strong>Ordena por columnas:</strong> Haz clic en los encabezados de las columnas para ordenar las filas de la tabla en orden alfabético o numérico ascendente o descendente.",
+        "<strong>Exporta tus cambios:</strong> Haz clic en \"Exportar CSV\" para descargar la hoja de cálculo actualizada a tu computadora, o haz clic en \"Abrir Nuevo\" para limpiar la cuadrícula y cargar un archivo diferente."
+      ],
+      "key_features_title": "Características clave",
+      "key_features": [
+        "<strong>Edición en cuadrícula en tiempo real:</strong> Edita valores de celdas directamente dentro de una tabla interactiva con guardados locales instantáneos.",
+        "<strong>Ordenación y búsqueda por columnas:</strong> Analiza rápidamente conjuntos de datos ordenando registros o filtrando filas que coincidan con tus palabras clave.",
+        "<strong>Analizador del cliente de alta velocidad:</strong> Renderiza miles de puntos de datos localmente en milisegundos sin latencia del servidor.",
+        "<strong>Soporte para caracteres UTF-8:</strong> Conserva acentos, símbolos especiales y caracteres no latinos durante la importación y exportación.",
+        "<strong>Aislamiento de datos sin conexión:</strong> Funciona completamente sin conexión para garantizar que tus archivos permanezcan seguros."
+      ],
+      "common_use_cases_title": "Casos de uso comunes",
+      "common_use_cases": [
+        "<strong>Actualizaciones de inventario de comercio electrónico:</strong> Edita descripciones de productos, precios o recuentos de existencias en hojas de inventario antes de importarlas a tu tienda.",
+        "<strong>Depuración de contactos de clientes:</strong> Busca entradas duplicadas o corrige errores de formato en listas de suscripción de correo electrónico.",
+        "<strong>Inspecciones de registros y exportaciones:</strong> Visualiza exportaciones de registros de servidor, historiales de transacciones o salidas de análisis del sistema en un formato de tabla legible.",
+        "<strong>Comprobaciones de ingesta en bases de datos:</strong> Verifica y da formato al diseño de columnas en hojas de datos antes de subirlas a bases de datos SQL."
+      ],
+      "faq_title": "Preguntas frecuentes",
+      "faq": [
+        {
+          "question": "¿Hay un límite en el tamaño del archivo que puedo subir?",
+          "answer": "Para disfrutar de la experiencia más fluida, recomendamos utilizar este editor para archivos CSV de hasta 10-15 MB. Los conjuntos de datos muy grandes que contienen cientos de miles de filas pueden ralentizar la renderización del navegador, por lo que las aplicaciones de escritorio son más adecuadas para archivos masivos."
+        },
+        {
+          "question": "¿Editar una celda actualiza el archivo de origen en mi computadora?",
+          "answer": "No. Los navegadores no pueden modificar archivos locales directamente debido a restricciones de seguridad. Tus cambios se guardan en la sesión de memoria activa del navegador. Para aplicar estas ediciones, haz clic en el botón \"Exportar CSV\" para descargar una copia nueva y actualizada del archivo."
+        },
+        {
+          "question": "¿Las filas de mi hoja de cálculo se suben o rastrean?",
+          "answer": "No. 99tool.in procesa todos los archivos localmente. Tus datos, celdas de tabla y exportaciones permanecen en el entorno seguro de tu navegador, protegiendo tu privacidad."
+        },
+        {
+          "question": "¿Esta herramienta admite punto y coma o tabulaciones como separadores?",
+          "answer": "Esta versión está optimizada para archivos estándar separados por comas (.csv). Los puntos y comas o las tabulaciones pueden hacer que las columnas se agrupen incorrectamente en la cuadrícula de la tabla."
+        },
+        {
+          "question": "¿Puedo agregar nuevas filas o columnas?",
+          "answer": "Esta herramienta está diseñada como un visor y editor de valores para cuadrículas existentes. Para agregar nuevas columnas o filas, recomendamos utilizar nuestra Herramienta de Hoja de Cálculo completa basada en el cliente."
+        }
+      ],
+      "privacy_note": "🔒 Nota de Privacidad y Datos: El análisis de datos CSV y la renderización de tablas ocurren dentro de tu navegador. No se envían archivos ni valores de celdas a nuestros servidores.",
+      "schema_org": {
+        "name": "Visor y Editor de CSV",
+        "description": "Análisis de CSV, vista de tabla, edición de celdas, ordenación de columnas, exportación de datos."
+      }
+    },
+    "image_compressor": {
+      "page_title": "Compresor de Imágenes – 99tool.in",
+      "meta_description": "Reduce el tamaño de tus imágenes sin perder calidad. Compresor de imágenes rápido, seguro y gratuito de 99tool.in.",
+      "what_is_title": "¿Qué es el Compresor de Imágenes Inteligente?",
+      "what_is_content": "El Compresor de Imágenes Inteligente es una utilidad de optimización en el lado del cliente diseñada para reducir el tamaño de archivo de tus imágenes manteniendo intactos sus detalles visuales. Utilizando la renderización en Canvas del navegador y el escalado de compresión dinámico, la herramienta te permite reducir archivos de imagen pesados para mejorar el rendimiento web.\n\nEsta optimización opera completamente dentro de la memoria de entorno seguro de tu navegador local. Dado que no se suben archivos a ningún servidor externo, tus fotos de alta resolución originales, gráficos sin procesar y diseños propietarios permanecen completamente privados y seguros.",
+      "how_to_use_title": "Cómo usar el Compresor de Imágenes Inteligente",
+      "how_to_use_steps": [
+        "<strong>Carga tu imagen:</strong> Haz clic dentro de la zona de carga punteada o arrastra y suelta tu archivo de imagen (JPG, PNG o WEBP) en el navegador.",
+        "<strong>Revisa el tamaño original:</strong> Consulta la columna <strong>Original</strong> en la cuadrícula de comparación para ver el tamaño inicial de tu archivo.",
+        "<strong>Selecciona el nivel de compresión:</strong> Arrastra el deslizador de <strong>Nivel de Compresión</strong> para ajustar el porcentaje de calidad. Mover el deslizador hacia \"Archivo más pequeño\" (izquierda) reduce aún más el tamaño, mientras que moverlo hacia \"Mejor calidad\" (derecha) conserva los detalles.",
+        "<strong>Elige el formato de destino:</strong> En el menú desplegable <strong>Convertir a formato</strong>, selecciona si deseas mantener el formato de archivo original o transcodificar a JPEG (para alta compatibilidad) o WEBP (para máxima compresión de archivos).",
+        "<strong>Analiza el ahorro:</strong> Compara las vistas previas de <strong>Original</strong> y <strong>Comprimido</strong> lado a lado. La insignia verde muestra el porcentaje exacto de espacio ahorrado.",
+        "<strong>Descarga la imagen optimizada:</strong> Haz clic en el botón <strong>Descargar Imagen Comprimida</strong> para guardar el nuevo archivo comprimido en tu dispositivo local."
+      ],
+      "key_features_title": "Características clave",
+      "key_features": [
+        "<strong>Comparación de calidad lado a lado:</strong> Compara las vistas previas original y comprimida dinámicamente para garantizar que el texto y las texturas sigan siendo legibles.",
+        "<strong>Deslizador de calidad granular:</strong> Ajusta con precisión el nivel de compresión desde el 10% hasta el 100% para adaptarlo a tus objetivos de almacenamiento.",
+        "<strong>Conversión de formato sobre la marcha:</strong> Transcodifica tus archivos a formatos modernos como WEBP o altamente compatibles como JPEG de forma instantánea.",
+        "<strong>Calculadora de ahorro en tiempo real:</strong> Calcula al instante el porcentaje de tamaño de archivo ahorrado durante los ajustes de compresión.",
+        "<strong>Ejecución puramente en el lado del cliente:</strong> Procesa todo en JavaScript local, garantizando cero registros de datos o almacenamiento remoto."
+      ],
+      "common_use_cases_title": "Casos de uso comunes",
+      "common_use_cases": [
+        "<strong>Desarrolladores web:</strong> Compresión de imágenes principales del sitio web, texturas de fondo y elementos de productos para optimizar la velocidad de carga y el SEO.",
+        "<strong>Gestores de redes sociales:</strong> Formatear y reducir fotos pesadas de cámara para cumplir con los límites de carga de las plataformas sin distorsión visual.",
+        "<strong>Administradores de oficina:</strong> Reducción del tamaño de documentos escaneados o capturas de pantalla para no superar los límites de adjuntos por correo electrónico.",
+        "<strong>Blogueros y redactores de contenido:</strong> Creación de imágenes optimizadas y de carga rápida para lectores móviles para reducir la tasa de rebotado."
+      ],
+      "faq_title": "Preguntas frecuentes",
+      "faq": [
+        {
+          "question": "¿Mi imagen perderá calidad durante la compresión?",
+          "answer": "Recomendamos mantener el deslizador entre el 80% y el 90% para un uso típico. En este rango, el tamaño del archivo se reduce significativamente, mientras que los cambios visuales suelen ser imperceptibles para el ojo humano."
+        },
+        {
+          "question": "¿Mis fotos privadas se suben a un servidor en la nube?",
+          "answer": "Absolutamente no. Todo el procesamiento, cambio de tamaño y transcodificación de formato ocurren localmente en la memoria privada de tu navegador. No se envían archivos por la red."
+        },
+        {
+          "question": "¿Cuál es el beneficio de convertir a WEBP?",
+          "answer": "WEBP es un formato de imagen moderno que proporciona una compresión con y sin pérdidas superior en comparación con formatos tradicionales como JPEG y PNG, lo que da como resultado archivos más pequeños con mayor fidelidad."
+        },
+        {
+          "question": "¿Puedo comprimir imágenes PNG transparentes?",
+          "answer": "Sí. Para conservar la transparencia, selecciona \"Mantener formato original\" o convierte a \"WEBP\". Convertir imágenes transparentes a JPEG reemplazará las áreas transparentes con un fondo blanco sólido."
+        },
+        {
+          "question": "¿Por qué aumentó el tamaño de mi archivo después de la compresión?",
+          "answer": "Esto puede suceder si el archivo original ya estaba muy optimizado, o si estás convirtiendo un formato altamente comprimido a uno menos eficiente (como JPEG a WEBP con un ajuste de calidad del 100%). Reduce el deslizador para resolver esto."
+        }
+      ],
+      "privacy_note": "Nota de Privacidad y Datos: Cada paso de la compresión de píxeles y la transcodificación de formato se realiza localmente en tu computadora. Tus archivos nunca se almacenan ni se procesan en servidores externos.",
+      "schema_org": {
+        "name": "Compresor de Imágenes – 99tool.in",
+        "description": "Herramienta gratuita en línea de 99tool.in: rápida, privada, sin necesidad de registro."
+      }
+    },
+    "markdown_previewer": {
+      "page_title": "Visor de Markdown – 99tool.in",
+      "meta_description": "Escribe, edita y convierte Markdown a HTML en tiempo real. Herramienta de desarrollo gratuita y privada de 99tool.in.",
+      "what_is_title": "¿Qué es el Visor de Markdown?",
+      "what_is_content": "El Visor de Markdown es un editor en el lado del navegador diseñado para escribir, dar formato y renderizar la sintaxis de Markdown en tiempo real. Al escribir marcado en el lado izquierdo y revisar los resultados estilizados en el derecho, los desarrolladores pueden auditar leámes, guías técnicas y artículos antes de publicarlos en repositorios de producción.\n\nEste editor ejecuta todas las traducciones de Markdown a HTML localmente en tu computadora. Dado que no se suben cadenas de borrador, bloques de código ni configuraciones del sistema a bases de datos externas, tus archivos de documentos y planes de origen permanecen completamente seguros.",
+      "how_to_use_title": "Cómo usar el Visor de Markdown",
+      "how_to_use_steps": [
+        "<strong>Ingresa tu Markdown:</strong> Escribe o pega tu sintaxis Markdown sin procesar en el panel \"Editor\" del lado izquierdo.",
+        "<strong>Observa la renderización en vivo:</strong> Consulta el panel \"Vista previa en vivo\" del lado derecho para revisar instantáneamente tus encabezados, listas, fragmentos de código y tablas formateadas.",
+        "<strong>Copia el código HTML:</strong> Haz clic en el botón \"Copiar HTML\" dentro del encabezado del panel de vista previa para copiar el marcado HTML compilado a tu portapapeles.",
+        "<strong>Descarga tu archivo de origen:</strong> Haz clic en \"Descargar .md\" para exportar tu espacio de trabajo de texto sin procesar como un documento Markdown estándar directamente a tu dispositivo.",
+        "<strong>Limpia el espacio de trabajo:</strong> Haz clic en \"Limpiar todo\" para vaciar los editores de texto y comenzar a escribir un nuevo borrador."
+      ],
+      "key_features_title": "Características clave",
+      "key_features": [
+        "<strong>Renderización en panel dividido en vivo:</strong> Traduce tu marcado sin procesar en formato HTML visual a medida que escribes.",
+        "<strong>Compatibilidad con formato GFM:</strong> Admite reglas estándar de GitHub Flavored Markdown para tablas, texto en negrita, listas y citas.",
+        "<strong>Copiador de salida HTML:</strong> Guarda los elementos HTML compilados en tu portapapeles para integraciones web instantáneas.",
+        "<strong>Exportación de archivos locales:</strong> Descarga tus borradores completados como un archivo <code>.md</code> independiente.",
+        "<strong>Compilador 100% en el lado del cliente:</strong> Renderiza estilos visuales sin conexión en la caché del navegador para proteger tu texto."
+      ],
+      "common_use_cases_title": "Casos de uso comunes",
+      "common_use_cases": [
+        "<strong>Redacción de README de repositorios:</strong> Da formato a archivos de descripción de proyectos y verifica referencias de imágenes antes de enviar actualizaciones.",
+        "<strong>Vistas previas de documentación de API:</strong> Escribe y previsualiza especificaciones de API, listas de puntos de enlace y muestras de consultas en bloques estilizados.",
+        "<strong>Redacción de blogs técnicos:</strong> Esboza artículos basados en Markdown y previsualiza jerarquías de encabezados antes de exportar a tu CMS.",
+        "<strong>Estudio de sintaxis Markdown:</strong> Aprende y prueba atajos de Markdown (como negritas, listas y enlaces) en un editor interactivo."
+      ],
+      "faq_title": "Preguntas frecuentes",
+      "faq": [
+        {
+          "question": "¿Este editor es compatible con GitHub Flavored Markdown?",
+          "answer": "Sí. El visor admite elementos GFM estándar, incluidas listas de tareas anidadas, tablas Markdown, citas y bloques de sintaxis de código."
+        },
+        {
+          "question": "¿Mis borradores se envían a un servidor?",
+          "answer": "No. 99tool.in procesa todas las compilaciones de Markdown y generaciones de HTML localmente en la memoria de tu navegador. Tus borradores y configuraciones nunca se suben."
+        },
+        {
+          "question": "¿Cómo renderizo imágenes en la vista previa en vivo?",
+          "answer": "Puedes hacer referencia a cualquier imagen alojada utilizando la sintaxis estándar (<code>![](url_de_la_imagen)</code>). Asegúrate de que el enlace sea accesible públicamente para que tu navegador pueda renderizarlo en el panel de vista previa."
+        },
+        {
+          "question": "¿El archivo .md exportado incluye el HTML renderizado?",
+          "answer": "No. Al hacer clic en \"Descargar .md\" se exporta el código fuente de Markdown editable sin procesar. Para obtener el HTML compilado, haz clic en el botón \"Copiar HTML\" dentro del panel de vista previa."
+        }
+      ],
+      "privacy_note": "🔒 Nota de Privacidad y Datos: La renderización de Markdown, las acciones del portapapeles y las exportaciones ocurren localmente en tu navegador. Ninguno de tus borradores se envía a nuestros servidores.",
+      "schema_org": {
+        "name": "Visor de Markdown",
+        "description": "Vista previa de resultados en vivo, soporte GFM, exportación como HTML, pantalla dividida multipanel."
+      }
+    },
+    "pdf_merger": {
+      "page_title": "Unir PDF – 99tool.in",
+      "meta_description": "Combina y une archivos PDF en segundos directamente en tu navegador. Herramienta 100% privada y gratuita de 99tool.in.",
+      "what_is_title": "Por fin, un combinador de PDF que respeta tu privacidad digital",
+      "what_is_content": "Todos hemos estado allí: tienes tres informes diferentes, una docena de recibos escaneados y una carta de presentación que deben enviarse como un único archivo adjunto profesional. Tu primer instinto es buscar una herramienta para <strong>unir pdf gratis en línea</strong>. Pero luego surge la duda. Miras el botón de \"subir\" y te das cuenta de que estás a punto de enviar documentos potencialmente confidenciales (contratos privados, registros de salud personales o expedientes académicos) a un servidor en alguna parte de la nube. ¿Quién es dueño de ese servidor? ¿Qué pasa con tus datos después de hacer clic en \"unir\"?\n\nEn 99tool.in, creamos nuestra utilidad para <strong>combinar archivos pdf</strong> específicamente para resolver este dilema moderno de privacidad. A diferencia de los grandes competidores que procesan tus archivos en su infraestructura, nuestra herramienta te trae el poder de procesamiento a ti. Al utilizar los últimos avances en tecnología <code>pdf-lib</code> basada en el navegador, hemos creado un <strong>unidor de pdf</strong> que se ejecuta completamente en la memoria RAM de tu computadora. Tus archivos nunca salen de tu dispositivo. Ni por un segundo. Esto no se trata solo de velocidad; se trata de la tranquilidad absoluta que proviene de saber que tus huellas digitales son tuyas y solo tuyas.",
+      "how_to_use_title": "Cómo usar el Unidor de PDF de 99tool.in (paso a paso)",
+      "how_to_use_steps": [
+        "<strong>Paso 1: Reúne tus archivos</strong> — Haz clic en el recuadro \"Seleccionar PDF\" o simplemente arrastra tu grupo de PDF directamente a la interfaz. Los verás aparecer en una lista ordenada al instante.",
+        "<strong>Paso 2: Verifica el estado de seguridad</strong> — Busca el escudo verde al lado de cada archivo. Esto confirma que nuestro escaneo interno no encontró ningún script oculto.",
+        "<strong>Paso 3: Organiza tu secuencia</strong> — Pasa el cursor sobre un archivo, haz clic y mantenlo presionado, y arrástralo hacia arriba o hacia abajo. El archivo superior será la página 1 de tu nuevo documento.",
+        "<strong>Paso 4: Finaliza y descarga</strong> — Una vez que el orden sea perfecto, haz clic en el botón \"Unir archivos\". Debido a que este es un <strong>unidor de pdf</strong> local, el ensamblaje ocurre en segundos. Tu descarga se inicia automáticamente."
+      ],
+      "key_features_title": "Por qué la combinación manual orientada al usuario es mejor",
+      "key_features": [
+        "<strong>Espacio de trabajo visual táctil:</strong> Arrastra y suelta cada elemento en la secuencia exacta que necesitas.",
+        "<strong>Escaneo de seguridad activo:</strong> Escanea la estructura interna del documento en busca de elementos interactivos como etiquetas /JS o /Action antes de unir.",
+        "<strong>Ensamblaje puro en el navegador:</strong> Se ejecuta completamente dentro de la memoria RAM mediante pdf-lib y WebAssembly.",
+        "<strong>Cero subidas de archivos:</strong> Protección de privacidad absoluta para contratos confidenciales, registros médicos y expedientes legales."
+      ],
+      "common_use_cases_title": "Casos de uso del mundo real para combinación profesional",
+      "common_use_cases": [
+        "<strong>Para profesionales legales:</strong> Creación de expedientes judiciales combinando pruebas, declaraciones juradas y jurisprudencia sin filtraciones de metadatos.",
+        "<strong>Para estudiantes y educadores:</strong> Envío de tesis finales que requieren incluir bibliografías y declaraciones firmadas o creación de paquetes de lectura.",
+        "<strong>Para agentes inmobiliarios:</strong> Combinación de divulgaciones, cartas de oferta e informes de inspección manteniendo privados los datos financieros de los clientes."
+      ],
+      "faq_title": "Preguntas frecuentes",
+      "faq": [
+        {
+          "question": "¿Hay un límite en la cantidad de PDF que puedo unir?",
+          "answer": "Debido a que la combinación ocurre localmente utilizando los recursos de tu navegador, el límite depende de la memoria RAM de tu computadora. La mayoría de las computadoras de escritorio y portátiles modernas pueden manejar fácilmente más de 50 archivos PDF de tamaño mediano. Para unir archivos PDF muy grandes, recomendamos procesar en lotes más pequeños para un rendimiento óptimo."
+        },
+        {
+          "question": "¿La combinación afecta la calidad de mis imágenes?",
+          "answer": "No. Nuestro unidor de PDF mantiene intactos los datos originales de cada página mediante la librería pdf-lib. No comprimimos ni volvemos a renderizar las páginas durante el proceso de unión, garantizando que tu texto siga siendo buscable y tus imágenes conserven alta resolución."
+        },
+        {
+          "question": "¿Por qué recibo una \"Advertencia de seguridad\" en algunos archivos?",
+          "answer": "Algunos archivos PDF contienen elementos interactivos como JavaScript o acciones automatizadas (AcroForms). Nuestro unidor seguro de PDF los marca para informarte, ya que estos elementos a veces se pueden usar para rastreo. En la mayoría de los casos, son solo características de formularios avanzados, pero creemos en la transparencia."
+        },
+        {
+          "question": "¿Mis documentos se suben a un servidor?",
+          "answer": "Absolutamente no. Para la máxima seguridad, todo el procesamiento se realiza mediante WASM y JavaScript directamente en la pestaña de tu navegador. Tus archivos se leen en la memoria local, se unen y se descargan. No se transmiten datos a nuestra infraestructura."
+        },
+        {
+          "question": "¿Puedo unir archivos PDF protegidos con contraseña?",
+          "answer": "Unir archivos cifrados o protegidos con contraseña requiere que se desbloqueen primero. Nuestro unidor actual en el navegador no puede eludir las restricciones de seguridad de PDF. Asegúrate de que tus archivos estén descifrados antes de intentar combinarlos."
+        },
+        {
+          "question": "¿Esta herramienta es compatible con dispositivos móviles?",
+          "answer": "Sí. Siempre que tu navegador móvil admita las API nativas de JavaScript modernas, puedes combinar archivos PDF en iPhone, iPad o Android. Ten en cuenta que los archivos muy grandes pueden verse limitados por la memoria disponible en tu dispositivo móvil."
+        }
+      ],
+      "privacy_note": "🔒 Procesamiento basado en sesión. Cero subidas. Cero rastreo. Última actualización: 10 de abril de 2026.",
+      "schema_org": {
+        "name": "Herramienta para Unir PDF",
+        "description": "Unión de PDF, reordenación visual de archivos, escaneo de seguridad, procesamiento centrado en la privacidad."
+      }
+    },
+    "password_generator": {
+      "page_title": "Generador de Contraseñas – 99tool.in",
+      "meta_description": "Genera contraseñas seguras y aleatorias al instante. Herramienta 100% privada y local de 99tool.in.",
+      "what_is_title": "¿Qué es el Generador de Contraseñas Seguras?",
+      "what_is_content": "El Generador de Contraseñas Seguras crea contraseñas criptográficamente aleatorias utilizando la API Web Crypto de tu navegador (window.crypto.getRandomValues). Esto produce un resultado aleatorio genuino que es estadísticamente superior a las contraseñas elegidas por humanos o a las generadas por herramientas basadas en Math.random(). Todo el proceso se ejecuta localmente en tu navegador: nada se transmite a ningún servidor.\n\nConfigura la longitud de tu contraseña, los conjuntos de caracteres (mayúsculas, minúsculas, dígitos, símbolos) y la herramienta generará al instante una contraseña que cumpla con tus requisitos exactos. Cópiala en tu portapapeles y guárdala en un gestor de contraseñas.",
+      "how_to_use_title": "Cómo usar el Generador de Contraseñas Seguras",
+      "how_to_use_steps": [
+        "Establece la longitud de contraseña deseada usando el deslizador de longitud o el campo de entrada (se recomiendan de 8 a 128 caracteres).",
+        "Activa las casillas de verificación de los conjuntos de caracteres: Mayúsculas (A-Z), Minúsculas (a-z), Números (0-9), Símbolos (!@#$...).",
+        "Haz clic en \"Generar contraseña\" para crear una contraseña criptográficamente aleatoria que coincida con tus ajustes.",
+        "Revisa el Medidor de fuerza para confirmar que la contraseña generada cumple con tus requisitos de seguridad.",
+        "Haz clic en \"Copiar\" para copiar la contraseña a tu portapapeles y luego pégala inmediatamente en tu gestor de contraseñas.",
+        "Haz clic en \"Generar\" nuevamente para producir una nueva contraseña sin cambiar tus ajustes."
+      ],
+      "key_features_title": "Características clave",
+      "key_features": [
+        "<strong>Aleatoriedad mediante API Web Crypto:</strong> Utiliza una generación de números aleatorios criptográficamente segura, no Math.random().",
+        "<strong>Salida configurable:</strong> Establece la longitud (hasta 128 caracteres) y elige entre 4 combinaciones de conjuntos de caracteres.",
+        "<strong>Medidor de fuerza:</strong> Muestra la entropía y la calificación de fuerza de cada contraseña generada en tiempo real.",
+        "<strong>Copia en un clic:</strong> Copia al instante la contraseña generada a tu portapapeles con confirmación visual."
+      ],
+      "common_use_cases_title": "Casos de uso comunes",
+      "common_use_cases": [
+        "<strong>Registro de cuentas:</strong> Generación de una contraseña única y fuerte cada vez que creas una nueva cuenta en línea.",
+        "<strong>Rotación de contraseñas:</strong> Creación de una contraseña de reemplazo cuando un sitio te obliga a actualizar tus credenciales.",
+        "<strong>Plantillas de claves de API:</strong> Generación de cadenas aleatorias que pueden servir como claves de API, tokens o valores secretos en desarrollo."
+      ],
+      "faq_title": "Preguntas frecuentes",
+      "faq": [
+        {
+          "question": "¿La contraseña generada es verdaderamente aleatoria?",
+          "answer": "Sí. La herramienta utiliza window.crypto.getRandomValues(), que obtiene la entropía del generador de números aleatorios criptográficamente seguro del sistema operativo (CSPRNG). Esta es la misma fuente de entropía que utilizan TLS y las librerías criptográficas modernas."
+        },
+        {
+          "question": "¿Qué longitud debe tener mi contraseña?",
+          "answer": "Se recomienda un mínimo de 16 caracteres para cuentas estándar y más de 20 para cuentas críticas (correo electrónico, banca). Las contraseñas más largas con conjuntos de caracteres mixtos son exponencialmente más difíciles de descifrar."
+        },
+        {
+          "question": "¿La contraseña se envía a sus servidores?",
+          "answer": "Nunca. Toda la generación ocurre localmente en tu navegador. La contraseña nunca sale de tu dispositivo y no se almacena ni se registra en ningún lugar."
+        },
+        {
+          "question": "¿Debo memorizar la contraseña generada?",
+          "answer": "No. Las contraseñas generadas están diseñadas para almacenarse en un gestor de contraseñas, no para memorizarse. Utiliza una herramienta como Bitwarden, 1Password o nuestra Bóveda de Contraseñas Seguras para guardarlas de forma segura."
+        }
+      ],
+      "privacy_note": "🔒 Criptográficamente segura. 100% Local. Cero contacto con servidores. Última actualización: 10 de abril de 2026.",
+      "schema_org": {
+        "name": "Generador de Contraseñas Seguras",
+        "description": "Generación de contraseñas aleatorias, conjuntos de caracteres personalizables, comprobación de entropía de fuerza de contraseña, 100% en el cliente."
+      }
+    },
+    "regex_tester": {
+      "page_title": "Probador de Regex – 99tool.in",
+      "meta_description": "Prueba y depura expresiones regulares en tiempo real. Herramienta gratuita y privada para desarrolladores de 99tool.in.",
+      "what_is_title": "¿Qué es el Probador y Depurador de Regex?",
+      "what_is_content": "El Probador y Depurador de Regex es un espacio de trabajo de desarrollo en el lado del cliente diseñado para componer, probar y solucionar problemas de expresiones regulares. Al ingresar un patrón y banderas de coincidencia, los desarrolladores pueden auditar cómo las reglas de expresión recorren el texto de muestra, capturan grupos y manejan casos límite directamente dentro de su navegador web.\n\nEste depurador ejecuta toda la compilación de expresiones y la coincidencia de patrones localmente utilizando el motor RegExp nativo de JavaScript del navegador. Debido a que no se envían bloques de texto de prueba, registros propietarios ni reglas personalizadas a través de la red, tus arquitecturas de origen y cadenas permanecen confidenciales.",
+      "how_to_use_title": "Cómo usar el Probador y Depurador de Regex",
+      "how_to_use_steps": [
+        "<strong>Ingresa tu patrón:</strong> Escribe tu expresión regular (por ejemplo, <code>[a-zA-Z0-9]+</code>) en la barra de entrada de patrones.",
+        "<strong>Configura las banderas:</strong> Activa banderas como Global (g) para buscar todas las coincidencias, Insensible a mayúsculas (i) para ignorar mayúsculas o Multilínea (m) para anclas de línea.",
+        "<strong>Pega tu texto de prueba:</strong> Introduce tu cadena de muestra en el área de texto \"Texto de prueba\". Las coincidencias se resaltarán de inmediato.",
+        "<strong>Inspecciona los grupos de captura:</strong> Examina el panel lateral de \"Resultados de coincidencias\" para ver detalles sobre coincidencias completas y grupos de captura numerados o nombrados.",
+        "<strong>Corrige problemas de sintaxis:</strong> Si tu expresión está rota, revisa el mensaje de error que se muestra debajo de la barra de patrones para identificar y corregir errores de sintaxis."
+      ],
+      "key_features_title": "Características clave",
+      "key_features": [
+        "<strong>Renderización de resaltado en tiempo real:</strong> Visualiza las coincidencias en el bloque de prueba a medida que escribes o cambias el patrón de la expresión.",
+        "<strong>Control interactivo de banderas:</strong> Activa fácilmente las banderas Global, Insensible a mayúsculas y Multilínea para modificar las reglas de evaluación.",
+        "<strong>Mapa detallado de grupos de captura:</strong> Detalla las ubicaciones de coincidencias completas junto con índices de grupo específicos y valores extraídos.",
+        "<strong>Depuración de errores integrada:</strong> Muestra advertencias de validación descriptivas para ayudar a aislar corchetes sin cerrar o caracteres no válidos.",
+        "<strong>Compilador 100% en el lado del cliente:</strong> Prueba expresiones regulares sin conexión dentro de la pestaña del navegador para proteger la privacidad."
+      ],
+      "common_use_cases_title": "Casos de uso comunes",
+      "common_use_cases": [
+        "<strong>Validación de entradas de usuario:</strong> Valida patrones para estructuras de correo electrónico, números de teléfono, contraseñas y campos de nombre de usuario.",
+        "<strong>Auditoría y análisis de registros:</strong> Crea patrones para extraer bloques de marcas de tiempo, ubicaciones de IP o valores de estado HTTP de los registros del servidor.",
+        "<strong>Flujos de trabajo de extracción de texto:</strong> Prueba patrones que extraigan etiquetas específicas, claves de metadatos o variables de archivos de código fuente.",
+        "<strong>Aprendizaje de expresiones regulares:</strong> Experimenta con anclas, cuantificadores, lógica de búsqueda previa y agrupaciones en un entorno visual."
+      ],
+      "faq_title": "Preguntas frecuentes",
+      "faq": [
+        {
+          "question": "¿Qué motor de expresiones regulares utiliza esta herramienta?",
+          "answer": "Esta herramienta utiliza el motor <code>RegExp</code> nativo de JavaScript. Este motor coincide con el comportamiento de los entornos de Chrome, Edge, Safari, Firefox y Node.js."
+        },
+        {
+          "question": "¿Mis cadenas de prueba se suben a un servidor?",
+          "answer": "No. 99tool.in procesa todas las compilaciones de expresiones y evaluaciones de patrones localmente en la memoria de tu navegador. Tus cadenas de prueba nunca se envían por la red."
+        },
+        {
+          "question": "¿Por qué la herramienta muestra un error de sintaxis de regex?",
+          "answer": "Este mensaje ocurre cuando la expresión es matemáticamente no válida, como tener paréntesis sin cerrar <code>(</code>, barras sin escapar o banderas duplicadas."
+        },
+        {
+          "question": "¿El depurador admite lookbehinds y lookaheads?",
+          "answer": "Sí. El motor nativo del navegador admite características modernas de regex de ES2018+, incluidas búsquedas hacia adelante positivas y negativas (<code>(?=...)</code> / <code>(?!...)</code>) y búsquedas hacia atrás (<code>(?<=...)</code> / <code>(?<!...)</code>)."
+        }
+      ],
+      "privacy_note": "🔒 Nota de Privacidad y Datos: La compilación de patrones regex, las evaluaciones de coincidencia y las listas de grupos ocurren localmente en tu navegador. Ninguno de tus datos se envía a nuestros servidores.",
+      "schema_org": {
+        "name": "Probador de Regex",
+        "description": "Pruebas de Regex en tiempo real, soporte de banderas (g, i, m), resaltado de coincidencias."
+      }
+    },
+    "word_counter": {
+      "page_title": "Contador de Palabras – 99tool.in",
+      "meta_description": "Cuenta palabras, caracteres, oraciones y párrafos en tiempo real. Herramienta gratuita y privada de 99tool.in.",
+      "what_is_title": "¿Qué es el Contador de Palabras en Línea?",
+      "what_is_content": "El Contador de Palabras en Línea es una herramienta de análisis de texto en tiempo real que cuenta palabras, caracteres, oraciones y párrafos a medida que escribes o pegas contenido. Los editores de texto basados en la nube a menudo almacenan tus documentos en servidores externos. Esta herramienta realiza todo el análisis localmente dentro de tu navegador sin transmisión de datos.\n\nEl contador se actualiza al instante con cada pulsación de tecla, permitiéndote monitorear la longitud del texto para ensayos, publicaciones en redes sociales, contenido SEO o cualquier formato con un límite de caracteres o palabras. Tu texto nunca sale de tu dispositivo.",
+      "how_to_use_title": "Cómo usar el Contador de Palabras en Línea",
+      "how_to_use_steps": [
+        "Escribe o pega tu texto directamente en el recuadro del editor en la parte superior de la página.",
+        "Observa cómo el recuento de palabras, caracteres, oraciones y párrafos se actualiza en tiempo real.",
+        "Utiliza el indicador de \"Tiempo de lectura\" para estimar cuánto tiempo le tomará a un lector promedio consumir tu contenido.",
+        "Edita tu texto directamente en el cuadro para ajustar la longitud hasta alcanzar tu objetivo.",
+        "Haz clic en \"Limpiar\" para reiniciar el editor y realizar un nuevo análisis."
+      ],
+      "key_features_title": "Características clave",
+      "key_features": [
+        "<strong>Recuento en tiempo real:</strong> Actualiza los recuentos de palabras, caracteres, oraciones y párrafos con cada pulsación de tecla.",
+        "<strong>Estimación del tiempo de lectura:</strong> Calcula la duración aproximada de lectura basada en la velocidad de lectura estándar de un adulto.",
+        "<strong>Recuento de caracteres (con y sin espacios):</strong> Muestra ambos totales para plataformas como Twitter que cuentan los espacios de manera diferente.",
+        "<strong>Privacidad sin subidas:</strong> Toda la lógica de conteo se ejecuta en el cliente; tu texto nunca se envía a ningún servidor."
+      ],
+      "common_use_cases_title": "Casos de uso comunes",
+      "common_use_cases": [
+        "<strong>Ensayos académicos:</strong> Verificación del recuento de palabras con respecto a los límites de entrega para trabajos universitarios antes de subirlos.",
+        "<strong>Redacción de contenido SEO:</strong> Orientación a recuentos específicos de caracteres para descripciones meta, etiquetas de título y longitud de artículos.",
+        "<strong>Publicaciones en redes sociales:</strong> Mantenimiento dentro de los límites de caracteres de Twitter/X o LinkedIn antes de publicar.",
+        "<strong>Redacción independiente:</strong> Auditoría de la longitud de los entregables frente a las especificaciones contractuales de recuento de palabras."
+      ],
+      "faq_title": "Preguntas frecuentes",
+      "faq": [
+        {
+          "question": "¿Esta herramienta guarda lo que escribo?",
+          "answer": "Absolutamente no. Tu privacidad es primordial. Todo sucede localmente en la pestaña de tu navegador. Una vez que la cierras, tu texto desaparece para siempre de nuestro lado (¡porque nunca estuvo aquí en primer lugar!)."
+        },
+        {
+          "question": "¿Cuál es una buena velocidad de lectura?",
+          "answer": "Utilizamos una estimación promedio de 200 palabras por minuto, que es lo estándar para la mayoría de los adultos. Te da una idea aproximada de cuánto tiempo le tomará a alguien terminar tu artículo."
+        },
+        {
+          "question": "¿Puedo usar esto para límites de caracteres en redes sociales?",
+          "answer": "¡Definitivamente! Ya sea para X (Twitter), LinkedIn o descripciones de Instagram, el contador de caracteres (con y sin espacios) es tu mejor aliado para mantenerte dentro de esos límites."
+        },
+        {
+          "question": "¿Hay un límite en la cantidad de texto que puedo pegar?",
+          "answer": "¡Aún no hemos encontrado un límite! Ya sea un tweet corto o el capítulo completo de una tesis, la herramienta está diseñada para manejarlo sin esfuerzo."
+        },
+        {
+          "question": "¿Funciona en mi teléfono?",
+          "answer": "Sí, la herramienta es totalmente adaptable. Puedes contar palabras sobre la marcha desde tu teléfono inteligente o tableta tan fácilmente como en una computadora de escritorio."
+        }
+      ],
+      "privacy_note": "Nota de Privacidad y Datos: Todo el análisis de texto, recuento de caracteres y cálculos de tiempo de lectura se procesan completamente dentro de tu navegador. Tu contenido nunca se almacena, transmite ni es visto por ningún servidor.",
+      "schema_org": {
+        "name": "Contador de Palabras en Línea",
+        "description": "Recuento de palabras, recuento de caracteres, recuento de oraciones, estimación del tiempo de lectura."
+      }
+    }
+  }
+}

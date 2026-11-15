@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Spin Wheel – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/fun/spin-wheel.html"/>
+<meta property="og:title" content="Spin Wheel – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/fun/spin-wheel.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Spin Wheel \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/fun/spin-wheel.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .wheel-workspace {
+      display: grid;
+      grid-template-columns: 1fr 350px;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .wheel-container {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 3rem;
+      overflow: hidden;
+    }
+    
+    .wheel-wrapper {
+      position: relative;
+      width: 400px;
+      height: 400px;
+    }
+    
+    #wheel {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 10px solid #222;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+      transition: transform 4s cubic-bezier(0.1, 0, 0.2, 1);
+    }
+    
+    .pointer {
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 40px;
+      background: var(--primary);
+      clip-path: polygon(50% 100%, 0 0, 100% 0);
+      z-index: 10;
+      filter: drop-shadow(0 4px 4px rgba(0,0,0,0.5));
+    }
+
+    .options-pane {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    
+    textarea {
+      background: var(--dark);
+      border: 1px solid var(--border);
+      color: white;
+      padding: 1rem;
+      border-radius: 8px;
+      resize: none;
+      height: 200px;
+      font-size: 0.9rem;
+    }
+
+    .winner-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.8);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      z-index: 100;
+      border-radius: 20px;
+      animation: fadeIn 0.3s ease;
+    }
+    .winner-card {
+      background: var(--dark-card);
+      border: 2px solid var(--primary);
+      padding: 3rem;
+      border-radius: 20px;
+      text-align: center;
+      transform: scale(0.8);
+      animation: popOut 0.5s forwards cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .winner-card h2 { font-size: 3rem; color: var(--primary); margin: 1rem 0; }
+
+    @keyframes popOut { to { transform: scale(1); } }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    @media (max-width: 992px) {
+      .wheel-workspace { grid-template-columns: 1fr; }
+      .wheel-wrapper { width: 300px; height: 300px; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-hero text-center">
+      <nav class="breadcrumb justify-content-center">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#fun">Fun</a> <span>/</span> 
+        <span>Spin Wheel Picker</span>
+      </nav>
+      <h1>Spin Wheel Random Picker</h1>
+      <p>The ultimate decision maker. Add your choices, spin the wheel, and let fate decide.</p>
+    </div>
+
+    <div class="wheel-workspace">
+      <section class="wheel-container">
+        <div class="winner-overlay" id="winner-overlay">
+          <div class="winner-card">
+             <p class="text-muted text-uppercase small">The Winner is:</p>
+             <h2 id="winner-text">Result</h2>
+             <button class="btn btn-primary" onclick="closeWinner()">Spin Again</button>
+          </div>
+        </div>
+
+        <div class="wheel-wrapper">
+          <div class="pointer"></div>
+          <canvas id="wheel"></canvas>
+        </div>
+        <button class="btn btn-primary btn-lg mt-5" id="spin-btn" onclick="spin()">SPIN THE WHEEL</button>
+      </section>
+
+      <aside class="options-pane">
+        <h3>Wheel Options</h3>
+        <p class="text-muted small">Enter one option per line</p>
+        <textarea id="options-input" oninput="drawWheel()">Pizza\nBurgers\nSushi\nTacos\nSalad\nThai</textarea>
+        <button class="btn btn-secondary" onclick="shuffleOptions()">Shuffle Options</button>
+      </aside>
+    </div>
+
+    <!-- SEO CONTENT -->
+    <section class="seo-content mt-5">
+      <h2>Gamify Your Decisions with High-Fidelity Physics</h2>
+      <p>Analysis paralysis is a common productivity killer. Whether you are deciding where to go for lunch, picking a winner for an office raffle, or choosing the next book for your club, our <strong>spin wheel tool</strong> adds an element of fun to the process. Unlike static random pickers, our wheel uses premium CSS and Canvas animations to simulate the tension and excitement of a physical "Wheel of Fortune."</p>
+      
+      <h3 class="mt-4">Designed for Engagement and Replayability</h3>
+      <p>Most <strong>decision makers online</strong> are cluttered with intrusive ads that ruin the suspense. 99tool.in provides a clean, <strong>private spin wheel</strong> that works entirely in your browser. No data is sent to a server, and your custom lists are stored locally in your session. The high-contrast design ensures that the wheel is easily visible in group settings, making it perfect for parties or team meetings.</p>
+
+      <ul style="line-height: 1.8; margin-top: 15px;">
+        <li><strong>Dynamic Segments:</strong> Add as many options as you like. The wheel automatically resizes and re-colors each piece.</li>
+        <li><strong>Physics-Based Spin:</strong> A custom easing function ensures that the wheel slows down realistically, keeping the result a mystery until the very end.</li>
+        <li><strong>Winner Celebration:</strong> A dedicated overlay highlights the result, complete with visual flair for that "premium" feel.</li>
+      </ul>
+
+      <h3 class="mt-4">100% Private, 100%</h3>
+      <p>Your choices are your business. Many <strong>random picker apps</strong> track your selections to build consumer profiles. At 99tool.in, we believe in "Privacy by Design." Every line of text you enter stays in your RAM or <code>sessionStorage</code>. Once you close the tab, your data is gone. It's the perfect <strong>private decision tool</strong> for professionals and families alike.</p>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const canvas = document.getElementById('wheel');
+    const ctx = canvas.getContext('2d');
+    const input = document.getElementById('options-input');
+    
+    let options = [];
+    let currentRotation = 0;
+    let isSpinning = false;
+
+    // Set canvas resolution
+    canvas.width = 800;
+    canvas.height = 800;
+
+    function drawWheel() {
+      options = input.value.split('\n').filter(opt => opt.trim().length > 0);
+      if (options.length === 0) return;
+
+      const arc = (2 * Math.PI) / options.length;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      options.forEach((opt, i) => {
+        const angle = i * arc;
+        
+        ctx.beginPath();
+        ctx.fillStyle = `hsl(${(i * 360) / options.length}, 70%, 40%)`;
+        ctx.moveTo(400, 400);
+        ctx.arc(400, 400, 380, angle, angle + arc);
+        ctx.lineTo(400, 400);
+        ctx.fill();
+
+        // Draw Text
+        ctx.save();
+        ctx.translate(400, 400);
+        ctx.rotate(angle + arc / 2);
+        ctx.textAlign = 'right';
+        ctx.fillStyle = 'white';
+        ctx.font = 'bold 24px Inter';
+        ctx.fillText(opt.substring(0, 15), 360, 10);
+        ctx.restore();
+      });
+    }
+
+    function shuffleOptions() {
+      const arr = input.value.split('\n').filter(o => o.trim());
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+      input.value = arr.join('\n');
+      drawWheel();
+    }
+
+    function spin() {
+      if (isSpinning || options.length === 0) return;
+      isSpinning = true;
+      document.getElementById('spin-btn').disabled = true;
+
+      const extraSpins = 5 + Math.floor(Math.random() * 5);
+      const stopAngle = Math.random() * (2 * Math.PI);
+      const totalRotation = extraSpins * 2 * Math.PI + stopAngle;
+      
+      currentRotation += totalRotation;
+      canvas.style.transform = `rotate(${currentRotation}rad)`;
+
+      setTimeout(() => {
+        isSpinning = false;
+        document.getElementById('spin-btn').disabled = false;
+        
+        // Calculate result
+        // The pointer is at -90deg (top). We need to see which arc aligns with it.
+        const normalizedAngle = (currentRotation % (2 * Math.PI));
+        const arc = (2 * Math.PI) / options.length;
+        // Pointer is at -PI/2. The wheel rotates clockwise.
+        // ResultIndex = Math.floor( ( (3/2 * PI) - normAngle) / arc ) % options.length
+        let resultIdx = Math.floor(((1.5 * Math.PI) - normalizedAngle) / arc) % options.length;
+        if (resultIdx < 0) resultIdx += options.length;
+        
+        showWinner(options[resultIdx]);
+      }, 4000);
+    }
+
+    function showWinner(text) {
+      document.getElementById('winner-text').innerText = text;
+      document.getElementById('winner-overlay').style.display = 'flex';
+    }
+
+    function closeWinner() {
+      document.getElementById('winner-overlay').style.display = 'none';
+    }
+
+    drawWheel();
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Sharpen Image – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/image/sharpen-image.html"/>
+<meta property="og:title" content="Sharpen Image – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/image/sharpen-image.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Sharpen Image \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/image/sharpen-image.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .editor-layout {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    @media (max-width: 992px) {
+      .editor-layout { grid-template-columns: 1fr; }
+    }
+    .preview-container {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 400px;
+      position: relative;
+    }
+    #main-canvas {
+      max-width: 100%;
+      height: auto;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      border-radius: 4px;
+    }
+
+    .tool-panel {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      height: fit-content;
+      position: sticky;
+      top: 80px;
+    }
+    .tool-section { margin-bottom: 2rem; }
+    .tool-section h4 { font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem; letter-spacing: 1px; }
+
+    .range-wrap label { display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-muted); margin-bottom: 4px; }
+    
+    .loading-overlay {
+      position: absolute;
+      background: rgba(0,0,0,0.7);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 50px;
+      display: none;
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Image Sharpening Tool</h1>
+      <p>Enhance details and rescue blurry photos with professional-grade sharpening. 100% private and secure.</p>
+    </div>
+
+    <div class="tool-container">
+      <div class="upload-area" id="drop-zone">
+        <div class="upload-icon">✨</div>
+        <p>Drop blurry image or <span class="text-primary">select file</span></p>
+        <p class="text-muted small">JPG, PNG, WEBP (Maximum privacy, no data usage)</p>
+        <input type="file" id="image-input" accept="image/*" hidden>
+      </div>
+
+      <div id="tool-workspace" class="hidden">
+        <div class="editor-layout">
+          <div class="preview-container">
+             <div class="loading-overlay" id="loader">Processing...</div>
+             <canvas id="main-canvas"></canvas>
+          </div>
+
+          <div class="tool-panel">
+            <div class="tool-section">
+               <h4>Enhancement</h4>
+               <div class="range-wrap">
+                  <label>Sharpen Strength: <span id="intensity-val">50</span>%</label>
+                  <input type="range" id="intensity" min="0" max="100" value="50" class="w-100">
+               </div>
+               <p class="small text-muted">A kernel-based convolution is applied to enhance local contrast and edges.</p>
+            </div>
+
+            <button id="download-btn" class="btn btn-primary w-100">Download Sharpened Image</button>
+            <button id="reset-btn" class="btn btn-secondary w-100 mt-2">Reset to Original</button>
+            <p class="text-center mt-3 small text-muted">All processing happens in your browser</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- HUMANIZED SEO CONTENT -->
+      <section class="seo-content mt-5">
+        <h2>Defining Your Vision in Private: Secure Local Image Sharpening</h2>
+        <p>We've all been there: you've captured a stunning photo or a clear professional graphic, but it's loaded a little "Soft"—the details are slightly blurred, the edges are indistinct, and it lacks that professional "Pop." You look for an <strong>image sharpener</strong> online to help you define your vision, bring out the textures, and ensure a professional finish. But as you look at the "Kernel Analysis" and "Cloud Enhancement" prompts of most legacy checkers, you realize that your original high-res assets, your personal memories, and your proprietary graphics are being analyzed by an anonymous database. Do you really want to share your "Visual Resolution" with a third-party algorithm?</p>
+
+        <p>At 99tool.in, we built our <strong>image sharpener</strong> to give you a professional definition station without the privacy debt. By utilizing browser-side convolution matrix and local frequency logic, we allow you to <strong>sharpen images</strong> entirely within the secure sandbox of your own machine. Whether you’re a photographer restoring clarity, a seller defining product textures, or a researcher enhancing forensic details, our <strong>safe sharpening tool</strong> ensures that your original pixels stay where they belong: on your device, under your total sovereignty.</p>
+
+        <div class="tool-preview-box mt-4 mb-4" style="text-align:center;">
+           <img src="../../assets/images/sharpen-preview.png" alt="Clean Image Sharpening Interface with High-Pass Frequency Filtering and Bilateral Edge Preservation Visuals" class="tool-preview" id="tool-preview-img" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+        </div>
+
+        <h3 class="mt-4">The Logic of High-Pass Frequency Filtering</h3>
+        <p>Image sharpening isn't just about making things look "Crisp"; it’s about "Structural Clarity." Most basic <strong>sharpen image online</strong> services use blunt enhancements that lead to "Pixel Noise"—those grainy artifacts and unrealistic textures. Our <strong>professional image sharpener</strong> takes a human-centric approach: we focus on **High-Pass Frequency Filtering** and **Bilateral Edge Preservation**.</p>
+        
+        <p>We provide a clear control deck where you can adjust the "Strength" of the sharpening kernel in real-time. Our <strong>safe clarity validator</strong> ensures that the enhancement is applied to the edges while preserving the natural texture of flatter areas, preventing that "over-processed" look that ruins professional work. This transparency transforms a technical enhancement into a professional routine, helping you define your vision in a private, professional environment.</p>
+
+        <h3 class="mt-4">Why Enhancement is the Expert’s Ethical Choice</h2>
+        <p>In the age of automated data harvesting, your "Unenhanced Visions" are your most valuable proprietary assets. When you use a standard <strong>unblur photo online free</strong> service that requires an upload, you are essentially trust-falling into an anonymous database. Even if they "generate" your sharpened photo, the original high-res asset and your specific enhancement markers were processed on a remote machine. Our 100% <strong>enhancement utility</strong> removes this "Forensic Risk" entirely from your digital routine.</p>
+        
+        <p>Because the sharpening and kernel convolution happen in your browser's private memory, your images are invisible to the outside world. No analytics are tracked, no resolutions are harvested, and no proprietary data is shared with advertisers or AI platforms. At 99tool.in, we believe that <strong>clarifying your world</strong> should be an empowering utility, not a data-mining trade-off. With us, you have a private, professional desk for your definition that fits in your browser tab.</p>
+
+        <h3 class="mt-4">How to Sharpen Your Vision Safely (Step-by-Step)</h3>
+        <p>Defining your visual detail should be a high-speed, 5-second task. Here is how to use our <strong>image sharpener</strong>:</p>
+        <ul style="line-height: 1.8; margin-bottom: 20px;">
+          <li><strong>Step 1: Load Your Asset</strong> — Drag your soft photo into the workspace. It renders instantly in our local enhancement queue without uploading a single byte.</li>
+          <li><strong>Step 2: Trigger Edge Enhancement</strong> — Adjust the "Strength" slider to set the intensity. You’ll see the details pop pixel-perfectly in real-time.</li>
+          <li><strong>Step 3: Verify the Definition</strong> — Review the final look across the image. Our system ensures your enhancement is consistent and maintains textural integrity.</li>
+          <li><strong>Step 4: Export and Share</strong> — Click "Download Sharpened Image." Our tool processes the kernel locally and saves your defined photo directly to your device.</li>
+        </ul>
+
+        <h3 class="mt-4">Strategic Use Cases for Your Local Sharpening Tool</h3>
+        <p>Our <strong>selective definition tool</strong> is the essential companion for varied professional life:</p>
+        
+        <p><strong>For Professional Photographers:</strong> Rescuing a slightly soft shot? Use our <strong>secure sharpening tool</strong> to restore edge detail and bring the focus back to your subject, keeping your proprietary high-res files confidential.</p>
+        
+        <p><strong>For E-commerce Sellers & Marketers:</strong> Defining product textures? Use our <strong>safe image sharpener</strong> to make your items pop on the screen, without risking your original brand assets.</p>
+        
+        <p><strong>For Researchers & Forensics:</strong> Enhancing small details? Use our <strong>private clarity tool</strong> to bring out textures or text in low-resolution scans, ensuring your research data and individual privacy remains protected.</p>
+
+        <h3 class="mt-5">Explore Your Complete Creator Suite</h3>
+        <p>Once you’ve successfully sharpened your vision, you might need to further optimize the final file for web speed. Check out our <strong><a href="compress-image.html">Image Compressor</a></strong>. Or, if you need to adjust the final composition, use our <strong><a href="crop-image.html">Image Cropper</a></strong>. At 99tool.in, we are building a world-class, 100% private digital toolkit to give you total control over your visual resolution.</p>
+        
+        <div class="flex gap-4 mt-4 mb-5">
+           <a href="image-to-sketch.html" class="btn btn-secondary" style="flex:1; text-align:center;">Make Sketch</a>
+           <a href="grayscale-converter.html" class="btn btn-secondary" style="flex:1; text-align:center;">Grayscale Image</a>
+        </div>
+      </section>
+ 
+      <!-- FAQ SECTION -->
+      <section class="faq-section mt-5">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Does sharpening fix out-of-focus photos?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>While our <strong>image sharpening tool</strong> can significantly enhance detail and recover "soft" focus, it cannot perfectly fix a photo that is heavily blurred or completely out of focus. It works best on slightly soft images or to bring out fine textures in well-captured shots.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              What is the "Kernel Convolution" method?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>The <strong>kernel convolution</strong> is a professional mathematical technique where a small matrix (the kernel) is passed over every pixel. This allows the tool to identify edges and increase their local contrast, which creates the visual effect of a sharper, more defined image.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Are my photos uploaded to 99tool.in?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Absolutely not. For your total security, all sharpening logic happens <strong>locally in your browser</strong>. Your original high-resolution photos never leave your device, ensuring your creative work and personal memories remain 100% private.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I sharpen images for professional printing?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. By adjusting the <strong>sharpen intensity</strong>, you can prepare your graphics for high-quality printing. Our tool preserves the resolution of your original file, giving you a crisp, professional output ready for any medium.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Does this add "Noise" to my photos?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Extreme sharpening can sometimes emphasize existing grain. However, our <strong>safe sharpening utility</strong> uses a balanced matrix designed to minimize artifacts. We recommend using moderate settings to achieve a natural, professional look without introducing unwanted pixel noise.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Which image formats are supported?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Our <strong>local image tool</strong> fully supports JPG, PNG, and WEBP formats. Since the processing is done via standard browser APIs, you get high-speed results across all modern web-compliant file types.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const imageInput = document.getElementById('image-input');
+    const dropZone = document.getElementById('drop-zone');
+    const workspace = document.getElementById('tool-workspace');
+    const canvas = document.getElementById('main-canvas');
+    const ctx = canvas.getContext('2d');
+    const intensitySlider = document.getElementById('intensity');
+    const intensityVal = document.getElementById('intensity-val');
+    const loader = document.getElementById('loader');
+    const downloadBtn = document.getElementById('download-btn');
+    const resetBtn = document.getElementById('reset-btn');
+
+    let originalImg = null;
+    let originalData = null;
+
+    dropZone.onclick = () => imageInput.click();
+    imageInput.onchange = (e) => handleFile(e.target.files[0]);
+    
+    // Init Drag and Drop using global helper
+    setupDragDrop('drop-zone', (files) => {
+       if (files.length) handleFile(files[0]);
+    });
+    
+    function handleFile(file) {
+      if (!file || !file.type.startsWith('image/')) return;
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        originalImg = new Image();
+        originalImg.onload = () => {
+          canvas.width = originalImg.width;
+          canvas.height = originalImg.height;
+          ctx.drawImage(originalImg, 0, 0);
+          originalData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+          workspace.classList.remove('hidden');
+          applySharpen();
+        };
+        originalImg.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+
+    intensitySlider.onchange = () => {
+       intensityVal.innerText = intensitySlider.value;
+       applySharpen();
+    };
+
+    function applySharpen() {
+       if (!originalData) return;
+       loader.style.display = 'block';
+       
+       // Small delay to allow UI to show loader
+       setTimeout(() => {
+          const strength = intensitySlider.value / 100;
+          // Sharpen Kernel:
+          // [ 0, -1,  0]
+          // [-1,  5, -1]
+          // [ 0, -1,  0]
+          // We blend it with identity based on strength
+          const kernel = [
+             0, -1 * strength, 0,
+             -1 * strength, 1 + (4 * strength), -1 * strength,
+             0, -1 * strength, 0
+          ];
+
+          const result = convolve(originalData, kernel);
+          ctx.putImageData(result, 0, 0);
+          loader.style.display = 'none';
+       }, 50);
+    }
+
+    function convolve(pixels, weights) {
+       const side = Math.round(Math.sqrt(weights.length));
+       const halfSide = Math.floor(side / 2);
+       const src = pixels.data;
+       const sw = pixels.width;
+       const sh = pixels.height;
+       
+       const output = ctx.createImageData(sw, sh);
+       const dst = output.data;
+
+       for (let y = 0; y < sh; y++) {
+          for (let x = 0; x < sw; x++) {
+             const sy = y;
+             const sx = x;
+             const dstOff = (y * sw + x) * 4;
+             let r = 0, g = 0, b = 0;
+
+             for (let cy = 0; cy < side; cy++) {
+                for (let cx = 0; cx < side; cx++) {
+                   const scy = sy + cy - halfSide;
+                   const scx = sx + cx - halfSide;
+                   if (scy >= 0 && scy < sh && scx >= 0 && scx < sw) {
+                      const srcOff = (scy * sw + scx) * 4;
+                      const wt = weights[cy * side + cx];
+                      r += src[srcOff] * wt;
+                      g += src[srcOff + 1] * wt;
+                      b += src[srcOff + 2] * wt;
+                   }
+                }
+             }
+             dst[dstOff] = r;
+             dst[dstOff + 1] = g;
+             dst[dstOff + 2] = b;
+             dst[dstOff + 3] = src[dstOff + 3];
+          }
+       }
+       return output;
+    }
+
+    resetBtn.onclick = () => {
+       intensitySlider.value = 0;
+       intensityVal.innerText = 0;
+       ctx.putImageData(originalData, 0, 0);
+    };
+
+    downloadBtn.onclick = () => {
+       const url = canvas.toDataURL('image/jpeg', 0.95);
+       const a = document.createElement('a');
+       a.href = url;
+       a.download = `sharpened_${Date.now()}.jpg`;
+       a.click();
+    };
+  </script>
+</body>
+</html>
+

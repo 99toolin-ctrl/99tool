@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Speed Test – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/network/speed-test.html"/>
+<meta property="og:title" content="Speed Test – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/network/speed-test.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Speed Test \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/network/speed-test.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .speed-test-container {
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+    .gauge-wrapper {
+      position: relative;
+      width: 250px;
+      height: 250px;
+      margin: 0 auto 2rem;
+      border-radius: 50%;
+      background: var(--bg-secondary);
+      border: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+    .gauge-wrapper.testing {
+      border-color: var(--primary);
+      box-shadow: 0 0 20px rgba(255, 71, 87, 0.2);
+    }
+    .speed-value {
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1;
+    }
+    .speed-unit {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+    }
+    .gauge-progress {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border-radius: 50%;
+      border: 4px solid transparent;
+      border-top-color: var(--primary);
+      transform: rotate(-45deg);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .testing .gauge-progress {
+      opacity: 1;
+      animation: spin 2s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(315deg); }
+    }
+    .start-btn {
+      background: var(--primary);
+      color: white;
+      padding: 1rem 3rem;
+      font-size: 1.25rem;
+      border-radius: 50px;
+      margin-bottom: 2rem;
+      transition: all 0.2s;
+    }
+    .start-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(255, 71, 87, 0.4);
+    }
+    .start-btn:disabled {
+      background: var(--border);
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+    .status-msg {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+    .pro-tip {
+      background: rgba(255, 71, 87, 0.05);
+      border: 1px dashed var(--primary);
+      padding: 1rem;
+      border-radius: 8px;
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      display: inline-block;
+      max-width: 500px;
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Internet Speed Test</h1>
+      <p>Measure your browser's download performance instantly.</p>
+    </div>
+
+    <div class="tool-container speed-test-container">
+      <div class="gauge-wrapper" id="gauge">
+        <div class="gauge-progress"></div>
+        <div class="gauge-content">
+          <div class="speed-value" id="speed-display">0.0</div>
+          <div class="speed-unit">Mbps</div>
+        </div>
+      </div>
+
+      <button id="test-btn" class="btn start-btn">Start Speed Test</button>
+      
+      <div id="status" class="status-msg">Click start to begin the measurement.</div>
+
+      <div class="pro-tip">
+        <strong>Note:</strong> Browsers measure throughput at the application layer. This reflects actual file download speeds but may be lower than your hardware's raw ISP line speed due to encryption and overhead.
+      </div>
+
+      <!-- SEO CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2>How a Browser-Based Speed Test Works</h2>
+        <p>When you run an <strong>internet speed test</strong> online, you are essentially asking your browser to perform a rapid series of data transmissions with a high-speed remote server. Unlike professional network hardware, a <strong>browser speed test</strong> operates at the highest level of the network stack. This means it measures exactly what you care about most: how fast a website or file will actually load for you.</p>
+
+        <h3 class="mt-4">Download Speed vs. Latency</h3>
+        <p>Our tool focuses on two primary metrics. First is <strong>download speed</strong>, measured in Megabits per second (Mbps). We do this by downloading structured fragments of data from high-performance Content Delivery Networks (CDNs) like JSDelivr. Second is <strong>latency</strong>, often called ping. This is the time it takes for a tiny signal to reach the server and bounce back. A <strong>check internet speed</strong> utility is vital for identifying why a video might be buffering or why a teleconference Call is lagging.</p>
+
+        <h3 class="mt-4">Maximizing Your Test Accuracy</h3>
+        <p>To get the most reliable <strong>wifi speed test</strong> results, we recommend a few simple steps. Close other active browser tabs, pause any background downloads (like Steam or Windows Updates), and ensure no other device on your network is streaming high-definition video. By isolating the connection, our <strong>speed test tool</strong> can provide a high-fidelity snapshot of your current performance.</p>
+
+        <h3 class="mt-4">Why Privacy Matters in Network Testing</h3>
+        <p>Most commercial speed tests track your IP and ISP to sell advertising data. At 99tool.in, our <strong>private speed test</strong> focuses solely on the math. We don't store your results or build a profile of your location. We use secure, encrypted data fragments to ensure your <strong>check network speed</strong> session is as secure as the rest of our utility suite.</p>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const testBtn = document.getElementById('test-btn');
+    const speedDisplay = document.getElementById('speed-display');
+    const gauge = document.getElementById('gauge');
+    const status = document.getElementById('status');
+
+    // High speed CDN file (1MB-5MB is good for burst testing)
+    // Using a reliable JS bundle from JSDelivr
+    const TEST_FILE_URL = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@3.4.120/build/pdf.worker.min.js';
+    const FILE_SIZE_BYTES = 1000000; // Roughly 1MB
+
+    testBtn.addEventListener('click', runSpeedTest);
+
+    async function runSpeedTest() {
+      testBtn.disabled = true;
+      testBtn.innerText = "Testing...";
+      gauge.classList.add('testing');
+      status.innerText = "Connecting to global CDN node...";
+      
+      const startTime = performance.now();
+      
+      try {
+        // Prevent caching by adding a random param
+        const response = await fetch(TEST_FILE_URL + '?cache=' + startTime);
+        
+        if (!response.ok) throw new Error("Connection failed");
+
+        const reader = response.body.getReader();
+        let receivedLength = 0;
+        
+        while(true) {
+          const {done, value} = await reader.read();
+          if (done) break;
+          receivedLength += value.length;
+          
+          // Partial updates for smoother gauge
+          const intermediateTime = (performance.now() - startTime) / 1000;
+          if (intermediateTime > 0.1) {
+            const currentMbps = ((receivedLength * 8) / (intermediateTime * 1000000)).toFixed(1);
+            speedDisplay.innerText = currentMbps;
+          }
+        }
+
+        const endTime = performance.now();
+        const durationSeconds = (endTime - startTime) / 1000;
+        
+        // Calculation: (Bytes * 8 bits / 1,000,000 bits per Mbit) / seconds
+        const mbps = ((receivedLength * 8) / (durationSeconds * 1000000)).toFixed(1);
+        
+        speedDisplay.innerText = mbps;
+        status.innerText = `Test complete. Total data transferred: ${(receivedLength/1024/1024).toFixed(2)} MB.`;
+        
+      } catch (err) {
+        console.error(err);
+        status.innerText = "Error: Connection interrupted. Please try again.";
+        speedDisplay.innerText = "0.0";
+      } finally {
+        testBtn.disabled = false;
+        testBtn.innerText = "Start Speed Test";
+        gauge.classList.remove('testing');
+      }
+    }
+  </script>
+</body>
+</html>

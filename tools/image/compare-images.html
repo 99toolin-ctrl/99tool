@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Compare Images – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/image/compare-images.html"/>
+<meta property="og:title" content="Compare Images – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/image/compare-images.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Compare Images \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/image/compare-images.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .comparison-workspace {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* SLIDER UI */
+    .slider-container {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      aspect-ratio: 16/9;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+      border: 1px solid var(--border);
+      background: var(--dark-card);
+      user-select: none;
+    }
+
+    .image-after, .image-before {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .image-before {
+      z-index: 2;
+      width: 50%; /* Initial split */
+      border-right: 2px solid #fff;
+    }
+
+    .slider-handle {
+      position: absolute;
+      top: 0; left: 50%;
+      width: 4px; height: 100%;
+      background: white;
+      z-index: 3;
+      transform: translateX(-50%);
+      cursor: ew-resize;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .handle-circle {
+      width: 40px; height: 40px;
+      background: white;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: var(--dark);
+    }
+
+    .label-tag {
+      position: absolute;
+      bottom: 20px;
+      padding: 6px 12px;
+      background: rgba(0,0,0,0.6);
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      border-radius: 4px;
+      z-index: 4;
+      pointer-events: none;
+    }
+    .label-before { left: 20px; }
+    .label-after { right: 20px; }
+
+    .upload-grid {
+       display: grid;
+       grid-template-columns: 1fr 1fr;
+       gap: 1.5rem;
+       width: 100%;
+       max-width: 800px;
+       margin-bottom: 2rem;
+    }
+    
+    .mini-upload {
+       background: var(--dark-card);
+       border: 2px dashed var(--border);
+       padding: 30px;
+       border-radius: var(--radius);
+       text-align: center;
+       cursor: pointer;
+       transition: all 0.2s ease;
+    }
+    .mini-upload:hover { border-color: var(--primary); background: rgba(229,57,53,0.05); }
+    .mini-upload.complete { border-style: solid; border-color: #4caf50; background: rgba(76,175,80,0.05); }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/image/compare-images.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/image/compare-images.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/image/compare-images.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/image/compare-images.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/image/compare-images.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/image/compare-images.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/image/compare-images.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/image/compare-images.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/image/compare-images.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/image/compare-images.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/image/compare-images.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/image/compare-images.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/image/compare-images.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/image/compare-images.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/image/compare-images.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/image/compare-images.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/image/compare-images.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/image/compare-images.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/image/compare-images.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/image/compare-images.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/image/compare-images.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/image/compare-images.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Interactive Image Comparison Tool</h1>
+      <p>Compare two versions of an image with a premium "Before & After" slider. 100% private.</p>
+    </div>
+
+    <div class="tool-container">
+      <div class="upload-grid" id="upload-grid">
+         <div class="mini-upload" id="upload-before">
+            <div style="font-size: 1.5rem;">📁</div>
+            <p class="small mt-2">Upload <b>Before</b> Image</p>
+            <input type="file" id="input-before" accept="image/*" hidden>
+         </div>
+         <div class="mini-upload" id="upload-after">
+            <div style="font-size: 1.5rem;">📁</div>
+            <p class="small mt-2">Upload <b>After</b> Image</p>
+            <input type="file" id="input-after" accept="image/*" hidden>
+         </div>
+      </div>
+
+      <div id="tool-workspace" class="hidden">
+        <div class="comparison-workspace">
+           <div class="slider-container" id="slider-container">
+              <div class="image-after" id="bg-after"></div>
+              <div class="image-before" id="bg-before"></div>
+              
+              <div class="slider-handle" id="slider-handle">
+                 <div class="handle-circle">↔</div>
+              </div>
+
+              <div class="label-tag label-before">Before</div>
+              <div class="label-tag label-after">After</div>
+           </div>
+
+           <div class="mt-4 text-center">
+              <p class="text-muted small">Drag the center handle to compare the two images.</p>
+              <button id="reset-btn" class="btn btn-secondary mt-3">Upload Different Images</button>
+           </div>
+        </div>
+      </div>
+
+    <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5">
+        <h2 data-i18n="tools.image_comparator.what_is_title">What is Interactive Image Comparison Tool</h2>
+        <p>The Interactive Image Comparison Tool is a visual quality assurance utility that allows you to compare two versions of an image side-by-side using an overlay slider. By loading your "Before" and "After" versions, the tool creates a layered CSS structure where you drag a dividing bar horizontally to reveal the pixel differences.</p>
+        <p>This comparison operates entirely on the client-side within your browser tab. Your files are not uploaded to any remote server, meaning your confidential revisions, mockups, and comparative photo sets remain secure on your local hard drive.</p>
+
+        <h3 class="mt-4">How to Use Interactive Image Comparison Tool</h3>
+        <ol style="line-height: 1.8; margin-bottom: 20px; padding-left: 20px;">
+          <li><strong>Upload the original image:</strong> Click the left <strong>Before</strong> upload box to choose your source image or drag and drop your file.</li>
+          <li><strong>Upload the edited version:</strong> Click the right <strong>After</strong> upload box to choose the revised image or drag and drop it.</li>
+          <li><strong>Initialize the workspace:</strong> Once both images are successfully loaded, the tool hides the upload panels and presents the overlay slider workspace.</li>
+          <li><strong>Slide to compare:</strong> Grab the white slider handle in the center of the image container and drag it left and right to inspect the transition.</li>
+          <li><strong>Analyze the difference:</strong> Compare specific sections of the image by centering the dividing handle to spot alignments, color grades, or compression differences.</li>
+          <li><strong>Upload new files:</strong> If you want to compare a different set of files, click the <strong>Upload Different Images</strong> button to reset the upload workspace.</li>
+        </ol>
+
+        <h3 class="mt-4">Key Features</h3>
+        <ul style="line-height: 1.8; margin-bottom: 20px; padding-left: 20px;">
+          <li><strong>Seamless Overlay Slider:</strong> Slides a dividing divider smoothly across aligned images to highlight differences in real-time.</li>
+          <li><strong>Instant Visual Feedback:</strong> Toggles and compares edits without forcing you to switch tabs or open separate viewports.</li>
+          <li><strong>Responsive Canvas Wrapping:</strong> Automatically containment-scales both uploaded assets within a widescreen 16:9 ratio container.</li>
+          <li><strong>Touch-Enabled Sliding:</strong> Supports touch events for easy drag audits on mobile and tablet devices.</li>
+          <li><strong>Secure Session Memory:</strong> Processes image assets entirely in RAM, clearing out all files when the page is closed.</li>
+        </ul>
+
+        <h3 class="mt-4">Common Use Cases</h3>
+        <ul style="line-height: 1.8; margin-bottom: 20px; padding-left: 20px;">
+          <li><strong>Web Developers:</strong> Inspecting layout adjustments or visual diffs between a design mockup and the final coded page.</li>
+          <li><strong>Graphic Editors:</strong> Auditing color grading, sharpening levels, or noise reduction variations between raw and edited photos.</li>
+          <li><strong>3D Artists:</strong> Verifying render changes and lighting modifications between sequential image frames.</li>
+          <li><strong>Document Analysts:</strong> Tracking revisions and layout alignments between scanned pages or document drafts.</li>
+        </ul>
+
+        <h3 class="mt-4">Privacy & Data Note</h3>
+        <p>Both comparative images are rendered locally using standard browser styling APIs. No data is sent to a server, ensuring total confidentiality for your work.</p>
+      </section>
+ 
+      <!-- FAQ SECTION -->
+      <section class="faq-section mt-5">
+        <h2 data-i18n="tools.image_comparator.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Do the two uploaded images need to be the same size?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes, we recommend using images with identical dimensions. While the container fits different sizes using center-containment rules, alignment is only pixel-accurate when the source resolutions match.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I export the slider comparison as a video or GIF?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Currently, this is a real-time interactive viewer. To save a static side-by-side comparison, you can take a screenshot of the slider set at your preferred midpoint.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Does this comparison tool support transparency?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes, transparent backgrounds in formats like PNG or WebP show the dark grid pattern underneath, allowing you to compare transparent cutouts cleanly.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Is there a file size limit for the images I upload?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No rigid limits are enforced, but extremely large images (e.g. 50+ megapixels) will depend on your computer's RAM capacity to load and display smoothly.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Why does the slider feel laggy on my device?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>If sliding feels slow, your device might be running low on memory. Try closing other heavy browser tabs or resizing high-resolution source images before comparing.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const inputBefore = document.getElementById('input-before');
+    const inputAfter = document.getElementById('input-after');
+    const bgBefore = document.getElementById('bg-before');
+    const bgAfter = document.getElementById('bg-after');
+    const handle = document.getElementById('slider-handle');
+    const container = document.getElementById('slider-container');
+    const workspace = document.getElementById('tool-workspace');
+    const uploadGrid = document.getElementById('upload-grid');
+    const resetBtn = document.getElementById('reset-btn');
+
+    let beforeLoaded = false;
+    let afterLoaded = false;
+
+    document.getElementById('upload-before').onclick = () => inputBefore.click();
+    document.getElementById('upload-after').onclick = () => inputAfter.click();
+
+    inputBefore.onchange = (e) => handleFile(e, 'before');
+    inputAfter.onchange = (e) => handleFile(e, 'after');
+
+    function handleFile(e, type) {
+       const file = e.target.files[0];
+       if (!file) return;
+       const reader = new FileReader();
+       reader.onload = (ev) => {
+          if (type === 'before') {
+             bgBefore.style.backgroundImage = `url(${ev.target.result})`;
+             beforeLoaded = true;
+             document.getElementById('upload-before').classList.add('complete');
+          } else {
+             bgAfter.style.backgroundImage = `url(${ev.target.result})`;
+             afterLoaded = true;
+             document.getElementById('upload-after').classList.add('complete');
+          }
+          checkReady();
+       };
+       reader.readAsDataURL(file);
+    }
+
+    function checkReady() {
+       if (beforeLoaded && afterLoaded) {
+          uploadGrid.classList.add('hidden');
+          workspace.classList.remove('hidden');
+       }
+    }
+
+    // Slider Logic
+    let isDragging = false;
+
+    handle.onmousedown = () => isDragging = true;
+    window.onmouseup = () => isDragging = false;
+    
+    // Touch support
+    handle.ontouchstart = () => isDragging = true;
+    window.ontouchend = () => isDragging = false;
+
+    window.onmousemove = (e) => {
+       if (!isDragging) return;
+       moveSlider(e.clientX);
+    };
+    
+    window.ontouchmove = (e) => {
+       if (!isDragging) return;
+       moveSlider(e.touches[0].clientX);
+    };
+
+    function moveSlider(clientX) {
+       const rect = container.getBoundingClientRect();
+       let x = clientX - rect.left;
+       
+       if (x < 0) x = 0;
+       if (x > rect.width) x = rect.width;
+       
+       const pct = (x / rect.width) * 100;
+       bgBefore.style.width = pct + '%';
+       handle.style.left = pct + '%';
+    }
+
+    resetBtn.onclick = () => {
+       beforeLoaded = false;
+       afterLoaded = false;
+       uploadGrid.classList.remove('hidden');
+       workspace.classList.add('hidden');
+       document.getElementById('upload-before').classList.remove('complete');
+       document.getElementById('upload-after').classList.remove('complete');
+    };
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

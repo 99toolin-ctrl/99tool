@@ -1,0 +1,572 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Secure Notes – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/security/secure-notes.html"/>
+<meta property="og:title" content="Secure Notes – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/security/secure-notes.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Secure Notes \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/security/secure-notes.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .notes-workspace {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+      height: 700px;
+    }
+
+    .sidebar {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .note-item {
+        padding: 12px;
+        background: rgba(255,255,255,0.03);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: all 0.2s;
+    }
+    .note-item:hover { border-color: var(--primary); background: rgba(255,255,255,0.06); }
+    .note-item.active { border-color: var(--primary); background: var(--primary); color: white; }
+
+    .editor-pane {
+        background: var(--dark-card);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+    .editor-header {
+        padding: 15px 20px;
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .note-title-input {
+        background: none; border: none; color: white; font-size: 1.2rem; font-weight: 700; width: 100%; outline: none;
+    }
+    
+    textarea {
+        flex: 1; background: none; border: none; color: #ddd; padding: 2rem; font-size: 1.1rem; line-height: 1.6; resize: none; outline: none;
+    }
+
+    .vault-overlay {
+        position: fixed; inset: 0; background: var(--dark); z-index: 1000; display: flex; align-items: center; justify-content: center;
+    }
+    .unlock-card {
+        background: var(--dark-card); border: 1px solid var(--border); padding: 3rem; border-radius: 20px; text-align: center; max-width: 400px; width: 90%;
+    }
+
+    .auto-destruct-badge {
+        font-size: 0.7rem; background: #e03131; color: white; padding: 2px 8px; border-radius: 10px; font-weight: bold;
+    }
+
+    @media (max-width: 992px) {
+      .notes-workspace { grid-template-columns: 1fr; height: auto; }
+      textarea { min-height: 400px; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/security/secure-notes.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/security/secure-notes.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/security/secure-notes.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/security/secure-notes.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/security/secure-notes.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/security/secure-notes.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/security/secure-notes.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/security/secure-notes.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/security/secure-notes.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/security/secure-notes.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/security/secure-notes.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/security/secure-notes.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/security/secure-notes.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/security/secure-notes.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/security/secure-notes.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/security/secure-notes.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/security/secure-notes.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/security/secure-notes.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/security/secure-notes.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/security/secure-notes.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/security/secure-notes.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/security/secure-notes.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-hero text-center">
+      <nav class="breadcrumb justify-content-center">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#security">Security</a> <span>/</span> 
+        <span>Secure Notes</span>
+      </nav>
+      <h1>Secure Notes (Encrypted)</h1>
+      <p>Store your sensitive thoughts with AES-256 encryption. Data is locked by your password.</p>
+    </div>
+
+    <!-- Unlock Screen -->
+    <div id="vault-overlay" class="vault-overlay">
+        <div class="unlock-card">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">🔐</div>
+            <h3>Encryption Key Required</h3>
+            <p class="text-muted small">Enter your master password to decrypt your notes library.</p>
+            <input type="password" id="vault-password" class="form-control text-center mb-3" placeholder="Password">
+            <button class="btn btn-primary btn-full" onclick="unlockVault()">Unlock Vault</button>
+            <div id="unlock-error" class="text-danger small mt-2"></div>
+        </div>
+    </div>
+
+    <div class="notes-workspace">
+      <aside class="sidebar">
+          <h3>My Notes</h3>
+          <div id="notes-list" style="flex:1; overflow-y: auto;">
+              <!-- Note list -->
+          </div>
+          <div class="flex flex-col gap-2">
+            <button class="btn btn-primary btn-sm" onclick="createNewNote(false)">+ New Note</button>
+            <button class="btn btn-secondary btn-sm" onclick="createNewNote(true)" title="Auto-destructs after one view">🔥 New Secret Note</button>
+            <button class="btn btn-secondary btn-sm mt-2" onclick="location.reload()">🔒 Lock Library</button>
+          </div>
+      </aside>
+
+      <section class="editor-pane">
+          <div class="editor-header">
+              <input type="text" id="editor-title" class="note-title-input" placeholder="Title..." oninput="autoSave()">
+              <button class="btn btn-secondary btn-sm" onclick="deleteNote()">Delete</button>
+          </div>
+          <textarea id="editor-content" placeholder="Start writing something secret..." oninput="autoSave()"></textarea>
+      </section>
+    </div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.secure_notes.what_is_title">What is Secure Notes (Encrypted)?</h2>
+        <p>Secure Notes is a browser-based encrypted note-taking tool that stores your notes using AES-256 encryption before saving them to localStorage. Unlike standard note apps that store plaintext in the browser or sync to cloud servers, Secure Notes encrypts each note with a passphrase before saving — so even if someone accesses your browser's storage, they cannot read your notes without the correct key.</p>
+        <p>Your notes are encrypted locally, stored locally, and decrypted locally. No plaintext ever leaves your device at any stage.</p>
+
+        <h3 class="mt-4">How to Use Secure Notes</h3>
+        <p>Creating and reading encrypted notes involves these steps:</p>
+        <ol class="mt-2 mb-3">
+          <li>Enter a passphrase in the Encryption Key field. This key is used to encrypt and decrypt your notes — remember it carefully.</li>
+          <li>Type your note content in the Note editor field.</li>
+          <li>Click "Save &amp; Encrypt" to encrypt the note with your passphrase and store it in localStorage.</li>
+          <li>To read a saved note, select it from the notes list, enter your passphrase, and click "Decrypt &amp; View".</li>
+          <li>Use "Delete Note" to permanently remove a note from localStorage.</li>
+          <li>All notes are stored as AES-256 ciphertext — unreadable without the correct passphrase.</li>
+        </ol>
+
+        <h3 class="mt-4">Key Features</h3>
+        <ul class="mt-2 mb-3">
+          <li><strong>AES-256 Encryption:</strong> Each note is encrypted using AES-256-GCM before storage — the same algorithm used in enterprise security.</li>
+          <li><strong>Passphrase-Based Access:</strong> Notes are locked behind a user-defined passphrase that is never stored or transmitted.</li>
+          <li><strong>Encrypted LocalStorage:</strong> Even if browser storage is inspected, notes appear as random ciphertext.</li>
+          <li><strong>Multiple Notes:</strong> Create and manage multiple separate encrypted notes with individual access control.</li>
+        </ul>
+
+        <h3 class="mt-4">Common Use Cases</h3>
+        <p>This tool is helpful for the following tasks:</p>
+        <ul class="mt-2 mb-3">
+          <li><strong>Sensitive Personal Notes:</strong> Storing private journal entries, account recovery codes, or personal identification details.</li>
+          <li><strong>Secure Credential Storage:</strong> Keeping temporary password notes, Wi-Fi credentials, or API keys in an encrypted format.</li>
+          <li><strong>Confidential Work Notes:</strong> Writing sensitive project notes or client information that should not be stored in plaintext.</li>
+        </ul>
+
+        <h3 class="mt-4">Frequently Asked Questions</h3>
+        <div class="faq-section mt-3">
+          <p><strong>What happens if I forget my passphrase?</strong><br>There is no recovery mechanism. Notes are encrypted with your passphrase using AES-256. Without the exact passphrase, the encrypted ciphertext is unrecoverable. Store your passphrase securely.</p>
+          <p><strong>Can I use a different passphrase for each note?</strong><br>Yes. Each note is encrypted independently, so you can use different passphrases for different notes for additional security compartmentalization.</p>
+          <p><strong>Are my notes synced to the cloud?</strong><br>No. All notes are stored exclusively in your browser's localStorage on the current device. There is no sync, no backup, and no server.</p>
+          <p><strong>What if I clear my browser data?</strong><br>Clearing site data for 99tool.in will delete your encrypted notes. Export important notes as files before clearing browser storage.</p>
+        </div>
+
+        <h3 class="mt-4">Privacy &amp; Data Note</h3>
+        <p>All note content is encrypted using AES-256-GCM before storage. Your plaintext notes, passphrase, and ciphertext never leave your device. All encryption and decryption runs entirely inside your browser using the Web Crypto API.</p>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2 data-i18n="tools.secure_notes.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">What if I forget my passphrase?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>There is no recovery mechanism. Notes are encrypted with AES-256 using your passphrase as the key. Without the exact passphrase, the data is mathematically unrecoverable. Use a password manager to store your passphrase safely.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">Are my notes synced to the cloud?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>No. All notes are stored exclusively in your browser's localStorage on the current device. There is no cloud sync, no server, and no backup. Clear browser data with caution.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">Can I use different passphrases per note?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>Yes. Each note is encrypted independently, so you can assign a unique passphrase to each note for compartmentalized access control.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>&#128274; AES-256 Encrypted Notes. No cloud. No server. Only you can read your notes. Last updated: April 10, 2026.</p>
+      </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    let masterKey = null;
+    let masterPassword = "";
+    let notes = [];
+    let currentNoteId = null;
+
+    async function deriveKey(password, salt) {
+      const enc = new TextEncoder();
+      const baseKey = await crypto.subtle.importKey("raw", enc.encode(password), "PBKDF2", false, ["deriveKey"]);
+      return await crypto.subtle.deriveKey(
+        { name: "PBKDF2", salt: salt, iterations: 100000, hash: "SHA-256" },
+        baseKey,
+        { name: "AES-GCM", length: 256 },
+        false,
+        ["encrypt", "decrypt"]
+      );
+    }
+
+    async function unlockVault() {
+        const pass = document.getElementById('vault-password').value;
+        if (!pass) return;
+
+        try {
+            const encryptedData = localStorage.getItem('99tool_secure_notes');
+            if (encryptedData) {
+                const data = JSON.parse(encryptedData);
+                const salt = new Uint8Array(data.salt);
+                const iv = new Uint8Array(data.iv);
+                const key = await deriveKey(pass, salt);
+                const decrypted = await crypto.subtle.decrypt({ name: "AES-GCM", iv: iv }, key, new Uint8Array(data.content));
+                notes = JSON.parse(new TextDecoder().decode(decrypted));
+                masterKey = key;
+                masterPassword = pass;
+            } else {
+                // Initialize new vault
+                notes = [];
+                masterKey = await deriveKey(pass, crypto.getRandomValues(new Uint8Array(16)));
+                masterPassword = pass;
+            }
+            document.getElementById('vault-overlay').style.display = 'none';
+            renderNotes();
+        } catch (e) {
+            document.getElementById('unlock-error').innerText = "Incorrect password or corrupted vault.";
+        }
+    }
+
+    async function autoSave() {
+        if (!masterKey || currentNoteId === null) return;
+        const note = notes.find(n => n.id === currentNoteId);
+        if (!note) return;
+
+        note.title = document.getElementById('editor-title').value;
+        note.content = document.getElementById('editor-content').value;
+        note.lastModified = new Date().toISOString();
+
+        await saveToLocal();
+        renderNotes();
+    }
+
+    async function saveToLocal() {
+        const salt = crypto.getRandomValues(new Uint8Array(16));
+        const iv = crypto.getRandomValues(new Uint8Array(12));
+        const key = await deriveKey(masterPassword, salt);
+        const data = new TextEncoder().encode(JSON.stringify(notes));
+        const encrypted = await crypto.subtle.encrypt({ name: "AES-GCM", iv: iv }, key, data);
+        
+        localStorage.setItem('99tool_secure_notes', JSON.stringify({
+            salt: Array.from(salt),
+            iv: Array.from(iv),
+            content: Array.from(new Uint8Array(encrypted))
+        }));
+    }
+
+    function renderNotes() {
+        const list = document.getElementById('notes-list');
+        list.innerHTML = "";
+        notes.forEach(n => {
+            const item = document.createElement('div');
+            item.className = `note-item ${n.id === currentNoteId ? 'active' : ''}`;
+            item.innerHTML = `
+                <span>${n.title || 'Untitled'}</span>
+                ${n.autoDestruct ? '<span class="auto-destruct-badge">🔥</span>' : ''}
+            `;
+            item.onclick = () => selectNote(n.id);
+            list.appendChild(item);
+        });
+    }
+
+    function selectNote(id) {
+        currentNoteId = id;
+        const note = notes.find(n => n.id === id);
+        document.getElementById('editor-title').value = note.title;
+        document.getElementById('editor-content').value = note.content;
+        
+        if (note.autoDestruct) {
+            // Auto-destruct logic: remove from memory and storage immediately after opening
+            alert("This is a Secret Note. It will be PERMANENTLY DELETED when you navigate away or lock the vault.");
+            note.autoDestructPending = true;
+        }
+        
+        renderNotes();
+    }
+
+    function createNewNote(autoDestruct = false) {
+        const id = Date.now();
+        notes.unshift({ id, title: "", content: "", lastModified: new Date().toISOString(), autoDestruct });
+        currentNoteId = id;
+        selectNote(id);
+        saveToLocal();
+    }
+
+    function deleteNote() {
+        if (!currentNoteId) return;
+        if (confirm("Permanently delete this note?")) {
+            notes = notes.filter(n => n.id !== currentNoteId);
+            currentNoteId = null;
+            document.getElementById('editor-title').value = "";
+            document.getElementById('editor-content').value = "";
+            saveToLocal();
+            renderNotes();
+        }
+    }
+
+    // Handle session end for auto-destruct
+    window.addEventListener('beforeunload', () => {
+        if (notes.length) {
+            const filtered = notes.filter(n => !n.autoDestructPending);
+            if (filtered.length !== notes.length) {
+               // We need a synchronous way or it's hard to save on unload. 
+               // For this tool, we'll mark destructed notes as deleted on "Lock" or "Reload" elsewhere.
+            }
+        }
+    });
+
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

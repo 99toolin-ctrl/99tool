@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Base64 Tool – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/developer/base64-tool.html"/>
+<meta property="og:title" content="Base64 Tool – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/developer/base64-tool.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Base64 Tool \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/developer/base64-tool.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    .base64-workspace {
+      max-width: 900px;
+      margin: 2rem auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    @media (max-width: 800px) {
+       .base64-workspace { grid-template-columns: 1fr; }
+    }
+    .text-panel {
+       background: var(--dark-card);
+       border: 1px solid var(--border);
+       padding: 1.5rem;
+       border-radius: 16px;
+       display: flex;
+       flex-direction: column;
+       gap: 15px;
+    }
+    .panel-title { font-weight: 700; font-size: 0.9rem; color: var(--text-muted); text-transform: uppercase; display: flex; justify-content: space-between; align-items: center; }
+    textarea {
+       width: 100%;
+       height: 350px;
+       background: var(--bg-secondary);
+       border: 1px solid var(--border);
+       color: var(--text);
+       padding: 1rem;
+       border-radius: 12px;
+       font-size: 1rem;
+       font-family: 'JetBrains Mono', monospace;
+       resize: none;
+    }
+    textarea:focus { border-color: var(--primary); outline: none; }
+    .action-bar { display: flex; gap: 10px; }
+    .btn-icon { padding: 6px 12px; font-size: 0.8rem; }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Infinite Base64 Tool</h1>
+      <p>Secure, client-side encoding and decoding. Full UTF-8 support for modern data transfers.</p>
+    </div>
+
+    <div class="base64-workspace">
+      <!-- INPUT TEXT -->
+      <div class="text-panel">
+         <div class="panel-title">
+            <span>Plain Text</span>
+            <div class="action-bar">
+               <button class="btn btn-secondary btn-icon" onclick="copy('text')">Copy</button>
+               <button class="btn btn-secondary btn-icon" style="color: #ff5252;" onclick="clearP('text')">Clear</button>
+            </div>
+         </div>
+         <textarea id="plain-text" placeholder="Enter text here... Emojis 👋 are supported!" oninput="encode()"></textarea>
+      </div>
+
+      <!-- BASE64 TEXT -->
+      <div class="text-panel">
+         <div class="panel-title">
+            <span>Base64 String</span>
+            <div class="action-bar">
+               <button class="btn btn-secondary btn-icon" onclick="copy('base64')">Copy</button>
+               <button class="btn btn-secondary btn-icon" style="color: #ff5252;" onclick="clearP('base64')">Clear</button>
+            </div>
+         </div>
+         <textarea id="base64-text" placeholder="Enter base64 string here..." oninput="decode()"></textarea>
+      </div>
+    </div>
+
+    <!-- SEO CONTENT -->
+    <section class="seo-content mt-5 text-start">
+      <h2>What is Base64 Encoding?</h2>
+      <p>Base64 is a binary-to-text encoding scheme that represents binary data in an ASCII string format. It is widely used for **transferring data over mediums that only support text**, such as embedding images in HTML or sending attachments in emails. Our <strong>online Base64 encoder</strong> transforms your text into a standardized sequence instantly. A consistent <strong>data encoding diagnostic auditor</strong> is essential for web development and API integration.</p>
+
+      <h3 class="mt-4">UTF-8 and Special Characters</h2>
+      <p>Many standard Base64 tools fail with non-ASCII characters like emojis or foreign languages because they don't handle multi-byte UTF-8 correctly. Our <strong>Base64 professional diagnostic tool</strong> uses advanced byte-array logic to ensure your emojis and symbols are encoded perfectly. A reliable <strong>UTF-8 data auditor</strong> is key to maintaining data integrity across different regional servers and databases.</p>
+
+      <h3 class="mt-4">Privacy and Instant Processing</h2>
+      <p>At 99tool.in, all encoding and decoding operations take place on your local device. We never transmit your text or encoded strings to our servers. This <strong>private Base64 tool</strong> provides high-speed results without the risk of data leaks. Whether you are a developer encoding a client secret or a designer embedding a SVG, our <strong>secure Base64 calculator</strong> ensures your data remains purely yours.</p>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const plainEl = document.getElementById('plain-text');
+    const b64El = document.getElementById('base64-text');
+
+    // Robust UTF-8 Base64 Encoding
+    function encode() {
+       const text = plainEl.value;
+       if (!text) {
+          b64El.value = '';
+          return;
+       }
+       try {
+          // Use btoa with URI encoding to handle UTF-8 properly
+          const b64 = btoa(unescape(encodeURIComponent(text)));
+          b64El.value = b64;
+       } catch (e) {
+          b64El.value = "Encoding Error: Check your input characters.";
+       }
+    }
+
+    // Robust UTF-8 Base64 Decoding
+    function decode() {
+       const b64 = b64El.value.trim();
+       if (!b64) {
+          plainEl.value = '';
+          return;
+       }
+       try {
+          const text = decodeURIComponent(escape(atob(b64)));
+          plainEl.value = text;
+       } catch (e) {
+          plainEl.value = "Decoding Error: Invalid Base64 string.";
+       }
+    }
+
+    function copy(id) {
+       const el = (id === 'text') ? plainEl : b64El;
+       copyToClipboard(el.value, event.target);
+    }
+
+    function clearP(id) {
+       if (id === 'text') plainEl.value = '';
+       else b64El.value = '';
+       encode();
+    }
+  </script>
+</body>
+</html>

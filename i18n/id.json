@@ -1,0 +1,609 @@
+{
+  "common": {
+    "privacy_note": "🔒 Catatan Privasi & Data: Semua pemrosesan terjadi secara lokal di peramban Anda. Data Anda tidak pernah meninggalkan perangkat Anda dan tidak dikirim ke server mana pun.",
+    "no_signup_required": "Tidak perlu mendaftar, menginstal, atau membayar.",
+    "offline_ready": "Bekerja sepenuhnya luring setelah halaman dimuat."
+  },
+  "tools": {
+    "age_calculator": {
+      "page_title": "Kalkulator Umur – 99tool.in",
+      "meta_description": "Alat online gratis dari 99tool.in: hitung usia Anda secara tepat dalam tahun, bulan, dan hari. Cepat dan aman.",
+      "what_is_title": "Apa itu Kalkulator Usia Tak Terbatas?",
+      "what_is_content": "Kalkulator Usia Tak Terbatas adalah alat kalender sisi klien yang dirancang untuk menghitung usia tepat Anda dari tanggal lahir hingga saat ini. Alih-alih memberikan perkiraan sederhana, alat ini merinci usia Anda dalam tahun, bulan, dan hari. Ini memberikan presisi tinggi untuk dokumen, penjadwalan, atau pelacakan perkembangan.\n\nSelain itu, kalkulator melakukan sub-perhitungan untuk menampilkan total masa hidup Anda dalam unit lain seperti total bulan, minggu, hari, dan jam yang telah Anda jalani, bersama dengan hitungan mundur ke ulang tahun Anda berikutnya. Semua pemrosesan terjadi secara lokal di perangkat Anda, memastikan tanggal lahir Anda tidak pernah dikirim ke server.",
+      "how_to_use_title": "Cara Menggunakan Kalkulator Usia Tak Terbatas",
+      "how_to_use_steps": [
+        "<strong>Pilih Tanggal Lahir Anda:</strong> Klik pada pemilih tanggal di bawah \"Pilih Tanggal Lahir\" untuk memilih hari, bulan, dan tahun lahir Anda di kalender.",
+        "<strong>Tinjau Usia Utama Anda:</strong> Setelah tanggal dipilih, metrik utama secara otomatis menampilkan usia Anda dalam Tahun, Bulan, dan Hari.",
+        "<strong>Periksa Hitungan Mundur Ulang Tahun:</strong> Lihat spanduk yang disorot tepat di bawah usia Anda untuk melihat jumlah hari yang tersisa hingga ulang tahun Anda berikutnya.",
+        "<strong>Tinjau Statistik Kehidupan Detail:</strong> Gulir ke bawah ke daftar statistik untuk melihat total masa hidup Anda yang dinyatakan dalam Total Bulan, Total Minggu, Total Hari, dan Total Jam."
+      ],
+      "key_features_title": "Fitur Utama",
+      "key_features": [
+        "<strong>Rincian Usia Detail:</strong> Menampilkan usia tepat Anda yang dibagi menjadi tahun, bulan, dan hari, menyesuaikan dengan benar untuk tahun kabisat dan panjang bulan yang berbeda.",
+        "<strong>Hitung Mundur Ulang Tahun Berikutnya:</strong> Penghitung hari dinamis menunjukkan seberapa dekat Anda dengan pencapaian ulang tahun berikutnya.",
+        "<strong>Statistik Kehidupan Multi-Unit:</strong> Mengonversi usia Anda menjadi total akumulasi bulan, minggu, hari, dan jam.",
+        "<strong>Perhitungan Lokal Otomatis:</strong> Perhitungan berjalan seketika setelah pemilihan tanggal tanpa perlu memuat ulang halaman.",
+        "<strong>Pemrosesan Sisi Klien:</strong> Semua perhitungan berjalan langsung di memori RAM peramban Anda untuk melindungi privasi."
+      ],
+      "common_use_cases_title": "Kasus Penggunaan Umum",
+      "common_use_cases": [
+        "<strong>Verifikasi Formulir dan Aplikasi:</strong> Konfirmasikan usia tepat dalam tahun dan bulan untuk polis asuransi, dokumen hukum, atau aplikasi visa.",
+        "<strong>Pencapaian Perkembangan Anak:</strong> Lacak tahap pertumbuhan bayi dan anak-anak dalam bulan dan hari yang presisi.",
+        "<strong>Perencanaan Acara dan Ulang Tahun:</strong> Lacak sisa hari hingga ulang tahun untuk mengelola pemesanan dan undangan tepat waktu.",
+        "<strong>Rasa Ingin Tahu dan Hiburan:</strong> Cari tahu berapa hari atau jam Anda telah hidup secara total."
+      ],
+      "faq_title": "Pertanyaan yang Sering Diajukan",
+      "faq": [
+        {
+          "question": "Bagaimana alat ini memperhitungkan tahun kabisat?",
+          "answer": "Kalkulator menggunakan objek Date bawaan JavaScript, yang secara otomatis dan akurat memperhitungkan tahun kabisat (termasuk 29 Februari) dan panjang bulan yang berbeda (28, 30, atau 31 hari)."
+        },
+        {
+          "question": "Apakah tanggal lahir saya disimpan atau diunggah oleh 99tool.in?",
+          "answer": "Tidak. 99tool.in beroperasi sepenuhnya dengan kode sisi klien. Tanggal lahir Anda diproses secara lokal di peramban Anda dan tidak pernah dikirim ke server atau basis data mana pun."
+        },
+        {
+          "question": "Dapatkah saya menghitung usia relatif terhadap tanggal di masa lalu atau masa depan?",
+          "answer": "Alat khusus ini menghitung usia Anda relatif terhadap tanggal hari ini. Jika Anda perlu menemukan perbedaan antara dua tanggal opsional, silakan gunakan Kalkulator Perbedaan Tanggal kami."
+        },
+        {
+          "question": "Mengapa alat menampilkan peringatan jika saya memilih tanggal masa depan?",
+          "answer": "Perhitungan usia mewakili waktu yang telah berlalu sejak kelahiran. Memilih tanggal masa depan akan menghasilkan usia negatif, sehingga alat memblokir input ini."
+        },
+        {
+          "question": "Apakah perhitungan total jam mencakup perubahan waktu musim panas?",
+          "answer": "Statistik total jam dihitung dengan mengalikan total hari yang berlalu dengan 24 jam. Ini adalah konversi matematika standar."
+        }
+      ],
+      "privacy_note": "🔒 Catatan Privasi & Data: Tanggal lahir Anda diproses secara lokal di peramban Anda. Tidak ada data pribadi yang dikumpulkan, dilacak, atau dikirim ke server kami.",
+      "schema_org": {
+        "name": "Kalkulator Umur – 99tool.in",
+        "description": "Alat online gratis dari 99tool.in: cepat, aman, tidak perlu mendaftar."
+      }
+    },
+    "audio_recorder": {
+      "page_title": "Perekam Suara – 99tool.in",
+      "meta_description": "Rekam dan edit audio langsung di peramban Anda. Alat gratis dan privat tanpa pendaftaran dari 99tool.in.",
+      "what_is_title": "Apa itu Perekam & Editor Audio?",
+      "what_is_content": "Alat perekam dan pengeditan audio berbasis web ini memungkinkan Anda merekam catatan suara, audio, dan ucapan dengan kesetiaan tinggi langsung dari peramban Anda. Dirancang dengan privasi mutlak, alat ini mengubah peramban perangkat Anda menjadi studio rekaman yang aman tanpa perlu membuat akun.\n\nMemanfaatkan API peramban bawaan, utilitas memproses semua data audio secara lokal. Ini berarti apakah Anda merekam klip suara atau memotong catatan, file Anda tetap berada di perangkat lokal Anda. Aliran audio tidak pernah dikirim ke server jarak jauh."
+    },
+    "audio_recorder": {
+      "page_title": "Perekam Suara – 99tool.in",
+      "meta_description": "Rekam dan edit audio langsung di peramban Anda. Alat gratis dan privat tanpa pendaftaran dari 99tool.in.",
+      "what_is_title": "Apa itu Perekam & Editor Audio?",
+      "what_is_content": "Alat perekam dan pengeditan audio berbasis web ini memungkinkan Anda merekam catatan suara, audio, dan ucapan dengan kesetiaan tinggi langsung dari peramban Anda. Dirancang dengan privasi mutlak, alat ini mengubah peramban perangkat Anda menjadi studio rekaman yang aman tanpa perlu membuat akun.\n\nMemanfaatkan API peramban bawaan, utilitas memproses semua data audio secara lokal. Ini berarti apakah Anda merekam klip suara atau memotong catatan, file Anda tetap berada di perangkat lokal Anda. Aliran audio tidak pernah dikirim ke server jarak jauh.",
+      "how_to_use_title": "Cara Menggunakan Perekam & Editor Audio",
+      "how_to_use_steps": [
+        "<strong>Pilih Format Ekspor:</strong> Pilih antara WebM (ideal untuk file lebih kecil dan pemrosesan cepat) atau WAV (sempurna untuk audio tanpa kehilangan kualitas) di menu tarik-turun.",
+        "<strong>Inisialisasi Mikrofon:</strong> Klik tombol \"Inisialisasi Mikrofon\". Peramban Anda akan meminta izin akses mikrofon.",
+        "<strong>Mulai Merekam:</strong> Klik tombol bulat merah untuk mulai merekam suara. Pengukur waktu akan mulai berjalan dan bentuk gelombang akan menampilkan sinyal langsung.",
+        "<strong>Hentikan Sesi:</strong> Klik tombol berhenti persegi untuk menyelesaikan rekaman. Alat akan memproses audio secara otomatis dan menambahkannya ke daftar Anda.",
+        "<strong>Dengarkan dan Simpan:</strong> Klik tombol \"PUTAR\" untuk mendengarkan trek Anda, atau tombol \"SIMPAN\" untuk mengunduhnya langsung ke perangkat Anda."
+      ],
+      "key_features_title": "Fitur Utama",
+      "key_features": [
+        "<strong>Output Terkompresi dan Tanpa Hilang:</strong> Ekspor file audio Anda dalam format WAV mentah atau format WebM yang dioptimalkan untuk web.",
+        "<strong>Visualisasi Bentuk Gelombang Real-Time:</strong> Osiloskop memberikan umpan balik visual langsung tentang tingkat input dan aktivitas mikrofon.",
+        "<strong>Penyimpanan RAM Aman:</strong> Rekaman disimpan sementara menggunakan memori sistem (URL Blob) daripada penyimpanan server.",
+        "<strong>Riwayat Sesi Ganda:</strong> Buat beberapa rekaman dalam satu sesi dan dengarkan atau unduh secara terpisah sesuai kebutuhan.",
+        "<strong>Tata Letak Perekaman Responsif:</strong> Antarmuka yang dioptimalkan untuk seluler memudahkan merekam catatan di ponsel, tablet, atau komputer."
+      ],
+      "common_use_cases_title": "Kasus Penggunaan Umum",
+      "common_use_cases": [
+        "<strong>Kreator Konten & Podcaster:</strong> Rekam pengisi suara, intro, atau draf tanpa menginstal perangkat lunak komputer yang berat.",
+        "<strong>Siswa & Peneliti:</strong> Rekam catatan kuliah, pengingat belajar, atau wawancara di lingkungan yang aman.",
+        "<strong>Musisi & Perancang Suara:</strong> Rekam ide musik cepat, latihan vokal, atau efek suara secara instan.",
+        "<strong>Dikte Pribadi:</strong> Diktekan catatan rahasia atau jurnal tanpa takut kebocoran data ke cloud."
+      ],
+      "faq_title": "Pertanyaan yang Sering Diajukan",
+      "faq": [
+        {
+          "question": "Apakah rekaman audio saya disimpan di server Anda?",
+          "answer": "Tidak. 99tool.in memproses semua data audio sepenuhnya di memori (RAM) tab peramban lokal Anda sebagai Blob. Rekaman tidak pernah sampai ke server kami dan dihapus saat tab ditutup."
+        },
+        {
+          "question": "Mengapa saya perlu memberikan izin mikrofon?",
+          "answer": "Peramban Anda memerlukan izin eksplisit untuk menginstal perangkat keras input audio Anda. Izin ini dikelola secara lokal dan hanya digunakan untuk merekam."
+        },
+        {
+          "question": "Bisakah saya menggunakan alat ini secara luring?",
+          "answer": "Ya. Karena antarmuka sepenuhnya bergantung pada Web API bawaan dan pemrosesan lokal, setelah halaman dimuat, Anda dapat merekam dan mengunduh tanpa koneksi internet."
+        },
+        {
+          "question": "Apa perbedaan antara WebM dan WAV?",
+          "answer": "File WAV tidak terkompresi dan tanpa kehilangan kualitas, menawarkan kualitas audio tertinggi tetapi ukuran file lebih besar. File WebM terkompresi dan dioptimalkan untuk web."
+        },
+        {
+          "question": "Apakah ada batas waktu perekaman?",
+          "answer": "Tidak ada batas waktu acak yang ditetapkan oleh alat. Durasi perekaman hanya dibatasi oleh memori sistem (RAM) yang tersedia di perangkat Anda."
+        }
+      ],
+      "privacy_note": "🔒 Catatan Privasi & Data: Semua perekaman dan pemrosesan audio terjadi di dalam peramban Anda. Tidak ada file yang diunggah ke server kami.",
+      "schema_org": {
+        "name": "Perekam & Editor Audio",
+        "description": "Perekaman audio berkualitas tinggi, visualisasi bentuk gelombang real-time, pemotongan audio, kontrol pemutaran, pemrosesan lokal yang aman."
+      }
+    },
+    "bmi_calculator": {
+      "page_title": "Kalkulator BMI – 99tool.in",
+      "meta_description": "Hitung Indeks Massa Tubuh (BMI) Anda dengan akurat. Alat kesehatan gratis, aman, dan cepat dari 99tool.in.",
+      "what_is_title": "Apa itu Kalkulator BMI Tak Terbatas?",
+      "what_is_content": "Kalkulator BMI Tak Terbatas adalah utilitas kesehatan sisi klien yang dirancang untuk menghitung Indeks Massa Tubuh (BMI) menggunakan nilai tinggi dan berat badan. Dengan memasukkan parameter metrik, pengguna dapat menentukan kategori berat badan mereka dan memeriksa indikator standar.\n\nKalkulator ini memproses semua perhitungan matematika, pencocokan kategori, dan penyesuaian jarum petunjuk secara lokal di memori peramban Anda. Tidak ada nilai tinggi, berat, atau BMI yang dihitung disimpan atau diunggah."
+    },
+    "bmi_calculator": {
+      "page_title": "Kalkulator BMI – 99tool.in",
+      "meta_description": "Hitung Indeks Massa Tubuh (BMI) Anda dengan akurat. Alat kesehatan gratis, aman, dan cepat dari 99tool.in.",
+      "what_is_title": "Apa itu Kalkulator BMI Tak Terbatas?",
+      "what_is_content": "Kalkulator BMI Tak Terbatas adalah utilitas kesehatan sisi klien yang dirancang untuk menghitung Indeks Massa Tubuh (BMI) menggunakan nilai tinggi dan berat badan. Dengan memasukkan parameter metrik, pengguna dapat menentukan kategori berat badan mereka dan memeriksa indikator standar.\n\nKalkulator ini memproses semua perhitungan matematika, pencocokan kategori, dan penyesuaian jarum petunjuk secara lokal di memori peramban Anda. Tidak ada nilai tinggi, berat, atau BMI yang dihitung disimpan atau diunggah.",
+      "how_to_use_title": "Cara Menggunakan Kalkulator BMI Tak Terbatas",
+      "how_to_use_steps": [
+        "<strong>Masukkan Berat Badan Anda:</strong> Isi berat badan Anda dalam kilogram (kg) di kotak input berat badan.",
+        "<strong>Masukkan Tinggi Badan Anda:</strong> Isi tinggi badan Anda dalam sentimeter (cm) di kotak input tinggi badan.",
+        "<strong>Klik Hitung:</strong> Tekan tombol \"Hitung BMI\" untuk menjalankan perhitungan lokal.",
+        "<strong>Tinjau Hasil Anda:</strong> Periksa panel hasil untuk melihat nilai numerik BMI Anda, kategori berat badan, dan posisi jarum penunjuk."
+      ],
+      "key_features_title": "Fitur Utama",
+      "key_features": [
+        "<strong>Dukungan Unit Metrik:</strong> Masukkan nilai standar untuk berat badan (kg) dan tinggi badan (cm) secara langsung.",
+        "<strong>Jarum Penunjuk Visual:</strong> Menggerakkan penunjuk secara dinamis di atas bilah berwarna untuk menampilkan klasifikasi berat badan Anda.",
+        "<strong>Rentang BMI Standar:</strong> Mengevaluasi input berdasarkan referensi WHO (Kurus, Normal, Kelebihan Berat Badan, Obesitas).",
+        "<strong>Dasbor Hasil Instan:</strong> Menampilkan skor numerik dan nama kategori secara jelas pada kartu yang disorot.",
+        "<strong>Mesin 100% Sisi Klien:</strong> Menjalankan semua operasi matematika secara lokal di peramban untuk melindungi data medis Anda."
+      ],
+      "common_use_cases_title": "Kasus Penggunaan Umum",
+      "common_use_cases": [
+        "<strong>Pelacakan Manajemen Berat Badan:</strong> Pantau tren massa tubuh secara teratur selama program penurunan berat badan atau kebugaran.",
+        "<strong>Pemeriksaan Kesehatan & Kebugaran:</strong> Periksa kategori massa tubuh umum Anda dengan cepat untuk formulir medis atau asuransi.",
+        "<strong>Penetapan Tujuan Gaya Hidup:</strong> Tetapkan BMI dasar untuk menentukan tujuan kesehatan fisik yang realistis.",
+        "<strong>Kegiatan Sekolah & Pendidikan:</strong> Ajari siswa tentang pengukuran tubuh manusia, konstanta biologis, dan rumus BMI."
+      ],
+      "faq_title": "Pertanyaan yang Sering Diajukan",
+      "faq": [
+        {
+          "question": "Berapa rentang BMI standar?",
+          "answer": "Klasifikasi resmi WHO adalah: Kurus (kurang dari 18,5), Berat badan normal (18,5 hingga 24,9), Kelebihan berat badan (25 hingga 29,9), dan Obesitas (30 atau lebih tinggi)."
+        },
+        {
+          "question": "Apakah kalkulator ini memperhitungkan massa otot atau kepadatan tulang?",
+          "answer": "Tidak. BMI adalah indeks penilaian umum yang hanya menggunakan tinggi dan berat badan. Ini tidak membedakan antara otot, lemak, atau massa tulang."
+        },
+        {
+          "question": "Apakah data kesehatan saya dibagikan atau diunggah?",
+          "answer": "Tidak. Semua perhitungan dilakukan di perangkat Anda melalui JavaScript lokal. 99tool.in tidak menyimpan atau mengumpulkan pengukuran Anda."
+        },
+        {
+          "question": "Apakah ada penyesuaian usia atau jenis kelamin dalam perhitungan ini?",
+          "answer": "Alat ini menghitung indeks BMI standar untuk orang dewasa. Untuk anak-anak, remaja, dan wanita hamil, dokter menggunakan grafik pertumbuhan khusus."
+        }
+      ],
+      "privacy_note": "🔒 Catatan Privasi & Data: Perhitungan tinggi badan, berat badan, dan BMI diproses secara lokal di peramban Anda. Tidak ada data kesehatan pribadi yang diunggah.\nPenafian: Alat ini hanya untuk tujuan informasi dan tidak menggantikan saran medis profesional.",
+      "schema_org": {
+        "name": "Kalkulator BMI – 99tool.in",
+        "description": "Alat online gratis dari 99tool.in: cepat, aman, tidak perlu mendaftar."
+      }
+    },
+    "csv_editor": {
+      "page_title": "Editor CSV – 99tool.in",
+      "meta_description": "Buka, edit, dan ekspor file CSV di peramban Anda. Alat data aman dan gratis dari 99tool.in.",
+      "what_is_title": "Apa itu Penglihat & Editor CSV?",
+      "what_is_content": "Penglihat & Editor CSV adalah alat spreadsheet berbasis web ringan yang dirancang untuk membuka, memeriksa, dan mengubah file nilai yang dipisahkan koma (CSV). Alih-alih menunggu perangkat lunak kantor yang berat terbuka, Anda dapat menyeret dan melepas kumpulan data langsung ke tab peramban untuk melihatnya dalam tata letak tabel yang jelas.\n\nUtilitas ini memungkinkan Anda mengedit nilai sel, mengurutkan kolom, mencari rekaman tertentu, dan mengekspor file yang diperbarui. Karena semua penguraian file dan tampilan tabel terjadi secara lokal di RAM, data sensitif Anda tidak pernah terpapar ke server luar."
+    },
+    "csv_editor": {
+      "page_title": "Editor CSV – 99tool.in",
+      "meta_description": "Buka, edit, dan ekspor file CSV di peramban Anda. Alat data aman dan gratis dari 99tool.in.",
+      "what_is_title": "Apa itu Penglihat & Editor CSV?",
+      "what_is_content": "Penglihat & Editor CSV adalah alat spreadsheet berbasis web ringan yang dirancang untuk membuka, memeriksa, dan mengubah file nilai yang dipisahkan koma (CSV). Alih-alih menunggu perangkat lunak kantor yang berat terbuka, Anda dapat menyeret dan melepas kumpulan data langsung ke tab peramban untuk melihatnya dalam tata letak tabel yang jelas.\n\nUtilitas ini memungkinkan Anda mengedit nilai sel, mengurutkan kolom, mencari rekaman tertentu, dan mengekspor file yang diperbarui. Karena semua penguraian file dan tampilan tabel terjadi secara lokal di RAM, data sensitif Anda tidak pernah terpapar ke server luar.",
+      "how_to_use_title": "Cara Menggunakan Penglihat & Editor CSV",
+      "how_to_use_steps": [
+        "<strong>Impor Kumpulan Data Anda:</strong> Seret dan lepas file CSV Anda langsung ke area lepas bergaris putus-putus, atau klik \"Jelajahi File\" untuk memilih dari komputer.",
+        "<strong>Edit Nilai Sel:</strong> Klik langsung pada sel tabel mana pun untuk mengubah isinya. Ketik perubahan Anda dan klik di luar sel untuk menyimpan secara lokal.",
+        "<strong>Filter dan Cari:</strong> Gunakan kotak pencarian di atas tabel untuk mencari baris tertentu atau memfilter hasil secara real-time.",
+        "<strong>Urutkan berdasarkan Kolom:</strong> Klik header kolom untuk mengurutkan baris tabel secara alfabetis atau numerik dalam urutan naik atau turun.",
+        "<strong>Ekspor Perubahan:</strong> Klik \"Ekspor CSV\" untuk mengunduh spreadsheet yang diperbarui ke komputer Anda."
+      ],
+      "key_features_title": "Fitur Utama",
+      "key_features": [
+        "<strong>Pengeditan Tabel Real-Time:</strong> Edit nilai sel langsung di dalam tabel interaktif dengan penyimpanan lokal instan.",
+        "<strong>Pengurutan dan Pencarian Kolom:</strong> Analisis data dengan cepat dengan mengurutkan rekaman atau memfilter baris berdasarkan kata kunci.",
+        "<strong>Pengurai Sisi Klien Kecepatan Tinggi:</strong> Tampilkan ribuan titik data secara lokal dalam hitungan milidetik tanpa penundaan server.",
+        "<strong>Dukungan Karakter UTF-8:</strong> Mempertahankan karakter khusus dan simbol selama impor dan ekspor.",
+        "<strong>Isolasi Data Luring:</strong> Berjalan sepenuhnya luring untuk memastikan file Anda tetap aman."
+      ],
+      "common_use_cases_title": "Kasus Penggunaan Umum",
+      "common_use_cases": [
+        "<strong>Pembaruan Inventaris E-commerce:</strong> Edit deskripsi produk, harga, atau jumlah stok di tabel sebelum mengimpor ke toko Anda.",
+        "<strong>Pembersihan Daftar Kontak:</strong> Cari entri ganda atau perbaiki kesalahan format dalam daftar email.",
+        "<strong>Inspeksi Log & Laporan:</strong> Lihat ekspor log server atau laporan keuangan dalam tabel yang terorganisir.",
+        "<strong>Verifikasi Impor Basis Data:</strong> Periksa dan format tata letak kolom sebelum mengunggah data ke basis data SQL."
+      ],
+      "faq_title": "Pertanyaan yang Sering Diajukan",
+      "faq": [
+        {
+          "question": "Apakah ada batas ukuran file unggahan?",
+          "answer": "Untuk pengalaman terbaik, kami menyarankan menggunakan editor ini untuk file CSV hingga 10-15 MB. Kumpulan data yang sangat besar dengan ratusan ribu baris dapat memperlambat peramban."
+        },
+        {
+          "question": "Apakah mengedit sel memperbarui file asli di komputer saya?",
+          "answer": "Tidak. Peramban tidak dapat menimpa file lokal secara langsung karena pembatasan keamanan. Untuk menerapkan perubahan, klik tombol \"Ekspor CSV\" untuk mengunduh salinan baru."
+        },
+        {
+          "question": "Apakah data spreadsheet saya diunggah atau dilacak?",
+          "answer": "Tidak. 99tool.in memproses semua file secara lokal. Data dan nilai sel Anda tetap aman di peramban Anda."
+        },
+        {
+          "question": "Apakah alat ini mendukung titik koma atau tab sebagai pemisah?",
+          "answer": "Versi ini dioptimalkan untuk file standar yang dipisahkan koma (.csv). Menggunakan titik koma dapat menyebabkan ketidakcocokan kolom."
+        },
+        {
+          "question": "Bisakah saya menambahkan baris atau kolom baru?",
+          "answer": "Alat ini dirancang sebagai penglihat dan editor nilai untuk tabel yang sudah ada. Untuk menambahkan kolom baru, kami menyarankan menggunakan perangkat lunak spreadsheet lengkap."
+        }
+      ],
+      "privacy_note": "🔒 Catatan Privasi & Data: Penguraian data CSV dan tampilan tabel terjadi di peramban Anda. Tidak ada file atau nilai sel yang dikirim ke server kami.",
+      "schema_org": {
+        "name": "Penglihat & Editor CSV",
+        "description": "Penguraian CSV, tampilan tabel, pengeditan sel, pengurutan kolom, ekspor data."
+      }
+    },
+    "image_compressor": {
+      "page_title": "Kompres Gambar – 99tool.in",
+      "meta_description": "Kurangi ukuran file gambar Anda tanpa kehilangan kualitas. Alat gambar gratis dan cepat dari 99tool.in.",
+      "what_is_title": "Apa itu Pengompres Gambar Pintar?",
+      "what_is_content": "Pengompres Gambar Pintar adalah utilitas optimasi sisi klien yang dirancang untuk mengurangi ukuran file gambar Anda sambil mempertahankan detail visual. Dengan menggunakan pemrosesan kanvas peramban dan penyesuaian kualitas dinamis, Anda dapat dengan mudah mengecilkan file gambar besar untuk meningkatkan kecepatan pemuatan situs web.\n\nSemua optimasi terjadi sepenuhnya di memori lokal peramban Anda. Karena tidak ada file yang diunggah ke server luar, foto dan desain asli Anda tetap privat secara penuh."
+    },
+    "image_compressor": {
+      "page_title": "Kompres Gambar – 99tool.in",
+      "meta_description": "Kurangi ukuran file gambar Anda tanpa kehilangan kualitas. Alat gambar gratis dan cepat dari 99tool.in.",
+      "what_is_title": "Apa itu Pengompres Gambar Pintar?",
+      "what_is_content": "Pengompres Gambar Pintar adalah utilitas optimasi sisi klien yang dirancang untuk mengurangi ukuran file gambar Anda sambil mempertahankan detail visual. Dengan menggunakan pemrosesan kanvas peramban dan penyesuaian kualitas dinamis, Anda dapat dengan mudah mengecilkan file gambar besar untuk meningkatkan kecepatan pemuatan situs web.\n\nSemua optimasi terjadi sepenuhnya di memori lokal peramban Anda. Karena tidak ada file yang diunggah ke server luar, foto dan desain asli Anda tetap privat secara penuh.",
+      "how_to_use_title": "Cara Menggunakan Pengompres Gambar Pintar",
+      "how_to_use_steps": [
+        "<strong>Unggah Gambar:</strong> Klik area bingkai atau seret dan lepas file gambar Anda (JPG, PNG, atau WEBP) ke peramban.",
+        "<strong>Periksa Ukuran Asli:</strong> Lihat kolom <strong>Asli</strong> di tabel perbandingan untuk melihat ukuran file awal.",
+        "<strong>Pilih Tingkat Kompresi:</strong> Seret penggeser <strong>Tingkat Kompresi</strong> untuk menyesuaikan persentase kualitas. Menggeser ke kiri mengurangi ukuran lebih banyak, menggeser ke kanan mempertahankan kualitas.",
+        "<strong>Pilih Format Target:</strong> Pilih di menu <strong>Konversi ke Format</strong> untuk mempertahankan format asli atau mengonversi ke JPEG atau WEBP.",
+        "<strong>Evaluasi Penghematan:</strong> Bandingkan pratinjau <strong>Asli</strong> dan <strong>Terkompresi</strong> secara berdampingan. Lencana hijau menampilkan persentase ukuran yang dihemat.",
+        "<strong>Unduh Gambar Terkompresi:</strong> Klik tombol <strong>Unduh Gambar Terkompresi</strong> untuk menyimpan file ke perangkat Anda."
+      ],
+      "key_features_title": "Fitur Utama",
+      "key_features": [
+        "<strong>Perbandingan Kualitas Berdampingan:</strong> Bandingkan pratinjau asli dan terkompresi secara berdampingan untuk memastikan teks dan detail tetap tajam.",
+        "<strong>Kontrol Kualitas Presisi:</strong> Sesuaikan tingkat kompresi secara halus dari 10% hingga 100% berdasarkan kebutuhan penyimpanan Anda.",
+        "<strong>Konversi Format Instan:</strong> Konversi file Anda secara instan ke format modern seperti WEBP atau JPEG yang kompatibel.",
+        "<strong>Kalkulator Penghematan Real-Time:</strong> Menghitung persentase ukuran file yang dihemat secara instan saat Anda menyesuaikan penggeser.",
+        "<strong>Eksekusi Sepenuhnya Lokal:</strong> Memproses semuanya melalui JavaScript lokal tanpa pencatatan data pada server."
+      ],
+      "common_use_cases_title": "Kasus Penggunaan Umum",
+      "common_use_cases": [
+        "<strong>Pengembang Web:</strong> Kompres gambar situs web untuk meningkatkan kecepatan pemuatan dan peringkat SEO.",
+        "<strong>Pengelola Media Sosial:</strong> Kurangi ukuran foto agar sesuai dengan batas unggahan tanpa kehilangan kualitas visual.",
+        "<strong>Pekerja Kantor:</strong> Kurangi ukuran dokumen hasil pemindaian atau tangkapan layar untuk lampiran email.",
+        "<strong>Blogger:</strong> Buat gambar yang dioptimalkan untuk pembaca seluler guna meningkatkan pengalaman pemuatan."
+      ],
+      "faq_title": "Pertanyaan yang Sering Diajukan",
+      "faq": [
+        {
+          "question": "Apakah gambar saya akan kehilangan kualitas saat dikompresi?",
+          "answer": "Kami menyarankan agar penggeser tetap berada di antara 80% dan 90%. Dalam rentang ini, ukuran file berkurang secara signifikan sementara perbedaan visual sulit disadari."
+        },
+        {
+          "question": "Apakah foto pribadi saya diunggah ke server cloud?",
+          "answer": "Sama sekali tidak. Semua pemrosesan, pengubahan ukuran, dan konversi format terjadi secara lokal di memori peramban Anda."
+        },
+        {
+          "question": "Apa keuntungan mengonversi ke WEBP?",
+          "answer": "WEBP adalah format gambar modern yang memberikan kompresi unggul dibandingkan JPEG dan PNG, menghasilkan file yang lebih kecil dengan tetap mempertahankan kualitas."
+        },
+        {
+          "question": "Bisakah saya mengompresi gambar PNG transparan?",
+          "answer": "Ya. Untuk mempertahankan transparansi, pilih \"Pertahankan Format Asli\" atau konversi ke \"WEBP\". Mengonversi ke JPEG akan membuat area transparan menjadi putih."
+        },
+        {
+          "question": "Mengapa file saya menjadi lebih besar setelah dikompresi?",
+          "answer": "Ini dapat terjadi jika file asli sudah sangat dioptimalkan. Seret penggeser sedikit lebih rendah untuk menyelesaikannya."
+        }
+      ],
+      "privacy_note": "Catatan Privasi & Data: Setiap langkah kompresi dilakukan secara lokal di komputer Anda. File Anda tidak diproses di server luar.",
+      "schema_org": {
+        "name": "Kompres Gambar – 99tool.in",
+        "description": "Alat online gratis dari 99tool.in: cepat, aman, tidak perlu mendaftar."
+      }
+    },
+    "markdown_previewer": {
+      "page_title": "Pratinjau Markdown – 99tool.in",
+      "meta_description": "Tulis, edit, dan konversi Markdown ke HTML secara real-time. Alat pengembang gratis dari 99tool.in.",
+      "what_is_title": "Apa itu Pratinjau Markdown?",
+      "what_is_content": "Pratinjau Markdown adalah editor berbasis peramban yang dirancang untuk menulis, memformat, dan mempratinjau sintaks Markdown secara real-time. Dengan menulis di sebelah kiri dan melihat hasilnya di sebelah kanan, Anda dapat memeriksa file README dan dokumen sebelum diterbitkan.\n\nEditor ini melakukan semua konversi secara lokal di komputer Anda. Karena tidak ada draf yang dikirim ke basis data luar, dokumen Anda tetap aman.",
+      "how_to_use_title": "Cara Menggunakan Pratinjau Markdown",
+      "how_to_use_steps": [
+        "<strong>Masukkan Markdown:</strong> Ketik atau tempel sintaks Markdown Anda di panel \"Editor\" kiri.",
+        "<strong>Tonton Pratinjau Langsung:</strong> Amati panel \"Pratinjau Langsung\" kanan untuk memeriksa format judul, daftar, dan tabel.",
+        "<strong>Salin Kode HTML:</strong> Klik \"Salin HTML\" untuk menyalin kode HTML yang dikompilasi ke papan klip Anda.",
+        "<strong>Unduh File Anda:</strong> Klik \"Unduh .md\" untuk menyimpan pekerjaan Anda sebagai dokumen Markdown.",
+        "<strong>Bersihkan Semua:</strong> Klik \"Bersihkan Semua\" untuk menyetel ulang editor."
+      ],
+      "key_features_title": "Fitur Utama",
+      "key_features": [
+        "<strong>Layar Terpisah Pratinjau Langsung:</strong> Mengubah sintaks mentah secara langsung menjadi format HTML visual saat Anda mengetik.",
+        "<strong>Kompatibilitas GFM:</strong> Mendukung aturan GitHub Flavored Markdown standar untuk tabel, teks tebal, dan daftar.",
+        "<strong>Salin Output HTML:</strong> Menyimpan elemen HTML yang dikompilasi di papan klip untuk penggunaan langsung.",
+        "<strong>Ekspor File Lokal:</strong> Unduh draf Anda yang telah selesai sebagai file <code>.md</code> mandiri.",
+        "<strong>Pengompil 100% Sisi Klien:</strong> Merender gaya secara luring di tembolok peramban untuk melindungi teks Anda."
+      ],
+      "common_use_cases_title": "Kasus Penggunaan Umum",
+      "common_use_cases": [
+        "<strong>Menulis README Repositori:</strong> Format file deskripsi proyek dan periksa tautan gambar sebelum memperbarui kode.",
+        "<strong>Dokumentasi API:</strong> Tulis dan pratinjau spesifikasi API serta contoh kode.",
+        "<strong>Draf Blog Teknis:</strong> Siapkan artikel dalam Markdown dan periksa struktur judul.",
+        "<strong>Mempelajari Sintaks Markdown:</strong> Berlatih pintasan Markdown dalam editor interaktif."
+      ],
+      "faq_title": "Pertanyaan yang Sering Diajukan",
+      "faq": [
+        {
+          "question": "Apakah editor ini kompatibel dengan GitHub Flavored Markdown?",
+          "answer": "Ya. Pratinjau mendukung elemen GFM standar seperti daftar tugas, tabel, dan blok kode."
+        },
+        {
+          "question": "Apakah draf saya dikirim ke server?",
+          "answer": "Tidak. 99tool.in memproses semua konversi secara lokal di memori peramban Anda."
+        },
+        {
+          "question": "Bagaimana cara menampilkan gambar di pratinjau langsung?",
+          "answer": "Anda dapat merujuk ke gambar apa pun menggunakan sintaks standar (<code>![](url_gambar)</code>)."
+        },
+        {
+          "question": "Apakah file .md yang diunduh berisi kode HTML?",
+          "answer": "Tidak. \"Unduh .md\" menyimpan kode sumber Markdown yang dapat diedit. Gunakan \"Salin HTML\" untuk kode HTML."
+        }
+      ],
+      "privacy_note": "🔒 Catatan Privasi & Data: Penataan gaya Markdown dan ekspor file terjadi secara lokal di peramban Anda.",
+      "schema_org": {
+        "name": "Pratinjau Markdown",
+        "description": "Pratinjau hasil real-time, dukungan GFM, ekspor HTML, layar terpisah."
+      }
+    },
+    "pdf_merger": {
+      "page_title": "Gabung File PDF – 99tool.in",
+      "meta_description": "Gabungkan beberapa file PDF dalam hitungan detik di peramban Anda. Alat gratis dan aman 100% dari 99tool.in.",
+      "what_is_title": "Alat Penggabung PDF yang Menghormati Privasi Anda",
+      "what_is_content": "Kita semua pernah mengalami hal ini: Anda memiliki beberapa laporan, dokumen hasil pemindaian, dan surat lamaran yang perlu digabungkan menjadi satu file PDF. Pemikiran pertama adalah mencari \"<strong>gabung PDF gratis online</strong>\". Namun Anda ragu untuk mengunggah kontrak rahasia atau dokumen pribadi ke server yang tidak dikenal.\n\nDi 99tool.in, kami mengembangkan alat <strong>penggabung file PDF</strong> untuk menyelesaikan masalah privasi ini. Berbeda dengan situs yang memproses file di server jarak jauh, alat kami melakukan perhitungan di perangkat Anda sendiri. Menggunakan teknologi <code>pdf-lib</code> di peramban, penggabungan terjadi sepenuhnya di RAM komputer Anda. File Anda tidak pernah meninggalkan perangkat."
+    },
+    "pdf_merger": {
+      "page_title": "Gabung File PDF – 99tool.in",
+      "meta_description": "Gabungkan beberapa file PDF dalam hitungan detik di peramban Anda. Alat gratis dan aman 100% dari 99tool.in.",
+      "what_is_title": "Alat Penggabung PDF yang Menghormati Privasi Anda",
+      "what_is_content": "Kita semua pernah mengalami hal ini: Anda memiliki beberapa laporan, dokumen hasil pemindaian, dan surat lamaran yang perlu digabungkan menjadi satu file PDF. Pemikiran pertama adalah mencari \"<strong>gabung PDF gratis online</strong>\". Namun Anda ragu untuk mengunggah kontrak rahasia atau dokumen pribadi ke server yang tidak dikenal.\n\nDi 99tool.in, kami mengembangkan alat <strong>penggabung file PDF</strong> untuk menyelesaikan masalah privasi ini. Berbeda dengan situs yang memproses file di server jarak jauh, alat kami melakukan perhitungan di perangkat Anda sendiri. Menggunakan teknologi <code>pdf-lib</code> di peramban, penggabungan terjadi sepenuhnya di RAM komputer Anda. File Anda tidak pernah meninggalkan perangkat.",
+      "how_to_use_title": "Cara Menggabungkan File PDF di 99tool.in (Langkah demi Langkah)",
+      "how_to_use_steps": [
+        "<strong>Langkah 1: Pilih File Anda</strong> — Klik kotak \"Pilih PDF\" atau seret dan lepas file Anda ke halaman.",
+        "<strong>Langkah 2: Periksa Status Keamanan</strong> — Perhatikan perisai hijau di samping setiap file untuk mengonfirmasi keamanan.",
+        "<strong>Langkah 3: Atur Urutan</strong> — Seret kartu file ke atas atau ke bawah untuk mengubah urutan halaman.",
+        "<strong>Langkah 4: Gabungkan dan Unduh</strong> — Klik \"Gabungkan File\". Penggabungan selesai dalam hitungan detik dan pengunduhan dimulai."
+      ],
+      "key_features_title": "Mengapa Penggabungan PDF Lokal Lebih Baik",
+      "key_features": [
+        "<strong>Ruang Kerja Visual:</strong> Seret dan lepas file dengan mudah dalam urutan yang tepat sesuai keinginan Anda.",
+        "<strong>Pemindaian Keamanan Aktif:</strong> Memindai file untuk mencari skrip tersembunyi sebelum menggabungkannya.",
+        "<strong>Perakitan Peramban Murni:</strong> Berjalan sepenuhnya di RAM melalui pdf-lib dan WebAssembly.",
+        "<strong>Tanpa Unggahan File:</strong> Perlindungan privasi penuh untuk kontrak dan dokumen medis."
+      ],
+      "common_use_cases_title": "Kasus Penggunaan Nyata",
+      "common_use_cases": [
+        "<strong>Untuk Pengacara & Konsultan:</strong> Gabungkan bukti dan berkas tanpa risiko kebocoran data.",
+        "<strong>Untuk Siswa & Guru:</strong> Gabungkan skripsi, halaman judul, dan daftar pustaka menjadi satu file.",
+        "<strong>Untuk Profesional Keuangan:</strong> Bundel aplikasi dan laporan dengan tetap menjaga privasi klien."
+      ],
+      "faq_title": "Pertanyaan yang Sering Diajukan",
+      "faq": [
+        {
+          "question": "Apakah ada batas jumlah file PDF yang bisa saya gabungkan?",
+          "answer": "Batasnya tergantung pada RAM komputer Anda. Sebagian besar komputer modern dapat dengan mudah menggabungkan 50+ file PDF berukuran sedang."
+        },
+        {
+          "question": "Apakah penggabungan memengaruhi kualitas gambar?",
+          "answer": "Tidak. Alat kami mempertahankan data asli setiap halaman melalui pustaka pdf-lib tanpa rekompresi."
+        },
+        {
+          "question": "Mengapa saya melihat peringatan keamanan pada beberapa file?",
+          "answer": "Beberapa file PDF berisi elemen interaktif seperti JavaScript. Sistem kami memberi tahu hal ini demi transparansi."
+        },
+        {
+          "question": "Apakah dokumen saya diunggah ke server?",
+          "answer": "Sama sekali tidak. Semua pemrosesan dilakukan secara lokal melalui WASM dan JavaScript di peramban Anda."
+        },
+        {
+          "question": "Bisakah saya menggabungkan file PDF yang dilindungi kata sandi?",
+          "answer": "File yang dilindungi harus dibuka kuncinya terlebih dahulu. Alat kami tidak dapat mengabaikan perlindungan kata sandi."
+        },
+        {
+          "question": "Apakah alat ini berfungsi di ponsel?",
+          "answer": "Ya. Selama peramban seluler Anda mendukung JavaScript modern, Anda dapat menggabungkan file PDF di ponsel."
+        }
+      ],
+      "privacy_note": "🔒 Pemrosesan lokal per sesi. Tanpa unggahan. Tanpa pelacakan. Diperbarui April 2026.",
+      "schema_org": {
+        "name": "Alat Penggabung PDF",
+        "description": "Penggabungan PDF, urutan halaman visual, pemindaian keamanan, pemrosesan lokal yang aman."
+      }
+    },
+    "password_generator": {
+      "page_title": "Pembuat Kata Sandi – 99tool.in",
+      "meta_description": "Buat kata sandi yang kuat dan acak secara instan. Alat 100% aman dan lokal dari 99tool.in.",
+      "what_is_title": "Apa itu Pembuat Kata Sandi Aman?",
+      "what_is_content": "Pembuat Kata Sandi Aman membuat kata sandi acak yang aman secara kriptografis menggunakan Web Crypto API (window.crypto.getRandomValues) peramban Anda. Ini memberikan hasil yang benar-benar acak dibandingkan dengan fungsi standar. Seluruh proses terjadi secara lokal di peramban Anda.\n\nAtur panjang kata sandi dan kumpulan karakter (huruf besar, huruf kecil, angka, simbol), alat akan segera membuat kata sandi aman yang sesuai. Salin dengan satu klik dan simpan di pengelola kata sandi Anda."
+    },
+    "password_generator": {
+      "page_title": "Pembuat Kata Sandi – 99tool.in",
+      "meta_description": "Buat kata sandi yang kuat dan acak secara instan. Alat 100% aman dan lokal dari 99tool.in.",
+      "what_is_title": "Apa itu Pembuat Kata Sandi Aman?",
+      "what_is_content": "Pembuat Kata Sandi Aman membuat kata sandi acak yang aman secara kriptografis menggunakan Web Crypto API (window.crypto.getRandomValues) peramban Anda. Ini memberikan hasil yang benar-benar acak dibandingkan dengan fungsi standar. Seluruh proses terjadi secara lokal di peramban Anda.\n\nAtur panjang kata sandi dan kumpulan karakter (huruf besar, huruf kecil, angka, simbol), alat akan segera membuat kata sandi aman yang sesuai. Salin dengan satu klik dan simpan di pengelola kata sandi Anda.",
+      "how_to_use_title": "Cara Menggunakan Pembuat Kata Sandi Aman",
+      "how_to_use_steps": [
+        "Atur panjang kata sandi yang diinginkan dengan penggeser (direkomendasikan 8 hingga 128 karakter).",
+        "Centang opsi kumpulan karakter: Huruf besar (A-Z), huruf kecil (a-z), angka (0-9), simbol (!@#$...).",
+        "Klik \"Buat Kata Sandi\" untuk menghasilkan kata sandi acak.",
+        "Periksa pengukur kekuatan untuk mengonfirmasi tingkat keamanan.",
+        "Klik \"Salin\" untuk menyalin kata sandi ke papan klip Anda dan tempel di pengelola kata sandi Anda.",
+        "Klik \"Buat\" lagi untuk opsi lain."
+      ],
+      "key_features_title": "Fitur Utama",
+      "key_features": [
+        "<strong>Acak dari Web Crypto API:</strong> Menggunakan penggenerasi angka acak yang aman secara kriptografis.",
+        "<strong>Opsi yang Dapat Disesuaikan:</strong> Atur panjang hingga 128 karakter dan gabungkan 4 jenis karakter.",
+        "<strong>Pengukur Kekuatan:</strong> Menampilkan tingkat keamanan setiap kata sandi yang dihasilkan secara real-time.",
+        "<strong>Salin Satu Klik:</strong> Menyalin kata sandi yang dihasilkan ke papan klip secara instan."
+      ],
+      "common_use_cases_title": "Kasus Penggunaan Umum",
+      "common_use_cases": [
+        "<strong>Pendaftaran Akun Baru:</strong> Buat kata sandi yang unik dan kuat setiap kali Anda mendaftar di layanan baru.",
+        "<strong>Perubahan Kata Sandi:</strong> Buat pengganti yang aman ketika situs web meminta untuk memperbarui kredensial Anda.",
+        "<strong>Kunci API dan Token:</strong> Buat string acak untuk digunakan sebagai kunci keamanan dalam proyek."
+      ],
+      "faq_title": "Pertanyaan yang Sering Diajukan",
+      "faq": [
+        {
+          "question": "Apakah kata sandi yang dihasilkan benar-benar acak?",
+          "answer": "Ya. Alat menggunakan window.crypto.getRandomValues(), yang mengambil keacakan dari generator sistem operasi (CSPRNG)."
+        },
+        {
+          "question": "Berapa panjang kata sandi yang direkomendasikan?",
+          "answer": "Minimal 16 karakter untuk akun standar, dan 20+ karakter untuk akun penting (email, bank)."
+        },
+        {
+          "question": "Apakah kata sandi dikirim ke server?",
+          "answer": "Sama sekali tidak. Semua pembuatan terjadi secara lokal di peramban Anda. Kata sandi tidak pernah meninggalkan perangkat."
+        },
+        {
+          "question": "Haruskah saya mengingat kata sandi yang dihasilkan?",
+          "answer": "Tidak. Kata sandi yang kuat dirancang untuk disimpan di pengelola kata sandi (seperti 1Password atau Bitwarden)."
+        }
+      ],
+      "privacy_note": "🔒 Aman secara kriptografis. 100% Lokal. Tanpa kontak server. Diperbarui April 2026.",
+      "schema_org": {
+        "name": "Pembuat Kata Sandi Aman",
+        "description": "Pembuatan kata sandi acak, kumpulan karakter yang dapat disesuaikan, uji kekuatan, 100% sisi klien."
+      }
+    },
+    "regex_tester": {
+      "page_title": "Penguji Regex – 99tool.in",
+      "meta_description": "Uji dan perbaiki kesalahan Regular Expression secara real-time. Alat pengembang gratis dari 99tool.in.",
+      "what_is_title": "Apa itu Penguji & Pengoreksi Regex?",
+      "what_is_content": "Penguji & Pengoreksi Regex adalah utilitas pengembang sisi klien yang dirancang untuk membuat, menguji, dan memperbaiki ekspresi reguler (RegEx). Dengan memasukkan pola dan bendera, Anda dapat memeriksa bagaimana ekspresi cocok dengan teks di peramban Anda.\n\nPengoreksi kesalahan ini melakukan semua evaluasi secara lokal dengan mesin JavaScript RegExp bawaan peramban Anda. Tidak ada data yang dikirim melalui jaringan."
+    },
+    "regex_tester": {
+      "page_title": "Penguji Regex – 99tool.in",
+      "meta_description": "Uji dan perbaiki kesalahan Regular Expression secara real-time. Alat pengembang gratis dari 99tool.in.",
+      "what_is_title": "Apa itu Penguji & Pengoreksi Regex?",
+      "what_is_content": "Penguji & Pengoreksi Regex adalah utilitas pengembang sisi klien yang dirancang untuk membuat, menguji, dan memperbaiki ekspresi reguler (RegEx). Dengan memasukkan pola dan bendera, Anda dapat memeriksa bagaimana ekspresi cocok dengan teks di peramban Anda.\n\nPengoreksi kesalahan ini melakukan semua evaluasi secara lokal dengan mesin JavaScript RegExp bawaan peramban Anda. Tidak ada data yang dikirim melalui jaringan.",
+      "how_to_use_title": "Cara Menggunakan Penguji & Pengoreksi Regex",
+      "how_to_use_steps": [
+        "<strong>Masukkan Pola:</strong> Ketik ekspresi reguler Anda (misalnya: <code>[a-zA-Z0-9]+</code>) di kotak pola.",
+        "<strong>Konfigurasi Bendera:</strong> Aktifkan bendera seperti Global (g), Tidak Peka Huruf Besar/Kecil (i), atau Banyak Baris (m).",
+        "<strong>Tempel Teks Penguji:</strong> Masukkan teks sampel Anda. Hasil yang cocok akan disorot secara instan.",
+        "<strong>Periksa Grup yang Ditangkap:</strong> Lihat panel hasil untuk melihat detail tentang kecocokan dan grup.",
+        "<strong>Perbaiki Kesalahan Sintaks:</strong> Jika ekspresi tidak valid, lihat pesan kesalahan untuk menyelesaikannya."
+      ],
+      "key_features_title": "Fitur Utama",
+      "key_features": [
+        "<strong>Penyorotan Real-Time:</strong> Menyorot kecocokan di kotak teks secara instan saat Anda mengetik.",
+        "<strong>Kontrol Bendera Interaktif:</strong> Sakelar g, i, m mudah diaktifkan atau dinonaktifkan dengan satu klik.",
+        "<strong>Detail Grup yang Ditangkap:</strong> Menampilkan posisi kecocokan dan nilai grup yang ditangkap.",
+        "<strong>Diagnosis Kesalahan Sintaks:</strong> Menampilkan pesan yang jelas saat terjadi kesalahan sintaks untuk penanganan cepat.",
+        "<strong>100% Sisi Klien:</strong> Menguji ekspresi reguler secara luring untuk melindungi data Anda."
+      ],
+      "common_use_cases_title": "Kasus Penggunaan Umum",
+      "common_use_cases": [
+        "<strong>Validasi Input Formulir:</strong> Uji pola untuk alamat email, nomor telepon, dan kata sandi.",
+        "<strong>Analisis Log Server:</strong> Buat pola untuk mengekstrak alamat IP atau kode kesalahan dari log.",
+        "<strong>Ekstraksi Teks:</strong> Uji pola untuk mengekstrak tag atau variabel tertentu dari file kode.",
+        "<strong>Mempelajari Regex:</strong> Berlatih aturan Regex dalam lingkungan visual."
+      ],
+      "faq_title": "Pertanyaan yang Sering Diajukan",
+      "faq": [
+        {
+          "question": "Mesin Regex apa yang digunakan alat ini?",
+          "answer": "Alat ini menggunakan mesin JavaScript <code>RegExp</code> bawaan, sepenuhnya kompatibel dengan Chrome, Firefox, Safari, dan Node.js."
+        },
+        {
+          "question": "Apakah teks sampel saya diunggah ke server?",
+          "answer": "Tidak. 99tool.in memproses semua evaluasi secara lokal di memori peramban Anda."
+        },
+        {
+          "question": "Mengapa saya melihat pesan kesalahan sintaks?",
+          "answer": "Ini terjadi ketika memasukkan ekspresi yang tidak valid, misalnya tanda kurung yang belum ditutup <code>(</code>."
+        },
+        {
+          "question": "Apakah pengoreksi kesalahan mendukung Lookaround?",
+          "answer": "Ya. Mesin bawaan mendukung fitur ES2018+ modern (Lookahead dan Lookbehind)."
+        }
+      ],
+      "privacy_note": "🔒 Catatan Privasi & Data: Evaluasi Regex terjadi secara lokal di peramban Anda. Tidak ada data yang dikirim.",
+      "schema_org": {
+        "name": "Penguji Regex",
+        "description": "Pengujian Regex real-time, dukungan bendera (g, i, m), penyorotan kecocokan."
+      }
+    },
+    "word_counter": {
+      "page_title": "Penghitung Kata – 99tool.in",
+      "meta_description": "Hitung kata, karakter, kalimat, dan paragraf secara real-time. Alat gratis dan aman dari 99tool.in.",
+      "what_is_title": "Apa itu Penghitung Kata Online?",
+      "what_is_content": "Penghitung Kata Online adalah utilitas analisis teks real-time yang menghitung kata, karakter, kalimat, dan paragraf saat Anda mengetik atau menempelkan teks. Berbeda dengan editor cloud, alat ini bekerja secara lokal di peramban Anda tanpa transmisi data.\n\nPenghitung diperbarui secara instan pada setiap tombol yang ditekan, membantu Anda mengontrol panjang teks untuk artikel, postingan media sosial, atau konten SEO secara presisi."
+    },
+    "word_counter": {
+      "page_title": "Penghitung Kata – 99tool.in",
+      "meta_description": "Hitung kata, karakter, kalimat, dan paragraf secara real-time. Alat gratis dan aman dari 99tool.in.",
+      "what_is_title": "Apa itu Penghitung Kata Online?",
+      "what_is_content": "Penghitung Kata Online adalah utilitas analisis teks real-time yang menghitung kata, karakter, kalimat, dan paragraf saat Anda mengetik atau menempelkan teks. Berbeda dengan editor cloud, alat ini bekerja secara lokal di peramban Anda tanpa transmisi data.\n\nPenghitung diperbarui secara instan pada setiap tombol yang ditekan, membantu Anda mengontrol panjang teks untuk artikel, postingan media sosial, atau konten SEO secara presisi.",
+      "how_to_use_title": "Cara Menggunakan Penghitung Kata Online",
+      "how_to_use_steps": [
+        "Ketik atau tempel teks Anda langsung di kotak editor di bagian atas halaman.",
+        "Perhatikan jumlah kata, karakter, kalimat, dan paragraf diperbarui secara real-time.",
+        "Gunakan indikator \"Waktu Membaca\" untuk memperkirakan waktu yang dibutuhkan pembaca untuk menyelesaikan konten Anda.",
+        "Edit teks Anda di dalam kotak hingga mencapai target Anda.",
+        "Klik \"Bersihkan\" untuk menyetel ulang editor."
+      ],
+      "key_features_title": "Fitur Utama",
+      "key_features": [
+        "<strong>Penghitungan Real-Time:</strong> Memperbarui jumlah kata, karakter, dan kalimat pada setiap tombol yang ditekan.",
+        "<strong>Perkiraan Waktu Membaca:</strong> Menghitung waktu membaca rata-rata berdasarkan kecepatan membaca normal orang dewasa.",
+        "<strong>Penghitung Karakter (dengan dan tanpa spasi):</strong> Menampilkan kedua total untuk platform seperti Twitter.",
+        "<strong>100% Privasi:</strong> Semua logika penghitungan berjalan di sisi klien; teks Anda tidak pernah dikirim."
+      ],
+      "common_use_cases_title": "Kasus Penggunaan Umum",
+      "common_use_cases": [
+        "<strong>Tugas Akademik:</strong> Periksa batas kata untuk tugas sekolah atau esai sebelum dikumpulkan.",
+        "<strong>Penulisan Konten SEO:</strong> Kontrol panjang deskripsi meta, tag judul, dan artikel secara presisi.",
+        "<strong>Postingan Media Sosial:</strong> Mematuhi batas karakter untuk Twitter/X atau LinkedIn.",
+        "<strong>Penulisan Lepas:</strong> Periksa panjang pengiriman sesuai spesifikasi kontrak."
+      ],
+      "faq_title": "Pertanyaan yang Sering Diajukan",
+      "faq": [
+        {
+          "question": "Apakah alat ini menyimpan apa yang saya ketik?",
+          "answer": "Sama sekali tidak. Privasi Anda adalah yang utama. Semuanya terjadi secara lokal di tab peramban Anda. Saat Anda menutup tab, teks Anda dihapus."
+        },
+        {
+          "question": "Bagaimana waktu membaca dihitung?",
+          "answer": "Perhitungan didasarkan pada kecepatan membaca rata-rata orang dewasa (sekitar 200 hingga 250 kata per menit)."
+        },
+        {
+          "question": "Apakah spasi dihitung sebagai karakter?",
+          "answer": "Ya. Alat menampilkan \"total karakter termasuk spasi\" dan \"tidak termasuk spasi\"."
+        },
+        {
+          "question": "Apa yang dianggap sebagai \"kalimat\"?",
+          "answer": "Setiap bagian teks yang diakhiri dengan titik, tanda seru, atau tanda tanya dihitung sebagai satu kalimat."
+        },
+        {
+          "question": "Apakah ini berfungsi di ponsel saya?",
+          "answer": "Ya! Alat ini sepenuhnya responsif dan berfungsi dengan baik di smartphone dan tablet."
+        }
+      ],
+      "privacy_note": "Catatan Privasi & Data: Semua analisis teks dan perhitungan waktu membaca terjadi di peramban Anda. Konten Anda tidak disimpan.",
+      "schema_org": {
+        "name": "Penghitung Kata Online",
+        "description": "Hitung kata, hitung karakter, hitung kalimat, perkirakan waktu membaca."
+      }
+    }
+  }
+}

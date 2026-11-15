@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Browser Perf – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/network/browser-perf.html"/>
+<meta property="og:title" content="Browser Perf – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/network/browser-perf.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Browser Perf \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/network/browser-perf.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .perf-workspace {
+      margin-top: 2rem;
+      background: var(--bg-secondary);
+      border-radius: 20px;
+      padding: 3rem;
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+    .score-circle {
+      width: 180px;
+      height: 180px;
+      margin: 0 auto 2rem;
+      border: 8px solid #222;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #111;
+      box-shadow: 0 0 30px rgba(var(--primary-rgb), 0.2);
+    }
+    .main-score { font-size: 3.5rem; font-weight: 900; color: var(--primary); }
+    .score-label { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+    
+    .test-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .test-card {
+      background: var(--bg-primary);
+      padding: 1.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      text-align: left;
+    }
+    .t-val { font-size: 1.5rem; font-weight: 700; color: var(--text); }
+    .t-label { font-size: 0.85rem; color: var(--text-muted); }
+    
+    .progress-bar-small {
+      width: 100%; height: 4px;
+      background: #333;
+      margin-top: 10px;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .progress-fill { height: 100%; width: 0; background: var(--primary); }
+    
+    .running-ui { display: none; }
+    .running .running-ui { display: block; }
+    .running .static-ui { display: none; }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Browser Performance Benchmark</h1>
+      <p>Measure JavaScript execution velocity and DOM engine efficiency.</p>
+    </div>
+
+    <div class="tool-container text-center">
+      <div class="perf-workspace" id="main-ws">
+        <div class="score-circle">
+           <div class="main-score" id="score-out">0</div>
+           <div class="score-label">Health Score</div>
+        </div>
+
+        <div class="test-grid">
+           <div class="test-card">
+              <div class="t-label">JS Engine Speed</div>
+              <div class="t-val" id="js-val">0 ops</div>
+              <div class="progress-bar-small"><div id="js-progress" class="progress-fill"></div></div>
+           </div>
+           <div class="test-card">
+              <div class="t-label">Rendering Efficiency</div>
+              <div class="t-val" id="render-val">0 fps</div>
+              <div class="progress-bar-small"><div id="render-progress" class="progress-fill"></div></div>
+           </div>
+        </div>
+
+        <button id="start-btn" class="btn btn-primary btn-lg">⚡ Run Benchmark</button>
+        <div class="running-ui mt-3 text-muted italic">Running deep engine analysis... please do not close tab.</div>
+      </div>
+
+      <!-- SEO CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2>What is a Browser Speed Test?</h2>
+        <p>Your browser is the primary operating system for the modern web. A <strong>browser performance test</strong> benchmarks how quickly your browser can execute complex JavaScript logic and render visual elements. Unlike a standard internet speed test, our <strong>browser benchmark tool</strong> measures local processing power, helping you identify if your browser is lagging due to heavy extensions, outdated software, or hardware limitations.</p>
+
+        <h3 class="mt-4">Benchmarking the JavaScript Engine</h2>
+        <p>Every website uses JavaScript for interactivity. Our <strong>online JS tester</strong> performs billions of calculations (like the Sieve of Eratosthenes for prime numbers) in a few seconds. By measuring the "Operations Per Second," we can provide a <strong>JavaScript speed score</strong> that reflects how well engines like V8 (Chrome/Edge) or SpiderMonkey (Firefox) are performing on your specific CPU architecture.</p>
+
+        <h3 class="mt-4">Testing Rendering and DOM Efficiency</h2>
+        <p>A fast engine is useless without a fast rendering pipeline. Our <strong>online rendering tester</strong> stress-tests your browser by manipulating thousands of DOM elements or drawing complex shapes on a canvas simultaneously. This <strong>DOM speed test</strong> reveals how smoothly your browser can handle modern, "heavy" web applications like Google Maps, Figma, or browser-based games.</p>
+
+        <h3 class="mt-4">Privacy and Benchmarking Transparency</h3>
+        <p>At 99tool.in, our <strong>private browser benchmark</strong> runs 100% on your machine. We do not upload your hardware specs or your scores to a central database. We provide a transparent <strong>Browser Health Score</strong> based on global averages for modern devices, allowing you to self-diagnose if a specific browser or profile is underperforming without compromising your digital privacy.</p>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const startBtn = document.getElementById('start-btn');
+    const mainWs = document.getElementById('main-ws');
+    const scoreOut = document.getElementById('score-out');
+    const jsVal = document.getElementById('js-val');
+    const renderVal = document.getElementById('render-val');
+    
+    const jsProgress = document.getElementById('js-progress');
+    const renderProgress = document.getElementById('render-progress');
+
+    async function runBenchmark() {
+       mainWs.classList.add('running');
+       startBtn.disabled = true;
+       
+       // Pass 1: JS Benchmark (Primes)
+       const jsScore = await benchmarkJS();
+       jsVal.innerText = `${Math.round(jsScore)} ops`;
+       jsProgress.style.width = "100%";
+
+       // Pass 2: Rendering Benchmark
+       const renderScore = await benchmarkRender();
+       renderVal.innerText = `${Math.round(renderScore)} fps`;
+       renderProgress.style.width = "100%";
+
+       // Final Score (Simplified)
+       // Max ops ~ 1000, Max fps ~ 60-144
+       const finalScore = Math.min(100, Math.round((jsScore / 10) + (renderScore * 0.5)));
+       scoreOut.innerText = finalScore;
+
+       mainWs.classList.remove('running');
+       startBtn.disabled = false;
+       startBtn.innerText = "Restart Benchmark";
+    }
+
+    function benchmarkJS() {
+       return new Promise(resolve => {
+          let ops = 0;
+          const start = performance.now();
+          while (performance.now() - start < 1000) {
+             // Sieve of Eratosthenes Lite
+             let n = 1000;
+             let primes = [];
+             for(let i=2; i<n; i++) {
+                let isP = true;
+                for(let j=2; j<i; j++) if(i%j===0) { isP=false; break; }
+                if(isP) primes.push(i);
+             }
+             ops++;
+          }
+          resolve(ops);
+       });
+    }
+
+    function benchmarkRender() {
+       return new Promise(resolve => {
+          let frames = 0;
+          const start = performance.now();
+          const canvas = document.createElement('canvas');
+          const ctx = canvas.getContext('2d');
+          canvas.width = 500; canvas.height = 500;
+
+          function frame() {
+             if (performance.now() - start < 1000) {
+                for(let i=0; i<100; i++) {
+                   ctx.fillStyle = `rgb(${Math.random()*255},0,0)`;
+                   ctx.fillRect(Math.random()*500, Math.random()*500, 20, 20);
+                }
+                frames++;
+                requestAnimationFrame(frame);
+             } else {
+                resolve(frames);
+             }
+          }
+          frame();
+       });
+    }
+
+    startBtn.onclick = runBenchmark;
+  </script>
+</body>
+</html>

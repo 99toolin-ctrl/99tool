@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Power Consumption – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/physics/power-consumption.html"/>
+<meta property="og:title" content="Power Consumption – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/physics/power-consumption.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Power Consumption \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/physics/power-consumption.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .physics-workspace {
+      max-width: 650px;
+      margin: 2rem auto;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      border-radius: 20px;
+    }
+    .form-group { margin-bottom: 1.5rem; }
+    label { display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-muted); }
+    input {
+      width: 100%;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.8rem;
+      border-radius: 8px;
+    }
+    .result-grid {
+       display: grid;
+       grid-template-columns: repeat(2, 1fr);
+       gap: 1.5rem;
+       margin-top: 2rem;
+       display: none;
+    }
+    .stat-box {
+       background: rgba(255,255,255,0.03);
+       padding: 1.5rem;
+       border-radius: 12px;
+       border: 1px solid var(--border);
+       text-align: center;
+    }
+    .stat-val { font-size: 2rem; font-weight: 800; color: var(--primary); }
+    .stat-lab { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; margin-top: 5px; }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/physics/power-consumption.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/physics/power-consumption.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/physics/power-consumption.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/physics/power-consumption.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/physics/power-consumption.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/physics/power-consumption.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/physics/power-consumption.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/physics/power-consumption.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/physics/power-consumption.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/physics/power-consumption.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/physics/power-consumption.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/physics/power-consumption.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/physics/power-consumption.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/physics/power-consumption.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/physics/power-consumption.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/physics/power-consumption.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/physics/power-consumption.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/physics/power-consumption.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/physics/power-consumption.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/physics/power-consumption.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/physics/power-consumption.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/physics/power-consumption.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Infinite Power Consumption Auditor</h1>
+      <p>Estimate the electricity cost of your home appliances. Calculate kWh and projected bills instantly.</p>
+    </div>
+
+    <div class="physics-workspace">
+      <div class="form-group">
+        <label>Device Power Consumption (Watts)</label>
+        <input type="number" id="watts" placeholder="e.g., 1000 for a heater">
+      </div>
+      <div class="form-group">
+        <label>Usage Hours per Day</label>
+        <input type="number" id="hours" placeholder="e.g., 5">
+      </div>
+      <div class="form-group">
+        <label>Cost per Unit / kWh (optional)</label>
+        <input type="number" id="cost" placeholder="e.g., 8" value="8">
+      </div>
+      
+      <button onclick="calculateEnergy()" class="btn btn-primary btn-lg btn-full">Estimate Consumption</button>
+
+      <div class="result-grid" id="res-grid">
+         <div class="stat-box">
+            <div class="stat-val" id="kwh-day">0</div>
+            <div class="stat-lab">Daily kWh</div>
+         </div>
+         <div class="stat-box">
+            <div class="stat-val" id="cost-day">₹0</div>
+            <div class="stat-lab">Daily Cost</div>
+         </div>
+         <div class="stat-box">
+            <div class="stat-val" id="kwh-month">0</div>
+            <div class="stat-lab">Monthly kWh</div>
+         </div>
+         <div class="stat-box">
+            <div class="stat-val" id="cost-month">₹0</div>
+            <div class="stat-lab">Monthly Cost</div>
+         </div>
+      </div>
+
+      <!-- SEO CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.power_consumption_auditor.what_is_title">What is the Infinite Power Consumption Auditor?</h2>
+        <p>The Infinite Power Consumption Auditor is an offline estimation utility designed to calculate the electricity usage and operational costs of household appliances. Power consumption is measured in kilowatt-hours (kWh), representing the energy used by a device drawing one kilowatt of power for one hour. Keeping track of these metrics helps users identify power-hungry appliances and manage their monthly utility budgets.</p>
+        <p>By specifying the device wattage, operational hours per day, and local utility rates, this auditor maps out running costs. The tool generates daily and monthly breakdowns of electricity usage and projected expenses automatically.</p>
+
+        <h3 class="mt-4">How to Use the Power Auditor</h3>
+        <p>To estimate the energy consumption of any appliance, follow these steps:</p>
+        <ol class="mt-2 mb-3">
+          <li>Enter the rated electrical load of the appliance in the "Device Power Consumption (Watts)" field. (For example, enter 1500 for a space heater or 150 for a television).</li>
+          <li>Enter the number of hours the device runs on an average day in the "Usage Hours per Day" input field.</li>
+          <li>Input your local electricity rate per unit in the "Cost per Unit / kWh (optional)" field. (Defaults to 8).</li>
+          <li>Click the "Estimate Consumption" button to calculate parameters.</li>
+          <li>Review the result grid displaying daily/monthly Kilowatt-Hours (kWh) and daily/monthly currency costs.</li>
+        </ol>
+
+        <h3 class="mt-4">Key Features</h3>
+        <ul class="mt-2 mb-3">
+          <li><strong>Detailed Utility Matrix:</strong> Outputs comprehensive daily and monthly estimates of energy units used and financial costs.</li>
+          <li><strong>Watt-to-kWh Conversion:</strong> Converts device power outputs to energy consumption values ($E_{\text{kWh}} = (P_{\text{W}} \times t_{\text{h}}) / 1000$) automatically.</li>
+          <li><strong>Adjustable Rates:</strong> Allows you to customize utility unit costs to match local electricity tariffs.</li>
+          <li><strong>Offline Calculator:</strong> Performs calculations locally using high-fidelity equations, requiring no network connection.</li>
+        </ul>
+
+        <h3 class="mt-4">Common Use Cases</h3>
+        <p>This electricity auditor is useful for the following scenarios:</p>
+        <ul class="mt-2 mb-3">
+          <li><strong>Utility Bill Auditing:</strong> Estimating how much specific appliances (like air conditioners or electric water heaters) contribute to your monthly utility bills.</li>
+          <li><strong>Energy-Saving Audits:</strong> Identifying high-consumption appliances to adjust usage habits and lower monthly bills.</li>
+          <li><strong>Solar System Sizing:</strong> Estimating total daily kWh requirements to size battery storage and solar panel arrays for off-grid power systems.</li>
+        </ul>
+
+        <h3 class="mt-4">Frequently Asked Questions</h3>
+        <div class="faq-section mt-3">
+          <p><strong>What is a Kilowatt-Hour (kWh)?</strong><br>A Kilowatt-hour is the standard unit of measurement for electrical energy. It represents the energy consumed by a 1,000-watt appliance running for exactly one hour.</p>
+          <p><strong>How do I find my appliance's wattage?</strong><br>Wattage is usually printed on the manufacturer's label on the back or bottom of the device. If the label only lists Volts and Amps, multiply them ($W = V \times I$) to find the wattage.</p>
+          <p><strong>Do appliances draw power when turned off?</strong><br>Yes. Many modern appliances draw a small amount of standby power (often called phantom load) when plugged in, even if they are turned off.</p>
+          <p><strong>What is a typical household electricity rate?</strong><br>Rates vary significantly by region and country, typically ranging from ₹5 to ₹12 per unit in India, and 12¢ to 30¢ per kWh in the United States.</p>
+        </div>
+
+        <h3 class="mt-4">Privacy & Data Note</h3>
+        <p>All appliance metrics, run durations, and cost estimates are processed locally within your browser tab. Your household appliance configuration and billing details are never sent to external servers.</p>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    function calculateEnergy() {
+       const w = parseFloat(document.getElementById('watts').value);
+       const h = parseFloat(document.getElementById('hours').value);
+       const c = parseFloat(document.getElementById('cost').value) || 0;
+       
+       if (!w || !h) return alert('Please enter Watts and Hours.');
+
+       const kwhDay = (w * h) / 1000;
+       const costDay = kwhDay * c;
+       
+       const kwhMonth = kwhDay * 30;
+       const costMonth = costDay * 30;
+
+       document.getElementById('kwh-day').innerText = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(kwhDay, 2) : kwhDay.toFixed(2);
+       document.getElementById('cost-day').innerText = (window.i18n && window.i18n.formatCurrency) ? window.i18n.formatCurrency(costDay, 2) : '$' + costDay.toFixed(2);
+       document.getElementById('kwh-month').innerText = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(kwhMonth, 2) : kwhMonth.toFixed(2);
+       document.getElementById('cost-month').innerText = (window.i18n && window.i18n.formatCurrency) ? window.i18n.formatCurrency(costMonth, 2) : '$' + costMonth.toFixed(2);
+       
+       document.getElementById('res-grid').style.display = 'grid';
+    }
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>

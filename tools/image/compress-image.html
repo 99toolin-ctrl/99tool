@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Compress Image – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/image/compress-image.html"/>
+<meta property="og:title" content="Compress Image – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/image/compress-image.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Compress Image \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/image/compress-image.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .compress-box {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 2rem;
+      border-radius: var(--radius);
+      margin-top: 2rem;
+    }
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    @media (max-width: 768px) {
+      .comparison-grid { grid-template-columns: 1fr; }
+    }
+    .image-preview {
+      background: var(--dark);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      text-align: center;
+      padding: 1rem;
+    }
+    .image-preview img {
+       max-height: 300px;
+       border-radius: 8px;
+       box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+    .stat-label { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 5px; }
+    .stat-value { font-size: 1.2rem; font-weight: 700; color: var(--white); }
+    .savings-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      background: rgba(76, 175, 80, 0.2);
+      color: #4caf50;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      margin-top: 10px;
+    }
+
+    .slider-container {
+      margin: 2rem 0;
+    }
+    input[type=range] {
+      width: 100%;
+      height: 6px;
+      background: var(--border);
+      border-radius: 3px;
+      outline: none;
+      -webkit-appearance: none;
+    }
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 20px; height: 20px;
+      background: var(--primary);
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .quality-display {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    #loading-overlay {
+      display: none;
+      text-align: center;
+      padding: 2rem;
+    }
+    .spinner {
+      border: 3px solid rgba(229,57,53,0.1);
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      border-left-color: var(--primary);
+      animation: spin 1s linear infinite;
+      margin: 0 auto 10px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/image/compress-image.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/image/compress-image.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/image/compress-image.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/image/compress-image.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/image/compress-image.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/image/compress-image.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/image/compress-image.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/image/compress-image.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/image/compress-image.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/image/compress-image.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/image/compress-image.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/image/compress-image.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/image/compress-image.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/image/compress-image.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/image/compress-image.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/image/compress-image.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/image/compress-image.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/image/compress-image.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/image/compress-image.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/image/compress-image.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/image/compress-image.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/image/compress-image.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Smart Image Compressor</h1>
+      <p>Reduce file size without losing the visual details. Safe, private, and stunningly fast.</p>
+    </div>
+
+    <div class="tool-container">
+      <div class="upload-area" id="drop-zone">
+        <div class="upload-icon">📉</div>
+        <p>Drop your image here or <span class="text-primary">select file</span></p>
+        <p class="text-muted small">JPG, PNG, WEBP (Max 20MB)</p>
+        <input type="file" id="image-input" accept="image/*" hidden>
+      </div>
+
+      <div id="tool-workspace" class="hidden">
+        <div class="comparison-grid">
+          <div class="image-preview">
+            <div class="stat-label">Original</div>
+            <div id="original-size" class="stat-value">0 KB</div>
+            <div id="original-img-container" class="mt-3"></div>
+          </div>
+          <div class="image-preview">
+            <div class="stat-label">Compressed</div>
+            <div id="new-size" class="stat-value">0 KB</div>
+            <div id="savings" class="savings-badge">Calculating...</div>
+            <div id="new-img-container" class="mt-3"></div>
+          </div>
+        </div>
+
+        <div class="compress-box">
+          <div class="slider-container">
+            <div class="flex justify-between items-center mb-2">
+              <label class="font-bold">Compression Level</label>
+              <span id="quality-percent" class="text-primary font-bold">85%</span>
+            </div>
+            <input type="range" id="quality-slider" min="10" max="100" value="85">
+            <div class="quality-display">
+               <span>Smallest File</span>
+               <span>Best Quality</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+             <div class="input-group">
+                <label class="block mb-2 font-medium">Convert To Format (Optional)</label>
+                <select id="format-select" class="btn btn-secondary w-100" style="text-align: left; background: var(--dark);">
+                   <option value="original">Keep Original Format</option>
+                   <option value="image/jpeg">JPEG (High Compatibility)</option>
+                   <option value="image/webp">WEBP (Highly Efficient)</option>
+                </select>
+             </div>
+             <button id="download-btn" class="btn btn-primary w-100 mt-auto">Download Compressed Image</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="loading-overlay">
+        <div class="spinner"></div>
+        <p>Optimizing pixels in your browser memory...</p>
+      </div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5">
+        <h2 data-i18n="tools.image_compressor.what_is_title">What is Smart Image Compressor</h2>
+        <p>The Smart Image Compressor is a client-side optimization utility designed to reduce the file size of your images while keeping their visual details intact. Using browser Canvas rendering and dynamic compression scaling, the tool allows you to shrink heavy image files to improve web performance.</p>
+        <p>This optimization operates entirely within your browser's local sandbox memory. Since no files are uploaded to any external server, your high-resolution original photos, raw graphics, and proprietary designs remain completely private and secure.</p>
+
+        <h3 class="mt-4">How to Use Smart Image Compressor</h3>
+        <ol style="line-height: 1.8; margin-bottom: 20px; padding-left: 20px;">
+          <li><strong>Load your image:</strong> Click inside the dashed upload zone or drag and drop your image file (JPG, PNG, or WEBP) into the browser.</li>
+          <li><strong>Review original size:</strong> Check the <strong>Original</strong> column in the comparison grid to view your file's starting size.</li>
+          <li><strong>Select compression level:</strong> Drag the <strong>Compression Level</strong> slider to adjust the quality percentage. Moving the slider toward "Smallest File" (left) reduces size further, while moving it toward "Best Quality" (right) preserves details.</li>
+          <li><strong>Choose target format:</strong> In the <strong>Convert To Format</strong> dropdown, select whether to keep the original file format, or transcode to JPEG (for high compatibility) or WEBP (for maximum file compression).</li>
+          <li><strong>Analyze the savings:</strong> Compare the <strong>Original</strong> and <strong>Compressed</strong> previews side-by-side. The green badge displays the exact percentage of space saved.</li>
+          <li><strong>Download the optimized image:</strong> Click the **Download Compressed Image** button to save the new compressed file to your local device.</li>
+        </ol>
+
+        <h3 class="mt-4">Key Features</h3>
+        <ul style="line-height: 1.8; margin-bottom: 20px; padding-left: 20px;">
+          <li><strong>Side-by-Side Quality Comparison:</strong> Compare the original and compressed previews dynamically to ensure text and textures remain readable.</li>
+          <li><strong>Granular Quality Slider:</strong> Fine-tune the compression level from 10% up to 100% to match your storage targets.</li>
+          <li><strong>On-the-Fly Format Conversion:</strong> Transcode your files to modern WEBP or highly compatible JPEG formats instantly.</li>
+          <li><strong>Real-time Savings Calculator:</strong> Instantly calculates the percentage of file size saved during compression adjustments.</li>
+          <li><strong>Purely Client-Side Execution:</strong> Processes everything in local JavaScript, ensuring zero data logs or remote storage.</li>
+        </ul>
+
+        <h3 class="mt-4">Common Use Cases</h3>
+        <ul style="line-height: 1.8; margin-bottom: 20px; padding-left: 20px;">
+          <li><strong>Web Developers:</strong> Compressing website hero images, background textures, and product assets to optimize page load speeds and SEO.</li>
+          <li><strong>Social Media Managers:</strong> Formatting and shrinking heavy camera snaps to fit platform upload limits without visual distortion.</li>
+          <li><strong>Office Administrators:</strong> Reducing the size of scanned documents or screenshots to stay under email attachment limits.</li>
+          <li><strong>Bloggers & Content Writers:</strong> Creating optimized, fast-loading images for mobile readers to reduce bounce rates.</li>
+        </ul>
+
+        <h3 class="mt-4">Privacy & Data Note</h3>
+        <p>Every step of the pixel compression and format transcoding is done locally on your computer. Your files are never stored or processed on external servers.</p>
+      </section>
+ 
+            <!-- FAQ SECTION -->
+      <section class="faq-section mt-5">
+        <h2 data-i18n="tools.image_compressor.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              <span data-i18n="tools.image_compressor.faq[0].question"></span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p data-i18n="tools.image_compressor.faq[0].answer"></p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span data-i18n="tools.image_compressor.faq[1].question"></span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p data-i18n="tools.image_compressor.faq[1].answer"></p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span data-i18n="tools.image_compressor.faq[2].question"></span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p data-i18n="tools.image_compressor.faq[2].answer"></p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span data-i18n="tools.image_compressor.faq[3].question"></span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p data-i18n="tools.image_compressor.faq[3].answer"></p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span data-i18n="tools.image_compressor.faq[4].question"></span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p data-i18n="tools.image_compressor.faq[4].answer"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const imageInput = document.getElementById('image-input');
+    const dropZone = document.getElementById('drop-zone');
+    const workspace = document.getElementById('tool-workspace');
+    const originalSizeDisplay = document.getElementById('original-size');
+    const newSizeDisplay = document.getElementById('new-size');
+    const savingsDisplay = document.getElementById('savings');
+    const qualitySlider = document.getElementById('quality-slider');
+    const qualityPercent = document.getElementById('quality-percent');
+    const formatSelect = document.getElementById('format-select');
+    const downloadBtn = document.getElementById('download-btn');
+    const loadingOverlay = document.getElementById('loading-overlay');
+    
+    // Preview Containers
+    const originalContainer = document.getElementById('original-img-container');
+    const newContainer = document.getElementById('new-img-container');
+
+    let originalImg = null;
+    let originalFile = null;
+
+    dropZone.onclick = () => imageInput.click();
+    imageInput.onchange = (e) => handleFile(e.target.files[0]);
+    
+    // Init Drag and Drop using global helper
+    setupDragDrop('drop-zone', (files) => {
+       if (files.length) handleFile(files[0]);
+    });
+
+    function handleFile(file) {
+      if (!file || !file.type.startsWith('image/')) return;
+      originalFile = file;
+      originalSizeDisplay.innerText = formatSize(file.size);
+      
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        originalImg = new Image();
+        originalImg.onload = () => {
+          originalContainer.innerHTML = `<img src="${originalImg.src}" alt="Original">`;
+          workspace.classList.remove('hidden');
+          compressImage();
+        };
+        originalImg.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+
+    qualitySlider.oninput = () => {
+       qualityPercent.innerText = ((window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(qualitySlider.value, 0) : qualitySlider.value) + '%';
+      compressImage();
+    };
+
+    formatSelect.onchange = compressImage;
+
+    async function compressImage() {
+      if (!originalImg) return;
+      
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+      canvas.width = originalImg.width;
+      canvas.height = originalImg.height;
+      ctx.drawImage(originalImg, 0, 0);
+
+      const quality = parseInt(qualitySlider.value) / 100;
+      const format = formatSelect.value === 'original' ? originalFile.type : formatSelect.value;
+      
+      // canvas.toBlob is better for size calculation
+      canvas.toBlob((blob) => {
+        const url = URL.createObjectURL(blob);
+        newContainer.innerHTML = `<img src="${url}" alt="Compressed">`;
+        newSizeDisplay.innerText = formatSize(blob.size);
+        
+        const savings = Math.round(((originalFile.size - blob.size) / originalFile.size) * 100);
+       savingsDisplay.innerText = savings > 0 ? `Saved ${((window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(savings, 0) : savings)}%` : `No Change`;
+        savingsDisplay.style.background = savings > 0 ? 'rgba(76, 175, 80, 0.2)' : 'rgba(153, 153, 153, 0.2)';
+        savingsDisplay.style.color = savings > 0 ? '#4caf50' : '#999';
+
+        downloadBtn.onclick = () => {
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = `optimized_${originalFile.name.split('.')[0]}.${format.split('/')[1]}`;
+          a.click();
+        };
+      }, format, quality);
+    }
+
+    function formatSize(bytes) {
+      if (bytes === 0) return '0 Bytes';
+      const k = 1024;
+      const sizes = ['Bytes', 'KB', 'MB'];
+      const i = Math.floor(Math.log(bytes) / Math.log(k));
+      return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+    }
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

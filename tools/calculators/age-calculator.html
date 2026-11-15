@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Age Calculator – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/calculators/age-calculator.html"/>
+<meta property="og:title" content="Age Calculator – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/calculators/age-calculator.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Age Calculator \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/calculators/age-calculator.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .age-workspace {
+      max-width: 700px;
+      margin: 2rem auto;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+    .input-group { margin-bottom: 2rem; }
+    label { display: block; margin-bottom: 0.8rem; color: var(--text-muted); font-size: 0.9rem; font-weight: 700; text-transform: uppercase; }
+    input[type="date"] {
+      width: 100%;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 1.2rem;
+      border-radius: 12px;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+    
+    .age-display {
+       display: grid;
+       grid-template-columns: repeat(3, 1fr);
+       gap: 1.5rem;
+       margin-top: 2rem;
+       display: none;
+    }
+    .age-card {
+       background: rgba(255,255,255,0.03);
+       border: 1px solid var(--border);
+       padding: 1.5rem;
+       border-radius: 16px;
+       text-align: center;
+    }
+    .age-val { font-size: 2.5rem; font-weight: 800; color: var(--primary); margin-bottom: 5px; }
+    .age-lab { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700; }
+    
+    .countdown-banner {
+       background: var(--gradient);
+       margin-top: 2rem;
+       padding: 1.5rem;
+       border-radius: 16px;
+       text-align: center;
+       display: none;
+       color: white;
+    }
+    .countdown-val { font-size: 1.5rem; font-weight: 800; }
+    
+    .stats-info {
+       margin-top: 2rem;
+       border-top: 1px solid var(--border);
+       padding-top: 1.5rem;
+       display: none;
+    }
+    .stat-row { display: flex; justify-content: space-between; margin-bottom: 10px; color: var(--text-muted); }
+    .stat-row b { color: var(--text); }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/calculators/age-calculator.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/calculators/age-calculator.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/calculators/age-calculator.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/calculators/age-calculator.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/calculators/age-calculator.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/calculators/age-calculator.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/calculators/age-calculator.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/calculators/age-calculator.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/calculators/age-calculator.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/calculators/age-calculator.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/calculators/age-calculator.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/calculators/age-calculator.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/calculators/age-calculator.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/calculators/age-calculator.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/calculators/age-calculator.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/calculators/age-calculator.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/calculators/age-calculator.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/calculators/age-calculator.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/calculators/age-calculator.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/calculators/age-calculator.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/calculators/age-calculator.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/calculators/age-calculator.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Infinite Age Calculator</h1>
+      <p>Calculate your exact life duration with precision accuracy. Discover your roadmap to biological time.</p>
+    </div>
+
+    <div class="age-workspace">
+      <div class="input-group">
+        <label>Select Date of Birth</label>
+        <input type="date" id="dob" onchange="calculateAge()">
+      </div>
+
+      <div class="age-display" id="age-display">
+         <div class="age-card">
+            <div class="age-val" id="res-years">0</div>
+            <div class="age-lab">Years</div>
+         </div>
+         <div class="age-card">
+            <div class="age-val" id="res-months">0</div>
+            <div class="age-lab">Months</div>
+         </div>
+         <div class="age-card">
+            <div class="age-val" id="res-days">0</div>
+            <div class="age-lab">Days</div>
+         </div>
+      </div>
+
+      <div class="countdown-banner" id="birthday-banner">
+         <div class="countdown-val">🎂 Next Birthday in <span id="days-to-bday">0</span> Days!</div>
+      </div>
+
+      <div class="stats-info" id="stats-info">
+         <div class="stat-row"><span>Total Months:</span> <b id="total-months">0</b></div>
+         <div class="stat-row"><span>Total Weeks:</span> <b id="total-weeks">0</b></div>
+         <div class="stat-row"><span>Total Days:</span> <b id="total-days">0</b></div>
+         <div class="stat-row"><span>Total Hours:</span> <b id="total-hours">0</b></div>
+      </div>
+
+            <!-- CONTENT SECTION -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.age_calculator.what_is_title"></h2>
+        <p data-i18n="tools.age_calculator.what_is_content"></p>
+
+        <h2 class="mt-4" data-i18n="tools.age_calculator.how_to_use_title"></h2>
+        <ol>
+          <li data-i18n-html="tools.age_calculator.how_to_use_steps[0]"></li>
+          <li data-i18n-html="tools.age_calculator.how_to_use_steps[1]"></li>
+          <li data-i18n-html="tools.age_calculator.how_to_use_steps[2]"></li>
+          <li data-i18n-html="tools.age_calculator.how_to_use_steps[3]"></li>
+        </ol>
+
+        <h2 class="mt-4" data-i18n="tools.age_calculator.key_features_title"></h2>
+        <ul>
+          <li data-i18n-html="tools.age_calculator.key_features[0]"></li>
+          <li data-i18n-html="tools.age_calculator.key_features[1]"></li>
+          <li data-i18n-html="tools.age_calculator.key_features[2]"></li>
+          <li data-i18n-html="tools.age_calculator.key_features[3]"></li>
+          <li data-i18n-html="tools.age_calculator.key_features[4]"></li>
+        </ul>
+
+        <h2 class="mt-4" data-i18n="tools.age_calculator.common_use_cases_title"></h2>
+        <ul>
+          <li data-i18n-html="tools.age_calculator.common_use_cases[0]"></li>
+          <li data-i18n-html="tools.age_calculator.common_use_cases[1]"></li>
+          <li data-i18n-html="tools.age_calculator.common_use_cases[2]"></li>
+          <li data-i18n-html="tools.age_calculator.common_use_cases[3]"></li>
+        </ul>
+      </section>
+
+            <!-- FAQ SECTION -->
+      <section class="faq-section mt-5">
+        <h2 data-i18n="tools.age_calculator.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              <span data-i18n="tools.age_calculator.faq[0].question"></span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p data-i18n="tools.age_calculator.faq[0].answer"></p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span data-i18n="tools.age_calculator.faq[1].question"></span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p data-i18n="tools.age_calculator.faq[1].answer"></p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span data-i18n="tools.age_calculator.faq[2].question"></span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p data-i18n="tools.age_calculator.faq[2].answer"></p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span data-i18n="tools.age_calculator.faq[3].question"></span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p data-i18n="tools.age_calculator.faq[3].answer"></p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              <span data-i18n="tools.age_calculator.faq[4].question"></span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p data-i18n="tools.age_calculator.faq[4].answer"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 Privacy & Data Note: Your date of birth is processed locally in your browser. No personal identification data is ever collected, tracked, or sent to our servers.</p>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    function calculateAge() {
+       const dobVal = document.getElementById('dob').value;
+       if (!dobVal) return;
+
+       const dob = new Date(dobVal);
+       const now = new Date();
+
+       if (dob > now) {
+          alert("Birth date cannot be in the future!");
+          return;
+       }
+
+       let years = now.getFullYear() - dob.getFullYear();
+       let months = now.getMonth() - dob.getMonth();
+       let days = now.getDate() - dob.getDate();
+
+       if (days < 0) {
+          months--;
+          const lastMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+          days += lastMonth.getDate();
+       }
+
+       if (months < 0) {
+          years--;
+          months += 12;
+       }
+
+       // Update Display
+       document.getElementById('res-years').innerText = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(years, 0) : years;
+       document.getElementById('res-months').innerText = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(months, 0) : months;
+       document.getElementById('res-days').innerText = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(days, 0) : days;
+       document.getElementById('age-display').style.display = 'grid';
+
+       // Total Stats
+       const diffTime = Math.abs(now - dob);
+       const totalDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+       const totalWeeks = Math.floor(totalDays / 7);
+       const totalMonths = (years * 12) + months;
+       
+       document.getElementById('total-days').innerText = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(totalDays, 0) : totalDays.toLocaleString();
+       document.getElementById('total-weeks').innerText = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(totalWeeks, 0) : totalWeeks.toLocaleString();
+       document.getElementById('total-months').innerText = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(totalMonths, 0) : totalMonths.toLocaleString();
+       document.getElementById('total-hours').innerText = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(totalDays * 24, 0) : (totalDays * 24).toLocaleString();
+       document.getElementById('stats-info').style.display = 'block';
+
+       // Next Birthday
+       let nextBday = new Date(now.getFullYear(), dob.getMonth(), dob.getDate());
+       if (nextBday < now) {
+          nextBday.setFullYear(now.getFullYear() + 1);
+       }
+       const diffBday = Math.ceil((nextBday - now) / (1000 * 60 * 60 * 24));
+       
+       document.getElementById('days-to-bday').innerText = (diffBday === 366 || diffBday === 0) ? "Today!" : diffBday;
+       document.getElementById('birthday-banner').style.display = 'block';
+    }
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>

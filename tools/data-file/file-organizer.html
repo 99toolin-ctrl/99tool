@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">File Organizer – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/data-file/file-organizer.html"/>
+<meta property="og:title" content="File Organizer – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/data-file/file-organizer.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "File Organizer \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/data-file/file-organizer.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="file organizer, file organizer, sort files by type, organize downloads, file sorting tool" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- JSZip for batching -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json" id="schema-org-data">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "File Organizer Tool",
+    "operatingSystem": "Any",
+    "applicationCategory": "UtilitiesApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Automatic file categorization, Batch ZIP download, processing, Private file handling"
+  }
+  </script>
+
+  <style>
+    .organizer-box {
+      border: 2px dashed var(--border);
+      border-radius: var(--radius);
+      padding: 60px 40px;
+      text-align: center;
+      transition: all 0.3s ease;
+      background: rgba(255,255,255,0.02);
+      cursor: pointer;
+    }
+    .organizer-box:hover, .organizer-box.dragover {
+      border-color: var(--primary);
+      background: rgba(229, 57, 53, 0.05);
+    }
+    .organizer-box svg { color: var(--text-muted); margin-bottom: 20px; }
+
+    .file-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+    .stat-card {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 20px;
+      text-align: center;
+    }
+    .stat-card h4 { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 10px; }
+    .stat-card .count { font-size: 1.5rem; font-weight: 800; color: var(--white); }
+
+    .result-section {
+      display: none;
+      margin-top: 40px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+    }
+
+    .file-list-preview {
+      max-height: 300px;
+      overflow-y: auto;
+      background: var(--dark);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 15px;
+      margin-top: 20px;
+      text-align: left;
+    }
+    .file-preview-item {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .file-preview-item .category { color: var(--primary); font-weight: 600; }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/data-file/file-organizer.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/data-file/file-organizer.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/data-file/file-organizer.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/data-file/file-organizer.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/data-file/file-organizer.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/data-file/file-organizer.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/data-file/file-organizer.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/data-file/file-organizer.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/data-file/file-organizer.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/data-file/file-organizer.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/data-file/file-organizer.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/data-file/file-organizer.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/data-file/file-organizer.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/data-file/file-organizer.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/data-file/file-organizer.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/data-file/file-organizer.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/data-file/file-organizer.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/data-file/file-organizer.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/data-file/file-organizer.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/data-file/file-organizer.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/data-file/file-organizer.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/data-file/file-organizer.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#data">Data & File</a> <span>/</span> 
+        <span>File Organizer</span>
+      </nav>
+      <h1>File Organizer</h1>
+      <p>Clean up your messy downloads folder in seconds. Drag, drop, and let us sort your files into a neat ZIP archive.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div class="tool-box">
+        <div class="organizer-box" id="drop-zone">
+          <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path d="M12 16.5V9.75m0 0l3 3m-3-3l-3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.752 3.752 0 0118 19.5H6.75z"/>
+          </svg>
+          <h3 class="mt-2">Drop your messy files here</h3>
+          <p class="text-muted">Or click to select multiple files from your computer</p>
+          <input type="file" id="file-input" multiple style="display: none;">
+        </div>
+
+        <div class="file-stats" id="stats-area" style="display: none;">
+          <div class="stat-card">
+            <h4>Images</h4>
+            <div class="count" id="count-images">0</div>
+          </div>
+          <div class="stat-card">
+            <h4>Documents</h4>
+            <div class="count" id="count-docs">0</div>
+          </div>
+          <div class="stat-card">
+            <h4>Media</h4>
+            <div class="count" id="count-media">0</div>
+          </div>
+          <div class="stat-card">
+            <h4>Others</h4>
+            <div class="count" id="count-others">0</div>
+          </div>
+        </div>
+
+        <div class="result-section" id="result-section">
+          <div class="text-center">
+            <h3>Files Organized Successfully!</h3>
+            <p class="text-muted mb-4">You can now download your sorted files in a single, organized ZIP folder.</p>
+            <button class="btn btn-primary btn-lg" id="download-zip">Download Organized ZIP</button>
+            <button class="btn btn-secondary btn-lg" onclick="location.reload()">Start Over</button>
+          </div>
+          
+          <div class="file-list-preview" id="preview-list">
+            <!-- Preview items here -->
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTENT SECTION -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.file_organizer.what_is_title">What is the File Organizer?</h2>
+        <p>The File Organizer is a local browser utility designed to automatically sort folders of mixed files into structured subfolders based on their file extensions. By analyzing file metadata inside the browser session, the tool groups items into logical folders like Images, Documents, Media, and Code.</p>
+        <p>This page uses browser APIs to organize files without any cloud data syncing. Instead of uploading your documents to a remote platform, it reads their extensions locally, reorganizes them into a categorized folder tree, and packages the result into a clean ZIP archive for download.</p>
+
+        <h2 class="mt-4" data-i18n="tools.file_organizer.how_to_use_title">How to Use the File Organizer</h2>
+        <ol>
+          <li><strong>Import Your Files:</strong> Drag and drop your unorganized files into the dotted drop zone, or click inside the zone to browse and select files from your computer.</li>
+          <li><strong>Audit the Sorting Status:</strong> The organizer will instantly separate your files into categories. Review the preview list below the uploader to see the target folders assigned to each file.</li>
+          <li><strong>Compile the Organized Folders:</strong> Click the "Download Organized ZIP" button. The tool will package your files into a ZIP archive containing the sorted subfolders.</li>
+          <li><strong>Extract Your Files:</strong> Download the ZIP file directly to your system, and extract it to place the sorted folders in their permanent directory.</li>
+        </ol>
+
+        <h2 class="mt-4" data-i18n="tools.file_organizer.key_features_title">Key Features</h2>
+        <ul>
+          <li><strong>Automatic Extension Sorting:</strong> Categorizes files into dedicated folders (Images, Documents, Media, Code, and Others) based on their file format extensions.</li>
+          <li><strong>Interactive Tree Preview:</strong> Displays a list of which files have been placed in which folders before building the download file.</li>
+          <li><strong>No Quality Compression Loss:</strong> Packages files in their original binary byte structure with zero degradation.</li>
+          <li><strong>Instant File Statistics:</strong> Visualizes the file-type distribution in your queue, helping you analyze the contents of large folders.</li>
+          <li><strong>Local Browser Sandbox:</strong> Keeps all file transfers and sorting structures offline for complete privacy.</li>
+        </ul>
+
+        <h2 class="mt-4" data-i18n="tools.file_organizer.common_use_cases_title">Common Use Cases</h2>
+        <ul>
+          <li><strong>Downloads Folder Cleanups:</strong> Sort messy downloads containing mixed PDFs, installers, screenshots, and zip archives into clean directories.</li>
+          <li><strong>Camera Backup Filing:</strong> Separate raw camera media files from document exports or notes after imports.</li>
+          <li><strong>Project Deliverable Organization:</strong> Package final creative assets, project contracts, invoice PDFs, and web source codes into organized folders for clients.</li>
+          <li><strong>Academic Resource Sorting:</strong> File semesters of coursework, lecture slides, syllabus papers, and script files into logical study guides.</li>
+        </ul>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2 data-i18n="tools.file_organizer.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Does this tool move or alter files directly on my hard drive?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. Browsers cannot modify or move files on your computer's filesystem due to strict security sandboxes. The tool reads your files and duplicates them inside a newly structured ZIP folder, leaving your original files untouched.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Is there a file size limit for organizing?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Since the zipping process runs in browser memory, we recommend zipping batches under 150-200MB. Processing extremely large media files (like high-definition movies or raw databases) may cause the browser tab to crash.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Are my file layouts, names, or values uploaded to a server?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. 99tool.in runs all sorting scripts locally in your web browser. None of your file paths, filenames, or content structures are shared or uploaded to our servers.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              What extensions belong to each category?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p><strong>Images</strong> include formats like JPG, PNG, GIF, and WEBP. <strong>Documents</strong> cover PDF, DOCX, XLSX, and TXT. <strong>Media</strong> groups MP4, MP3, MOV, and WAV files. <strong>Code</strong> organizes HTML, CSS, JS, and PY scripts. Unmatched formats go into the <strong>Others</strong> folder.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I customize the folder names or categories?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>This utility uses standardized category names to simplify the sorting process. To apply custom naming structures, we recommend using our Bulk File Renamer before zipping.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 Privacy & Data Note: File sorting and zip bundling occur locally in your browser. Your files, names, and folders are never uploaded to any server.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const dropZone = document.getElementById('drop-zone');
+    const fileInput = document.getElementById('file-input');
+    const statsArea = document.getElementById('stats-area');
+    const resultSection = document.getElementById('result-section');
+    const previewList = document.getElementById('preview-list');
+    const downloadBtn = document.getElementById('download-zip');
+
+    const counts = { images: 0, docs: 0, media: 0, others: 0 };
+    let filesToZip = [];
+
+    // Categories mapping
+    const categories = {
+      images: ['jpg', 'jpeg', 'png', 'gif', 'webp', 'svg'],
+      docs: ['pdf', 'doc', 'docx', 'txt', 'rtf', 'xlsx', 'pptx'],
+      media: ['mp4', 'mov', 'avi', 'mp3', 'wav', 'ogg']
+    };
+
+    function getCategory(fileName) {
+      const ext = fileName.split('.').pop().toLowerCase();
+      if (categories.images.includes(ext)) return 'Images';
+      if (categories.docs.includes(ext)) return 'Documents';
+      if (categories.media.includes(ext)) return 'Media';
+      return 'Others';
+    }
+
+    function processFiles(files) {
+      if (files.length === 0) return;
+      
+      filesToZip = Array.from(files);
+      counts.images = 0; counts.docs = 0; counts.media = 0; counts.others = 0;
+      previewList.innerHTML = '';
+
+      filesToZip.forEach(file => {
+        const cat = getCategory(file.name);
+        counts[cat.toLowerCase() === 'others' ? 'others' : (cat.toLowerCase() === 'documents' ? 'docs' : cat.toLowerCase())]++;
+        
+        const item = document.createElement('div');
+        item.className = 'file-preview-item';
+        item.innerHTML = `<span>${file.name}</span> <span class="category">${cat}</span>`;
+        previewList.appendChild(item);
+      });
+
+      // Update UI
+       document.getElementById('count-images').textContent = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(counts.images, 0) : counts.images;
+       document.getElementById('count-docs').textContent = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(counts.docs, 0) : counts.docs;
+       document.getElementById('count-media').textContent = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(counts.media, 0) : counts.media;
+       document.getElementById('count-others').textContent = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(counts.others, 0) : counts.others;
+
+      dropZone.style.display = 'none';
+      statsArea.style.display = 'grid';
+      resultSection.style.display = 'block';
+    }
+
+    // Drag & Drop
+    dropZone.onclick = () => fileInput.click();
+    fileInput.onchange = (e) => processFiles(e.target.files);
+
+    // Init Drag and Drop using global helper
+    setupDragDrop('drop-zone', (files) => {
+       processFiles(files);
+    });
+
+    // ZIP Logic
+    downloadBtn.onclick = async () => {
+      const zip = new JSZip();
+      
+      filesToZip.forEach(file => {
+        const cat = getCategory(file.name);
+        zip.folder(cat).file(file.name, file);
+      });
+
+      downloadBtn.textContent = 'Generating ZIP...';
+      const content = await zip.generateAsync({ type: 'blob' });
+      
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(content);
+      link.download = `organized_files_${new Date().toISOString().slice(0,10)}.zip`;
+      link.click();
+      
+      downloadBtn.textContent = 'Download Organized ZIP';
+    };
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

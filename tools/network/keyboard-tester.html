@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Keyboard Tester – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/network/keyboard-tester.html"/>
+<meta property="og:title" content="Keyboard Tester – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/network/keyboard-tester.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Keyboard Tester \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/network/keyboard-tester.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .keyboard-workspace {
+      margin-top: 2rem;
+      background: var(--bg-secondary);
+      padding: 2.5rem;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+    .virtual-keyboard {
+      display: inline-flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 1rem;
+      background: #1a1a1a;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+      user-select: none;
+    }
+    .keyboard-row {
+      display: flex;
+      gap: 8px;
+    }
+    .key {
+      min-width: 45px;
+      height: 45px;
+      background: #2d2d2d;
+      border: 1px solid #3d3d3d;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #aaa;
+      font-weight: 600;
+      font-size: 0.85rem;
+      transition: all 0.1s;
+      box-shadow: 0 4px 0 #1a1a1a;
+      position: relative;
+    }
+    .key.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+      transform: translateY(2px);
+      box-shadow: 0 2px 0 #8e2b34;
+    }
+    .key.tested {
+      background: rgba(255, 71, 87, 0.2);
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+    
+    /* Layout sizing */
+    .key-wide-1 { min-width: 70px; }
+    .key-wide-2 { min-width: 90px; }
+    .key-wide-3 { min-width: 110px; }
+    .key-space { min-width: 250px; }
+    
+    .last-key-box {
+      margin-bottom: 2rem;
+      background: var(--bg-primary);
+      padding: 1.5rem;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+    #last-key-code {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--primary);
+      font-family: monospace;
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/network/keyboard-tester.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/network/keyboard-tester.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/network/keyboard-tester.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/network/keyboard-tester.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/network/keyboard-tester.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/network/keyboard-tester.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/network/keyboard-tester.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/network/keyboard-tester.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/network/keyboard-tester.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/network/keyboard-tester.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/network/keyboard-tester.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/network/keyboard-tester.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/network/keyboard-tester.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/network/keyboard-tester.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/network/keyboard-tester.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/network/keyboard-tester.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/network/keyboard-tester.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/network/keyboard-tester.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/network/keyboard-tester.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/network/keyboard-tester.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/network/keyboard-tester.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/network/keyboard-tester.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Mechanical Keyboard Tester</h1>
+      <p>Test for dead keys, chattering, and ghosting in real-time.</p>
+    </div>
+
+    <div class="tool-container text-center">
+      <div class="last-key-box">
+         <div class="detail-label" style="text-transform: uppercase;">Last Pressed Key</div>
+         <div id="last-key-code">NONE</div>
+      </div>
+
+      <div class="keyboard-workspace">
+        <div class="virtual-keyboard" id="keyboard">
+          <!-- Generation via JS -->
+        </div>
+      </div>
+
+      <button class="btn btn-secondary mt-4" onclick="location.reload()">Reset Test</button>
+
+      <!-- SEO CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2>Why Use an Online Keyboard Tester?</h2>
+        <p>Whether you've just spilled coffee on your laptop or bought a high-end mechanical keyboard, a <strong>keyboard tester</strong> is the most reliable way to verify hardware health. Individual keys can fail for many reasons—dust, switch wear, or internal membrane cracks. Our <strong>online key tester</strong> provides instant visual confirmation for every key press, ensuring your hardware is 100% functional.</p>
+
+        <h3 class="mt-4">Testing for Ghosting and Chattering</h3>
+        <p>A professional <strong>test keyboard</strong> utility does more than just see if a key works. It helps detect "Ghosting" (when multiple keys pressed together don't register) and "Chattering" (when one press registers multiple times). Our <strong>mechanical keyboard checker</strong> highlights keys in real-time, allowing you to mash combinations and see if your keyboard supports N-key rollover—a vital feature for competitive gaming.</p>
+
+        <h3 class="mt-4">Privacy and Input Security</h3>
+        <p>Many <strong>keyboard checkers</strong> online are actually hidden keyloggers looking for passwords. At 99tool.in, your safety is our priority. Our <strong>private keyboard test</strong> runs entirely via local browser events. We do not store, send, or analyze your inputs. Any text you "type" while testing isn't even recorded in a text field; we simply map individual key codes to visual badges on your screen.</p>
+
+        <h3 class="mt-4">Diagnosing Laptop Hardware Issues</h3>
+        <p>Laptop keyboards are notoriously difficult to repair. By using our <strong>laptop key checker</strong>, you can identify if a problem is hardware-based or software-based. If a key doesn't light up here but works intermittently in Word, it could be a driver issue. If it fails to respond entirely in our <strong>web-based keyboard tool</strong>, it’s a clear sign that the physical switch or trace needs cleaning or replacement.</p>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const keyboard = document.getElementById('keyboard');
+    const lastKeyDisp = document.getElementById('last-key-code');
+
+    const layout = [
+      ['Escape', 'F1', 'F2', 'F3', 'F4', 'F5', 'F6', 'F7', 'F8', 'F9', 'F10', 'F11', 'F12'],
+      ['Backquote', 'Digit1', 'Digit2', 'Digit3', 'Digit4', 'Digit5', 'Digit6', 'Digit7', 'Digit8', 'Digit9', 'Digit0', 'Minus', 'Equal', 'Backspace'],
+      ['Tab', 'KeyQ', 'KeyW', 'KeyE', 'KeyR', 'KeyT', 'KeyY', 'KeyU', 'KeyI', 'KeyO', 'KeyP', 'BracketLeft', 'BracketRight', 'Backslash'],
+      ['Capslock', 'KeyA', 'KeyS', 'KeyD', 'KeyF', 'KeyG', 'KeyH', 'KeyJ', 'KeyK', 'KeyL', 'Semicolon', 'Quote', 'Enter'],
+      ['ShiftLeft', 'KeyZ', 'KeyX', 'KeyC', 'KeyV', 'KeyB', 'KeyN', 'KeyM', 'Comma', 'Period', 'Slash', 'ShiftRight'],
+      ['ControlLeft', 'MetaLeft', 'AltLeft', 'Space', 'AltRight', 'MetaRight', 'ContextMenu', 'ControlRight']
+    ];
+
+    const labelMap = {
+      'Backquote': '`', 'Digit1': '1', 'Digit2': '2', 'Digit3': '3', 'Digit4': '4', 'Digit5': '5', 'Digit6': '6', 'Digit7': '7', 'Digit8': '8', 'Digit9': '9', 'Digit0': '0',
+      'Minus': '-', 'Equal': '=', 'BracketLeft': '[', 'BracketRight': ']', 'Backslash': '\\', 'Semicolon': ';', 'Quote': "'", 'Comma': ',', 'Period': '.', 'Slash': '/',
+      'KeyQ': 'Q', 'KeyW': 'W', 'KeyE': 'E', 'KeyR': 'R', 'KeyT': 'T', 'KeyY': 'Y', 'KeyU': 'U', 'KeyI': 'I', 'KeyO': 'O', 'KeyP': 'P', 'KeyA': 'A', 'KeyS': 'S', 'KeyD': 'D',
+      'KeyF': 'F', 'KeyG': 'G', 'KeyH': 'H', 'KeyJ': 'J', 'KeyK': 'K', 'KeyL': 'L', 'KeyZ': 'Z', 'KeyX': 'X', 'KeyC': 'C', 'KeyV': 'V', 'KeyB': 'B', 'KeyN': 'N', 'KeyM': 'M',
+      'ShiftLeft': 'L.Shift', 'ShiftRight': 'R.Shift', 'ControlLeft': 'L.Ctrl', 'ControlRight': 'R.Ctrl', 'MetaLeft': 'Win', 'AltLeft': 'Alt', 'MetaRight': 'Win', 'AltRight': 'Alt'
+    };
+
+    function initKeyboard() {
+      layout.forEach(row => {
+        const rowEl = document.createElement('div');
+        rowEl.className = 'keyboard-row';
+        row.forEach(code => {
+          const keyEl = document.createElement('div');
+          keyEl.className = 'key';
+          keyEl.id = `key-${code}`;
+          keyEl.innerText = labelMap[code] || code;
+          
+          if (code === 'Backspace' || code === 'Tab' || code === 'Capslock' || code === 'Enter') keyEl.classList.add('key-wide-1');
+          if (code === 'ShiftLeft' || code === 'ShiftRight') keyEl.classList.add('key-wide-2');
+          if (code === 'ControlLeft' || code === 'ControlRight' || code === 'MetaLeft' || code === 'AltLeft') keyEl.classList.add('key-wide-1');
+          if (code === 'Space') keyEl.classList.add('key-space');
+
+          rowEl.appendChild(keyEl);
+        });
+        keyboard.appendChild(rowEl);
+      });
+    }
+
+    window.addEventListener('keydown', (e) => {
+      e.preventDefault();
+      const code = e.code;
+      lastKeyDisp.innerText = code;
+      const keyEl = document.getElementById(`key-${code}`);
+      if (keyEl) {
+        keyEl.classList.add('active');
+        keyEl.classList.add('tested');
+      }
+    });
+
+    window.addEventListener('keyup', (e) => {
+      const code = e.code;
+      const keyEl = document.getElementById(`key-${code}`);
+      if (keyEl) {
+        keyEl.classList.remove('active');
+      }
+    });
+
+    initKeyboard();
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>

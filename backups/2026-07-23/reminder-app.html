@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Reminder App – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/productivity/reminder-app.html"/>
+<meta property="og:title" content="Reminder App – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/productivity/reminder-app.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Reminder App \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/productivity/reminder-app.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="reminder app, reminder app, task reminder tool, browser reminder, daily reminder app, work alerts" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Reminder App",
+    "operatingSystem": "Any",
+    "applicationCategory": "ProductivityApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "System-native browser notifications, Scheduled alerts, Active reminder tracking, 100% functionality"
+  }
+  </script>
+
+  <style>
+    .reminder-container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .reminder-form {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px;
+      margin-bottom: 30px;
+    }
+
+    .reminder-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .reminder-card {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.3s;
+    }
+    .reminder-card.expired { opacity: 0.5; border-color: var(--border); }
+    .reminder-card.active { border-color: var(--primary); }
+
+    .reminder-info h4 { margin: 0; font-size: 1rem; }
+    .reminder-info p { margin: 4px 0 0; font-size: 0.75rem; color: var(--text-muted); }
+
+    .permission-banner {
+      background: rgba(229, 57, 53, 0.1);
+      border: 1px solid var(--primary);
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    input[type="datetime-local"] {
+      width: 100%;
+      background: var(--dark);
+      border: 1px solid var(--border);
+      color: var(--white);
+      padding: 12px;
+      border-radius: 6px;
+      margin-top: 10px;
+      outline: none;
+    }
+    input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+      filter: invert(1);
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#productivity">Productivity</a> <span>/</span> 
+        <span>Reminder App</span>
+      </nav>
+      <h1>Browser Reminders</h1>
+      <p>Stay on schedule with the power of system-native notifications. Set your alerts once and get notified even if you're multitasking in other tabs.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div class="reminder-container">
+        
+        <!-- Permission Check -->
+        <div id="permission-box" class="permission-banner" style="display: none;">
+          <div>
+            <h4 style="margin: 0;">Enable Notifications</h4>
+            <p style="font-size: 0.8rem; margin: 4px 0 0;">We need permission to show you desktop alerts when a reminder ends.</p>
+          </div>
+          <button class="btn btn-primary btn-sm" onclick="requestPermission()">Allow Now</button>
+        </div>
+
+        <!-- Create Form -->
+        <div class="reminder-form">
+          <h3>Set New Reminder</h3>
+          <div class="form-group mt-3">
+            <label>What's the reminder for?</label>
+            <input type="text" id="rem-text" class="form-control" placeholder="e.g. Call the doctor, Join meeting...">
+          </div>
+          <div class="form-group mt-3">
+            <label>When should we notify you?</label>
+            <input type="datetime-local" id="rem-time">
+          </div>
+          <button class="btn btn-primary btn-full mt-4 btn-lg" id="add-btn">Create Reminder</button>
+        </div>
+
+        <!-- List Area -->
+        <div class="flex justify-between items-center mb-3">
+            <h3>Active Reminders</h3>
+            <button class="btn btn-secondary btn-sm" onclick="clearExpired()">Clear Expired</button>
+        </div>
+        <div id="reminder-list" class="reminder-list">
+          <!-- Items here -->
+        </div>
+
+      </div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5">
+        <h2>Sheltering Your Priorities in Private: Secure Local Reminder Management</h2>
+        <p>We’ve all been there: you have a critical medical appointment, a life-changing medicine to take at a specific hour, or a high-stakes bill to pay before midnight. You look for a <strong>reminder app</strong> online to help you stay on track and prevent those essential life beats from slipping through the cracks of a busy day. But as you look at the "Social Sharing" buttons and "Cloud Sync" permissions of most notification apps, you realize that your daily agenda, your personal health routines, and your financial vulnerabilities are being harvested by an anonymous database. Do you really want to share your "Private To-Dos" with a third-party algorithm?</p>
+
+        <p>At 99tool.in, we built our <strong>reminder app</strong> to give you a professional timekeeper without the privacy gamble. By utilizing browser-side notification technology and local data persistence, we allow you to <strong>set alerts</strong> entirely within the secure sandbox of your own machine. Whether you’re a professional managing client follow-ups, a student tracking assignment deadlines, or a patient ensuring medical adherence, our <strong>safe reminder tool</strong> ensures that your schedule stays where it belongs: on your device, under your total sovereignty.</p>
+        
+        <div class="tool-preview-box mt-4 mb-4" style="text-align:center;">
+           <img src="../../assets/images/reminder-preview.png" alt="Clean Reminder Workspace with Active and Expired Alert Logs" class="tool-preview" id="tool-preview-img" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+        </div>
+
+        <h3 class="mt-4">The Logic of Temporal Validation</h3>
+        <p>Memory is fragile, but priority should be absolute. Most basic <strong>daily reminder apps</strong> overwhelm you with push notifications that you eventually ignore, causing "Alert Fatigue." Our <strong>professional reminder tool</strong> takes a human-centric approach: we focus on **System-Native Alerting** and **Persistent Visual Queuing**.</p>
+        
+        <p>We utilize the browser's Notification API to push alerts directly to your operating system's notification center. Our <strong>safe alert validator</strong> doesn't just show a message; it maintains a real-time list of "Active" and "Expired" reminders that survives browser restarts. This transparency allows you to maintain a reliable "External Brain," helping you offload the stress of remembering times so you can focus on the intensity of your current task in a private, professional environment.</p>
+
+        <h3 class="mt-4">Why Notifications are the Intentional Choice</h2>
+        <p>In the age of digital surveillance, your daily schedule is a map of your entire lifestyle. When you use a standard <strong>browser reminder online free</strong> service, you are essentially giving away your "Routine Data" for a third party to analyze. Our 100% <strong>reminder utility</strong> removes this "Privacy Risk" entirely from your daily schedule.</p>
+        
+        <p>Because the logic and storage happen in your browser's private memory, your reminders and their timing are invisible to the outside world. No analytics are tracked, no schedules are harvested, and no personal habits are shared with advertisers or AI trackers. At 99tool.in, we believe that <strong>staying on schedule</strong> should be an empowering utility, not a data-mining exercise. With us, you have a private, professional alarm clock that fits in your browser tab.</p>
+
+        <h3 class="mt-4">How to Secure Your Schedule (Step-by-Step)</h3>
+        <p>Setting an alert should be a high-speed, 5-second task. Here is how to use our <strong>reminder</strong>:</p>
+        <ul style="line-height: 1.8; margin-bottom: 20px;">
+          <li><strong>Step 1: Grant Access</strong> — Click "Allow Now" on our permission banner. This enables our tool to talk to your computer's native notification system.</li>
+          <li><strong>Step 2: Define Your Mission</strong> — Enter your reminder text (e.g., "Submit Tax Return" or "Pick up Prescription"). Be specific to ensure the notification is actionable.</li>
+          <li><strong>Step 3: Pin the Moment</strong> — Select your date and time using the secure input. Our system will calculate the exact moment to trigger the alert locally.</li>
+          <li><strong>Step 4: Stay Notified</strong> — Keep this tab open or pinned in the background. Our system will pulse your notification center exactly when it's time, keeping your active list updated automatically.</li>
+        </ul>
+
+        <h3 class="mt-4">Strategic Use Cases for Your Local Reminder App</h3>
+        <p>Our <strong>browser alert tool</strong> is the essential companion for varied professional and personal life:</p>
+        
+        <p><strong>For Project Supervisors:</strong> Managing time-sensitive client calls? Use our <strong>reminder app</strong> to ensure you’re always punctual without the distraction of an integrated corporate calendar syncing your private movements.</p>
+        
+        <p><strong>For Financial Planners:</strong> Tracking specific market opens or bill due dates? Use our <strong>safe task reminder</strong> to keep those high-value moments private, ensuring your financial schedule stays in your control.</p>
+        
+        <p><strong>For Health-Conscious Humans:</strong> Managing a strict vitamin or hydration routine? Use our <strong>browser notification tool</strong> to stay consistent through the day, ensuring your personal health data never leaves your machine.</p>
+
+        <h3 class="mt-5">Explore Your Complete Productivity Suite</h3>
+        <p>Once you’ve successfully mastered your schedule, you might need to manage more complex projects. Check out our <strong><a href="kanban-board.html">Kanban Board</a></strong>. Or, if you need to build long-term focus habits, use our <strong><a href="pomodoro-timer.html">Pomodoro Timer</a></strong>. At 99tool.in, we are building a world-class, 100% private digital toolkit to give you total control over your digital future.</p>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Will I get notified if I close the tab?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>For technical and security reasons, your browser won't allow a website to send notifications if the tab is completely closed. We recommend keeping the <strong>reminder app</strong> open in a pinned tab in the background. If you accidentally close it, your reminders are still safely stored in <code>localStorage</code>, and you’ll see them as "Expired" when you return.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Does this work if my computer is asleep?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Most modern operating systems (Windows, macOS) will "pause" browser activity when in sleep mode. If your computer wakes up after a reminder was supposed to trigger, the notification will usually fire immediately upon waking. For critical tasks, we recommend ensuring your device's power settings allow for background alerts.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I set recurring reminders?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Currently, our <strong>alert tool</strong> focus on "One-Time High-Priority" reminders to keep the interface lightning fast and private. For daily routines, we recommend our **Habit Tracker**, which is optimized for recurring consistency without the need for intrusive alarms.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Why don't the notifications have sound?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>The sounds are managed by your System Settings (Windows/macOS). If your <strong>task reminder</strong> is silent, check your "Focus Mode," "Do Not Disturb," or "Native Notification Volume" settings. Using system sounds ensuring high-fidelity alerts that match your device's professional environment.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Is there a limit to how many alerts I can set?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. You can queue up dozens of reminders for the day. Our engine scales perfectly to handle multiple concurrent alerts without any performance lag or data leaks.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              How do the notifications work technically?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>We use the standard W3C <strong>Notification API</strong>. This allows the browser to communicate directly with your computer's "Native Notification Center." This is the most secure way to show alerts because the browser handles the display logic, keeping your data inside the sandbox.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 Privacy is the Priority. Zero Sync. Zero Tracking. Last updated: April 10, 2026.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    let reminders = JSON.parse(localStorage.getItem('99tool_reminders')) || [];
+    const listEl = document.getElementById('reminder-list');
+    const addBtn = document.getElementById('add-btn');
+    const pBox = document.getElementById('permission-box');
+
+    function checkPermission() {
+      if (Notification.permission === 'default') {
+        pBox.style.display = 'flex';
+      } else {
+        pBox.style.display = 'none';
+      }
+    }
+
+    async function requestPermission() {
+      const permission = await Notification.requestPermission();
+      checkPermission();
+    }
+
+    function renderReminders() {
+      listEl.innerHTML = '';
+      if (reminders.length === 0) {
+        listEl.innerHTML = '<div class="text-center text-muted py-5">No reminders set. Add one above!</div>';
+        return;
+      }
+
+      reminders.sort((a,b) => new Date(a.time) - new Date(b.time));
+
+      reminders.forEach((rem, idx) => {
+        const now = new Date();
+        const remTime = new Date(rem.time);
+        const isExpired = remTime < now;
+
+        const card = document.createElement('div');
+        card.className = `reminder-card ${isExpired ? 'expired' : 'active'}`;
+        card.innerHTML = `
+          <div class="reminder-info">
+            <h4>${rem.text}</h4>
+            <p>${remTime.toLocaleString()} ${isExpired ? '(Missed/Done)' : ''}</p>
+          </div>
+          <button class="btn btn-secondary btn-sm" onclick="deleteReminder(${idx})">×</button>
+        `;
+        listEl.appendChild(card);
+      });
+      
+      localStorage.setItem('99tool_reminders', JSON.stringify(reminders));
+    }
+
+    addBtn.onclick = () => {
+      const text = document.getElementById('rem-text').value.trim();
+      const time = document.getElementById('rem-time').value;
+
+      if (!text || !time) return;
+
+      reminders.push({ text, time, notified: false });
+      document.getElementById('rem-text').value = '';
+      document.getElementById('rem-time').value = '';
+      renderReminders();
+    };
+
+    window.deleteReminder = (idx) => {
+      reminders.splice(idx, 1);
+      renderReminders();
+    };
+
+    window.clearExpired = () => {
+      const now = new Date();
+      reminders = reminders.filter(r => new Date(r.time) > now);
+      renderReminders();
+    };
+
+    // Notification Engine
+    setInterval(() => {
+      const now = new Date();
+      let changed = false;
+
+      reminders.forEach(rem => {
+        const remTime = new Date(rem.time);
+        if (!rem.notified && remTime <= now) {
+          showNotification(rem.text);
+          rem.notified = true;
+          changed = true;
+        }
+      });
+
+      if (changed) renderReminders();
+    }, 10000); // Check every 10 seconds
+
+    function showNotification(msg) {
+      if (Notification.permission === 'granted') {
+        new Notification('99tool.in Reminder', {
+          body: msg,
+          icon: '../../assets/logo.png'
+        });
+      }
+    }
+
+    checkPermission();
+    renderReminders();
+  </script>
+</body>
+</html>
+

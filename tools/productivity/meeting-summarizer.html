@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Meeting Summarizer – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/productivity/meeting-summarizer.html"/>
+<meta property="og:title" content="Meeting Summarizer – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/productivity/meeting-summarizer.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Meeting Summarizer \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/productivity/meeting-summarizer.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="meeting notes summarizer, notes summarizer, summarize notes tool, meeting summary generator, notes organizer, action item extractor" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json" id="schema-org-data">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Meeting Notes Summarizer",
+    "operatingSystem": "Any",
+    "applicationCategory": "ProductivityApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Rule-based action item extraction, Keyword detection, One-click clean summary, Privacy-first processing"
+  }
+  </script>
+
+  <style>
+    .summarizer-layout {
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .editor-section textarea {
+      width: 100%;
+      min-height: 450px;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      color: var(--text);
+      font-family: 'Fira Code', monospace;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      resize: vertical;
+      outline: none;
+    }
+    .editor-section textarea:focus { border-color: var(--primary); }
+
+    .summary-panel {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      position: sticky;
+      top: 100px;
+      height: fit-content;
+    }
+
+    .summary-section {
+      margin-bottom: 24px;
+    }
+    .summary-section h4 {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--primary);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .summary-item {
+      font-size: 0.85rem;
+      margin-bottom: 8px;
+      padding-left: 12px;
+      border-left: 2px solid var(--border);
+      color: var(--text-muted);
+    }
+    .summary-item b { color: var(--white); }
+
+    .empty-state {
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--text-muted);
+      border: 2px dashed var(--border);
+      border-radius: 8px;
+    }
+
+    @media (max-width: 900px) {
+      .summarizer-layout { grid-template-columns: 1fr; }
+      .summary-panel { position: static; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/productivity/meeting-summarizer.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/productivity/meeting-summarizer.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/productivity/meeting-summarizer.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/productivity/meeting-summarizer.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/productivity/meeting-summarizer.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/productivity/meeting-summarizer.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/productivity/meeting-summarizer.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/productivity/meeting-summarizer.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/productivity/meeting-summarizer.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/productivity/meeting-summarizer.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/productivity/meeting-summarizer.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/productivity/meeting-summarizer.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/productivity/meeting-summarizer.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/productivity/meeting-summarizer.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/productivity/meeting-summarizer.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/productivity/meeting-summarizer.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/productivity/meeting-summarizer.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/productivity/meeting-summarizer.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/productivity/meeting-summarizer.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/productivity/meeting-summarizer.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/productivity/meeting-summarizer.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/productivity/meeting-summarizer.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#productivity">Productivity</a> <span>/</span> 
+        <span>Meeting Summarizer</span>
+      </nav>
+      <h1>Meeting Notes Summarizer</h1>
+      <p>Clean up your messy notes instantly. Our rule-based engine extracts action items and key decisions without ever sending your sensitive data to the cloud.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div class="summarizer-layout">
+        <!-- INPUT AREA -->
+        <div class="editor-section">
+          <div class="flex justify-between items-center mb-3">
+            <h3>Your Meeting Notes</h3>
+            <button class="btn btn-secondary btn-sm" onclick="clearNotes()">Clear All</button>
+          </div>
+          <textarea id="notes-input" placeholder="Paste your raw meeting notes here...&#10;&#10;Use prefixes like:&#10;Action: Fix the bug&#10;Decision: Switch to dark mode&#10;Important: Deadline is Friday"></textarea>
+          
+          <div class="trust-signal mt-3">
+             <p>✨ <b>Pro Tip:</b> Use dashes (-), dots (•) or keywords like "Tasks" to help the engine find your action items.</p>
+          </div>
+        </div>
+
+        <!-- SUMMARY PANEL -->
+        <div class="summary-area">
+          <div class="summary-panel">
+            <h3 class="mb-4">Live Summary</h3>
+            
+            <div id="summary-content">
+               <div class="empty-state">
+                  <span style="font-size: 2rem;">📋</span>
+                  <p class="mt-2">Start typing to see highlights</p>
+               </div>
+            </div>
+
+            <button class="btn btn-primary btn-full mt-4" id="export-summary">Copy Clean Summary</button>
+          </div>
+        </div>
+      </div>
+
+       <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.meeting_notes_summarizer.what_is_title">What is the Meeting Notes Summarizer?</h2>
+        <p>The Meeting Notes Summarizer is a rule-based note extraction tool that scans your pasted meeting notes and automatically categorizes lines into Action Items, Decisions, and Important Points. Standard cloud-based summarizers send your confidential meeting content to external AI engines. This tool performs all parsing locally inside your browser tab.</p>
+        <p>By using keyword prefix detection, it identifies structured intent markers in your text and extracts them into a clean Live Summary panel on the right. Your raw notes and their summaries never leave your device.</p>
+
+        <h3 class="mt-4">How to Use the Meeting Notes Summarizer</h3>
+        <p>Extracting the key points from your notes involves these steps:</p>
+        <ol class="mt-2 mb-3">
+          <li>Paste your raw meeting notes into the editor pane on the left side of the interface.</li>
+          <li>Prefix action items with "Action:", "Task:", or "TODO:" to mark them for extraction.</li>
+          <li>Prefix decisions with "Decision:", "Agreed:", or "Outcome:" to flag them as resolved points.</li>
+          <li>Prefix highlights with "Important:", "Key:", or "Goal:" to mark them as critical notes.</li>
+          <li>Watch the Live Summary panel on the right automatically populate as you type.</li>
+          <li>Click "Copy Clean Summary" to copy the extracted highlights to your clipboard.</li>
+        </ol>
+
+        <h3 class="mt-4">Key Features</h3>
+        <ul class="mt-2 mb-3">
+          <li><strong>Pattern-Match Engine:</strong> Detects keyword prefixes and bullet-point intent markers to extract structured content.</li>
+          <li><strong>Three-Category Output:</strong> Organizes extracted content into Action Items, Decisions, and Important Points sections.</li>
+          <li><strong>Live Summary Panel:</strong> Updates the extraction results in real time as you type or paste notes.</li>
+          <li><strong>One-Click Copy:</strong> Copies the formatted summary to your clipboard for immediate sharing via email or chat.</li>
+        </ul>
+
+        <h3 class="mt-4">Common Use Cases</h3>
+        <p>This summarizer is helpful for the following tasks:</p>
+        <ul class="mt-2 mb-3">
+          <li><strong>Corporate Meetings:</strong> Quickly extracting follow-up actions and decisions from lengthy strategy sessions before distributing minutes.</li>
+          <li><strong>Project Standups:</strong> Isolating blockers, assignments, and resolved items from daily team updates.</li>
+          <li><strong>Legal Briefings:</strong> Identifying agreed-upon terms and key outcomes from sensitive client meetings.</li>
+        </ul>
+
+        <h3 class="mt-4">Frequently Asked Questions</h3>
+        <div class="faq-section mt-3">
+          <p><strong>Does this tool use AI to understand my notes?</strong><br>No. This is a rule-based pattern matcher, not an AI. It finds lines you have prefixed with specific keywords (like "Action:" or "Decision:"). It does not interpret or paraphrase your content.</p>
+          <p><strong>Is my meeting content safe?</strong><br>Yes. All parsing happens inside your browser tab. Your notes never leave your device and are not stored anywhere.</p>
+          <p><strong>Can I customize the trigger keywords?</strong><br>The current version uses a built-in list covering standard meeting terminology (Action, Task, TODO, Decision, Goal, Important). Custom keywords may be added in a future update.</p>
+          <p><strong>Does my raw notes text get saved?</strong><br>No. The notes input field is not persisted to localStorage. Each session starts with a blank editor, so your sensitive content is automatically discarded when you close the tab.</p>
+        </div>
+
+        <h3 class="mt-4">Privacy &amp; Data Note</h3>
+        <p>All meeting notes, keyword extractions, and copied summaries are processed entirely inside your browser. No note content is stored, transmitted, or processed by any server or external AI service.</p>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 Zero AI. Zero cloud. 100% logic-based privacy. Last updated: April 10, 2026.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const input = document.getElementById('notes-input');
+    const display = document.getElementById('summary-content');
+    const exportBtn = document.getElementById('export-summary');
+
+    input.oninput = updateSummary;
+
+    function updateSummary() {
+      const text = input.value;
+      if (!text.trim()) {
+        display.innerHTML = `
+          <div class="empty-state">
+            <span style="font-size: 2rem;">📋</span>
+            <p class="mt-2">Start typing to see highlights</p>
+          </div>
+        `;
+        return;
+      }
+
+      const lines = text.split('\n');
+      const results = {
+        actions: [],
+        decisions: [],
+        important: []
+      };
+
+      const keywords = {
+        actions: /^(action|task|todo|to-do|follow-up|assign):?\s*/i,
+        decisions: /^(decision|agreed|outcome|decided):?\s*/i,
+        important: /^(important|key|goal|alert|warning|note):?\s*/i
+      };
+
+      lines.forEach(line => {
+        const trimmed = line.trim();
+        if (!trimmed) return;
+
+        // Check patterns
+        if (keywords.actions.test(trimmed)) {
+          results.actions.push(trimmed.replace(keywords.actions, '').trim());
+        } else if (keywords.decisions.test(trimmed)) {
+          results.decisions.push(trimmed.replace(keywords.decisions, '').trim());
+        } else if (keywords.important.test(trimmed)) {
+          results.important.push(trimmed.replace(keywords.important, '').trim());
+        } 
+        // Bonus: Bullet points that look like tasks
+        else if (/^[-*•]\s+(?:need to|should|will|must)\s+/i.test(trimmed)) {
+          results.actions.push(trimmed.replace(/^[-*•]\s+/i, '').trim());
+        }
+      });
+
+      renderSummary(results);
+    }
+
+    function renderSummary(res) {
+      if (res.actions.length === 0 && res.decisions.length === 0 && res.important.length === 0) {
+        display.innerHTML = `
+           <div class="empty-state">
+              <p>No structural markers found yet.<br><small>(Try starting lines with "Action:" or "Decision:")</small></p>
+           </div>
+        `;
+        return;
+      }
+
+      let html = '';
+      if (res.actions.length > 0) {
+        html += `<div class="summary-section">
+          <h4>🚀 Action Items (${res.actions.length})</h4>
+          ${res.actions.map(a => `<div class="summary-item">${a}</div>`).join('')}
+        </div>`;
+      }
+      if (res.decisions.length > 0) {
+        html += `<div class="summary-section">
+          <h4>⚖️ Decisions (${res.decisions.length})</h4>
+          ${res.decisions.map(d => `<div class="summary-item"><b>${d}</b></div>`).join('')}
+        </div>`;
+      }
+      if (res.important.length > 0) {
+        html += `<div class="summary-section">
+          <h4>⭐ Important (${res.important.length})</h4>
+          ${res.important.map(i => `<div class="summary-item">${i}</div>`).join('')}
+        </div>`;
+      }
+
+      display.innerHTML = html;
+    }
+
+    exportBtn.onclick = () => {
+      const summaryText = display.innerText;
+      if (!summaryText || summaryText.includes('Start typing')) return;
+
+      navigator.clipboard.writeText(summaryText).then(() => {
+        const originalText = exportBtn.innerText;
+        exportBtn.innerText = 'Copied to Clipboard!';
+        exportBtn.classList.add('btn-success');
+        setTimeout(() => {
+          exportBtn.innerText = originalText;
+          exportBtn.classList.remove('btn-success');
+        }, 2000);
+      });
+    };
+
+    function clearNotes() {
+      if (confirm('Clear your meeting notes?')) {
+        input.value = '';
+        updateSummary();
+      }
+    }
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

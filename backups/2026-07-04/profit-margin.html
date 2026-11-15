@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Profit Margin – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/business/profit-margin.html"/>
+<meta property="og:title" content="Profit Margin – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/business/profit-margin.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Profit Margin \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/business/profit-margin.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    .math-workspace {
+      max-width: 700px;
+      margin: 2rem auto;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      border-radius: 20px;
+    }
+    .input-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem; }
+    label { display: block; margin-bottom: 0.5rem; color: var(--text-muted); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; }
+    input {
+      width: 100%;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 1rem;
+      border-radius: 12px;
+      font-size: 1.2rem;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    input:focus { border-color: var(--primary); outline: none; }
+    
+    .result-display {
+       margin-top: 2rem;
+       display: none;
+    }
+    .main-res-card {
+       background: rgba(var(--primary-rgb), 0.05);
+       border: 1px solid var(--primary);
+       padding: 2.5rem;
+       border-radius: 20px;
+       text-align: center;
+       margin-bottom: 20px;
+    }
+    .res-val { font-size: 3.5rem; font-weight: 800; color: var(--primary); line-height: 1; }
+    .res-lab { font-size: 0.9rem; color: var(--text-muted); margin-top: 5px; text-transform: uppercase; letter-spacing: 1px; }
+    
+    .stats-grid {
+       display: grid;
+       grid-template-columns: repeat(3, 1fr);
+       gap: 15px;
+    }
+    .stat-card {
+       background: rgba(255,255,255,0.03);
+       border: 1px solid var(--border);
+       padding: 1.5rem;
+       border-radius: 16px;
+       text-align: center;
+    }
+    .stat-val { font-size: 1.5rem; font-weight: 700; color: var(--text); }
+    .stat-lab { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; margin-top: 4px; }
+    
+    .mode-toggle {
+       display: flex;
+       justify-content: center;
+       gap: 10px;
+       margin-bottom: 2rem;
+    }
+    .btn-mode {
+       background: rgba(255,255,255,0.05);
+       border: 1px solid var(--border);
+       padding: 8px 16px;
+       border-radius: 30px;
+       font-size: 0.8rem;
+       font-weight: 600;
+       color: var(--text-muted);
+       cursor: pointer;
+    }
+    .btn-mode.active { background: var(--primary); color: white; border-color: var(--primary); }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Infinite Profit & Margin Solver</h1>
+      <p>Analyze business profitability with professional-grade precision. Identify target prices and gross margins instantly.</p>
+    </div>
+
+    <div class="math-workspace">
+      <div class="mode-toggle">
+         <button class="btn-mode active" id="mode-std" onclick="setMode('std')">Calculate Margin</button>
+         <button class="btn-mode" id="mode-rev" onclick="setMode('rev')">Calculate Selling Price</button>
+      </div>
+
+      <div class="input-grid" id="grid-std">
+         <div>
+            <label>Cost Price ($)</label>
+            <input type="number" id="cost-in" placeholder="0.00" oninput="solve()">
+         </div>
+         <div>
+            <label>Selling Price ($)</label>
+            <input type="number" id="sel-in" placeholder="0.00" oninput="solve()">
+         </div>
+      </div>
+
+      <div class="input-grid" id="grid-rev" style="display: none;">
+         <div>
+            <label>Cost Price ($)</label>
+            <input type="number" id="cost-in-rev" placeholder="0.00" oninput="solve()">
+         </div>
+         <div>
+            <label>Target Margin (%)</label>
+            <input type="number" id="marg-in-rev" placeholder="e.g., 25" oninput="solve()">
+         </div>
+      </div>
+
+      <div class="result-display" id="res-panel">
+         <div class="main-res-card">
+            <div class="res-lab" id="main-lab">Gross Profit Margin</div>
+            <div class="res-val" id="res-main">0%</div>
+         </div>
+
+         <div class="stats-grid">
+            <div class="stat-card">
+               <div class="stat-val" id="res-profit">$0.00</div>
+               <div class="stat-lab">Total Profit</div>
+            </div>
+            <div class="stat-card">
+               <div class="stat-val" id="res-markup">0%</div>
+               <div class="stat-lab">Markup %</div>
+            </div>
+            <div class="stat-card">
+               <div class="stat-val" id="res-cost-ratio">0%</div>
+               <div class="stat-lab">Cost-to-Price Ratio</div>
+            </div>
+         </div>
+      </div>
+
+      <!-- SEO CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2>What is a Profit Margin Calculator?</h2>
+        <p>A profit margin calculator is a financial tool used by businesses to determine the profitability of products or services. It calculates the relationship between revenue and costs. Our <strong>online margin solver</strong> provides an automated diagnostic of your gross profit, helping you understand how much of every dollar earned is actual profit. A consistent <strong>business margin auditor</strong> is essential for optimizing pricing strategies and inventory management.</p>
+
+        <h3 class="mt-4">Margin vs. Markup Parsing</h2>
+        <p>A common point of confusion in financial analysis is the difference between margin and markup. Margin is based on selling price, while markup is based on cost. Our <strong>profit diagnostic tool</strong> calculates both metrics instantly to provide a high-fidelity view of your business performance. This <strong>advanced financial auditor</strong> ensures that you are pricing your products high enough to cover overhead and hit your growth targets.</p>
+
+        <h3 class="mt-4">Privacy and Secure Decision Making</h2>
+        <p>At 99tool.in, all financial calculations are executed locally in your browser sandbox. We do not store your costs, selling prices, or profit logs. This <strong>private margin tool</strong> provides professional-grade results without the need for cloud-based tracking. Whether you are a small business owner or a retail manager, our <strong>secure profit calculator</strong> ensures your financial strategy remains purely your business.</p>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    let currentMode = 'std';
+
+    function setMode(mode) {
+       currentMode = mode;
+       document.querySelectorAll('.btn-mode').forEach(b => b.classList.remove('active'));
+       document.getElementById('mode-' + mode).classList.add('active');
+       
+       document.getElementById('grid-std').style.display = (mode === 'std') ? 'grid' : 'none';
+       document.getElementById('grid-rev').style.display = (mode === 'rev') ? 'grid' : 'none';
+       solve();
+    }
+
+    function solve() {
+       let cost, sel, marg;
+       
+       if (currentMode === 'std') {
+          cost = parseFloat(document.getElementById('cost-in').value) || 0;
+          sel = parseFloat(document.getElementById('sel-in').value) || 0;
+          if (sel <= 0) {
+             document.getElementById('res-panel').style.display = 'none';
+             return;
+          }
+          marg = ((sel - cost) / sel) * 100;
+       } else {
+          cost = parseFloat(document.getElementById('cost-in-rev').value) || 0;
+          marg = parseFloat(document.getElementById('marg-in-rev').value) || 0;
+          if (marg >= 100) {
+             document.getElementById('res-panel').style.display = 'none';
+             return;
+          }
+          sel = cost / (1 - (marg / 100));
+       }
+
+       if (sel <= 0 && currentMode === 'std') return;
+
+       const profit = sel - cost;
+       const markup = (cost > 0) ? (profit / cost) * 100 : 0;
+       const costRatio = (sel > 0) ? (cost / sel) * 100 : 0;
+
+       // Render
+       if (currentMode === 'std') {
+          document.getElementById('main-lab').innerText = "Gross Profit Margin";
+          document.getElementById('res-main').innerText = marg.toFixed(1) + '%';
+       } else {
+          document.getElementById('main-lab').innerText = "Required Selling Price";
+          document.getElementById('res-main').innerText = '$' + sel.toFixed(2);
+       }
+
+       document.getElementById('res-profit').innerText = '$' + profit.toFixed(2);
+       document.getElementById('res-markup').innerText = markup.toFixed(1) + '%';
+       document.getElementById('res-cost-ratio').innerText = costRatio.toFixed(1) + '%';
+       
+       document.getElementById('res-panel').style.display = 'block';
+    }
+  </script>
+</body>
+</html>

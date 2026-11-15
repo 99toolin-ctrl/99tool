@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Goal Tracker – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/productivity/goal-tracker.html"/>
+<meta property="og:title" content="Goal Tracker – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/productivity/goal-tracker.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Goal Tracker \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/productivity/goal-tracker.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="goal setting tool, goal tracker, goal planner, personal goal tracker, productivity goals" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json" id="schema-org-data">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Goal-Setting Dashboard",
+    "operatingSystem": "Any",
+    "applicationCategory": "ProductivityApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Goal progress visualization, Milestone tracking, Category-based organization, Local data persistence"
+  }
+  </script>
+
+  <style>
+    .goal-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 20px;
+    }
+
+    .goal-card {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .goal-card:hover { border-color: var(--primary); transform: translateY(-3px); }
+
+    .goal-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; }
+    .goal-header h3 { margin: 0; font-size: 1.1rem; }
+    
+    .progress-wrap { margin: 16px 0; }
+    .progress-info { display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 8px; }
+    .progress-bar-bg { width: 100%; height: 8px; background: var(--dark); border-radius: 10px; overflow: hidden; }
+    .progress-bar-fill { height: 100%; background: var(--primary); transition: width 0.6s ease; }
+
+    .milestone-list { list-style: none; padding: 0; margin-top: 16px; border-top: 1px solid var(--border); padding-top: 16px; }
+    .milestone-item { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-size: 0.85rem; }
+    .milestone-item input[type="checkbox"] { accent-color: var(--primary); cursor: pointer; width: 16px; height: 16px; }
+    .milestone-item.done span { text-decoration: line-through; color: var(--text-muted); }
+
+    .modal {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8);
+      backdrop-filter: blur(5px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 20px;
+    }
+    .modal.show { display: flex; }
+    .modal-content {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .add-goal-btn {
+      position: fixed; bottom: 30px; right: 30px;
+      width: 60px; height: 60px; border-radius: 50%;
+      background: var(--primary); color: var(--white);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2rem; box-shadow: 0 10px 30px rgba(229, 57, 53, 0.4);
+      cursor: pointer; z-index: 100; transition: all 0.3s;
+    }
+    .add-goal-btn:hover { transform: scale(1.1) rotate(90deg); }
+
+    @media (max-width: 600px) {
+      .goal-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/productivity/goal-tracker.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/productivity/goal-tracker.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/productivity/goal-tracker.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/productivity/goal-tracker.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/productivity/goal-tracker.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/productivity/goal-tracker.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/productivity/goal-tracker.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/productivity/goal-tracker.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/productivity/goal-tracker.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/productivity/goal-tracker.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/productivity/goal-tracker.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/productivity/goal-tracker.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/productivity/goal-tracker.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/productivity/goal-tracker.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/productivity/goal-tracker.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/productivity/goal-tracker.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/productivity/goal-tracker.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/productivity/goal-tracker.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/productivity/goal-tracker.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/productivity/goal-tracker.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/productivity/goal-tracker.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/productivity/goal-tracker.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#productivity">Productivity</a> <span>/</span> 
+        <span>Goal Dashboard</span>
+      </nav>
+      <h1>Goal-Setting Dashboard</h1>
+      <p>Transform your ambitions into actionable plans. Track milestones, visualize progress, and stay committed to your long-term success privately.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div id="goal-container">
+        <!-- Dashboard Stats -->
+        <div class="stats-grid mb-4" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px;">
+          <div class="stat-item" style="background: var(--dark-card); padding: 20px; border-radius: 8px; border: 1px solid var(--border); text-align: center;">
+            <p class="text-muted" style="font-size: 0.75rem;">Active Goals</p>
+            <h3 id="stat-active">0</h3>
+          </div>
+          <div class="stat-item" style="background: var(--dark-card); padding: 20px; border-radius: 8px; border: 1px solid var(--border); text-align: center;">
+            <p class="text-muted" style="font-size: 0.75rem;">Completed</p>
+            <h3 id="stat-done">0</h3>
+          </div>
+          <div class="stat-item" style="background: var(--dark-card); padding: 20px; border-radius: 8px; border: 1px solid var(--border); text-align: center;">
+            <p class="text-muted" style="font-size: 0.75rem;">Overall Progress</p>
+            <h3 id="stat-avg">0%</h3>
+          </div>
+        </div>
+
+        <div id="goal-list" class="goal-grid">
+          <!-- Goals injected by JS -->
+        </div>
+
+        <div id="no-goals" class="text-center py-5" style="display: none;">
+           <span style="font-size: 4rem;">🎯</span>
+           <h3 class="mt-3">Ready to set your first goal?</h3>
+           <p class="text-muted">Click the button below to start your journey.</p>
+        </div>
+      </div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.goal_setting_dashboard.what_is_title">What is the Goal-Setting Dashboard?</h2>
+        <p>The Goal-Setting Dashboard is an offline productivity tool designed to help you plan, track, and complete long-term objectives. Setting ambitious goals can be overwhelming without structured planning. This application allows you to decompose major objectives into actionable milestones, helping you maintain clarity and focus.</p>
+        <p>Operating entirely in your browser window, this tool ensures your personal ambitions and development plans remain private. It saves your goals locally in browser storage, eliminating the need to sync private projects to public cloud databases.</p>
+
+        <h3 class="mt-4">How to Use the Goal-Setting Dashboard</h3>
+        <p>Creating and managing your goal milestones involves the following steps:</p>
+        <ol class="mt-2 mb-3">
+          <li>Click the circular "+" button in the bottom-right corner of the window to open the goal-setting modal.</li>
+          <li>Enter a brief name for your target in the "Goal Title" input box.</li>
+          <li>In the "Milestones" text box, type your action steps, placing each item on a new line.</li>
+          <li>Click the "Set Goal" button to generate your goal card.</li>
+          <li>As you complete each step, select the corresponding checkbox on the card. The card's progress bar and percentage indicator will update automatically.</li>
+          <li>Review your top dashboard statistics (Active Goals, Completed, Overall Progress) to track your velocity.</li>
+          <li>Click the "×" button in the corner of a goal card to permanently delete it.</li>
+        </ol>
+
+        <h3 class="mt-4">Key Features of the Goal Tracker</h3>
+        <ul class="mt-2 mb-3">
+          <li><strong>Progress Tally Cards:</strong> Features dynamic counters displaying active goals, completed goals, and your average overall progress.</li>
+          <li><strong>Milestone Deconstruction:</strong> Allows you to break down large targets into distinct checklist items.</li>
+          <li><strong>Visual Progress Indicators:</strong> Displays color-coded fill bars and percentage readouts that update in real time.</li>
+          <li><strong>Persistent Storage Sandbox:</strong> Retains all dashboard data locally so your lists are preserved when you refresh the page.</li>
+        </ul>
+
+        <h3 class="mt-4">Common Use Cases</h3>
+        <p>This planner is helpful for the following tasks:</p>
+        <ul class="mt-2 mb-3">
+          <li><strong>Personal Development Goals:</strong> Planning certifications, languages to learn, or books to read over several months.</li>
+          <li><strong>Academic Project Milestones:</strong> Tracking research, drafts, and submissions for term papers.</li>
+          <li><strong>Fitness & Wellness Roadmaps:</strong> Outlining physical milestones (such as run distances or training frequencies) to track your progress.</li>
+        </ul>
+
+        <h3 class="mt-4">Frequently Asked Questions</h3>
+        <div class="faq-section mt-3">
+          <p><strong>How is the overall progress percentage calculated?</strong><br>The dashboard averages the completion percentages of all active goal cards. If you have two goals, one at 50% completion and one at 100%, your overall progress will display as 75%.</p>
+          <p><strong>Can I edit a goal's milestones after creating it?</strong><br>No. To keep the interface lightweight and fast, milestones cannot be edited once set. You can delete the card and create a new one with updated steps.</p>
+          <p><strong>Is there a limit to how many milestones I can add?</strong><br>No software limit is enforced. You can add as many checklist lines as you need to detail your plan.</p>
+          <p><strong>Can I export my goal list to a file?</strong><br>Data is saved inside your browser's local cache. While this tool does not have a direct export button, our Life OS panel lets you manage and back up your saved data.</p>
+        </div>
+
+        <h3 class="mt-4">Privacy & Data Note</h3>
+        <p>All goal titles, milestones, checklist actions, and progress statistics are processed locally on your computer. Your dashboard data is stored securely in your browser's local storage and is never uploaded to external servers.</p>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 100% Private. No account needed. All data stays in your browser. Last updated: April 10, 2026.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ADD GOAL BUTTON -->
+  <div class="add-goal-btn" id="show-modal-btn">+</div>
+
+  <!-- ADD GOAL MODAL -->
+  <div id="goal-modal" class="modal">
+    <div class="modal-content">
+      <h3 class="mb-3">Start New Journey</h3>
+      <div class="form-group">
+        <label>Goal Title</label>
+        <input type="text" id="goal-title" class="form-control" placeholder="e.g. Master React JS, Run a 5k...">
+      </div>
+      <div class="form-group">
+        <label>Milestones (One per line)</label>
+        <textarea id="goal-milestones" class="form-control" placeholder="e.g.&#10;Complete Tutorial&#10;Build Portfolio Project&#10;Apply for Jobs" style="min-height: 120px;"></textarea>
+      </div>
+      <div class="flex gap-2 mt-4">
+        <button class="btn btn-primary btn-full" id="save-goal-btn">Set Goal</button>
+        <button class="btn btn-secondary" id="close-modal-btn">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    let goals = JSON.parse(localStorage.getItem('99tool_goals')) || [];
+
+    const goalList = document.getElementById('goal-list');
+    const noGoals = document.getElementById('no-goals');
+    const modal = document.getElementById('goal-modal');
+    const showModalBtn = document.getElementById('show-modal-btn');
+    const closeModalBtn = document.getElementById('close-modal-btn');
+    const saveGoalBtn = document.getElementById('save-goal-btn');
+
+    function renderGoals() {
+      goalList.innerHTML = '';
+      if (goals.length === 0) {
+        noGoals.style.display = 'block';
+        updateStats();
+        return;
+      }
+      noGoals.style.display = 'none';
+
+      goals.forEach((goal, gIdx) => {
+        const total = goal.tasks.length;
+        const completed = goal.tasks.filter(t => t.done).length;
+        const percent = total > 0 ? Math.round((completed / total) * 100) : 0;
+
+        const card = document.createElement('div');
+        card.className = 'goal-card';
+        card.innerHTML = `
+          <div class="goal-header">
+            <h3>${goal.title}</h3>
+            <button class="btn-sm btn-secondary" style="padding: 2px 8px;" onclick="deleteGoal(${gIdx})">×</button>
+          </div>
+          <div class="progress-wrap">
+            <div class="progress-info">
+              <span>Progress</span>
+              <span>${percent}%</span>
+            </div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" style="width: ${percent}%"></div>
+            </div>
+          </div>
+          <ul class="milestone-list">
+            ${goal.tasks.map((t, tIdx) => `
+              <li class="milestone-item ${t.done ? 'done' : ''}">
+                <input type="checkbox" ${t.done ? 'checked' : ''} onchange="toggleTask(${gIdx}, ${tIdx})">
+                <span>${t.text}</span>
+              </li>
+            `).join('')}
+          </ul>
+        `;
+        goalList.appendChild(card);
+      });
+      updateStats();
+    }
+
+    function updateStats() {
+      const active = goals.filter(g => g.tasks.some(t => !t.done)).length;
+      const done = goals.length > 0 && goals.filter(g => g.tasks.every(t => t.done)).length;
+      
+      let totalPercent = 0;
+      goals.forEach(g => {
+        const total = g.tasks.length;
+        const completed = g.tasks.filter(t => t.done).length;
+        totalPercent += (total > 0 ? (completed / total) * 100 : 0);
+      });
+      const avg = goals.length > 0 ? Math.round(totalPercent / goals.length) : 0;
+
+       document.getElementById('stat-active').textContent = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(active, 0) : active;
+       document.getElementById('stat-done').textContent = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(done, 0) : done;
+       document.getElementById('stat-avg').textContent = ((window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(avg, 0) : avg) + '%';
+    }
+
+    window.toggleTask = (gIdx, tIdx) => {
+      goals[gIdx].tasks[tIdx].done = !goals[gIdx].tasks[tIdx].done;
+      saveAndRender();
+    };
+
+    window.deleteGoal = (idx) => {
+      if (confirm('Permanently delete this goal and all its progress?')) {
+        goals.splice(idx, 1);
+        saveAndRender();
+      }
+    };
+
+    function saveAndRender() {
+      localStorage.setItem('99tool_goals', JSON.stringify(goals));
+      renderGoals();
+    }
+
+    // Modal Events
+    showModalBtn.onclick = () => modal.classList.add('show');
+    closeModalBtn.onclick = () => modal.classList.remove('show');
+    
+    saveGoalBtn.onclick = () => {
+      const title = document.getElementById('goal-title').value.trim();
+      const rawTasks = document.getElementById('goal-milestones').value.trim();
+      
+      if (!title) return;
+      
+      const tasks = rawTasks.split('\n')
+        .map(t => t.trim())
+        .filter(t => t.length > 0)
+        .map(t => ({ text: t, done: false }));
+
+      goals.unshift({ title, tasks });
+      saveAndRender();
+      
+      // Reset & Close
+      document.getElementById('goal-title').value = '';
+      document.getElementById('goal-milestones').value = '';
+      modal.classList.remove('show');
+    };
+
+    // Init
+    renderGoals();
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

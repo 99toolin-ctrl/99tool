@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Projectile Motion – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/physics/projectile-motion.html"/>
+<meta property="og:title" content="Projectile Motion – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/physics/projectile-motion.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Projectile Motion \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/physics/projectile-motion.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .physics-workspace {
+      max-width: 700px;
+      margin: 2rem auto;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      border-radius: 20px;
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem; }
+    label { display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-muted); }
+    input {
+      width: 100%;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 1rem;
+      border-radius: 12px;
+      font-size: 1.1rem;
+    }
+    .result-grid {
+       display: grid;
+       grid-template-columns: repeat(3, 1fr);
+       gap: 1.5rem;
+       margin-top: 2rem;
+       display: none;
+    }
+    .stat-box {
+       background: rgba(255,255,255,0.03);
+       padding: 1.5rem;
+       border-radius: 12px;
+       border: 1px solid var(--border);
+       text-align: center;
+    }
+    .stat-val { font-size: 2rem; font-weight: 800; color: var(--primary); }
+    .stat-lab { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; margin-top: 5px; }
+
+    .trajectory-viz {
+       height: 150px;
+       border: 1px dashed var(--border);
+       border-radius: 12px;
+       margin-bottom: 2rem;
+       position: relative;
+       overflow: hidden;
+       background: rgba(0,0,0,0.2);
+    }
+    .projectile-trail {
+       position: absolute;
+       bottom: 10px; left: 10px;
+       width: 0%; height: 0%;
+       border: 2px solid var(--primary);
+       border-radius: 100% 100% 0 0;
+       border-bottom: 0;
+       transition: all 1s ease;
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/physics/projectile-motion.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/physics/projectile-motion.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/physics/projectile-motion.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/physics/projectile-motion.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/physics/projectile-motion.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/physics/projectile-motion.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/physics/projectile-motion.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/physics/projectile-motion.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/physics/projectile-motion.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/physics/projectile-motion.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/physics/projectile-motion.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/physics/projectile-motion.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/physics/projectile-motion.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/physics/projectile-motion.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/physics/projectile-motion.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/physics/projectile-motion.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/physics/projectile-motion.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/physics/projectile-motion.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/physics/projectile-motion.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/physics/projectile-motion.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/physics/projectile-motion.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/physics/projectile-motion.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Infinite Projectile Motion Predictor</h1>
+      <p>Analyze parabolic trajectories. Calculate Range, Height, and Time for any launch scenario.</p>
+    </div>
+
+    <div class="physics-workspace">
+      <div class="trajectory-viz">
+         <div class="projectile-trail" id="trail"></div>
+      </div>
+
+      <div class="form-row">
+         <div class="form-group">
+            <label>Initial Velocity (V₀) in m/s</label>
+            <input type="number" id="vel" placeholder="e.g., 20">
+         </div>
+         <div class="form-group">
+            <label>Launch Angle (θ) in Degrees</label>
+            <input type="number" id="ang" placeholder="e.g., 45">
+         </div>
+      </div>
+      
+      <button onclick="calculateMotion()" class="btn btn-primary btn-lg btn-full">Calculate Trajectory</button>
+
+      <div class="result-grid" id="res-grid">
+         <div class="stat-box">
+            <div class="stat-val" id="res-range">0.0</div>
+            <div class="stat-lab">Range (m)</div>
+         </div>
+         <div class="stat-box">
+            <div class="stat-val" id="res-height">0.0</div>
+            <div class="stat-lab">Max Height (m)</div>
+         </div>
+         <div class="stat-box">
+            <div class="stat-val" id="res-time">0.0</div>
+            <div class="stat-lab">Time (s)</div>
+         </div>
+      </div>
+
+      <!-- SEO CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.projectile_motion_predictor.what_is_title">What is the Infinite Projectile Motion Predictor?</h2>
+        <p>The Infinite Projectile Motion Predictor is a kinematics simulator designed to model the parabolic trajectory of an object launched into the air. When an object is projected, its motion is split into independent horizontal and vertical components. The vertical velocity is continuously influenced by the constant acceleration of gravity ($g \approx 9.81\text{ m/s}^2$), causing the characteristic curved flight path.</p>
+        <p>This predictor calculates the essential flight parameters, including total flight duration, horizontal range, and the peak height reached during flight. The interface also includes a dynamic visual indicator that updates in sync with your launching parameters.</p>
+
+        <h3 class="mt-4">How to Use the Projectile Motion Predictor</h3>
+        <p>To simulate a trajectory, input your launch settings:</p>
+        <ol class="mt-2 mb-3">
+          <li>Enter the initial launch speed in the "Initial Velocity (V₀) in m/s" input field.</li>
+          <li>Enter the elevation angle above horizontal in the "Launch Angle (θ) in Degrees" input field. (Use values between 0 and 90).</li>
+          <li>Click the "Calculate Trajectory" button to run the kinematics simulation.</li>
+          <li>Review the calculated "Range", "Max Height", and "Time" indicators displayed in the results card.</li>
+          <li>Observe the simplified trajectory curve displayed in the visualization box above the inputs.</li>
+        </ol>
+
+        <h3 class="mt-4">Key Features</h3>
+        <ul class="mt-2 mb-3">
+          <li><strong>Integrated Kinematics Formulas:</strong> Uses standardized gravitational equations to solve for range ($R = \frac{v_0^2 \sin(2\theta)}{g}$), max height ($H = \frac{v_0^2 \sin^2\theta}{2g}$), and time ($t = \frac{2v_0 \sin\theta}{g}$).</li>
+          <li><strong>Dynamic Trajectory Visualization:</strong> Features a visual trail indicator that scales dynamically to represent the parabolic path height.</li>
+          <li><strong>Degree-to-Radian Converter:</strong> Automatically translates angular degrees into mathematical radians to ensure precise trigonometric calculations.</li>
+          <li><strong>Interactive Grid Dashboard:</strong> Groups the key metrics (Range, Height, Time) in a clean, easily readable card layout.</li>
+        </ul>
+
+        <h3 class="mt-4">Common Use Cases</h3>
+        <p>This kinematics simulator is designed for the following applications:</p>
+        <ul class="mt-2 mb-3">
+          <li><strong>Game Physics Prototyping:</strong> Calculating trajectory models to program realistic projectile physics (e.g., throwing mechanics, archery arcs) in game development.</li>
+          <li><strong>Athletic Motion Analysis:</strong> Simulating the optimal launch angles for sports equipment like footballs, javelins, shot puts, or basketballs.</li>
+          <li><strong>Physics Education:</strong> Helping students visualize the relationships between launch angles, initial speeds, and total horizontal distance.</li>
+        </ul>
+
+        <h3 class="mt-4">Frequently Asked Questions</h3>
+        <div class="faq-section mt-3">
+          <p><strong>What launch angle yields the maximum horizontal range?</strong><br>In a vacuum, a launch angle of $45^\circ$ provides the maximum possible horizontal range for any given initial velocity.</p>
+          <p><strong>Does this simulator account for air resistance?</strong><br>No. This simulator uses classical kinematics equations that assume a vacuum with zero air resistance (drag) and a flat ground plane.</p>
+          <p><strong>Why is gravity set to 9.81 m/s²?</strong><br>This is the standard acceleration due to gravity on the surface of the Earth. If you were on the Moon, gravity would be much lower (approx. $1.62\text{ m/s}^2$).</p>
+          <p><strong>What happens if I launch at 90 degrees?</strong><br>A $90^\circ$ launch is straight up. The horizontal range will be 0, and the max height and time of flight will reach their maximum values for that initial velocity.</p>
+        </div>
+
+        <h3 class="mt-4">Privacy & Data Note</h3>
+        <p>All kinematics calculations, angular translations, and trajectory drawings are computed locally within your browser window. Launch velocities, angles, and calculated paths are never uploaded or saved.</p>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    function calculateMotion() {
+       const v0 = parseFloat(document.getElementById('vel').value);
+       const thetaDeg = parseFloat(document.getElementById('ang').value);
+       const g = 9.81;
+       
+       if (isNaN(v0) || isNaN(thetaDeg)) return alert('Please enter both velocity and angle.');
+
+       const theta = thetaDeg * (Math.PI / 180);
+
+       // Time of Flight: (2 * v0 * sin(theta)) / g
+       const time = (2 * v0 * Math.sin(theta)) / g;
+       
+       // Range: (v0^2 * sin(2*theta)) / g
+       const range = (Math.pow(v0, 2) * Math.sin(2 * theta)) / g;
+       
+       // Max Height: (v0^2 * sin(theta)^2) / (2*g)
+       const height = (Math.pow(v0, 2) * Math.pow(Math.sin(theta), 2)) / (2 * g);
+
+       document.getElementById('res-range').innerText = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(Math.max(0, range), 2) : Math.max(0, range).toFixed(2);
+       document.getElementById('res-height').innerText = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(Math.max(0, height), 2) : Math.max(0, height).toFixed(2);
+       document.getElementById('res-time').innerText = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(Math.max(0, time), 2) : Math.max(0, time).toFixed(2);
+       
+       // Visualize
+       const trail = document.getElementById('trail');
+       trail.style.width = '100px';
+       trail.style.height = (height > 0 ? '50px' : '0');
+
+       document.getElementById('res-grid').style.display = 'grid';
+    }
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Code Playground – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/learning/code-playground.html"/>
+<meta property="og:title" content="Code Playground – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/learning/code-playground.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Code Playground \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/learning/code-playground.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    .playground-main {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      height: calc(100vh - 200px);
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    
+    .editors-pane {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .editor-box {
+      flex: 1;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .editor-label {
+      padding: 8px 15px;
+      background: rgba(255,255,255,0.03);
+      border-bottom: 1px solid var(--border);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--primary);
+    }
+    textarea {
+      flex: 1;
+      background: none;
+      border: none;
+      color: #eee;
+      padding: 1rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9rem;
+      resize: none;
+      outline: none;
+      line-height: 1.5;
+    }
+
+    .preview-pane {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1.5rem;
+      padding: 10px;
+      background: var(--dark-card);
+      border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+
+    @media (max-width: 992px) {
+      .playground-main { grid-template-columns: 1fr; height: auto; }
+      .editor-box { height: 300px; }
+      .preview-pane { height: 400px; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+<link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+          <body>
+            ${html}
+            <script>${js}<\/script>
+          </body>
+        </html>
+      `;
+
+      preview.srcdoc = output;
+      
+      // Save progress
+      localStorage.setItem('99tool_playground_save', JSON.stringify({html, css, js}));
+    }
+
+    function loadTemplate(type) {
+      if (type === 'basic') {
+        htmlEditor.value = `<h1>The Coding Journey</h1>\n<p>Start your adventure here.</p>`;
+        cssEditor.value = `body { font-family: sans-serif; padding: 40px; text-align: center; background: #fafafa; }\nh1 { color: #e53935; }`;
+        jsEditor.value = `console.log("Ready to code?");`;
+      } else if (type === 'button') {
+        htmlEditor.value = `<button class="cool-btn">Hover Me</button>`;
+        cssEditor.value = `.cool-btn { padding: 15px 30px; border: 2px solid #e53935; background: none; color: #e53935; border-radius: 30px; font-weight: bold; cursor: pointer; transition: 0.3s; }\n.cool-btn:hover { background: #e53935; color: white; }`;
+        jsEditor.value = ``;
+      }
+      updatePreview();
+    }
+
+    function exportFile() {
+      const output = `
+        <!DOCTYPE html>
+        <html>
+          <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+            <style>${cssEditor.value}</style>
+            <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+          <body>
+            ${htmlEditor.value}
+            <script>${jsEditor.value}<\/script>
+          body>
+        </html>
+      `;
+      const blob = new Blob([output], {type: 'text/html'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'playground_export.html';
+      a.click();
+    }
+
+    // Restore save
+    const saved = JSON.parse(localStorage.getItem('99tool_playground_save'));
+    if (saved) {
+      htmlEditor.value = saved.html;
+      cssEditor.value = saved.css;
+      jsEditor.value = saved.js;
+      updatePreview();
+    } else {
+      loadTemplate('basic');
+    }
+  </script>
+</body>
+</html>
+

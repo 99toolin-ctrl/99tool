@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Fps Test – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/network/fps-test.html"/>
+<meta property="og:title" content="Fps Test – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/network/fps-test.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Fps Test \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/network/fps-test.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .fps-workspace {
+      margin-top: 2rem;
+      background: var(--bg-secondary);
+      border-radius: 20px;
+      padding: 3rem;
+      border: 1px solid var(--border);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .fps-display {
+      position: relative;
+      z-index: 10;
+    }
+    #fps-count {
+      font-size: 6rem;
+      font-weight: 900;
+      color: var(--primary);
+      text-shadow: 0 0 20px rgba(var(--primary-rgb), 0.3);
+      line-height: 1;
+    }
+    .fps-label {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    .fps-canvas {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      opacity: 0.15;
+      z-index: 5;
+      pointer-events: none;
+    }
+    .stats-row {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+      z-index: 10;
+      position: relative;
+    }
+    .min-max {
+      font-family: monospace;
+      font-size: 1rem;
+      background: rgba(0,0,0,0.3);
+      padding: 5px 15px;
+      border-radius: 5px;
+      border: 1px solid var(--border);
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/network/fps-test.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/network/fps-test.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/network/fps-test.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/network/fps-test.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/network/fps-test.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/network/fps-test.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/network/fps-test.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/network/fps-test.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/network/fps-test.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/network/fps-test.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/network/fps-test.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/network/fps-test.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/network/fps-test.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/network/fps-test.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/network/fps-test.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/network/fps-test.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/network/fps-test.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/network/fps-test.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/network/fps-test.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/network/fps-test.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/network/fps-test.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/network/fps-test.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Infinite FPS Tester</h1>
+      <p>Analyze your hardware refresh rate and animation stability in real-time.</p>
+    </div>
+
+    <div class="tool-container text-center">
+      <div class="fps-workspace">
+        <canvas id="fps-canvas" class="fps-canvas"></canvas>
+        
+        <div class="fps-display">
+          <div id="fps-count">0</div>
+          <div class="fps-label">Frames Per Second</div>
+        </div>
+
+        <div class="stats-row">
+           <div class="min-max">MIN: <span id="fps-min">0</span></div>
+           <div class="min-max">MAX: <span id="fps-max">0</span></div>
+        </div>
+      </div>
+
+      <!-- SEO CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.fps_tester.what_is_title">What is the Infinite FPS Tester?</h2>
+        <p>The Infinite FPS Tester is a real-time, animation-driven browser frame rate benchmark designed to test your display adapter's performance. Frames Per Second (FPS) represents the frequency at which your graphics processor and browser render consecutive images on screen. Smooth motion, seamless scrolling, and gaming responsiveness depend directly on achieving stable frame rates that match your screen's refresh capabilities.</p>
+        <p>This utility runs a lightweight, continuous animation cycle to track how consistently your web browser interacts with your GPU. By calculating rendering times down to a fraction of a millisecond, it exposes bottlenecks and monitors performance drops that cause visible stuttering during routine navigation.</p>
+
+        <h3 class="mt-4">How to Use the Frame Rate Checker</h3>
+        <p>Running the performance benchmark is fully automated and simple:</p>
+        <ol class="mt-2 mb-3">
+          <li>Open the page in the browser tab you wish to benchmark.</li>
+          <li>Keep the window active to allow the rendering loop to initialize.</li>
+          <li>Monitor the large center indicator for your live average frame rate.</li>
+          <li>Observe the minimum (MIN) and maximum (MAX) metrics to detect frame drops.</li>
+          <li>If the results are lower than expected, close background tabs or check your system hardware settings.</li>
+        </ol>
+
+        <h3 class="mt-4">Key Features of the FPS Benchmarking Tool</h3>
+        <ul class="mt-2 mb-3">
+          <li><strong>Live Canvas Render:</strong> Employs dynamic graphic elements to stimulate GPU rendering pathways.</li>
+          <li><strong>Min/Max Peak Tracker:</strong> Catches sudden performance degradation or temporary spikes in rendering delay.</li>
+          <li><strong>Sync Frequency:</strong> Calibrates directly with browser display refresh triggers using standard APIs.</li>
+          <li><strong>Zero-Asset Execution:</strong> Employs programmatic drawing rather than video assets to prevent bandwidth drain.</li>
+        </ul>
+
+        <h3 class="mt-4">Common Use Cases</h3>
+        <p>Use this utility to troubleshoot your graphics performance in the following scenarios:</p>
+        <ul class="mt-2 mb-3">
+          <li><strong>Display Configuration Check:</strong> Verifying that high refresh rate screens (120Hz, 144Hz, or 240Hz) are correctly configured in operating system settings.</li>
+          <li><strong>Hardware Acceleration Diagnostics:</strong> Confirming if your browser is utilizing dedicated hardware acceleration or falling back to slower CPU rendering.</li>
+          <li><strong>Thermal and Stutter Audits:</strong> Checking for performance drops under thermal throttling or GPU resource congestion.</li>
+        </ul>
+
+        <h3 class="mt-4">Frequently Asked Questions</h3>
+        <div class="faq-section mt-3">
+          <p><strong>What is the difference between Monitor Hz and render FPS?</strong><br>Monitor refresh rate (Hz) represents how many times per second the physical screen updates its light output. Render rate (FPS) is the number of frames the system renders. Ideal performance is achieved when both match.</p>
+          <p><strong>Why is my FPS locked exactly at 60?</strong><br>Browsers often lock frame rates to 60 FPS due to vertical synchronization (V-Sync) or settings in the operating system. Check that your display driver allows high-refresh rates for web browser applications.</p>
+          <p><strong>How do I enable hardware acceleration?</strong><br>Open your browser's system settings, search for "Use graphics acceleration when available" (or similar), toggle it on, and restart your browser.</p>
+          <p><strong>Does background activity affect my FPS score?</strong><br>Yes, heavy background tasks, active video streams in other tabs, or CPU-intensive applications will consume hardware resources and lower your score.</p>
+        </div>
+
+        <h3 class="mt-4">Privacy & Data Note</h3>
+        <p>All animation cycles, frame duration logs, and performance graphs are rendered in real-time inside your browser's local sandbox memory. No system metrics or usage stats are sent to external databases.</p>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const fpsCount = document.getElementById('fps-count');
+    const fpsMin = document.getElementById('fps-min');
+    const fpsMax = document.getElementById('fps-max');
+    const canvas = document.getElementById('fps-canvas');
+    const ctx = canvas.getContext('2d');
+
+    let lastTime = performance.now();
+    let frameTimes = [];
+    let minFps = 999;
+    let maxFps = 0;
+
+    // Background animation points
+    let points = [];
+    for(let i=0; i<50; i++) {
+       points.push({ x: Math.random(), y: Math.random(), vx: Math.random()*0.002-0.001, vy: Math.random()*0.002-0.001 });
+    }
+
+    function animate(now) {
+       const delta = now - lastTime;
+       lastTime = now;
+       
+       if (delta > 0) {
+          const fps = Math.round(1000 / delta);
+          frameTimes.push(fps);
+          if (frameTimes.length > 30) frameTimes.shift();
+          
+          const avgFps = Math.round(frameTimes.reduce((a,b)=>a+b, 0) / frameTimes.length);
+       fpsCount.innerText = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(avgFps, 0) : avgFps;
+
+          if (avgFps > 5 && avgFps < minFps) { minFps = avgFps; fpsMin.innerText = minFps; }
+          if (avgFps > maxFps) { maxFps = avgFps; fpsMax.innerText = maxFps; }
+       }
+
+       // Draw subtle bg
+       canvas.width = canvas.offsetWidth;
+       canvas.height = canvas.offsetHeight;
+       ctx.clearRect(0,0,canvas.width, canvas.height);
+       ctx.fillStyle = 'rgba(255, 71, 87, 0.5)';
+       
+       points.forEach(p => {
+          p.x += p.vx; p.y += p.vy;
+          if (p.x < 0 || p.x > 1) p.vx *= -1;
+          if (p.y < 0 || p.y > 1) p.vy *= -1;
+          ctx.beginPath();
+          ctx.arc(p.x * canvas.width, p.y * canvas.height, 3, 0, Math.PI*2);
+          ctx.fill();
+       });
+
+       requestAnimationFrame(animate);
+    }
+    
+    requestAnimationFrame(animate);
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>

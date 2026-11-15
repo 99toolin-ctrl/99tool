@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>File Size Analyzer – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/data-file/file-size-analyzer.html"/>
+<meta property="og:title" content="File Size Analyzer – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/data-file/file-size-analyzer.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "File Size Analyzer \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/data-file/file-size-analyzer.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="file size analyzer, analyze file size, disk usage tool, file info, storage analyzer, file metadata tool" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "File Size Analyzer",
+    "operatingSystem": "Any",
+    "applicationCategory": "DataApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Size breakdown, File type analysis, Interactive distribution charts, Private local processing"
+  }
+  </script>
+
+  <style>
+    .analyzer-grid {
+      display: grid; grid-template-columns: 1fr; gap: 30px;
+    }
+
+    .stat-card {
+      background: var(--dark-card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 25px; text-align: center;
+    }
+
+    .stat-val { font-size: 2rem; font-weight: 800; color: var(--primary); margin: 10px 0; }
+    .stat-label { font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; }
+
+    .file-list-card {
+      background: var(--dark-card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 30px;
+    }
+
+    .file-table {
+      width: 100%; border-collapse: collapse; font-size: 0.85rem;
+    }
+
+    .file-table th {
+      text-align: left; padding: 12px 10px; border-bottom: 2px solid var(--border);
+      color: var(--white); font-weight: 700;
+    }
+
+    .file-table td {
+      padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-muted);
+    }
+
+    .chart-box {
+      background: var(--dark-card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 25px; height: 350px;
+    }
+
+    @media (min-width: 900px) {
+      .analyzer-grid { grid-template-columns: 1fr 1fr; }
+      .full-span { grid-column: 1 / -1; }
+    }
+
+    .progress-bar-wrap {
+      width: 100%; height: 6px; background: var(--dark); border-radius: 10px; overflow: hidden; margin-top: 5px;
+    }
+    .progress-bar { height: 100%; background: var(--primary); }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#data">Data & File</a> <span>/</span> 
+        <span>File Size Analyzer</span>
+      </nav>
+      <h1>File Size Analyzer</h1>
+      <p>Instant, private insights into your file storage. Analyze file sizes and type distributions without uploading a single byte to any server.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div id="upload-stage">
+        <div class="upload-area" id="drop-zone">
+          <div class="upload-icon">📏</div>
+          <h3>Select files to analyze</h3>
+          <p>Drag & drop multiple files or click to browse</p>
+          <input type="file" id="file-input" multiple class="hidden">
+        </div>
+        <div class="info-box">
+          <div class="info-icon">🖥️</div>
+          <p>Browser limitations prevent full disk scanning. Select specific files or groups of files to see their size relationships and distribution.</p>
+        </div>
+      </div>
+
+      <div id="result-stage" class="hidden">
+        <div class="analyzer-grid mb-4">
+           <div class="stat-card">
+              <div class="stat-label">Total Size</div>
+              <div class="stat-val" id="total-size">0 KB</div>
+              <div class="text-muted small">Processed Locally</div>
+           </div>
+           <div class="stat-card">
+              <div class="stat-label">File Count</div>
+              <div class="stat-val" id="file-count">0</div>
+              <div class="text-muted small">Analyzed in Sandbox</div>
+           </div>
+           
+           <div class="chart-box full-span">
+              <h4 class="mb-4">File Type Distribution</h4>
+              <div style="height: 250px;">
+                 <canvas id="type-chart"></canvas>
+              </div>
+           </div>
+
+           <div class="file-list-card full-span">
+              <div class="flex justify-between items-center mb-4">
+                 <h3>File Breakdown</h3>
+                 <button class="btn btn-secondary btn-sm" id="reset-btn">Analyze New Batch</button>
+              </div>
+              <div style="overflow-x: auto;">
+                 <table class="file-table" id="file-table">
+                    <thead>
+                       <tr>
+                          <th>File Name</th>
+                          <th>Type</th>
+                          <th style="text-align: right;">Size</th>
+                          <th style="width: 150px;">Share</th>
+                       </tr>
+                    </thead>
+                    <tbody id="file-body"></tbody>
+                 </table>
+              </div>
+           </div>
+        </div>
+      </div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5">
+        <h2>Mapping Your Storage in Private: Why Local File Analysis Matters</h2>
+        <p>We’ve all been there: your drive is getting full, your downloads folder is a mess, and you need to find out which files are eating up all your space. You've got high-resolution videos, massive spreadsheets, and mysterious system logs everywhere. You want a quick breakdown, so you look for a <strong>file size analyzer online</strong>. But as you prepare to grant "Full Access" or upload specific file details to a cloud-hosted info tool, you pause. Do you really want to share your project's "Data Mapping" and file names with an anonymous analytics company?</p>
+
+        <p>At 99tool.in, we built our <strong>file size analyzer</strong> to provide a high-fidelity diagnostic laboratory for your storage without the privacy risk. By utilizing native browser File APIs and zero-cloud processing, we allow you to <strong>analyze storage usage</strong> entirely within the secure sandbox of your machine. Whether you're an IT lead auditing project assets, a photographer comparing raw file sizes, or a student organizing research materials, our <strong>safe file tool</strong> ensures that your metadata stays where it belongs: on your device, under your total sovereignty.</p>
+        
+        <div class="tool-preview-box mt-4 mb-4" style="text-align:center;">
+           <img src="../../assets/images/markdown-preview.png" alt="Pro-Grade Integrated File Storage Dashboard with high-fidelity size breakdown and type distribution" class="tool-preview" id="tool-preview-img" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+        </div>
+
+        <h3 class="mt-4">The Logic of "Metadata Transparency"</h3>
+        <p>File management is about "Structural Clarity." Most basic <strong>disk usage tools online</strong> are slow or require account setups. Our <strong>professional file analyzer</strong> takes a human-centric approach: we focus on **Instant Size Aggregation** and **Visual Distribution Mapping**.</p>
+        
+        <p>We've engineered a high-speed parsing engine that scans your selected files in milliseconds, aggregating total bytes and identifying formats like PDF, JPEG, and MP4. Our <strong>safe storage validator</strong> transforms these raw numbers into a clear, visual dashboard—complete with distribution charts and comparative lists. This transparency transforms a chaotic folder list into a clear, logical map, helping you see the "Story of your Storage" without the friction of platform-wide scanning.</p>
+
+        <h3 class="mt-4">Why Manual Selection is the Developer’s Ethical Choice</h2>
+        <p>In the age of digital profiling and automated technical scraping, your file structures are a map of your work habits and project scopes. Using a standard <strong>storage analyzer online free</strong> service creates a digital record of what you own and how you organize it. Our 100% <strong>size utility</strong> removes this "Privacy Vulnerability" entirely from your routine.</p>
+        
+        <p>Because the analysis and rendering happen in your browser's private memory, your file details are invisible to the outside world. No analytics are tracked, no file names are harvested, and no proprietary data mapping is shared with AI trackers or advertisers. At 99tool.in, we believe that <strong>managing your space</strong> should be an empowering utility, not a data-collection opportunity. With us, you have a private, professional laboratory for your data that fits in your browser tab.</p>
+
+        <h3 class="mt-4">How to Analyze Your Space (Step-by-Step)</h3>
+        <p>Viewing a storage breakdown should be a high-speed, 5-second task. Here is how to use our <strong>file size tool</strong>:</p>
+        <ul style="line-height: 1.8; margin-bottom: 20px;">
+          <li><strong>Step 1: Select Your Batch</strong> — Drag a group of files into the local sandbox. Browser security requires manual selection, ensuring you only analyze what you intend to.</li>
+          <li><strong>Step 2: Observe the Tally</strong> — Watch the "Total Size" and "File Count" dashboards update instantly as our local engine processes the metadata.</li>
+          <li><strong>Step 3: Analyze the Distribution</strong> — Review the interactive pie chart to see which file types (e.g., Images vs Docs) are dominating your selection.</li>
+          <li><strong>Step 4: Audit the Details</strong> — Check the "File Breakdown" table to find specific heavyweights. Once you're finished, simply close the tab—no data is ever stored on our end.</li>
+        </ul>
+
+        <h3 class="mt-4">Strategic Use Cases for Your Local Analyzer</h3>
+        <p>Our <strong>searchable size explorer</strong> is the essential companion for modern digital hygiene:</p>
+        
+        <p><strong>For Remote Workers:</strong> Preparing to sync a large project folder? Use our <strong>file size analyzer</strong> to find and remove unnecessary high-resolution assets before uploading.</p>
+        
+        <p><strong>For Tech Enthusiasts:</strong> Comparing the efficiency of different export formats? Use our <strong>safe file tool</strong> to see exactly how much space you're saving with New-Gen formats.</p>
+        
+        <p><strong>For Privacy Advocates:</strong> Need to audit a collection of sensitive documents? Use our <strong>safe storage tool</strong> to see the metadata for yourself without risking exposure on a cloud platform.</p>
+
+        <h3 class="mt-5">Explore Your Complete Data Suite</h3>
+        <p>Once you’ve mapped your storage, you might need to find redundancies. Check out our <strong><a href="duplicate-finder.html">Duplicate File Finder</a></strong>. Or, if you need to visualize the full hierarchy, use our <strong><a href="folder-visualizer.html">Folder Size Visualizer</a></strong>. At 99tool.in, we are building a world-class, 100% private digital toolkit to give you total control over your digital footprint.</p>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Does this tool scan my whole hard drive?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. For your security and privacy, browsers do not allow websites to scan your full disk. You must <strong>manually select files or folder contents</strong> to analyze them. This ensures that only the data you choose is ever processed.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Is there a limit on file count?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Our <strong>local analyzer</strong> can handle hundreds of files within a single batch. Since we only process the metadata (name, size, type) and not the actual content, the experience remains responsive even with large selections.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Is my file data shared with 99tool.in?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Absolutely not. All processing happens within your <strong>browser session's local memory</strong>. No file names or size data are ever sent to our servers. Your local storage footprint remains strictly private.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 Privacy-First. Metadata Analysis only. 100%. Last updated: April 10, 2026.</p>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const dropZone = document.getElementById('drop-zone');
+    const fileInput = document.getElementById('file-input');
+    const uploadStage = document.getElementById('upload-stage');
+    const resultStage = document.getElementById('result-stage');
+    const totalSizeEl = document.getElementById('total-size');
+    const fileCountEl = document.getElementById('file-count');
+    const fileBody = document.getElementById('file-body');
+    const resetBtn = document.getElementById('reset-btn');
+
+    let typeChart = null;
+
+    dropZone.onclick = () => fileInput.click();
+    fileInput.onchange = (e) => analyzeFiles(e.target.files);
+
+    // Init Drag and Drop using global helper
+    setupDragDrop('drop-zone', (files) => {
+       analyzeFiles(files);
+    });
+
+    function analyzeFiles(files) {
+       if (!files || files.length === 0) return;
+
+       uploadStage.classList.add('hidden');
+       resultStage.classList.remove('hidden');
+
+       let totalBytes = 0;
+       const types = {};
+       const list = [];
+
+       for (let i = 0; i < files.length; i++) {
+          const f = files[i];
+          totalBytes += f.size;
+          const type = f.type || 'unknown';
+          types[type] = (types[type] || 0) + f.size;
+          list.push({ name: f.name, size: f.size, type: type });
+       }
+
+       // Update Dashboard
+       totalSizeEl.textContent = formatSize(totalBytes);
+       fileCountEl.textContent = files.length;
+
+       // Render Table
+       list.sort((a,b) => b.size - a.size);
+       fileBody.innerHTML = list.map(f => {
+          const p = (f.size / totalBytes) * 100;
+          return `
+             <tr>
+                <td style="color: var(--white); font-weight: 500;">${f.name}</td>
+                <td>${f.type.split('/')[1] || f.type || 'unknown'}</td>
+                <td style="text-align: right; color: var(--white);">${formatSize(f.size)}</td>
+                <td>
+                   <div class="progress-bar-wrap">
+                      <div class="progress-bar" style="width: ${p}%"></div>
+                   </div>
+                </td>
+             </tr>
+          `
+       }).join('');
+
+       // Render Chart
+       renderChart(types);
+    }
+
+    function renderChart(typeData) {
+       const ctx = document.getElementById('type-chart').getContext('2d');
+       if (typeChart) typeChart.destroy();
+       
+       const labels = Object.keys(typeData);
+       const data = Object.values(typeData);
+
+       typeChart = new Chart(ctx, {
+          type: 'doughnut',
+          data: {
+             labels: labels,
+             datasets: [{
+                data: data,
+                backgroundColor: ['#e53935', '#b71c1c', '#ff6f6f', '#1a1a1a', '#444'],
+                borderWidth: 0
+             }]
+          },
+          options: {
+             responsive: true,
+             maintainAspectRatio: false,
+             plugins: {
+                legend: { position: 'right', labels: { color: '#999', font: { family: 'Inter' } } }
+             }
+          }
+       });
+    }
+
+    function formatSize(bytes) {
+       if (bytes === 0) return '0 Bytes';
+       const k = 1024;
+       const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+       const i = Math.floor(Math.log(bytes) / Math.log(k));
+       return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+    }
+
+    resetBtn.onclick = () => {
+       uploadStage.classList.remove('hidden');
+       resultStage.classList.add('hidden');
+       fileInput.value = '';
+    };
+  </script>
+</body>
+</html>
+

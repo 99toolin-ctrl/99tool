@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Local Calendar Planner – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/productivity/local-calendar-planner.html"/>
+<meta property="og:title" content="Local Calendar Planner – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/productivity/local-calendar-planner.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Local Calendar Planner \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/productivity/local-calendar-planner.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="calendar planner, daily planner calendar, simple calendar tool, schedule planner free, calendar planner" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json" id="schema-org-data">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Local Calendar Planner",
+    "operatingSystem": "Any",
+    "applicationCategory": "UtilitiesApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Interactive calendar GUI, Local event storage, Daily task planning, No data sync"
+  }
+  </script>
+
+  <style>
+    .calendar-container {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-top: 20px;
+    }
+
+    .calendar-header {
+      padding: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      background: #1a1a1a;
+    }
+
+    .calendar-header h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .cal-nav {
+      display: flex;
+      gap: 10px;
+    }
+
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .day-name {
+      padding: 12px;
+      text-align: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      background: rgba(255, 255, 255, 0.03);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .calendar-day {
+      min-height: 110px;
+      padding: 10px;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      transition: background 0.2s;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .calendar-day:nth-child(7n) { border-right: none; }
+    .calendar-day:hover { background: rgba(229, 57, 53, 0.05); }
+    .calendar-day.empty { cursor: default; background: rgba(0,0,0,0.1); }
+    .calendar-day.today { background: rgba(229, 57, 53, 0.1); }
+    .calendar-day.today .day-number { color: var(--primary); font-weight: 800; }
+
+    .day-number {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .event-indicator {
+      font-size: 0.75rem;
+      background: var(--primary);
+      color: white;
+      padding: 2px 6px;
+      border-radius: 4px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-bottom: 4px;
+    }
+
+    .more-events {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    /* Event Modal/Panel */
+    .event-panel {
+      padding: 30px;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-top: 30px;
+      display: none;
+    }
+
+    .event-panel.show { display: block; }
+
+    .event-list {
+      margin-top: 20px;
+    }
+
+    .event-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px;
+      background: var(--dark);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      margin-bottom: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .calendar-day { min-height: 80px; padding: 6px; }
+      .day-number { font-size: 0.8rem; }
+      .event-indicator { font-size: 0.65rem; padding: 1px 4px; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/productivity/local-calendar-planner.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/productivity/local-calendar-planner.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/productivity/local-calendar-planner.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/productivity/local-calendar-planner.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/productivity/local-calendar-planner.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/productivity/local-calendar-planner.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/productivity/local-calendar-planner.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/productivity/local-calendar-planner.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/productivity/local-calendar-planner.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/productivity/local-calendar-planner.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/productivity/local-calendar-planner.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/productivity/local-calendar-planner.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/productivity/local-calendar-planner.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/productivity/local-calendar-planner.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/productivity/local-calendar-planner.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/productivity/local-calendar-planner.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/productivity/local-calendar-planner.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/productivity/local-calendar-planner.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/productivity/local-calendar-planner.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/productivity/local-calendar-planner.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/productivity/local-calendar-planner.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/productivity/local-calendar-planner.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#productivity">Productivity</a> <span>/</span> 
+        <span>Local Calendar Planner</span>
+      </nav>
+      <h1>Calendar Planner</h1>
+      <p>Stay on top of your schedule with a private daily planner. No data syncing, no tracking—just your events, your way.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div class="calendar-container">
+        <div class="calendar-header">
+          <h2 id="current-month-year">April 2026</h2>
+          <div class="cal-nav">
+            <button class="btn btn-secondary btn-sm" id="prev-month">←</button>
+            <button class="btn btn-secondary btn-sm" id="next-month">→</button>
+          </div>
+        </div>
+        <div class="calendar-grid" id="day-names">
+          <div class="day-name">Sun</div>
+          <div class="day-name">Mon</div>
+          <div class="day-name">Tue</div>
+          <div class="day-name">Wed</div>
+          <div class="day-name">Thu</div>
+          <div class="day-name">Fri</div>
+          <div class="day-name">Sat</div>
+        </div>
+        <div class="calendar-grid" id="calendar-days">
+          <!-- JS will populate -->
+        </div>
+      </div>
+
+      <div class="event-panel" id="event-panel">
+        <div class="flex justify-between items-center mb-3">
+          <h3 id="panel-date-title">Events for April 10</h3>
+          <button class="btn btn-secondary btn-sm" id="close-panel">Close</button>
+        </div>
+        
+        <div class="form-group mb-2">
+          <label>Add New Event</label>
+          <div class="flex gap-2">
+            <input type="text" id="event-input" class="form-control" placeholder="Buy groceries, Meeting with team...">
+            <button class="btn btn-primary" id="add-event-btn">Add</button>
+          </div>
+        </div>
+
+        <div class="event-list" id="event-list">
+          <!-- JS will populate -->
+        </div>
+      </div>
+
+      <div class="info-box mt-4">
+        <span class="info-icon">📅</span>
+        <p>Your calendar events are stored locally in your browser. This tool works entirely and keeps your schedule private.</p>
+      </div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.calendar_planner.what_is_title">What is the Calendar Planner?</h2>
+        <p>The Calendar Planner is a private scheduling utility designed to help you organize your daily tasks and events. Traditional calendar applications sync your scheduling information to third-party servers. In contrast, this calendar organizer operates entirely offline in your browser, keeping your schedule private.</p>
+        <p>Using a grid-based monthly view, this tool displays your scheduled tasks at a glance. It integrates with your browser's local storage to save your inputs securely on your own device.</p>
+
+        <h3 class="mt-4">How to Use the Calendar Planner</h3>
+        <p>Organizing your monthly schedule involves the following steps:</p>
+        <ol class="mt-2 mb-3">
+          <li>Use the navigation arrows (← and →) at the top of the calendar grid to switch between months.</li>
+          <li>Click directly on any day number in the grid to open the event panel for that day.</li>
+          <li>In the "Add New Event" text field, type a title for your task or appointment.</li>
+          <li>Click the "Add" button. The task will appear instantly in the day's event list, and an indicator will appear on the calendar grid.</li>
+          <li>Click "×" next to any list item to delete it, or click "Close" to shut the active entry panel.</li>
+        </ol>
+
+        <h3 class="mt-4">Key Features of the Monthly Planner</h3>
+        <ul class="mt-2 mb-3">
+          <li><strong>Interactive Monthly Grid:</strong> Clear day grid layout showing active event indicators for each date.</li>
+          <li><strong>Slide-Open Event Panel:</strong> Dedicated panel interface to add, review, and clear specific items for any selected date.</li>
+          <li><strong>Persistent Event Cache:</strong> Saves all entries locally so your monthly agenda is preserved when you close or refresh the tab.</li>
+          <li><strong>Responsive Mobile Adaptations:</strong> Adapts layout dynamically to fit mobile viewports and tablets.</li>
+        </ul>
+
+        <h3 class="mt-4">Common Use Cases</h3>
+        <p>This local organizer is helpful for the following tasks:</p>
+        <ul class="mt-2 mb-3">
+          <li><strong>Private Project Tracking:</strong> Logging key internal milestones or deliverables without disclosing sensitive project timelines to public cloud systems.</li>
+          <li><strong>Activity and Workout Logging:</strong> Recording exercise routines, workout days, or physical therapy appointments on a daily grid.</li>
+          <li><strong>Personal Habit Audits:</strong> Checking off key dates to track long-term habits, travel schedules, or bill due dates.</li>
+        </ul>
+
+        <h3 class="mt-4">Frequently Asked Questions</h3>
+        <div class="faq-section mt-3">
+          <p><strong>Can I sync this calendar with external platforms?</strong><br>No. To maintain complete privacy, this tool does not sync with external accounts or cloud calendars. All data remains saved on your local device.</p>
+          <p><strong>Is there a limit to the number of events I can save?</strong><br>The only limit is your browser's local storage threshold (usually around 5MB). You can schedule thousands of daily events without experiencing any performance delays.</p>
+          <p><strong>How do I back up my calendar?</strong><br>Your schedule is tied to your browser's local profile data. Clearing your browser's site cookies and site data will delete your calendar. We recommend keeping your browser profile backed up.</p>
+          <p><strong>Does the tool work without internet access?</strong><br>Yes. Once loaded, the calendar planner runs offline. You can open and use it without active network access.</p>
+        </div>
+
+        <h3 class="mt-4">Privacy & Data Note</h3>
+        <p>All scheduled dates, task descriptions, and calendar events are processed locally on your machine. Your data is stored securely in your browser's local storage sandbox and is never transmitted to remote servers.</p>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 100% Privacy Focused. No data sync. No cookies. Last updated: April 10, 2026.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    let currentDate = new Date();
+    let selectedDate = null;
+    let events = JSON.parse(localStorage.getItem('99tool_calendar_events')) || {};
+
+    const monthDisplay = document.getElementById('current-month-year');
+    const dayGrid = document.getElementById('calendar-days');
+    const prevBtn = document.getElementById('prev-month');
+    const nextBtn = document.getElementById('next-month');
+    const panel = document.getElementById('event-panel');
+    const panelTitle = document.getElementById('panel-date-title');
+    const eventInput = document.getElementById('event-input');
+    const addEventBtn = document.getElementById('add-event-btn');
+    const eventList = document.getElementById('event-list');
+    const closePanel = document.getElementById('close-panel');
+
+    function renderCalendar() {
+      dayGrid.innerHTML = '';
+      const year = currentDate.getFullYear();
+      const month = currentDate.getMonth();
+      
+      const firstDay = new Date(year, month, 1).getDay();
+      const daysInMonth = new Date(year, month + 1, 0).getDate();
+      
+      monthDisplay.textContent = new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric' }).format(currentDate);
+
+      // Empty days before start
+      for (let i = 0; i < firstDay; i++) {
+        const d = document.createElement('div');
+        d.className = 'calendar-day empty';
+        dayGrid.appendChild(d);
+      }
+
+      // Actual days
+      const today = new Date();
+      for (let day = 1; day <= daysInMonth; day++) {
+        const d = document.createElement('div');
+        const dateKey = `${year}-${month + 1}-${day}`;
+        const isToday = today.getDate() === day && today.getMonth() === month && today.getFullYear() === year;
+        
+        d.className = `calendar-day ${isToday ? 'today' : ''}`;
+        d.innerHTML = `<div class="day-number">${day}</div>`;
+        
+        // Event indicators
+        if (events[dateKey] && events[dateKey].length > 0) {
+          events[dateKey].slice(0, 2).forEach(ev => {
+            const di = document.createElement('div');
+            di.className = 'event-indicator';
+            di.textContent = ev;
+            d.appendChild(di);
+          });
+          if (events[dateKey].length > 2) {
+            d.innerHTML += `<div class="more-events">+ ${events[dateKey].length - 2} more</div>`;
+          }
+        }
+
+        d.onclick = () => openEventPanel(dateKey);
+        dayGrid.appendChild(d);
+      }
+    }
+
+    function openEventPanel(dateKey) {
+      selectedDate = dateKey;
+      panel.classList.add('show');
+      panelTitle.textContent = `Events for ${dateKey}`;
+      renderEventList();
+      panel.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function renderEventList() {
+      eventList.innerHTML = '';
+      const dayEvents = events[selectedDate] || [];
+      
+      if (dayEvents.length === 0) {
+        eventList.innerHTML = '<p class="text-muted">No events scheduled for this day.</p>';
+      } else {
+        dayEvents.forEach((ev, idx) => {
+          const item = document.createElement('div');
+          item.className = 'event-item';
+          item.innerHTML = `
+            <span>${ev}</span>
+            <button class="btn btn-secondary btn-sm" onclick="deleteEvent(${idx})">×</button>
+          `;
+          eventList.appendChild(item);
+        });
+      }
+    }
+
+    window.deleteEvent = (idx) => {
+      events[selectedDate].splice(idx, 1);
+      if (events[selectedDate].length === 0) delete events[selectedDate];
+      saveEvents();
+      renderEventList();
+      renderCalendar();
+    };
+
+    function saveEvents() {
+      localStorage.setItem('99tool_calendar_events', JSON.stringify(events));
+    }
+
+    addEventBtn.onclick = () => {
+      const val = eventInput.value.trim();
+      if (!val) return;
+      if (!events[selectedDate]) events[selectedDate] = [];
+      events[selectedDate].push(val);
+      eventInput.value = '';
+      saveEvents();
+      renderEventList();
+      renderCalendar();
+    };
+
+    closePanel.onclick = () => panel.classList.remove('show');
+
+    prevBtn.onclick = () => { currentDate.setMonth(currentDate.getMonth() - 1); renderCalendar(); };
+    nextBtn.onclick = () => { currentDate.setMonth(currentDate.getMonth() + 1); renderCalendar(); };
+
+    // Init
+    renderCalendar();
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

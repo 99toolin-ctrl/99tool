@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Code Snippet Manager – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/developer/code-snippet-manager.html"/>
+<meta property="og:title" content="Code Snippet Manager – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/developer/code-snippet-manager.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Code Snippet Manager \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/developer/code-snippet-manager.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="code snippet manager, snippet organizer, save code snippets, developer tools, code vault" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json" id="schema-org-data">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Code Snippet Manager",
+    "operatingSystem": "Any",
+    "applicationCategory": "DeveloperApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Save snippets, Searchable database, Tag organization, One-click copy"
+  }
+  </script>
+
+  <style>
+    .snippet-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    .snippet-card {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .snippet-card:hover { border-color: var(--primary); }
+
+    .snippet-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .snippet-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .snippet-tags {
+      display: flex;
+      gap: 8px;
+    }
+
+    .tag-pill {
+      background: rgba(229, 57, 53, 0.1);
+      color: var(--primary-light);
+      padding: 2px 10px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .snippet-code-wrap {
+      background: var(--dark);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      margin: 12px 0;
+      max-height: 250px;
+      overflow: auto;
+      font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', monospace;
+      font-size: 0.82rem;
+      white-space: pre-wrap;
+    }
+
+    .snippet-footer {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    #add-form-modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.8);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-content {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      width: 100%;
+      max-width: 600px;
+      padding: 30px;
+    }
+
+    @media (min-width: 900px) {
+      .snippet-layout { grid-template-columns: 300px 1fr; }
+    }
+    
+    .sidebar {
+       background: var(--dark-card);
+       padding: 24px;
+       border-radius: var(--radius);
+       border: 1px solid var(--border);
+       height: fit-content;
+       position: sticky;
+       top: 100px;
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/developer/code-snippet-manager.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/developer/code-snippet-manager.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/developer/code-snippet-manager.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/developer/code-snippet-manager.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/developer/code-snippet-manager.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/developer/code-snippet-manager.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/developer/code-snippet-manager.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/developer/code-snippet-manager.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/developer/code-snippet-manager.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/developer/code-snippet-manager.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/developer/code-snippet-manager.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/developer/code-snippet-manager.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/developer/code-snippet-manager.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/developer/code-snippet-manager.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/developer/code-snippet-manager.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/developer/code-snippet-manager.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/developer/code-snippet-manager.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/developer/code-snippet-manager.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/developer/code-snippet-manager.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/developer/code-snippet-manager.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/developer/code-snippet-manager.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/developer/code-snippet-manager.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#developer">Developer</a> <span>/</span> 
+        <span>Code Snippet Manager</span>
+      </nav>
+      <h1>Code Snippet Manager</h1>
+      <p>Your personal vault for reusable code pieces. Save, tag, and find snippets instantly without an account.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div class="snippet-layout">
+        <aside class="sidebar">
+          <button class="btn btn-primary btn-full mb-4" id="open-add-btn">+ Add New Snippet</button>
+          
+          <div class="form-group">
+            <label>Search Snippets</label>
+            <input type="text" id="search-input" class="form-control" placeholder="Type title or tag...">
+          </div>
+
+          <div class="stats mt-4 py-3 border-top" style="font-size: 0.85rem; color: var(--text-muted);">
+             Total Saved: <span id="total-count" style="color:var(--white)">0</span>
+          </div>
+        </aside>
+
+        <section id="snippet-list">
+          <!-- Snippets injected here -->
+          <div class="text-center py-5 text-muted">No snippets found. Click "Add New Snippet" to get started!</div>
+        </section>
+      </div>
+
+      <!-- Add Modal -->
+      <div id="add-form-modal">
+        <div class="modal-content">
+          <h2 class="mb-4">Save New Snippet</h2>
+          <div class="form-group">
+            <label>Title</label>
+            <input type="text" id="new-title" class="form-control" placeholder="e.g., Python Quick Sort">
+          </div>
+          <div class="form-group">
+            <label>Code</label>
+            <textarea id="new-code" class="form-control" style="min-height: 200px; font-family: monospace;" placeholder="Paste code here..."></textarea>
+          </div>
+          <div class="form-group">
+            <label>Tags (comma separated)</label>
+            <input type="text" id="new-tags" class="form-control" placeholder="python, algo, sorting">
+          </div>
+          <div class="flex gap-2 justify-end mt-4">
+            <button class="btn btn-secondary" id="close-modal-btn">Cancel</button>
+            <button class="btn btn-primary" id="save-snippet-btn">Save Snippet</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTENT SECTION -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.code_snippet_manager.what_is_title">What is the Code Snippet Manager?</h2>
+        <p>The Code Snippet Manager is a client-side snippet vault developed to help developers catalog, organize, and quickly retrieve code blocks. By leveraging browser storage, developers can maintain a personal library of boilerplates, utility functions, and complex commands without connecting to cloud services.</p>
+        <p>This organizer stores all titles, languages, tags, and code blocks locally in your browser's persistent LocalStorage. Because no database connection is established and no snippets are synced to external networks, your intellectual property remains private on your machine.</p>
+
+        <h2 class="mt-4" data-i18n="tools.code_snippet_manager.how_to_use_title">How to Use the Code Snippet Manager</h2>
+        <ol>
+          <li><strong>Open the Snippet Form:</strong> Click the "+ Add New Snippet" button to trigger the creation modal.</li>
+          <li><strong>Fill in the Metadata:</strong> Enter a descriptive title, choose the programming language (such as JavaScript, Python, HTML, CSS, SQL, Shell, or Markdown), and input relevant tags.</li>
+          <li><strong>Save the Snippet:</strong> Paste your code string into the code editor textarea and click "Save Snippet." The snippet card will generate instantly in the main dashboard grid.</li>
+          <li><strong>Filter and Search:</strong> Use the global search bar to filter snippets by title, code content, or tag keywords in real-time.</li>
+          <li><strong>Use Your Snippets:</strong> Click the "Copy" button on any snippet card to copy the code block to your clipboard. To remove a snippet, click "Delete."</li>
+        </ol>
+
+        <h2 class="mt-4" data-i18n="tools.code_snippet_manager.key_features_title">Key Features</h2>
+        <ul>
+          <li><strong>Persistent Storage:</strong> Saves your code blocks across browser refreshes and system reboots using LocalStorage.</li>
+          <li><strong>Tag-Based Categorization:</strong> Filter and search snippets by language keywords or project-specific tags.</li>
+          <li><strong>Single-Click Clipboard Copying:</strong> Copy syntax snippets instantly to decrease typing overhead and formatting bugs.</li>
+          <li><strong>Multi-Language Highlighting:</strong> Supports JavaScript, Python, HTML, CSS, SQL, shell scripts, and Markdown structures.</li>
+          <li><strong>100% Offline Run:</strong> Retains data locally within the browser sandbox to secure your code.</li>
+        </ul>
+
+        <h2 class="mt-4" data-i18n="tools.code_snippet_manager.common_use_cases_title">Common Use Cases</h2>
+        <ul>
+          <li><strong>SQL Query Logs:</strong> Store complex database joins, index updates, and migrations for easy reference.</li>
+          <li><strong>Boilerplate code:</strong> Keep clean configurations for React components, flexbox setups, and HTML skeletons.</li>
+          <li><strong>Shell script utilities:</strong> Catalog deployment scripts, Docker commands, and system cron jobs.</li>
+          <li><strong>Algorithm libraries:</strong> Organize sorting routines, graph traversal functions, and regex patterns for coding assignments.</li>
+        </ul>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section mt-5">
+        <h2 data-i18n="tools.code_snippet_manager.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Is there a limit on how many snippets I can save?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>The manager uses LocalStorage, which typically supports 5MB to 10MB of data. This capacity is sufficient to store thousands of standard text code snippets.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Are my snippets synced across different devices?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. To maintain complete privacy, all data is stored locally in the specific browser and device you are currently using. No cloud sync services are active.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              How do I export my snippets for backup?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>All snippets are stored in your browser's local cache. If you clear your browser's site data or cookies, your snippets will be removed. We recommend keeping master copies of critical scripts in your version control repository.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I store sensitive credentials or API keys?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>We recommend against saving plain-text passwords or active API production keys in any browser storage. Use dedicated local environment files (.env) or secure password managers for production secrets.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Does 99tool.in have access to my snippet library?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. The Code Snippet Manager operates entirely in your client-side environment. No analytics are tracked, and no data packets are sent to 99tool.in servers.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 Privacy & Data Note: Code snippets, metadata, and tags are stored locally in your browser's storage. No data is sent to our servers.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const snippetList = document.getElementById('snippet-list');
+    const totalCount = document.getElementById('total-count');
+    const searchInput = document.getElementById('search-input');
+    const modal = document.getElementById('add-form-modal');
+    
+    let snippets = JSON.parse(localStorage.getItem('99tool_snippets')) || [];
+
+    function renderSnippets() {
+      const q = searchInput.value.toLowerCase().trim();
+      const filtered = snippets.filter(s => 
+        s.title.toLowerCase().includes(q) || 
+        s.tags.some(t => t.toLowerCase().includes(q))
+      );
+
+      snippetList.innerHTML = '';
+       totalCount.textContent = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(snippets.length, 0) : snippets.length;
+
+      if (filtered.length === 0) {
+        snippetList.innerHTML = `<div class="text-center py-5 text-muted">${q ? 'No matches found.' : 'No snippets saved yet.'}</div>`;
+        return;
+      }
+
+      filtered.forEach((s, idx) => {
+        const card = document.createElement('div');
+        card.className = 'snippet-card';
+        card.innerHTML = `
+          <div class="snippet-header">
+            <div class="snippet-title">${escapeHTML(s.title)}</div>
+            <div class="snippet-tags">
+              ${s.tags.map(t => `<span class="tag-pill">${escapeHTML(t)}</span>`).join('')}
+            </div>
+          </div>
+          <div class="snippet-code-wrap">${escapeHTML(s.code)}</div>
+          <div class="snippet-footer">
+            <button class="btn btn-secondary btn-sm" onclick="copySnippet(${idx}, this)">Copy</button>
+            <button class="btn btn-secondary btn-sm" onclick="deleteSnippet(${idx})" style="color: var(--primary)">Delete</button>
+          </div>
+        `;
+        snippetList.appendChild(card);
+      });
+    }
+
+    function saveSnippet() {
+      const title = document.getElementById('new-title').value.trim();
+      const code = document.getElementById('new-code').value.trim();
+      const tagsStr = document.getElementById('new-tags').value.trim();
+
+      if (!title || !code) {
+        alert('Please provide at least a title and code.');
+        return;
+      }
+
+      const tags = tagsStr ? tagsStr.split(',').map(t => t.trim()) : [];
+      
+      snippets.unshift({ title, code, tags, time: new Date().getTime() });
+      localStorage.setItem('99tool_snippets', JSON.stringify(snippets));
+      
+      closeModal();
+      renderSnippets();
+    }
+
+    window.copySnippet = (idx, btn) => {
+      copyToClipboard(snippets[idx].code, btn);
+    };
+
+    window.deleteSnippet = (idx) => {
+      if (confirm('Are you sure you want to delete this snippet?')) {
+        snippets.splice(idx, 1);
+        localStorage.setItem('99tool_snippets', JSON.stringify(snippets));
+        renderSnippets();
+      }
+    };
+
+    function escapeHTML(str) {
+      const div = document.createElement('div');
+      div.textContent = str;
+      return div.innerHTML;
+    }
+
+    // Modal logic
+    document.getElementById('open-add-btn').onclick = () => {
+      modal.style.display = 'flex';
+      document.getElementById('new-title').focus();
+    }
+    const closeModal = () => {
+      modal.style.display = 'none';
+      document.getElementById('new-title').value = '';
+      document.getElementById('new-code').value = '';
+      document.getElementById('new-tags').value = '';
+    };
+    document.getElementById('close-modal-btn').onclick = closeModal;
+    document.getElementById('save-snippet-btn').onclick = saveSnippet;
+
+    searchInput.oninput = renderSnippets;
+
+    // Init
+    renderSnippets();
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

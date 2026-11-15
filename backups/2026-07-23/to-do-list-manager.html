@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>To Do List Manager – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/productivity/to-do-list-manager.html"/>
+<meta property="og:title" content="To Do List Manager – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/productivity/to-do-list-manager.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "To Do List Manager \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/productivity/to-do-list-manager.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="to do list manager, free to do list app, simple todo list tool, no login task manager, private to-do list, browser-based to-do" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "To-Do List Manager",
+    "operatingSystem": "Any",
+    "applicationCategory": "UtilitiesApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Task management, storage, task filtering, persistence"
+  }
+  </script>
+  <style>
+    .todo-input-group {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .todo-input-group input {
+      flex: 1;
+    }
+    .todo-list {
+      list-style: none;
+      padding: 0;
+    }
+    .todo-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px;
+      background: var(--dark);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      margin-bottom: 10px;
+      transition: transform var(--transition);
+    }
+    .todo-item:hover {
+      border-color: var(--primary);
+    }
+    .todo-item.completed span {
+      text-decoration: line-through;
+      color: var(--text-muted);
+    }
+    .todo-item input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+      accent-color: var(--primary);
+    }
+    .todo-item span {
+      flex: 1;
+      font-size: 0.95rem;
+    }
+    .todo-item .delete-task {
+      cursor: pointer;
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      transition: color var(--transition);
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .todo-item .delete-task:hover {
+      color: var(--primary);
+    }
+    .todo-filters {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .filter-btn-group {
+      display: flex;
+      gap: 5px;
+    }
+    .filter-btn {
+      background: var(--dark);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+    .filter-btn.active {
+      background: var(--primary);
+      color: var(--white);
+      border-color: var(--primary);
+    }
+    .clear-completed {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+    .clear-completed:hover {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+    .tool-preview {
+      margin-top: 40px;
+      text-align: center;
+      padding-bottom: 20px;
+    }
+    .tool-preview p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+    .tool-preview img {
+      max-width: 100%;
+      height: auto;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      margin: 0 auto;
+    }
+    .trust-signal {
+      text-align: center;
+      padding: 24px 0;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      margin-top: 40px;
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <!-- HERO -->
+  <section class="tool-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../../index.html">Home</a>
+        <span>›</span>
+        <a href="../../index.html#productivity">Productivity</a>
+        <span>›</span>
+        <span>To-Do List Manager</span>
+      </div>
+      <h1>To-Do List Manager</h1>
+      <p>Organize your day with this simple todo list tool. 100% private,-first, and saves automatically.</p>
+    </div>
+  </section>
+
+  <!-- TOOL -->
+  <main class="tool-main">
+    <div class="container-sm">
+      <div class="tool-box">
+        <div class="todo-input-group">
+          <input type="text" id="todo-input" class="form-control" placeholder="What needs to be done?" autocomplete="off" />
+          <button id="add-todo" class="btn btn-primary">Add</button>
+        </div>
+
+        <ul id="todo-list" class="todo-list">
+          <!-- Tasks will appear here -->
+        </ul>
+
+        <div class="todo-filters" id="todo-filters" style="display: none;">
+          <span id="items-left" style="font-size: 0.8rem; color: var(--text-muted);">0 items left</span>
+          <div class="filter-btn-group">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="active">Active</button>
+            <button class="filter-btn" data-filter="completed">Completed</button>
+          </div>
+          <button id="clear-completed" class="clear-completed">Clear completed</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tool Preview -->
+    <div class="tool-preview container-sm">
+      <p>Here's what it looks like:</p>
+      <img src="../../assets/images/todo-preview.png" alt="To-Do List Preview" loading="lazy" />
+    </div>
+  </m  <!-- SEO CONTENT -->
+  <section class="seo-content mt-5">
+    <div class="container-sm">
+      <h2>Master Your Day in Private: Secure Local Task Management</h2>
+      <p>We’ve all been there: you wake up with a long list of things to do, ranging from simple grocery runs to finishing a high-stakes project report. You look for a <strong>to-do list</strong> online to help you stay organized and keep those "mental tabs" from closing accidentally. But as you look at the "Social Sharing" buttons and "Account Syncing" permissions on most task apps, you realize that your daily agenda, your personal habits, and your professional priorities are being harvested by an anonymous database. Do you really want to share your "Daily Blueprint" with a third-party algorithm?</p>
+
+      <p>At 99tool.in, we built our <strong>to-do list manager</strong> to give you a professional organizer without the privacy debt. By utilizing browser-side task persistence and local storage logic, we allow you to <strong>manage your tasks</strong> entirely within the secure sandbox of your own machine. Whether you’re a busy parent juggling family logistics, a student managing a heavy course load, or a professional tracking daily "must-dos," our <strong>safe task tool</strong> ensures that your agenda stays exactly where it belongs: on your device, under your total sovereignty.</p>
+      
+      <div class="tool-preview-box mt-4 mb-4" style="text-align:center;">
+         <img src="../../assets/images/todo-preview.png" alt="Clean To-Do List Workspace with Categorized Tasks" class="tool-preview" id="tool-preview-img" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+      </div>
+
+      <h3 class="mt-4">The Logic of Priority Execution</h3>
+      <p>Productivity isn't just about lists; it’s about "Execution Logic." Most complex <strong>task management apps</strong> overwhelm you with tags, sub-tasks, and reminders, causing "Decision Fatigue." Our <strong>professional to-do list</strong> takes a human-centric approach: we focus on **Minimalist Clarity** and **Instant Feedback**.</p>
+      
+      <p>We provide a "frictless" entry system where you can add a task and see it immediately in your active list. Our <strong>safe todo validator</strong> doesn't just store text; it provides a real-time "Items Left" counter and visual filters for active and completed tasks. This transparency helps you manage your cognitive load, allowing you to focus on the task at hand rather than the complexity of the tool itself.</p>
+
+      <h3 class="mt-4">Why Tasking is the Professional’s Ethical Choice</h2>
+      <p>In the age of digital surveillance, the way you spend your time is a valuable roadmap of your potential. When you use a standard <strong>to do list app online free</strong> service, you are essentially giving away your "Intent Data" for a third party to analyze. Our 100% <strong>task utility</strong> removes this "Surveillance Risk" entirely from your daily routine.</p>
+      
+      <p>Because the logic and storage happen in your browser's private memory, your lists are invisible to the outside world. No analytics are tracked, no agendas are harvested, and no personal habits are shared with advertisers or AI models. At 99tool.in, we believe that <strong>organizing your day</strong> should be an empowering utility, not a data-mining trap. With us, you have a private, professional notepad that fits in your browser tab.</p>
+
+      <h3 class="mt-4">How to Conquer Your Agenda (Step-by-Step)</h3>
+      <p>Managing your tasks should be a high-speed, 5-second task. Here is how to use our <strong>to-do list</strong>:</p>
+      <ul style="line-height: 1.8; margin-bottom: 20px;">
+        <li><strong>Step 1: Capture the Thought</strong> — Type your task into the input box (e.g., "Review Q3 Budget" or "Call the Plumber"). Press Enter or click "Add" to commit it to your local list.</li>
+        <li><strong>Step 2: Track Your Progress</strong> — As you work through your day, use the checkboxes to mark items as complete. This visual "Cross-Off" provides an instant psychological win.</li>
+        <li><strong>Step 3: Filter Your Focus</strong> — Use the "Active" or "Completed" filters to tidy up your view and focus only on what remains to be done.</li>
+        <li><strong>Step 4: Secure Your Success</strong> — Use "Clear Completed" to purge your finished tasks. Your active list survives browser restarts, keeping your momentum alive without any cloud login.</li>
+      </ul>
+
+      <h3 class="mt-4">Strategic Use Cases for Your Local To-Do List</h3>
+      <p>Our <strong>simple todo tool</strong> is the essential companion for varied professional and personal life:</p>
+      
+      <p><strong>For Remote Workers:</strong> Juggling professional deadlines and home chores? Use our <strong>to-do list</strong> to keep a combined, private agenda that ensures you never miss a beat without syncing it to a corporate tracker.</p>
+      
+      <p><strong>For Project Sprints:</strong> Managing a fast-moving, sensitive project? Use our <strong>safe task manager</strong> to jot down rapid-fire requirements or bug fixes that shouldn't yet touch a shared documentation cloud.</p>
+      
+      <p><strong>For Privacy Advocates:</strong> Keeping a "Sensitive" list of calls to make or bank errands? Use our <strong>private to-do list</strong> to ensure those personal movements are never indexed by an external server.</p>
+
+      <h3 class="mt-5">Explore Your Complete Productivity Suite</h3>
+      <p>Once you’ve successfully mastered your daily tasks, you might need to manage more complex projects. Check out our <strong><a href="kanban-board.html">Kanban Board</a></strong>. Or, if you need to build long-term routines, use our <strong><a href="daily-habit-tracker.html">Habit Tracker</a></strong>. At 99tool.in, we are building a world-class, 100% private digital toolkit to give you total control over your digital life.</p>
+    </div>
+  </section>  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="container-sm">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">Are my tasks stored on your servers?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>Not a single byte. We don't even have a database for your tasks. Everything is saved directly in your browser's private memory (<code>localStorage</code>). Your daily agenda is your business, and it stays exactly where it belongs: on your device.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Is there a limit to how many items I can add?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>There is no software-defined limit. You can add hundreds of tasks. However, for maximum productivity and to avoid "Analysis Paralysis," we recommend focusing on your "Top 3-5" high-impact items for the day.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Why did my list disappear?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>Since data is stored locally in your browser, clearing your "Site Data," "Cache," or "LocalStorage" for 99tool.in will wipe the list. It's like throwing away a physical sticky note — once it's gone, it's gone! We recommend taking a screenshot or copying long lists if you plan to clear your browser.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Can I use this for complex project management?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>This tool is designed for "Rapid Daily Execution." For complex, multi-stage projects, we recommend using our **Kanban Board** tool, which allows for visual drag-and-drop workflow management.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Does it work on mobile phones?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>Yes, the tool is fully responsive and works perfectly on mobile browsers. It’s an ideal way to keep a shopping list or quick "To-Dos" handy while you’re on the move, without needing to install a heavy app.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Is it possible to sync with my Google Calendar?<span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>No. To ensure 100% privacy, we do not connect to external APIs or third-party calendars. This tool is a isolated and secure environment for your most sensitive daily tasks.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container trust-signal">
+    Last updated: June 2025
+  </div>
+
+  <div id="site-footer"></div>
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const todoInput = document.getElementById('todo-input');
+    const addTodoBtn = document.getElementById('add-todo');
+    const todoList = document.getElementById('todo-list');
+    const todoFilters = document.getElementById('todo-filters');
+    const itemsLeft = document.getElementById('items-left');
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const clearCompletedBtn = document.getElementById('clear-completed');
+
+    let todos = JSON.parse(localStorage.getItem('99tool_todos')) || [];
+    let currentFilter = 'all';
+
+    function saveTodos() {
+      localStorage.setItem('99tool_todos', JSON.stringify(todos));
+    }
+
+    function render() {
+      todoList.innerHTML = '';
+      let filteredTodos = todos;
+      
+      if (currentFilter === 'active') {
+        filteredTodos = todos.filter(t => !t.completed);
+      } else if (currentFilter === 'completed') {
+        filteredTodos = todos.filter(t => t.completed);
+      }
+
+      filteredTodos.forEach((todo, index) => {
+        const li = document.createElement('li');
+        li.className = `todo-item ${todo.completed ? 'completed' : ''}`;
+        li.innerHTML = `
+          <input type="checkbox" ${todo.completed ? 'checked' : ''} onchange="toggleTodo(${index})">
+          <span>${todo.text}</span>
+          <button class="delete-task" onclick="deleteTodo(${index})" aria-label="Delete task">&times;</button>
+        `;
+        todoList.appendChild(li);
+      });
+
+      const activeCount = todos.filter(t => !t.completed).length;
+      itemsLeft.textContent = `${activeCount} item${activeCount !== 1 ? 's' : ''} left`;
+      
+      // Fix: Only show counter/filters if there are tasks
+      if (todos.length > 0) {
+        todoFilters.style.display = 'flex';
+      } else {
+        todoFilters.style.display = 'none';
+      }
+      
+      saveTodos();
+    }
+
+    function addTodo() {
+      const text = todoInput.value.trim();
+      if (text) {
+        todos.push({ text, completed: false });
+        todoInput.value = '';
+        render();
+      }
+    }
+
+    window.toggleTodo = function(index) {
+      // Find actual index if filtered
+      if (currentFilter !== 'all') {
+         const filtered = todos.filter(t => {
+            if (currentFilter === 'active') return !t.completed;
+            if (currentFilter === 'completed') return t.completed;
+            return true;
+         });
+         const item = filtered[index];
+         const realIndex = todos.indexOf(item);
+         todos[realIndex].completed = !todos[realIndex].completed;
+      } else {
+        todos[index].completed = !todos[index].completed;
+      }
+      render();
+    };
+
+    window.deleteTodo = function(index) {
+       if (currentFilter !== 'all') {
+         const filtered = todos.filter(t => {
+            if (currentFilter === 'active') return !t.completed;
+            if (currentFilter === 'completed') return t.completed;
+            return true;
+         });
+         const item = filtered[index];
+         const realIndex = todos.indexOf(item);
+         todos.splice(realIndex, 1);
+      } else {
+        todos.splice(index, 1);
+      }
+      render();
+    };
+
+    addTodoBtn.addEventListener('click', addTodo);
+    todoInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') addTodo();
+    });
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentFilter = btn.dataset.filter;
+        render();
+      });
+    });
+
+    clearCompletedBtn.addEventListener('click', () => {
+      todos = todos.filter(t => !t.completed);
+      render();
+    });
+
+    render();
+  </script>
+</body>
+</html>
+

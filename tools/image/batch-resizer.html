@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Batch Resizer – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/image/batch-resizer.html"/>
+<meta property="og:title" content="Batch Resizer – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/image/batch-resizer.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Batch Resizer \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/image/batch-resizer.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="batch image resizer, bulk image resize, resize images, multiple image resizer, secure image tool" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- JSZip for bulk download -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json" id="schema-org-data">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Batch Image Resizer",
+    "operatingSystem": "Any",
+    "applicationCategory": "DesignApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Bulk Resizing, Canvas Processing, ZIP Export, Private local processing"
+  }
+  </script>
+
+  <style>
+    .resizer-layout { display: grid; grid-template-columns: 1fr; gap: 30px; }
+
+    .controls-pane, .queue-pane {
+      background: var(--dark-card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 30px;
+    }
+
+    .form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: var(--white); }
+    .form-control { width: 100%; }
+
+    .queue-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 15px; margin-top: 20px;
+    }
+
+    .queue-card {
+      background: var(--dark); border: 1px solid var(--border); border-radius: var(--radius-sm);
+      padding: 10px; text-align: center; position: relative;
+    }
+    .queue-card img { width: 100%; height: 80px; object-fit: cover; border-radius: 4px; margin-bottom: 8px; }
+    .queue-card .name { font-size: 0.65rem; color: var(--text-muted); word-break: break-all; }
+    .queue-card .status { font-size: 0.6rem; color: var(--primary); font-weight: 700; text-transform: uppercase; margin-top: 5px; }
+
+    @media (min-width: 900px) {
+      .resizer-layout { grid-template-columns: 350px 1fr; }
+    }
+
+    #loading-overlay {
+       position: fixed; top:0; left:0; right:0; bottom:0; background: rgba(0,0,0,0.8);
+       display: flex; flex-direction: column; align-items: center; justify-content: center;
+       z-index: 1000; display: none;
+    }
+    .spinner {
+       width: 40px; height: 40px; border: 4px solid var(--border); border-top-color: var(--primary);
+       border-radius: 50%; animation: spin 1s linear infinite; margin-bottom: 20px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/image/batch-resizer.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/image/batch-resizer.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/image/batch-resizer.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/image/batch-resizer.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/image/batch-resizer.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/image/batch-resizer.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/image/batch-resizer.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/image/batch-resizer.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/image/batch-resizer.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/image/batch-resizer.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/image/batch-resizer.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/image/batch-resizer.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/image/batch-resizer.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/image/batch-resizer.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/image/batch-resizer.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/image/batch-resizer.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/image/batch-resizer.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/image/batch-resizer.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/image/batch-resizer.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/image/batch-resizer.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/image/batch-resizer.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/image/batch-resizer.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#image">Image Tools</a> <span>/</span> 
+        <span>Batch Image Resizer</span>
+      </nav>
+      <h1>Batch Image Resizer</h1>
+      <p>Scale entire collections of images instantly. Set your dimensions once and process hundreds of files in your browser with absolute privacy.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div id="upload-stage">
+        <div class="upload-area" id="drop-zone">
+          <div class="upload-icon">🖼️</div>
+          <h3>Select your images</h3>
+          <p>Drag & drop multiple images or click to browse</p>
+          <input type="file" id="file-input" accept="image/*" multiple class="hidden">
+        </div>
+        <div class="info-box">
+          <div class="info-icon">⚡</div>
+          <p>We use high-performance <strong>Canvas Rendering</strong> to process your images locally. Files are never uploaded, ensuring your visual assets remain secure.</p>
+        </div>
+      </div>
+
+      <div id="process-stage" class="hidden">
+        <div class="resizer-layout">
+           <div class="controls-pane">
+              <h3>Resize Options</h3>
+              <p class="text-muted small mb-4">Apply settings to all selected images.</p>
+
+              <div class="form-group mb-4">
+                 <label>Resize Mode</label>
+                 <select id="resize-mode" class="form-control">
+                    <option value="width">Target Width (Maintain Aspect)</option>
+                    <option value="height">Target Height (Maintain Aspect)</option>
+                    <option value="percentage">Percentage Scale</option>
+                 </select>
+              </div>
+
+              <div class="form-group mb-4">
+                 <label id="val-label">Target Pixels</label>
+                 <input type="number" id="resize-val" class="form-control" value="800">
+              </div>
+
+              <div class="form-group mb-4">
+                 <label>Output Format</label>
+                 <select id="format" class="form-control">
+                    <option value="image/jpeg">JPEG (High Compatible)</option>
+                    <option value="image/png">PNG (Lossless)</option>
+                    <option value="image/webp">WebP (Optimized)</option>
+                 </select>
+              </div>
+
+              <button class="btn btn-primary btn-full" id="start-btn">Process & Zip</button>
+              <button class="btn btn-secondary btn-full mt-3" onclick="location.reload()">Reset Batch</button>
+           </div>
+
+           <div class="queue-pane">
+              <div class="flex justify-between items-center mb-4">
+                 <h3 class="mb-0">Process Queue</h3>
+                 <span class="text-muted small" id="queue-status">0 files selected</span>
+              </div>
+              <div class="queue-grid" id="queue-grid">
+                 <!-- Entries injected -->
+              </div>
+           </div>
+        </div>
+      </div>
+
+      <!-- LOADING OVERLAY -->
+      <div id="loading-overlay">
+         <div class="spinner"></div>
+         <p id="loading-text">Processing images: 0%</p>
+      </div>
+
+      <!-- HUMANIZED CONTENT -->
+    <!-- CONTENT SECTION -->
+    <section class="seo-content mt-5 text-start">
+      <h2 data-i18n="tools.batch_image_resizer.what_is_title">What is the Batch Image Resizer?</h2>
+      <p>The Batch Image Resizer is a client-side image processing utility designed to scale multiple images simultaneously. By setting target dimensions or percentage scales, users can resize batches of photos, screenshots, and designs locally in their browser.</p>
+      <p>This utility processes all image loading, aspect ratio scaling, canvas redraw operations, and ZIP bundling locally in your browser memory. Your original graphics, photos, and resized files are never uploaded to any server, ensuring complete confidentiality.</p>
+
+      <h2 class="mt-4" data-i18n="tools.batch_image_resizer.how_to_use_title">How to Use the Batch Image Resizer</h2>
+      <ol>
+        <li><strong>Select Your Images:</strong> Drag and drop multiple image files into the dotted drop zone, or click to browse and select them.</li>
+        <li><strong>Choose Resize Mode:</strong> Select "Target Width", "Target Height", or "Percentage Scale" from the dropdown menu.</li>
+        <li><strong>Define Value:</strong> Input the target pixel dimension or scale percentage in the value field (e.g., 800 for width, or 50 for half size).</li>
+        <li><strong>Set Output Format:</strong> Choose your preferred file format (JPEG, PNG, or WebP) from the format selector.</li>
+        <li><strong>Process and Save:</strong> Click the "Process & Zip" button. Once background queue rendering completes, the ZIP archive downloads automatically.</li>
+      </ol>
+
+      <h2 class="mt-4" data-i18n="tools.batch_image_resizer.key_features_title">Key Features</h2>
+      <ul>
+        <li><strong>Flexible Resizing Modes:</strong> Scale by target width or height (retaining proportions) or by percentage.</li>
+        <li><strong>Interactive Queue Manager:</strong> View a list of selected files and processing status in a dedicated queue panel.</li>
+        <li><strong>Output Format Control:</strong> Convert output formats dynamically to JPEG, PNG, or WebP during resizing.</li>
+        <li><strong>Bilinear Canvas Rescaling:</strong> Employs high-quality canvas drawing logic to minimize pixelation and blur.</li>
+        <li><strong>ZIP Export Bundling:</strong> Automatically packages all scaled outputs into a single structured ZIP file using JSZip.</li>
+      </ul>
+
+      <h2 class="mt-4" data-i18n="tools.batch_image_resizer.common_use_cases_title">Common Use Cases</h2>
+      <ul>
+        <li><strong>Site Asset Optimizations:</strong> Bulk resize raw website assets to specific container widths for faster page load times.</li>
+        <li><strong>Camera Exports Compression:</strong> Shrink large megapixel camera photos to manageable sizes before sharing with clients.</li>
+        <li><strong>Document Preparation:</strong> Resize screenshots and product photos uniformly before inserting them into company PDFs or docs.</li>
+        <li><strong>E-commerce Product Catalogs:</strong> Format product images to standard dimensions for online store listings.</li>
+      </ul>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-section mt-5">
+      <h2 data-i18n="tools.batch_image_resizer.faq_title">Frequently Asked Questions</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <button class="faq-question">
+            Does the resizer distort my images?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>No. When using "Target Width" or "Target Height" modes, the resizer automatically calculates the other dimension to maintain the original aspect ratio, preventing stretching.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            What is the benefit of WebP output?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Selecting WebP format produces highly optimized images with significantly smaller file sizes than JPEGs or PNGs, making them ideal for web pages.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Are my personal photos uploaded?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>No. All resizing, format conversions, and ZIP packaging occur locally on your machine using JavaScript. No files are ever sent to 99tool.in servers.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            How many files can I process at once?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>You can process dozens of files at once. Since processing runs locally in browser RAM, very large batches (e.g., over 100 images) depend on your computer's performance.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust-signal">
+      <p>🔒 Privacy & Data Note: File selection lists, canvas resizing tasks, and ZIP compilation are processed locally in your browser. No files are stored or uploaded.</p>
+    </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const dropZone = document.getElementById('drop-zone');
+    const fileInput = document.getElementById('file-input');
+    const uploadStage = document.getElementById('upload-stage');
+    const processStage = document.getElementById('process-stage');
+    const queueGrid = document.getElementById('queue-grid');
+    const queueStatus = document.getElementById('queue-status');
+    const resizeMode = document.getElementById('resize-mode');
+    const resizeVal = document.getElementById('resize-val');
+    const valLabel = document.getElementById('val-label');
+    const startBtn = document.getElementById('start-btn');
+    const loadingOverlay = document.getElementById('loading-overlay');
+    const loadingText = document.getElementById('loading-text');
+
+    let filesQueue = [];
+
+    dropZone.onclick = () => fileInput.click();
+    fileInput.onchange = (e) => handleFiles(e.target.files);
+    
+    // Init Drag and Drop using global helper
+    setupDragDrop('drop-zone', (files) => {
+       handleFiles(files);
+    });
+
+    function handleFiles(files) {
+       if (!files.length) return;
+       filesQueue = Array.from(files);
+       uploadStage.classList.add('hidden');
+       processStage.classList.remove('hidden');
+       renderQueue();
+    }
+
+    function renderQueue() {
+       queueStatus.textContent = ((window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(filesQueue.length, 0) : filesQueue.length) + ' files selected';
+       queueGrid.innerHTML = filesQueue.map((f, i) => `
+          <div class="queue-card" id="card-${i}">
+             <img src="${URL.createObjectURL(f)}" alt="thumb">
+             <div class="name">${f.name}</div>
+             <div class="status" id="status-${i}">Pending</div>
+          </div>
+       `).join('');
+    }
+
+    resizeMode.onchange = () => {
+       if (resizeMode.value === 'percentage') {
+          valLabel.textContent = 'Scale Percentage (%)';
+          resizeVal.value = '50';
+       } else {
+          valLabel.textContent = 'Target Pixels';
+          resizeVal.value = '800';
+       }
+    };
+
+    startBtn.onclick = async () => {
+       loadingOverlay.style.display = 'flex';
+       const zip = new JSZip();
+       const format = document.getElementById('format').value;
+       const ext = format.split('/')[1];
+
+       for (let i = 0; i < filesQueue.length; i++) {
+          const file = filesQueue[i];
+          loadingText.textContent = `Processing: ${Math.round((i/filesQueue.length)*100)}% (${file.name})`;
+          document.getElementById(`status-${i}`).textContent = 'Processing...';
+
+          try {
+             const resizedBlob = await resizeImage(file);
+             zip.file(`${file.name.split('.')[0]}_resized.${ext}`, resizedBlob);
+             document.getElementById(`status-${i}`).textContent = 'Done ✅';
+             document.getElementById(`status-${i}`).style.color = '#4caf50';
+          } catch (e) {
+             document.getElementById(`status-${i}`).textContent = 'Error ❌';
+             console.error(e);
+          }
+       }
+
+       loadingText.textContent = 'Generating Export ZIP...';
+       const content = await zip.generateAsync({ type: 'blob' });
+       const link = document.createElement('a');
+       link.href = URL.createObjectURL(content);
+       link.download = `resized_batch_${new Date().getTime()}.zip`;
+       link.click();
+       
+       loadingOverlay.style.display = 'none';
+    };
+
+    function resizeImage(file) {
+       return new Promise((resolve, reject) => {
+          const img = new Image();
+          img.src = URL.createObjectURL(file);
+          img.onload = () => {
+             const canvas = document.createElement('canvas');
+             const ctx = canvas.getContext('2d');
+             
+             let targetW, targetH;
+             const val = parseInt(resizeVal.value);
+             const ratio = img.width / img.height;
+
+             if (resizeMode.value === 'width') {
+                targetW = val;
+                targetH = val / ratio;
+             } else if (resizeMode.value === 'height') {
+                targetH = val;
+                targetW = val * ratio;
+             } else {
+                targetW = img.width * (val / 100);
+                targetH = img.height * (val / 100);
+             }
+
+             canvas.width = targetW;
+             canvas.height = targetH;
+             
+             // Smoothing
+             ctx.imageSmoothingEnabled = true;
+             ctx.imageSmoothingQuality = 'high';
+             ctx.drawImage(img, 0, 0, targetW, targetH);
+             
+             canvas.toBlob((blob) => resolve(blob), document.getElementById('format').value, 0.9);
+          };
+          img.onerror = reject;
+       });
+    }
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Calorie Calculator – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/health/calorie-calculator.html"/>
+<meta property="og:title" content="Calorie Calculator – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/health/calorie-calculator.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Calorie Calculator \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/health/calorie-calculator.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .cal-workspace {
+      max-width: 650px;
+      margin: 2rem auto;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      border-radius: 20px;
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; }
+    .form-group { margin-bottom: 1.5rem; }
+    label { display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-muted); }
+    input, select {
+      width: 100%;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.8rem;
+      border-radius: 8px;
+    }
+    .result-card {
+      background: var(--bg-secondary);
+      padding: 2rem;
+      border-radius: 12px;
+      margin-top: 2rem;
+      display: none;
+      border: 1px solid var(--primary);
+    }
+    .main-cal { font-size: 3.5rem; font-weight: 900; color: var(--primary); text-align: center; }
+    .cal-label { text-align: center; font-size: 1.1rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+    
+    .goals-grid {
+       display: grid;
+       grid-template-columns: repeat(3, 1fr);
+       gap: 1rem;
+       margin-top: 1.5rem;
+    }
+    .goal-box {
+       background: rgba(255,255,255,0.03);
+       padding: 1rem;
+       border-radius: 10px;
+       text-align: center;
+       border: 1px solid var(--border);
+    }
+    .goal-val { font-weight: 800; color: var(--text); }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Infinite Calorie Calculator</h1>
+      <p>Estimate your Total Daily Energy Expenditure (TDEE) and set precise weight goals.</p>
+    </div>
+
+    <div class="cal-workspace">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Gender</label>
+          <select id="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Age</label>
+          <input type="number" id="age" placeholder="25">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Weight (kg)</label>
+          <input type="number" id="weight" placeholder="70">
+        </div>
+        <div class="form-group">
+          <label>Height (cm)</label>
+          <input type="number" id="height" placeholder="175">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Activity Level</label>
+        <select id="activity">
+          <option value="1.2">Sedentary (office job, little exercise)</option>
+          <option value="1.375">Lightly Active (light exercise 1-3 days/week)</option>
+          <option value="1.55">Moderately Active (exercise 3-5 days/week)</option>
+          <option value="1.725">Very Active (heavy exercise 6-7 days/week)</option>
+          <option value="1.9">Extra Active (very heavy exercise + physical job)</option>
+        </select>
+      </div>
+      
+      <button onclick="calculateCalories()" class="btn btn-primary btn-lg btn-full">Check My Requirements</button>
+
+      <div class="result-card" id="result-card">
+         <div class="main-cal" id="tdee">0</div>
+         <div class="cal-label">Maintenance Calories / Day</div>
+         
+         <div class="goals-grid">
+            <div class="goal-box">
+               <div class="goal-val" id="loss">0</div>
+               <div class="small text-muted">Mild Loss (-0.25kg)</div>
+            </div>
+            <div class="goal-box" style="border-color: var(--primary);">
+               <div class="goal-val" id="loss-p">0</div>
+               <div class="small text-muted">Weight Loss (-0.5kg)</div>
+            </div>
+            <div class="goal-box">
+               <div class="goal-val" id="gain">0</div>
+               <div class="small text-muted">Mild Gain (+0.25kg)</div>
+            </div>
+         </div>
+      </div>
+
+      <!-- SEO CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2>What is TDEE?</h2>
+        <p>TDEE stands for **Total Daily Energy Expenditure**. It is the total number of calories you burn each day when exercise and physical activity are taken into account. Our <strong>online calorie needs calculator</strong> provides an estimation of your maintenance calories—the level where your body remains at a stable weight.</p>
+
+        <h3 class="mt-4">How to Use Calorie Targets for Weight Loss</h2>
+        <p>To lose weight, you must create a "Calorie Deficit"—consuming fewer calories than your TDEE. A deficit of 500 calories per day typically results in 0.5kg of weight loss per week. Our <strong>daily calorie auditor</strong> provides these targets automatically based on your biological metrics. Conversely, to gain weight or muscle, a surplus of 250-500 calories is recommended.</p>
+
+        <h3 class="mt-4">Privacy and Privacy Tracking</h2>
+        <p>At 99tool.in, we believe your nutrition data is private. Our <strong>secure calorie calculator</strong> runs entirely locally in your browser. We do not store your physical details or goal patterns. This <strong>private calorie auditor</strong> is the safest way to plan your fitness phase without third-party monitoring or pervasive tracking.</p>
+
+        <div class="alert alert-info mt-4">
+           <strong>Disclaimer:</strong> Calorie needs vary between individuals. This tool provides an estimate; consult a dietitian or medical professional for specialized nutrition plans.
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    function calculateCalories() {
+       const w = parseFloat(document.getElementById('weight').value);
+       const h = parseFloat(document.getElementById('height').value);
+       const a = parseInt(document.getElementById('age').value);
+       const g = document.getElementById('gender').value;
+       const act = parseFloat(document.getElementById('activity').value);
+       
+       if (!w || !h || !a) return alert('Please enter all details.');
+
+       // BMR
+       let bmr = (10 * w) + (6.25 * h) - (5 * a);
+       if (g === 'male') bmr += 5; else bmr -= 161;
+
+       const tdee = bmr * act;
+
+       document.getElementById('tdee').innerText = Math.round(tdee);
+       document.getElementById('loss').innerText = Math.round(tdee - 250);
+       document.getElementById('loss-p').innerText = Math.round(tdee - 500);
+       document.getElementById('gain').innerText = Math.round(tdee + 250);
+       
+       document.getElementById('result-card').style.display = 'block';
+    }
+  </script>
+</body>
+</html>

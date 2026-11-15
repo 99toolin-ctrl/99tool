@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Icon Generator – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/image/icon-generator.html"/>
+<meta property="og:title" content="Icon Generator – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/image/icon-generator.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Icon Generator \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/image/icon-generator.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- JSZip -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <style>
+    .icon-layout {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    @media (max-width: 992px) {
+      .icon-layout { grid-template-columns: 1fr; }
+    }
+    
+    .preview-panel {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      min-height: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .size-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      gap: 20px;
+      width: 100%;
+      margin-top: 2rem;
+    }
+    .size-item {
+      background: var(--dark);
+      border: 1px solid var(--border);
+      padding: 15px;
+      border-radius: 12px;
+      text-align: center;
+    }
+    .img-wrap {
+       width: 100%; aspect-ratio: 1;
+       background: #111;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       border-radius: 8px;
+       margin-bottom: 8px;
+       overflow: hidden;
+    }
+    .img-wrap img { width: 100%; height: 100%; object-fit: contain; }
+    .size-label { font-size: 0.75rem; color: var(--text-muted); font-weight: 600; }
+
+    .sidebar {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      height: fit-content;
+      position: sticky;
+      top: 80px;
+    }
+    .status-box {
+       padding: 15px;
+       background: rgba(255,255,255,0.05);
+       border-radius: 8px;
+       margin-bottom: 1.5rem;
+       font-size: 0.85rem;
+       line-height: 1.5;
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/image/icon-generator.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/image/icon-generator.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/image/icon-generator.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/image/icon-generator.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/image/icon-generator.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/image/icon-generator.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/image/icon-generator.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/image/icon-generator.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/image/icon-generator.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/image/icon-generator.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/image/icon-generator.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/image/icon-generator.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/image/icon-generator.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/image/icon-generator.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/image/icon-generator.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/image/icon-generator.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/image/icon-generator.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/image/icon-generator.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/image/icon-generator.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/image/icon-generator.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/image/icon-generator.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/image/icon-generator.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>App Icon Generator</h1>
+      <p>Generate every icon size for iOS, Android, and Web in one click. 100% private and secure.</p>
+    </div>
+
+    <div class="tool-container">
+      <div class="upload-area" id="drop-zone">
+        <div class="upload-icon">💎</div>
+        <p>Drop your 1024x1024 Logo or <span class="text-primary">select file</span></p>
+        <p class="text-muted small">PNG, WEBP, or JPG (Private processing)</p>
+        <input type="file" id="image-input" accept="image/*" hidden>
+      </div>
+
+      <div id="tool-workspace" class="hidden">
+        <div class="icon-layout">
+          <div class="preview-panel">
+             <h3>Generated Asset Pack</h3>
+             <div class="size-grid" id="size-grid"></div>
+          </div>
+
+          <div class="sidebar">
+             <div class="status-box">
+                <b>Standard Output:</b>
+                <ul class="small mt-2 p-0" style="list-style:none;">
+                   <li>✓ Web (16x, 32x, 192x, 512x)</li>
+                   <li>✓ iOS (180x, 1024x)</li>
+                   <li>✓ Android (App Store icons)</li>
+                </ul>
+             </div>
+             <button id="download-zip" class="btn btn-primary w-100">Download All as ZIP (.zip)</button>
+             <button id="reset-btn" class="btn btn-secondary w-100 mt-2">Start Over</button>
+             <p class="text-center mt-3 small text-muted">All resizing happens locally in your browser</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- HUMANIZED CONTENT -->
+    <!-- CONTENT SECTION -->
+    <section class="seo-content mt-5 text-start">
+      <h2 data-i18n="tools.icon_favicon_generator.what_is_title">What is the App Icon Generator?</h2>
+      <p>The App Icon Generator is a client-side asset compilation utility designed to generate a complete set of application icons in multiple resolutions. By dropping in a high-resolution logo, developers and designers can compile favicons, PWA icons, iOS App Store graphics, and Android launcher assets instantly.</p>
+      <p>This generator processes all image sampling, canvas rendering, and ZIP packaging operations locally in your browser memory. Your high-resolution master graphics and compiled files remain entirely private, avoiding any external server uploads.</p>
+
+      <h2 class="mt-4" data-i18n="tools.icon_favicon_generator.how_to_use_title">How to Use the App Icon Generator</h2>
+      <ol>
+        <li><strong>Upload Your Master Logo:</strong> Drag and drop your high-resolution logo (ideally 1024x1024 pixels) into the upload zone, or click to select a file.</li>
+        <li><strong>Review Asset Grid:</strong> The workspace automatically updates to display a grid of generated icons at different sizes (from 16x16 up to 1024x1024).</li>
+        <li><strong>Download ZIP:</strong> Click the "Download All as ZIP" button to save the entire folder of compiled icons directly to your computer.</li>
+        <li><strong>Start Over:</strong> Click "Start Over" to clear the workspace and upload a new image.</li>
+      </ol>
+
+      <h2 class="mt-4" data-i18n="tools.icon_favicon_generator.key_features_title">Key Features</h2>
+      <ul>
+        <li><strong>Multi-Platform Dimensions:</strong> Automatically generates favicons (16x, 32x), PWA assets (192x, 512x), iOS icons (180x, 1024x), and Android sizes.</li>
+        <li><strong>Interactive Preview Deck:</strong> Displays a live grid of all generated dimensions to check clarity before downloading.</li>
+        <li><strong>Automatic ZIP Bundling:</strong> Packages all resized assets in a single structured ZIP archive using JSZip.</li>
+        <li><strong>Transparency Preservation:</strong> Retains PNG transparency layers across all scaled output resolutions.</li>
+        <li><strong>100% Client-Side Processing:</strong> Performs all image manipulation locally in browser RAM to safeguard your brand designs.</li>
+      </ul>
+
+      <h2 class="mt-4" data-i18n="tools.icon_favicon_generator.common_use_cases_title">Common Use Cases</h2>
+      <ul>
+        <li><strong>App Store Submissions:</strong> Generate the complete set of required sizes for iOS and Android store listings with one click.</li>
+        <li><strong>PWA Setup:</strong> Create manifest-ready launch icons to support web application installations.</li>
+        <li><strong>Favicon Compilation:</strong> Generate web-ready favicons for modern browsers and tab displays.</li>
+        <li><strong>Social Media Profiling:</strong> Resize logos for standard avatar formats across different business profiles.</li>
+      </ul>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-section mt-5">
+      <h2 data-i18n="tools.icon_favicon_generator.faq_title">Frequently Asked Questions</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <button class="faq-question">
+            Which file format should I upload for best results?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>We recommend uploading a high-resolution PNG file (minimum 1024x1024 pixels). PNGs preserve transparency layers, which is crucial for round or custom-shaped app icons.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Does the generator crop or stretch my image?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>No. The generator scales your image proportionally to fit standard square dimensions, keeping your design's aspect ratio intact.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Is my logo or artwork saved on your server?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>No. Your images are loaded and processed locally using your browser's canvas APIs. 99tool.in does not store, collect, or share your proprietary visual assets.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Can I run this tool without an internet connection?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. Once loaded, the tool runs entirely client-side using JavaScript, allowing you to generate and download icon sets offline.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust-signal">
+      <p>🔒 Privacy & Data Note: Image uploads, scaling canvas tasks, and ZIP compilation are processed locally in your browser. No files are stored or uploaded.</p>
+    </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const imageInput = document.getElementById('image-input');
+    const dropZone = document.getElementById('drop-zone');
+    const workspace = document.getElementById('tool-workspace');
+    const sizeGrid = document.getElementById('size-grid');
+    const downloadZipBtn = document.getElementById('download-zip');
+    const resetBtn = document.getElementById('reset-btn');
+
+    const SIZES = [16, 32, 48, 64, 128, 180, 192, 512, 1024];
+    let originalImg = null;
+    let generatedCanvases = [];
+
+    dropZone.onclick = () => imageInput.click();
+    imageInput.onchange = (e) => handleFile(e.target.files[0]);
+    
+    // Init Drag and Drop using global helper
+    setupDragDrop('drop-zone', (files) => {
+       if (files.length) handleFile(files[0]);
+    });
+    
+    function handleFile(file) {
+      if (!file || !file.type.startsWith('image/')) return;
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        originalImg = new Image();
+        originalImg.onload = () => {
+          generateIcons();
+          workspace.classList.remove('hidden');
+          dropZone.classList.add('hidden');
+        };
+        originalImg.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function generateIcons() {
+       sizeGrid.innerHTML = '';
+       generatedCanvases = [];
+
+       SIZES.forEach(size => {
+          const canvas = document.createElement('canvas');
+          const ctx = canvas.getContext('2d');
+          canvas.width = size;
+          canvas.height = size;
+          
+          // Use high quality image smoothing
+          ctx.imageSmoothingEnabled = true;
+          ctx.imageSmoothingQuality = 'high';
+          ctx.drawImage(originalImg, 0, 0, size, size);
+          
+          generatedCanvases.push({ size, canvas });
+
+          // UI Preview
+          const div = document.createElement('div');
+          div.className = 'size-item';
+          div.innerHTML = `
+             <div class="img-wrap">
+                <img src="${canvas.toDataURL()}" alt="${size}x${size}">
+             </div>
+             <div class="size-label">${size} x ${size}</div>
+          `;
+          sizeGrid.appendChild(div);
+       });
+    }
+
+    downloadZipBtn.onclick = async () => {
+       const zip = new JSZip();
+       const folder = zip.folder("app_icons");
+
+       generatedCanvases.forEach(item => {
+          const data = item.canvas.toDataURL('image/png').split(',')[1];
+          folder.file(`icon_${item.size}x${item.size}.png`, data, {base64: true});
+       });
+
+       const content = await zip.generateAsync({type: "blob"});
+       const a = document.createElement('a');
+       a.href = URL.createObjectURL(content);
+       a.download = `app_icons_${Date.now()}.zip`;
+       a.click();
+    };
+
+    resetBtn.onclick = () => {
+       workspace.classList.add('hidden');
+       dropZone.classList.remove('hidden');
+       images = [];
+       generatedCanvases = [];
+    };
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

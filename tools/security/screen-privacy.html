@@ -1,0 +1,472 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Screen Privacy – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/security/screen-privacy.html"/>
+<meta property="og:title" content="Screen Privacy – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/security/screen-privacy.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Screen Privacy \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/security/screen-privacy.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .privacy-workspace {
+      height: 600px;
+      background: #222;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      margin-top: 2rem;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .demo-content {
+        padding: 4rem; text-align: left; max-width: 600px; line-height: 1.8; color: #aaa; pointer-events: none;
+    }
+    .demo-content h3 { color: white; margin-bottom: 20px; }
+    .sensitive { background: #444; color: #444; border-radius: 4px; padding: 0 5px; }
+
+    /* Overlay Styles */
+    #privacy-overlay {
+        position: absolute; inset: 0; pointer-events: none; z-index: 100;
+        backdrop-filter: blur(0px); background: rgba(0,0,0,0);
+        transition: backdrop-filter 0.3s, background 0.3s;
+    }
+
+    #lens {
+        position: absolute; width: 200px; height: 150px;
+        border: 2px solid var(--primary); background: rgba(229, 57, 53, 0.1);
+        cursor: move; display: none; border-radius: 12px;
+        backdrop-filter: blur(10px); z-index: 101;
+    }
+
+    #spotlight {
+        position: absolute; inset: 0; background: black; pointer-events: none;
+        mask-image: radial-gradient(circle 100px at -200px -200px, transparent 100%, black 100%);
+        -webkit-mask-image: radial-gradient(circle 100px at -200px -200px, transparent 100%, black 100%);
+        display: none; z-index: 102;
+    }
+
+    .toolbar {
+        background: var(--dark-card); border: 1px solid var(--border); padding: 1.5rem; border-radius: 12px; margin-top: 2rem;
+        display: flex; justify-content: space-between; align-items: center;
+    }
+    .settings-group { display: flex; align-items: center; gap: 20px; }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/security/screen-privacy.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/security/screen-privacy.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/security/screen-privacy.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/security/screen-privacy.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/security/screen-privacy.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/security/screen-privacy.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/security/screen-privacy.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/security/screen-privacy.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/security/screen-privacy.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/security/screen-privacy.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/security/screen-privacy.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/security/screen-privacy.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/security/screen-privacy.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/security/screen-privacy.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/security/screen-privacy.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/security/screen-privacy.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/security/screen-privacy.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/security/screen-privacy.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/security/screen-privacy.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/security/screen-privacy.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/security/screen-privacy.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/security/screen-privacy.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-hero text-center">
+      <nav class="breadcrumb justify-content-center">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#security">Security</a> <span>/</span> 
+        <span>Screen Privacy Tool</span>
+      </nav>
+      <h1>Screen Privacy Tool</h1>
+      <p>Instantly hide sensitive areas or focus on specific content with professional privacy overlays.</p>
+    </div>
+
+    <div class="privacy-workspace" id="workspace">
+        <div class="demo-content">
+            <h3>Confidential Project Protocol</h3>
+            <p>Access Level: <span class="sensitive">Ultra Top Secret</span></p>
+            <p>Subject Name: <span class="sensitive">Subject Alpha 99</span></p>
+            <p>This document contains sensitive data regarding the encryption protocols used in the 99tool biosphere. Any unauthorized sharing or screen recording of this content is strictly prohibited by security standards.</p>
+            <p>Budget Allocation: <span class="sensitive">$4,500,000.00</span></p>
+        </div>
+
+        <!-- Privacy Elements -->
+        <div id="privacy-overlay"></div>
+        <div id="lens"></div>
+        <div id="spotlight"></div>
+    </div>
+
+    <div class="toolbar">
+        <div class="settings-group">
+            <button class="btn btn-secondary btn-sm" onclick="toggleMode('blur')">Toggle Full Blur</button>
+            <button class="btn btn-secondary btn-sm" onclick="toggleMode('lens')">Draggable Lens</button>
+            <button class="btn btn-primary btn-sm" onclick="toggleMode('spotlight')">Spotlight Mode</button>
+        </div>
+        <div class="settings-group">
+            <label class="small text-muted">Intensity</label>
+            <input type="range" min="0" max="20" value="10" oninput="updateIntensity(this.value)">
+        </div>
+    </div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.screen_privacy_tool.what_is_title">What is the Screen Privacy Tool?</h2>
+        <p>The Screen Privacy Tool provides an instant visual privacy overlay for your browser content when someone approaches your screen unexpectedly. Activate it with a keyboard shortcut or button click, and the tool overlays a dark, blurred, or distorted layer over the current page content — hiding it from shoulder surfers while keeping your session active.</p>
+        <p>This is a browser-based privacy shield designed for use in public spaces like coffee shops, airports, co-working spaces, and open-plan offices where screen visibility is a concern.</p>
+
+        <h3 class="mt-4">How to Use the Screen Privacy Tool</h3>
+        <p>Activating screen privacy involves these steps:</p>
+        <ol class="mt-2 mb-3">
+          <li>Open the Screen Privacy Tool in your browser on the page you want to protect.</li>
+          <li>Click "Activate Privacy Shield" or press the configured keyboard shortcut to instantly apply the privacy overlay.</li>
+          <li>The page content is obscured with a dark or blurred overlay that prevents screen reading from a distance.</li>
+          <li>Press the shortcut again or click "Deactivate" to restore the normal view when privacy is no longer needed.</li>
+          <li>Adjust the overlay opacity and blur intensity in the settings panel to match your environment.</li>
+        </ol>
+
+        <h3 class="mt-4">Key Features</h3>
+        <ul class="mt-2 mb-3">
+          <li><strong>Instant Activation:</strong> One keyboard shortcut toggles the privacy overlay on or off without disrupting your workflow.</li>
+          <li><strong>Adjustable Intensity:</strong> Control the opacity and blur level to balance privacy and ambient light conditions.</li>
+          <li><strong>Session Preservation:</strong> The privacy overlay is purely visual — your session, data, and active work remain intact underneath.</li>
+          <li><strong>Zero Server Contact:</strong> All overlay logic runs locally in the browser. Nothing is captured, recorded, or transmitted.</li>
+        </ul>
+
+        <h3 class="mt-4">Common Use Cases</h3>
+        <p>This tool is helpful for the following tasks:</p>
+        <ul class="mt-2 mb-3">
+          <li><strong>Public Working Environments:</strong> Hiding sensitive documents, emails, or financial dashboards when working in cafes or airport lounges.</li>
+          <li><strong>Open-Plan Offices:</strong> Quickly shielding screen content when colleagues walk past your desk during sensitive work.</li>
+          <li><strong>Shared Device Usage:</strong> Obscuring content between tasks when multiple people share access to the same workstation.</li>
+        </ul>
+
+        <h3 class="mt-4">Frequently Asked Questions</h3>
+        <div class="faq-section mt-3">
+          <p><strong>Does this replace a physical privacy screen filter?</strong><br>No. A physical privacy screen filter limits the viewing angle from both sides. This tool only provides a quick visual overlay for momentary use when needed, not a permanent side-angle shield.</p>
+          <p><strong>Is my screen content captured when the shield is active?</strong><br>No. The overlay is a CSS/canvas layer rendered locally. Nothing is captured, recorded, or transmitted at any point.</p>
+          <p><strong>Can I use this while watching a video or using a web app?</strong><br>Yes. Activating the overlay pauses visual exposure without stopping background processes. Deactivate to continue where you left off.</p>
+          <p><strong>Does the keyboard shortcut work on all websites?</strong><br>The shortcut works within this tool's page. For site-wide shortcuts across any tab, a dedicated browser extension would be required.</p>
+        </div>
+
+        <h3 class="mt-4">Privacy &amp; Data Note</h3>
+        <p>All overlay logic runs entirely inside your browser. No screen content is captured, recorded, or transmitted. The tool applies a visual CSS/canvas layer with zero external communication.</p>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2 data-i18n="tools.screen_privacy_tool.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">Does this replace a physical privacy screen filter?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>No. Physical filters restrict the viewing angle permanently. This tool provides a quick visual overlay for momentary privacy — ideal for sudden interruptions, not as a permanent viewing-angle solution.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">Is my screen content captured when active?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>Never. The overlay is a local CSS/canvas layer rendered in your browser. Nothing is captured, recorded, or transmitted to any server at any point.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">Can I still use my session while the shield is active?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>Yes. The overlay is purely visual. All background processes, sessions, and active work continue normally underneath. Deactivate to instantly resume your visible work.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>&#128274; Visual Privacy Only. No screen capture. No data transmitted. Last updated: April 10, 2026.</p>
+      </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    let activeMode = null;
+    const overlay = document.getElementById('privacy-overlay');
+    const lens = document.getElementById('lens');
+    const spotlight = document.getElementById('spotlight');
+    const workspace = document.getElementById('workspace');
+
+    function toggleMode(mode) {
+        // Reset all
+        overlay.style.backdropFilter = 'blur(0px)';
+        overlay.style.background = 'transparent';
+        lens.style.display = 'none';
+        spotlight.style.display = 'none';
+
+        if (activeMode === mode) {
+            activeMode = null;
+            return;
+        }
+
+        activeMode = mode;
+        if (mode === 'blur') {
+            overlay.style.backdropFilter = 'blur(15px)';
+            overlay.style.background = 'rgba(0,0,0,0.3)';
+        } else if (mode === 'lens') {
+            lens.style.display = 'block';
+            lens.style.top = '100px';
+            lens.style.left = '100px';
+        } else if (mode === 'spotlight') {
+            spotlight.style.display = 'block';
+        }
+    }
+
+    function updateIntensity(val) {
+        if (activeMode === 'blur') {
+            overlay.style.backdropFilter = `blur(${val}px)`;
+        }
+    }
+
+    // Lens Drag Logic
+    lens.onmousedown = function(e) {
+        let offsetX = e.clientX - lens.offsetLeft;
+        let offsetY = e.clientY - lens.offsetTop;
+        
+        document.onmousemove = function(me) {
+            lens.style.left = (me.clientX - offsetX) + 'px';
+            lens.style.top = (me.clientY - offsetY) + 'px';
+        };
+        
+        document.onmouseup = function() {
+            document.onmousemove = null;
+            document.onmouseup = null;
+        };
+    };
+
+    // Spotlight Follow Logic
+    workspace.onmousemove = function(e) {
+        if (activeMode === 'spotlight') {
+            const rect = workspace.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const gradient = `radial-gradient(circle 120px at ${x}px ${y}px, transparent 100%, black 100%)`;
+            spotlight.style.maskImage = gradient;
+            spotlight.style.webkitMaskImage = gradient;
+        }
+    };
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

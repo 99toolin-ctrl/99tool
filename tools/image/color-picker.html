@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Color Picker – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/image/color-picker.html"/>
+<meta property="og:title" content="Color Picker – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/image/color-picker.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Color Picker \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/image/color-picker.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .picker-layout {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    @media (max-width: 992px) {
+      .picker-layout { grid-template-columns: 1fr; }
+    }
+    .image-workspace {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem;
+      position: relative;
+      cursor: crosshair;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 400px;
+    }
+    #picker-img {
+       max-width: 100%;
+       height: auto;
+       border-radius: 4px;
+       box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+    
+    .sidebar {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      height: fit-content;
+      position: sticky;
+      top: 80px;
+    }
+
+    .active-color-box {
+      width: 100%;
+      height: 100px;
+      border-radius: 12px;
+      border: 2px solid var(--border);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: #fff;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+      font-size: 1.2rem;
+      transition: background 0.1s ease;
+    }
+
+    .code-row {
+      background: var(--dark);
+      border: 1px solid var(--border);
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .code-label { font-size: 0.75rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; }
+    .code-value { font-family: monospace; font-size: 1rem; color: var(--white); }
+    .copy-mini { 
+      background: var(--primary); color: white; border: none; padding: 4px 8px; 
+      border-radius: 4px; font-size: 0.7rem; cursor: pointer; 
+    }
+
+    .palette-history {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .palette-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .swatch {
+      width: 100%; aspect-ratio: 1; border-radius: 4px; 
+      border: 1px solid var(--border); cursor: pointer;
+    }
+
+    .magnifier {
+      position: absolute;
+      width: 100px; height: 100px;
+      border: 4px solid #fff;
+      border-radius: 50%;
+      pointer-events: none;
+      display: none;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      background-repeat: no-repeat;
+      z-index: 10;
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/image/color-picker.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/image/color-picker.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/image/color-picker.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/image/color-picker.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/image/color-picker.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/image/color-picker.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/image/color-picker.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/image/color-picker.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/image/color-picker.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/image/color-picker.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/image/color-picker.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/image/color-picker.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/image/color-picker.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/image/color-picker.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/image/color-picker.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/image/color-picker.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/image/color-picker.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/image/color-picker.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/image/color-picker.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/image/color-picker.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/image/color-picker.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/image/color-picker.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Image Color Picker</h1>
+      <p>Identify and extract the perfect palette from any image. Instantly. Privately.</p>
+    </div>
+
+    <div class="tool-container">
+      <div class="upload-area" id="drop-zone">
+        <div class="upload-icon">🎯</div>
+        <p>Drop image to pick colors or <span class="text-primary">select file</span></p>
+        <p class="text-muted small">JPG, PNG, WEBP (No data usage)</p>
+        <input type="file" id="image-input" accept="image/*" hidden>
+      </div>
+
+      <div id="tool-workspace" class="hidden">
+        <div class="picker-layout">
+          <div class="image-workspace" id="img-workspace">
+             <img id="picker-img" alt="Picker Target">
+             <div class="magnifier" id="magnifier"></div>
+          </div>
+
+          <div class="sidebar">
+             <div class="active-color-box" id="active-color">#FFFFFF</div>
+             
+             <div class="code-row">
+                <div>
+                   <div class="code-label">HEX</div>
+                   <div class="code-value" id="hex-val">#FFFFFF</div>
+                </div>
+                <button class="copy-mini" onclick="copyValue('hex-val')">Copy</button>
+             </div>
+             <div class="code-row">
+                <div>
+                   <div class="code-label">RGB</div>
+                   <div class="code-value" id="rgb-val">rgb(255, 255, 255)</div>
+                </div>
+                <button class="copy-mini" onclick="copyValue('rgb-val')">Copy</button>
+             </div>
+             
+             <div class="palette-history">
+                <h4 class="small uppercase font-bold text-muted">History</h4>
+                <div class="palette-grid" id="history-palette"></div>
+             </div>
+             
+             <p class="text-center mt-4 small text-muted">Click image to save color</p>
+          </div>
+        </div>
+      </div>
+
+    <!-- CONTENT SECTION -->
+    <section class="seo-content mt-5 text-start">
+      <h2 data-i18n="tools.image_color_picker.what_is_title">What is the Image Color Picker?</h2>
+      <p>The Image Color Picker is a client-side design utility developed to sample and identify exact color codes from uploaded images. By moving an interactive cursor over an image, designers can inspect pixel-level hues and extract standard HEX and RGB color values.</p>
+      <p>This color extractor executes all pixel calculations, cursor coordinates tracking, and history updates locally in your browser memory. Your uploaded graphics, design assets, and selected color codes remain private and are never uploaded to any server.</p>
+
+      <h2 class="mt-4" data-i18n="tools.image_color_picker.how_to_use_title">How to Use the Image Color Picker</h2>
+      <ol>
+        <li><strong>Select Your Image:</strong> Drag and drop your image file into the upload zone, or click to browse and select it.</li>
+        <li><strong>Position Your Cursor:</strong> Hover over the loaded image to display a magnified pixel view around your cursor.</li>
+        <li><strong>Sample the Color:</strong> Click on the specific pixel you want to sample. The selected color card updates immediately.</li>
+        <li><strong>Copy the Code:</strong> Click the "Copy" button next to either the HEX or RGB color code to copy the value to your clipboard.</li>
+        <li><strong>Review History:</strong> Check the "History" panel to see and quickly re-select recently sampled color chips.</li>
+      </ol>
+
+      <h2 class="mt-4" data-i18n="tools.image_color_picker.key_features_title">Key Features</h2>
+      <ul>
+        <li><strong>Pixel-Precise Magnification:</strong> Features a built-in zoom bubble to isolate and select individual pixels easily.</li>
+        <li><strong>Instant Formats Conversion:</strong> Displays selected color points in standard HEX and RGB formats.</li>
+        <li><strong>Palette History Chips:</strong> Keeps a running row of recently clicked colors for fast comparison and recovery.</li>
+        <li><strong>Client-Side Canvas Extraction:</strong> Uses local canvas pixel-data APIs to read coordinates without network lag.</li>
+        <li><strong>Responsive Upload Sandbox:</strong> The interface adjusts dynamically to fit large images on desktop or mobile layouts.</li>
+      </ul>
+
+      <h2 class="mt-4" data-i18n="tools.image_color_picker.common_use_cases_title">Common Use Cases</h2>
+      <ul>
+        <li><strong>UI/UX CSS Design:</strong> Extract primary and secondary colors from UI mockups to build website stylesheets.</li>
+        <li><strong>Brand Asset Auditing:</strong> Inspect logo files and digital banners to ensure color codes match branding guidelines.</li>
+        <li><strong>Digital Art Inspiration:</strong> Sample color palettes from photos of nature or cityscapes to build drawing presets.</li>
+        <li><strong>Web Accessibility Checks:</strong> Identify color codes on text and backgrounds to check contrast ratios.</li>
+      </ul>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-section mt-5">
+      <h2 data-i18n="tools.image_color_picker.faq_title">Frequently Asked Questions</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <button class="faq-question">
+            How accurate is the pixel sampler?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>The tool reads raw RGBA values directly from the image's canvas coordinates, ensuring that the extracted HEX and RGB codes match the source file pixels exactly.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Does this tool store my uploaded images?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>No. All rendering, zoom magnification, and pixel analysis occur locally in your browser cache. No visual data is sent to 99tool.in servers.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Can I sample colors from transparent areas?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. When clicking transparent areas, the tool will return the background color values. We recommend sampling opaque pixels for accurate design targets.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Why use this color picker over browser extensions?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Many extensions require invasive permissions to read all page data. This sandboxed web utility requires zero installations or browser permissions, making it safer to use.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust-signal">
+      <p>🔒 Privacy & Data Note: Image loading tasks, pixel magnification, and color code extraction are processed locally in your browser. No files are stored or uploaded.</p>
+    </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const imageInput = document.getElementById('image-input');
+    const dropZone = document.getElementById('drop-zone');
+    const workspace = document.getElementById('tool-workspace');
+    const pickerImg = document.getElementById('picker-img');
+    const magnifier = document.getElementById('magnifier');
+    const activeColorBox = document.getElementById('active-color');
+    const hexVal = document.getElementById('hex-val');
+    const rgbVal = document.getElementById('rgb-val');
+    const historyPalette = document.getElementById('history-palette');
+
+    let canvas = document.createElement('canvas');
+    let ctx = canvas.getContext('2d', { willReadFrequently: true });
+    let history = [];
+
+    dropZone.onclick = () => imageInput.click();
+    imageInput.onchange = (e) => handleFile(e.target.files[0]);
+    
+    // Init Drag and Drop using global helper
+    setupDragDrop('drop-zone', (files) => {
+       if (files.length) handleFile(files[0]);
+    });
+    
+    function handleFile(file) {
+      if (!file || !file.type.startsWith('image/')) return;
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        pickerImg.src = e.target.result;
+        
+        const tempImg = new Image();
+        tempImg.onload = () => {
+           canvas.width = tempImg.width;
+           canvas.height = tempImg.height;
+           ctx.drawImage(tempImg, 0, 0);
+           workspace.classList.remove('hidden');
+           magnifier.style.backgroundImage = `url(${e.target.result})`;
+        };
+        tempImg.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+
+    // Picker Logic
+    pickerImg.onmousemove = (e) => {
+       const rect = pickerImg.getBoundingClientRect();
+       const x = e.clientX - rect.left;
+       const y = e.clientY - rect.top;
+       
+       const scaleX = canvas.width / rect.width;
+       const scaleY = canvas.height / rect.height;
+       
+       const pxX = Math.floor(x * scaleX);
+       const pxY = Math.floor(y * scaleY);
+       
+       const pixel = ctx.getImageData(pxX, pxY, 1, 1).data;
+       const hex = rgbToHex(pixel[0], pixel[1], pixel[2]);
+       
+       // Update Magnifier
+       magnifier.style.display = 'block';
+       magnifier.style.left = (x - 50) + 'px';
+       magnifier.style.top = (y - 50) + 'px';
+       magnifier.style.backgroundPosition = `-${pxX * (100/canvas.width)}% -${pxY * (100/canvas.height)}%`; // Simplified for now
+       magnifier.style.backgroundSize = (canvas.width * 5) + 'px ' + (canvas.height * 5) + 'px';
+       magnifier.style.backgroundPosition = `-${(pxX * 5) - 50}px -${(pxY * 5) - 50}px`;
+    };
+
+    pickerImg.onmouseleave = () => magnifier.style.display = 'none';
+
+    pickerImg.onclick = (e) => {
+       const rect = pickerImg.getBoundingClientRect();
+       const x = e.clientX - rect.left;
+       const y = e.clientY - rect.top;
+       const scaleX = canvas.width / rect.width;
+       const scaleY = canvas.height / rect.height;
+       const pxX = Math.floor(x * scaleX);
+       const pxY = Math.floor(y * scaleY);
+       
+       const pixel = ctx.getImageData(pxX, pxY, 1, 1).data;
+       const hex = rgbToHex(pixel[0], pixel[1], pixel[2]);
+       const rgb = `rgb(${pixel[0]}, ${pixel[1]}, ${pixel[2]})`;
+       
+       updateActiveColor(hex, rgb);
+       addToHistory(hex);
+    };
+
+    function updateActiveColor(hex, rgb) {
+       activeColorBox.style.background = hex;
+       activeColorBox.innerText = hex;
+       hexVal.innerText = hex;
+       rgbVal.innerText = rgb;
+       
+       // Best contrast for text
+       const r = parseInt(hex.slice(1,3), 16);
+       const g = parseInt(hex.slice(3,5), 16);
+       const b = parseInt(hex.slice(5,7), 16);
+       activeColorBox.style.color = (r*0.299 + g*0.587 + b*0.114) > 186 ? '#000' : '#fff';
+    }
+
+    function addToHistory(hex) {
+       if (history.includes(hex)) return;
+       history.unshift(hex);
+       if (history.length > 20) history.pop();
+       renderHistory();
+    }
+
+    function renderHistory() {
+       historyPalette.innerHTML = '';
+       history.forEach(hex => {
+          const div = document.createElement('div');
+          div.className = 'swatch';
+          div.style.background = hex;
+          div.title = hex;
+          div.onclick = () => {
+             const r = parseInt(hex.slice(1,3), 16);
+             const g = parseInt(hex.slice(3,5), 16);
+             const b = parseInt(hex.slice(5,7), 16);
+             updateActiveColor(hex, `rgb(${r}, ${g}, ${b})`);
+          };
+          historyPalette.appendChild(div);
+       });
+    }
+
+    function rgbToHex(r, g, b) {
+       return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1).toUpperCase();
+    }
+
+    window.copyValue = (id) => {
+       const val = document.getElementById(id).innerText;
+       navigator.clipboard.writeText(val);
+       const btn = document.querySelector(`button[onclick="copyValue('${id}')"]`);
+       const old = btn.innerText;
+       btn.innerText = 'Copied!';
+       setTimeout(() => btn.innerText = old, 1500);
+    };
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

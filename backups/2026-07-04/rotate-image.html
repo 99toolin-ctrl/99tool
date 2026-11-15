@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Rotate Image – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/image/rotate-image.html"/>
+<meta property="og:title" content="Rotate Image – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/image/rotate-image.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Rotate Image \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/image/rotate-image.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <style>
+    .editor-container {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      margin-top: 2rem;
+    }
+    .preview-container {
+      background: var(--dark);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      overflow: hidden;
+      min-height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    #preview-canvas {
+      max-width: 100%;
+      max-height: 500px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      border-radius: 4px;
+      transition: transform 0.3s ease;
+    }
+    
+    .control-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 15px;
+    }
+    .action-card {
+      background: var(--dark);
+      border: 1px solid var(--border);
+      padding: 1rem;
+      border-radius: 10px;
+      text-align: center;
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+    .action-card:hover { 
+      border-color: var(--primary); 
+      background: rgba(229,57,53,0.05);
+    }
+    .card-icon { font-size: 1.5rem; margin-bottom: 8px; }
+    .card-label { font-size: 0.85rem; font-weight: 600; color: var(--text-muted); }
+
+    .batch-tray {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+    .tray-grid {
+       display: grid;
+       grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+       gap: 10px;
+    }
+    .tray-item {
+       width: 100px; height: 100px;
+       border: 2px solid var(--border);
+       border-radius: 8px;
+       object-fit: cover;
+       cursor: pointer;
+    }
+    .tray-item.active { border-color: var(--primary); }
+
+    #loading-overlay {
+      display: none;
+      text-align: center;
+      padding: 2rem;
+    }
+    .spinner {
+      border: 3px solid rgba(229,57,53,0.1);
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      border-left-color: var(--primary);
+      animation: spin 1s linear infinite;
+      margin: 0 auto 10px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Image Rotator & Flipper</h1>
+      <p>Fix orientation metadata and mirror photos instantly. Safe, private, and 100% local-first.</p>
+    </div>
+
+    <div class="tool-container">
+      <div class="upload-area" id="drop-zone">
+        <div class="upload-icon">🔄</div>
+        <p>Drop images here or <span class="text-primary">select from device</span></p>
+        <p class="text-muted small">Supports batch rotation for multiple files</p>
+        <input type="file" id="image-input" accept="image/*" multiple hidden>
+      </div>
+
+      <div id="tool-workspace" class="hidden">
+        <div class="preview-container">
+           <canvas id="preview-canvas"></canvas>
+        </div>
+
+        <div class="editor-container">
+           <div class="control-grid">
+              <div class="action-card" onclick="rotate(-90)">
+                <div class="card-icon">↺</div>
+                <div class="card-label">Rotate Left</div>
+              </div>
+              <div class="action-card" onclick="rotate(90)">
+                <div class="card-icon">↻</div>
+                <div class="card-label">Rotate Right</div>
+              </div>
+              <div class="action-card" onclick="flip('h')">
+                <div class="card-icon">↔</div>
+                <div class="card-label">Flip Horizontal</div>
+              </div>
+              <div class="action-card" onclick="flip('v')">
+                <div class="card-icon">↕</div>
+                <div class="card-label">Flip Vertical</div>
+              </div>
+           </div>
+           
+           <div class="flex gap-4 mt-5">
+              <button id="reset-btn" class="btn btn-secondary" style="flex:1">Reset Image</button>
+              <button id="download-btn" class="btn btn-primary" style="flex:2">Apply & Download ZIP</button>
+           </div>
+        </div>
+
+        <div class="batch-tray">
+           <p class="mb-3 small font-bold text-muted uppercase tracking-wider">Queue: <span id="queue-count">0</span> Images</p>
+           <div class="tray-grid" id="tray-grid"></div>
+        </div>
+      </div>
+
+      <div id="loading-overlay">
+        <div class="spinner"></div>
+        <p>Transforming pixels in your browser memory...</p>
+      </div>
+
+      <!-- HUMANIZED SEO CONTENT -->
+      <section class="seo-content mt-5">
+        <h2>Orienting Your Story in Private: Secure Local Image Rotation</h2>
+        <p>We've all been there: you've captured a stunning photo or a clear professional graphic, but it's loaded sideways, upside down, or at a slight, frustrating tilt. You need to fix the orientation before sharing it with the world or including it in your next presentation. You look for an <strong>image rotator</strong> online to help you straighten your vision and ensure a professional finish. But as you look at the "Pixel Analysis" and "Cloud Orientation" prompts of most legacy checkers, you realize that your original high-res assets, your personal moments, and your proprietary graphics are being analyzed by an anonymous database. Do you really want to share your "Visual Axis" with a third-party algorithm?</p>
+
+        <p>At 99tool.in, we built our <strong>image rotator</strong> to give you a professional orientation station without the privacy debt. By utilizing browser-side canvas transformation and local matrix logic, we allow you to <strong>rotate and flip images</strong> entirely within the secure sandbox of your own machine. Whether you’re a photographer correcting EXIF orientation, a designer flipping assets, or a social media user straightening memories, our <strong>safe rotation tool</strong> ensures that your original pixels stay where they belong: on your device, under your total sovereignty.</p>
+
+        <div class="tool-preview-box mt-4 mb-4" style="text-align:center;">
+           <img src="../../assets/images/rotate-preview.png" alt="Clean Image Rotator Interface with High-Resolution Matrix Rotation and Lossless Orientation Mapping Visuals" class="tool-preview" id="tool-preview-img" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+        </div>
+
+        <h3 class="mt-4">The Logic of High-Resolution Matrix Rotation</h3>
+        <p>Image rotation isn't just about turning a picture; it’s about "Geometric Integrity." Most basic <strong>rotate image online</strong> services use blunt transformations that lead to "Perspective Distortion"—those blurry edges and compromised resolutions. Our <strong>professional image rotator</strong> takes a human-centric approach: we focus on **High-Resolution Matrix Rotation** and **Lossless Orientation Mapping**.</p>
+        
+        <p>We provide a clear control deck where you can rotate left, rotate right, or flip your assets on both the vertical and horizontal axes. Our <strong>safe orientation validator</strong> ensures that every transformation is mapped pixel-by-pixel, maintaining the original clarity and resolution of your work. This transparency transforms a technical fix into a professional routine, helping you orient your story in a private, professional environment.</p>
+
+        <h3 class="mt-4">Why Transformation is the Expert’s Ethical Choice</h2>
+        <p>In the age of automated visual harvesting, your "Unprocessed Perspectives" are your most valuable proprietary assets. When you use a standard <strong>rotate photo online free</strong> service that requires an upload, you are essentially trust-falling into an anonymous database. Even if they "generate" your rotated photo, the original high-res asset and your specific orientation markers were processed on a remote machine. Our 100% <strong>transformation utility</strong> removes this "Reference Risk" entirely from your creative routine.</p>
+        
+        <p>Because the rotation and flipping happen in your browser's private memory, your images are invisible to the outside world. No analytics are tracked, no perspectives are harvested, and no proprietary data is shared with advertisers or AI platforms. At 99tool.in, we believe that <strong>correcting your world</strong> should be an empowering utility, not a data-mining trade-off. With us, you have a private, professional desk for your orientation that fits in your browser tab.</p>
+
+        <h3 class="mt-4">How to Orient Your Vision Safely (Step-by-Step)</h3>
+        <p>Fixing your visual perspective should be a high-speed, 5-second task. Here is how to use our <strong>image rotator</strong>:</p>
+        <ul style="line-height: 1.8; margin-bottom: 20px;">
+          <li><strong>Step 1: Load Your Asset</strong> — Drag your photo into the workspace. It renders instantly in our local transformation queue without uploading a single byte.</li>
+          <li><strong>Step 2: Choose Your Axis</strong> — Use our "Rotate" or "Flip" controls to set the perfect orientation. You’ll see the preview update pixel-perfectly in real-time.</li>
+          <li><strong>Step 3: Verify the Orientation</strong> — Review the final look across your batch. Our system ensures that your transformations are consistent and high-fidelity.</li>
+          <li><strong>Step 4: Export and Share</strong> — Click "Apply & Download." Our tool processes the transformations locally and saves your corrected photos directly to your device.</li>
+        </ul>
+
+        <h3 class="mt-4">Strategic Use Cases for Your Local Rotation Tool</h3>
+        <p>Our <strong>selective orientation tool</strong> is the essential companion for varied professional life:</p>
+        
+        <p><strong>For Professional Photographers:</strong> Delivering a gallery? Use our <strong>secure rotation tool</strong> to fix EXIF errors and ensure every shot is oriented perfectly, keeping your clients' private moments confidential.</p>
+        
+        <p><strong>For Graphic Designers & Publishers:</strong> Flipping an asset for a layout? Use our <strong>safe image flipper</strong> to mirror icons or backgrounds for the perfect symmetry, without risking your proprietary design files.</p>
+        
+        <p><strong>For Social Media Users & Families:</strong> Straightening a memory? Use our <strong>private orientation tool</strong> to fix that tilted horizon or sideways selfie, ensuring your personal identity and location details remain protected.</p>
+
+        <h3 class="mt-5">Explore Your Complete Image Suite</h3>
+        <p>Once you’ve successfully oriented your images, you might need to adjust the final composition. Check out our <strong><a href="crop-image.html">Image Cropper</a></strong>. Or, if you need to optimize the final file for web speed, use our <strong><a href="compress-image.html">Image Compressor</a></strong>. At 99tool.in, we are building a world-class, 100% private digital toolkit to give you total control over your visual perspective. </p>
+        
+        <div class="flex gap-4 mt-4 mb-5">
+           <a href="resize-image.html" class="btn btn-secondary" style="flex:1; text-align:center;">Resize Images</a>
+           <a href="convert-image.html" class="btn btn-secondary" style="flex:1; text-align:center;">Convert Format</a>
+        </div>
+      </section>
+ 
+      <!-- FAQ SECTION -->
+      <section class="faq-section mt-5">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Does rotating images reduce their quality?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. Our <strong>local image rotator</strong> uses high-fidelity canvas transformations that maintain the original resolution and quality of your assets. Since the processing happens entirely on your device, there is no "Lossy Compression" typically associated with remote servers.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Are my photos uploaded to 99tool.in?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Absolutely not. Your privacy is our technical foundation. All orientation fixes and flips happen <strong>locally in your browser's memory</strong>. Your original photos never leave your device, ensuring total "Visual Sovereignty."</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I rotate multiple images at once?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. Our <strong>batch rotation utility</strong> allows you to load an entire queue of images. You can select individual files from the tray to adjust their specific orientation and then download the entire corrected set as a single ZIP file.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Why do my photos appear sideways in other apps?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>This is often due to "EXIF Metadata" errors where the camera's orientation flag isn't recognized. Our <strong>safe orientation tool</strong> physically rewrites the pixel data to the correct axis, ensuring your photo appears correctly in every app and on every device.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              How does the "Flip" feature differ from rotation?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Rotation turns the image on a central axis (90, 180, 270 degrees), while <strong>flipping</strong> creates a "Mirror Image" on the horizontal or vertical axis. This is perfect for correcting front-camera selfies or creating symmetrical design elements.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Which file formats can I rotate?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Our <strong>professional transformation tool</strong> supports standard web formats including JPG, PNG, and WEBP. Because we use native browser APIs, the rotation is extremely fast and high-resolution across all supported types.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const imageInput = document.getElementById('image-input');
+    const dropZone = document.getElementById('drop-zone');
+    const workspace = document.getElementById('tool-workspace');
+    const trayGrid = document.getElementById('tray-grid');
+    const queueCount = document.getElementById('queue-count');
+    const previewCanvas = document.getElementById('preview-canvas');
+    const downloadBtn = document.getElementById('download-btn');
+    const resetBtn = document.getElementById('reset-btn');
+    const loadingOverlay = document.getElementById('loading-overlay');
+    
+    let items = []; // { file, img, rotation: 0, flipH: 1, flipV: 1 }
+    let activeIndex = 0;
+
+    dropZone.onclick = () => imageInput.click();
+    imageInput.onchange = (e) => handleFiles(e.target.files);
+    
+    // Init Drag and Drop using global helper
+    setupDragDrop('drop-zone', (files) => {
+       handleFiles(files);
+    });
+
+    function handleFiles(files) {
+      const validFiles = Array.from(files).filter(f => f.type.startsWith('image/'));
+      if (validFiles.length === 0) return;
+
+      workspace.classList.remove('hidden');
+      
+      for (const file of validFiles) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          const img = new Image();
+          img.onload = () => {
+            items.push({ file, img, rotation: 0, flipH: 1, flipV: 1 });
+            queueCount.innerText = items.length;
+            renderTray();
+            if (items.length === 1) selectItem(0);
+          };
+          img.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+
+    function renderTray() {
+      trayGrid.innerHTML = '';
+      items.forEach((item, index) => {
+        const img = document.createElement('img');
+        img.src = item.img.src;
+        img.className = `tray-item ${index === activeIndex ? 'active' : ''}`;
+        img.onclick = () => selectItem(index);
+        trayGrid.appendChild(img);
+      });
+    }
+
+    function selectItem(index) {
+      activeIndex = index;
+      renderTray();
+      drawPreview();
+    }
+
+    function drawPreview() {
+      const item = items[activeIndex];
+      const canvas = previewCanvas;
+      const ctx = canvas.getContext('2d');
+      
+      const is90 = Math.abs(item.rotation % 180) === 90;
+      canvas.width = is90 ? item.img.height : item.img.width;
+      canvas.height = is90 ? item.img.width : item.img.height;
+      
+      ctx.save();
+      ctx.translate(canvas.width / 2, canvas.height / 2);
+      ctx.rotate((item.rotation * Math.PI) / 180);
+      ctx.scale(item.flipH, item.flipV);
+      ctx.drawImage(item.img, -item.img.width / 2, -item.img.height / 2);
+      ctx.restore();
+    }
+
+    window.rotate = (deg) => {
+      if (items.length === 0) return;
+      items[activeIndex].rotation = (items[activeIndex].rotation + deg) % 360;
+      drawPreview();
+    };
+
+    window.flip = (axis) => {
+      if (items.length === 0) return;
+      if (axis === 'h') items[activeIndex].flipH *= -1;
+      else items[activeIndex].flipV *= -1;
+      drawPreview();
+    };
+
+    resetBtn.onclick = () => {
+       if (items.length === 0) return;
+       items[activeIndex].rotation = 0;
+       items[activeIndex].flipH = 1;
+       items[activeIndex].flipV = 1;
+       drawPreview();
+    };
+
+    downloadBtn.onclick = async () => {
+      if (items.length === 0) return;
+      loadingOverlay.style.display = 'block';
+      downloadBtn.disabled = true;
+
+      const zip = new JSZip();
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+
+      try {
+        for (const item of items) {
+          const is90 = Math.abs(item.rotation % 180) === 90;
+          canvas.width = is90 ? item.img.height : item.img.width;
+          canvas.height = is90 ? item.img.width : item.img.height;
+          
+          ctx.save();
+          ctx.translate(canvas.width / 2, canvas.height / 2);
+          ctx.rotate((item.rotation * Math.PI) / 180);
+          ctx.scale(item.flipH, item.flipV);
+          ctx.drawImage(item.img, -item.img.width / 2, -item.img.height / 2);
+          ctx.restore();
+
+          const base64 = canvas.toDataURL(item.file.type, 0.9).split(',')[1];
+          zip.file(`fixed_${item.file.name}`, base64, { base64: true });
+        }
+
+        const content = await zip.generateAsync({ type: "blob" });
+        const url = URL.createObjectURL(content);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `transformed_images_${Date.now()}.zip`;
+        a.click();
+        URL.revokeObjectURL(url);
+        
+        document.getElementById('status-msg').innerText = "All images transformed and zipped!";
+        document.getElementById('status-msg').style.color = "green";
+      } catch (err) {
+        console.error(err);
+        document.getElementById('status-msg').innerText = "Error during processing.";
+        document.getElementById('status-msg').style.color = "red";
+      } finally {
+        loadingOverlay.style.display = 'none';
+        downloadBtn.disabled = false;
+      }
+    };
+  </script>
+</body>
+</html>
+

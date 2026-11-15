@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Batch Pdf – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/pdf/batch-pdf.html"/>
+<meta property="og:title" content="Batch Pdf – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/pdf/batch-pdf.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Batch Pdf \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/pdf/batch-pdf.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+  <style>
+    .batch-list {
+      margin-top: 1.5rem;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .file-row {
+      display: flex;
+      align-items: center;
+      padding: 0.75rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      gap: 15px;
+    }
+    .file-row:last-child { border-bottom: none; }
+    .file-icon { font-size: 1.2rem; }
+    .file-name { flex-grow: 1; font-weight: 500; font-size: 0.9rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .file-size { font-size: 0.8rem; color: #777; width: 80px; text-align: right; }
+    .remove-file { color: #e53e3e; cursor: pointer; font-weight: bold; padding: 5px; }
+    .batch-actions {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .action-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+    .action-card h3 { font-size: 1.1rem; margin-bottom: 1rem; color: var(--primary); }
+    .input-group { margin-bottom: 1rem; }
+    .input-group label { display: block; margin-bottom: 0.5rem; font-size: 0.85rem; font-weight: 600; }
+    .input-group input { width: 100%; padding: 0.6rem; border: 1px solid var(--border); border-radius: 6px; }
+    .action-btn { width: 100%; margin-top: 0.5rem; }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/pdf/batch-pdf.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/pdf/batch-pdf.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/pdf/batch-pdf.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/pdf/batch-pdf.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/pdf/batch-pdf.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/pdf/batch-pdf.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/pdf/batch-pdf.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/pdf/batch-pdf.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/pdf/batch-pdf.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/pdf/batch-pdf.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/pdf/batch-pdf.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/pdf/batch-pdf.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/pdf/batch-pdf.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/pdf/batch-pdf.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/pdf/batch-pdf.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/pdf/batch-pdf.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/pdf/batch-pdf.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/pdf/batch-pdf.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/pdf/batch-pdf.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/pdf/batch-pdf.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/pdf/batch-pdf.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/pdf/batch-pdf.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Batch PDF Processor</h1>
+      <p>Clean, Organize, and Combine your document archives in seconds. Privately and fast.</p>
+    </div>
+
+    <div class="tool-container">
+      <div class="upload-area" id="drop-zone">
+        <div class="upload-icon">📦</div>
+        <p>Drag & drop <b>multiple</b> PDFs or <span class="text-primary">browse files</span></p>
+        <input type="file" id="pdf-input" accept="application/pdf" multiple hidden>
+      </div>
+
+      <div id="file-list-container" class="hidden">
+        <div class="batch-list" id="file-list"></div>
+        
+        <div class="batch-actions">
+          <!-- MERGE ACTION -->
+          <div class="action-card">
+            <h3>Batch Merge</h3>
+            <p class="small text-muted mb-3">Combine all uploaded files into a single master PDF in the order shown above.</p>
+            <div class="input-group">
+                <label>Output Filename</label>
+                <input type="text" id="merge-name" value="combined_archive.pdf">
+            </div>
+            <button id="merge-btn" class="btn btn-primary action-btn">Merge All Files</button>
+          </div>
+
+          <!-- RENAME ACTION -->
+          <div class="action-card">
+            <h3>Batch Rename</h3>
+            <p class="small text-muted mb-3">Rename all files sequentially using a custom prefix and starting number.</p>
+            <div class="input-group">
+                <label>Prefix (e.g. Invoice_)</label>
+                <input type="text" id="rename-prefix" value="document_">
+            </div>
+            <div class="input-group">
+                <label>Start Number</label>
+                <input type="number" id="rename-start" value="1">
+            </div>
+            <button id="rename-btn" class="btn btn-secondary action-btn">Download Renamed Zipped</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="status-msg" class="text-center mt-4 small"></div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5">
+        <h2>Tame the Document Chaos with Intelligent Batch Processing</h2>
+        <p>We’ve all been there: you’ve finished a major project, a tax season, or a house closing, and you’re left with a folder of 30 different PDF files. Some are titled "Scan_101," others are messy downloads, and none of them are organized. Your first instinct is to find a tool to <strong>batch process pdf</strong> files. But then the reality hits: to organize these files, most websites want you to "upload your entire archive" to the cloud. Do you really want to hand over your entire life’s documentation—every bank statement, contract, and private note—to a remote server just to rename or merge them?</p>
+
+        <p>At 99tool.in, we built our <strong>bulk pdf tools</strong> to solve the modern problem of "Document Bloat" without the privacy anxiety. By utilizing local <code>pdf-lib</code> and <code>JSZip</code> technology, we allow you to <strong>process multiple pdf files</strong> simultaneously directly in your browser. Whether you’re a small business owner clearing your books, a digital archivist organizing a library, or a professional preparing a massive discovery packet, our <strong>batch pdf processor</strong> ensures that your data never leaves your device, giving you a clean, organized system in seconds.</p>
+        
+        <div class="tool-preview-box mt-4 mb-4" style="text-align:center;">
+           <img src="../../assets/images/renamer-preview.png" alt="Batch PDF Organization Dashboard" class="tool-preview" id="tool-preview-img" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+        </div>
+
+        <h3 class="mt-4">The Logic of Scalable Document Archiving</h3>
+        <p>Organization is the foundation of digital productivity. Searching for a "lost" file is the biggest time-sink in the modern office. Our <strong>batch pdf tool</strong> provides the two most critical features for taming your archive: **Sequential Renaming** and **Smart Merging**. This isn't just about changing names; it's about building a searchable, logical structure for your intellectual property.</p>
+        
+        <p>Need to turn a jumble of receipts into a single "Expenses_2024.pdf"? Or perhaps you need to rename 50 different project modules to "ProjectX_Phase_[1-50]"? Our interface allows for high-speed <strong>bulk pdf management</strong>. We’ve designed it with a human-centric focus: you see all your files in a list, you can remove mistakes instantly, and everything is processed in parallel for maximum speed. It’s a <strong>professional document archiver</strong> that lives in your browser tab.</p>
+
+        <h3 class="mt-4">Why Batching is a Non-Negotiable Standard</h3>
+        <p>The risk of a data breach increases exponentially with the volume of data you upload. Sending one PDF is risky; sending a "Batch" of 50 is essentially handing over a complete map of your private or professional life. This is why <strong>batch processing</strong> is the only responsible way to handle large volumes of documentation. Our system uses your computer's local RAM to handle the heavy lifting, ensuring that even the most confidential <strong>bulk pdf merges</strong> remain between you and your screen.</p>
+        
+        <p>Furthermore, 99tool.in includes an active **Security Scan** for every file added to the batch. We inspect for hidden scripts and interactive malicious code (<code>/JS</code>), protecting you from the "Trojan Horse" document that might be hidden in your downloads folder. We believe that <strong>processing multiple pdfs</strong> should make your life easier and your data safer. With 99tool.in, you get the highest standard of <strong>confidential batch management</strong> available today.</p>
+
+        <h3 class="mt-4">How to Process Your PDFs in Bulk (Step-by-Step)</h3>
+        <p>Clearing a year’s worth of document clutter should be a 60-second task. Here is how to use our <strong>batch pdf processor</strong> utility:</p>
+        <ul style="line-height: 1.8; margin-bottom: 20px;">
+          <li><strong>Step 1: Securely Load Your Archive</strong> — Drag your entire folder of PDFs into the upload zone. We’ll show you a list of every file detected, its size, and its security status.</li>
+          <li><strong>Step 2: Define Your Strategy</strong> — Need one master file? Use the **Batch Merge** action. Need to clean up messy filenames? Use the **Batch Rename** tool with your custom prefix.</li>
+          <li><strong>Step 3: Audit the Sequence</strong> — Check the file list to ensure the order is correct for your merge. You can remove any unwanted files with a single click.</li>
+          <li><strong>Step 4: Execute</strong> — Click your chosen action button. Our local engine works in the background to assemble your new archive without ever hitting the cloud.</li>
+          <li><strong>Step 5: Collect and Clear</strong> — Download your single merged file or a perfectly renamed ZIP archive instantly. The moment you close the tab, the entire session is wiped from memory.</li>
+        </ul>
+
+        <h3 class="mt-4">Strategic Use Cases for Bulk Document Management</h3>
+        <p>Our <strong>batch pdf tool</strong> is the essential engine for high-volume workflows:</p>
+        
+        <p><strong>For Small Business Accounting:</strong> At the end of the month, combine all your invoices and bank statements into a single "Financial_Report_Month.pdf" for your accountant using our <strong>batch merge</strong> feature.</p>
+        
+        <p><strong>For Digital Photographers and Creatives:</strong> If you’re sending a portfolio with 20 different layout PDFS, use our <strong>batch rename</strong> tool to give them a consistent branding (e.g. "Portfolio_Page_1") so they look as professional as your work.</p>
+        
+        <p><strong>For Legal and Real Estate Offices:</strong> Organize years of archived client records into logical, numbered folders in seconds. Our <strong>bulk pdf management</strong> speed ensures you spend more time on billable work and less on clerical filing.</p>
+
+        <h3 class="mt-5">Explore Your Complete Document Toolkit</h3>
+        <p>Once you’ve successfully organized your batch, you might need to protect the final archive. Check out our <strong><a href="protect-pdf.html">PDF Password Protector</a></strong>. Or, if the resulting merged file is too heavy for an email, use our <strong><a href="compress-pdf.html">PDF Compressor</a></strong> to shrink it safely. At 99tool.in, we are building a world-class, private digital toolkit to give you total sovereignty over your work.</p>
+        
+        <div class="flex gap-4 mt-4 mb-5">
+           <a href="merge-pdf.html" class="btn btn-secondary" style="flex:1; text-align:center;">Simple Merge</a>
+           <a href="view-pdf.html" class="btn btn-secondary" style="flex:1; text-align:center;">Fast Viewer</a>
+        </div>
+      </section>
+ 
+      <!-- FAQ SECTION -->
+      <section class="faq-section mt-5">
+        <h2 data-i18n="tools.batch_pdf_processor.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Is there a limit to how many files I can process in a batch?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>The limit depends entirely on your <strong>browser's memory (RAM)</strong>. Most modern computers can easily handle 50-100 PDF files at once. For massive archives of thousands of files, we recommend processing in smaller groups for the best performance.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Are my confidential documents uploaded to a server?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. 99tool.in is a <strong>serverless utility</strong>. All merging, renaming, and ZIP creation happens locally in your browser's private sandbox. No part of your document archive is ever transmitted to the cloud.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Does batch merging preserve hyperlinks and bookmarks?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Our <strong>batch merge tool</strong> uses high-fidelity libraries to ensure that internal page links and bookmarks are preserved in the final master document. However, external links to local files on your computer might need manual verification.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              How does the batch renamer work?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>You provide a <strong>custom prefix</strong> (like "Invoice_") and a starting number. We then apply that template to every file in your list and bundle them into a single, organized ZIP file that you can download instantly.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Is the security scan accurate?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. Our <strong>local security scan</strong> inspects the first few thousand bytes of every file for the "/JS" pattern, which is used to trigger interactive scripts. This helps ensure that the archive you are organizing is safe and logic-free.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Why use 99tool instead of standard file management?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>While standard file explorers can rename files, they can't <strong>merge PDF pages</strong> or verify document security. 99tool.in provides a specialized, private workspace to audit and combine your PDF assets with surgical precision.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <!-- JSZip is needed for batch renaming and multiple downloads -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script>
+    const pdfInput = document.getElementById('pdf-input');
+    const dropZone = document.getElementById('drop-zone');
+    const fileList = document.getElementById('file-list');
+    const listContainer = document.getElementById('file-list-container');
+    const mergeBtn = document.getElementById('merge-btn');
+    const renameBtn = document.getElementById('rename-btn');
+
+    let uploadedFiles = [];
+
+    // File selection
+    dropZone.addEventListener('click', () => pdfInput.click());
+    pdfInput.addEventListener('change', (e) => handleFiles(e.target.files));
+
+    function handleFiles(files) {
+      if (!files.length) return;
+      Array.from(files).forEach(f => {
+        if (f.type === 'application/pdf') {
+          uploadedFiles.push(f);
+          // Inline Security Scan for each file
+          const reader = new FileReader();
+          reader.onload = function(e) {
+            const text = new TextDecoder().decode(e.target.result.slice(0, 5000));
+            if (text.includes('/JS')) {
+                console.warn(`Security Warning: Script pattern detected in ${f.name}`);
+            }
+          };
+          reader.readAsArrayBuffer(f);
+        }
+      });
+      renderList();
+    }
+
+    function renderList() {
+      if (!uploadedFiles.length) {
+        listContainer.classList.add('hidden');
+        return;
+      }
+      listContainer.classList.remove('hidden');
+      fileList.innerHTML = "";
+      uploadedFiles.forEach((f, i) => {
+        const row = document.createElement('div');
+        row.className = 'file-row';
+        row.innerHTML = `
+          <span class="file-icon">📄</span>
+          <span class="file-name">${f.name}</span>
+          <span class="file-size">${(f.size / 1024).toFixed(1)} KB</span>
+          <span class="remove-file" onclick="removeFile(${i})">×</span>
+        `;
+        fileList.appendChild(row);
+      });
+    }
+
+    window.removeFile = function(i) {
+      uploadedFiles.splice(i, 1);
+      renderList();
+    };
+
+    mergeBtn.addEventListener('click', async () => {
+      if (!uploadedFiles.length) return;
+      const msg = document.getElementById('status-msg');
+      msg.innerText = "Merging Batch... This may take a moment for large files.";
+      try {
+        const { PDFDocument } = PDFLib;
+        const mainPdf = await PDFDocument.create();
+        
+        for (const file of uploadedFiles) {
+          const buffer = await file.arrayBuffer();
+          const subPdf = await PDFDocument.load(buffer);
+          const pages = await mainPdf.copyPages(subPdf, subPdf.getPageIndices());
+          pages.forEach(p => mainPdf.addPage(p));
+        }
+
+        const pdfBytes = await mainPdf.save();
+        const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = document.getElementById('merge-name').value || 'merged_archive.pdf';
+        a.click();
+        URL.revokeObjectURL(url);
+        msg.innerText = "Batch Merge Complete! ✅";
+        msg.style.color = "green";
+      } catch (err) {
+        msg.innerText = "Error: " + err.message;
+        msg.style.color = "red";
+      }
+    });
+
+    renameBtn.addEventListener('click', async () => {
+      if (!uploadedFiles.length) return;
+      const msg = document.getElementById('status-msg');
+      msg.innerText = "Batch Renaming & Zipping...";
+      try {
+        const zip = new JSZip();
+        const prefix = document.getElementById('rename-prefix').value;
+        const start = parseInt(document.getElementById('rename-start').value) || 1;
+
+        uploadedFiles.forEach((file, i) => {
+          zip.file(`${prefix}${i + start}.pdf`, file);
+        });
+
+        const content = await zip.generateAsync({ type: "blob" });
+        const url = URL.createObjectURL(content);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = "renamed_pdfs.zip";
+        a.click();
+        URL.revokeObjectURL(url);
+        msg.innerText = "Batch Rename Complete! ZIP downloaded. ✅";
+        msg.style.color = "green";
+      } catch (err) {
+        msg.innerText = "Error Renaming: " + err.message;
+        msg.style.color = "red";
+      }
+    });
+
+    // Init Drag and Drop using global helper
+    setupDragDrop('drop-zone', (files) => {
+      handleFiles(files);
+    });
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

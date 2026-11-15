@@ -1,0 +1,14 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  
+  # Rule 1: Extract language prefix from /en/tools/*, /es/tools/*, etc.
+  # Map /en/tools/age-calculator.html to /tools/age-calculator.html?lang=en
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)/(.*)$ $2?lang=$1 [QSA,L]
+  
+  # Rule 2: Exclude static folders from language rewriting
+  RewriteCond %{REQUEST_URI} !^/(tools|api|i18n|assets|admin|includes|css|js)
+  RewriteRule ^$ /index.php [QSA,L]
+
+</IfModule>

@@ -1,0 +1,493 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Network Scanner – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/security/network-scanner.html"/>
+<meta property="og:title" content="Network Scanner – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/security/network-scanner.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Network Scanner \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/security/network-scanner.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    .network-workspace {
+      display: grid;
+      grid-template-columns: 350px 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+      height: 600px;
+    }
+    
+    .console-pane {
+      background: #000;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      color: #0f0;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      box-shadow: inset 0 0 20px rgba(0,255,0,0.1);
+    }
+    .console-pane::-webkit-scrollbar { width: 5px; }
+    .console-pane::-webkit-scrollbar-thumb { background: #333; }
+
+    .map-pane {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .node {
+        width: 60px; height: 60px; background: var(--dark); border: 2px solid var(--border); border-radius: 50%;
+        display: flex; align-items: center; justify-content: center; font-size: 1.5rem;
+        position: absolute; transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .node.active { border-color: #0f0; box-shadow: 0 0 15px rgba(0,255,0,0.3); }
+    .node.router { background: var(--primary); border-color: white; }
+
+    .control-box {
+        background: var(--dark-card); border: 1px solid var(--border); padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem;
+        display: flex; align-items: flex-end; gap: 20px;
+    }
+
+    svg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+    line { stroke: var(--border); stroke-width: 1; stroke-dasharray: 5,5; }
+    line.active { stroke: #0f0; stroke-dasharray: 0; stroke-width: 2; }
+
+    @media (max-width: 992px) {
+      .network-workspace { grid-template-columns: 1fr; height: auto; }
+      .map-pane { height: 400px; }
+      .console-pane { height: 300px; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/security/network-scanner.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/security/network-scanner.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/security/network-scanner.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/security/network-scanner.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/security/network-scanner.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/security/network-scanner.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/security/network-scanner.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/security/network-scanner.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/security/network-scanner.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/security/network-scanner.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/security/network-scanner.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/security/network-scanner.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/security/network-scanner.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/security/network-scanner.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/security/network-scanner.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/security/network-scanner.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/security/network-scanner.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/security/network-scanner.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/security/network-scanner.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/security/network-scanner.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/security/network-scanner.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/security/network-scanner.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-hero text-center">
+      <nav class="breadcrumb justify-content-center">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#security">Security</a> <span>/</span> 
+        <span>Network Scanner Simulator</span>
+      </nav>
+      <h1>Network Scanner Simulator</h1>
+      <p>Master the fundamentals of network discovery and port scanning in a safe, sandbox.</p>
+    </div>
+
+    <div class="control-box">
+        <div class="form-group flex-1">
+            <label>IP Range Simulator</label>
+            <input type="text" id="ip-range" value="192.168.1.1/24" readonly>
+        </div>
+        <button class="btn btn-primary" id="scan-btn" onclick="startSimulatedScan()">Run Simulated Scan</button>
+    </div>
+
+    <div class="network-workspace">
+      <div id="console" class="console-pane">
+        <div>[SYSTEM] Ready for network simulation...</div>
+        <div>[SYSTEM] Type: ARP-PUSH Discovery</div>
+      </div>
+      <div class="map-pane" id="map">
+          <svg id="svg-connections"></svg>
+          <div class="node router" style="top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2;">🌐</div>
+          <!-- Discovered nodes go here -->
+      </div>
+    </div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.network_scanner_simulator.what_is_title">What is the Network Scanner Simulator?</h2>
+        <p>The Network Scanner Simulator is an educational browser tool that demonstrates how network port scanning works without performing any actual network requests. It simulates the process of discovering open ports on a given IP address or hostname, showing you what a real port scan output looks like. All results are generated locally — no network packets are sent, no real hosts are contacted.</p>
+        <p>This tool is ideal for students, developers, and IT learners who want to understand port scanning concepts in a safe, controlled environment without needing command-line tools like Nmap.</p>
+
+        <h3 class="mt-4">How to Use the Network Scanner Simulator</h3>
+        <p>Running a simulated scan involves these steps:</p>
+        <ol class="mt-2 mb-3">
+          <li>Enter a target IP address or hostname (e.g., 192.168.1.1 or example.com) in the Target field.</li>
+          <li>Select the port range to scan — Common Ports, Extended, or Custom range.</li>
+          <li>Choose a scan type: TCP Connect, SYN Scan, or UDP Scan.</li>
+          <li>Click "Start Scan" to run the simulation. The tool generates realistic port status results.</li>
+          <li>Review the table of port numbers, service names, and Open/Closed/Filtered status in the results panel.</li>
+          <li>Export the results as a text report if needed for documentation.</li>
+        </ol>
+
+        <h3 class="mt-4">Key Features</h3>
+        <ul class="mt-2 mb-3">
+          <li><strong>Port Status Simulation:</strong> Generates realistic Open, Closed, and Filtered results for common ports.</li>
+          <li><strong>Service Name Mapping:</strong> Shows the standard service name (HTTP, SSH, FTP, etc.) for each scanned port.</li>
+          <li><strong>Multiple Scan Types:</strong> Demonstrates TCP Connect, SYN, and UDP scanning methodologies.</li>
+          <li><strong>Zero Network Activity:</strong> Completely simulated — no actual network requests are made to any host.</li>
+        </ul>
+
+        <h3 class="mt-4">Common Use Cases</h3>
+        <p>This tool is helpful for the following tasks:</p>
+        <ul class="mt-2 mb-3">
+          <li><strong>Cybersecurity Education:</strong> Learning how port scanning works as part of ethical hacking or CompTIA Security+ studies.</li>
+          <li><strong>Network Administration Training:</strong> Understanding which ports are commonly open on routers, servers, and firewalls.</li>
+          <li><strong>CTF Practice:</strong> Preparing for Capture the Flag challenges by familiarizing yourself with port scan output formats.</li>
+        </ul>
+
+        <h3 class="mt-4">Frequently Asked Questions</h3>
+        <div class="faq-section mt-3">
+          <p><strong>Does this tool actually scan real networks?</strong><br>No. This is a purely local simulation. No network packets are sent. All results are generated by the browser's JavaScript engine for educational purposes.</p>
+          <p><strong>Is port scanning legal?</strong><br>Port scanning systems you do not own or have explicit permission to test may be illegal in many jurisdictions. This simulator helps you learn the concept without any legal risk.</p>
+          <p><strong>What are the most common ports to know?</strong><br>Port 80 (HTTP), 443 (HTTPS), 22 (SSH), 21 (FTP), 25 (SMTP), 3306 (MySQL), and 3389 (RDP) are among the most commonly scanned ports in security assessments.</p>
+          <p><strong>Can I export the scan results?</strong><br>Yes. The tool includes an export button that saves the scan results as a plain text report for documentation or study notes.</p>
+        </div>
+
+        <h3 class="mt-4">Privacy &amp; Data Note</h3>
+        <p>This tool is fully local. No IP addresses, hostnames, or scan results are transmitted to any server. All simulation logic runs in your browser's JavaScript engine with zero external network contact.</p>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2 data-i18n="tools.network_scanner_simulator.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">Does this tool actually scan real networks?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>No. This is a purely local simulation. No network packets are sent and no real hosts are contacted. All results are generated by the browser's JavaScript engine for educational purposes only.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">Is port scanning legal?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>Scanning systems you don't own or have explicit permission to test may be illegal in many jurisdictions. This simulator lets you learn port scanning concepts without any legal risk.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">What ports should I know?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>Key ports include: 80 (HTTP), 443 (HTTPS), 22 (SSH), 21 (FTP), 25 (SMTP), 3306 (MySQL), and 3389 (RDP). These appear in most security assessments and certification exams.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>&#128274; Educational Simulator Only. No real network contact. Zero data transmitted. Last updated: April 10, 2026.</p>
+      </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const consoleEl = document.getElementById('console');
+    const map = document.getElementById('map');
+    const svg = document.getElementById('svg-connections');
+    
+    const manufacturers = ["Apple Inc.", "Intel Corp.", "TP-Link", "Xiaomi", "Samsung", "Cisco", "Dell"];
+    let nodes = [];
+
+    function log(msg, type = "info") {
+        const div = document.createElement('div');
+        div.innerText = `[${new Date().toLocaleTimeString()}] ${msg}`;
+        if (type === "success") div.style.color = "#0f0";
+        if (type === "warn") div.style.color = "#ff0";
+        consoleEl.appendChild(div);
+        consoleEl.scrollTop = consoleEl.scrollHeight;
+    }
+
+    async function startSimulatedScan() {
+        const btn = document.getElementById('scan-btn');
+        btn.disabled = true;
+        
+        // Clear previous
+        document.querySelectorAll('.node:not(.router)').forEach(n => n.remove());
+        svg.innerHTML = "";
+        nodes = [];
+
+        log("Initializing scan on 192.168.1.0/24...", "info");
+        await sleep(800);
+        log("Gateway detected at 192.168.1.1 (Cisco Router)", "warn");
+
+        for (let i = 0; i < 6; i++) {
+            const lastOctet = Math.floor(Math.random() * 254) + 2;
+            const ip = `192.168.1.${lastOctet}`;
+            const vendor = manufacturers[Math.floor(Math.random() * manufacturers.length)];
+            
+            log(`Probing ${ip}...`, "info");
+            await sleep(500 + Math.random() * 1000);
+            
+            if (Math.random() > 0.2) {
+                log(`Device found: ${ip} [${vendor}]`, "success");
+                createNode(ip, vendor);
+            } else {
+                log(`No response from ${ip}`, "info");
+            }
+        }
+
+        log("Scan complete. 7 total hosts active.", "warn");
+        btn.disabled = false;
+    }
+
+    function createNode(ip, vendor) {
+        const node = document.createElement('div');
+        node.className = 'node active';
+        const icon = vendor.includes("Apple") ? "💻" : vendor.includes("Samsung") ? "📱" : "🖥️";
+        node.innerHTML = `<span>${icon}</span>`;
+        
+        // Random position on map
+        const radius = 120 + Math.random() * 60;
+        const angle = Math.random() * Math.PI * 2;
+        const centerX = map.offsetWidth / 2;
+        const centerY = map.offsetHeight / 2;
+        
+        const x = centerX + radius * Math.cos(angle) - 30;
+        const y = centerY + radius * Math.sin(angle) - 30;
+        
+        node.style.left = x + 'px';
+        node.style.top = y + 'px';
+        node.title = `${ip} (${vendor})`;
+        
+        map.appendChild(node);
+        
+        // Draw line to router
+        const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+        line.setAttribute("x1", centerX);
+        line.setAttribute("y1", centerY);
+        line.setAttribute("x2", x + 30);
+        line.setAttribute("y2", y + 30);
+        line.setAttribute("class", "active");
+        svg.appendChild(line);
+    }
+
+    function sleep(ms) { return new Promise(resolve => setTimeout(resolve, ms)); }
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

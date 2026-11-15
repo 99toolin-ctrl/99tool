@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Add Watermark – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/image/add-watermark.html"/>
+<meta property="og:title" content="Add Watermark – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/image/add-watermark.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Add Watermark \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/image/add-watermark.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .editor-layout {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    @media (max-width: 992px) {
+      .editor-layout { grid-template-columns: 1fr; }
+    }
+    .canvas-container {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      min-height: 500px;
+      overflow: hidden;
+      cursor: move;
+      position: relative;
+    }
+    #main-canvas {
+      max-width: 100%;
+      height: auto;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      border-radius: 4px;
+    }
+
+    .tool-panel {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      height: fit-content;
+      position: sticky;
+      top: 80px;
+    }
+    .tool-section { margin-bottom: 1.5rem; }
+    .tool-section h4 { font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.75rem; letter-spacing: 1px; }
+
+    .tabs {
+      display: flex;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 1rem;
+    }
+    .tab {
+      flex: 1;
+      padding: 8px;
+      text-align: center;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+    .tab.active { color: var(--primary); border-bottom: 2px solid var(--primary); }
+
+    .input-group { margin-bottom: 1rem; }
+    .input-group label { display: block; font-size: 0.75rem; color: var(--text-muted); margin-bottom: 4px; }
+    .input-group input, .input-group select {
+      width: 100%;
+      background: var(--dark);
+      border: 1px solid var(--border);
+      padding: 8px;
+      border-radius: 4px;
+      color: var(--white);
+    }
+
+    .range-wrap label { display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-muted); margin-bottom: 4px; }
+
+    .logo-upload-btn {
+      background: var(--dark);
+      border: 1px dashed var(--border);
+      padding: 10px;
+      text-align: center;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.8rem;
+    }
+    .logo-upload-btn:hover { border-color: var(--primary); color: var(--primary); }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Image Watermark Adder</h1>
+      <p>Protect your brand and copyright with custom text or logo watermarks. 100% private and secure.</p>
+    </div>
+
+    <div class="tool-container">
+      <div class="upload-area" id="drop-zone">
+        <div class="upload-icon">🖋️</div>
+        <p>Drop image to Watermark or <span class="text-primary">browse files</span></p>
+        <p class="text-muted small">Supports JPG, PNG, WEBP (Maximum privacy)</p>
+        <input type="file" id="image-input" accept="image/*" hidden>
+      </div>
+
+      <div id="tool-workspace" class="hidden">
+        <div class="editor-layout">
+          <div class="canvas-container" id="canvas-container">
+             <canvas id="main-canvas"></canvas>
+             <p class="position-absolute bottom-0 start-50 translate-middle-x mb-2 small text-muted">Drag watermark to position</p>
+          </div>
+
+          <div class="tool-panel">
+            <div class="tabs">
+               <div class="tab active" data-tab="text">Text</div>
+               <div class="tab" data-tab="image">Logo</div>
+            </div>
+
+            <div id="tab-text" class="tab-content">
+               <div class="input-group">
+                  <label>Watermark Text</label>
+                  <input type="text" id="wm-text" value="99tool.in">
+               </div>
+               <div class="input-group">
+                  <label>Font Family</label>
+                  <select id="wm-font">
+                     <option value="Inter">Inter</option>
+                     <option value="Arial">Arial</option>
+                     <option value="Serif">Serif</option>
+                     <option value="Monospace">Monospace</option>
+                  </select>
+               </div>
+               <div class="input-group">
+                  <label>Text Color</label>
+                  <input type="color" id="wm-color" value="#ffffff">
+               </div>
+            </div>
+
+            <div id="tab-image" class="tab-content hidden">
+               <div class="logo-upload-btn" id="logo-drop-zone">
+                  Click to Upload Logo
+                  <input type="file" id="logo-input" accept="image/*" hidden>
+               </div>
+               <div class="range-wrap mt-3">
+                  <label>Logo Scale: <span id="logo-scale-val">30</span>%</label>
+                  <input type="range" id="logo-scale" min="5" max="100" value="30" class="w-100">
+               </div>
+            </div>
+
+            <div class="tool-section mt-4">
+               <h4>Styling</h4>
+               <div class="range-wrap">
+                  <label>Opacity: <span id="wm-opacity-val">50</span>%</label>
+                  <input type="range" id="wm-opacity" min="0" max="100" value="50" class="w-100">
+               </div>
+               <div class="range-wrap">
+                  <label>Size: <span id="wm-size-val">40</span></label>
+                  <input type="range" id="wm-size" min="10" max="200" value="40" class="w-100">
+               </div>
+               <div class="range-wrap">
+                  <label>Rotation: <span id="wm-rotate-val">0</span>°</label>
+                  <input type="range" id="wm-rotate" min="0" max="360" value="0" class="w-100">
+               </div>
+            </div>
+
+            <button id="download-btn" class="btn btn-primary w-100">Download Watermarked Image</button>
+            <p class="text-center mt-3 small text-muted">Processing is 100% local-first</p>
+          </div>
+        </div>
+            <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5">
+        <h2>Protecting Your Vision in Private: Secure Local Image Watermarking</h2>
+        <p>We’ve all been there: you’ve spent hours capturing the perfect shot or designing a unique graphic, and you're ready to share it with the world. You look for an <strong>image watermark tool</strong> online to help you protect your intellectual property and ensure your brand travels with your work. But as you look at the "Cloud Processing" and "Usage Rights" of most editors, you realize that your high-resolution original works, your artistic choices, and your proprietary designs are being uploaded to an anonymous database. Do you really want to share your "Visual Identity" with a third-party algorithm?</p>
+
+        <p>At 99tool.in, we built our <strong>image watermark adder</strong> to give you a professional branding studio without the privacy gamble. By utilizing browser-side Canvas API rendering and zero-cloud processing, we allow you to <strong>add watermarks to photos</strong> entirely within the secure sandbox of your own machine. Whether you’re a professional photographer signing a high-stakes gallery, a designer protecting a concept draft, or a content creator branding your social media assets, our <strong>safe watermarking tool</strong> ensures that your original pixels stay where they belong: on your device, under your total sovereignty.</p>
+        
+        <div class="tool-preview-box mt-4 mb-4" style="text-align:center;">
+           <img src="../../assets/images/watermark-preview.png" alt="Clean Image Watermarking Interface with Alpha-Channel Transparency and Interactive Canvas Visuals" class="tool-preview" id="tool-preview-img" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+        </div>
+
+        <h3 class="mt-4">The Logic of Alpha-Channel Transparency</h3>
+        <p>Visual protection isn't just about labels; it’s about "Aesthetic Balance." Most basic <strong>add watermark online</strong> services apply a flat, opaque box that ruins the composition of your image, leading to "Visual Degradation." Our <strong>professional watermark tool</strong> takes a human-centric approach: we focus on **Alpha-Channel Transparency** and **Interactive Canvas Rendering**.</p>
+        
+        <p>We provide a real-time editor where you can adjust the opacity and scale of your signature with pixel-perfect precision. Our <strong>safe branding validator</strong> doesn't just overlay text; it creates a high-fidelity rendering pipeline that allows you to drag, rotate, and style your mark until it complements your work. This transparency transforms a security measure into a professional signature, helping you protect your visual narrative in a private, professional environment.</p>
+
+        <h3 class="mt-4">Why Branding is the Designer’s Ethical Choice</h2>
+        <p>In the age of digital surveillance and AI harvesting, your original, un-watermarked imagery is your most valuable asset. When you use a standard <strong>watermark photo online free</strong> service that requires an upload, you are essentially giving away your "Original Negatives" for a third party to analyze or potentially use in their own models. Our 100% <strong>protection utility</strong> removes this "IP Risk" entirely from your creative routine.</p>
+        
+        <p>Because the logic and rendering happen in your browser's private memory, your original files are invisible to the outside world. No analytics are tracked, no pixels are harvested, and no creative data is shared with advertisers or AI platforms. At 99tool.in, we believe that <strong>protecting your work</strong> should be an empowering utility, not a data-mining trade-off. With us, you have a private, professional darkroom for your brand that fits in your browser tab.</p>
+
+        <h3 class="mt-4">How to Sign Your Gallery (Step-by-Step)</h3>
+        <p>Branding a new asset should be a high-speed, 10-second task. Here is how to use our <strong>watermark adder</strong>:</p>
+        <ul style="line-height: 1.8; margin-bottom: 20px;">
+          <li><strong>Step 1: Load Your Imagery</strong> — Drag and drop your photo into the workspace. It renders instantly in our local canvas without uploading a single byte to any server.</li>
+          <li><strong>Step 2: Define Your Signature</strong> — Choose between "Text" for a clean label or "Logo" to upload your own PNG branding asset. Our system handles both with equal privacy.</li>
+          <li><strong>Step 3: Calibrate the Overlay</strong> — Use the sliders to adjust Opacity, Size, and Rotation. Drag the mark directly on the canvas to find the perfect anchor point for your composition.</li>
+          <li><strong>Step 4: Commit Your Protection</strong> — Click "Download Watermarked Image." Our tool generates your branded high-quality file instantly and saves it to your local drive.</li>
+        </ul>
+
+        <h3 class="mt-4">Strategic Use Cases for Your Local Watermark Tool</h3>
+        <p>Our <strong>add watermark to photo tool</strong> is the essential companion for varied professional life:</p>
+        
+        <p><strong>For Professional Photographers:</strong> Preparing a client preview gallery? Use our <strong>secure watermark tool</strong> to add a semi-transparent logo across your high-res shots, ensuring your work is seen but not stolen before final delivery.</p>
+        
+        <p><strong>For Social Media Content Creators:</strong> Sharing original infographics or quote cards? Use our <strong>safe branding creator</strong> to add your handle as a permanent signature, ensuring your viral growth always leads back to your profile.</p>
+        
+        <p><strong>For Industrial & Product Designers:</strong> Sharing patent-pending sketches or 3D renders? Use our <strong>private watermark tool</strong> to apply "Internal Use Only" or "Confidential" stamps across your assets with absolute confidentiality.</p>
+
+        <h3 class="mt-5">Explore Your Complete Image Suite</h3>
+        <p>Once you’ve successfully branded your images, you might need to adjust them for different platforms. Check out our <strong><a href="resize-image.html">Image Resizer</a></strong>. Or, if you need to perform the same transformation on multiple files, use our <strong><a href="metadata-tool.html">EXIF Metadata Remover</a></strong>. At 99tool.in, we are building a world-class, 100% private digital toolkit to give you total control over your visual voice.</p>
+      </section>
+ 
+      <!-- FAQ SECTION -->
+      <section class="faq-section mt-5">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Does watermarking lower image quality?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. Our <strong>local watermark tool</strong> uses high-resolution canvas rendering to overlay your signature. Since the processing happens entirely on your device with native browser APIs, there is no "Lossy Compression" typically associated with remote web editors.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Is my high-res original photo sent to 99tool.in?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Absolutely not. For your total security, all branding and pixel manipulation happen <strong>locally in your browser</strong>. Your original "Negatives" never leave your machine, ensuring your creative work remains 100% private and under your control.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I use my own logo as a watermark?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. You can toggle to the "Logo" tab to upload your own PNG or JPG branding asset. Our <strong>safe branding creator</strong> allows you to scale, rotate, and position your logo anywhere on the canvas with interactive drag-and-drop controls.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              What is the best opacity for a watermark?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>For professional results, we recommend an <strong>opacity between 30% and 50%</strong>. This creates a "Semi-Transparent" look that protects your copyright without distracting from the core visual content of your photo.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I watermark multiple images at once?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Currently, this tool is optimized for <strong>precision high-fidelity signing</strong> of individual assets. To watermark an entire gallery with identical settings, we recommend our specialized <strong><a href="batch-resizer.html">Bulk Image Tools</a></strong> for high-speed workflow.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Why should I watermark my social media photos?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>In the digital age, images are easily stolen and repurposed. Using a <strong>private signature tool</strong> ensures that your handle or brand travels with your content, protecting your growth and ensuring you receive proper credit for your original creations.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const imageInput = document.getElementById('image-input');
+    const dropZone = document.getElementById('drop-zone');
+    const workspace = document.getElementById('tool-workspace');
+    const canvas = document.getElementById('main-canvas');
+    const ctx = canvas.getContext('2d');
+    
+    // UI Elements
+    const tabs = document.querySelectorAll('.tab');
+    const tabContents = document.querySelectorAll('.tab-content');
+    const downloadBtn = document.getElementById('download-btn');
+    
+    // Configs
+    const wmText = document.getElementById('wm-text');
+    const wmFont = document.getElementById('wm-font');
+    const wmColor = document.getElementById('wm-color');
+    const wmOpacity = document.getElementById('wm-opacity');
+    const wmSize = document.getElementById('wm-size');
+    const wmRotate = document.getElementById('wm-rotate');
+    const logoInput = document.getElementById('logo-input');
+    const logoDropZone = document.getElementById('logo-drop-zone');
+    const logoScale = document.getElementById('logo-scale');
+
+    let originalImg = null;
+    let logoImg = null;
+    let activeTab = 'text';
+    
+    // Position state
+    let wmX = 50;
+    let wmY = 50;
+    let isDragging = false;
+
+    // Tab Logic
+    tabs.forEach(tab => {
+       tab.onclick = () => {
+          tabs.forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          activeTab = tab.dataset.tab;
+          tabContents.forEach(c => c.classList.toggle('hidden', c.id !== `tab-${activeTab}`));
+          draw();
+       };
+    });
+
+    // File Handlers
+    dropZone.onclick = () => imageInput.click();
+    imageInput.onchange = (e) => handleMasterFile(e.target.files[0]);
+    
+    // Init Drag and Drop using global helper
+    setupDragDrop('drop-zone', (files) => {
+       if (files.length) handleMasterFile(files[0]);
+    });
+    logoInput.onchange = (e) => {
+       const file = e.target.files[0];
+       if (!file) return;
+       const reader = new FileReader();
+       reader.onload = (ev) => {
+          logoImg = new Image();
+          logoImg.onload = draw;
+          logoImg.src = ev.target.result;
+        };
+       reader.readAsDataURL(file);
+    };
+
+    function handleMasterFile(file) {
+      if (!file || !file.type.startsWith('image/')) return;
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        originalImg = new Image();
+        originalImg.onload = () => {
+          canvas.width = originalImg.width;
+          canvas.height = originalImg.height;
+          wmX = canvas.width / 2;
+          wmY = canvas.height / 2;
+          draw();
+          workspace.classList.remove('hidden');
+        };
+        originalImg.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+
+    // Drawing Logic
+    function draw() {
+       if (!originalImg) return;
+       ctx.clearRect(0, 0, canvas.width, canvas.height);
+       ctx.drawImage(originalImg, 0, 0);
+       
+       ctx.save();
+       ctx.globalAlpha = wmOpacity.value / 100;
+       ctx.translate(wmX, wmY);
+       ctx.rotate((wmRotate.value * Math.PI) / 180);
+       
+       if (activeTab === 'text') {
+          ctx.font = `${wmSize.value}px ${wmFont.value}`;
+          ctx.fillStyle = wmColor.value;
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.fillText(wmText.value, 0, 0);
+       } else if (logoImg) {
+          const scale = logoScale.value / 100;
+          const w = logoImg.width * (wmSize.value / 100) * scale;
+          const h = logoImg.height * (wmSize.value / 100) * scale;
+          ctx.drawImage(logoImg, -w/2, -h/2, w, h);
+       }
+       ctx.restore();
+    }
+
+    // Interaction
+    canvas.onmousedown = (e) => { isDragging = true; updatePos(e); };
+    window.onmouseup = () => isDragging = false;
+    canvas.onmousemove = (e) => { if (isDragging) updatePos(e); };
+
+    function updatePos(e) {
+       const rect = canvas.getBoundingClientRect();
+       const scaleX = canvas.width / rect.width;
+       const scaleY = canvas.height / rect.height;
+       wmX = (e.clientX - rect.left) * scaleX;
+       wmY = (e.clientY - rect.top) * scaleY;
+       draw();
+    }
+
+    [wmText, wmOpacity, wmSize, wmRotate, wmFont, wmColor, logoScale].forEach(el => {
+       el.oninput = () => {
+          if (el.id.includes('val')) return;
+          const valDisplay = document.getElementById(el.id + '-val');
+          if (valDisplay) valDisplay.innerText = el.value;
+          draw();
+       };
+    });
+
+    downloadBtn.onclick = () => {
+       const url = canvas.toDataURL('image/jpeg', 0.95);
+       const a = document.createElement('a');
+       a.href = url;
+       a.download = `watermarked_${Date.now()}.jpg`;
+       a.click();
+    };
+  </script>
+</body>
+</html>

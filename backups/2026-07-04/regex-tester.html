@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Regex Tester – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/developer/regex-tester.html"/>
+<meta property="og:title" content="Regex Tester – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/developer/regex-tester.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Regex Tester \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/developer/regex-tester.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="regex tester, regex validator, test regex online, regex tool, regular expression debugger" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Regex Tester",
+    "operatingSystem": "Any",
+    "applicationCategory": "DeveloperApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Real-time Regex Testing, Flags Support (g, i, m), Match Highlighting"
+  }
+  </script>
+
+  <style>
+    .regex-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    .tester-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .regex-input-group {
+       background: var(--dark-card);
+       padding: 24px;
+       border-radius: var(--radius);
+       border: 1px solid var(--border);
+    }
+
+    .flags-group {
+      display: flex;
+      gap: 15px;
+      margin-top: 12px;
+    }
+
+    .flag-checkbox {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      color: var(--text-muted);
+    }
+
+    .flag-checkbox input {
+      accent-color: var(--primary);
+      width: 16px;
+      height: 16px;
+    }
+
+    .flag-checkbox:hover { color: var(--white); }
+
+    .highlight-editor {
+      position: relative;
+      min-height: 200px;
+    }
+
+    #test-string-input, #highlight-backdrop {
+      width: 100%;
+      height: 200px;
+      padding: 16px;
+      font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', monospace;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      border-radius: var(--radius-sm);
+      margin: 0;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      overflow: auto;
+    }
+
+    #test-string-input {
+      position: relative;
+      z-index: 2;
+      background: transparent !important;
+      color: transparent !important;
+      caret-color: var(--white);
+      resize: vertical;
+    }
+
+    #highlight-backdrop {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      background: var(--dark);
+      border: 1px solid var(--border);
+      color: var(--text);
+      pointer-events: none;
+    }
+
+    .match-highlight {
+      background: rgba(229, 57, 53, 0.3);
+      border-bottom: 2px solid var(--primary);
+      border-radius: 2px;
+    }
+
+    .match-highlight:nth-child(even) {
+       background: rgba(33, 150, 243, 0.3);
+       border-bottom-color: #2196f3;
+    }
+
+    .results-panel {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+
+    .match-info {
+      font-size: 0.85rem;
+      color: var(--white);
+      margin-bottom: 15px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 10px;
+    }
+
+    .group-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .group-item {
+      background: var(--dark);
+      padding: 8px 12px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      border-left: 3px solid var(--primary);
+    }
+
+    .group-label {
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-right: 8px;
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#developer">Developer</a> <span>/</span> 
+        <span>Regex Tester</span>
+      </nav>
+      <h1>Regex Tester & Debugger</h1>
+      <p>Test your regular expressions in real-time with match highlighting and group extraction. 100%.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div class="regex-layout">
+        <div class="tester-container">
+          <div class="regex-input-group">
+            <div class="form-group">
+              <label>Regular Expression</label>
+              <div class="flex gap-2 items-center">
+                <span style="color: var(--primary); font-weight: 800; font-size: 1.2rem;">/</span>
+                <input type="text" id="regex-pattern" class="form-control" placeholder="[a-zA-Z0-9]+" style="font-family: monospace;">
+                <span style="color: var(--primary); font-weight: 800; font-size: 1.2rem;">/</span>
+                <span id="active-flags" style="color: var(--primary-light); font-weight: 600;">gm</span>
+              </div>
+            </div>
+
+            <div class="flags-group">
+              <label class="flag-checkbox"><input type="checkbox" value="g" checked> global (g)</label>
+              <label class="flag-checkbox"><input type="checkbox" value="i"> insensitive (i)</label>
+              <label class="flag-checkbox"><input type="checkbox" value="m" checked> multiline (m)</label>
+              <label class="flag-checkbox"><input type="checkbox" value="s"> dotAll (s)</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Test String</label>
+            <div class="highlight-editor">
+               <div id="highlight-backdrop"></div>
+               <textarea id="test-string-input" spellcheck="false" placeholder="Enter text to test your regex against..."></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="results-panel">
+          <h3>Match Results</h3>
+          <div id="match-summary" class="match-info">No matches found.</div>
+          
+          <div id="group-results" class="group-list">
+             <!-- Groups injected here -->
+          </div>
+        </div>
+      </div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5">
+        <h2>Pattern Precision in Private: Secure Regular Expression Testing</h2>
+        <p>We’ve all been there: you’re trying to extract specific data from a massive log file or validate a complex user input, and you’re stuck on a "Regex" that just won't behave. Your first instinct is to find a <strong>regex tester</strong> online to debug your pattern. But then you hesitate—your test string contains real customer emails, production error logs, or sensitive system paths. Do you really want to send that data to a random server just to see if your <code>(group)</code> matches correctly?</p>
+
+        <p>At 99tool.in, we built our <strong>regex validator</strong> to give you a professional debugging environment without the privacy debt. By running the regex engine entirely within your browser's JavaScript environment, we allow you to <strong>test regex online</strong> with absolute data sovereignty. Whether you’re a security researcher parsing threat intel, a frontend dev validating forms, or a data engineer cleaning CSVs, our <strong>regex tool</strong> ensures your strings never leave your device.</p>
+        
+        <div class="tool-preview-box mt-4 mb-4" style="text-align:center;">
+           <img src="../../assets/images/markdown-preview.png" alt="Interactive Regex Tester Workspace" class="tool-preview" id="tool-preview-img" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+        </div>
+
+        <h3 class="mt-4">The Logic of Real-Time Pattern Highlighting</h3>
+        <p>Regular expressions are the "logic puzzles" of the programming world. A single misplaced <code>*</code> or <code>?</code> can mean the difference between matching a single word and capturing an entire database. Most online <strong>regex tools</strong> are static, requiring you to click "Test" every time you make a change. Our <strong>safe regex tester</strong> takes a human-centric approach: we focus on **Instant Visual Feedback** and **Group Extraction**.</p>
+        
+        <p>We utilize a synchronized rendering engine that highlights matches as you type. Our <strong>professional regex validator</strong> doesn't just show you "if" it matches; it shows you "where" and "how" through color-coded capture groups. This transparency allows you to see the "Logic of your Pattern" in real-time, helping you catch edge cases and catastrophic backtracking issues before they reach your production code.</p>
+
+        <h3 class="mt-4">Why Regex Testing is the Ethical Standard</h3>
+        <p>When you use a standard <strong>regex debugger</strong> that requires a cloud connection, you are essentially creating a digital record of the logic you use to protect your systems. In the hands of bad actors, this knowledge is a roadmap. Our 100% <strong>regex utility</strong> eliminates this risk. We believe that <strong>debugging code patterns</strong> should be an empowering utility, not a data-harvesting trap.</p>
+        
+        <p>Because the logic runs in your browser's private sandbox, your patterns and your data are invisible to the outside world. No analytics are tracked, no patterns are harvested, and no test strings are saved. With 99tool.in, you have a private, professional laboratory for your most complex logic strings, right in your browser tab.</p>
+
+        <h3 class="mt-4">How to Use the 99tool.in Regex Tester (Step-by-Step)</h3>
+        <p>Mastering your patterns should be a frictionless experience. Here is how to use our <strong>regex tester</strong> utility:</p>
+        <ul style="line-height: 1.8; margin-bottom: 20px;">
+          <li><strong>Step 1: Define Your Logic</strong> — Enter your regular expression into the pattern box. Our system immediately prepares the local matching engine.</li>
+          <li><strong>Step 2: Set Your Flags</strong> — Toggle Global (g), Case-insensitive (i), or Multiline (m) flags to fine-tune how the engine traverses your text.</li>
+          <li><strong>Step 3: Provide the Data</strong> — Paste your test string into the workspace. Watch as matches are instantly highlighted in the visualization pane.</li>
+          <li><strong>Step 4: Analyze Groups</strong> — Look at the "Matches Found" section to see broken-down capture groups, ensuring your variables are extracting exactly what you expect.</li>
+        </ul>
+
+        <h3 class="mt-4">Strategic Use Cases for Safe Regex Testing</h3>
+        <p>Our <strong>regex tool</strong> is the essential companion for high-stakes development:</p>
+        
+        <p><strong>For Data Scientists:</strong> Cleaning a massive dataset with sensitive PII? Use our <strong>regex tester</strong> to verify your cleaning patterns on a sample without ever risking a data breach.</p>
+        
+        <p><strong>For Backend Engineers:</strong> Writing complex URL routing or search patterns? Use our <strong>regex validator</strong> to test edge cases and ensure your routes are secure and efficient.</p>
+        
+        <p><strong>For Log Analysts:</strong> Parsing server logs to find security anomalies? Use our <strong>regex tool</strong> to build patterns that extract IP addresses, timestamps, and error codes privately.</p>
+
+        <h3 class="mt-5">Expand Your Developer Toolkit</h3>
+        <p>Once you’ve perfected your regex, you might need to format the resulting data. Check out our <strong><a href="json-formatter.html">JSON Formatter</a></strong>. Or, if you’re building a library of reusable patterns, use our <strong><a href="code-snippet-manager.html">Snippet Manager</a></strong>. At 99tool.in, we are building a world-class, 100% private digital toolkit to give you total control over your code.</p>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Which Regex engine does this use?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>This tool uses the native JavaScript <code>RegExp</code> engine (V8 model). This is the standard engine for modern web development, making it perfect for testing patterns meant for frontend validation, Node.js scripts, and many server-side environments.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Is my test data safe?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. 99tool.in runs the matching logic entirely within your local browser's memory. We do not upload your test strings, patterns, or results to any server. Your sensitive logs and PII (Personally Identifiable Information) stay private.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I use Lookbehind or Named Groups?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes! Our <strong>regex validator</strong> supports ES2018+ features, including lookbehind assertions <code>(?<=...)</code> and named capture groups <code>(?<name>...)</code>. These will show up clearly in the "Match Results" panel.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Why does it say my pattern is invalid?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>This usually happens due to unescaped special characters or a syntax error in your brackets. Check for unclosed parentheses or misplaced quantifiers. Our debugger provides a specific error message to help you pinpoint the issue.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Does it support global matching?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. By enabling the <strong>global (g)</strong> flag, our tool will find every occurrence of your pattern in the test string. Without it, the engine will stop after finding the first match.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I test multi-line strings?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Absolutely. Use the <strong>multiline (m)</strong> flag to allow anchors like <code>^</code> and <code>$</code> to match the start and end of each individual line within your test string.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 100% private. All patterns stay in your browser. Last updated: April 11, 2026.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const patternInput = document.getElementById('regex-pattern');
+    const testInput = document.getElementById('test-string-input');
+    const backdrop = document.getElementById('highlight-backdrop');
+    const flagsCheckboxes = document.querySelectorAll('.flag-checkbox input');
+    const activeFlagsDisplay = document.getElementById('active-flags');
+    const matchSummary = document.getElementById('match-summary');
+    const groupResults = document.getElementById('group-results');
+
+    function update() {
+      const pattern = patternInput.value;
+      const text = testInput.value;
+      let flags = '';
+      
+      flagsCheckboxes.forEach(cb => { if(cb.checked) flags += cb.value; });
+      activeFlagsDisplay.textContent = flags;
+
+      if (!pattern) {
+        backdrop.textContent = text;
+        matchSummary.textContent = 'Enter a pattern to start.';
+        groupResults.innerHTML = '';
+        return;
+      }
+
+      try {
+        const regex = new RegExp(pattern, flags);
+        
+        // Match summary & Highlighting
+        let matches = [];
+        if (flags.includes('g')) {
+           matches = [...text.matchAll(regex)];
+        } else {
+           const singleMatch = text.match(regex);
+           if (singleMatch) matches = [singleMatch];
+        }
+
+        matchSummary.innerHTML = `Found <strong style="color:var(--primary)">${matches.length}</strong> match${matches.length === 1 ? '' : 'es'}.`;
+        
+        // Create highlights
+        let highlightedText = '';
+        let lastIndex = 0;
+        
+        matches.forEach((match, i) => {
+            const start = match.index;
+            const content = match[0];
+            highlightedText += escapeHTML(text.substring(lastIndex, start));
+            highlightedText += `<span class="match-highlight">${escapeHTML(content)}</span>`;
+            lastIndex = start + content.length;
+        });
+        highlightedText += escapeHTML(text.substring(lastIndex));
+        backdrop.innerHTML = highlightedText + '\n'; // Add newline fix for scroll syncing
+
+        // Show group results for the first match
+        groupResults.innerHTML = '';
+        if (matches.length > 0) {
+           const firstMatch = matches[0];
+           firstMatch.forEach((val, i) => {
+              const div = document.createElement('div');
+              div.className = 'group-item';
+              div.innerHTML = `<span class="group-label">Match ${i}:</span> ${escapeHTML(val || 'undefined')}`;
+              groupResults.appendChild(div);
+           });
+           
+           // Named groups
+           if (firstMatch.groups) {
+              Object.entries(firstMatch.groups).forEach(([name, val]) => {
+                const div = document.createElement('div');
+                div.className = 'group-item';
+                div.style.borderColor = '#4caf50';
+                div.innerHTML = `<span class="group-label" style="color:#4caf50;">${name}:</span> ${escapeHTML(val)}`;
+                groupResults.appendChild(div);
+              });
+           }
+        }
+
+      } catch (e) {
+        backdrop.textContent = text;
+        matchSummary.innerHTML = `<span style="color:var(--primary)">⚠️ Invalid pattern: ${e.message}</span>`;
+        groupResults.innerHTML = '';
+      }
+    }
+
+    function escapeHTML(str) {
+      const div = document.createElement('div');
+      div.textContent = str;
+      return div.innerHTML;
+    }
+
+    // Sync scrolling
+    testInput.onscroll = () => {
+      backdrop.scrollTop = testInput.scrollTop;
+      backdrop.scrollLeft = testInput.scrollLeft;
+    };
+
+    patternInput.oninput = update;
+    testInput.oninput = update;
+    flagsCheckboxes.forEach(cb => cb.onchange = update);
+
+    // Initial update
+    update();
+  </script>
+</body>
+</html>
+

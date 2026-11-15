@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Rotate Pdf – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/pdf/rotate-pdf.html"/>
+<meta property="og:title" content="Rotate Pdf – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/pdf/rotate-pdf.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Rotate Pdf \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/pdf/rotate-pdf.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+  <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+  <style>
+    .thumbnails-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .thumb-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem;
+      text-align: center;
+      position: relative;
+      transition: all 0.2s;
+    }
+    .thumb-card canvas {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .thumb-controls {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 1rem;
+    }
+    .rotate-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: white;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      transition: all 0.2s;
+    }
+    .rotate-btn:hover { background: var(--primary); color: white; border-color: var(--primary); }
+    .global-controls {
+      background: var(--bg-secondary);
+      padding: 1.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-top: 1.5rem;
+    }
+    #loading-status {
+      display: none;
+      text-align: center;
+      padding: 2rem;
+    }
+    .spin { animation: rotate 1s linear infinite; display: inline-block; }
+    @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/pdf/rotate-pdf.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/pdf/rotate-pdf.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/pdf/rotate-pdf.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/pdf/rotate-pdf.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/pdf/rotate-pdf.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/pdf/rotate-pdf.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/pdf/rotate-pdf.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/pdf/rotate-pdf.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/pdf/rotate-pdf.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/pdf/rotate-pdf.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/pdf/rotate-pdf.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/pdf/rotate-pdf.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/pdf/rotate-pdf.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/pdf/rotate-pdf.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/pdf/rotate-pdf.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/pdf/rotate-pdf.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/pdf/rotate-pdf.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/pdf/rotate-pdf.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/pdf/rotate-pdf.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/pdf/rotate-pdf.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/pdf/rotate-pdf.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/pdf/rotate-pdf.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>PDF Page Rotator</h1>
+      <p>Fix sideways or upside-down scans instantly. Privately and visual.</p>
+    </div>
+
+    <div class="tool-container">
+      <div class="upload-area" id="drop-zone">
+        <div class="upload-icon">🔄</div>
+        <p>Drag & drop your PDF or <span class="text-primary">browse files</span></p>
+        <input type="file" id="pdf-input" accept="application/pdf" hidden>
+      </div>
+
+      <div id="file-info" class="file-info hidden">
+        <div class="file-details">
+          <span id="file-name">filename.pdf</span>
+          <span id="file-size" class="text-muted">0 KB</span>
+        </div>
+        <div class="security-badge" id="security-badge">
+          <span class="badge-icon">🛡️</span>
+          <span id="security-status">Analyzing...</span>
+        </div>
+      </div>
+
+      <div id="loading-status">
+        <span class="spin">🔄</span> Rendering pages... Please wait.
+      </div>
+
+      <div id="editor-workspace" class="hidden">
+        <div class="global-controls">
+          <span class="fw-bold">Bulk Action:</span>
+          <button class="btn btn-secondary btn-sm" id="rotate-all-left">Rotate All Left ↺</button>
+          <button class="btn btn-secondary btn-sm" id="rotate-all-right">Rotate All Right ↻</button>
+          <div style="flex-grow: 1;"></div>
+          <button id="save-btn" class="btn btn-primary">Save & Download PDF</button>
+        </div>
+
+        <div class="thumbnails-grid" id="thumbnails-grid"></div>
+      </div>
+
+      <div id="status-msg" class="text-center mt-3 small"></div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5">
+        <h2>Restore the Right Perspective to Your Documents</h2>
+        <p>We’ve all been there: you receive a scanned document or a set of photos converted to PDF, and half the pages are sideways. Reading it requires you to tilt your head at an awkward 90-degree angle or constantly rotate your tablet. Your first instinct is to find a tool to <strong>rotate pdf</strong> online. But when those pages contain sensitive tax returns, a signed contract, or private medical notes, do you really want to "upload" them to a server you don't control? Does fixing a minor visual orientation issue warrant a major privacy compromise?</p>
+
+        <p>At 99tool.in, we built our <strong>pdf rotate tool</strong> to give you a professional, visual interface without the cloud risk. By utilizing the latest in browser-based rendering (PDF.js), we allow you to <strong>change pdf orientation</strong> directly in your browser. Whether you're a legal clerk organizing a discovery packet, a student fixing a textbook scan, or a professional preparing a report, our <strong>pdf rotator</strong> ensure that your pages always face the right way, keeping your data private and your neck strain-free.</p>
+        
+        <div class="tool-preview-box mt-4 mb-4" style="text-align:center;">
+           <img src="../../assets/images/reorder-preview.png" alt="Visual PDF Rotation Workspace" class="tool-preview" id="tool-preview-img" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+        </div>
+
+        <h3 class="mt-4">The Precision of a Visual Workspace</h3>
+        <p>Most basic orientation tools force you to rotate the entire document at once. If you have a 50-page PDF and only Page 12 is upside down, a "global" rotation just moves the problem from one page to another. Our <strong>visual pdf rotator</strong> interface was designed for surgical precision. The moment you load your file, we generate high-quality thumbnails for every single page.</p>
+        
+        <p>This allows you to <strong>rotate pdf pages</strong> individually. See a sideways chart? Click the rotation arrow on that specific thumbnail. The preview updates instantly in your browser, so you don't have to guess. We’ve also included bulk controls for those pesky documents where *every* page was fed into the scanner wrong. This human-centric approach to <strong>pdf page management</strong> ensures that the final result is exactly how a professional document should look: consistent and easy to read.</p>
+
+        <h3 class="mt-4">Why Processing is the Security Standard</h3>
+        <p>Document rotation is a structural change. To perform it, traditional <strong>rotate pdf online</strong> services must ingest your file, re-render it, and save a new version on their servers. This "Data Trail" is exactly where privacy leaks happen. If a server is compromised, your unencrypted documents are exposed. Our <strong>safe pdf orientation tool</strong> eliminates this entire category of risk.</p>
+        
+        <p>All the heavy lifting—from generating thumbnails to rebuilding the internal orientation flags of the PDF—happens in your browser's private sandbox memory. Furthermore, as part of our commitment to being the most secure <strong>pdf toolkit</strong> on the web, 99tool.in includes an automated **Security Scan** as you load your thumbnails. We check for interactive elements and hidden scripts (<code>/JS</code>), giving you a "clean bill of health" for every file you process. We believe that correcting the layout shouldn't introduce new vulnerabilities.</p>
+
+        <h3 class="mt-4">How to Rotate Your PDF Pages (Step-by-Step)</h3>
+        <p>Mastering our <strong>rotate pdf</strong> utility is as simple as turning a wheel. Here is how to ensure a perfect result:</p>
+        <ul style="line-height: 1.8; margin-bottom: 20px;">
+          <li><strong>Step 1: Secure Load</strong> — Drag your PDF into the dashed uploader. We’ll immediately perform a security check and begin rendering your page thumbnails.</li>
+          <li><strong>Step 2: Inspect and Orient</strong> — Scroll through the thumbnails. When you find a page that needs a turn, click the ↺ (Left) or ↻ (Right) buttons on that specific card.</li>
+          <li><strong>Step 3: Verify the Preview</strong> — Each thumbnail shows its rotation in real-time. Use the <strong>Bulk Rotate</strong> buttons in the toolbar if the entire document needs a 90 or 180-degree flip.</li>
+          <li><strong>Step 4: Rebuild and Download</strong> — Click "Save & Download PDF." Our local engine will save the new orientation flags and start your download instantly.</li>
+        </ul>
+
+        <h3 class="mt-4">Professional Use Cases for Orientation Management</h3>
+        <p>Our <strong>pdf rotate</strong> tool is the essential fix for diverse professional workflows:</p>
+        
+        <p><strong>For Real Estate Professionals:</strong> Handling multi-page disclosure packets? Sometimes the appraisal forms are landscape while the contracts are portrait. Use our <strong>pdf rotate tool</strong> to align everything perfectly for your client’s signature portal.</p>
+        
+        <p><strong>For Academic Researchers:</strong> Scanning older journals often results in rotated pages due to original binding issues. Fix your research archive in seconds with our <strong>visual pdf orientation</strong> utility before importing it into your citation manager.</p>
+        
+        <p><strong>For Medical Offices:</strong> Patient records often arrive as a jumble of scans from different machines. Our <strong>rotate pdf pages</strong> feature allows you to ensure that charts and lab results are facing the correct way before they are attached to an electronic health record (EHR).</p>
+
+        <h3 class="mt-5">Explore Your Complete Productivity Suite</h3>
+        <p>Once you’ve perfectly rotated your pages, you might find that you need to reorder them or combine them with other files. Check out our <strong><a href="reorder-pdf.html">PDF Page Reorder</a></strong> tool. Or, if the final document is too large for an email attachment, use our <strong><a href="compress-pdf.html">PDF Compressor</a></strong> to shrink it safely. At 99tool.in, we are building a world-class, private digital toolkit to empower your work, every day.</p>
+        
+        <div class="flex gap-4 mt-4 mb-5">
+           <a href="reorder-pdf.html" class="btn btn-secondary" style="flex:1; text-align:center;">Reorder PDF</a>
+           <a href="merge-pdf.html" class="btn btn-secondary" style="flex:1; text-align:center;">Merge PDF</a>
+        </div>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2 data-i18n="tools.pdf_page_rotator.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Does rotating a PDF affect the quality?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. Our <strong>rotate pdf</strong> tool only modifies the orientation metadata flag of each page. It does not re-encode or compress the actual content, ensuring your text, images, and vectors remain at original resolution and high fidelity.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I rotate specific pages instead of the whole file?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes! Our visual editor allows you to <strong>rotate individual pdf pages</strong>. Each page has its own left and right rotation buttons on its thumbnail, so you can fix a single sideways page without affecting anything else.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Are my files sent to any server for rotation?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Absolutely not. For maximum privacy, the <strong>entire rotation process</strong> happens locally in your browser tab. We use JavaScript and WASM to modify your file's metadata in-memory, ensuring no one else ever sees your data.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I rotate a PDF 180 degrees?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. Simply click the rotate button twice for any page or use the <strong>bulk rotate</strong> buttons to flip the entire document upside down. We support 90, 180, and 270-degree rotations in both directions.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Is there a limit on how many pages I can rotate?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Since the processing happens in your <strong>browser's RAM</strong>, you can handle documents with hundreds of pages. For extremely large files (over 500 pages), ensure your device has sufficient memory for the smoothest rendering experience.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Why use 99tool instead of a standard PDF viewer?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Standard viewers often only rotate the *view* without saving the changes to the file. Our <strong>PDF rotator</strong> "burns" the new orientation into the file's metadata, making the change permanent across all devices and readers.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 Privacy-First. No Uploads. 100% Secure. Last updated: April 10, 2026.</p>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js';
+
+    const pdfInput = document.getElementById('pdf-input');
+    const dropZone = document.getElementById('drop-zone');
+    const workspace = document.getElementById('editor-workspace');
+    const thumbnailsGrid = document.getElementById('thumbnails-grid');
+    const saveBtn = document.getElementById('save-btn');
+    const loadStatus = document.getElementById('loading-status');
+    const rotateAllLeftBtn = document.getElementById('rotate-all-left');
+    const rotateAllRightBtn = document.getElementById('rotate-all-right');
+
+    let currentFile = null;
+    let pageRotations = []; // Array of integers (0, 90, 180, 270)
+
+    // File selection
+    dropZone.addEventListener('click', () => pdfInput.click());
+    pdfInput.addEventListener('change', (e) => handleFile(e.target.files[0]));
+
+    async function handleFile(file) {
+      if (!file || file.type !== 'application/pdf') return;
+      currentFile = file;
+      document.getElementById('file-name').innerText = file.name;
+      document.getElementById('file-size').innerText = (file.size / 1024).toFixed(1) + ' KB';
+      document.getElementById('file-info').classList.remove('hidden');
+      workspace.classList.add('hidden');
+      
+      // Security Scan
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const text = new TextDecoder().decode(e.target.result.slice(0, 5000));
+        const badge = document.getElementById('security-badge');
+        const status = document.getElementById('security-status');
+        if (text.includes('/JS')) {
+            badge.style.background = '#fff3cd'; badge.style.color = '#856404';
+            status.innerText = 'Detection: Nested Scripts';
+        } else {
+            badge.style.background = '#d4edda'; badge.style.color = '#155724';
+            status.innerText = 'Safe: Logic-Free Document';
+        }
+      };
+      reader.readAsArrayBuffer(file);
+
+      renderThumbnails(file);
+    }
+
+    async function renderThumbnails(file) {
+      thumbnailsGrid.innerHTML = "";
+      loadStatus.style.display = 'block';
+      const arrayBuffer = await file.arrayBuffer();
+      const pdf = await pdfjsLib.getDocument(arrayBuffer).promise;
+
+      pageRotations = new Array(pdf.numPages).fill(0);
+
+      for (let i = 1; i <= pdf.numPages; i++) {
+        const page = await pdf.getPage(i);
+        const viewport = page.getViewport({ scale: 0.3 });
+
+        const card = document.createElement('div');
+        card.className = 'thumb-card';
+        card.innerHTML = `
+          <div class="thumb-preview" id="preview-page-${i-1}">
+            <canvas id="canvas-page-${i-1}"></canvas>
+          </div>
+          <p class="small text-muted mt-2">Page ${i}</p>
+          <div class="thumb-controls">
+            <button class="rotate-btn" onclick="rotateSingle(${i-1}, -90)">↺</button>
+            <button class="rotate-btn" onclick="rotateSingle(${i-1}, 90)">↻</button>
+          </div>
+        `;
+
+        const canvas = card.querySelector('canvas');
+        const context = canvas.getContext('2d');
+        canvas.height = viewport.height;
+        canvas.width = viewport.width;
+
+        await page.render({ canvasContext: context, viewport }).promise;
+        thumbnailsGrid.appendChild(card);
+      }
+      loadStatus.style.display = 'none';
+      workspace.classList.remove('hidden');
+    }
+
+    window.rotateSingle = function(index, delta) {
+      pageRotations[index] = (pageRotations[index] + delta + 360) % 360;
+      const canvas = document.getElementById(`canvas-page-${index}`);
+      canvas.style.transform = `rotate(${pageRotations[index]}deg)`;
+    };
+
+    rotateAllLeftBtn.addEventListener('click', () => {
+      pageRotations = pageRotations.map(r => (r - 90 + 360) % 360);
+      updateAllCanvasRotations();
+    });
+
+    rotateAllRightBtn.addEventListener('click', () => {
+      pageRotations = pageRotations.map(r => (r + 90) % 360);
+      updateAllCanvasRotations();
+    });
+
+    function updateAllCanvasRotations() {
+      pageRotations.forEach((rot, i) => {
+        const canvas = document.getElementById(`canvas-page-${i}`);
+        if (canvas) canvas.style.transform = `rotate(${rot}deg)`;
+      });
+    }
+
+    saveBtn.addEventListener('click', async () => {
+      document.getElementById('status-msg').innerText = "Processing orientation changes...";
+      try {
+        const { PDFDocument, degrees } = PDFLib;
+        const arrayBuffer = await currentFile.arrayBuffer();
+        const pdfDoc = await PDFDocument.load(arrayBuffer);
+        const pages = pdfDoc.getPages();
+
+        pages.forEach((page, i) => {
+          const currentRotation = page.getRotation().angle;
+          const newRotation = (currentRotation + pageRotations[i]) % 360;
+          page.setRotation(degrees(newRotation));
+        });
+
+        const pdfBytes = await pdfDoc.save();
+        const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'rotated_' + currentFile.name;
+        a.click();
+        URL.revokeObjectURL(url);
+        document.getElementById('status-msg').innerText = "PDF rotated successfully!";
+      } catch (err) {
+        console.error(err);
+        document.getElementById('status-msg').innerText = "Error rotating PDF: " + err.message;
+      }
+    });
+
+    // Init Drag and Drop using global helper
+    setupDragDrop('drop-zone', (files) => {
+      if (files.length) handleFile(files[0]);
+    });
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

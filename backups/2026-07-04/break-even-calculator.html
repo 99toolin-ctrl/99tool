@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Break Even Calculator – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/business/break-even-calculator.html"/>
+<meta property="og:title" content="Break Even Calculator – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/business/break-even-calculator.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Break Even Calculator \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/business/break-even-calculator.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    .math-workspace {
+      max-width: 750px;
+      margin: 2rem auto;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      border-radius: 24px;
+    }
+    .input-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 2rem; }
+    label { display: block; margin-bottom: 0.5rem; color: var(--text-muted); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
+    input {
+      width: 100%;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 1rem;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    input:focus { border-color: var(--primary); outline: none; }
+    
+    .result-panel {
+       margin-top: 2rem;
+       display: none;
+    }
+    .main-metric {
+       background: rgba(var(--primary-rgb), 0.05);
+       border: 1px solid var(--primary);
+       padding: 2.5rem;
+       border-radius: 20px;
+       text-align: center;
+       margin-bottom: 20px;
+    }
+    .val-primary { font-size: 3.5rem; font-weight: 800; color: var(--primary); line-height: 1; }
+    .lab-primary { font-size: 0.9rem; color: var(--text-muted); margin-top: 10px; text-transform: uppercase; letter-spacing: 1px; }
+    
+    .sec-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .metric-card {
+       background: rgba(255,255,255,0.03);
+       border: 1px solid var(--border);
+       padding: 1.5rem;
+       border-radius: 16px;
+       text-align: center;
+    }
+    .metric-val { font-size: 1.5rem; font-weight: 700; color: var(--text); }
+    .metric-lab { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; margin-top: 4px; }
+    
+    .alert-box {
+       margin-bottom: 1.5rem;
+       padding: 12px;
+       border-radius: 8px;
+       background: rgba(229, 57, 53, 0.1);
+       border: 1px solid #e53935;
+       color: #e53935;
+       font-size: 0.85rem;
+       display: none;
+    }
+    @media (max-width: 600px) {
+       .input-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Infinite Break-Even Auditor</h1>
+      <p>Analyze the point of zero loss. Identify the sales volume required to cover your infrastructure costs instantly.</p>
+    </div>
+
+    <div class="math-workspace">
+      <div id="error-box" class="alert-box">Selling price must be higher than variable cost to reach break-even.</div>
+
+      <div class="input-grid">
+         <div>
+            <label>Total Fixed Costs ($)</label>
+            <input type="number" id="fixed-in" placeholder="e.g., 5000" oninput="solve()">
+         </div>
+         <div>
+            <label>Variable Cost / Unit ($)</label>
+            <input type="number" id="var-in" placeholder="e.g., 10" oninput="solve()">
+         </div>
+         <div>
+            <label>Selling Price / Unit ($)</label>
+            <input type="number" id="price-in" placeholder="e.g., 25" oninput="solve()">
+         </div>
+      </div>
+
+      <div class="result-panel" id="res-panel">
+         <div class="main-metric">
+            <div class="val-primary" id="res-units">0</div>
+            <div class="lab-primary">Break-Even Units Required</div>
+         </div>
+
+         <div class="sec-metrics">
+            <div class="metric-card">
+               <div class="metric-val" id="res-revenue">$0.00</div>
+               <div class="metric-lab">Break-Even Revenue</div>
+            </div>
+            <div class="metric-card">
+               <div class="metric-val" id="res-cont">0%</div>
+               <div class="metric-lab">Contribution Margin</div>
+            </div>
+         </div>
+      </div>
+
+      <!-- SEO CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2>What is a Break-Even Point?</h2>
+        <p>The break-even point is the specific level of sales volume where total revenue exactly matches total costs, resulting in zero profit and zero loss. For entrepreneurs and project managers, this is the first critical milestone. Our <strong>online break-even calculator</strong> provides high-fidelity modeling of your financial survival point. An accurate <strong>cost recovery diagnostic auditor</strong> is essential for startup planning and scaling existing business models.</p>
+
+        <h3 class="mt-4">Understanding Contribution Margin</h2>
+        <p>Contribution margin is the remaining revenue per unit after covering all variable costs. This amount "contributes" directly to paying off your fixed costs. Our <strong>profit threshold diagnostic tool</strong> calculates your contribution margin percentage to show how efficiently your products generate recovery value. This <strong>advanced financial auditor</strong> helps you evaluate if your current pricing strategy allows for a realistic path to profitability.</p>
+
+        <h3 class="mt-4">Privacy and Business Modeling</h2>
+        <p>At 99tool.in, all financial modeling is executed locally in your browser sandbox. We do not store your fixed costs, variable data, or pricing strategies on any server. This <strong>private business tool</strong> provides professional-grade results without any corporate telemetry. Whether you are launching a new product line or evaluating overhead reduction, our <strong>secure break-even calculator</strong> ensures your financial roadmap remains purely yours.</p>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    function solve() {
+       const fixed = parseFloat(document.getElementById('fixed-in').value) || 0;
+       const varCost = parseFloat(document.getElementById('var-in').value) || 0;
+       const price = parseFloat(document.getElementById('price-in').value) || 0;
+       const errBox = document.getElementById('error-box');
+
+       if (fixed <= 0 || price <= 0) {
+          document.getElementById('res-panel').style.display = 'none';
+          errBox.style.display = 'none';
+          return;
+       }
+
+       if (price <= varCost) {
+          document.getElementById('res-panel').style.display = 'none';
+          errBox.style.display = 'block';
+          return;
+       }
+
+       errBox.style.display = 'none';
+
+       // 1. Break-even units
+       const units = fixed / (price - varCost);
+       const revenue = units * price;
+       const contMargin = ((price - varCost) / price) * 100;
+
+       // Render
+       document.getElementById('res-units').innerText = Math.ceil(units).toLocaleString();
+       document.getElementById('res-revenue').innerText = '$' + revenue.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+       document.getElementById('res-cont').innerText = contMargin.toFixed(1) + '%';
+       
+       document.getElementById('res-panel').style.display = 'block';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Knowledge Base – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/productivity/knowledge-base.html"/>
+<meta property="og:title" content="Knowledge Base – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/productivity/knowledge-base.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Knowledge Base \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/productivity/knowledge-base.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="personal knowledge base, knowledge base, personal wiki, note organization tool, knowledge management tool, wiki notes" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json" id="schema-org-data">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Personal Knowledge Base",
+    "operatingSystem": "Any",
+    "applicationCategory": "ProductivityApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Wiki-style internal linking, Markdown support, Instant global search, Persistent storage"
+  }
+  </script>
+
+  <style>
+    .wiki-layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .wiki-sidebar {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+
+    .wiki-main {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 40px;
+      min-height: 600px;
+      position: relative;
+    }
+
+    .wiki-content {
+      font-family: 'IBM Plex Sans', sans-serif;
+      line-height: 1.7;
+      color: var(--text);
+    }
+    .wiki-content p { margin-bottom: 1.2rem; }
+    .wiki-content h2, .wiki-content h3 { margin-top: 2rem; color: var(--white); }
+    .wiki-content a.internal-link { color: var(--primary); text-decoration: none; border-bottom: 1px dashed var(--primary); }
+    .wiki-content a.internal-link:hover { background: rgba(229, 57, 53, 0.1); }
+    .wiki-content a.broken-link { color: #f44336; border-bottom: 1px dashed #f44336; border-radius: 2px; }
+
+    .wiki-editor textarea {
+      width: 100%;
+      min-height: 500px;
+      background: transparent;
+      border: none;
+      color: var(--text);
+      font-family: 'Fira Code', monospace;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      resize: none;
+      outline: none;
+    }
+
+    .sidebar-list {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .sidebar-item {
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      color: var(--text-muted);
+      transition: all 0.2s;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .sidebar-item:hover, .sidebar-item.active { background: rgba(229, 57, 53, 0.1); color: var(--primary); }
+
+    .search-input {
+      width: 100%;
+      background: var(--dark);
+      border: 1px solid var(--border);
+      padding: 10px 14px;
+      border-radius: 6px;
+      color: var(--white);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 900px) {
+      .wiki-layout { grid-template-columns: 1fr; }
+      .wiki-sidebar { height: 300px; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/productivity/knowledge-base.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/productivity/knowledge-base.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/productivity/knowledge-base.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/productivity/knowledge-base.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/productivity/knowledge-base.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/productivity/knowledge-base.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/productivity/knowledge-base.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/productivity/knowledge-base.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/productivity/knowledge-base.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/productivity/knowledge-base.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/productivity/knowledge-base.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/productivity/knowledge-base.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/productivity/knowledge-base.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/productivity/knowledge-base.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/productivity/knowledge-base.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/productivity/knowledge-base.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/productivity/knowledge-base.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/productivity/knowledge-base.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/productivity/knowledge-base.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/productivity/knowledge-base.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/productivity/knowledge-base.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/productivity/knowledge-base.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#productivity">Productivity</a> <span>/</span> 
+        <span>Knowledge Base</span>
+      </nav>
+      <h1>Personal Knowledge Base</h1>
+      <p>Build your second brain. Connect your ideas with internal links and build a structured library of information that stays 100% on your machine.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div class="wiki-layout">
+        <!-- SIDEBAR -->
+        <aside class="wiki-sidebar">
+          <input type="search" id="wiki-search" class="search-input" placeholder="Search pages...">
+          <div class="flex justify-between items-center mt-2">
+            <h4 style="margin:0; font-size: 0.8rem; text-transform: uppercase;">Pages</h4>
+            <button class="btn-sm btn-secondary" onclick="createNewPage()" style="padding: 2px 8px;">New</button>
+          </div>
+          <div id="sidebar-list" class="sidebar-list">
+            <!-- Pages here -->
+          </div>
+        </aside>
+
+        <!-- MAIN AREA -->
+        <article class="wiki-main">
+          <div id="view-mode">
+            <div class="flex justify-between items-start mb-4">
+               <h2 id="page-title" style="margin: 0; font-size: 2rem; color: var(--white);">Welcome</h2>
+               <div class="flex gap-2">
+                  <button class="btn btn-secondary btn-sm" onclick="enterEditMode()">Edit Page</button>
+                  <button class="btn btn-secondary btn-sm" onclick="deleteCurrentPage()">×</button>
+               </div>
+            </div>
+            <div id="render-area" class="wiki-content">
+              <!-- Rendered markdown -->
+            </div>
+          </div>
+
+          <div id="edit-mode" style="display: none;">
+            <div class="flex justify-between items-center mb-4">
+               <input type="text" id="edit-title" style="background: transparent; border: none; font-size: 2rem; color: var(--white); font-weight: 700; width: 100%;" placeholder="Page Title">
+               <div class="flex gap-2">
+                 <button class="btn btn-primary btn-sm" onclick="savePage()">Save</button>
+                 <button class="btn btn-secondary btn-sm" onclick="exitEditMode()">Cancel</button>
+               </div>
+            </div>
+            <div class="wiki-editor">
+               <textarea id="wiki-editor" placeholder="Write your thoughts... Use [[Link Name]] to create internal links."></textarea>
+            </div>
+            <p class="text-muted mt-3" style="font-size: 0.8rem;">Markdown Tip: # Header, **bold**, *italic*, 1. List</p>
+          </div>
+        </article>
+      </div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.personal_knowledge_base.what_is_title">What is the Personal Knowledge Base?</h2>
+        <p>The Personal Knowledge Base is a private, wiki-style note organizer that lets you create interconnected pages using Markdown. Unlike cloud note apps that index and sync your content on remote servers, this tool stores all pages exclusively in your browser's localStorage. Pages persist across sessions without any login or cloud account.</p>
+        <p>Internal links between pages use a double-bracket syntax (e.g., [[Page Name]]), allowing you to build a network of connected ideas that mirrors how you actually think. All content stays on your device.</p>
+
+        <h3 class="mt-4">How to Use the Personal Knowledge Base</h3>
+        <p>Building your personal wiki involves these steps:</p>
+        <ol class="mt-2 mb-3">
+          <li>Click "New" in the left sidebar to create a new page and enter a title for it.</li>
+          <li>Write your notes using Markdown: use # for headers, **bold**, *italic*, and - for lists.</li>
+          <li>Link to other pages by typing [[Page Name]] anywhere in your note. Click the link to navigate to that page, or create it on the fly.</li>
+          <li>Use the sidebar search bar to filter through all your pages by title in real time.</li>
+          <li>Click "Save" to write your changes to localStorage. Click "Cancel" to discard edits.</li>
+          <li>Use the delete button to permanently remove a page you no longer need.</li>
+        </ol>
+
+        <h3 class="mt-4">Key Features</h3>
+        <ul class="mt-2 mb-3">
+          <li><strong>Wiki-Style Internal Links:</strong> Connect pages using [[Bracket Syntax]] to build a personal web of ideas.</li>
+          <li><strong>Markdown Rendering:</strong> Supports headers, bold, italic, and lists for structured note formatting.</li>
+          <li><strong>Real-Time Sidebar Search:</strong> Instantly filters your page list by title as you type.</li>
+          <li><strong>Broken Link Detection:</strong> Highlights links to non-existent pages in a different color so you can spot gaps in your wiki.</li>
+        </ul>
+
+        <h3 class="mt-4">Common Use Cases</h3>
+        <p>This knowledge base is helpful for the following tasks:</p>
+        <ul class="mt-2 mb-3">
+          <li><strong>Research Management:</strong> Maintaining a private network of linked notes across topics, sources, and ideas for academic or professional research.</li>
+          <li><strong>Technical Documentation:</strong> Building an internal reference wiki for system architecture, API notes, or project specifications.</li>
+          <li><strong>World-Building:</strong> Keeping track of characters, locations, and lore for fiction writing or game design using linked pages.</li>
+        </ul>
+
+        <h3 class="mt-4">Frequently Asked Questions</h3>
+        <div class="faq-section mt-3">
+          <p><strong>Is there a limit to how many pages I can create?</strong><br>No. You can create thousands of pages. Because the data is text-only localStorage, the storage footprint is minimal and search remains fast.</p>
+          <p><strong>Can I export my knowledge base?</strong><br>A dedicated export feature is in development. In the meantime, you can access all page data via the browser's developer tools under Application > localStorage.</p>
+          <p><strong>What happens if I clear my browser data?</strong><br>Clearing site data for 99tool.in will erase all pages. Export your notes before performing a browser reset.</p>
+          <p><strong>Does it sync between devices?</strong><br>No. The knowledge base is intentionally local-only to protect your privacy. You can manually copy notes between devices.</p>
+        </div>
+
+        <h3 class="mt-4">Privacy &amp; Data Note</h3>
+        <p>All page content, internal links, and search queries are handled entirely inside your browser's localStorage. No notes are transmitted to any server, synced to any cloud, or indexed by any external service.</p>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2 data-i18n="tools.personal_knowledge_base.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Is there a limit to how many pages I can create?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. You can create literally thousands of interconnected pages in our <strong>wiki</strong>. Because it is purely text-based, your entire <strong>knowledge management tool</strong> library takes up very little space in your browser's memory, ensuring lightning-fast search and retrieval.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I use Markdown for formatting?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. Our <strong>knowledge base</strong> supports Markdown conventions including headers (#), bold (**), italics (*), and lists. Combined with our <strong>personal wiki</strong> linking, this allows you to create professionally formatted, interconnected documentation.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              How do I back up my knowledge base?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Because privacy is paramount, we don't sync your notes to any cloud. To back up your library, you can manually copy the <code>localStorage</code> contents via browser developer tools. A dedicated JSON export feature is planned for a future update.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 100% Local. No login. No sync. Just pure information at your fingertips. Last updated: April 10, 2026.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    let pages = JSON.parse(localStorage.getItem('99tool_wiki_v1')) || {
+      "Welcome": "# Welcome to your Knowledge Base\n\nThis is your private, wiki. Start by exploring these features:\n\n1. **Internal Links**: Use [[Brackets]] to create links to other pages.\n2. **Markdown**: Use headers, bold, and lists to organize your thoughts.\n3. **Search**: Find anything instantly using the sidebar search.\n\nYou can [[Edit This Page]] to get started!"
+    };
+
+    let currentPage = 'Welcome';
+
+    const renderArea = document.getElementById('render-area');
+    const sidebarList = document.getElementById('sidebar-list');
+    const editArea = document.getElementById('wiki-editor');
+    const editTitle = document.getElementById('edit-title');
+    const pageTitle = document.getElementById('page-title');
+    const searchInput = document.getElementById('wiki-search');
+
+    function init() {
+      loadPage(currentPage);
+      renderSidebar();
+    }
+
+    function loadPage(name) {
+      currentPage = name;
+      const content = pages[currentPage] || "# New Page\nWrite something for this page...";
+      pageTitle.textContent = currentPage;
+      renderArea.innerHTML = simpleMarkdown(content);
+      renderSidebar();
+    }
+
+    function simpleMarkdown(text) {
+      let html = text
+        .replace(/^# (.*$)/gim, '<h2>$1</h2>')
+        .replace(/^## (.*$)/gim, '<h3>$1</h3>')
+        .replace(/\*\*(.*)\*\*/gim, '<strong>$1</strong>')
+        .replace(/\*(.*)\*/gim, '<em>$1</em>')
+        .replace(/^\d+\. (.*$)/gim, '<li>$1</li>')
+        .replace(/^\- (.*$)/gim, '<li>$1</li>')
+        .replace(/\n\n/g, '</p><p>')
+        .replace(/\[\[(.*?)\]\]/g, (match, p1) => {
+           const exists = !!pages[p1.trim()];
+           return `<a href="#" class="internal-link ${exists ? '' : 'broken-link'}" onclick="handleLinkClick('${p1.trim()}'); return false;">${p1.trim()}</a>`;
+        });
+      return `<p>${html}</p>`.replace(/<li>/g, '<ul><li>').replace(/<\/li>\n/g, '</li></ul>');
+    }
+
+    window.handleLinkClick = (name) => {
+      if (!pages[name]) {
+        if (confirm(`Page "${name}" does not exist. Create it now?`)) {
+          pages[name] = `# ${name}\n\nThis page was created via a link.`;
+          saveToDisk();
+          loadPage(name);
+        }
+      } else {
+        loadPage(name);
+      }
+    };
+
+    function savePage() {
+      const newTitle = editTitle.value.trim();
+      const content = editArea.value;
+
+      if (!newTitle) return;
+
+      if (newTitle !== currentPage) {
+        delete pages[currentPage];
+      }
+      pages[newTitle] = content;
+      currentPage = newTitle;
+
+      saveToDisk();
+      exitEditMode();
+      loadPage(currentPage);
+    }
+
+    function deleteCurrentPage() {
+      if (confirm(`Permanently delete page "${currentPage}"?`)) {
+        delete pages[currentPage];
+        saveToDisk();
+        currentPage = Object.keys(pages)[0] || 'Welcome';
+        if (!pages[currentPage]) pages['Welcome'] = "# Welcome";
+        loadPage(currentPage);
+      }
+    }
+
+    function saveToDisk() {
+      localStorage.setItem('99tool_wiki_v1', JSON.stringify(pages));
+    }
+
+    function renderSidebar(filter = '') {
+      sidebarList.innerHTML = '';
+      const list = Object.keys(pages).sort();
+      
+      list.forEach(name => {
+        if (name.toLowerCase().includes(filter.toLowerCase())) {
+          const item = document.createElement('div');
+          item.className = `sidebar-item ${name === currentPage ? 'active' : ''}`;
+          item.textContent = name;
+          item.onclick = () => loadPage(name);
+          sidebarList.appendChild(item);
+        }
+      });
+    }
+
+    function enterEditMode() {
+      document.getElementById('view-mode').style.display = 'none';
+      document.getElementById('edit-mode').style.display = 'block';
+      editTitle.value = currentPage;
+      editArea.value = pages[currentPage];
+    }
+
+    function exitEditMode() {
+      document.getElementById('view-mode').style.display = 'block';
+      document.getElementById('edit-mode').style.display = 'none';
+    }
+
+    function createNewPage() {
+      currentPage = 'Untitled';
+      pages[currentPage] = '# Untitled Page\n\nStart writing...';
+      enterEditMode();
+    }
+
+    searchInput.oninput = (e) => renderSidebar(e.target.value);
+
+    init();
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

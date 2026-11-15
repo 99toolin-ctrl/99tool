@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Cli Cheat Sheet – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/developer/cli-cheat-sheet.html"/>
+<meta property="og:title" content="Cli Cheat Sheet – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/developer/cli-cheat-sheet.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Cli Cheat Sheet \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/developer/cli-cheat-sheet.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="cli cheat sheet, command line commands, terminal command list, git cheat sheet, linux commands search" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "CLI Cheat Sheet Tool",
+    "operatingSystem": "Any",
+    "applicationCategory": "DeveloperApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Searchable command database, Categorized CLI help, One-click copy, access"
+  }
+  </script>
+
+  <style>
+    .search-section {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px;
+      margin-bottom: 30px;
+    }
+
+    .category-filters {
+      display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px;
+    }
+
+    .cat-tag {
+      cursor: pointer; padding: 6px 14px; border-radius: 20px; border: 1px solid var(--border);
+      font-size: 0.8rem; font-weight: 500; background: var(--dark); color: var(--text-muted);
+      transition: 0.2s;
+    }
+    .cat-tag.active {
+      background: var(--primary); color: white; border-color: var(--primary);
+    }
+
+    .command-grid {
+      display: grid; grid-template-columns: 1fr; gap: 20px;
+    }
+
+    .cmd-card {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .cmd-card:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+
+    .cmd-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px; }
+    .cmd-meta { display: flex; gap: 10px; align-items: center; }
+    .cmd-tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; background: rgba(255,255,255,0.05); padding: 2px 8px; border-radius: 4px; color: var(--text-muted); }
+
+    .cmd-title { font-size: 1.1rem; font-weight: 700; color: var(--white); margin-bottom: 5px; }
+    .cmd-desc { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 15px; line-height: 1.5; }
+
+    .cmd-block {
+      background: var(--dark);
+      border: 1px solid var(--border);
+      padding: 12px 16px;
+      border-radius: var(--radius-sm);
+      font-family: 'Fira Code', monospace;
+      font-size: 0.85rem;
+      color: var(--primary-light);
+      display: flex; justify-content: space-between; align-items: center;
+      cursor: pointer;
+    }
+    .cmd-block:hover { background: rgba(255,255,255,0.03); }
+    .copy-icon { opacity: 0.4; font-size: 0.8rem; }
+
+    @media (min-width: 800px) {
+      .command-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#developer">Developer</a> <span>/</span> 
+        <span>CLI Cheat Sheet</span>
+      </nav>
+      <h1>CLI Command Cheat Sheet</h1>
+      <p>Quickly find and copy essential command-line snippets for Git, Linux, and daily developer tasks. 100% and searchable.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div class="search-section">
+        <div class="form-group mb-0">
+          <label>Search Commands...</label>
+          <input type="text" id="cmd-search" class="form-control" placeholder="Search by purpose or keyword (e.g., 'commit', 'list', 'rename')...">
+        </div>
+        <div class="category-filters" id="cat-filters">
+           <div class="cat-tag active" data-cat="all">All Commands</div>
+           <div class="cat-tag" data-cat="git">Git</div>
+           <div class="cat-tag" data-cat="linux">Linux/Bash</div>
+           <div class="cat-tag" data-cat="file">File System</div>
+           <div class="cat-tag" data-cat="net">Network</div>
+           <div class="cat-tag" data-cat="sys">System</div>
+        </div>
+      </div>
+
+      <div class="command-grid" id="cmd-grid">
+         <!-- Cards loaded by JS -->
+      </div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5">
+        <h2>Unlocking the Terminal in Private: Secure Local CLI Command Discovery</h2>
+        <p>We’ve all been there: you’re deep in a critical deployment or setting up a new server, and you need a specific command to resolve a conflict, view a hidden file, or check a network port. You know the command exists, but the exact flags and syntax are just out of reach. Your first instinct is to find a <strong>cli cheat sheet online</strong>. But as you search for "remove remote branch" or "list active ports," you realize that your specific technical focus and infrastructure patterns are being tracked by an anonymous search engine. Do you really want to share your project's "Technical Vulnerabilities" with a third-party analytics tracker?</p>
+
+        <p>At 99tool.in, we built our <strong>cli cheat sheet tool</strong> to give developers an instant, professional command center without the privacy trade-off. By utilizing a local command database and zero-cloud search processing, we allow you to <strong>find terminal commands</strong> entirely within the secure session of your own machine. Whether you’re a beginner developer mastering the bash basics, a DevOps engineer managing complex Git workflows, or a security professional hardening a local system, our <strong>safe terminal reference</strong> ensures that your technical queries stay where they belong: in your browser memory, under your total sovereignty.</p>
+        
+        <div class="tool-preview-box mt-4 mb-4" style="text-align:center;">
+           <img src="../../assets/images/markdown-preview.png" alt="Pro-Grade Searchable CLI Command Dashboard with Categorized reference Cards and Quick-Copy" class="tool-preview" id="tool-preview-img" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+        </div>
+
+        <h3 class="mt-4">The Logic of "Command-Line Fluency"</h3>
+        <p>The terminal is a conversation by "Precise Abstractions." Most basic <strong>command lists online</strong> are overwhelming walls of text that make it harder to find what you actually need. Our <strong>professional cli tool</strong> takes a human-centric approach: we focus on **Functional Categorization** and **Action-Oriented Search**.</p>
+        
+        <p>We've structured our database around real-world tasks rather than just alphabetic lists. Our <strong>safe command validator</strong> groups shortcuts by ecosystem (Git vs Linux) and by intent (File Management vs Network Analysis). This transparency transforms the daunting task of memorization into a rapid-discovery session, allowing you to find the "Exact Syntax" you need in seconds, copy it, and get back to your code without the distractions of the open web.</p>
+
+        <h3 class="mt-4">Why Reference is the Engineer’s Ethical Choice</h2>
+        <p>In a professional environment, the commands you search for reflect the architecture of your stack. When you use a standard <strong>cli cheat sheet online free</strong> service that requires an internet connection, you are creating a digital breadcrumb trail of your internal workflows. Our 100% <strong>cli utility</strong> removes this "Privacy Risk" entirely from your development routine.</p>
+        
+        <p>Because the search index and command data happen in your browser's private memory, your search history is invisible to the outside world. No analytics are tracked, no technical patterns are harvested, and no proprietary command structures are shared with third-party data aggregators. At 99tool.in, we believe that <strong>mastering the terminal</strong> should be an empowering utility, not a data-collection trap. With us, you have a private, professional manual for your machine that fits in your browser tab.</p>
+
+        <h3 class="mt-4">How to Find Your Command (Step-by-Step)</h3>
+        <p>Finding the right flag or syntax should be a high-speed, 3-second task. Here is how to use our <strong>cli reference</strong>:</p>
+        <ul style="line-height: 1.8; margin-bottom: 20px;">
+          <li><strong>Step 1: Filter by Ecosystem</strong> — Select a category (e.g., Git or Network) to narrow down the command list to the tools you're currently using.</li>
+          <li><strong>Step 2: Search by Intent</strong> — Start typing your goal (e.g., "rebase", "permission", or "ip") into the search bar. Our system filters the list instantly as you type.</li>
+          <li><strong>Step 3: Analyze the Syntax</strong> — Read the clean, highlighted command block along with its brief explanation to ensure it's the right fit for your task.</li>
+          <li><strong>Step 4: Copy and Execute</strong> — Click the command block to instantly copy the syntax to your clipboard. Paste it directly into your terminal and get back to work.</li>
+        </ul>
+
+        <h3 class="mt-4">Strategic Use Cases for Your Local CLI Tool</h3>
+        <p>Our <strong>searchable command list</strong> is the essential companion for modern technical work:</p>
+        
+        <p><strong>For New Developers:</strong> Still confusing <code>mv</code> with <code>cp</code>? Use our <strong>cli cheat sheet</strong> as a safe training wheels environment to build your muscle memory without the pressure of live-searching.</p>
+        
+        <p><strong>For Git Experts:</strong> Need to squash commits or fix a detached HEAD state? Use our <strong>private command reference</strong> to quickly find those "Hard-to-Remember" complex Git workflows privately.</p>
+        
+        <p><strong>For System Administrators:</strong> Checking for performance bottlenecks or managing partitions? Use our <strong>safe terminal tool</strong> to verify your disk management or process monitoring flags before execution.</p>
+
+        <h3 class="mt-5">Explore Your Complete Developer Suite</h3>
+        <p>Once you’ve successfully executed your terminal commands, you might need to analyze the resulting logs. Check out our <strong><a href="log-analyzer.html">Log Analyzer</a></strong>. Or, if you’re building the logic for your next deployment, use our <strong><a href="sql-query-builder.html">SQL Query Builder</a></strong>. At 99tool.in, we are building a world-class, 100% private digital toolkit to give you total control over your development environment.</p>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Is this safe to copy-paste directly?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. All commands in our <strong>cheat sheet</strong> are vetted for standard syntax and safety. However, always ensure you replace placeholders like <code>[filename]</code> or <code>[url]</code> with your actual data before hitting Enter in your terminal. It's a professional best practice to verify commands before execution.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Which terminal environments are supported?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>The majority of these commands are optimized for <strong>Unix/Linux (Bash/Zsh) and Git</strong>, as these are the industry standards for professional terminal work. They also work perfectly in macOS Terminal and Windows environments like WSL (Windows Subsystem for Linux) or Git Bash.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Does this tool record my search history?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Absolutely not. Your searches and interactions stay entirely within your <strong>browser session's local memory</strong>. No data is sent to our servers, and no history is persisted beyond your current browser tab. Your technical focus remains 100% private.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              How do I find a command if I forgot the name?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Use our <strong>search by intent</strong> feature. Instead of searching for "ls", try searching for "list" or "files". Our tool is designed to map common developer goals to the correct command-line syntax instantly.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Are these commands compatible with PowerShell?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>While some commands like <code>mkdir</code> or <code>cd</code> have aliases in PowerShell, most flags are different. For pure Windows environments, we recommend using WSL or Git Bash to ensure these industry-standard <strong>CLI snippets</strong> function as expected.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I contribute new commands?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>We are constantly updating our <strong>CLI database</strong>. While this version is static, we regularly audit and expand our command list based on the latest developer trends and community feedback to ensure you have the most relevant tools at your fingertips.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 Privacy-First. No Tracking. 100%. Last updated: April 10, 2026.</p>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const searchInput = document.getElementById('cmd-search');
+    const catFilters = document.querySelectorAll('.cat-tag');
+    const cmdGrid = document.getElementById('cmd-grid');
+
+    const commands = [
+      { cat: 'git', title: 'Undo Last Commit', desc: 'Keep changes but move back to staging area (Soft Reset).', cmd: 'git reset --soft HEAD~1' },
+      { cat: 'git', title: 'Commit with Message', desc: 'Saves your staged changes with a descriptive note.', cmd: 'git commit -m "[message]"' },
+      { cat: 'git', title: 'Push to Remote', desc: 'Uploads local commits to a specific branch on the server.', cmd: 'git push origin [branch-name]' },
+      { cat: 'git', title: 'Switch Branch', desc: 'Moves your working directory to a different existing branch.', cmd: 'git checkout [branch-name]' },
+      { cat: 'git', title: 'Stash Changes', desc: 'Temporarily save uncommitted work to a clean state.', cmd: 'git stash' },
+      
+      { cat: 'linux', title: 'List All Files', desc: 'Shows all files, including hidden ones, with details.', cmd: 'ls -la' },
+      { cat: 'linux', title: 'Current Path', desc: 'Prints the absolute path of your current directory.', cmd: 'pwd' },
+      { cat: 'linux', title: 'Manual Page', desc: 'Displays the documentation for any specific command.', cmd: 'man [command]' },
+      
+      { cat: 'file', title: 'Create Folder', desc: 'Creates a new empty directory/folder.', cmd: 'mkdir [folder-name]' },
+      { cat: 'file', title: 'Remove Folder', desc: 'Deletes a folder and all of its contents (Warning!).', cmd: 'rm -rf [folder-name]' },
+      { cat: 'file', title: 'Copy File', desc: 'Copies a file to a new destination.', cmd: 'cp [source] [destination]' },
+      { cat: 'file', title: 'Move/Rename', desc: 'Moves a file or renames it in place.', cmd: 'mv [old-name] [new-name]' },
+      
+      { cat: 'net', title: 'Check Connection', desc: 'Tests connectivity to a specific server/URL.', cmd: 'ping [url/ip]' },
+      { cat: 'net', title: 'Network Config', desc: 'Shows current local network interface information.', cmd: 'ifconfig' },
+      { cat: 'net', title: 'Open Ports', desc: 'Lists active network connections and listening ports.', cmd: 'netstat -tuln' },
+      
+      { cat: 'sys', title: 'Show Processes', desc: 'Displays an interactive list of running system processes.', cmd: 'top' },
+      { cat: 'sys', title: 'Check Disk Space', desc: 'Shows available and used disk space on all partitions.', cmd: 'df -h' },
+      { cat: 'sys', title: 'System Uptime', desc: 'Displays how long the server has been running.', cmd: 'uptime' }
+    ];
+
+    let activeCat = 'all';
+
+    function render() {
+      const query = searchInput.value.toLowerCase();
+      cmdGrid.innerHTML = '';
+      
+      const filtered = commands.filter(c => {
+        const matchesQuery = c.title.toLowerCase().includes(query) || 
+                             c.desc.toLowerCase().includes(query) || 
+                             c.cmd.toLowerCase().includes(query);
+        const matchesCat = activeCat === 'all' || c.cat === activeCat;
+        return matchesQuery && matchesCat;
+      });
+
+      if (filtered.length === 0) {
+        cmdGrid.innerHTML = '<div class="text-center py-5 text-muted col-span-full">No commands match your search.</div>';
+        return;
+      }
+
+      filtered.forEach(c => {
+        const card = document.createElement('div');
+        card.className = 'cmd-card';
+        card.innerHTML = `
+          <div class="cmd-header">
+            <span class="cmd-tag">${c.cat}</span>
+          </div>
+          <div class="cmd-title">${c.title}</div>
+          <div class="cmd-desc">${c.desc}</div>
+          <div class="cmd-block" onclick="copySnippet(this, '${c.cmd}')">
+            <span>${c.cmd}</span>
+            <span class="copy-icon">📋</span>
+          </div>
+        `;
+        cmdGrid.appendChild(card);
+      });
+    }
+
+    function copySnippet(el, text) {
+      copyToClipboard(text, el);
+    }
+
+    searchInput.addEventListener('input', render);
+
+    catFilters.forEach(tag => {
+      tag.addEventListener('click', () => {
+        catFilters.forEach(t => t.classList.remove('active'));
+        tag.classList.add('active');
+        activeCat = tag.dataset.cat;
+        render();
+      });
+    });
+
+    // Init
+    render();
+  </script>
+</body>
+</html>
+

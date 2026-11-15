@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Env Manager – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/developer/env-manager.html"/>
+<meta property="og:title" content="Env Manager – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/developer/env-manager.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Env Manager \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/developer/env-manager.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="env variable manager, environment variable tool, env editor, .env generator, secure config manager" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json" id="schema-org-data">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Environment Variable Manager",
+    "operatingSystem": "Any",
+    "applicationCategory": "DeveloperApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Key-Value management, .env file export, Persistent local storage, Quick-copy variables"
+  }
+  </script>
+
+  <style>
+    .manager-layout {
+      display: grid; grid-template-columns: 1fr; gap: 30px; margin-top: 20px;
+    }
+
+    .config-card {
+      background: var(--dark-card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 30px;
+    }
+
+    .var-row {
+      display: grid; grid-template-columns: 200px 1fr 100px; gap: 15px; margin-bottom: 12px;
+      padding: 12px; background: rgba(0,0,0,0.2); border: 1px solid var(--border);
+      border-radius: var(--radius-sm); align-items: center;
+    }
+
+    .var-key { font-family: 'Fira Code', monospace; font-weight: 700; color: var(--primary-light); font-size: 0.85rem; }
+    .var-val { font-family: 'Fira Code', monospace; color: var(--text-muted); font-size: 0.85rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+    .env-preview {
+      background: var(--dark); border: 1px solid var(--border); padding: 20px;
+      border-radius: var(--radius-sm); font-family: 'Fira Code', monospace;
+      font-size: 0.85rem; color: #a0a0a0; white-space: pre-wrap; margin-top: 20px;
+      min-height: 100px;
+    }
+
+    @media (max-width: 800px) {
+      .var-row { grid-template-columns: 1fr; }
+      .var-key { font-weight: 800; border-bottom: 1px solid var(--border); padding-bottom: 5px; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/developer/env-manager.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/developer/env-manager.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/developer/env-manager.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/developer/env-manager.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/developer/env-manager.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/developer/env-manager.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/developer/env-manager.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/developer/env-manager.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/developer/env-manager.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/developer/env-manager.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/developer/env-manager.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/developer/env-manager.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/developer/env-manager.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/developer/env-manager.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/developer/env-manager.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/developer/env-manager.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/developer/env-manager.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/developer/env-manager.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/developer/env-manager.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/developer/env-manager.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/developer/env-manager.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/developer/env-manager.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#developer">Developer</a> <span>/</span> 
+        <span>Env Variable Manager</span>
+      </nav>
+      <h1>Environment Variable Manager</h1>
+      <p>Organize, store, and generate your development configurations privately. Keeping your sensitive keys strictly local and secure.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div class="manager-layout">
+        <div class="config-card">
+           <div class="flex justify-between align-center mb-4">
+              <h3 class="mb-0">Project Configuration</h3>
+              <button class="btn btn-primary btn-sm" id="add-var-btn">+ Add Variable</button>
+           </div>
+
+           <div id="vars-list">
+              <!-- JS injection -->
+           </div>
+
+           <div class="mt-5">
+              <div class="flex justify-between align-center mb-2">
+                 <label>Preview .env File</label>
+                 <button class="btn btn-secondary btn-sm" id="copy-env-btn">Copy All</button>
+              </div>
+              <div class="env-preview" id="env-preview-box"># Your .env content will appear here</div>
+              <button class="btn btn-primary btn-full mt-3" id="download-env-btn">Download .env File</button>
+           </div>
+        </div>
+      </div>
+
+      <!-- CONTENT SECTION -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.environment_variable_manager.what_is_title">What is the Environment Variable Manager?</h2>
+        <p>The Environment Variable Manager is a client-side development tool designed to format, manage, and export environment configurations into <code>.env</code> files. By inserting key-value pairs, developers can preview their environment settings and download configuration blocks without cloud storage risks.</p>
+        <p>This manager processes all variable additions, preview formations, and download triggers locally in your browser cache. Because no keys, tokens, or credential strings are uploaded to external databases, your local application credentials and environment configs remain confidential.</p>
+
+        <h2 class="mt-4" data-i18n="tools.environment_variable_manager.how_to_use_title">How to Use the Environment Variable Manager</h2>
+        <ol>
+          <li><strong>Add a New Variable:</strong> Enter your variable key (e.g., <code>DATABASE_URL</code>) and value (e.g., <code>mongodb://localhost:27017</code>) into the input fields and click "Add Variable".</li>
+          <li><strong>Organize Variables:</strong> Inspect the active variable list. You can edit keys and values directly in the rows or click "Remove" to delete them.</li>
+          <li><strong>Review the .env Preview:</strong> Check the "Preview .env File" panel to view the formatted environment file output in real-time.</li>
+          <li><strong>Copy or Download:</strong> Click "Copy All" to copy the generated configuration block to your clipboard, or click "Download .env File" to save the configuration directly to your project's root folder.</li>
+        </ol>
+
+        <h2 class="mt-4" data-i18n="tools.environment_variable_manager.key_features_title">Key Features</h2>
+        <ul>
+          <li><strong>Dynamic .env Previewing:</strong> Formats keys and values into the standard <code>KEY=VALUE</code> syntax automatically as you type.</li>
+          <li><strong>One-Click File Exports:</strong> Downloads compiled configurations as a standard <code>.env</code> text file ready for deployment.</li>
+          <li><strong>LocalStorage Persistence:</strong> Restores your configured variables across page refreshes and browser tabs using secure local cache.</li>
+          <li><strong>Interactive Key Management:</strong> Allows you to edit keys, values, or remove entries in a clean dashboard.</li>
+          <li><strong>100% Client-Side Runtime:</strong> Operates entirely in browser RAM to prevent credentials harvesting.</li>
+        </ul>
+
+        <h2 class="mt-4" data-i18n="tools.environment_variable_manager.common_use_cases_title">Common Use Cases</h2>
+        <ul>
+          <li><strong>Local Server Configurations:</strong> Draft <code>.env</code> settings for Node.js, Python, or Ruby servers during bootstrap phases.</li>
+          <li><strong>API Credential Listings:</strong> Organize keys, token lists, client IDs, and secret tokens in a clean layout.</li>
+          <li><strong>Docker Env Setup:</strong> Compile environment parameters for Docker Compose files or container run commands.</li>
+          <li><strong>Multi-Environment Prototyping:</strong> Manage and verify keys for staging, production, and local environments privately.</li>
+        </ul>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2 data-i18n="tools.environment_variable_manager.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Is this safe to use for production credentials?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. The manager runs entirely in your local browser sandbox and does not send any data over the network. However, we advise against using the tool on public or shared computers to prevent browser cache exposure.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I export my variables directly?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. Once your variables are configured, click the "Download .env File" button to download a standard formatted text file directly to your system.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Are my environment variables logged by 99tool.in?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. 99tool.in does not store, monitor, or track your keys. All key-value formatting and local persistence occur within your local browser storage.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              How do I format keys correctly?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>For standard environment file compliance, keys should be formatted in UPPER_SNAKE_CASE (e.g., <code>PORT</code>, <code>API_SECRET_KEY</code>) without spaces.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Does the tool support multi-line values?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Standard <code>.env</code> variables are single-line strings. For multi-line values (like SSH private keys), we recommend escaping newlines as <code>\n</code> within your value string.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 Privacy & Data Note: Environment variables, key-value mappings, and exports are processed locally in your browser. No configuration files are uploaded.</p>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const STORAGE_KEY = '99tool_env_vars_v1';
+    const varsList = document.getElementById('vars-list');
+    const envPreview = document.getElementById('env-preview-box');
+    const addBtn = document.getElementById('add-var-btn');
+    const copyBtn = document.getElementById('copy-env-btn');
+    const downloadBtn = document.getElementById('download-env-btn');
+
+    let variables = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [
+      { key: 'API_URL', val: 'https://api.example.com' },
+      { key: 'DB_PORT', val: '5432' }
+    ];
+
+    function save() {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(variables));
+      render();
+    }
+
+    function render() {
+      varsList.innerHTML = '';
+      let envText = '';
+      
+      variables.forEach((v, i) => {
+        const row = document.createElement('div');
+        row.className = 'var-row';
+        row.innerHTML = `
+          <input type="text" class="form-control var-key" value="${v.key}" placeholder="KEY" oninput="updateVar(${i}, 'key', this.value)">
+          <input type="text" class="form-control var-val" value="${v.val}" placeholder="value" oninput="updateVar(${i}, 'val', this.value)">
+          <div style="text-align: right;">
+             <button class="btn btn-secondary btn-icon" onclick="removeVar(${i})">🗑️</button>
+          </div>
+        `;
+        varsList.appendChild(row);
+        envText += `${v.key}=${v.val}\n`;
+      });
+      
+      envPreview.textContent = envText || '# No variables defined yet.';
+    }
+
+    window.updateVar = (i, field, val) => {
+      variables[i][field] = val.toUpperCase().replace(/\s+/g, '_').trim();
+      if(field === 'val') variables[i][field] = val.trim(); // values can have mixed case
+      
+      // Debounced save
+      clearTimeout(window.saveTimer);
+      window.saveTimer = setTimeout(save, 500);
+    };
+
+    window.removeVar = (i) => {
+      if(confirm('Remove this variable?')) {
+        variables.splice(i, 1);
+        save();
+      }
+    };
+
+    addBtn.onclick = () => {
+      variables.push({ key: 'NEW_VAR', val: '' });
+      save();
+    };
+
+    copyBtn.onclick = () => {
+      copyToClipboard(envPreview.textContent, copyBtn);
+    };
+
+    downloadBtn.onclick = () => {
+      const blob = new Blob([envPreview.textContent], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = '.env';
+      a.click();
+    };
+
+    // Init
+    render();
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

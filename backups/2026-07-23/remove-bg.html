@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Remove Bg – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/image/remove-bg.html"/>
+<meta property="og:title" content="Remove Bg – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/image/remove-bg.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Remove Bg \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/image/remove-bg.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .editor-layout {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    @media (max-width: 992px) {
+      .editor-layout { grid-template-columns: 1fr; }
+    }
+    .canvas-container {
+      background: #111;
+      background-image: 
+        linear-gradient(45deg, #1a1a1a 25%, transparent 25%), 
+        linear-gradient(-45deg, #1a1a1a 25%, transparent 25%), 
+        linear-gradient(45deg, transparent 75%, #1a1a1a 75%), 
+        linear-gradient(-45deg, transparent 75%, #1a1a1a 75%);
+      background-size: 20px 20px;
+      background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      min-height: 500px;
+      overflow: hidden;
+      cursor: crosshair;
+      position: relative;
+    }
+    canvas {
+      max-width: 100%;
+      height: auto;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .tool-panel {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      height: fit-content;
+      position: sticky;
+      top: 80px;
+    }
+    
+    .tool-section { margin-bottom: 2rem; }
+    .tool-section h4 { font-size: 0.9rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem; letter-spacing: 1px; }
+
+    .brush-controls {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .brush-btn {
+      background: var(--dark);
+      border: 1px solid var(--border);
+      padding: 10px;
+      border-radius: 8px;
+      text-align: center;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.8rem;
+    }
+    .brush-btn.active { border-color: var(--primary); background: rgba(229,57,53,0.1); color: var(--primary); }
+
+    .color-picker-strip {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .swatch {
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      border: 2px solid var(--border);
+      cursor: pointer;
+    }
+
+    .range-wrap { margin-bottom: 1.5rem; }
+    .range-wrap label { display: block; margin-bottom: 5px; font-size: 0.8rem; }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Smart Background Remover</h1>
+      <p>Clean up your shots for transparent exports. Manual precision, 100% private.</p>
+    </div>
+
+    <div class="tool-container">
+      <div class="upload-area" id="drop-zone">
+        <div class="upload-icon">🧼</div>
+        <p>Drop image with solid background or <span class="text-primary">browse files</span></p>
+        <p class="text-muted small">Best results with white, green, or solid studio backgrounds</p>
+        <input type="file" id="image-input" accept="image/*" hidden>
+      </div>
+
+      <div id="tool-workspace" class="hidden">
+        <div class="editor-layout">
+          <div class="canvas-container" id="canvas-container">
+             <canvas id="main-canvas"></canvas>
+          </div>
+
+          <div class="tool-panel">
+            <div class="tool-section">
+               <h4>Magic Eraser</h4>
+               <p class="small text-muted mb-2">Click a color on the image to remove it.</p>
+               <div class="range-wrap">
+                  <label>Sensitivity: <span id="thresh-val">30</span></label>
+                  <input type="range" id="threshold" min="1" max="100" value="30" class="w-100">
+               </div>
+               <div class="color-picker-strip">
+                  <div class="swatch" style="background:#fff;" onclick="setHint('#ffffff')"></div>
+                  <div class="swatch" style="background:#00ff00;" onclick="setHint('#00ff00')"></div>
+                  <div class="swatch" style="background:#000;" onclick="setHint('#000000')"></div>
+               </div>
+            </div>
+
+            <div class="tool-section">
+               <h4>Manual Touch-up</h4>
+               <div class="brush-controls">
+                  <div class="brush-btn active" id="brush-erase">Erase</div>
+                  <div class="brush-btn" id="brush-restore">Restore</div>
+               </div>
+               <div class="range-wrap mt-3">
+                  <label>Brush Size: <span id="brush-val">20</span></label>
+                  <input type="range" id="brush-size" min="5" max="100" value="20" class="w-100">
+               </div>
+            </div>
+
+            <button id="download-btn" class="btn btn-primary w-100">Download PNG</button>
+            <button id="reset-btn" class="btn btn-secondary w-100 mt-2">Reset All</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5">
+        <h2>Isolating the Subject in Private: Secure Local Background Removal</h2>
+        <p>We've all been there: you've taken a great photo, but the background—even if it's a solid studio wall—is slightly off, shadowed, or cluttered. You need a clean, transparent cutout to fit your e-commerce layout or your next personal project. You look for a <strong>background remover</strong> online to help you isolate your subject and ensure a professional finish. But as you look at the "Object Analysis" and "Cloud Studio" prompts of most legacy checkers, you realize that your high-res assets, your professional setups, and your personal environments are being analyzed by an anonymous database. Do you really want to share your "Visual Core" with a third-party algorithm?</p>
+
+        <p>At 99tool.in, we built our <strong>background remover</strong> to give you a professional darkroom without the privacy debt. By utilizing browser-side alpha mapping and local canvas logic, we allow you to <strong>create transparent PNGs</strong> entirely within the secure sandbox of your own machine. Whether you’re an online seller creating clean product cutouts, a designer managing professional headshots, or a social media user sanitizing a photo, our <strong>safe background tool</strong> ensures that your original pixels stay where they belong: on your device, under your total sovereignty.</p>
+        
+        <div class="tool-preview-box mt-4 mb-4" style="text-align:center;">
+           <img src="../../assets/images/remove-bg-preview.png" alt="Clean Background Remover Interface with Color-Distance Thresholding and Precision Brush Refinement Visuals" class="tool-preview" id="tool-preview-img" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+        </div>
+
+        <h3 class="mt-4">The Logic of Pixel-Perfect Isolation</h3>
+        <p>Background removal isn't just about deleting pixels; it’s about "Edge Sensitivity." Most basic <strong>remove background from image online</strong> services use blunt AI that leads to "Edge Fraying"—that messy, unprofessional look around horizons and fabric. Our <strong>professional background remover</strong> takes a human-centric approach: we focus on **Color-Distance Thresholding** and **Precision Brush Refinement**.</p>
+        
+        <p>We provide a dual-stage station where you can use our "Magic Eraser" to instantly neutralize solid backgrounds, and then switch to our manual brushes for pixel-perfect finishing. Our <strong>safe extraction validator</strong> allows you to "Restore" parts of the subject if you go too far, ensuring that every strand of hair and every product edge is preserved. This transparency transforms a complex edit into a professional routine, helping you isolate your subject in a private, professional environment.</p>
+
+        <h3 class="mt-4">Why Extraction is the Creator’s Ethical Choice</h2>
+        <p>In the age of automated visual harvesting, your "Unprocessed Originals" are your most valuable proprietary assets. When you use a standard <strong>bg remover online free</strong> service that requires an upload, you are essentially trust-falling into an anonymous database. Even if they "generate" your cutout, the original high-res photo and your specific object markers were processed on a remote machine. Our 100% <strong>extraction utility</strong> removes this "Reference Risk" entirely from your creative routine.</p>
+        
+        <p>Because the pixel manipulation and alpha mapping happen in your browser's private memory, your images are invisible to the outside world. No analytics are tracked, no objects are harvested, and no proprietary data is shared with advertisers or AI platforms. At 99tool.in, we believe that <strong>cleaning your work</strong> should be an empowering utility, not a data-mining trade-off. With us, you have a private, professional desk for your cutouts that fits in your browser tab.</p>
+
+        <h3 class="mt-4">How to Isolate Your Vision Safely (Step-by-Step)</h3>
+        <p>Creating a clean cutout should be a high-speed, 10-second task. Here is how to use our <strong>background remover</strong>:</p>
+        <ul style="line-height: 1.8; margin-bottom: 20px;">
+          <li><strong>Step 1: Load Your Asset</strong> — Drag your photo into the workspace. It renders instantly on our local checkerboard canvas without uploading a single byte.</li>
+          <li><strong>Step 2: Use the Magic Eraser</strong> — Click on your solid background color. Our system identifies and neutralizes similar pixels based on your chosen sensitivity.</li>
+          <li><strong>Step 3: Refine with the Brush</strong> — Use the "Erase" brush to clean up fine details around the edges, or "Restore" to bring back any part of the subject you accidentally removed.</li>
+          <li><strong>Step 4: Export to PNG</strong> — Click "Download PNG." Our engine flattens the transparency layer and saves your high-resolution cutout directly to your device.</li>
+        </ul>
+
+        <h3 class="mt-4">Strategic Use Cases for Your Local Background Tool</h3>
+        <p>Our <strong>selective extraction tool</strong> is the essential companion for varied professional life:</p>
+        
+        <p><strong>For E-commerce & Online Sellers:</strong> Creating a catalog? Use our <strong>secure background tool</strong> to generate clean, transparent product shots in seconds, ensuring your store looks professional without risking visual privacy.</p>
+        
+        <p><strong>For Graphic Designers & Brand Managers:</strong> Delivering a presentation? Use our <strong>safe bg remover</strong> to isolate logos or team headshots for the perfect slide layout, keeping your brand assets confidential throughout the process.</p>
+        
+        <p><strong>For Content Creators & Influencers:</strong> Building a thumbnail? Use our <strong>private artistic tool</strong> to create consistent, high-impact cutouts of yourself or your equipment, ensuring your personal identity remains protected safely.</p>
+
+        <h3 class="mt-5">Explore Your Complete Image Suite</h3>
+        <p>Once you’ve successfully isolated your subject, you might need to adjust the final composition. Check out our <strong><a href="crop-image.html">Image Cropper</a></strong>. Or, if you need to optimize the final file for web speed, use our <strong><a href="compress-image.html">Image Compressor</a></strong>. At 99tool.in, we are building a world-class, 100% private digital toolkit to give you total control over your visual assets.</p>
+      </section>
+ 
+      <!-- FAQ SECTION -->
+      <section class="faq-section mt-5">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Is the background removal automatic?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Our <strong>background remover</strong> features a "Magic Eraser" that provides high-speed automated removal for solid colors. For more complex backgrounds, we provide precision manual tools to ensure you get a professional result every time.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Are my photos sent to a server?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Absolutely not. For your total privacy, all pixel isolation and alpha mapping happen <strong>locally in your browser</strong>. Your original photos never leave your device, ensuring your professional assets and personal images stay 100% private.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Why should I use the manual brush?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>While automated tools are fast, they often struggle with fine details like hair or fabric. Our <strong>local editor</strong> provides a manual touch-up brush so you can refine those tricky edges with professional precision, ensuring a high-impact cutout.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              What does "Sensitivity" control?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>The **Sensitivity** slider (threshold) determines how strictly our "Magic Eraser" identifies matching colors. A higher sensitivity will remove a wider range of similar shades, which is perfect for studio shots with slight lighting gradients.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Does this tool support high-res images?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. Our <strong>extraction utility</strong> maintains the original resolution of your image. Whether you're creating a product cutout for an e-commerce site or a flyer, the final PNG will be as sharp as the original file you loaded.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Why export to PNG?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>The **PNG format** is the industry standard for images with transparency. By downloading your cutout as a PNG, you can layer it over any background in other design tools like Photoshop, Canva, or presentation software without any white box around it.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const imageInput = document.getElementById('image-input');
+    const dropZone = document.getElementById('drop-zone');
+    const workspace = document.getElementById('tool-workspace');
+    const canvas = document.getElementById('main-canvas');
+    const ctx = canvas.getContext('2d');
+    
+    // Controls
+    const thresholdSlider = document.getElementById('threshold');
+    const threshVal = document.getElementById('thresh-val');
+    const brushSlider = document.getElementById('brush-size');
+    const brushVal = document.getElementById('brush-val');
+    const eraseBtn = document.getElementById('brush-erase');
+    const restoreBtn = document.getElementById('brush-restore');
+    const downloadBtn = document.getElementById('download-btn');
+    const resetBtn = document.getElementById('reset-btn');
+
+    let originalImg = null;
+    let currentMode = 'magic'; // 'magic' or 'manual'
+    let brushType = 'erase';
+    let isDrawing = false;
+
+    dropZone.onclick = () => imageInput.click();
+    imageInput.onchange = (e) => handleFile(e.target.files[0]);
+    
+    // Init Drag and Drop using global helper
+    setupDragDrop('drop-zone', (files) => {
+       if (files.length) handleFile(files[0]);
+    });
+    
+    function handleFile(file) {
+      if (!file || !file.type.startsWith('image/')) return;
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        originalImg = new Image();
+        originalImg.onload = () => {
+          canvas.width = originalImg.width;
+          canvas.height = originalImg.height;
+          ctx.drawImage(originalImg, 0, 0);
+          workspace.classList.remove('hidden');
+        };
+        originalImg.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+
+    // Toggle Modes
+    eraseBtn.onclick = () => {
+       brushType = 'erase';
+       eraseBtn.classList.add('active');
+       restoreBtn.classList.remove('active');
+    };
+    restoreBtn.onclick = () => {
+       brushType = 'restore';
+       restoreBtn.classList.add('active');
+       eraseBtn.classList.remove('active');
+    };
+
+    thresholdSlider.oninput = () => threshVal.innerText = thresholdSlider.value;
+    brushSlider.oninput = () => brushVal.innerText = brushSlider.value;
+
+    // Magic Eraser Logic
+    canvas.onclick = (e) => {
+       if (isDrawing) return; // Don't trigger magic if drawing
+       
+       const rect = canvas.getBoundingClientRect();
+       const scaleX = canvas.width / rect.width;
+       const scaleY = canvas.height / rect.height;
+       const x = (e.clientX - rect.left) * scaleX;
+       const y = (e.clientY - rect.top) * scaleY;
+       
+       const pixel = ctx.getImageData(x, y, 1, 1).data;
+       removeColor(pixel[0], pixel[1], pixel[2]);
+    };
+
+    function removeColor(r, g, b) {
+       const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+       const data = imageData.data;
+       const tolerance = thresholdSlider.value;
+
+       for (let i = 0; i < data.length; i += 4) {
+          const dr = Math.abs(data[i] - r);
+          const dg = Math.abs(data[i+1] - g);
+          const db = Math.abs(data[i+2] - b);
+          
+          if (dr < tolerance && dg < tolerance && db < tolerance) {
+             data[i+3] = 0; // Transparent
+          }
+       }
+       ctx.putImageData(imageData, 0, 0);
+    }
+
+    // Manual Brush Logic
+    canvas.onmousedown = () => isDrawing = true;
+    window.onmouseup = () => isDrawing = false;
+    canvas.onmousemove = (e) => {
+       if (!isDrawing) return;
+       
+       const rect = canvas.getBoundingClientRect();
+       const scaleX = canvas.width / rect.width;
+       const scaleY = canvas.height / rect.height;
+       const x = (e.clientX - rect.left) * scaleX;
+       const y = (e.clientY - rect.top) * scaleY;
+
+       ctx.save();
+       ctx.beginPath();
+       ctx.arc(x, y, brushSlider.value, 0, Math.PI * 2);
+       
+       if (brushType === 'erase') {
+          ctx.globalCompositeOperation = 'destination-out';
+          ctx.fill();
+       } else {
+          // Restore is tricky with canvas composition. 
+          // We need a temp canvas or use originalImg as pattern
+          ctx.globalCompositeOperation = 'source-over';
+          const pattern = ctx.createPattern(originalImg, 'no-repeat');
+          ctx.fillStyle = pattern;
+          ctx.fill();
+       }
+       ctx.restore();
+    };
+
+    resetBtn.onclick = () => {
+       if (originalImg) ctx.drawImage(originalImg, 0, 0);
+    };
+
+    downloadBtn.onclick = () => {
+       const url = canvas.toDataURL('image/png');
+       const a = document.createElement('a');
+       a.href = url;
+       a.download = `cutout_${Date.now()}.png`;
+       a.click();
+    };
+  </script>
+</body>
+</html>

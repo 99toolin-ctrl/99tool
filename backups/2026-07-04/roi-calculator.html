@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Roi Calculator – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/business/roi-calculator.html"/>
+<meta property="og:title" content="Roi Calculator – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/business/roi-calculator.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Roi Calculator \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/business/roi-calculator.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    .math-workspace {
+      max-width: 750px;
+      margin: 2rem auto;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      border-radius: 20px;
+    }
+    .input-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 2rem; }
+    label { display: block; margin-bottom: 0.5rem; color: var(--text-muted); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
+    input {
+      width: 100%;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 1rem;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    input:focus { border-color: var(--primary); outline: none; }
+    
+    .result-panel {
+       margin-top: 2rem;
+       display: none;
+    }
+    .main-metric {
+       background: rgba(var(--primary-rgb), 0.05);
+       border: 1px solid var(--primary);
+       padding: 2.5rem;
+       border-radius: 20px;
+       text-align: center;
+       margin-bottom: 20px;
+    }
+    .val-primary { font-size: 3.5rem; font-weight: 800; color: var(--primary); line-height: 1; }
+    .lab-primary { font-size: 0.9rem; color: var(--text-muted); margin-top: 10px; text-transform: uppercase; letter-spacing: 1px; }
+    
+    .sec-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .metric-card {
+       background: rgba(255,255,255,0.03);
+       border: 1px solid var(--border);
+       padding: 1.5rem;
+       border-radius: 16px;
+       text-align: center;
+    }
+    .metric-val { font-size: 1.5rem; font-weight: 700; color: var(--text); }
+    .metric-lab { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; margin-top: 4px; }
+    
+    @media (max-width: 600px) {
+       .input-grid, .sec-metrics { grid-template-columns: 1fr; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Infinite ROI & CAGR Auditor</h1>
+      <p>Analyze investment performance with institutional precision. Measure absolute growth and annualized rates instantly.</p>
+    </div>
+
+    <div class="math-workspace">
+      <div class="input-grid">
+         <div>
+            <label>Amount Invested ($)</label>
+            <input type="number" id="init-in" placeholder="e.g., 1000" oninput="solve()">
+         </div>
+         <div>
+            <label>Amount Returned ($)</label>
+            <input type="number" id="final-in" placeholder="e.g., 1500" oninput="solve()">
+         </div>
+         <div>
+            <label>Investment Period (YRS)</label>
+            <input type="number" id="years-in" placeholder="e.g., 1" step="0.1" oninput="solve()">
+         </div>
+      </div>
+
+      <div class="result-panel" id="res-panel">
+         <div class="main-metric">
+            <div class="val-primary" id="res-roi">0%</div>
+            <div class="lab-primary">Absolute Return (ROI)</div>
+         </div>
+
+         <div class="sec-metrics">
+            <div class="metric-card">
+               <div class="metric-val" id="res-profit">$0.00</div>
+               <div class="metric-lab">Net Profit</div>
+            </div>
+            <div class="metric-card">
+               <div class="metric-val" id="res-ann">0%</div>
+               <div class="metric-lab">Annualized ROI (CAGR)</div>
+            </div>
+            <div class="metric-card">
+               <div class="metric-val" id="res-mult">1.0x</div>
+               <div class="metric-lab">Investment Multiple</div>
+            </div>
+         </div>
+      </div>
+
+      <!-- SEO CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2>What is Return on Investment (ROI)?</h2>
+        <p>ROI is a performance measure used to evaluate the efficiency of an investment or to compare the efficiency of several different investments. It measures the amount of return on a particular investment relative to its cost. Our <strong>online ROI calculator</strong> provides high-fidelity analysis of your financial gains. An accurate <strong>investment diagnostic auditor</strong> is key for personal finance management, crypto-portfolio tracking, and corporate project evaluation.</p>
+
+        <h3 class="mt-4">Absolute vs. Annualized CAGR</h2>
+        <p>While absolute ROI tells you how much you grew in total, Annualized ROI (or CAGR) tells you how fast you grew per year. This is critical when comparing a 20% gain over 1 year vs. a 20% gain over 5 years. Our <strong>CAGR diagnostic tool</strong> handles complex power-function math to find your yearly growth rate. This <strong>advanced performance auditor</strong> ensures that you are comparing investments on an equal time-adjusted basis.</p>
+
+        <h3 class="mt-4">Privacy and Wealth Strategy</h2>
+        <p>At 99tool.in, all investment analysis is performed locally in your browser sandbox. We do not store your investment amounts, returns, or timeframes. This <strong>private ROI tool</strong> provides professional-grade results without any cloud-based data storage. Whether you are tracking stock market gains or small business payouts, our <strong>secure ROI calculator</strong> ensures your wealth data remains purely your business.</p>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    function solve() {
+       const init = parseFloat(document.getElementById('init-in').value) || 0;
+       const final = parseFloat(document.getElementById('final-in').value) || 0;
+       const years = parseFloat(document.getElementById('years-in').value) || 0;
+
+       if (init <= 0) {
+          document.getElementById('res-panel').style.display = 'none';
+          return;
+       }
+
+       const profit = final - init;
+       const roi = (profit / init) * 100;
+       const mult = final / init;
+       
+       let annRoi = 0;
+       if (years > 0 && mult > 0) {
+          annRoi = (Math.pow(mult, 1/years) - 1) * 100;
+       }
+
+       // Render
+       document.getElementById('res-roi').innerText = roi.toFixed(1) + '%';
+       document.getElementById('res-profit').innerText = '$' + profit.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+       document.getElementById('res-ann').innerText = (years > 0) ? annRoi.toFixed(2) + '%' : "N/A";
+       document.getElementById('res-mult').innerText = mult.toFixed(2) + 'x';
+       
+       document.getElementById('res-panel').style.display = 'block';
+    }
+  </script>
+</body>
+</html>

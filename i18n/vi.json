@@ -1,0 +1,609 @@
+{
+  "common": {
+    "privacy_note": "🔒 Ghi chú về quyền riêng tư và dữ liệu: Tất cả quá trình xử lý đều diễn ra cục bộ trong trình duyệt của bạn. Dữ liệu của bạn không bao giờ rời khỏi thiết bị và không được gửi đến bất kỳ máy chủ nào.",
+    "no_signup_required": "Không cần đăng ký, cài đặt hoặc thanh toán.",
+    "offline_ready": "Hoạt động hoàn toàn ngoại tuyến sau khi trang được tải."
+  },
+  "tools": {
+    "age_calculator": {
+      "page_title": "Tính Tuổi – 99tool.in",
+      "meta_description": "Công cụ trực tuyến miễn phí từ 99tool.in: tính tuổi chính xác của bạn theo năm, tháng và ngày. Nhanh chóng và bảo mật.",
+      "what_is_title": "Công cụ Tính Tuổi Vô Tận là gì?",
+      "what_is_content": "Công cụ Tính Tuổi Vô Tận là một tiện ích lịch phía máy khách được thiết kế để tính tuổi chính xác của bạn từ ngày sinh cho đến thời điểm hiện tại. Thay vì chỉ đưa ra ước tính đơn giản, công cụ phân tích chi tiết tuổi của bạn theo năm, tháng và ngày, mang lại độ chính xác cao cho các hồ sơ, lập kế hoạch hoặc theo dõi sự phát triển.\n\nNgoài ra, máy tính còn thực hiện các phép tính phụ để hiển thị tổng thời gian sống của bạn theo các đơn vị khác như tổng số tháng, tuần, ngày và giờ đã sống, cùng với đếm ngược đến sinh nhật tiếp theo của bạn. Tất cả quá trình xử lý diễn ra cục bộ trên thiết bị của bạn, đảm bảo ngày sinh của bạn không bao giờ được gửi đến máy chủ.",
+      "how_to_use_title": "Cách sử dụng Công cụ Tính Tuổi Vô Tận",
+      "how_to_use_steps": [
+        "<strong>Chọn ngày sinh của bạn:</strong> Nhấp vào ô chọn ngày dưới phần \"Chọn ngày sinh\" để chọn ngày, tháng và năm sinh của bạn trong lịch.",
+        "<strong>Xem tuổi chính của bạn:</strong> Sau khi chọn ngày, các chỉ số chính sẽ tự động hiển thị tuổi của bạn theo Năm, Tháng và Ngày.",
+        "<strong>Kiểm tra đếm ngược sinh nhật:</strong> Quan sát biểu ngữ nổi bật ngay bên dưới tuổi của bạn để biết chính xác số ngày còn lại đến sinh nhật tiếp theo.",
+        "<strong>Xem thống kê cuộc sống chi tiết:</strong> Cuộn xuống danh sách thống kê để xem tổng thời gian sống tính theo Tổng số tháng, Tổng số tuần, Tổng số ngày và Tổng số giờ."
+      ],
+      "key_features_title": "Các tính năng chính",
+      "key_features": [
+        "<strong>Phân tích tuổi chi tiết:</strong> Hiển thị tuổi chính xác được chia thành năm, tháng và ngày, tự động điều chỉnh chính xác cho năm nhuận và độ dài tháng khác nhau.",
+        "<strong>Đếm ngược sinh nhật tiếp theo:</strong> Bộ đếm ngày động hiển thị chính xác mức độ bạn sắp tới cột mốc sinh nhật tiếp theo.",
+        "<strong>Thống kê cuộc sống đa đơn vị:</strong> Quy đổi tuổi của bạn thành tổng số tháng, tuần, ngày và giờ tích lũy.",
+        "<strong>Tự động tính toán cục bộ:</strong> Phép tính chạy ngay lập tức khi chọn ngày mà không cần tải lại trang.",
+        "<strong>Xử lý phía máy khách:</strong> Tất cả các phép tính chạy trực tiếp trong RAM trình duyệt của bạn để bảo vệ thông tin cá nhân."
+      ],
+      "common_use_cases_title": "Các trường hợp sử dụng phổ biến",
+      "common_use_cases": [
+        "<strong>Xác minh biểu mẫu và đơn từ:</strong> Xác nhận tuổi chính xác theo năm và tháng cho hợp đồng bảo hiểm, giấy tờ pháp lý hoặc đơn xin thị thực.",
+        "<strong>Cột mốc phát triển của trẻ:</strong> Theo dõi các giai đoạn tăng trưởng của trẻ sơ sinh và trẻ nhỏ theo tháng và ngày chính xác.",
+        "<strong>Lập kế hoạch sự kiện và sinh nhật:</strong> Theo dõi số ngày còn lại đến các dịp kỷ niệm để quản lý đặt chỗ và thiệp mời kịp thời.",
+        "<strong>Tò mò và giải trí:</strong> Tìm hiểu xem bạn đã sống tổng cộng bao nhiêu ngày hoặc bao nhiêu giờ."
+      ],
+      "faq_title": "Các câu hỏi thường gặp",
+      "faq": [
+        {
+          "question": "Công cụ này xử lý năm nhuận như thế nào?",
+          "answer": "Máy tính sử dụng đối tượng Date gốc của JavaScript, đối tượng này tự động và chính xác tính toán các năm nhuận (bao gồm ngày 29 tháng 2) và số ngày khác nhau của các tháng (28, 30 hoặc 31 ngày)."
+        },
+        {
+          "question": "Ngày sinh của tôi có được 99tool.in lưu trữ hoặc tải lên không?",
+          "answer": "Không. 99tool.in hoạt động hoàn toàn bằng mã phía máy khách. Ngày sinh của bạn được xử lý cục bộ trong trình duyệt và không bao giờ được gửi đến bất kỳ máy chủ hoặc cơ sở dữ liệu nào."
+        },
+        {
+          "question": "Tôi có thể tính tuổi so với một ngày trong quá khứ hoặc tương lai không?",
+          "answer": "Công cụ cụ thể này tính tuổi của bạn so với ngày hiện tại (hôm nay). Nếu bạn cần tìm khoảng cách giữa hai ngày bất kỳ, vui lòng sử dụng \"Máy Tính Khoảng Cách Ngày\" của chúng tôi."
+        },
+        {
+          "question": "Tại sao công cụ hiển thị cảnh báo nếu tôi chọn một ngày trong tương lai?",
+          "answer": "Phép tính tuổi đại diện cho khoảng thời gian đã trôi qua kể từ khi sinh ra. Chọn một ngày trong tương lai sẽ dẫn đến tuổi âm, vì vậy công cụ chặn đầu vào này."
+        },
+        {
+          "question": "Phép tính tổng số giờ có bao gồm thay đổi giờ mùa hè không?",
+          "answer": "Thống kê tổng số giờ được tính bằng cách nhân tổng số ngày đã qua với 24 giờ. Đây là phép chuyển đổi toán học tiêu chuẩn không điều chỉnh theo giờ mùa hè địa phương."
+        }
+      ],
+      "privacy_note": "🔒 Ghi chú về quyền riêng tư và dữ liệu: Ngày sinh của bạn được xử lý cục bộ trong trình duyệt của bạn. Không có dữ liệu cá nhân nào được thu thập, theo dõi hoặc gửi đến máy chủ.",
+      "schema_org": {
+        "name": "Tính Tuổi – 99tool.in",
+        "description": "Công cụ trực tuyến miễn phí từ 99tool.in: nhanh chóng, an toàn, không cần đăng ký."
+      }
+    },
+    "audio_recorder": {
+      "page_title": "Ghi Âm Audio – 99tool.in",
+      "meta_description": "Ghi âm và chỉnh sửa âm thanh trực tiếp trong trình duyệt của bạn. Công cụ miễn phí, riêng tư không cần đăng ký từ 99tool.in.",
+      "what_is_title": "Công cụ Ghi Âm & Chỉnh Sửa Âm Thanh là gì?",
+      "what_is_content": "Công cụ ghi âm và chỉnh sửa âm thanh dựa trên web này cho phép bạn ghi lại ghi chú giọng nói, âm thanh và bài phát biểu với độ trung thực cao trực tiếp từ trình duyệt của bạn. Được thiết kế với tiêu chí riêng tư tuyệt đối, nó biến trình duyệt thiết bị của bạn thành một phòng thu âm an toàn mà không cần tạo tài khoản hay đăng ký.\n\nTận dụng các API trình duyệt gốc, tiện ích xử lý tất cả dữ liệu âm thanh cục bộ. Điều này có nghĩa là cho dù bạn đang ghi âm một đoạn giọng nói hay cắt gọt ghi chú, tệp của bạn vẫn ở trên máy cục bộ của bạn. Luồng âm thanh không bao giờ được gửi đến máy chủ từ xa."
+    },
+    "audio_recorder": {
+      "page_title": "Ghi Âm Audio – 99tool.in",
+      "meta_description": "Ghi âm và chỉnh sửa âm thanh trực tiếp trong trình duyệt của bạn. Công cụ miễn phí, riêng tư không cần đăng ký từ 99tool.in.",
+      "what_is_title": "Công cụ Ghi Âm & Chỉnh Sửa Âm Thanh là gì?",
+      "what_is_content": "Công cụ ghi âm và chỉnh sửa âm thanh dựa trên web này cho phép bạn ghi lại ghi chú giọng nói, âm thanh và bài phát biểu với độ trung thực cao trực tiếp từ trình duyệt của bạn. Được thiết kế với tiêu chí riêng tư tuyệt đối, nó biến trình duyệt thiết bị của bạn thành một phòng thu âm an toàn mà không cần tạo tài khoản hay đăng ký.\n\nTận dụng các API trình duyệt gốc, tiện ích xử lý tất cả dữ liệu âm thanh cục bộ. Điều này có nghĩa là cho dù bạn đang ghi âm một đoạn giọng nói hay cắt gọt ghi chú, tệp của bạn vẫn ở trên máy cục bộ của bạn. Luồng âm thanh không bao giờ được gửi đến máy chủ từ xa.",
+      "how_to_use_title": "Cách sử dụng Công cụ Ghi Âm & Chỉnh Sửa Âm Thanh",
+      "how_to_use_steps": [
+        "<strong>Chọn định dạng xuất:</strong> Chọn giữa WebM (lý tưởng cho các tệp nhỏ hơn và xử lý nhanh) hoặc WAV (hoàn hảo cho âm thanh chất lượng cao không nén) trong menu thả xuống.",
+        "<strong>Khởi tạo micro:</strong> Nhấp vào nút \"Khởi tạo Micro\". Trình duyệt của bạn sẽ yêu cầu cấp quyền truy cập micro.",
+        "<strong>Bắt đầu ghi âm:</strong> Nhấp vào nút tròn màu đỏ để bắt đầu thu âm. Bộ đếm thời gian sẽ chạy và màn hình sóng âm sẽ hiển thị tín hiệu theo thời gian thực.",
+        "<strong>Dừng phiên ghi âm:</strong> Nhấp vào nút dừng hình vuông để hoàn thành bản ghi. Công cụ sẽ tự động xử lý âm thanh và thêm vào danh sách của bạn.",
+        "<strong>Nghe lại và lưu:</strong> Nhấp vào nút \"PHÁT\" để nghe lại bản ghi, hoặc nút \"LƯU\" để tải trực tiếp xuống thiết bị của bạn."
+      ],
+      "key_features_title": "Các tính năng chính",
+      "key_features": [
+        "<strong>Đầu ra nén và không nén:</strong> Xuất tệp âm thanh của bạn ở định dạng WAV thô hoặc định dạng WebM được tối ưu hóa cho web.",
+        "<strong>Trực quan hóa sóng âm thời gian thực:</strong> Màn hình hiển thị cung cấp phản hồi trực quan tức thì về mức đầu vào và hoạt động của micro.",
+        "<strong>Lưu trữ RAM an toàn:</strong> Các bản ghi được lưu tạm thời bằng bộ nhớ hệ thống (URL Blob) thay vì lưu trữ trên máy chủ.",
+        "<strong>Lịch sử nhiều phiên:</strong> Thực hiện nhiều bản ghi trong một phiên duy hạn và nghe lại hoặc tải xuống từng bản ghi khi cần.",
+        "<strong>Giao diện ghi âm tương thích:</strong> Giao diện tối ưu cho thiết bị di động giúp dễ dàng ghi lại ghi chú trên điện thoại, máy tính bảng hoặc máy tính."
+      ],
+      "common_use_cases_title": "Các trường hợp sử dụng phổ biến",
+      "common_use_cases": [
+        "<strong>Nhà sáng tạo nội dung & Podcaster:</strong> Ghi lại lời thuyết minh, phần giới thiệu hoặc bản nháp mà không cần cài đặt phần mềm máy tính nặng.",
+        "<strong>Sinh viên & Nhà nghiên cứu:</strong> Ghi lại ghi chú bài giảng, nhắc nhở học tập hoặc phỏng vấn trong môi trường an toàn.",
+        "<strong>Nhạc sĩ & Nhà thiết kế âm thanh:</strong> Thu lại các ý tưởng âm nhạc nhanh, phần luyện thanh hoặc hiệu ứng âm thanh ngay lập tức.",
+        "<strong>Ghi chép cá nhân riêng tư:</strong> Đọc ghi chú bảo mật hoặc nhật ký mà không lo rò rỉ dữ liệu lên đám mây."
+      ],
+      "faq_title": "Các câu hỏi thường gặp",
+      "faq": [
+        {
+          "question": "Bản ghi âm của tôi có được lưu trên máy chủ của bạn không?",
+          "answer": "Không. 99tool.in xử lý tất cả dữ liệu âm thanh hoàn toàn trong bộ nhớ (RAM) của thẻ trình duyệt cục bộ dưới dạng Blob. Bản ghi không bao giờ chạm tới máy chủ của chúng tôi và sẽ bị xóa khi đóng thẻ."
+        },
+        {
+          "question": "Tại sao tôi cần cấp quyền truy cập micro?",
+          "answer": "Trình duyệt của bạn cần quyền rõ ràng để truy cập phần cứng đầu vào âm thanh của thiết bị. Quyền này được quản lý cục bộ và chỉ được sử dụng để ghi âm."
+        },
+        {
+          "question": "Tôi có thể sử dụng công cụ này ngoại tuyến không?",
+          "answer": "Có. Vì giao diện phụ thuộc hoàn toàn vào các API Web gốc và xử lý phía máy khách, sau khi trang được tải, bạn có thể ghi âm và tải xuống mà không cần kết nối internet."
+        },
+        {
+          "question": "Sự khác biệt giữa WebM và WAV là gì?",
+          "answer": "Các tệp WAV không bị nén và không mất dữ liệu, cung cấp chất lượng âm thanh cao nhất nhưng dung lượng lớn. Tệp WebM được nén và tối ưu hóa cho web."
+        },
+        {
+          "question": "Có giới hạn thời gian ghi âm không?",
+          "answer": "Không có giới hạn thời gian tùy ý nào do công cụ thiết lập. Thời lượng ghi âm chỉ bị giới hạn bởi bộ nhớ hệ thống (RAM) khả dụng trên thiết bị của bạn."
+        }
+      ],
+      "privacy_note": "🔒 Ghi chú về quyền riêng tư và dữ liệu: Tất cả quá trình ghi âm và xử lý âm thanh đều diễn ra trong trình duyệt của bạn. Không có tệp nào được tải lên máy chủ của chúng tôi.",
+      "schema_org": {
+        "name": "Công cụ Ghi Âm & Chỉnh Sửa Âm Thanh",
+        "description": "Ghi âm chất lượng cao, trực quan hóa sóng âm thời gian thực, cắt âm thanh, điều khiển phát lại, xử lý an toàn cục bộ."
+      }
+    },
+    "bmi_calculator": {
+      "page_title": "Tính BMI – 99tool.in",
+      "meta_description": "Tính Chỉ số Khối Cơ thể (BMI) của bạn một cách chính xác. Công cụ sức khỏe miễn phí, an toàn và nhanh chóng từ 99tool.in.",
+      "what_is_title": "Công cụ Tính BMI Vô Tận là gì?",
+      "what_is_content": "Công cụ Tính BMI Vô Tận là một tiện ích sức khỏe phía máy khách được thiết kế để tính Chỉ số Khối Cơ thể (BMI) bằng cách sử dụng các giá trị chiều cao và cân nặng. Bằng cách nhập các thông số theo hệ mét, người dùng có thể xác định phân loại trọng lượng cơ thể của mình và kiểm tra các chỉ số tiêu chuẩn.\n\nMáy tính này xử lý tất cả các phép tính số học, logic khớp phân loại và điều chỉnh kim chỉ cục bộ trong bộ nhớ trình duyệt của bạn. Không có giá trị chiều cao, cân nặng hoặc BMI tính toán nào được lưu trữ hoặc tải lên."
+    },
+    "bmi_calculator": {
+      "page_title": "Tính BMI – 99tool.in",
+      "meta_description": "Tính Chỉ số Khối Cơ thể (BMI) của bạn một cách chính xác. Công cụ sức khỏe miễn phí, an toàn và nhanh chóng từ 99tool.in.",
+      "what_is_title": "Công cụ Tính BMI Vô Tận là gì?",
+      "what_is_content": "Công cụ Tính BMI Vô Tận là một tiện ích sức khỏe phía máy khách được thiết kế để tính Chỉ số Khối Cơ thể (BMI) bằng cách sử dụng các giá trị chiều cao và cân nặng. Bằng cách nhập các thông số theo hệ mét, người dùng có thể xác định phân loại trọng lượng cơ thể của mình và kiểm tra các chỉ số tiêu chuẩn.\n\nMáy tính này xử lý tất cả các phép tính số học, logic khớp phân loại và điều chỉnh kim chỉ cục bộ trong bộ nhớ trình duyệt của bạn. Không có giá trị chiều cao, cân nặng hoặc BMI tính toán nào được lưu trữ hoặc tải lên.",
+      "how_to_use_title": "Cách sử dụng Công cụ Tính BMI Vô Tận",
+      "how_to_use_steps": [
+        "<strong>Nhập cân nặng của bạn:</strong> Điền trọng lượng cơ thể tính bằng kilôgam (kg) vào ô nhập cân nặng.",
+        "<strong>Nhập chiều cao của bạn:</strong> Điền chiều cao tính bằng xentimét (cm) vào ô nhập chiều cao.",
+        "<strong>Nhấp vào Tính toán:</strong> Nhấn nút \"Tính BMI\" để chạy công thức tính toán cục bộ.",
+        "<strong>Xem kết quả của bạn:</strong> Kiểm tra bảng kết quả để xem giá trị BMI bằng số, phân loại cân nặng và vị trí của kim chỉ."
+      ],
+      "key_features_title": "Các tính năng chính",
+      "key_features": [
+        "<strong>Hỗ trợ đơn vị mét:</strong> Nhập trực tiếp các giá trị tiêu chuẩn cho cân nặng (kg) và chiều cao (cm).",
+        "<strong>Kim chỉ phạm vi trực quan:</strong> Di chuyển kim chỉ một cách linh hoạt trên thanh màu để hiển thị phân loại cân nặng của bạn.",
+        "<strong>Phạm vi BMI tiêu chuẩn:</strong> Đánh giá đầu vào dựa trên các tham chiếu của WHO (Gầy, Bình thường, Thừa cân, Béo phì).",
+        "<strong>Bảng kết quả tức thì:</strong> Hiển thị điểm số bằng số và tên phân loại một cách rõ ràng trên thẻ nổi bật.",
+        "<strong>Động cơ 100% phía máy khách:</strong> Thực hiện tất cả các phép toán cục bộ trong trình duyệt để bảo vệ dữ liệu y tế của bạn."
+      ],
+      "common_use_cases_title": "Các trường hợp sử dụng phổ biến",
+      "common_use_cases": [
+        "<strong>Theo dõi quản lý cân nặng:</strong> Giám sát xu hướng khối lượng cơ thể thường xuyên trong các chương trình giảm cân hoặc tập luyện.",
+        "<strong>Kiểm tra sức khỏe & thể lực:</strong> Nhanh chóng kiểm tra phân loại khối lượng cơ thể chung cho các hồ sơ y tế hoặc bảo hiểm.",
+        "<strong>Thiết lập mục tiêu lối sống:</strong> Thiết lập BMI cơ sở để xác định các mục tiêu sức khỏe thể chất thực tế.",
+        "<strong>Hoạt động trường học & giáo dục:</strong> Dạy học sinh về các chỉ số cơ thể người, hằng số sinh học và công thức BMI."
+      ],
+      "faq_title": "Các câu hỏi thường gặp",
+      "faq": [
+        {
+          "question": "Các phạm vi BMI tiêu chuẩn là gì?",
+          "answer": "Các phân loại chính thức của WHO là: Nhẹ cân (dưới 18.5), Bình thường (18.5 đến 24.9), Thừa cân (25 đến 29.9) và Béo phì (30 trở lên)."
+        },
+        {
+          "question": "Máy tính này có tính đến khối lượng cơ hoặc mật độ xương không?",
+          "answer": "Không. BMI là một chỉ số đánh giá chung chỉ sử dụng chiều cao và cân nặng. Nó không phân biệt giữa cơ, mỡ hoặc khối lượng xương và có thể cho kết quả cao hơn đối với vận động viên."
+        },
+        {
+          "question": "Dữ liệu sức khỏe của tôi có được chia sẻ hoặc tải lên không?",
+          "answer": "Không. Tất cả các phép tính được thực hiện trên thiết bị của bạn thông qua JavaScript cục bộ. 99tool.in không lưu trữ hoặc thu thập số đo của bạn."
+        },
+        {
+          "question": "Có điều chỉnh theo tuổi hoặc giới tính trong phép tính này không?",
+          "answer": "Công cụ này tính toán chỉ số BMI tiêu chuẩn cho người trưởng thành. Đối với trẻ em, thanh thiếu niên và phụ nữ mang thai, bác sĩ sử dụng biểu đồ tăng trưởng chuyên biệt."
+        }
+      ],
+      "privacy_note": "🔒 Ghi chú về quyền riêng tư và dữ liệu: Các phép tính chiều cao, cân nặng và BMI được xử lý cục bộ trong trình duyệt của bạn. Không có dữ liệu sức khỏe cá nhân nào được tải lên.\nTuyên bố miễn trừ trách nhiệm: Công cụ này chỉ mang tính chất tham khảo và không thay thế cho tư vấn y tế chuyên nghiệp.",
+      "schema_org": {
+        "name": "Tính BMI – 99tool.in",
+        "description": "Công cụ trực tuyến miễn phí từ 99tool.in: nhanh chóng, an toàn, không cần đăng ký."
+      }
+    },
+    "csv_editor": {
+      "page_title": "Chỉnh Sửa CSV – 99tool.in",
+      "meta_description": "Mở, chỉnh sửa và xuất tệp CSV trong trình duyệt của bạn. Công cụ dữ liệu an toàn và miễn phí từ 99tool.in.",
+      "what_is_title": "Trình Xem & Chỉnh Sửa CSV là gì?",
+      "what_is_content": "Trình Xem & Chỉnh Sửa CSV là một công cụ bảng tính dựa trên web nhẹ được thiết kế để mở, kiểm tra và chỉnh sửa các tệp giá trị phân tách bằng dấu phẩy (CSV). Thay vì chờ phần mềm văn phòng nặng khởi động, bạn có thể kéo và thả tập dữ liệu của mình trực tiếp vào thẻ trình duyệt để xem trong bố cục bảng rõ ràng.\n\nTiện ích này cho phép bạn chỉnh sửa giá trị ô, sắp xếp cột, tìm kiếm bản ghi cụ thể và xuất các tệp đã cập nhật. Vì tất cả việc phân tích tệp và hiển thị bảng đều diễn ra cục bộ trong bộ nhớ RAM, dữ liệu nhạy cảm của bạn không bao giờ bị lộ ra ngoài máy chủ."
+    },
+    "csv_editor": {
+      "page_title": "Chỉnh Sửa CSV – 99tool.in",
+      "meta_description": "Mở, chỉnh sửa và xuất tệp CSV trong trình duyệt của bạn. Công cụ dữ liệu an toàn và miễn phí từ 99tool.in.",
+      "what_is_title": "Trình Xem & Chỉnh Sửa CSV là gì?",
+      "what_is_content": "Trình Xem & Chỉnh Sửa CSV là một công cụ bảng tính dựa trên web nhẹ được thiết kế để mở, kiểm tra và chỉnh sửa các tệp giá trị phân tách bằng dấu phẩy (CSV). Thay vì chờ phần mềm văn phòng nặng khởi động, bạn có thể kéo và thả tập dữ liệu của mình trực tiếp vào thẻ trình duyệt để xem trong bố cục bảng rõ ràng.\n\nTiện ích này cho phép bạn chỉnh sửa giá trị ô, sắp xếp cột, tìm kiếm bản ghi cụ thể và xuất các tệp đã cập nhật. Vì tất cả việc phân tích tệp và hiển thị bảng đều diễn ra cục bộ trong bộ nhớ RAM, dữ liệu nhạy cảm của bạn không bao giờ bị lộ ra ngoài máy chủ.",
+      "how_to_use_title": "Cách sử dụng Trình Xem & Chỉnh Sửa CSV",
+      "how_to_use_steps": [
+        "<strong>Nhập tập dữ liệu của bạn:</strong> Kéo và thả tệp CSV của bạn trực tiếp vào vùng thả nét đứt, hoặc nhấp vào \"Duyệt tệp\" để chọn tệp từ máy tính.",
+        "<strong>Chỉnh sửa giá trị ô:</strong> Nhấp trực tiếp vào bất kỳ ô nào trong bảng để sửa đổi nội dung. Nhập các thay đổi của bạn và nhấp ra ngoài ô để lưu cục bộ.",
+        "<strong>Lọc và tìm kiếm:</strong> Sử dụng ô tìm kiếm phía trên bảng để tìm các hàng cụ thể hoặc lọc kết quả theo thời gian thực.",
+        "<strong>Sắp xếp theo cột:</strong> Nhấp vào tiêu đề cột để sắp xếp các hàng trong bảng theo thứ tự bảng chữ cái hoặc số tăng dần/giảm dần.",
+        "<strong>Xuất các thay đổi:</strong> Nhấp vào \"Xuất CSV\" để tải bảng tính đã cập nhật xuống máy tính của bạn."
+      ],
+      "key_features_title": "Các tính năng chính",
+      "key_features": [
+        "<strong>Chỉnh sửa bảng thời gian thực:</strong> Chỉnh sửa giá trị ô trực tiếp trong bảng tương tác với lưu cục bộ tức thì.",
+        "<strong>Sắp xếp và tìm kiếm cột:</strong> Phân tích dữ liệu nhanh chóng bằng cách sắp xếp bản ghi hoặc lọc các hàng khớp với từ khóa.",
+        "<strong>Bộ phân tích phía máy khách tốc độ cao:</strong> Hiển thị hàng nghìn điểm dữ liệu cục bộ trong vài mili giây mà không có độ trễ máy chủ.",
+        "<strong>Hỗ trợ ký tự UTF-8:</strong> Bảo toàn các ký tự tiếng Việt có dấu và ký hiệu đặc biệt trong quá trình nhập và xuất.",
+        "<strong>Cách ly dữ liệu ngoại tuyến:</strong> Hoạt động hoàn toàn ngoại tuyến để đảm bảo tệp của bạn luôn an toàn."
+      ],
+      "common_use_cases_title": "Các trường hợp sử dụng phổ biến",
+      "common_use_cases": [
+        "<strong>Cập nhật kho hàng thương mại điện tử:</strong> Chỉnh sửa mô tả sản phẩm, giá cả hoặc số lượng tồn kho trong bảng trước khi nhập vào cửa hàng.",
+        "<strong>Làm sạch danh sách liên hệ:</strong> Tìm kiếm các mục trùng lặp hoặc sửa lỗi định dạng trong danh sách đăng ký email.",
+        "<strong>Kiểm tra nhật ký & báo cáo:</strong> Xem nhật ký máy chủ hoặc báo cáo tài chính trong một bảng được tổ chức rõ ràng.",
+        "<strong>Xác minh nhập dữ liệu cơ sở dữ liệu:</strong> Kiểm tra và định dạng bố cục cột trước khi tải dữ liệu lên cơ sở dữ liệu SQL."
+      ],
+      "faq_title": "Các câu hỏi thường gặp",
+      "faq": [
+        {
+          "question": "Có giới hạn kích thước tệp tải lên không?",
+          "answer": "Để có trải nghiệm tốt nhất, chúng tôi khuyên bạn nên sử dụng trình chỉnh sửa này cho các tệp CSV tối đa 10-15 MB. Các tập dữ liệu rất lớn với hàng trăm nghìn hàng có thể làm chậm trình duyệt."
+        },
+        {
+          "question": "Chỉnh sửa một ô có cập nhật tệp gốc trên máy tính của tôi không?",
+          "answer": "Không. Trình duyệt không thể ghi đè trực tiếp lên các tệp cục bộ vì lý do bảo mật. Để áp dụng các thay đổi, nhấp vào nút \"Xuất CSV\" để tải xuống bản sao mới."
+        },
+        {
+          "question": "Dữ liệu bảng tính của tôi có được tải lên hoặc theo dõi không?",
+          "answer": "Không. 99tool.in xử lý tất cả các tệp cục bộ. Dữ liệu và giá trị ô của bạn luôn an toàn trong trình duyệt của bạn."
+        },
+        {
+          "question": "Công cụ này có hỗ trợ dấu chấm phẩy hoặc tab làm dấu phân cách không?",
+          "answer": "Phiên bản này được tối ưu hóa cho các tệp phân tách bằng dấu phẩy (.csv) tiêu chuẩn. Sử dụng dấu chấm phẩy có thể dẫn đến lệch cột."
+        },
+        {
+          "question": "Tôi có thể thêm các hàng hoặc cột mới không?",
+          "answer": "Công cụ này được thiết kế như một trình xem và chỉnh sửa giá trị cho các bảng hiện có. Để thêm các cột mới, chúng tôi khuyên bạn nên sử dụng phần mềm bảng tính đầy đủ."
+        }
+      ],
+      "privacy_note": "🔒 Ghi chú về quyền riêng tư và dữ liệu: Việc phân tích dữ liệu CSV và hiển thị bảng diễn ra trong trình duyệt của bạn. Không có tệp hoặc giá trị ô nào được gửi đến máy chủ của chúng tôi.",
+      "schema_org": {
+        "name": "Trình Xem & Chỉnh Sửa CSV",
+        "description": "Phân tích CSV, chế độ xem bảng, chỉnh sửa ô, sắp xếp cột, xuất dữ liệu."
+      }
+    },
+    "image_compressor": {
+      "page_title": "Nén Ảnh – 99tool.in",
+      "meta_description": "Giảm dung lượng tệp hình ảnh của bạn mà không làm giảm chất lượng. Công cụ ảnh miễn phí và nhanh chóng từ 99tool.in.",
+      "what_is_title": "Công cụ Nén Ảnh Thông Minh là gì?",
+      "what_is_content": "Công cụ Nén Ảnh Thông Minh là một tiện ích tối ưu hóa phía máy khách được thiết kế để giảm dung lượng tệp hình ảnh của bạn trong khi vẫn giữ nguyên các chi tiết trực quan. Bằng cách sử dụng khả năng xử lý canvas trong trình duyệt và điều chỉnh chất lượng linh hoạt, bạn có thể dễ dàng thu nhỏ các tệp ảnh lớn để cải thiện tốc độ tải trang web.\n\nTất cả việc tối ưu hóa diễn ra hoàn toàn trong bộ nhớ cục bộ trình duyệt của bạn. Vì không có tệp nào được tải lên máy chủ bên ngoài, hình ảnh gốc của bạn luôn được bảo mật 100%."
+    },
+    "image_compressor": {
+      "page_title": "Nén Ảnh – 99tool.in",
+      "meta_description": "Giảm dung lượng tệp hình ảnh của bạn mà không làm giảm chất lượng. Công cụ ảnh miễn phí và nhanh chóng từ 99tool.in.",
+      "what_is_title": "Công cụ Nén Ảnh Thông Minh là gì?",
+      "what_is_content": "Công cụ Nén Ảnh Thông Minh là một tiện ích tối ưu hóa phía máy khách được thiết kế để giảm dung lượng tệp hình ảnh của bạn trong khi vẫn giữ nguyên các chi tiết trực quan. Bằng cách sử dụng khả năng xử lý canvas trong trình duyệt và điều chỉnh chất lượng linh hoạt, bạn có thể dễ dàng thu nhỏ các tệp ảnh lớn để cải thiện tốc độ tải trang web.\n\nTất cả việc tối ưu hóa diễn ra hoàn toàn trong bộ nhớ cục bộ trình duyệt của bạn. Vì không có tệp nào được tải lên máy chủ bên ngoài, hình ảnh gốc của bạn luôn được bảo mật 100%.",
+      "how_to_use_title": "Cách sử dụng Công cụ Nén Ảnh Thông Minh",
+      "how_to_use_steps": [
+        "<strong>Tải ảnh lên:</strong> Nhấp vào vùng khung hoặc kéo và thả tệp ảnh của bạn (JPG, PNG hoặc WEBP) vào trình duyệt.",
+        "<strong>Kiểm tra kích thước gốc:</strong> Xem cột <strong>Gốc</strong> trong bảng so sánh để biết kích thước tệp ban đầu.",
+        "<strong>Chọn mức nén:</strong> Kéo thanh trượt <strong>Mức Nén</strong> để điều chỉnh phần trăm chất lượng. Kéo sang trái giúp giảm kích thước nhiều hơn, kéo sang phải giúp giữ chất lượng cao hơn.",
+        "<strong>Chọn định dạng mục tiêu:</strong> Chọn trong menu <strong>Chuyển đổi sang định dạng</strong> để giữ định dạng gốc hoặc chuyển đổi sang JPEG hoặc WEBP.",
+        "<strong>Đánh giá dung lượng tiết kiệm:</strong> So sánh xem trước <strong>Gốc</strong> và <strong>Đã Nén</strong> cạnh nhau. Huy hiệu màu xanh lá cây hiển thị phần trăm tiết kiệm.",
+        "<strong>Tải ảnh đã tối ưu xuống:</strong> Nhấp vào nút <strong>Tải Ảnh Đã Nén Xuống</strong> để lưu tệp vào thiết bị của bạn."
+      ],
+      "key_features_title": "Các tính năng chính",
+      "key_features": [
+        "<strong>So sánh chất lượng song song:</strong> So sánh bản xem trước gốc và bản nén cạnh nhau để đảm bảo văn bản và chi tiết vẫn rõ nét.",
+        "<strong>Điều khiển chất lượng chính xác:</strong> Tinh chỉnh mức nén từ 10% đến 100% dựa trên nhu cầu lưu trữ của bạn.",
+        "<strong>Chuyển đổi định dạng tức thì:</strong> Chuyển đổi tệp của bạn ngay lập tức sang các định dạng hiện đại như WEBP hoặc JPEG phổ biến.",
+        "<strong>Máy tính tiết kiệm thời gian thực:</strong> Tính toán ngay lập tức phần trăm dung lượng tệp được tiết kiệm khi bạn điều chỉnh thanh trượt.",
+        "<strong>Thực thi hoàn toàn cục bộ:</strong> Xử lý mọi thứ qua JavaScript cục bộ mà không lưu nhật ký dữ liệu trên máy chủ."
+      ],
+      "common_use_cases_title": "Các trường hợp sử dụng phổ biến",
+      "common_use_cases": [
+        "<strong>Nhà phát triển Web:</strong> Nén hình ảnh trang web để cải thiện tốc độ tải trang và thứ hạng SEO.",
+        "<strong>Quản lý Mạng xã hội:</strong> Giảm kích thước ảnh để phù hợp với giới hạn tải lên mà không bị giảm chất lượng trực quan.",
+        "<strong>Nhân viên Văn phòng:</strong> Giảm dung lượng tài liệu quét hoặc ảnh chụp màn hình cho các tệp đính kèm email.",
+        "<strong>Blogger:</strong> Tạo hình ảnh tối ưu cho người đọc trên di động để cải thiện trải nghiệm tải trang."
+      ],
+      "faq_title": "Các câu hỏi thường gặp",
+      "faq": [
+        {
+          "question": "Ảnh của tôi có bị giảm chất lượng khi nén không?",
+          "answer": "Chúng tôi khuyên bạn nên giữ thanh trượt từ 80% đến 90%. Trong khoảng này, dung lượng tệp giảm đáng kể trong khi sự khác biệt trực quan khó có thể nhận ra."
+        },
+        {
+          "question": "Ảnh riêng tư của tôi có được tải lên máy chủ đám mây không?",
+          "answer": "Tuyệt đối không. Tất cả quá trình xử lý, thay đổi kích thước và chuyển đổi định dạng đều diễn ra cục bộ trong bộ nhớ trình duyệt của bạn."
+        },
+        {
+          "question": "Ưu điểm của việc chuyển đổi sang WEBP là gì?",
+          "answer": "WEBP là định dạng hình ảnh hiện đại cung cấp khả năng nén vượt trội so với JPEG và PNG, mang lại các tệp nhỏ hơn mà vẫn giữ chất lượng."
+        },
+        {
+          "question": "Tôi có thể nén ảnh PNG trong suốt không?",
+          "answer": "Có. Để giữ tính trong suốt, chọn \"Giữ Định Dạng Gốc\" hoặc chuyển đổi sang \"WEBP\". Chuyển đổi sang JPEG sẽ làm vùng trong suốt biến thành màu trắng."
+        },
+        {
+          "question": "Tại sao tệp của tôi lại lớn hơn sau khi nén?",
+          "answer": "Điều này có thể xảy ra nếu tệp gốc đã được tối ưu hóa cao. Kéo thanh trượt xuống thấp hơn một chút để giải quyết."
+        }
+      ],
+      "privacy_note": "Ghi chú về quyền riêng tư và dữ liệu: Mọi bước nén đều được thực hiện cục bộ trên máy tính của bạn. Các tệp của bạn không được xử lý trên máy chủ bên ngoài.",
+      "schema_org": {
+        "name": "Nén Ảnh – 99tool.in",
+        "description": "Công cụ trực tuyến miễn phí từ 99tool.in: nhanh chóng, an toàn, không cần đăng ký."
+      }
+    },
+    "markdown_previewer": {
+      "page_title": "Xem Trước Markdown – 99tool.in",
+      "meta_description": "Soạn thảo, chỉnh sửa và chuyển đổi Markdown sang HTML theo thời gian thực. Công cụ lập trình miễn phí từ 99tool.in.",
+      "what_is_title": "Trình Xem Trước Markdown là gì?",
+      "what_is_content": "Trình Xem Trước Markdown là một trình chỉnh sửa dựa trên trình duyệt cho phép soạn thảo, định dạng và xem trước cú pháp Markdown theo thời gian thực. Bằng cách viết ở bên trái và xem kết quả ở bên phải, bạn có thể kiểm tra các tệp README và tài liệu trước khi xuất bản.\n\nTrình chỉnh sửa này thực hiện tất cả các chuyển đổi cục bộ trên máy tính của bạn. Vì không có bản nháp nào được gửi đến các cơ sở dữ liệu bên ngoài, tài liệu của bạn luôn an toàn.",
+      "how_to_use_title": "Cách sử dụng Trình Xem Trước Markdown",
+      "how_to_use_steps": [
+        "<strong>Nhập Markdown:</strong> Viết hoặc dán cú pháp Markdown của bạn vào bảng \"Trình chỉnh sửa\" bên trái.",
+        "<strong>Xem bản xem trước trực tiếp:</strong> Quan sát bảng \"Xem trước trực tiếp\" bên phải để kiểm tra định dạng tiêu đề, danh sách và bảng.",
+        "<strong>Sao chép mã HTML:</strong> Nhấp vào \"Sao chép HTML\" để sao chép mã HTML đã biên dịch vào khay nhớ tạm của bạn.",
+        "<strong>Tải xuống tệp:</strong> Nhấp vào \"Tải xuống .md\" để lưu công việc của bạn dưới dạng tài liệu Markdown.",
+        "<strong>Xóa tất cả:</strong> Nhấp vào \"Xóa tất cả\" để đặt lại trình chỉnh sửa."
+      ],
+      "key_features_title": "Các tính năng chính",
+      "key_features": [
+        "<strong>Màn hình chia đôi xem trực tiếp:</strong> Chuyển đổi cú pháp thô sang định dạng HTML trực quan ngay khi bạn gõ.",
+        "<strong>Tương thích GFM:</strong> Hỗ trợ các quy tắc GitHub Flavored Markdown tiêu chuẩn cho bảng, chữ đậm và danh sách.",
+        "<strong>Sao chép đầu ra HTML:</strong> Lưu các phần tử HTML đã biên dịch vào khay nhớ tạm để sử dụng trực tiếp.",
+        "<strong>Xuất tệp cục bộ:</strong> Tải xuống các bản nháp hoàn chỉnh của bạn dưới dạng tệp <code>.md</code> độc lập.",
+        "<strong>Bộ biên dịch 100% phía máy khách:</strong> Hiển thị các kiểu ngoại tuyến trong bộ nhớ đệm trình duyệt để bảo vệ văn bản của bạn."
+      ],
+      "common_use_cases_title": "Các trường hợp sử dụng phổ biến",
+      "common_use_cases": [
+        "<strong>Viết README cho dự án:</strong> Định dạng tệp mô tả dự án và kiểm tra liên kết hình ảnh trước khi cập nhật mã nguồn.",
+        "<strong>Tài liệu API:</strong> Viết và xem trước các thông số kỹ thuật API và ví dụ mã.",
+        "<strong>Bản nháp Blog kỹ thuật:</strong> Chuẩn bị bài viết bằng Markdown và kiểm tra cấu trúc tiêu đề.",
+        "<strong>Học cú pháp Markdown:</strong> Thực hành các phím tắt Markdown trong trình chỉnh sửa tương tác."
+      ],
+      "faq_title": "Các câu hỏi thường gặp",
+      "faq": [
+        {
+          "question": "Trình chỉnh sửa này có tương thích với GitHub Flavored Markdown không?",
+          "answer": "Có. Trình xem trước hỗ trợ các phần tử GFM tiêu chuẩn như danh sách công việc, bảng và khối mã."
+        },
+        {
+          "question": "Các bản nháp của tôi có được gửi đến máy chủ không?",
+          "answer": "Không. 99tool.in xử lý tất cả việc chuyển đổi cục bộ trong bộ nhớ trình duyệt của bạn."
+        },
+        {
+          "question": "Làm cách nào để hiển thị hình ảnh trong bản xem trước?",
+          "answer": "Bạn có thể tham chiếu đến bất kỳ hình ảnh nào bằng cú pháp tiêu chuẩn (<code>![](url_hinh_anh)</code>)."
+        },
+        {
+          "question": "Tệp .md được tải xuống có chứa mã HTML không?",
+          "answer": "Không. \"Tải xuống .md\" lưu mã nguồn Markdown có thể chỉnh sửa. Sử dụng \"Sao chép HTML\" cho mã HTML."
+        }
+      ],
+      "privacy_note": "🔒 Ghi chú về quyền riêng tư và dữ liệu: Việc hiển thị Markdown và xuất tệp diễn ra cục bộ trong trình duyệt của bạn.",
+      "schema_org": {
+        "name": "Xem Trước Markdown",
+        "description": "Xem trước kết quả thời gian thực, hỗ trợ GFM, xuất HTML, màn hình chia đôi."
+      }
+    },
+    "pdf_merger": {
+      "page_title": "Gộp File PDF – 99tool.in",
+      "meta_description": "Gộp nhiều tệp PDF trong vài giây ngay trong trình duyệt của bạn. Công cụ miễn phí và an toàn 100% từ 99tool.in.",
+      "what_is_title": "Công cụ Gộp PDF Tôn Trọng Quyền Riêng Tư Của Bạn",
+      "what_is_content": "Tất cả chúng ta đều từng trải qua: bạn có nhiều báo cáo, tài liệu đã quét và thư giới thiệu cần được gộp thành một tệp PDF chuyên nghiệp. Phản ứng đầu tiên là tìm kiếm \"<strong>gộp PDF miễn phí trực tuyến</strong>\". Nhưng bạn e ngại việc tải các hợp đồng bảo mật lên các máy chủ không xác định.\n\nTại 99tool.in, chúng tôi đã phát triển công cụ <strong>gộp tệp PDF</strong> để giải quyết vấn đề riêng tư này. Không giống như các trang web xử lý tệp trên máy chủ từ xa, công cụ của chúng tôi thực hiện việc tính toán ngay trên thiết bị của bạn. Sử dụng công nghệ <code>pdf-lib</code> trong trình duyệt, việc gộp tệp diễn ra hoàn toàn trong RAM máy tính của bạn. Các tệp của bạn không bao giờ rời khỏi thiết bị."
+    },
+    "pdf_merger": {
+      "page_title": "Gộp File PDF – 99tool.in",
+      "meta_description": "Gộp nhiều tệp PDF trong vài giây ngay trong trình duyệt của bạn. Công cụ miễn phí và an toàn 100% từ 99tool.in.",
+      "what_is_title": "Công cụ Gộp PDF Tôn Trọng Quyền Riêng Tư Của Bạn",
+      "what_is_content": "Tất cả chúng ta đều từng trải qua: bạn có nhiều báo cáo, tài liệu đã quét và thư giới thiệu cần được gộp thành một tệp PDF chuyên nghiệp. Phản ứng đầu tiên là tìm kiếm \"<strong>gộp PDF miễn phí trực tuyến</strong>\". Nhưng bạn e ngại việc tải các hợp đồng bảo mật lên các máy chủ không xác định.\n\nTại 99tool.in, chúng tôi đã phát triển công cụ <strong>gộp tệp PDF</strong> để giải quyết vấn đề riêng tư này. Không giống như các trang web xử lý tệp trên máy chủ từ xa, công cụ của chúng tôi thực hiện việc tính toán ngay trên thiết bị của bạn. Sử dụng công nghệ <code>pdf-lib</code> trong trình duyệt, việc gộp tệp diễn ra hoàn toàn trong RAM máy tính của bạn. Các tệp của bạn không bao giờ rời khỏi thiết bị.",
+      "how_to_use_title": "Cách gộp các tệp PDF trên 99tool.in (Từng Bước)",
+      "how_to_use_steps": [
+        "<strong>Bước 1: Chọn các tệp của bạn</strong> — Nhấp vào ô \"Chọn PDF\" hoặc kéo và thả các tệp của bạn vào trang.",
+        "<strong>Bước 2: Kiểm tra độ an toàn</strong> — Quan sát lá chắn màu xanh lá cây bên cạnh mỗi tệp để xác nhận độ an toàn.",
+        "<strong>Bước 3: Sắp xếp thứ tự</strong> — Kéo các thẻ tệp lên hoặc xuống để thay đổi thứ tự trang.",
+        "<strong>Bước 4: Gộp và tải xuống</strong> — Nhấp vào \"Gộp tệp\". Quá trình gộp hoàn tất trong vài giây và bắt đầu tải xuống."
+      ],
+      "key_features_title": "Tại Sao Gộp PDF Cục Bộ Lại Tốt Hơn",
+      "key_features": [
+        "<strong>Không gian làm việc trực quan:</strong> Kéo và thả các tệp dễ dàng theo đúng thứ tự bạn muốn.",
+        "<strong>Quét an toàn chủ động:</strong> Quét tệp để tìm các mã ẩn trước khi gộp.",
+        "<strong>Lắp ráp hoàn toàn trong trình duyệt:</strong> Chạy hoàn toàn trong RAM qua pdf-lib và WebAssembly.",
+        "<strong>Không tải tệp lên:</strong> Bảo vệ quyền riêng tư tuyệt đối cho các hợp đồng và tài liệu cá nhân."
+      ],
+      "common_use_cases_title": "Các Trường Hợp Sử Dụng Thực Tế",
+      "common_use_cases": [
+        "<strong>Dành cho Luật sư & Cố vấn:</strong> Gộp bằng chứng và hồ sơ mà không lo rò rỉ dữ liệu.",
+        "<strong>Dành cho Học sinh & Giáo viên:</strong> Gộp luận văn, trang bìa và tài liệu tham khảo thành một tệp.",
+        "<strong>Dành cho Chuyên viên Tài chính:</strong> Gộp các đơn từ và báo cáo trong khi vẫn bảo mật thông tin khách hàng."
+      ],
+      "faq_title": "Các câu hỏi thường gặp",
+      "faq": [
+        {
+          "question": "Có giới hạn số lượng tệp PDF tôi có thể gộp không?",
+          "answer": "Giới hạn phụ thuộc vào bộ nhớ RAM của máy tính của bạn. Hầu hết các máy tính hiện đại có thể gộp dễ dàng hơn 50 tệp PDF cỡ vừa."
+        },
+        {
+          "question": "Việc gộp có ảnh hưởng đến chất lượng hình ảnh không?",
+          "answer": "Không. Công cụ của chúng tôi giữ nguyên dữ liệu gốc của từng trang qua thư viện pdf-lib mà không nén lại."
+        },
+        {
+          "question": "Tại sao tôi thấy cảnh báo an toàn trên một số tệp?",
+          "answer": "Một số tệp PDF chứa các yếu tố tương tác như JavaScript. Hệ thống của chúng tôi thông báo điều này để đảm bảo tính minh bạch."
+        },
+        {
+          "question": "Tài liệu của tôi có được tải lên máy chủ không?",
+          "answer": "Tuyệt đối không. Tất cả xử lý được thực hiện cục bộ qua WASM và JavaScript trong trình duyệt của bạn."
+        },
+        {
+          "question": "Tôi có thể gộp các tệp PDF bảo vệ bằng mật khẩu không?",
+          "answer": "Các tệp được bảo vệ cần phải được mở khóa trước. Công cụ của chúng tôi không thể vượt qua mật khẩu bảo vệ."
+        },
+        {
+          "question": "Công cụ này có hoạt động trên điện thoại di động không?",
+          "answer": "Có. Miễn là trình duyệt di động của bạn hỗ trợ JavaScript hiện đại, bạn có thể gộp tệp PDF trên điện thoại."
+        }
+      ],
+      "privacy_note": "🔒 Xử lý cục bộ theo phiên. Không tải lên. Không theo dõi. Cập nhật tháng 4 năm 2026.",
+      "schema_org": {
+        "name": "Công cụ Gộp PDF",
+        "description": "Gộp PDF, sắp xếp trang trực quan, quét an toàn, xử lý cục bộ bảo mật."
+      }
+    },
+    "password_generator": {
+      "page_title": "Tạo Mật Khẩu – 99tool.in",
+      "meta_description": "Tạo mật khẩu mạnh và ngẫu nhiên ngay lập tức. Công cụ an toàn 100% cục bộ từ 99tool.in.",
+      "what_is_title": "Công cụ Tạo Mật Khẩu An Toàn là gì?",
+      "what_is_content": "Công cụ Tạo Mật Khẩu An Toàn tạo ra các mật khẩu ngẫu nhiên an toàn mã hóa bằng Web Crypto API (window.crypto.getRandomValues) của trình duyệt. Điều này mang lại kết quả ngẫu nhiên thực sự so với các hàm tiêu chuẩn. Toàn bộ quá trình diễn ra cục bộ trong trình duyệt của bạn.\n\nĐặt độ dài mật khẩu và các tập ký tự (chữ hoa, chữ thường, số, ký hiệu đặc biệt), công cụ sẽ tạo ngay mật khẩu an toàn phù hợp với yêu cầu của bạn. Sao chép bằng một nhấp chuột và lưu vào trình quản lý mật khẩu của bạn."
+    },
+    "password_generator": {
+      "page_title": "Tạo Mật Khẩu – 99tool.in",
+      "meta_description": "Tạo mật khẩu mạnh và ngẫu nhiên ngay lập tức. Công cụ an toàn 100% cục bộ từ 99tool.in.",
+      "what_is_title": "Công cụ Tạo Mật Khẩu An Toàn là gì?",
+      "what_is_content": "Công cụ Tạo Mật Khẩu An Toàn tạo ra các mật khẩu ngẫu nhiên an toàn mã hóa bằng Web Crypto API (window.crypto.getRandomValues) của trình duyệt. Điều này mang lại kết quả ngẫu nhiên thực sự so với các hàm tiêu chuẩn. Toàn bộ quá trình diễn ra cục bộ trong trình duyệt của bạn.\n\nĐặt độ dài mật khẩu và các tập ký tự (chữ hoa, chữ thường, số, ký hiệu đặc biệt), công cụ sẽ tạo ngay mật khẩu an toàn phù hợp với yêu cầu của bạn. Sao chép bằng một nhấp chuột và lưu vào trình quản lý mật khẩu của bạn.",
+      "how_to_use_title": "Cách sử dụng Công cụ Tạo Mật Khẩu An Toàn",
+      "how_to_use_steps": [
+        "Đặt độ dài mật khẩu mong muốn bằng thanh trượt (khuyến nghị từ 8 đến 128 ký tự).",
+        "Chọn các tùy chọn tập ký tự: Chữ hoa (A-Z), chữ thường (a-z), số (0-9), ký hiệu (!@#$...).",
+        "Nhấp vào \"Tạo mật khẩu\" để tạo mật khẩu ngẫu nhiên an toàn.",
+        "Kiểm tra thước đo độ mạnh để xác nhận mức độ bảo mật.",
+        "Nhấp vào \"Sao chép\" để sao chép mật khẩu vào khay nhớ tạm và dán vào trình quản lý mật khẩu của bạn.",
+        "Nhấp lại vào \"Tạo\" để tạo một tùy chọn khác."
+      ],
+      "key_features_title": "Các tính năng chính",
+      "key_features": [
+        "<strong>Tính ngẫu nhiên từ Web Crypto API:</strong> Sử dụng bộ tạo số giả ngẫu nhiên an toàn mã hóa.",
+        "<strong>Tùy chọn tùy chỉnh:</strong> Đặt độ dài lên tới 128 ký tự và kết hợp 4 loại ký tự.",
+        "<strong>Thước đo độ mạnh:</strong> Hiển thị mức độ bảo mật của từng mật khẩu được tạo theo thời gian thực.",
+        "<strong>Sao chép bằng một nhấp chuột:</strong> Sao chép ngay mật khẩu đã tạo vào khay nhớ tạm."
+      ],
+      "common_use_cases_title": "Các trường hợp sử dụng phổ biến",
+      "common_use_cases": [
+        "<strong>Đăng ký tài khoản mới:</strong> Tạo mật khẩu duy nhất và mạnh mỗi khi bạn đăng ký dịch vụ mới.",
+        "<strong>Thay đổi mật khẩu:</strong> Tạo mật khẩu thay thế an toàn khi trang web yêu cầu cập nhật thông tin.",
+        "<strong>Khóa API và Token:</strong> Tạo các chuỗi ngẫu nhiên để sử dụng làm khóa bảo mật cho dự án."
+      ],
+      "faq_title": "Các câu hỏi thường gặp",
+      "faq": [
+        {
+          "question": "Mật khẩu được tạo có thực sự ngẫu nhiên không?",
+          "answer": "Có. Công cụ sử dụng window.crypto.getRandomValues(), lấy tính ngẫu nhiên từ hệ điều hành (CSPRNG)."
+        },
+        {
+          "question": "Độ dài mật khẩu được khuyến nghị là bao nhiêu?",
+          "answer": "Tối thiểu 16 ký tự cho các tài khoản thông thường và 20+ ký tự cho các tài khoản quan trọng (email, ngân hàng)."
+        },
+        {
+          "question": "Mật khẩu có được gửi đến máy chủ không?",
+          "answer": "Tuyệt đối không. Tất cả việc tạo mật khẩu diễn ra cục bộ trong trình duyệt của bạn. Mật khẩu không bao giờ rời khỏi thiết bị."
+        },
+        {
+          "question": "Tôi có nên nhớ mật khẩu được tạo không?",
+          "answer": "Không. Mật khẩu mạnh được thiết kế để lưu trong trình quản lý mật khẩu (như 1Password hoặc Bitwarden)."
+        }
+      ],
+      "privacy_note": "🔒 An toàn mã hóa. 100% Cục bộ. Không liên hệ máy chủ. Cập nhật tháng 4 năm 2026.",
+      "schema_org": {
+        "name": "Công cụ Tạo Mật Khẩu An Toàn",
+        "description": "Tạo mật khẩu ngẫu nhiên, tập ký tự tùy chỉnh, kiểm tra độ mạnh, 100% phía máy khách."
+      }
+    },
+    "regex_tester": {
+      "page_title": "Kiểm Tra Regex – 99tool.in",
+      "meta_description": "Kiểm tra và tinh chỉnh biểu thức chính quy theo thời gian thực. Công cụ lập trình miễn phí từ 99tool.in.",
+      "what_is_title": "Công cụ Kiểm Tra & Tinh Chỉnh Regex là gì?",
+      "what_is_content": "Công cụ Kiểm Tra & Tinh Chỉnh Regex là một tiện ích phía máy khách được thiết kế để tạo, kiểm tra và sửa lỗi biểu thức chính quy (RegEx). Bằng cách nhập một mẫu và các cờ, bạn có thể kiểm tra cách biểu thức khớp với văn bản trực tiếp trong trình duyệt.\n\nTrình sửa lỗi này thực hiện tất cả việc đánh giá cục bộ bằng công cụ JavaScript RegExp gốc của trình duyệt. Không có dữ liệu nào được gửi qua mạng."
+    },
+    "regex_tester": {
+      "page_title": "Kiểm Tra Regex – 99tool.in",
+      "meta_description": "Kiểm tra và tinh chỉnh biểu thức chính quy theo thời gian thực. Công cụ lập trình miễn phí từ 99tool.in.",
+      "what_is_title": "Công cụ Kiểm Tra & Tinh Chỉnh Regex là gì?",
+      "what_is_content": "Công cụ Kiểm Tra & Tinh Chỉnh Regex là một tiện ích phía máy khách được thiết kế để tạo, kiểm tra và sửa lỗi biểu thức chính quy (RegEx). Bằng cách nhập một mẫu và các cờ, bạn có thể kiểm tra cách biểu thức khớp với văn bản trực tiếp trong trình duyệt.\n\nTrình sửa lỗi này thực hiện tất cả việc đánh giá cục bộ bằng công cụ JavaScript RegExp gốc của trình duyệt. Không có dữ liệu nào được gửi qua mạng.",
+      "how_to_use_title": "Cách sử dụng Công cụ Kiểm Tra & Tinh Chỉnh Regex",
+      "how_to_use_steps": [
+        "<strong>Nhập mẫu:</strong> Nhập biểu thức chính quy của bạn (ví dụ: <code>[a-zA-Z0-9]+</code>) vào thanh mẫu.",
+        "<strong>Cấu hình cờ:</strong> Bật các cờ như Toàn cục (g), Không phân biệt hoa thường (i) hoặc Nhiều dòng (m).",
+        "<strong>Dán văn bản kiểm tra:</strong> Nhập văn bản mẫu của bạn. Các khớp sẽ được làm nổi bật ngay lập tức.",
+        "<strong>Kiểm tra nhóm thu được:</strong> Xem bảng kết quả để biết chi tiết về các khớp và nhóm.",
+        "<strong>Sửa lỗi cú pháp:</strong> Nếu biểu thức không hợp lệ, hãy xem thông báo lỗi để giải quyết."
+      ],
+      "key_features_title": "Các tính năng chính",
+      "key_features": [
+        "<strong>Làm nổi bật thời gian thực:</strong> Làm nổi bật các kết quả khớp trong ô văn bản ngay khi bạn gõ.",
+        "<strong>Điều khiển cờ tương tác:</strong> Bật hoặc tắt các cờ g, i, m dễ dàng chỉ với một nhấp chuột.",
+        "<strong>Chi tiết nhóm thu được:</strong> Hiển thị vị trí khớp và các giá trị nhóm thu được.",
+        "<strong>Chẩn đoán lỗi cú pháp:</strong> Hiển thị thông báo rõ ràng khi có lỗi cú pháp để xử lý nhanh chóng.",
+        "<strong>100% Phía máy khách:</strong> Kiểm tra biểu thức chính quy ngoại tuyến để bảo vệ dữ liệu của bạn."
+      ],
+      "common_use_cases_title": "Các trường hợp sử dụng phổ biến",
+      "common_use_cases": [
+        "<strong>Xác thực biểu mẫu:</strong> Kiểm tra các mẫu cho địa chỉ email, số điện thoại và mật khẩu.",
+        "<strong>Phân tích nhật ký:</strong> Tạo mẫu để trích xuất địa chỉ IP hoặc mã lỗi từ nhật ký máy chủ.",
+        "<strong>Trích xuất văn bản:</strong> Kiểm tra mẫu để trích xuất các thẻ hoặc biến cụ thể từ tệp mã.",
+        "<strong>Học biểu thức chính quy:</strong> Thực hành các quy tắc Regex trong môi trường trực quan."
+      ],
+      "faq_title": "Các câu hỏi thường gặp",
+      "faq": [
+        {
+          "question": "Công cụ này sử dụng công cụ Regex nào?",
+          "answer": "Công cụ này sử dụng công cụ JavaScript <code>RegExp</code> gốc, hoàn toàn tương thích với Chrome, Firefox, Safari và Node.js."
+        },
+        {
+          "question": "Văn bản kiểm tra của tôi có được tải lên máy chủ không?",
+          "answer": "Không. 99tool.in xử lý tất cả việc đánh giá cục bộ trong bộ nhớ trình duyệt của bạn."
+        },
+        {
+          "question": "Tại sao tôi thấy thông báo lỗi cú pháp?",
+          "answer": "Điều này xảy ra khi nhập một biểu thức không hợp lệ, ví dụ như ngoặc đơn chưa đóng <code>(</code>."
+        },
+        {
+          "question": "Công cụ có hỗ trợ Lookaround không?",
+          "answer": "Có. Công cụ gốc hỗ trợ các tính năng ES2018+ hiện đại (Lookahead và Lookbehind)."
+        }
+      ],
+      "privacy_note": "🔒 Ghi chú về quyền riêng tư và dữ liệu: Đánh giá Regex diễn ra cục bộ trong trình duyệt của bạn. Không có dữ liệu nào được gửi đi.",
+      "schema_org": {
+        "name": "Kiểm Tra Regex",
+        "description": "Kiểm tra Regex thời gian thực, hỗ trợ cờ (g, i, m), làm nổi bật kết quả khớp."
+      }
+    },
+    "word_counter": {
+      "page_title": "Đếm Từ & Ký Tự – 99tool.in",
+      "meta_description": "Đếm số từ, ký tự, câu và đoạn văn theo thời gian thực. Công cụ miễn phí và an toàn từ 99tool.in.",
+      "what_is_title": "Công cụ Đếm Từ Trực Tuyến là gì?",
+      "what_is_content": "Công cụ Đếm Từ Trực Tuyến là một tiện ích phân tích văn bản theo thời gian thực giúp đếm số từ, ký tự, câu và đoạn văn khi bạn gõ hoặc dán nội dung. Không giống như các trình chỉnh sửa đám mây, công cụ này hoạt động cục bộ trong trình duyệt của bạn mà không truyền dữ liệu.\n\nBộ đếm cập nhật ngay lập tức sau mỗi lần nhấn phím, giúp bạn kiểm soát độ dài văn bản cho các bài viết, mạng xã hội hoặc nội dung SEO."
+    },
+    "word_counter": {
+      "page_title": "Đếm Từ & Ký Tự – 99tool.in",
+      "meta_description": "Đếm số từ, ký tự, câu và đoạn văn theo thời gian thực. Công cụ miễn phí và an toàn từ 99tool.in.",
+      "what_is_title": "Công cụ Đếm Từ Trực Tuyến là gì?",
+      "what_is_content": "Công cụ Đếm Từ Trực Tuyến là một tiện ích phân tích văn bản theo thời gian thực giúp đếm số từ, ký tự, câu và đoạn văn khi bạn gõ hoặc dán nội dung. Không giống như các trình chỉnh sửa đám mây, công cụ này hoạt động cục bộ trong trình duyệt của bạn mà không truyền dữ liệu.\n\nBộ đếm cập nhật ngay lập tức sau mỗi lần nhấn phím, giúp bạn kiểm soát độ dài văn bản cho các bài viết, mạng xã hội hoặc nội dung SEO.",
+      "how_to_use_title": "Cách sử dụng Công cụ Đếm Từ Trực Tuyến",
+      "how_to_use_steps": [
+        "Nhập hoặc dán văn bản của bạn trực tiếp vào ô trình chỉnh sửa ở đầu trang.",
+        "Theo dõi số từ, ký tự, câu và đoạn văn được cập nhật theo thời gian thực.",
+        "Sử dụng chỉ số \"Thời gian đọc\" để ước tính thời gian người đọc hoàn thành nội dung của bạn.",
+        "Chỉnh sửa văn bản trong ô cho đến khi đạt được mục tiêu của bạn.",
+        "Nhấp vào \"Xóa\" để đặt lại trình chỉnh sửa."
+      ],
+      "key_features_title": "Các tính năng chính",
+      "key_features": [
+        "<strong>Đếm thời gian thực:</strong> Cập nhật số từ, ký tự và câu sau mỗi lần nhấn phím.",
+        "<strong>Ước tính thời gian đọc:</strong> Tính thời gian đọc trung bình dựa trên tốc độ đọc của người trưởng thành.",
+        "<strong>Bộ đếm ký tự (có và không có khoảng trắng):</strong> Hiển thị cả hai tổng số cho các nền tảng như Twitter.",
+        "<strong>100% Riêng tư:</strong> Tất cả logic đếm chạy phía máy khách; văn bản của bạn không bao giờ được gửi đi."
+      ],
+      "common_use_cases_title": "Các trường hợp sử dụng phổ biến",
+      "common_use_cases": [
+        "<strong>Bài luận học thuật:</strong> Kiểm tra giới hạn số từ cho các bài tập trước khi nộp.",
+        "<strong>Viết nội dung SEO:</strong> Kiểm soát chính xác độ dài của mô tả meta, thẻ tiêu đề và bài viết.",
+        "<strong>Bài đăng mạng xã hội:</strong> Tuân thủ giới hạn ký tự cho Twitter/X hoặc LinkedIn.",
+        "<strong>Viết lách tự do:</strong> Kiểm tra độ dài hợp đồng theo yêu cầu."
+      ],
+      "faq_title": "Các câu hỏi thường gặp",
+      "faq": [
+        {
+          "question": "Công cụ này có lưu những gì tôi gõ không?",
+          "answer": "Tuyệt đối không. Quyền riêng tư của bạn là trên hết. Mọi thứ diễn ra cục bộ trong thẻ trình duyệt của bạn. Khi bạn đóng thẻ, văn bản sẽ bị xóa."
+        },
+        {
+          "question": "Thời gian đọc được tính như thế nào?",
+          "answer": "Phép tính dựa trên tốc độ đọc trung bình của người trưởng thành (khoảng 200 đến 250 từ mỗi phút)."
+        },
+        {
+          "question": "Khoảng trắng có được tính là ký tự không?",
+          "answer": "Có. Công cụ hiển thị cả \"tổng số ký tự bao gồm khoảng trắng\" và \"không bao gồm khoảng trắng\"."
+        },
+        {
+          "question": "Điều gì được coi là một \"câu\"?",
+          "answer": "Bất kỳ đoạn văn bản nào kết thúc bằng dấu chấm, dấu chấm cảm hoặc dấu hỏi đều được tính là một câu."
+        },
+        {
+          "question": "Nó có hoạt động trên điện thoại của tôi không?",
+          "answer": "Có! Công cụ hoàn toàn tương thích và hoạt động mượt mà trên điện thoại thông minh và máy tính bảng."
+        }
+      ],
+      "privacy_note": "Ghi chú về quyền riêng tư và dữ liệu: Tất cả phân tích văn bản và tính toán thời gian đọc đều diễn ra trong trình duyệt của bạn. Nội dung của bạn không được lưu trữ.",
+      "schema_org": {
+        "name": "Công cụ Đếm Từ Trực Tuyến",
+        "description": "Đếm từ, đếm ký tự, đếm câu, ước tính thời gian đọc."
+      }
+    }
+  }
+}

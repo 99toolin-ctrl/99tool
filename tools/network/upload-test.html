@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Upload Test – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/network/upload-test.html"/>
+<meta property="og:title" content="Upload Test – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/network/upload-test.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Upload Test \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/network/upload-test.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .upload-workspace {
+      margin-top: 2rem;
+      background: var(--bg-secondary);
+      border-radius: 20px;
+      padding: 3rem;
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+    .upload-gauge {
+      width: 200px;
+      height: 200px;
+      border: 10px solid #222;
+      border-bottom-color: #3ae374;
+      border-radius: 50%;
+      margin: 0 auto 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease;
+    }
+    .speed-number { font-size: 3rem; font-weight: 800; color: #3ae374; }
+    .unit-text { font-size: 1rem; color: var(--text-muted); text-transform: uppercase; }
+    
+    .status-badge {
+      display: inline-block;
+      padding: 5px 15px;
+      background: rgba(58, 227, 116, 0.1);
+      color: #3ae374;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+    }
+    .btn-upload {
+       background: #3ae374;
+       border-color: #3ae374;
+       color: #000;
+       font-weight: 800;
+       padding: 15px 40px;
+       border-radius: 50px;
+    }
+    .btn-upload:hover { background: #2ecc71; border-color: #2ecc71; }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/network/upload-test.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/network/upload-test.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/network/upload-test.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/network/upload-test.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/network/upload-test.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/network/upload-test.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/network/upload-test.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/network/upload-test.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/network/upload-test.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/network/upload-test.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/network/upload-test.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/network/upload-test.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/network/upload-test.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/network/upload-test.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/network/upload-test.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/network/upload-test.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/network/upload-test.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/network/upload-test.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/network/upload-test.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/network/upload-test.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/network/upload-test.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/network/upload-test.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Internet Upload Tester</h1>
+      <p>Measure your upstream performance by sending secure data blocks to the cloud.</p>
+    </div>
+
+    <div class="tool-container text-center">
+      <div class="upload-workspace">
+        <div id="status" class="status-badge">Ready to Test</div>
+        
+        <div class="upload-gauge" id="gauge-ring">
+           <div>
+             <div class="speed-number" id="speed-out">0</div>
+             <div class="unit-text">Mbps</div>
+           </div>
+        </div>
+
+        <button id="start-btn" class="btn btn-upload">⬆️ Start Upload Test</button>
+        
+        <p class="mt-4 text-muted small">
+           This tool securely sends random data to verify your connection's sending speed. 
+           No personal data is transmitted.
+        </p>
+      </div>
+
+      <!-- SEO CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2>Why Test Your Upload Speed?</h2>
+        <p>While most ISPs advertise high download speeds, <strong>upload speed</strong> is often the "choke point" for modern tasks. Whether you are on a Zoom call, uploading a video to YouTube, or backing up your photos to a cloud drive, your <strong>internet upload speed</strong> determines how fast you can share data with the world. Our <strong>online upload tester</strong> measures this specific upstream throughput to ensure your connection can handle high-bandwidth tasks.</p>
+
+        <h3 class="mt-4">How the Upload Test Works</h2>
+        <p>To measure your <strong>upstream speed</strong>, our tool generates a random, cryptographically secure binary blob (a "chunk" of data) in your browser's memory. We then send this chunk to a high-availability remote endpoint using a <code>POST</code> request. By measuring exactly how many milliseconds it takes for the remote server to acknowledge receipt, we can calculate your <strong>upload throughput in Mbps</strong> with professional accuracy.</p>
+
+        <h3 class="mt-4">The Impact of Low Upload Speed on Video Calls</h3>
+        <p>If your <strong>upload speed checker</strong> shows results below 3-5 Mbps, you might experience "choppy" video during meetings or lag while gaming. This is because your device cannot send your video or controller inputs to the server fast enough. Our <strong>online upload diagnostic</strong> helps you verify if you are getting the speed you pay for, giving you the data needed to contact your ISP or upgrade your router hardware.</p>
+
+        <h3 class="mt-4">Privacy and Secure Testing</h3>
+        <p>At 99tool.in, your privacy is paramount. Our <strong>secure upload test</strong> does not transmit your files or personal documents. We generate dummy data for the purpose of the test, which is discarded by the receiving echo server immediately. This ensures that you can <strong>check upload performance</strong> without any risk of data exposure or collection, maintaining the high privacy standards of our entire utility suite.</p>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const startBtn = document.getElementById('start-btn');
+    const speedOut = document.getElementById('speed-out');
+    const status = document.getElementById('status');
+    const gauge = document.getElementById('gauge-ring');
+
+    startBtn.onclick = async () => {
+       startBtn.disabled = true;
+       status.innerText = "Generating Test Data...";
+       speedOut.innerText = "0";
+       
+       // Generate 2MB of random data
+       const sizeBytes = 2 * 1024 * 1024;
+       const data = new Uint8Array(sizeBytes);
+       crypto.getRandomValues(data);
+       const blob = new Blob([data]);
+
+       status.innerText = "Uploading Data Blocks...";
+       const startTime = performance.now();
+
+       try {
+          // Use a public post endpoint (httpbin is good for light tests)
+          const response = await fetch('https://httpbin.org/post', {
+             method: 'POST',
+             body: blob
+          });
+          
+          if (!response.ok) throw new Error("Upload Failed");
+
+          const endTime = performance.now();
+          const durationSec = (endTime - startTime) / 1000;
+          
+          // Bits / Second
+          const bits = sizeBytes * 8;
+          const mbps = (bits / durationSec) / 1000000;
+          
+       speedOut.innerText = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(mbps, 2) : mbps.toFixed(2);
+          status.innerText = "Test Complete";
+          
+          const rotation = Math.min(180, (mbps / 20) * 180); // Scale 0-20Mbps
+          gauge.style.transform = `rotate(${rotation}deg)`;
+
+       } catch (err) {
+          console.error(err);
+          status.innerText = "Error: Upstream Interrupted";
+          status.style.color = "var(--primary)";
+       }
+
+       startBtn.disabled = false;
+       startBtn.innerText = "Restart Test";
+    };
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>

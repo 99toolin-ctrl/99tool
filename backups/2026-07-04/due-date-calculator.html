@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Due Date Calculator – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/health/due-date-calculator.html"/>
+<meta property="og:title" content="Due Date Calculator – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/health/due-date-calculator.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Due Date Calculator \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/health/due-date-calculator.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .due-workspace {
+      max-width: 600px;
+      margin: 2rem auto;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      border-radius: 20px;
+    }
+    .form-group { margin-bottom: 2rem; }
+    label { display: block; margin-bottom: 0.8rem; font-weight: 700; color: var(--text-muted); }
+    input[type="date"] {
+      width: 100%;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 1rem;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+    .result-card {
+      background: var(--bg-secondary);
+      padding: 2.5rem;
+      border-radius: 15px;
+      margin-top: 2rem;
+      text-align: center;
+      display: none;
+      border: 2px dashed #ff758c;
+    }
+    .date-val { font-size: 2.5rem; font-weight: 900; color: #ff758c; margin: 1rem 0; }
+    .countdown { font-size: 1.2rem; color: var(--text-muted); font-weight: 600; }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Infinite Due Date Calculator</h1>
+      <p>Estimate your pregnancy timeline with a private, clinically recognized calendar tool.</p>
+    </div>
+
+    <div class="due-workspace">
+      <div class="form-group">
+        <label>First Day of Your Last Period (LMP)</label>
+        <input type="date" id="lmp">
+      </div>
+      
+      <button onclick="calculateDueDate()" class="btn btn-primary btn-lg btn-full">Check My Due Date</button>
+
+      <div class="result-card" id="result-card">
+         <div class="small text-muted uppercase">Your Estimated Due Date</div>
+         <div class="date-val" id="due-date">N/A</div>
+         <div class="countdown" id="countdown">0 Days Remaining</div>
+         <p class="mt-4 text-muted small">This estimation uses Naegele's rule, which is the standard clinical method for determining pregnancy duration.</p>
+      </div>
+
+      <!-- SEO CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2>How is a Due Date Calculated?</h2>
+        <p>A standard pregnancy lasts approximately 40 weeks (or 280 days) from the first day of your last menstrual period (LMP). Our <strong>online due date calculator</strong> uses Naegele's rule to provide a high-fidelity estimation of your timeline. While only 4% of babies are born on their exact due date, this 10-month calendar benchmark is essential for tracking development milestones.</p>
+
+        <h3 class="mt-4">Understanding the Trimesters</h2>
+        <p>A pregnancy is divided into three sections: the first trimester (weeks 1-12), second trimester (weeks 13-26), and third trimester (weeks 27 until birth). By using our <strong>private pregnancy auditor</strong>, you can prepare for each phase. This <strong>secure due date checker</strong> helps you visualize your journey with zero data-scraping or intrusive trackers.</p>
+
+        <h3 class="mt-4">Privacy and Privacy Accuracy</h2>
+        <p>At 99tool.in, we understand that pregnancy is a deeply personal journey. Our <strong>private due date calculator</strong> runs entirely in your local browser sandbox. We do not store your biological data or event dates. This <strong>secure health diagnostic</strong> is the safest way to estimate your baby's timeline without being subjected to pervasive advertisement tracking or third-party data collection.</p>
+
+        <div class="alert alert-warning mt-4">
+           <strong>Disclaimer:</strong> This tool is for informational purposes only and is not a substitute for professional medical advice. Always consult your healthcare provider or obstetrician for accurate pregnancy dating and clinical care.
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    function calculateDueDate() {
+       const lmpInput = document.getElementById('lmp').value;
+       if (!lmpInput) return alert('Please select a date.');
+
+       const lmp = new Date(lmpInput);
+       const due = new Date(lmp);
+       due.setDate(lmp.getDate() + 280);
+
+       const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+       document.getElementById('due-date').innerText = due.toLocaleDateString(undefined, options);
+
+       const today = new Date();
+       const diffTime = due - today;
+       const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+       
+       if (diffDays > 0) {
+          document.getElementById('countdown').innerText = diffDays + ' Days Remaining';
+       } else {
+          document.getElementById('countdown').innerText = 'Already Arrived!';
+       }
+
+       document.getElementById('result-card').style.display = 'block';
+    }
+  </script>
+</body>
+</html>

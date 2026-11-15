@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Form Filler – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/pdf/form-filler.html"/>
+<meta property="og:title" content="Form Filler – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/pdf/form-filler.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Form Filler \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/pdf/form-filler.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+  <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+  <style>
+    .workspace {
+      display: flex;
+      flex-direction: column;
+      height: 700px;
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      margin-top: 1.5rem;
+    }
+    .toolbar {
+      padding: 1rem;
+      background: var(--bg-primary);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .tools-group { display: flex; gap: 8px; align-items: center; }
+    .tool-label { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; color: #666; }
+    .pages-container {
+      flex: 1;
+      padding: 2rem;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      background: #e2e8f0;
+    }
+    .page-wrapper {
+      position: relative;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      background: white;
+    }
+    canvas { max-width: 100%; height: auto !important; }
+    .fill-layer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 10;
+      cursor: text;
+    }
+    .text-input-field {
+      position: absolute;
+      min-width: 50px;
+      min-height: 20px;
+      background: rgba(235, 248, 255, 0.6);
+      border: 1px dashed var(--primary);
+      color: black;
+      font-size: 14px;
+      font-family: 'Inter', sans-serif;
+      outline: none;
+      padding: 2px 4px;
+      white-space: nowrap;
+      cursor: move;
+      z-index: 20;
+    }
+    .text-input-field:focus {
+      background: white;
+      border: 1px solid var(--primary);
+      box-shadow: 0 0 5px rgba(var(--primary-rgb), 0.3);
+    }
+    #loading-status {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--bg-primary);
+      padding: 10px 20px;
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+      z-index: 1000;
+      display: none;
+      font-size: 0.85rem;
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/pdf/form-filler.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/pdf/form-filler.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/pdf/form-filler.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/pdf/form-filler.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/pdf/form-filler.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/pdf/form-filler.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/pdf/form-filler.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/pdf/form-filler.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/pdf/form-filler.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/pdf/form-filler.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/pdf/form-filler.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/pdf/form-filler.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/pdf/form-filler.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/pdf/form-filler.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/pdf/form-filler.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/pdf/form-filler.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/pdf/form-filler.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/pdf/form-filler.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/pdf/form-filler.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/pdf/form-filler.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/pdf/form-filler.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/pdf/form-filler.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>PDF Form Filler</h1>
+      <p>Fill out any PDF or scanned form by typing directly on the page. Securely. Privately.</p>
+    </div>
+
+    <div class="tool-container">
+      <div class="upload-area" id="drop-zone">
+        <div class="upload-icon">✍️</div>
+        <p>Drag & drop your form PDF or <span class="text-primary">browse files</span></p>
+        <input type="file" id="pdf-input" accept="application/pdf" hidden>
+      </div>
+
+      <div id="file-info" class="file-info hidden">
+        <div class="file-details">
+          <span id="file-name">filename.pdf</span>
+          <span id="file-size" class="text-muted">0 KB</span>
+        </div>
+        <div class="security-badge" id="security-badge">
+          <span class="badge-icon">🛡️</span>
+          <span id="security-status">Scanning Mode</span>
+        </div>
+      </div>
+
+      <div id="editor-workspace" class="workspace hidden">
+        <div class="toolbar">
+          <div class="tools-group">
+            <span class="tool-label">Font Size:</span>
+            <select id="font-size" class="form-select-sm" style="border-radius: 4px; padding: 2px 8px;">
+              <option value="10">10px</option>
+              <option value="12" selected>12px</option>
+              <option value="14">14px</option>
+              <option value="16">16px</option>
+              <option value="18">18px</option>
+            </select>
+          </div>
+          <div class="tools-group">
+            <span class="tool-label">Color:</span>
+            <input type="color" id="text-color" value="#000000" style="width: 30px; height: 30px; border: none; padding: 0;">
+          </div>
+          <p class="text-muted small mb-0">Click anywhere on the PDF to start typing.</p>
+          <div style="flex-grow: 1;"></div>
+          <button id="save-btn" class="btn btn-primary btn-sm">Complete & Download PDF</button>
+        </div>
+        <div class="pages-container" id="pages-container"></div>
+      </div>
+
+      <div id="loading-status">Loading Form Page <span id="current-page">0</span>...</div>
+      <div id="status-msg" class="text-center mt-3 small"></div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5">
+        <h2>Stop Printing and Scanning: Fill PDF Forms the Modern Way</h2>
+        <p>We’ve all been there: you receive a digital form for a job application, a bank update, or a government permit, and it isn't "interactive." You can't click the fields to type. Your choices are frustrating: print it out, fill it by hand, and find a scanner; or upload your sensitive personal data to a "free" website that promises to let you <strong>fill pdf form</strong> online. In an era of identity theft, sending your unencrypted personal details to a random server is a massive risk you shouldn’t have to take.</p>
+
+        <p>At 99tool.in, we built our <strong>pdf form filler</strong> to give you a third, better option. Our system allows you to <strong>edit pdf form</strong> fields by overlaying text directly in your browser. It uses 100% processing, meaning your data stays on your machine during the entire filling process. Whether you’re a freelancer signing contracts, a parent filling out school forms, or a professional managing logistics, our <strong>pdf filler</strong> makes document completion fast, free, and completely secure.</p>
+        
+        <div class="tool-preview-box mt-4 mb-4" style="text-align:center;">
+           <img src="../../assets/images/habit-preview.png" alt="Seamless PDF Form Filling Experience" class="tool-preview" id="tool-preview-img" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+        </div>
+
+        <h3 class="mt-4">The Power of Custom Text Overlays</h3>
+        <p>Most <strong>pdf form filler online</strong> services struggle with auto-detecting fields, especially in older or scanned documents. This leads to misaligned text and messy results. We took a human-centric approach: **Click-to-Type**. Our interface treats your PDF like a canvas. Simply click on a line, and a text box appears exactly where you need it. You have full control over the <strong>font size and color</strong>, ensuring your additions look like they belong in the original design.</p>
+        
+        <p>This "Manual Fill" logic is superior for real-world forms where fields are often strangely shaped or positioned. Our <strong>fill pdf online free</strong> utility allows you to place text with pixel-perfect accuracy. Once you’re done, our engine "flattens" the text into the PDF, creating a professional, submission-ready document that looks just as clean as if it were a native digital form. It’s the ultimate <strong>secure pdf editor</strong> for the daily grind.</p>
+
+        <h3 class="mt-4">Why Privacy is Non-Negotiable</h3>
+        <p>Form data is the most sensitive information you own. It contains your name, address, social security details, family history, and financial status. When you use a cloud-based <strong>pdf filler</strong>, you are essentially creating a permanent digital record of that data on someone else's infrastructure. Even if they claim to delete it, the "data trail" left behind is a vulnerability.</p>
+        
+        <p>Our <strong>safe pdf form filler</strong> eliminates this trail. All the text you type is stored in your computer's local RAM. No data is ever transmitted across the internet. Combined with our active **Security Scan** that checks for hidden malicious elements in your source file, 99tool.in provides a "Sanitized Workspace" for your most important document work. It’s the highest level of <strong>confidential pdf management</strong> available on the web today.</p>
+
+        <h3 class="mt-4">How to Fill Your PDF Form (Step-by-Step)</h3>
+        <p>Completing a complex form should be a frictionless experience. Here is how to use our <strong>fill pdf form</strong> utility:</p>
+        <ul style="line-height: 1.8; margin-bottom: 20px;">
+          <li><strong>Step 1: Securely Load Your Form</strong> — Drag your PDF into the upload zone. Our engine will render the pages in high resolution for easy reading.</li>
+          <li><strong>Step 2: Position Your Text</strong> — Look at the form and click exactly where you need to enter data. A dashed text box will appear.</li>
+          <li><strong>Step 3: Type and Adjust</strong> — Enter your information. Use the toolbar to tweak the font size so it matches the rest of the form’s style.</li>
+          <li><strong>Step 4: Review Your Work</strong> — Scroll through all pages to ensure every field is filled. You can click and drag text boxes if you need to adjust their alignment.</li>
+          <li><strong>Step 5: Finalize and Download</strong> — Click "Complete & Download." Our local engine "burns" your text into the final PDF structure and starts your download instantly.</li>
+        </ul>
+
+        <h3 class="mt-4">The Flexible Choice for Professionals</h3>
+        <p>Our <strong>pdf filler</strong> is the go-to tool for users who handle diverse document types:</p>
+        
+        <p><strong>For Small Business Owners:</strong> Signing "Vendor Agreements" or filling out "Tax Declarations" becomes a 5-minute task rather than a 30-minute printing ordeal. Our <strong>pdf form editor</strong> ensures your documents look professional without the overhead of expensive software.</p>
+        
+        <p><strong>For Government Employees:</strong> When working on "Internal Requests" that involve sensitive personnel data, the 100% <strong>filling</strong> capability ensures you remain within strict data-handling guidelines while improving your productivity.</p>
+        
+        <p><strong>For Freelance Professionals:</strong> From "NDAs" to "Invoices," our <strong>fill pdf online</strong> simplicity helps you get administrative work out of the way so you can get back to your real work. The result is always a high-fidelity PDF that is ready for digital signature and sharing.</p>
+
+        <h3 class="mt-5">Discover More Empowering Tools</h3>
+        <p>Once you’ve successfully filled out your form, you might need to protect it before sending. Check out our <strong><a href="protect-pdf.html">PDF Password Protector</a></strong>. Or, if the completed form needs to be sent as part of a larger packet, use our <strong><a href="merge-pdf.html">PDF Merger</a></strong> to combine it with other documents safely. At 99tool.in, we are building a seamless, private, and powerful suite of utilities to make your digital life easier and more secure.</p>
+        
+        <div class="flex gap-4 mt-4 mb-5">
+           <a href="annotate-pdf.html" class="btn btn-secondary" style="flex:1; text-align:center;">Annotate PDF</a>
+           <a href="extract-text.html" class="btn btn-secondary" style="flex:1; text-align:center;">Extract Text</a>
+        </div>
+      </section>
+ 
+      <!-- FAQ SECTION -->
+      <section class="faq-section mt-5">
+        <h2 data-i18n="tools.pdf_form_filler.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Is my personal data saved on your servers?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Definitely not. For your total security, our <strong>pdf form filler</strong> works entirely locally. The text you type exists only in your browser's temporary memory and is "burned" into the PDF on your own machine. No data is ever transmitted to us.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I fill out scanned forms that don't have interactive fields?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. Our <strong>click-to-type editor</strong> is specifically designed for non-interactive and scanned PDFs. You can click anywhere on the page to overlay text, making it perfect for older government forms or scanned contracts.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I change the font style to match the form?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>While we currently use a professional-grade sans-serif font (Helvetica) for maximum compatibility, you can fully customize the <strong>font size and text color</strong> to ensure your entries blend in seamlessly with the original form layout.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Does this tool support digital signatures?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Currently, our <strong>safe pdf filler</strong> focuses on text entry. For a legally binding digital signature, we recommend filling your form here, downloading it, and then using a dedicated signing utility if required by your jurisdiction.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Will the final PDF be editable by others?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>When you download the completed form, we "flatten" your text into the <strong>PDF's internal structure</strong>. This means your entries are permanent and cannot be easily deleted or moved by others, ensuring your data integrity.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Why use a local filler instead of a cloud-based editor?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Cloud editors often cache your sensitive data for their own analytics or "AI training." A <strong>private PDF form filler</strong> removes that risk bridge. It's faster (no uploads), safer (no data leakage), and keeps your identity information under your total sovereignty.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js';
+
+    const pdfInput = document.getElementById('pdf-input');
+    const dropZone = document.getElementById('drop-zone');
+    const workspace = document.getElementById('editor-workspace');
+    const pagesContainer = document.getElementById('pages-container');
+    const saveBtn = document.getElementById('save-btn');
+    const loadStatus = document.getElementById('loading-status');
+    const fontSizeSelect = document.getElementById('font-size');
+    const textColorInput = document.getElementById('text-color');
+
+    let currentFile = null;
+    let inputsByPage = {}; // { pageIndex: [{x, y, text, size, color}] }
+
+    // File selection
+    dropZone.addEventListener('click', () => pdfInput.click());
+    pdfInput.addEventListener('change', (e) => handleFile(e.target.files[0]));
+
+    async function handleFile(file) {
+      if (!file || file.type !== 'application/pdf') return;
+      currentFile = file;
+      document.getElementById('file-name').innerText = file.name;
+      document.getElementById('file-size').innerText = (file.size / 1024).toFixed(1) + ' KB';
+      document.getElementById('file-info').classList.remove('hidden');
+      workspace.classList.remove('hidden');
+      
+      // Security Scan
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const text = new TextDecoder().decode(e.target.result.slice(0, 5000));
+        const status = document.getElementById('security-status');
+        status.innerText = text.includes('/AcroForm') ? 'Native Form Detected' : 'Scanned/Static Form';
+      };
+      reader.readAsArrayBuffer(file);
+
+      renderPDF(file);
+    }
+
+    async function renderPDF(file) {
+      pagesContainer.innerHTML = "";
+      loadStatus.style.display = 'block';
+      const arrayBuffer = await file.arrayBuffer();
+      const pdf = await pdfjsLib.getDocument(arrayBuffer).promise;
+
+      for (let i = 1; i <= pdf.numPages; i++) {
+        document.getElementById('current-page').innerText = i;
+        const page = await pdf.getPage(i);
+        const viewport = page.getViewport({ scale: 1.5 });
+
+        const wrapper = document.createElement('div');
+        wrapper.className = 'page-wrapper';
+        wrapper.style.width = viewport.width + 'px';
+        wrapper.style.height = viewport.height + 'px';
+
+        const canvas = document.createElement('canvas');
+        canvas.width = viewport.width;
+        canvas.height = viewport.height;
+        await page.render({ canvasContext: canvas.getContext('2d'), viewport }).promise;
+
+        const layer = document.createElement('div');
+        layer.className = 'fill-layer';
+        layer.dataset.pageIndex = i - 1;
+
+        layer.addEventListener('click', (e) => {
+          if (e.target.className === 'text-input-field') return;
+          const rect = layer.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          createInputField(layer, x, y, i - 1, viewport);
+        });
+
+        wrapper.appendChild(canvas);
+        wrapper.appendChild(layer);
+        pagesContainer.appendChild(wrapper);
+      }
+      loadStatus.style.display = 'none';
+    }
+
+    function createInputField(layer, x, y, pageIndex, viewport) {
+      const input = document.createElement('div');
+      input.className = 'text-input-field';
+      input.contentEditable = true;
+      input.style.left = x + 'px';
+      input.style.top = y + 'px';
+      input.style.fontSize = fontSizeSelect.value + 'px';
+      input.style.color = textColorInput.value;
+      
+      layer.appendChild(input);
+      input.focus();
+
+      if (!inputsByPage[pageIndex]) inputsByPage[pageIndex] = [];
+      const entry = { x: x / 1.5, y: (viewport.height - y) / 1.5, text: "", size: parseInt(fontSizeSelect.value), color: textColorInput.value };
+      inputsByPage[pageIndex].push(entry);
+
+      input.addEventListener('input', () => {
+        entry.text = input.innerText;
+      });
+
+      input.addEventListener('blur', () => {
+        if (!input.innerText.trim()) {
+          input.remove();
+          inputsByPage[pageIndex] = inputsByPage[pageIndex].filter(i => i !== entry);
+        }
+      });
+    }
+
+    saveBtn.addEventListener('click', async () => {
+      document.getElementById('status-msg').innerText = "Generating Completed PDF...";
+      try {
+        const { PDFDocument, rgb, StandardFonts } = PDFLib;
+        const arrayBuffer = await currentFile.arrayBuffer();
+        const pdfDoc = await PDFDocument.load(arrayBuffer);
+        const pages = pdfDoc.getPages();
+        const font = await pdfDoc.embedFont(StandardFonts.Helvetica);
+
+        for (const [pageIndex, items] of Object.entries(inputsByPage)) {
+          const page = pages[parseInt(pageIndex)];
+          items.forEach(item => {
+            if (!item.text.trim()) return;
+            
+            const r = parseInt(item.color.slice(1, 3), 16) / 255;
+            const g = parseInt(item.color.slice(3, 5), 16) / 255;
+            const b = parseInt(item.color.slice(5, 7), 16) / 255;
+
+            page.drawText(item.text, {
+              x: item.x,
+              y: item.y - (item.size * 0.8), // Adjust for baseline
+              size: item.size,
+              font: font,
+              color: rgb(r, g, b)
+            });
+          });
+        }
+
+        const pdfBytes = await pdfDoc.save();
+        const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'filled_' + currentFile.name;
+        a.click();
+        URL.revokeObjectURL(url);
+        document.getElementById('status-msg').innerText = "Form completed successfully!";
+      } catch (err) {
+        console.error(err);
+        document.getElementById('status-msg').innerText = "Error completing form: " + err.message;
+      }
+    });
+
+    // Init Drag and Drop using global helper
+    setupDragDrop('drop-zone', (files) => {
+      if (files.length) handleFile(files[0]);
+    });
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

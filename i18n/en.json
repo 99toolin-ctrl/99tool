@@ -1,0 +1,561 @@
+{
+  "common": {
+    "privacy_note": "🔒 Privacy & Data Note: All processing happens locally in your browser. Your data never leaves your device and is never sent to any server.",
+    "no_signup_required": "No sign-up, installation, or payment required.",
+    "offline_ready": "Fully works offline once the page loads."
+  },
+  "tools": {
+    "age_calculator": {
+      "page_title": "Age Calculator – 99tool.in",
+      "meta_description": "Free online tool from 99tool.in – fast, private, no signup required.",
+      "what_is_title": "What is the Infinite Age Calculator?",
+      "what_is_content": "The Infinite Age Calculator is a client-side calendar utility designed to calculate your exact age from your birth date up to the present moment. Rather than providing a simple estimation, the tool details your age in years, months, and days. This provides high precision for documents, scheduling, or developmental tracking.\n\nAdditionally, the calculator performs sub-calculations to show your total life span across other metrics, such as total months, weeks, days, and hours lived, alongside a countdown to your next birthday. All processing occurs locally on your machine, ensuring your birth date is never sent to a server.",
+      "how_to_use_title": "How to Use the Infinite Age Calculator",
+      "how_to_use_steps": [
+        "<strong>Select Your Date of Birth:</strong> Click the date selector field under \"Select Date of Birth\" to choose your day, month, and year of birth from the calendar interface.",
+        "<strong>Review Your Primary Age:</strong> Once the date is selected, the primary metrics display automatically, showing your age in Years, Months, and Days.",
+        "<strong>Check the Birthday Countdown:</strong> Look at the highlighted banner directly below your age. It tells you the exact number of days remaining until your next birthday.",
+        "<strong>Examine Detailed Life Statistics:</strong> Scroll down to the statistics list to see your total life span expressed as Total Months, Total Weeks, Total Days, and Total Hours lived."
+      ],
+      "key_features_title": "Key Features",
+      "key_features": [
+        "<strong>Detailed Age Breakdown:</strong> Displays your precise age split into years, months, and days, correctly adjusting for leap years and months of different lengths.",
+        "<strong>Next Birthday Countdown:</strong> Dynamic day counter calculations show exactly how close you are to your next birthday milestone.",
+        "<strong>Multi-Unit Lifetime Statistics:</strong> Converts your age into cumulative total months, weeks, days, and hours.",
+        "<strong>Automatic Local Trigger:</strong> Calculations run automatically on date selection without needing page updates or manual submit buttons.",
+        "<strong>Client-Side Processing:</strong> Calculations run directly in the browser RAM, keeping your birthday details private."
+      ],
+      "common_use_cases_title": "Common Use Cases",
+      "common_use_cases": [
+        "<strong>Form and Application Verification:</strong> Verify exact ages in years and months for insurance policies, legal filings, or visa applications.",
+        "<strong>Child Growth Milestones:</strong> Track growth stages of infants and children in precise months and days.",
+        "<strong>Event and Birthday Planning:</strong> Track the exact number of days left until milestone celebrations to manage vendor bookings and invitations.",
+        "<strong>Curiosity and Fun:</strong> Check how many total days or hours you have lived."
+      ],
+      "faq_title": "Frequently Asked Questions",
+      "faq": [
+        {
+          "question": "How does this tool account for leap years?",
+          "answer": "The calculator uses Javascript's native Date object, which automatically accounts for leap years (including February 29th) and varying month lengths (28, 30, or 31 days) to ensure accuracy."
+        },
+        {
+          "question": "Is my birth date uploaded or stored by 99tool.in?",
+          "answer": "No. 99tool.in runs entirely on client-side code. Your birth date is processed in your local browser tab and is never uploaded to any server or database, keeping your data secure."
+        },
+        {
+          "question": "Can I calculate age relative to a past or future date?",
+          "answer": "This specific tool calculates your age relative to the current date (today). If you need to find the difference between two arbitrary calendar dates, please use our Date Difference Solver."
+        },
+        {
+          "question": "Why does the tool show a warning if I pick a future date?",
+          "answer": "Age calculations represent the time elapsed since birth. Selecting a future date would result in a negative age, so the tool blocks this input to maintain logical results."
+        },
+        {
+          "question": "Does the total hour calculation include daylight saving shifts?",
+          "answer": "The total hour statistic is calculated by multiplying the total elapsed days by 24 hours. It provides a standard mathematical conversion rather than adjusting for local timezone daylight saving changes."
+        }
+      ],
+      "privacy_note": "🔒 Privacy & Data Note: Your date of birth is processed locally in your browser. No personal identification data is ever collected, tracked, or sent to our servers.",
+      "schema_org": {
+        "name": "Age Calculator – 99tool.in",
+        "description": "Free online tool from 99tool.in – fast, private, no signup required."
+      }
+    },
+    "audio_recorder": {
+      "page_title": "Audio Recorder – 99tool.in",
+      "meta_description": "Free online tool from 99tool.in – fast, private, no signup required.",
+      "what_is_title": "What is the Audio Recorder & Editor?",
+      "what_is_content": "This web-based audio recording and editing tool enables you to record high-fidelity voice notes, sounds, and speech directly from your browser. Designed with absolute privacy in mind, it turns your device's browser into a secure recording studio. It does not require any account creation or registration to use.\n\nBy leveraging native browser APIs, the utility processes all audio data locally. This means that whether you are recording a voice clip or trimming a note, your media remains on your local machine. The audio stream is never sent to remote servers, giving you complete confidentiality for sensitive voice recordings.",
+      "how_to_use_title": "How to Use the Audio Recorder & Editor",
+      "how_to_use_steps": [
+        "<strong>Select Your Export Format:</strong> Choose between WebM (ideal for smaller file sizes and fast processing) or WAV (perfect for lossless, high-quality audio) in the dropdown menu.",
+        "<strong>Initialize the Microphone:</strong> Click the \"Initialize Microphone\" button. Your browser will prompt you to grant microphone access permissions.",
+        "<strong>Start Recording:</strong> Click the red circle button to start capturing audio. The timer will begin counting, and the visualizer canvas will display a real-time wave waveform representing your vocal frequencies.",
+        "<strong>Stop the Session:</strong> Click the square stop button to finish recording. The tool will automatically process the audio and append it to your recording list.",
+        "<strong>Preview and Save:</strong> Click the \"PLAY\" button on the generated recording card to listen to your clip, or click the \"SAVE\" button to download it directly to your device."
+      ],
+      "key_features_title": "Key Features",
+      "key_features": [
+        "<strong>Lossless & Compressed Outputs:</strong> Export your audio files in either raw WAV format or highly optimized WebM format.",
+        "<strong>Real-Time Waveform Visualizer:</strong> An oscilloscope canvas offers instantaneous visual feedback on input levels and microphone activity.",
+        "<strong>Secure RAM Blobs:</strong> Records are saved temporarily using system memory (Blob URLs) instead of server storage.",
+        "<strong>Multi-Session History:</strong> Capture multiple recordings in a single session and preview or download them individually as needed.",
+        "<strong>Responsive Recording Layout:</strong> A mobile-friendly interface makes it easy to record notes on smartphones, tablets, or desktop systems."
+      ],
+      "common_use_cases_title": "Common Use Cases",
+      "common_use_cases": [
+        "<strong>Content Creators & Podcasters:</strong> Record voiceovers, quick snippets, or narration drafts for videos without needing heavy desktop software.",
+        "<strong>Students & Researchers:</strong> Capture lecture notes, study memos, or interview transcripts in a secure environment.",
+        "<strong>Musicians & Sound Designers:</strong> Record quick musical ideas, vocal runs, or sound effects on the fly to save as raw files.",
+        "<strong>Private Dictations:</strong> Dictate confidential notes or journals without fear of cloud data leakage or biometric harvesting."
+      ],
+      "faq_title": "Frequently Asked Questions",
+      "faq": [
+        {
+          "question": "Is my audio recording saved on your servers?",
+          "answer": "No. 99tool.in processes all audio data entirely in your local browser tab's memory (RAM) as a Blob. Your voice recordings never touch our servers and are deleted when you close the tab."
+        },
+        {
+          "question": "Why do I need to grant microphone permissions?",
+          "answer": "Your browser requires explicit permission to access your device's audio input hardware. This permission is handled natively by your browser and is only used locally for recording."
+        },
+        {
+          "question": "Can I use this tool offline?",
+          "answer": "Yes. Since the interface relies entirely on native browser Web APIs and client-side processing, once the page is loaded, you can record and download audio without an internet connection."
+        },
+        {
+          "question": "What is the difference between WebM and WAV?",
+          "answer": "WAV files are uncompressed and lossless, offering the highest audio fidelity but resulting in larger file sizes. WebM files are compressed and web-optimized, providing fast download speeds and small file footprints."
+        },
+        {
+          "question": "Is there a limit on how long I can record?",
+          "answer": "There is no arbitrary limit set by the tool. The recording duration is only limited by your device's available system memory (RAM)."
+        }
+      ],
+      "privacy_note": "🔒 Privacy & Data Note: All audio capturing and processing occur inside your web browser. No files are uploaded to our servers, keeping your voice recordings fully confidential.",
+      "schema_org": {
+        "name": "Audio Recorder & Editor",
+        "description": "High-Quality Recording, Real-time Visualizer, Audio Trimming, Playback Control, Private local processing"
+      }
+    },
+    "bmi_calculator": {
+      "page_title": "Bmi Calculator – 99tool.in",
+      "meta_description": "Free online tool from 99tool.in – fast, private, no signup required.",
+      "what_is_title": "What is the Infinite BMI Calculator?",
+      "what_is_content": "The Infinite BMI Calculator is a client-side health utility designed to calculate Body Mass Index (BMI) using height and weight inputs. By entering metric parameters, users can determine their body weight category and review standard mass indicators.\n\nThis calculator processes all numeric multipliers, category matching logic, and coordinate pointer adjustments locally in your browser memory. No height, weight, or calculated BMI values are stored or uploaded, guaranteeing complete confidentiality.",
+      "how_to_use_title": "How to Use the Infinite BMI Calculator",
+      "how_to_use_steps": [
+        "<strong>Input Your Weight:</strong> Enter your body weight in kilograms (kg) into the weight input box.",
+        "<strong>Input Your Height:</strong> Enter your height in centimeters (cm) into the height input box.",
+        "<strong>Click Calculate:</strong> Press the \"Calculate BMI\" button to run the local math engine.",
+        "<strong>Review Your Status:</strong> Check the \"Result\" panel to view your numeric BMI value, weight category, and the highlighted range pointer."
+      ],
+      "key_features_title": "Key Features",
+      "key_features": [
+        "<strong>Metric Units Support:</strong> Enter standard weight (kg) and height (cm) values directly.",
+        "<strong>Visual Range Pointer:</strong> Shifts a pointer dynamically across a color-coded bar to show your weight classification.",
+        "<strong>Standard BMI Ranges:</strong> Evaluates inputs against WHO benchmarks (Underweight, Normal, Overweight, Obese).",
+        "<strong>Instant Result Dashboard:</strong> Displays numeric scores and category names in a prominent card block.",
+        "<strong>100% Client-Side Engine:</strong> Performs all math operations locally in your browser to protect your medical details."
+      ],
+      "common_use_cases_title": "Common Use Cases",
+      "common_use_cases": [
+        "<strong>Weight Management Audits:</strong> Monitor body mass trends regularly during weight loss or fitness programs.",
+        "<strong>Health and Fitness Screenings:</strong> Quickly check your general body mass category for medical or insurance forms.",
+        "<strong>Lifestyle Goal Tracking:</strong> Establish a baseline BMI to set realistic physical health targets.",
+        "<strong>Classroom Science Activities:</strong> Teach students about human body metrics, biology constants, and BMI formulas."
+      ],
+      "faq_title": "Frequently Asked Questions",
+      "faq": [
+        {
+          "question": "What are the standard BMI ranges?",
+          "answer": "The standard WHO classifications are: Underweight (under 18.5), Normal weight (18.5 to 24.9), Overweight (25 to 29.9), and Obese (30 or greater)."
+        },
+        {
+          "question": "Does this calculator account for muscle mass or bone density?",
+          "answer": "No. BMI is a general screening index that only uses height and weight. It does not distinguish between muscle, fat, or bone mass, and may overestimate body fat in muscular athletes."
+        },
+        {
+          "question": "Is my medical data shared or uploaded?",
+          "answer": "No. All calculations are executed on your device using local JavaScript. 99tool.in does not store, collect, or share your physical dimensions."
+        },
+        {
+          "question": "Are there age or gender adjustments in this calculation?",
+          "answer": "This tool calculates the standard adult BMI index. For children, teens, and pregnant individuals, doctors use specialized percentile charts that account for age and development."
+        }
+      ],
+      "privacy_note": "🔒 Privacy & Data Note: Height, weight, and BMI calculations are processed locally in your browser. No personal health data is uploaded.\nDisclaimer: This tool is for informational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment.",
+      "schema_org": {
+        "name": "Bmi Calculator – 99tool.in",
+        "description": "Free online tool from 99tool.in – fast, private, no signup required."
+      }
+    },
+    "csv_editor": {
+      "page_title": "Csv Editor – 99tool.in",
+      "meta_description": "Free online tool from 99tool.in – fast, private, no signup required.",
+      "what_is_title": "What is the CSV Viewer & Editor?",
+      "what_is_content": "The CSV Viewer & Editor is a lightweight, web-based spreadsheet tool designed to open, inspect, and modify Comma-Separated Values (CSV) files. Instead of waiting for large office software to boot, you can drag your datasets directly into your browser tab to render them in a clean, interactive table layout.\n\nThis utility enables you to edit cell values, sort column entries, search for specific records, and export updated files. Because all file parsing and table rendering occur client-side in browser RAM, your sensitive customer contacts, business ledgers, and data dumps are never exposed to external servers.",
+      "how_to_use_title": "How to Use the CSV Viewer & Editor",
+      "how_to_use_steps": [
+        "<strong>Import Your Dataset:</strong> Drag your CSV file directly into the dotted upload area, or click \"Browse files\" to select one from your local hard drive.",
+        "<strong>Edit Cell Values:</strong> Click directly on any table cell to modify its contents. Type your changes and click outside the cell to save the updates locally.",
+        "<strong>Filter and Search:</strong> Use the search input box above the table grid to search for specific rows or filter matches in real time.",
+        "<strong>Sort by Columns:</strong> Click on column headers to sort the table rows in ascending or descending alphabetical/numerical order.",
+        "<strong>Export Your Changes:</strong> Click \"Export CSV\" to download the updated spreadsheet to your computer, or click \"Open New\" to clear the grid and upload a different file."
+      ],
+      "key_features_title": "Key Features",
+      "key_features": [
+        "<strong>Real-time Grid Editing:</strong> Edit cell values directly within an interactive table with instant local saves.",
+        "<strong>Column Sorting and Search:</strong> Quickly analyze datasets by ordering records or filtering rows matching your keywords.",
+        "<strong>High-Speed Client Parser:</strong> Renders thousands of data points locally in milliseconds without server latency.",
+        "<strong>UTF-8 Character Support:</strong> Preserves accents, special symbols, and non-English scripts during import and export.",
+        "<strong>Offline Data Isolation:</strong> Operates entirely offline to ensure your files remain secure."
+      ],
+      "common_use_cases_title": "Common Use Cases",
+      "common_use_cases": [
+        "<strong>E-commerce Inventory Updates:</strong> Edit product descriptions, pricing, or stock counts in inventory sheets before importing them to your store.",
+        "<strong>Customer Contact Cleaning:</strong> Search for duplicate entries or fix formatting mistakes in email subscription lists.",
+        "<strong>Log and Export Inspections:</strong> View server log exports, transaction histories, or system analytics outputs in a readable table layout.",
+        "<strong>Database Ingestion Checks:</strong> Verify and format column layouts in data sheets before uploading them to SQL databases."
+      ],
+      "faq_title": "Frequently Asked Questions",
+      "faq": [
+        {
+          "question": "Is there a limit on the file size I can upload?",
+          "answer": "For the smoothest experience, we recommend using this editor for CSV files up to 10-15MB. Very large datasets containing hundreds of thousands of rows may slow down browser rendering, making desktop-based applications better suited for massive files."
+        },
+        {
+          "question": "Does editing a cell update my source file on my computer?",
+          "answer": "No. Browsers cannot modify local files directly due to safety constraints. Your changes are saved in the browser's active memory session. To apply these edits, click the \"Export CSV\" button to download a new, updated copy of the file."
+        },
+        {
+          "question": "Are my spreadsheet rows uploaded or tracked?",
+          "answer": "No. 99tool.in processes all files locally. Your data, table cells, and exports remain in your browser sandbox, protecting your privacy."
+        },
+        {
+          "question": "Does this tool support semicolons or tabs as separators?",
+          "answer": "This version is optimized for standard comma-separated (.csv) files. Semicolons or tabs may cause columns to group incorrectly in the table grid."
+        },
+        {
+          "question": "Can I add new rows or columns?",
+          "answer": "This tool is designed as a viewer and value editor for existing grids. To add new columns or rows, we recommend using our fully featured client-side Spreadsheet Tool."
+        }
+      ],
+      "privacy_note": "🔒 Privacy & Data Note: CSV data parsing and table rendering occur inside your browser. No files or cell values are sent to our servers.",
+      "schema_org": {
+        "name": "CSV Viewer & Editor",
+        "description": "CSV parsing, Table view, Cell editing, Column sorting, Data export"
+      }
+    },
+    "image_compressor": {
+      "page_title": "Compress Image – 99tool.in",
+      "meta_description": "Free online tool from 99tool.in – fast, private, no signup required.",
+      "what_is_title": "What is Smart Image Compressor",
+      "what_is_content": "The Smart Image Compressor is a client-side optimization utility designed to reduce the file size of your images while keeping their visual details intact. Using browser Canvas rendering and dynamic compression scaling, the tool allows you to shrink heavy image files to improve web performance.\n\nThis optimization operates entirely within your browser's local sandbox memory. Since no files are uploaded to any external server, your high-resolution original photos, raw graphics, and proprietary designs remain completely private and secure.",
+      "how_to_use_title": "How to Use Smart Image Compressor",
+      "how_to_use_steps": [
+        "<strong>Load your image:</strong> Click inside the dashed upload zone or drag and drop your image file (JPG, PNG, or WEBP) into the browser.",
+        "<strong>Review original size:</strong> Check the <strong>Original</strong> column in the comparison grid to view your file's starting size.",
+        "<strong>Select compression level:</strong> Drag the <strong>Compression Level</strong> slider to adjust the quality percentage. Moving the slider toward \"Smallest File\" (left) reduces size further, while moving it toward \"Best Quality\" (right) preserves details.",
+        "<strong>Choose target format:</strong> In the <strong>Convert To Format</strong> dropdown, select whether to keep the original file format, or transcode to JPEG (for high compatibility) or WEBP (for maximum file compression).",
+        "<strong>Analyze the savings:</strong> Compare the <strong>Original</strong> and <strong>Compressed</strong> previews side-by-side. The green badge displays the exact percentage of space saved.",
+        "<strong>Download the optimized image:</strong> Click the **Download Compressed Image** button to save the new compressed file to your local device."
+      ],
+      "key_features_title": "Key Features",
+      "key_features": [
+        "<strong>Side-by-Side Quality Comparison:</strong> Compare the original and compressed previews dynamically to ensure text and textures remain readable.",
+        "<strong>Granular Quality Slider:</strong> Fine-tune the compression level from 10% up to 100% to match your storage targets.",
+        "<strong>On-the-Fly Format Conversion:</strong> Transcode your files to modern WEBP or highly compatible JPEG formats instantly.",
+        "<strong>Real-time Savings Calculator:</strong> Instantly calculates the percentage of file size saved during compression adjustments.",
+        "<strong>Purely Client-Side Execution:</strong> Processes everything in local JavaScript, ensuring zero data logs or remote storage."
+      ],
+      "common_use_cases_title": "Common Use Cases",
+      "common_use_cases": [
+        "<strong>Web Developers:</strong> Compressing website hero images, background textures, and product assets to optimize page load speeds and SEO.",
+        "<strong>Social Media Managers:</strong> Formatting and shrinking heavy camera snaps to fit platform upload limits without visual distortion.",
+        "<strong>Office Administrators:</strong> Reducing the size of scanned documents or screenshots to stay under email attachment limits.",
+        "<strong>Bloggers & Content Writers:</strong> Creating optimized, fast-loading images for mobile readers to reduce bounce rates."
+      ],
+      "faq_title": "Frequently Asked Questions",
+      "faq": [
+        {
+          "question": "Will my image lose quality during compression?",
+          "answer": "We recommend keeping the slider between 80% and 90% for typical use. In this range, file size is cut significantly, while the visual changes are usually indistinguishable from the original to the human eye."
+        },
+        {
+          "question": "Are my private photos uploaded to a cloud server?",
+          "answer": "Absolutely not. All processing, resizing, and format transcoding happen locally in your browser's private memory. No files are sent over the network."
+        },
+        {
+          "question": "What is the benefit of converting to WEBP?",
+          "answer": "WEBP is a modern image format that provides superior lossy and lossless compression compared to traditional formats like JPEG and PNG, resulting in smaller files with higher fidelity."
+        },
+        {
+          "question": "Can I compress transparent PNG images?",
+          "answer": "Yes. To preserve transparency, select \"Keep Original Format\" or convert to \"WEBP.\" Converting transparent images to JPEG will replace transparent areas with a solid white background."
+        },
+        {
+          "question": "Why did my file size increase after compression?",
+          "answer": "This can happen if the original file was already heavily optimized, or if you are converting a highly compressed format to a less efficient one (such as JPEG to WEBP with 100% quality setting). Lower the slider to resolve this."
+        }
+      ],
+      "privacy_note": "Privacy & Data Note: Every step of the pixel compression and format transcoding is done locally on your computer. Your files are never stored or processed on external servers.",
+      "schema_org": {
+        "name": "Compress Image – 99tool.in",
+        "description": "Free online tool from 99tool.in – fast, private, no signup required."
+      }
+    },
+    "markdown_previewer": {
+      "page_title": "Markdown Previewer – 99tool.in",
+      "meta_description": "Free online tool from 99tool.in – fast, private, no signup required.",
+      "what_is_title": "What is the Markdown Previewer?",
+      "what_is_content": "The Markdown Previewer is a browser-side editor designed to write, format, and render Markdown syntax in real-time. By writing markup on the left and reviewing styled outputs on the right, developers can audit readmes, technical guides, and articles before posting them to production repositories.\n\nThis editor executes all markdown-to-html translations locally on your computer. Since no draft strings, code blocks, or system configs are uploaded to external databases, your document files and source plans remain completely secure.",
+      "how_to_use_title": "How to Use the Markdown Previewer",
+      "how_to_use_steps": [
+        "<strong>Input Your Markdown:</strong> Type or paste your raw Markdown syntax into the left-side \"Editor\" panel.",
+        "<strong>Observe the Live Render:</strong> Watch the right-side \"Live Preview\" panel to review your formatted headers, lists, code snippets, and tables instantly.",
+        "<strong>Copy the HTML Code:</strong> Click the \"Copy HTML\" button inside the preview panel header to copy the compiled HTML markup to your clipboard.",
+        "<strong>Download Your Source File:</strong> Click \"Download .md\" to export your raw text workspace as a standard Markdown document directly to your device.",
+        "<strong>Clear Workspace:</strong> Click \"Clear All\" to empty the text editors and start writing a new draft."
+      ],
+      "key_features_title": "Key Features",
+      "key_features": [
+        "<strong>Live Split-Pane Rendering:</strong> Translates your raw markup into visual HTML formatting as you type.",
+        "<strong>GFM Layout Compatibility:</strong> Supports standard GitHub Flavored Markdown rules for tables, bold text, lists, and blockquotes.",
+        "<strong>HTML Output Copier:</strong> Saves the compiled HTML elements to your clipboard for instant website integrations.",
+        "<strong>Local File Exports:</strong> Downloads your completed drafts as a standalone <code>.md</code> file.",
+        "<strong>100% Client-Side Compiler:</strong> Renders visual styles offline in browser cache to safeguard your text."
+      ],
+      "common_use_cases_title": "Common Use Cases",
+      "common_use_cases": [
+        "<strong>Repository README Drafting:</strong> Format project description files and verify image references before pushing updates.",
+        "<strong>API Documentation Previews:</strong> Write and preview API specifications, endpoint lists, and query samples in styled blocks.",
+        "<strong>Technical Blog Drafting:</strong> Outline markdown-based articles and preview header hierarchies before exporting to your CMS.",
+        "<strong>Markdown Syntax Studies:</strong> Learn and test markdown shortcuts (like bolding, lists, and links) in an interactive editor."
+      ],
+      "faq_title": "Frequently Asked Questions",
+      "faq": [
+        {
+          "question": "Is this editor compatible with GitHub Flavored Markdown?",
+          "answer": "Yes. The previewer supports standard GFM elements, including nested task lists, markdown tables, blockquotes, and code syntax blocks."
+        },
+        {
+          "question": "Are my drafts sent to a server?",
+          "answer": "No. 99tool.in processes all markdown compiles and HTML generations locally in your browser memory. Your drafts and configurations are never uploaded."
+        },
+        {
+          "question": "How do I render images in the live preview?",
+          "answer": "You can reference any hosted image using standard syntax (<code>![](image_url)</code>). Ensure the link is publicly accessible so your browser can render it in the preview panel."
+        },
+        {
+          "question": "Does the exported .md file include the rendered HTML?",
+          "answer": "No. Clicking \"Download .md\" exports the raw, editable Markdown source code. To get the compiled HTML, click the \"Copy HTML\" button inside the preview panel."
+        }
+      ],
+      "privacy_note": "🔒 Privacy & Data Note: Markdown rendering, clipboard actions, and exports occur locally in your browser. None of your drafts are sent to our servers.",
+      "schema_org": {
+        "name": "Markdown Previewer",
+        "description": "Live result preview, GFM support, Export as HTML, Multi-pane split screen"
+      }
+    },
+    "pdf_merger": {
+      "page_title": "Merge Pdf – 99tool.in",
+      "meta_description": "Free online tool from 99tool.in – fast, private, no signup required.",
+      "what_is_title": "Finally, a PDF Merger That Respects Your Digital Privacy",
+      "what_is_content": "We’ve all been there: you have three different reports, a dozen scanned receipts, and a cover letter that all need to be sent as a single, professional attachment. Your first instinct is to search for a tool to <strong>merge pdf online free</strong>. But then the hesitation kicks in. You look at the \"upload\" button and realize you are about to send potentially sensitive documents—confidential contracts, personal health records, or academic transcripts—to a server somewhere in the cloud. Who owns that server? What happens to your data after you click \"merge\"?\n\nAt 99tool.in, we built our <strong>combine pdf files</strong> utility specifically to solve this modern privacy dilemma. Unlike the big-name competitors who process your files on their infrastructure, our tool brings the processing power to you. By utilizing the latest developments in browser-based <code>pdf-lib</code> technology, we’ve created an <strong>pdf merger</strong> that runs entirely in your computer's RAM. Your files never leave your device. Not for a second. This isn’t just about speed; it’s about the absolute peace of mind that comes from knowing your digital fingerprints are yours and yours alone.",
+      "how_to_use_title": "How to Use the 99tool.in PDF Merger (Step-by-Step)",
+      "how_to_use_steps": [
+        "<strong>Step 1: Gather Your Files</strong> — Click the \"Select PDF\" box or simply drag your cluster of PDFs directly onto the interface. You’ll see them appear as a neat list instantly.",
+        "<strong>Step 2: Check the Security Status</strong> — Look for the green shield next to each file. This confirms our internal scan didn't find any hidden scripts.",
+        "<strong>Step 3: Arrange Your Sequence</strong> — Hover your mouse over a file, click and hold, and drag it up or down. The top file will be Page 1 of your new document.",
+        "<strong>Step 4: Finalize and Download</strong> — Once the order is perfect, click the \"Merge Files\" button. Because this is an <strong>pdf merger</strong>, the assembly happens in seconds. Your download starts automatically."
+      ],
+      "key_features_title": "Why Manual \"Human-Centered\" Merging is Better",
+      "key_features": [
+        "<strong>Tactile Visual Workspace:</strong> Drag and drop every item into the exact sequence you need.",
+        "<strong>Active Security Scan:</strong> Scans internal structure of document for interactive elements like /JS or /Action tags before merging.",
+        "<strong>Pure In-Browser Assembly:</strong> Runs entirely inside RAM via pdf-lib and WebAssembly.",
+        "<strong>Zero File Uploads:</strong> Absolute privacy protection for confidential contracts, health records, and legal filings."
+      ],
+      "common_use_cases_title": "Real-World Use Cases for Professional Merging",
+      "common_use_cases": [
+        "<strong>For Legal Professionals:</strong> Building a \"Motion for Court\" combining evidence, affidavits, and case law without metadata leaks.",
+        "<strong>For Students and Educators:</strong> Submitting final theses with bibliographies and signed declarations or building reading packets.",
+        "<strong>For Real Estate Agents:</strong> Combining disclosures, offer letters, and inspection reports while keeping financial data private."
+      ],
+      "faq_title": "Frequently Asked Questions",
+      "faq": [
+        {
+          "question": "Is there a limit to how many PDFs I can merge?",
+          "answer": "Because the merging happens locally using your browser's resources, the limit depends on your computer's RAM. Most modern desktops and laptops can easily handle 50+ medium-sized PDFs. For merging very large PDF files, we recommend processing in smaller batches for optimal performance."
+        },
+        {
+          "question": "Does merging affect the quality of my images?",
+          "answer": "No. Our PDF joiner keeps the original data of each page intact using the pdf-lib library. We don't compress or re-render the pages during the merge process, ensuring your text remains searchable and your images remain high-resolution."
+        },
+        {
+          "question": "Why do I get a \"Security Warning\" on some files?",
+          "answer": "Some PDFs contain interactive elements like JavaScript or automated actions (AcroForms). Our safe pdf merger flags these to inform you, as these elements can sometimes be used for tracking. In most cases, these are just advanced form features, but we believe in transparency."
+        },
+        {
+          "question": "Are my documents uploaded to a server?",
+          "answer": "Absolutely not. For maximum security, all processing is done via WASM and JavaScript right in your browser tab. Your files are read into local memory, merged, and downloaded. No data is ever transmitted to our infrastructure."
+        },
+        {
+          "question": "Can I merge password-protected PDFs?",
+          "answer": "Merging encrypted or password-protected files requires them to be unlocked first. Our current in-browser merger cannot bypass PDF security restrictions. Please ensure your files are decrypted before attempting to combine them."
+        },
+        {
+          "question": "Is this tool compatible with mobile devices?",
+          "answer": "Yes. As long as your mobile browser supports modern JavaScript APIs, you can combine PDFs on iPhone, iPad, or Android. Note that very large files may be limited by your mobile device's available memory."
+        }
+      ],
+      "privacy_note": "🔒 Session-Based Processing. Zero Uploads. Zero Tracking. Last updated: April 10, 2026.",
+      "schema_org": {
+        "name": "Merge PDF Tool",
+        "description": "PDF merging, Visual file reordering, Security scanning, Privacy-first processing"
+      }
+    },
+    "password_generator": {
+      "page_title": "Password Generator – 99tool.in",
+      "meta_description": "Free online tool from 99tool.in – fast, private, no signup required.",
+      "what_is_title": "What is the Secure Password Generator?",
+      "what_is_content": "The Secure Password Generator creates cryptographically random passwords using your browser's Web Crypto API (window.crypto.getRandomValues). This produces genuine random output that is statistically superior to human-chosen passwords or those generated by Math.random()-based tools. All generation runs locally in your browser — nothing is transmitted to any server.\n\nConfigure your password's length, character sets (uppercase, lowercase, digits, symbols), and the tool instantly generates a password that meets your exact requirements. Copy it to your clipboard and store it in a password manager.",
+      "how_to_use_title": "How to Use the Secure Password Generator",
+      "how_to_use_steps": [
+        "Set the desired password length using the length slider or input field (8-128 characters recommended).",
+        "Toggle the character set checkboxes: Uppercase (A-Z), Lowercase (a-z), Numbers (0-9), Symbols (!@#$...).",
+        "Click \"Generate Password\" to create a cryptographically random password matching your settings.",
+        "Review the Strength Meter to confirm the generated password meets your security requirements.",
+        "Click \"Copy\" to copy the password to your clipboard, then paste it immediately into your password manager.",
+        "Click \"Generate\" again to produce a new password without changing your settings."
+      ],
+      "key_features_title": "Key Features",
+      "key_features": [
+        "<strong>Web Crypto API Randomness:</strong> Uses cryptographically secure random number generation — not Math.random().",
+        "<strong>Configurable Output:</strong> Set length (up to 128 characters) and choose from 4 character set combinations.",
+        "<strong>Strength Meter:</strong> Shows the entropy and strength rating of each generated password in real time.",
+        "<strong>One-Click Copy:</strong> Instantly copies the generated password to your clipboard with visual confirmation."
+      ],
+      "common_use_cases_title": "Common Use Cases",
+      "common_use_cases": [
+        "<strong>Account Registration:</strong> Generating a unique, strong password every time you create a new online account.",
+        "<strong>Password Rotation:</strong> Creating a replacement password when a site forces you to update your credentials.",
+        "<strong>API Key Templates:</strong> Generating random strings that can serve as API keys, tokens, or secret values in development."
+      ],
+      "faq_title": "Frequently Asked Questions",
+      "faq": [
+        {
+          "question": "Is the generated password truly random?",
+          "answer": "Yes. The tool uses window.crypto.getRandomValues(), which draws from your OS's cryptographically secure random number generator (CSPRNG). This is the same entropy source used by TLS and modern cryptographic libraries."
+        },
+        {
+          "question": "What length should my password be?",
+          "answer": "Minimum 16 characters for standard accounts, 20+ for critical accounts (email, banking). Longer passwords with mixed character sets are exponentially harder to crack."
+        },
+        {
+          "question": "Is the password sent to your servers?",
+          "answer": "Never. All generation happens locally in your browser. The password never leaves your device and is not stored or logged anywhere on our end."
+        },
+        {
+          "question": "Should I memorize the generated password?",
+          "answer": "No. Generated passwords are designed to be stored in a password manager, not memorized. Use a tool like Bitwarden, 1Password, or our Secure Password Vault to store them safely."
+        }
+      ],
+      "privacy_note": "🔒 Cryptographically Secure. 100% Local. Zero server contact. Last updated: April 10, 2026.",
+      "schema_org": {
+        "name": "Secure Password Generator",
+        "description": "Random password generation, Customizable character sets, Password strength entropy check, 100% Client-side"
+      }
+    },
+    "regex_tester": {
+      "page_title": "Regex Tester – 99tool.in",
+      "meta_description": "Free online tool from 99tool.in – fast, private, no signup required.",
+      "what_is_title": "What is the Regex Tester & Debugger?",
+      "what_is_content": "The Regex Tester & Debugger is a client-side development workspace designed to compose, test, and troubleshoot regular expressions. By entering a pattern and matching flags, developers can audit how expression rules traverse sample text, capture groups, and handle edge cases directly inside their web browser.\n\nThis debugger executes all expression compiling and pattern matching locally using the browser's native JavaScript RegExp engine. Because no test text blocks, proprietary logs, or custom rules are sent over the network, your source architectures and strings remain confidential.",
+      "how_to_use_title": "How to Use the Regex Tester & Debugger",
+      "how_to_use_steps": [
+        "<strong>Input Your Pattern:</strong> Type your regular expression (e.g., <code>[a-zA-Z0-9]+</code>) into the pattern input bar.",
+        "<strong>Configure Flags:</strong> Toggle flags like Global (g) for finding all matches, Case-Insensitive (i) for ignoring capitalization, or Multiline (m) for line anchors.",
+        "<strong>Paste Your Test Text:</strong> Input your sample string in the \"Test String\" textarea. Matches will be highlighted immediately.",
+        "<strong>Inspect Capture Groups:</strong> Examine the \"Match Results\" sidebar panel to view details on full matches and numbered or named capture groups.",
+        "<strong>Fix Syntax Issues:</strong> If your expression is broken, review the error message displayed below the pattern bar to identify and fix syntax bugs."
+      ],
+      "key_features_title": "Key Features",
+      "key_features": [
+        "<strong>Real-Time Highlight Rendering:</strong> Visualizes matches in the test block as you type or change the expression pattern.",
+        "<strong>Interactive Flags Control:</strong> Easily toggle Global, Case-Insensitive, and Multiline flags to modify evaluation rules.",
+        "<strong>Detailed Capture Groups Map:</strong> Details full match locations alongside specific group indexes and extracted values.",
+        "<strong>Integrated Error Debugging:</strong> Renders descriptive validation warnings to help isolate unclosed brackets or invalid characters.",
+        "<strong>100% Client-Side Compiler:</strong> Tests regular expressions offline inside the browser tab to protect privacy."
+      ],
+      "common_use_cases_title": "Common Use Cases",
+      "common_use_cases": [
+        "<strong>User Input Validations:</strong> Validate patterns for email structures, telephone numbers, passwords, and username fields.",
+        "<strong>Log Auditing and Parsing:</strong> Build patterns to extract timestamp blocks, IP locations, or HTTP status values from server logs.",
+        "<strong>Text Extraction Workflows:</strong> Test patterns that scrap specific tags, metadata keys, or variables from raw code files.",
+        "<strong>Learning Regular Expressions:</strong> Experiment with anchors, quantifiers, lookahead logic, and groupings in a visual sandbox."
+      ],
+      "faq_title": "Frequently Asked Questions",
+      "faq": [
+        {
+          "question": "Which regular expression engine does this tool use?",
+          "answer": "This tool utilizes the native JavaScript <code>RegExp</code> engine. This engine matches the behavior of Chrome, Edge, Safari, Firefox, and Node.js environments."
+        },
+        {
+          "question": "Are my test strings uploaded to a server?",
+          "answer": "No. 99tool.in processes all expression compilations and pattern evaluations locally in your browser memory. Your test strings are never sent over the network."
+        },
+        {
+          "question": "Why does the tool show a regex syntax error?",
+          "answer": "This message occurs when the expression is mathematically invalid, such as having unclosed parentheses <code>(</code>, unescaped slashes, or duplicate flags."
+        },
+        {
+          "question": "Does the debugger support lookbehinds and lookaheads?",
+          "answer": "Yes. The browser-native engine supports modern ES2018+ regex features, including positive and negative lookaheads (<code>(?=...)</code> / <code>(?!...)</code>) and lookbehinds (<code>(?<=...)</code> / <code>(?<!...)</code>)."
+        }
+      ],
+      "privacy_note": "🔒 Privacy & Data Note: Regex pattern compiling, matching evaluations, and group listings occur locally in your browser. None of your data is sent to our servers.",
+      "schema_org": {
+        "name": "Regex Tester",
+        "description": "Real-time Regex Testing, Flags Support (g, i, m), Match Highlighting"
+      }
+    },
+    "word_counter": {
+      "page_title": "Word Counter – 99tool.in",
+      "meta_description": "Free online tool from 99tool.in – fast, private, no signup required.",
+      "what_is_title": "What is the Online Word Counter?",
+      "what_is_content": "The Online Word Counter is a real-time text analysis tool that counts words, characters, sentences, and paragraphs as you type or paste content. Cloud-based text editors often store your documents on external servers. This tool performs all analysis locally inside your browser with no data transmission.\n\nThe counter updates instantly on every keystroke, letting you monitor text length for essays, social media posts, SEO content, or any format with a character or word limit. Your text never leaves your device.",
+      "how_to_use_title": "How to Use the Online Word Counter",
+      "how_to_use_steps": [
+        "Type or paste your text directly into the editor box at the top of the page.",
+        "Watch the Word Count, Character Count, Sentence Count, and Paragraph Count update in real time.",
+        "Use the \"Reading Time\" indicator to estimate how long it will take an average reader to consume your content.",
+        "Edit your text directly in the box to adjust length until you meet your target.",
+        "Click \"Clear\" to reset the editor for a fresh analysis."
+      ],
+      "key_features_title": "Key Features",
+      "key_features": [
+        "<strong>Real-Time Counting:</strong> Updates word, character, sentence, and paragraph counts on every keystroke.",
+        "<strong>Reading Time Estimate:</strong> Calculates approximate reading duration based on standard adult reading speed.",
+        "<strong>Character Count (with & without spaces):</strong> Displays both totals for platforms like Twitter that count spaces differently.",
+        "<strong>Zero-Upload Privacy:</strong> All counting logic runs client-side; your text is never sent to any server."
+      ],
+      "common_use_cases_title": "Common Use Cases",
+      "common_use_cases": [
+        "<strong>Academic Essays:</strong> Verifying word count against submission limits for university assignments before upload.",
+        "<strong>SEO Content Writing:</strong> Targeting specific character counts for meta descriptions, title tags, and article lengths.",
+        "<strong>Social Media Posts:</strong> Staying within Twitter/X or LinkedIn character limits before publishing.",
+        "<strong>Freelance Writing:</strong> Auditing deliverable length against contractual word-count specifications."
+      ],
+      "faq_title": "Frequently Asked Questions",
+      "faq": [
+        {
+          "question": "Does this tool save what I write?",
+          "answer": "Absolutely not. Your privacy is paramount. Everything happens locally in your browser tab. Once you close it, your text is gone forever from our end (because it was never here in the first place!)."
+        },
+        {
+          "question": "What is a good reading speed count?",
+          "answer": "We use an average estimate of 200 words per minute, which is standard for most adults. It gives you a rough idea of how long it will take someone to finish your article."
+        },
+        {
+          "question": "Can I use this for social media character limits?",
+          "answer": "Definitely! Whether it's for X (Twitter), LinkedIn, or Instagram captions, the character counter (with and without spaces) is your best friend for staying within those limits."
+        },
+        {
+          "question": "Is there a limit to how much text I can paste?",
+          "answer": "We haven't found a limit yet! Whether it's a short tweet or a full thesis chapter, the tool is built to handle it effortlessly."
+        },
+        {
+          "question": "Does it work on my phone?",
+          "answer": "Yes, the tool is fully responsive. You can count words on the go from your smartphone or tablet just as easily as on a desktop."
+        }
+      ],
+      "privacy_note": "Privacy & Data Note: All text analysis, character counting, and reading time calculations are processed entirely inside your browser. Your content is never stored, transmitted, or seen by any server.",
+      "schema_org": {
+        "name": "Online Word Counter",
+        "description": "Word count, character count, sentence count, reading time estimation"
+      }
+    }
+  }
+}

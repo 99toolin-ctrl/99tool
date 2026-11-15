@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Extract Text – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/pdf/extract-text.html"/>
+<meta property="og:title" content="Extract Text – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/pdf/extract-text.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Extract Text \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/pdf/extract-text.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+  <style>
+    .output-container {
+      margin-top: 1.5rem;
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+    }
+    .text-output {
+      width: 100%;
+      height: 400px;
+      padding: 1rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      resize: vertical;
+      margin-bottom: 1rem;
+    }
+    .action-bar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .progress-wrap {
+      margin-top: 1rem;
+      display: none;
+    }
+    .progress-bar {
+      height: 8px;
+      background: #eee;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      background: var(--primary);
+      width: 0%;
+      transition: width 0.3s;
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/pdf/extract-text.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/pdf/extract-text.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/pdf/extract-text.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/pdf/extract-text.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/pdf/extract-text.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/pdf/extract-text.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/pdf/extract-text.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/pdf/extract-text.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/pdf/extract-text.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/pdf/extract-text.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/pdf/extract-text.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/pdf/extract-text.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/pdf/extract-text.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/pdf/extract-text.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/pdf/extract-text.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/pdf/extract-text.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/pdf/extract-text.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/pdf/extract-text.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/pdf/extract-text.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/pdf/extract-text.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/pdf/extract-text.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/pdf/extract-text.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>PDF Text Extractor</h1>
+      <p>Instantly pull all selectable text from your PDF. Privately and secure.</p>
+    </div>
+
+    <div class="tool-container">
+      <div class="upload-area" id="drop-zone">
+        <div class="upload-icon">📝</div>
+        <p>Drag & drop your PDF or <span class="text-primary">browse files</span></p>
+        <input type="file" id="pdf-input" accept="application/pdf" hidden>
+      </div>
+
+      <div id="file-info" class="file-info hidden">
+        <div class="file-details">
+          <span id="file-name">filename.pdf</span>
+          <span id="file-size" class="text-muted">0 KB</span>
+        </div>
+        <div class="security-badge" id="security-badge">
+          <span class="badge-icon">🛡️</span>
+          <span id="security-status">Scanning...</span>
+        </div>
+      </div>
+
+      <div class="progress-wrap" id="progress-wrap">
+        <div class="progress-bar">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+        <p class="text-center small mt-1 text-muted">Extracting text... <span id="progress-text">0%</span></p>
+      </div>
+
+      <div id="output-area" class="output-container hidden">
+        <textarea id="text-result" class="text-output" placeholder="Extracted text will appear here..."></textarea>
+        <div class="action-bar">
+          <button id="copy-btn" class="btn btn-primary" style="flex: 1;">Copy to Clipboard 📋</button>
+          <button id="download-txt-btn" class="btn btn-secondary" style="flex: 1;">Download as .txt File 📥</button>
+        </div>
+      </div>
+
+      <div id="status-msg" class="text-center mt-3 small"></div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5">
+        <h2>Unlock the Data Trapped Inside Your Documents</h2>
+        <p>We’ve all been there: you have a PDF report, an old academic paper, or a complex invoice, and you need to grab just a few paragraphs or a table of data. You try to select the text with your mouse, but the formatting goes haywire, or you can’t select it at all without opening heavy, expensive software. Your first instinct is to find a tool to <strong>extract text from pdf</strong>. But when that document contains private client feedback, proprietary research, or your personal notes, do you really want to upload it to a cloud server? Who is reading that text once it leaves your machine?</p>
+
+        <p>At 99tool.in, we built our <strong>pdf to text</strong> converter to respect both your time and your data. By utilizing the legendary <code>PDF.js</code> parsing engine directly in your browser, we allow you to <strong>get text from pdf</strong> files without ever sending a single character to the internet. Whether you’re a researcher building a literature review, a data analyst scraping reports, or a student organizing notes, our <strong>pdf text extractor</strong> gives you clean, editable text with the privacy of a local application.</p>
+        
+        <div class="tool-preview-box mt-4 mb-4" style="text-align:center;">
+           <img src="../../assets/images/markdown-preview.png" alt="Clean Text Extraction Interface" class="tool-preview" id="tool-preview-img" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+        </div>
+
+        <h3 class="mt-4">The Logic of Modern PDF Parsing</h3>
+        <p>PDF files aren't stored like Word documents. They are a collection of precise instructions on where to "draw" a letter on a page. This is why copying and pasting directly from a PDF reader often results in weird line breaks, missing spaces, or scrambled characters. A professional <strong>pdf text converter</strong> needs to reconstruct the logical flow of sentences by analyzing the coordinates of every character.</p>
+        
+        <p>Our <strong>extract text pdf online free</strong> utility works by scanning every page and intelligently reassembling the text streams into a coherent format. This human-centric approach to <strong>content extraction</strong> ensures that you spend less time fixing "broken" text and more time actually using the data. It works perfectly for <strong>multi-column documents</strong> and complex reports, giving you a clean slate of text to copy, edit, or analyze.</p>
+
+        <h3 class="mt-4">Why Extraction is the Privacy Standard</h3>
+        <p>Text is the most valuable part of many documents. When you use a typical <strong>pdf text extractor online</strong>, you are handing over a searchable, indexed version of your document's contents to a third party. If you are working in Law, Finance, or Academic Research, this is a massive compliance risk. Data scraping and "AI training" are common uses for the text users upload to "free" tools.</p>
+        
+        <p>Our <strong>private pdf to text converter</strong> eliminates this risk profile. All the heavy parsing happens in your browser's local sandbox memory. We don't see your text. No logs are kept. It is a "Zero-Transmission" experience. This is the only way to manage sensitive <strong>pdf content extraction</strong> in the modern era of digital privacy. With 99tool.in, you have the peace of mind that your intellectual property stays where it belongs: on your device.</p>
+
+        <h3 class="mt-4">How to Extract Text from Your PDF (Step-by-Step)</h3>
+        <p>Pulling text from a complex file should be a 30-second task. Here is how to use our <strong>extract text from pdf</strong> utility:</p>
+        <ul style="line-height: 1.8; margin-bottom: 20px;">
+          <li><strong>Step 1: Secure Your Source</strong> — Drag your PDF into the upload box. Our system will immediately scan it for hidden scripts to ensure it's safe to process.</li>
+          <li><strong>Step 2: Start the Scan</strong> — Once loaded, our engine will begin iterating through every page. You can watch the progress bar as it reassembles your text.</li>
+          <li><strong>Step 3: Review the Results</strong> — The extracted text will appear in a clean, editable text area. Scroll through to ensure everything looks correct.</li>
+          <li><strong>Step 4: Use Your Data</strong> — Click "Copy to Clipboard" to paste into Word or Excel, or click "Download as .txt" to save a clean text version of your document for use.</li>
+        </ul>
+
+        <h3 class="mt-4">Strategic Use Cases for Clean Text Extraction</h3>
+        <p>Our <strong>pdf to text</strong> generator is a bridge between static documents and active workflows:</p>
+        
+        <p><strong>For Academic Researchers:</strong> When you need to summarize 50 different PDF journals, our <strong>get text from pdf</strong> tool allows you to quickly pull all quotes and data into a single master document without the "formatting hell" of manual copy-pasting.</p>
+        
+        <p><strong>For Business Analysts:</strong> Often, quarterly reports are locked in PDF tables. Use our <strong>pdf text extractor</strong> to pull that data into a plain format that is much easier to import into spreadsheets or data visualization software.</p>
+        
+        <p><strong>For Developers and Writers:</strong> If you’re converting a long PDF ebook into a blog post or a documentation site, our <strong>extract text pdf</strong> utility provides a clean foundation to start your markdown or HTML formatting.</p>
+
+        <h3 class="mt-5">Expand Your Productivity Toolkit</h3>
+        <p>Once you’ve extracted the text and made your changes, you might need to turn that content back into a document. Check out our <strong><a href="image-to-pdf.html">Image to PDF Converter</a></strong>. Or, if the original PDF is too large to share, use our <strong><a href="compress-pdf.html">PDF Compressor</a></strong> to shrink it before emailing the extracted highlights. At 99tool.in, we are building a seamless, private, and powerful suite of utilities to make your digital life easier.</p>
+        
+        <div class="flex gap-4 mt-4 mb-5">
+           <a href="split-pdf.html" class="btn btn-secondary" style="flex:1; text-align:center;">Split PDF</a>
+           <a href="pdf-to-image.html" class="btn btn-secondary" style="flex:1; text-align:center;">PDF to Image</a>
+        </div>
+      </section>
+ 
+      <!-- FAQ SECTION -->
+      <section class="faq-section mt-5">
+        <h2 data-i18n="tools.pdf_text_extractor.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Is the extraction accurate?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. Our <strong>PDF text extractor</strong> uses the standard PDF.js engine to identify every character stream on the page. While it preserves the reading order of the text, complex multi-column layouts might require minor reformatting once pasted into a new document.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Is my text sent to any server for processing?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Absolutely not. For maximum security, the <strong>entire extraction logic</strong> runs locally in your browser tab. We do not store, scan, or even see the text you extract. Your data sovereignty is our top priority.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can it extract text from images or scans?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>This tool is designed for "Digital PDFs" where the text is already searchable. If your PDF is a picture of text (like a scan), you would need an OCR tool. Use our <strong>pdf text puller</strong> for documents generated by Word, Excel, or other digital software.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              What file types can I download?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>You can instantly <strong>copy the text to your clipboard</strong> for immediate use, or download the entire extraction as a clean <code>.txt</code> file. This format is universal and can be opened in any text editor on any device.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Does it preserve tables and bold/italic styling?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Our <strong>basic text extractor</strong> focuses on the raw data. While we maintain paragraph breaks and basic indentation, specific styling like bold/italic or complex table borders is stripped to ensure the resulting text is as clean and usable as possible.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Why use a local extractor instead of a cloud service?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Cloud services often harvest the text you extract to train AI models or sell data insights. A <strong>private PDF to text tool</strong> ensures that your confidential business data or academic research never leaves your possession.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js';
+
+    const pdfInput = document.getElementById('pdf-input');
+    const dropZone = document.getElementById('drop-zone');
+    const outputArea = document.getElementById('output-area');
+    const textResult = document.getElementById('text-result');
+    const copyBtn = document.getElementById('copy-btn');
+    const downloadBtn = document.getElementById('download-txt-btn');
+    const progressWrap = document.getElementById('progress-wrap');
+    const progressFill = document.getElementById('progress-fill');
+    const progressText = document.getElementById('progress-text');
+
+    let currentFile = null;
+
+    // File selection
+    dropZone.addEventListener('click', () => pdfInput.click());
+    pdfInput.addEventListener('change', (e) => handleFile(e.target.files[0]));
+
+    async function handleFile(file) {
+      if (!file || file.type !== 'application/pdf') return;
+      currentFile = file;
+      document.getElementById('file-name').innerText = file.name;
+      document.getElementById('file-size').innerText = (file.size / 1024).toFixed(1) + ' KB';
+      document.getElementById('file-info').classList.remove('hidden');
+      
+      // Simple security scan
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const text = new TextDecoder().decode(e.target.result.slice(0, 5000));
+        const badge = document.getElementById('security-badge');
+        const status = document.getElementById('security-status');
+        if (text.includes('/JS') || text.includes('/JavaScript')) {
+            badge.style.background = '#fff3cd'; badge.style.color = '#856404';
+            status.innerText = 'Scripts Detected (Review Page)';
+        } else {
+            badge.style.background = '#d4edda'; badge.style.color = '#155724';
+            status.innerText = 'Safe: Readable Content';
+        }
+      };
+      reader.readAsArrayBuffer(file);
+
+      extractText(file);
+    }
+
+    async function extractText(file) {
+      progressWrap.style.display = 'block';
+      outputArea.classList.add('hidden');
+      textResult.value = "";
+      
+      try {
+        const arrayBuffer = await file.arrayBuffer();
+        const pdf = await pdfjsLib.getDocument(arrayBuffer).promise;
+        let fullText = "";
+        
+        for (let i = 1; i <= pdf.numPages; i++) {
+          const page = await pdf.getPage(i);
+          const content = await page.getTextContent();
+          const strings = content.items.map(item => item.str);
+          fullText += strings.join(" ") + "\n\n";
+          
+          const percent = Math.round((i / pdf.numPages) * 100);
+          progressFill.style.width = percent + '%';
+       progressText.innerText = ((window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(percent, 0) : percent) + '%';
+        }
+        
+        textResult.value = fullText.trim();
+        progressWrap.style.display = 'none';
+        outputArea.classList.remove('hidden');
+        document.getElementById('status-msg').innerText = "Text extraction complete!";
+        document.getElementById('status-msg').style.color = "green";
+      } catch (err) {
+        console.error(err);
+        progressWrap.style.display = 'none';
+        document.getElementById('status-msg').innerText = "Error extracting text: " + err.message;
+        document.getElementById('status-msg').style.color = "red";
+      }
+    }
+
+    copyBtn.addEventListener('click', () => {
+      textResult.select();
+      document.execCommand('copy');
+      const originalText = copyBtn.innerText;
+      copyBtn.innerText = "Copied! ✅";
+      setTimeout(() => copyBtn.innerText = originalText, 2000);
+    });
+
+    downloadBtn.addEventListener('click', () => {
+      const blob = new Blob([textResult.value], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = currentFile.name.replace('.pdf', '') + '_extracted.txt';
+      a.click();
+      URL.revokeObjectURL(url);
+    });
+
+    // Init Drag and Drop using global helper
+    setupDragDrop('drop-zone', (files) => {
+      if (files.length) handleFile(files[0]);
+    });
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

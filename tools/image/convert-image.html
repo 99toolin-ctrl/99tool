@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Convert Image – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/image/convert-image.html"/>
+<meta property="og:title" content="Convert Image – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/image/convert-image.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Convert Image \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/image/convert-image.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <style>
+    .converter-controls {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .format-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 1rem;
+    }
+    .format-btn {
+      background: var(--dark);
+      border: 1px solid var(--border);
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: center;
+      cursor: pointer;
+      transition: all var(--transition);
+      font-weight: 600;
+    }
+    .format-btn:hover { border-color: var(--primary); }
+    .format-btn.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: white;
+    }
+    
+    .file-list {
+      margin-top: 2rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .file-item {
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+      background: var(--dark-card);
+      border-bottom: 1px solid var(--border);
+      gap: 1rem;
+    }
+    .file-item:last-child { border-bottom: none; }
+    .file-thumb {
+      width: 50px; height: 50px;
+      border-radius: 4px;
+      object-fit: cover;
+    }
+    .file-status {
+      margin-left: auto;
+      font-size: 0.8rem;
+    }
+    .status-badge {
+       padding: 2px 8px;
+       border-radius: 10px;
+       background: rgba(255,255,255,0.1);
+    }
+
+    #loading-overlay {
+      display: none;
+      text-align: center;
+      padding: 2rem;
+    }
+    .spinner {
+      border: 3px solid rgba(229,57,53,0.1);
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      border-left-color: var(--primary);
+      animation: spin 1s linear infinite;
+      margin: 0 auto 10px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/image/convert-image.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/image/convert-image.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/image/convert-image.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/image/convert-image.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/image/convert-image.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/image/convert-image.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/image/convert-image.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/image/convert-image.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/image/convert-image.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/image/convert-image.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/image/convert-image.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/image/convert-image.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/image/convert-image.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/image/convert-image.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/image/convert-image.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/image/convert-image.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/image/convert-image.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/image/convert-image.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/image/convert-image.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/image/convert-image.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/image/convert-image.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/image/convert-image.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Batch Image Converter</h1>
+      <p>Switch between JPG, PNG, WEBP and more instantly. One file or one hundred. 100% private.</p>
+    </div>
+
+    <div class="tool-container">
+      <div class="upload-area" id="drop-zone">
+        <div class="upload-icon">🔄</div>
+        <p>Drop images here or <span class="text-primary">browse folders</span></p>
+        <p class="text-muted small">Supports all major image types</p>
+        <input type="file" id="image-input" accept="image/*" multiple hidden>
+      </div>
+
+      <div id="tool-workspace" class="hidden">
+        <div class="converter-controls">
+          <div>
+            <label class="block mb-3 font-bold">Target Format</label>
+            <div class="format-grid" id="format-grid">
+              <div class="format-btn active" data-format="image/jpeg">JPG</div>
+              <div class="format-btn" data-format="image/png">PNG</div>
+              <div class="format-btn" data-format="image/webp">WEBP</div>
+            </div>
+          </div>
+
+          <button id="convert-btn" class="btn btn-primary w-100">Convert Everything & Download ZIP</button>
+        </div>
+
+        <div class="file-list" id="file-list"></div>
+      </div>
+
+      <div id="loading-overlay">
+        <div class="spinner"></div>
+        <p>Converting document structure in your browser memory...</p>
+      </div>
+
+      <div id="status-msg" class="text-center mt-3 small"></div>
+
+      <!-- HUMANIZED CONTENT -->
+    <!-- CONTENT SECTION -->
+    <section class="seo-content mt-5 text-start">
+      <h2 data-i18n="tools.image_converter.what_is_title">What is the Batch Image Converter?</h2>
+      <p>The Batch Image Converter is a client-side transcoding utility developed to convert multiple images between formats simultaneously. By loading files and choosing a target format (PNG, JPEG, or WebP), users can batch convert entire image sets locally.</p>
+      <p>This converter executes all transcoding operations, pixel-data mapping, and archive bundling locally in your browser memory. Your original graphics, photos, and converted outputs remain private on your computer, never leaving your local workspace.</p>
+
+      <h2 class="mt-4" data-i18n="tools.image_converter.how_to_use_title">How to Use the Batch Image Converter</h2>
+      <ol>
+        <li><strong>Load Your Files:</strong> Drag and drop your images into the dotted drop zone, or click to browse and select files from your computer.</li>
+        <li><strong>Choose Target Format:</strong> Select your preferred output format (PNG, JPEG, or WebP) from the format dropdown selector.</li>
+        <li><strong>Convert and Package:</strong> Click the "Convert Everything & Download ZIP" button. The loading screen displays transcoding progress.</li>
+        <li><strong>Download Your Files:</strong> The converter automatically compiles the converted assets into a ZIP file and triggers a browser download.</li>
+      </ol>
+
+      <h2 class="mt-4" data-i18n="tools.image_converter.key_features_title">Key Features</h2>
+      <ul>
+        <li><strong>Multi-Format Presets:</strong> Supports conversions between standard web image formats (JPEG, PNG, WebP).</li>
+        <li><strong>Simultaneous Batch Processing:</strong> Load and convert multiple files in a single operation to speed up formatting.</li>
+        <li><strong>Alpha-Channel Transparency:</strong> Preserves transparency mapping when converting transparent PNGs to WebP.</li>
+        <li><strong>Client-Side Transcoding:</strong> Uses HTML5 canvas drawing layers to re-encode pixel arrays locally.</li>
+        <li><strong>Automatic ZIP Archiver:</strong> Bundles converted assets into a single ZIP file for organized saving.</li>
+      </ul>
+
+      <h2 class="mt-4" data-i18n="tools.image_converter.common_use_cases_title">Common Use Cases</h2>
+      <ul>
+        <li><strong>Web Performance Optimizations:</strong> Batch convert heavy JPEG and PNG assets to WebP formats to speed up web page loads.</li>
+        <li><strong>Standardizing Project Assets:</strong> Convert mixed-format folders of images into a uniform format before cataloging.</li>
+        <li><strong>Bypassing Upload Restrictions:</strong> Convert WebP graphics to standard PNG format for platforms that restrict modern formats.</li>
+        <li><strong>Offline Photography Prep:</strong> Batch convert photo sets on the go without needing network access.</li>
+      </ul>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-section mt-5">
+      <h2 data-i18n="tools.image_converter.faq_title">Frequently Asked Questions</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <button class="faq-question">
+            Does this tool support batch conversions?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. You can select and upload multiple images at once. The converter processes them sequentially in the background and bundles the outputs together.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            What happens to PNG transparency when converting to JPEG?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Since the JPEG format does not support transparency, transparent areas in your PNG source will automatically be filled with a solid white color.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Are my pictures uploaded to any server?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>No. All format transcoding and ZIP archiving take place locally within your browser sandbox. No file data is sent to external servers.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Is there a file size limit for conversion?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>There is no fixed limit. However, because conversions use your system's RAM, processing very large batches of extremely high-resolution images depends on your hardware capabilities.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust-signal">
+      <p>🔒 Privacy & Data Note: File uploads, format transcoding, and ZIP compilation are executed locally in your browser. No files are stored or uploaded.</p>
+    </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const imageInput = document.getElementById('image-input');
+    const dropZone = document.getElementById('drop-zone');
+    const workspace = document.getElementById('tool-workspace');
+    const fileList = document.getElementById('file-list');
+    const convertBtn = document.getElementById('convert-btn');
+    const formatBtns = document.querySelectorAll('.format-btn');
+    const loadingOverlay = document.getElementById('loading-overlay');
+    
+    let imageQueue = [];
+    let targetFormat = 'image/jpeg';
+
+    // Format Logic
+    formatBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        formatBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        targetFormat = btn.dataset.format;
+      });
+    });
+
+    // File Selection
+    dropZone.onclick = () => imageInput.click();
+    imageInput.onchange = (e) => handleFiles(e.target.files);
+    
+    // Init Drag and Drop using global helper
+    setupDragDrop('drop-zone', (files) => {
+       handleFiles(files);
+    });
+
+    function handleFiles(files) {
+      const validFiles = Array.from(files).filter(f => f.type.startsWith('image/'));
+      if (validFiles.length === 0) return;
+
+      workspace.classList.remove('hidden');
+      
+      for (const file of validFiles) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          const img = new Image();
+          img.onload = () => {
+            imageQueue.push({ file, img });
+            renderFileList();
+          };
+          img.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+
+    function renderFileList() {
+      fileList.innerHTML = '';
+      imageQueue.forEach((item, index) => {
+        const div = document.createElement('div');
+        div.className = 'file-item';
+        div.innerHTML = `
+          <img src="${item.img.src}" class="file-thumb">
+          <div>
+            <div class="font-bold small">${item.file.name}</div>
+            <div class="text-muted small">${(item.file.size / 1024).toFixed(1)} KB</div>
+          </div>
+          <div class="file-status">
+            <span class="status-badge">${item.file.type.split('/')[1].toUpperCase()}</span>
+          </div>
+        `;
+        fileList.appendChild(div);
+      });
+    }
+
+    convertBtn.onclick = async () => {
+      if (imageQueue.length === 0) return;
+      loadingOverlay.style.display = 'block';
+      convertBtn.disabled = true;
+
+      const zip = new JSZip();
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+
+      const extension = targetFormat.split('/')[1].replace('jpeg', 'jpg');
+
+      try {
+        for (const item of imageQueue) {
+          canvas.width = item.img.width;
+          canvas.height = item.img.height;
+          ctx.drawImage(item.img, 0, 0);
+
+          const dataUrl = canvas.toDataURL(targetFormat, 0.9);
+          const base64 = dataUrl.split(',')[1];
+          const fileName = item.file.name.split('.')[0] + '.' + extension;
+          
+          zip.file(fileName, base64, { base64: true });
+        }
+
+        const content = await zip.generateAsync({ type: "blob" });
+        const url = URL.createObjectURL(content);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `converted_images_${Date.now()}.zip`;
+        a.click();
+        URL.revokeObjectURL(url);
+
+        document.getElementById('status-msg').innerText = "Successfully converted and zipped!";
+        document.getElementById('status-msg').style.color = "green";
+      } catch (err) {
+        console.error(err);
+        document.getElementById('status-msg').innerText = "Error in batch conversion.";
+        document.getElementById('status-msg').style.color = "red";
+      } finally {
+        loadingOverlay.style.display = 'none';
+        convertBtn.disabled = false;
+      }
+    };
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

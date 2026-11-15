@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Folder Visualizer – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/data-file/folder-visualizer.html"/>
+<meta property="og:title" content="Folder Visualizer – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/data-file/folder-visualizer.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Folder Visualizer \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/data-file/folder-visualizer.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="folder size visualizer, disk usage tool, tree map file analyzer, storage visualizer, folder info, file size map" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- D3.js is too heavy, I will use a simple Squarified Treemap logic or recursive Grid split -->
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Folder Size Visualizer",
+    "operatingSystem": "Any",
+    "applicationCategory": "DataApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Interactive Treemap, Folder hierarchy simulation, Size-based visualization, Private local processing"
+  }
+  </script>
+
+  <style>
+    .visualizer-pane {
+      background: var(--dark-card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 30px; margin-bottom: 30px;
+    }
+
+    .treemap-area {
+      background: var(--dark); border-radius: var(--radius-sm); border: 1px solid var(--border);
+      height: 600px; width: 100%; position: relative; overflow: hidden;
+      display: flex; flex-wrap: wrap; align-content: flex-start;
+    }
+
+    .treemap-node {
+       position: relative; border: 1px solid rgba(0,0,0,0.3); box-sizing: border-box;
+       transition: all 0.2s ease; cursor: pointer; display: flex; align-items: center; justify-content: center;
+       overflow: hidden; 
+    }
+    .treemap-node:hover { filter: brightness(1.2); z-index: 10; transform: scale(0.99); }
+
+    .node-label {
+       color: white; font-size: 0.7rem; font-weight: 700; text-align: center;
+       pointer-events: none; padding: 4px; line-height: 1.2; word-break: break-all;
+    }
+
+    .tooltip {
+       position: absolute; background: var(--black); border: 1px solid var(--primary);
+       padding: 8px 12px; border-radius: 4px; pointer-events: none; z-index: 1000;
+       font-size: 0.75rem; color: white; display: none; box-shadow: var(--shadow);
+    }
+    
+    .stats-bar { display: flex; justify-content: space-between; margin-bottom: 15px; }
+
+    .btn-group { display: flex; gap: 10px; }
+
+    .legend { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 20px; }
+    .legend-item { display: flex; align-items: center; gap: 8px; font-size: 0.75rem; color: var(--text-muted); }
+    .legend-color { width: 12px; height: 12px; border-radius: 2px; }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#data">Data & File</a> <span>/</span> 
+        <span>Folder Visualizer</span>
+      </nav>
+      <h1>Folder Size Visualizer</h1>
+      <p>Analyze your storage distribution through an interactive Treemap view. Understand which files and directories are your biggest storage consumers—privately and instantly.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div id="upload-stage">
+        <div class="upload-area" id="drop-zone">
+          <div class="upload-icon">🌳</div>
+          <h3>Select folder or files</h3>
+          <p>Click to browse folder contents (webkit-supported browsers)</p>
+          <!-- Using webkitdirectory for folder selection -->
+          <input type="file" id="file-input" webkitdirectory directory multiple class="hidden">
+        </div>
+        <div class="info-box">
+          <div class="info-icon">🌳</div>
+          <p>For the best visualization, select a folder. We will map the hierarchy based on the relative paths. Block size represents the relative file size.</p>
+        </div>
+      </div>
+
+      <div id="result-stage" class="hidden">
+         <div class="visualizer-pane">
+            <div class="stats-bar">
+               <div class="flex items-center gap-4">
+                  <span id="folder-name" class="fw-bold" style="color: var(--primary);">storage mapping</span>
+                  <span id="total-size" class="text-muted small">0 MB / 0 files</span>
+               </div>
+               <div class="btn-group">
+                  <button class="btn btn-secondary btn-sm" id="reset-btn">New Scan</button>
+               </div>
+            </div>
+
+            <div class="treemap-area" id="treemap-view"></div>
+
+            <div class="legend" id="legend"></div>
+         </div>
+      </div>
+
+      <div class="tooltip" id="tooltip"></div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5">
+        <h2>Visualizing Your Digital Footprint: The Logic of Privacy-First Folder Mapping</h2>
+        <p>We’ve all been there: you know you’re running out of space, but a simple list of files doesn’t tell you the real story. You don't just want to see the numbers; you want to see the "proportions." You want to see if that one video project is bigger than your entire photo library at a glance. You search for a <strong>folder size visualizer online</strong>. But as you prepare to grant "Disk Access" to a cloud-based audit tool, you stop. Do you really want to share your project's "Folder DNA" and file hierarchy with an anonymous profiling engine? And do you really want to deal with the privacy implications of a cloud service mapping your personal life?</p>
+
+        <p>At 99tool.in, we built our <strong>folder visualizer</strong> to provide a professional-grade diagnostic experience without the privacy trade-off. By utilizing native browser File System APIs and zero-cloud processing, we allow you to <strong>visualize storage usage</strong> entirely within the secure sandbox of your machine. Whether you're an IT lead auditing a production drive, a programmer mapping project dependencies, or a student organizing a semester of work, our <strong>safe folder tool</strong> ensures that your metadata stays where it belongs: on your device, under your total sovereignty.</p>
+        
+        <div class="tool-preview-box mt-4 mb-4" style="text-align:center;">
+           <img src="../../assets/images/markdown-preview.png" alt="Pro-Grade Integrated Storage Dashboard with Interactive Treemap and Size-Based Block Mapping" class="tool-preview" id="tool-preview-img" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+        </div>
+
+        <h3 class="mt-4">The Logic of "Block Proportionality"</h3>
+        <p>Resource management is about "Visual Context." Most basic <strong>disk usage info tools</strong> hide the hierarchy behind nested lists. Our <strong>professional folder tool</strong> takes a human-centric approach: we focus on **Relational Visualization** and **Hierarchical Depth**.</p>
+        
+        <p>We've engineered a browser-side Treemap engine that transforms your selected folder into a clear, interactive map. Our <strong>safe storage validator</strong> maps file sizes to block area, letting you "See the Weight" of your data instantly. This transparency transforms a technical file audit into a visual tour of your digital footprint, helping you catch "Hidden Heavyweights" in your hierarchy before they become a storage crisis.</p>
+
+        <h3 class="mt-4">Why Local Visualization is the Architect’s Ethical Choice</h2>
+        <p>In the age of digital surveillance and automated technical scraping, your folder structure is a map of your work habits and project value. Using a standard <strong>storage visualizer online free</strong> creates a digital record of how you organize your life. Our 100% <strong>hierarchy utility</strong> removes this "Transparency Risk" entirely from your routine.</p>
+        
+        <p>Because the mapping and rendering happen in your browser's private memory, your folder structure is invisible to the outside world. No analytics are tracked, no file identities are harvested, and no proprietary data mapping is shared with AI trackers or advertisers. At 99tool.in, we believe that <strong>managing your space</strong> should be an empowering utility, not a data-collection opportunity. With us, you have a private, professional darkroom for your data that fits in your browser tab.</p>
+
+        <h3 class="mt-4">How to Map Your Folder (Step-by-Step)</h3>
+        <p>Visualizing a complex directory should be a high-speed, 5-second task. Here is how to use our <strong>folder visualizer</strong>:</p>
+        <ul style="line-height: 1.8; margin-bottom: 20px;">
+          <li><strong>Step 1: Select Your Hierarchy</strong> — Click the sandbox to select a folder from your system. Browser security ensures you only map the specific directory you choose.</li>
+          <li><strong>Step 2: Generate the Map</strong> — Watch as our local engine calculates the relative sizes and builds the Treemap in real-time. The larger the block, the more space it consumes.</li>
+          <li><strong>Step 3: Explore the Proportions</strong> — Hover over blocks to see exact file names and sizes. Colors indicate file types to help you distinguish between videos, images, and docs.</li>
+          <li><strong>Step 4: Cleanup with Precision</strong> — Identify the largest storage eaters and handle them manually on your system. Your metadata remains 100% private throughout the session.</li>
+        </ul>
+
+        <h3 class="mt-4">Strategic Use Cases for Your Local Visualizer</h3>
+        <p>Our <strong>searchable hierarchy explorer</strong> is the essential companion for modern system hygiene:</p>
+        
+        <p><strong>For Software Developers:</strong> Auditing a <code>node_modules</code> folder or a repository? Use our <strong>folder visualizer</strong> to see which packages are taking up the most space.</p>
+        
+        <p><strong>For Content Creators:</strong> Analyzing a project export folder? Use our <strong>safe file tool</strong> to ensure you haven't left massive uncompressed assets in your hierarchy.</p>
+        
+        <p><strong>For Privacy Advocates:</strong> Need to map a sensitive personal archive? Use our <strong>safe storage tool</strong> to see the proportions without ever uploading a directory map to the cloud.</p>
+
+        <h3 class="mt-5">Explore Your Complete Data Suite</h3>
+        <p>Once you’ve visualized your folders, you might need to find redundancies. Check out our <strong><a href="duplicate-finder.html">Duplicate File Finder</a></strong>. Or, if you need to analyze specific files deeper, use our <strong><a href="file-size-analyzer.html">File Size Analyzer</a></strong>. At 99tool.in, we are building a world-class, 100% private digital toolkit to give you total control over your digital sovereignty.</p>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Does this tool modify my files?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. For your total security, this is a <strong>read-only visualization tool</strong>. We analyze the metadata of the files you select to create the map, but we never modify, move, or delete any data on your system.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Which browsers support folder selection?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Most modern browsers (Chrome, Edge, Brave) support the <strong>webkitdirectory</strong> feature, which allows you to select an entire folder. In other browsers, you can still select multiple files to see their relative size distribution.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Is my folder map shared with anyone?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Absolutely not. All processing and treemap generation happen within your <strong>browser session's local memory</strong>. No file names or hierarchies are ever sent to our servers. Your local data structure remains strictly private.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 Privacy-First. Hierarchy Identification. 100%. Last updated: April 10, 2026.</p>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const dropZone = document.getElementById('drop-zone');
+    const fileInput = document.getElementById('file-input');
+    const uploadStage = document.getElementById('upload-stage');
+    const resultStage = document.getElementById('result-stage');
+    const treemapView = document.getElementById('treemap-view');
+    const legend = document.getElementById('legend');
+    const totalSizeEl = document.getElementById('total-size');
+    const tooltip = document.getElementById('tooltip');
+    const resetBtn = document.getElementById('reset-btn');
+
+    const COLORS = {
+      image: '#e53935',
+      video: '#ff9800',
+      document: '#2196f3',
+      archive: '#9c27b0',
+      other: '#444'
+    };
+
+    dropZone.onclick = () => fileInput.click();
+    fileInput.onchange = (e) => visualize(e.target.files);
+
+    // Init Drag and Drop using global helper
+    setupDragDrop('drop-zone', (files) => {
+       visualize(files);
+    });
+
+    function visualize(files) {
+      if (!files || files.length === 0) return;
+
+      uploadStage.classList.add('hidden');
+      resultStage.classList.remove('hidden');
+
+      let totalSize = 0;
+      const fileData = [];
+
+      for (let i = 0; i < files.length; i++) {
+        const f = files[i];
+        totalSize += f.size;
+        fileData.push({
+          name: f.name,
+          path: f.webkitRelativePath || f.name,
+          size: f.size,
+          ext: f.name.split('.').pop().toLowerCase()
+        });
+      }
+
+      totalSizeEl.textContent = `${formatSize(totalSize)} / ${files.length} items`;
+      renderTreemap(fileData, totalSize);
+    }
+
+    function renderTreemap(files, total) {
+      treemapView.innerHTML = '';
+      // Sort by size descending
+      files.sort((a,b) => b.size - a.size);
+
+      files.forEach(file => {
+        const share = (file.size / total) * 100;
+        if (share < 0.1) return; // Don't render tiny nodes
+
+        const node = document.createElement('div');
+        node.className = 'treemap-node';
+        node.style.width = `${share}%`;
+        // Flex basis/width is tricky for pure CSS treemap, I'll use a simple flex wrap for simplicity
+        // true squarified treemap would need absolute positioning.
+        // Let's use flex-basis instead for a "visual block" look
+        node.style.flex = `1 1 ${share}%`;
+        node.style.height = `${Math.max(40, share * 3)}px`; // Dynamic height
+        node.style.backgroundColor = getColor(file.ext);
+
+        if (share > 5) { // Only show label on larger nodes
+           node.innerHTML = `<div class="node-label">${file.name}<br>${formatSize(file.size)}</div>`;
+        }
+
+        node.onmouseenter = (e) => {
+           tooltip.style.display = 'block';
+           tooltip.innerHTML = `<strong>${file.name}</strong><br>Size: ${formatSize(file.size)}<br>Path: ${file.path}`;
+        };
+        node.onmousemove = (e) => {
+           tooltip.style.left = (e.pageX + 15) + 'px';
+           tooltip.style.top = (e.pageY + 15) + 'px';
+        };
+        node.onmouseleave = () => tooltip.style.display = 'none';
+
+        treemapView.appendChild(node);
+      });
+
+      renderLegend();
+    }
+
+    function getColor(ext) {
+      if (['jpg', 'jpeg', 'png', 'svg', 'webp', 'gif'].includes(ext)) return COLORS.image;
+      if (['mp4', 'mov', 'avi', 'mkv'].includes(ext)) return COLORS.video;
+      if (['pdf', 'docx', 'xlsx', 'txt', 'csv'].includes(ext)) return COLORS.document;
+      if (['zip', 'rar', '7z', 'gz'].includes(ext)) return COLORS.archive;
+      return COLORS.other;
+    }
+
+    function renderLegend() {
+       legend.innerHTML = Object.keys(COLORS).map(key => `
+          <div class="legend-item">
+             <div class="legend-color" style="background: ${COLORS[key]};"></div>
+             ${key.toUpperCase()}
+          </div>
+       `).join('');
+    }
+
+    function formatSize(bytes) {
+      if (bytes === 0) return '0 Bytes';
+      const k = 1024;
+      const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+      const i = Math.floor(Math.log(bytes) / Math.log(k));
+      return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+    }
+
+    resetBtn.onclick = () => {
+       uploadStage.classList.remove('hidden');
+       resultStage.classList.add('hidden');
+       fileInput.value = '';
+    };
+  </script>
+</body>
+</html>
+

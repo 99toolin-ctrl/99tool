@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Site Status – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/network/site-status.html"/>
+<meta property="og:title" content="Site Status – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/network/site-status.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Site Status \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/network/site-status.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .status-workspace {
+      max-width: 600px;
+      margin: 2rem auto;
+      background: var(--bg-secondary);
+      padding: 2.5rem;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+    .status-input-container {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 2rem;
+    }
+    .status-input-container input {
+      flex: 1;
+      padding: 12px 20px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--bg-primary);
+      color: var(--text);
+    }
+    .status-result {
+      margin-top: 2rem;
+      padding: 2rem;
+      border-radius: 12px;
+      display: none;
+    }
+    .status-up { background: rgba(46, 213, 115, 0.1); border: 1px solid #2ed573; color: #2ed573; }
+    .status-down { background: rgba(255, 71, 87, 0.1); border: 1px solid #ff4757; color: #ff4757; }
+    
+    .status-icon { font-size: 3rem; margin-bottom: 1rem; }
+    .status-text { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .status-meta { font-size: 0.9rem; color: var(--text); opacity: 0.8; }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/network/site-status.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/network/site-status.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/network/site-status.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/network/site-status.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/network/site-status.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/network/site-status.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/network/site-status.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/network/site-status.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/network/site-status.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/network/site-status.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/network/site-status.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/network/site-status.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/network/site-status.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/network/site-status.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/network/site-status.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/network/site-status.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/network/site-status.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/network/site-status.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/network/site-status.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/network/site-status.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/network/site-status.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/network/site-status.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Website Status Checker</h1>
+      <p>Instant availability diagnosis. Is it down for everyone or just for you?</p>
+    </div>
+
+    <div class="tool-container">
+      <div class="status-workspace">
+        <div class="status-input-container">
+          <input type="text" id="site-url" placeholder="Enter URL (e.g., google.com)" value="google.com">
+          <button id="check-btn" class="btn btn-primary">Check Status</button>
+        </div>
+
+        <div id="loading" class="hidden">Probing remote servers...</div>
+
+        <div id="result-box" class="status-result">
+          <div class="status-icon" id="res-icon">✅</div>
+          <div class="status-text" id="res-text">Website is Online</div>
+          <div class="status-meta" id="res-meta">Response Time: 120ms</div>
+        </div>
+      </div>
+
+      <!-- SEO CONTENT -->
+      <section class="seo-content mt-5">
+        <h2>What Does "Website Status" Actually Mean?</h2>
+        <p>In the digital age, being "online" is a relative term. Sometimes a website feels down because your local internet service is flickering, while other times the problem is at the source. Our <strong>website status checker</strong> acts as a neutral third party. It attempts to connect to the target web server from an independent network node, helping you determine if a site is <strong>down for everyone</strong> or just suffering from a local connectivity issue.</p>
+
+        <h3 class="mt-4">How Our Uptime Checker Works</h3>
+        <p>A standard browser cannot easily check another site's "status" because of security rules called CORS. To build a truly effective <strong>site status checker</strong>, we use secure remote bridges. Our tool sends a "pulse" to the target URL and measures exactly how many milliseconds it takes for the first byte to arrive. This allows us to provide a high-fidelity report on <strong>server response code</strong> and general availability.</p>
+
+        <h3 class="mt-4">Interpreting the Results</h3>
+        <p>When you <strong>check if a site is down</strong>, you might see several results:
+        <ul>
+          <li><strong>Online (200 OK)</strong>: The site is healthy and serving content normally.</li>
+          <li><strong>Timeout</strong>: The server is taking too long to respond, often a sign of a DDoS attack or server-side crash.</li>
+          <li><strong>Forbidden (403)</strong>: The site is online, but it is actively blocking the request, possibly due to regional restrictions or security firewalls.</li>
+          <li><strong>Not Found (404)</strong>: The server is online, but the specific page you requested does not exist.</li>
+        </ul></p>
+
+        <h3 class="mt-4">Diagnosing Connection Issues</h3>
+        <p>If our <strong>online website checker</strong> says the site is "UP" but you still cannot access it, the problem is likely closer to home. Try clearing your browser cache, restarting your router, or flushing your DNS. Having a reliable <strong>is site down</strong> utility in your bookmarks is the fastest way to stop wasting time on "ghost" outages and get back to productive work.</p>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const checkBtn = document.getElementById('check-btn');
+    const urlInput = document.getElementById('site-url');
+    const resultBox = document.getElementById('result-box');
+    const loading = document.getElementById('loading');
+
+    checkBtn.addEventListener('click', async () => {
+      let rawUrl = urlInput.value.trim();
+      if (!rawUrl) return;
+
+      // Ensure protocol
+      if (!rawUrl.startsWith('http')) rawUrl = 'https://' + rawUrl;
+
+      checkBtn.disabled = true;
+      loading.classList.remove('hidden');
+      resultBox.style.display = 'none';
+
+      const startTime = performance.now();
+      
+      try {
+        // Using allorigins.win to bypass CORS and get a real status check
+        const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(rawUrl)}`;
+        const response = await fetch(proxyUrl);
+        const data = await response.json();
+        
+        const endTime = performance.now();
+        const duration = Math.round(endTime - startTime);
+
+        resultBox.style.display = 'block';
+        
+        if (data.status && data.status.http_code >= 200 && data.status.http_code < 400) {
+          resultBox.className = 'status-result status-up';
+          document.getElementById('res-icon').innerText = '✅';
+          document.getElementById('res-text').innerText = 'Website is Online';
+          document.getElementById('res-meta').innerText = `Status: ${data.status.http_code} | Response Time: ${duration}ms`;
+        } else {
+          resultBox.className = 'status-result status-down';
+          document.getElementById('res-icon').innerText = '❌';
+          document.getElementById('res-text').innerText = 'Website is Down or Blocked';
+          document.getElementById('res-meta').innerText = data.status ? `Status: ${data.status.http_code}` : 'Connection Timeout';
+        }
+
+      } catch (err) {
+        console.error(err);
+        resultBox.style.display = 'block';
+        resultBox.className = 'status-result status-down';
+        document.getElementById('res-icon').innerText = '⚠️';
+        document.getElementById('res-text').innerText = 'Connection Error';
+        document.getElementById('res-meta').innerText = 'Unable to reach the server or proxy.';
+      } finally {
+        checkBtn.disabled = false;
+        loading.classList.add('hidden');
+      }
+    });
+
+    urlInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') checkBtn.click();
+    });
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>

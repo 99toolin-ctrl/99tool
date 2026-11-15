@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Excel To Pdf – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/pdf/excel-to-pdf.html"/>
+<meta property="og:title" content="Excel To Pdf – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/pdf/excel-to-pdf.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Excel To Pdf \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/pdf/excel-to-pdf.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.sheetjs.com/xlsx-0.19.3/package/dist/xlsx.full.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+  <style>
+    .conversion-card {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2.5rem;
+      margin-top: 2rem;
+    }
+    
+    .table-container {
+      margin-top: 2rem;
+      overflow-x: auto;
+      background: var(--dark);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      max-height: 400px;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      color: var(--text);
+    }
+    th, td {
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      text-align: left;
+      white-space: nowrap;
+    }
+    th { background: rgba(229, 57, 53, 0.1); color: var(--primary); font-weight: 600; }
+
+    .preview-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .hidden { display: none !important; }
+    
+    .progress-pulse {
+       width: 100%; height: 4px; background: var(--border); border-radius: 2px; overflow: hidden; margin-top: 10px;
+    }
+    .progress-pulse div { width: 30%; height: 100%; background: var(--primary); animation: slide 1.5s infinite; }
+    @keyframes slide { from { margin-left: -30%; } to { margin-left: 100%; } }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/pdf/excel-to-pdf.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/pdf/excel-to-pdf.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/pdf/excel-to-pdf.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/pdf/excel-to-pdf.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/pdf/excel-to-pdf.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/pdf/excel-to-pdf.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/pdf/excel-to-pdf.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/pdf/excel-to-pdf.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/pdf/excel-to-pdf.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/pdf/excel-to-pdf.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/pdf/excel-to-pdf.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/pdf/excel-to-pdf.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/pdf/excel-to-pdf.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/pdf/excel-to-pdf.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/pdf/excel-to-pdf.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/pdf/excel-to-pdf.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/pdf/excel-to-pdf.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/pdf/excel-to-pdf.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/pdf/excel-to-pdf.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/pdf/excel-to-pdf.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/pdf/excel-to-pdf.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/pdf/excel-to-pdf.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-hero text-center mb-5">
+      <nav class="breadcrumb justify-content-center">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#pdf">PDF & Document</a> <span>/</span> 
+        <span>Excel to PDF</span>
+      </nav>
+      <h1>Excel to PDF Converter</h1>
+      <p>Generate professional PDF reports from your spreadsheet data. Instant, private, and secure.</p>
+    </div>
+
+    <div class="conversion-card">
+      <div id="drop-area" class="upload-area">
+        <div class="upload-icon">📑</div>
+        <h3>Select Excel or CSV file</h3>
+        <p class="text-muted">Supports .xlsx, .xls, .csv, and .ods formats</p>
+        <button class="btn btn-primary mt-3" onclick="document.getElementById('file-input').click()">Browse Files</button>
+        <input type="file" id="file-input" accept=".xlsx, .xls, .csv, .ods" hidden>
+      </div>
+
+      <div id="result-area" class="hidden">
+        <div class="preview-header">
+          <h3 class="m-0">Data Preview</h3>
+          <span id="row-count" class="text-muted small">0 rows detected</span>
+        </div>
+        
+        <div class="table-container">
+          <table id="preview-table">
+            <thead id="table-head"></thead>
+            <tbody id="table-body"></tbody>
+          </table>
+        </div>
+
+        <div class="mt-4 flex gap-3">
+          <button id="convert-btn" class="btn btn-primary btn-lg">Generate PDF Document</button>
+          <button class="btn btn-secondary" onclick="location.reload()">Clear</button>
+        </div>
+        <div id="loading-bar" class="hidden">
+           <div class="progress-pulse"><div></div></div>
+           <p class="small text-center mt-2">Converting spreadsheet to high-fidelity PDF...</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEO CONTENT -->
+    <section class="seo-content mt-5">
+      <h2>Professional Spreadsheet to PDF Conversion Without Data Leaks</h2>
+      <p>Converting a spreadsheet into a shareable document is a standard business requirement. Whether you’re sending a price list, an inventory report, or a project timeline, you need that data to look clean and professional. But using a <strong>cloud excel to pdf converter</strong> introduces a massive security risk. Once you upload your spreadsheet, your internal data—from proprietary pricing to client lists—is now on someone else's server.</p>
+
+      <p>99tool.in provides a <strong>private excel to pdf</strong> solution. By combining the data-parsing precision of <code>SheetJS</code> with the layout power of <code>jsPDF</code> and <code>AutoTable</code>, we allow you to <strong>convert xlsx to pdf</strong> entirely within the privacy of your browser. Your data is processed in local RAM and wiped the moment you close the tab, ensuring your business intelligence remains your own.</p>
+
+      <h3 class="mt-4">Why Our Layout Engine is Superior</h3>
+      <p>Most basic converters produce "Screen Grabs" that are blurry or hard to read. Our <strong>professional spreadsheet converter</strong> takes a structural approach:</p>
+      <ul style="line-height:1.8;">
+        <li><strong>Native Rendering</strong>: We don't just "take a picture" of the table. We rebuild the table structure using vector-based PDF commands, ensuring maximum text clarity even at 400% zoom.</li>
+        <li><strong>Multi-Page Logic</strong>: Our engine automatically handles page breaks, ensuring that long spreadsheets are intelligently split across pages with repeating headers for readability.</li>
+        <li><strong>Format Versatility</strong>: We support not just modern <code>.xlsx</code> files, but also legacy <code>.xls</code>, <code>.csv</code>, and OpenDocument <code>.ods</code> formats.</li>
+        <li><strong>Zero Tracking</strong>: No cookies, no analytics, and no accounts. Just a clean, industrial-grade utility for your daily workflow.</li>
+      </ul>
+
+      <h3 class="mt-4">How to Convert Excel Safely (Step-by-Step)</h3>
+      <ul style="line-height:1.8;">
+        <li><strong>Step 1: Local Loading</strong> — Browse for your spreadsheet. Our system will immediately parse the data structure for a local preview.</li>
+        <li><strong>Step 2: Table Verification</strong> — Review the interactive preview to ensure your columns and rows are aligned correctly.</li>
+        <li><strong>Step 3: PDF Generation</strong> — Click "Generate PDF." Our local engine transforms the data into a multi-page document using coordinate-based layout logic.</li>
+        <li><strong>Step 4: Secure Download</strong> — The finished PDF is saved directly to your Downloads folder. No record of the transaction exists outside your machine.</li>
+      </ul>
+      <h3 class="mt-4">Why Security Matters for Financial Data</h3>
+      <p>Spreadsheets often contain the most sensitive parts of a business: revenue numbers, employee salaries, and strategic forecasts. Using a third-party <strong>online excel to pdf</strong> converter means your document's "Table" structure is sitting on a cloud server somewhere. At 99tool.in, we believe in <strong>Local-First Productivity</strong>. We provide the power of an industrial converter without the data transmission, giving you total sovereignty over your most important spreadsheets.</p>
+
+      <h3 class="mt-5">Explore Your Complete Office Suite</h3>
+      <p>Once you’ve converted your spreadsheet to a PDF, you might need to protect it from unauthorized viewing. Check out our <strong><a href="protect-pdf.html">PDF Password Protector</a></strong>. Or, if you need to extract text from a different PDF back into a spreadsheet format, use our <strong><a href="extract-text.html">Text Extraction Tool</a></strong>. At 99tool.in, we are building a world-class, private digital toolkit for the modern professional.</p>
+      
+      <div class="flex gap-4 mt-4 mb-5 text-center">
+         <a href="pdf-to-excel.html" class="btn btn-secondary" style="flex:1;">PDF to Excel</a>
+         <a href="merge-pdf.html" class="btn btn-secondary" style="flex:1;">Merge PDF</a>
+      </div>
+    </section>
+ 
+    <!-- FAQ SECTION -->
+    <section class="faq-section mt-5">
+      <h2 data-i18n="tools.excel_to_pdf_converter.faq_title">Frequently Asked Questions</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <button class="faq-question">
+            Does this tool support multiple sheets?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Currently, the <strong>excel to pdf converter</strong> processes the first (active) sheet in your workbook. For workbooks with multiple sheets, we recommend saving the specific sheet you need as a CSV or XLSX file before converting.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Are my files sent to any server?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>No. 99tool.in is a <strong>serverless utility</strong>. All data parsing and PDF generation happens locally in your browser's private sandbox. No part of your spreadsheet is ever transmitted to the cloud.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Does it preserve cell colors and borders?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Our <strong>high-fidelity converter</strong> focuses on structural data integrity and readability. It applies a professional corporate template (clean headers and alternating row colors) to ensure your data looks great regardless of original styling.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Is there a limit on the number of rows?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Since processing happens in your <strong>browser's RAM</strong>, you can convert sheets with thousands of rows. For extremely large datasets (over 10,000 rows), the PDF generation might take a few seconds as the engine builds the pages.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Can I convert CSV files to PDF?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes! We support <strong>CSV, XLSX, XLS, and ODS</strong> formats. The engine automatically detects the format and prepares a clean preview for you to audit before generating the PDF.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Will the PDF be searchable?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. Because we rebuild the table using <strong>native PDF vector commands</strong>, all text in the resulting PDF is fully searchable and selectable, just like a document created in professional office software.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const fileInput = document.getElementById('file-input');
+    const dropArea = document.getElementById('drop-area');
+    const resultArea = document.getElementById('result-area');
+    const rowCount = document.getElementById('row-count');
+    const tableHead = document.getElementById('table-head');
+    const tableBody = document.getElementById('table-body');
+    const convertBtn = document.getElementById('convert-btn');
+    const loadingBar = document.getElementById('loading-bar');
+
+    let sheetData = [];
+    let fileName = "spreadsheet";
+
+    fileInput.onchange = (e) => handleFile(e.target.files[0]);
+
+    // Init Drag and Drop using global helper
+    setupDragDrop('drop-area', (files) => {
+       handleFile(files[0]);
+    });
+
+    async function handleFile(file) {
+      if (!file) return;
+      fileName = file.name.split('.')[0];
+      
+      const arrayBuffer = await file.arrayBuffer();
+      const workbook = XLSX.read(arrayBuffer);
+      const firstSheet = workbook.Sheets[workbook.SheetNames[0]];
+      sheetData = XLSX.utils.sheet_to_json(firstSheet, { header: 1 });
+      
+      if (sheetData.length === 0) {
+        alert("The selected file appears to be empty.");
+        return;
+      }
+
+      dropArea.classList.add('hidden');
+      resultArea.classList.remove('hidden');
+       rowCount.innerText = ((window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(sheetData.length, 0) : sheetData.length) + ' rows detected';
+      
+      renderPreview(sheetData);
+    }
+
+    function renderPreview(data) {
+      tableHead.innerHTML = "";
+      tableBody.innerHTML = "";
+
+      const header = data[0];
+      const headTr = document.createElement('tr');
+      header.forEach(text => {
+        const th = document.createElement('th');
+        th.innerText = text || "";
+        headTr.appendChild(th);
+      });
+      tableHead.appendChild(headTr);
+
+      // Preview first 50 rows
+      data.slice(1, 50).forEach(row => {
+        const tr = document.createElement('tr');
+        header.forEach((_, i) => {
+          const td = document.createElement('td');
+          td.innerText = row[i] !== undefined ? row[i] : "";
+          tr.appendChild(td);
+        });
+        tableBody.appendChild(tr);
+      });
+    }
+
+    convertBtn.onclick = () => {
+      loadingBar.classList.remove('hidden');
+      convertBtn.disabled = true;
+      
+      setTimeout(() => {
+        try {
+          const { jsPDF } = window.jspdf;
+          const doc = new jsPDF('p', 'pt', 'a4');
+          
+          doc.autoTable({
+            head: [sheetData[0]],
+            body: sheetData.slice(1),
+            styles: { fontSize: 8, cellPadding: 5 },
+            headStyles: { fillColor: [229, 57, 53], textColor: [255, 255, 255] },
+            alternateRowStyles: { fillColor: [245, 245, 245] },
+            margin: { top: 40 },
+            didDrawPage: (data) => {
+               doc.setFontSize(10);
+               doc.text(`Page ${doc.internal.getNumberOfPages()}`, data.settings.margin.left, 20);
+            }
+          });
+
+          doc.save(`${fileName}.pdf`);
+        } catch (e) {
+          alert("Error generating PDF: " + e.message);
+        } finally {
+          loadingBar.classList.add('hidden');
+          convertBtn.disabled = false;
+        }
+      }, 500);
+    };
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

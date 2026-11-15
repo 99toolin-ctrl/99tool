@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Calorie Calculator – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/health/calorie-calculator.html"/>
+<meta property="og:title" content="Calorie Calculator – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/health/calorie-calculator.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Calorie Calculator \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/health/calorie-calculator.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .cal-workspace {
+      max-width: 650px;
+      margin: 2rem auto;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      border-radius: 20px;
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; }
+    .form-group { margin-bottom: 1.5rem; }
+    label { display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-muted); }
+    input, select {
+      width: 100%;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.8rem;
+      border-radius: 8px;
+    }
+    .result-card {
+      background: var(--bg-secondary);
+      padding: 2rem;
+      border-radius: 12px;
+      margin-top: 2rem;
+      display: none;
+      border: 1px solid var(--primary);
+    }
+    .main-cal { font-size: 3.5rem; font-weight: 900; color: var(--primary); text-align: center; }
+    .cal-label { text-align: center; font-size: 1.1rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+    
+    .goals-grid {
+       display: grid;
+       grid-template-columns: repeat(3, 1fr);
+       gap: 1rem;
+       margin-top: 1.5rem;
+    }
+    .goal-box {
+       background: rgba(255,255,255,0.03);
+       padding: 1rem;
+       border-radius: 10px;
+       text-align: center;
+       border: 1px solid var(--border);
+    }
+    .goal-val { font-weight: 800; color: var(--text); }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/health/calorie-calculator.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/health/calorie-calculator.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/health/calorie-calculator.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/health/calorie-calculator.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/health/calorie-calculator.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/health/calorie-calculator.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/health/calorie-calculator.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/health/calorie-calculator.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/health/calorie-calculator.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/health/calorie-calculator.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/health/calorie-calculator.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/health/calorie-calculator.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/health/calorie-calculator.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/health/calorie-calculator.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/health/calorie-calculator.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/health/calorie-calculator.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/health/calorie-calculator.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/health/calorie-calculator.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/health/calorie-calculator.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/health/calorie-calculator.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/health/calorie-calculator.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/health/calorie-calculator.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Infinite Calorie Calculator</h1>
+      <p>Estimate your Total Daily Energy Expenditure (TDEE) and set precise weight goals.</p>
+    </div>
+
+    <div class="cal-workspace">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Gender</label>
+          <select id="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Age</label>
+          <input type="number" id="age" placeholder="25">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Weight (kg)</label>
+          <input type="number" id="weight" placeholder="70">
+        </div>
+        <div class="form-group">
+          <label>Height (cm)</label>
+          <input type="number" id="height" placeholder="175">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Activity Level</label>
+        <select id="activity">
+          <option value="1.2">Sedentary (office job, little exercise)</option>
+          <option value="1.375">Lightly Active (light exercise 1-3 days/week)</option>
+          <option value="1.55">Moderately Active (exercise 3-5 days/week)</option>
+          <option value="1.725">Very Active (heavy exercise 6-7 days/week)</option>
+          <option value="1.9">Extra Active (very heavy exercise + physical job)</option>
+        </select>
+      </div>
+      
+      <button onclick="calculateCalories()" class="btn btn-primary btn-lg btn-full">Check My Requirements</button>
+
+      <div class="result-card" id="result-card">
+         <div class="main-cal" id="tdee">0</div>
+         <div class="cal-label">Maintenance Calories / Day</div>
+         
+         <div class="goals-grid">
+            <div class="goal-box">
+               <div class="goal-val" id="loss">0</div>
+               <div class="small text-muted">Mild Loss (-0.25kg)</div>
+            </div>
+            <div class="goal-box" style="border-color: var(--primary);">
+               <div class="goal-val" id="loss-p">0</div>
+               <div class="small text-muted">Weight Loss (-0.5kg)</div>
+            </div>
+            <div class="goal-box">
+               <div class="goal-val" id="gain">0</div>
+               <div class="small text-muted">Mild Gain (+0.25kg)</div>
+            </div>
+         </div>
+      </div>
+
+      <!-- CONTENT SECTION -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.calorie_calculator.what_is_title">What is the Infinite Calorie Calculator?</h2>
+        <p>The Infinite Calorie Calculator is a client-side health and nutrition utility designed to estimate your Total Daily Energy Expenditure (TDEE). By entering your biological statistics and daily activity level, you can find the calorie counts required to maintain, lose, or gain weight.</p>
+        <p>This calculator processes all Mifflin-St Jeor formulas, activity factor multipliers, and calorie target splits locally in your browser memory. None of your metrics are stored on external servers, keeping your dietary and fitness planning secure.</p>
+
+        <h2 class="mt-4" data-i18n="tools.calorie_calculator.how_to_use_title">How to Use the Infinite Calorie Calculator</h2>
+        <ol>
+          <li><strong>Select Gender:</strong> Choose Male or Female from the dropdown menu.</li>
+          <li><strong>Enter Your Age:</strong> Input your age in years.</li>
+          <li><strong>Enter Weight and Height:</strong> Input your current weight in kilograms (kg) and height in centimeters (cm).</li>
+          <li><strong>Set Activity Level:</strong> Select the factor that matches your daily routine (ranging from Sedentary to Extra Active).</li>
+          <li><strong>Calculate Needs:</strong> Click the "Calculate Calorie Needs" button to run the local calculations.</li>
+          <li><strong>Review Calorie Goals:</strong> Examine the results card to see your daily Maintenance calories alongside calculated targets for Mild Loss, Weight Loss, and Mild Gain.</li>
+        </ol>
+
+        <h2 class="mt-4" data-i18n="tools.calorie_calculator.key_features_title">Key Features</h2>
+        <ul>
+          <li><strong>BMR and Activity Integration:</strong> Combines basal metabolic calculations with activity multipliers to estimate TDEE.</li>
+          <li><strong>Activity Multipliers:</strong> Includes options from sedentary desk jobs to intense twice-a-day workouts.</li>
+          <li><strong>Target calorie splits:</strong> Automatically calculates targets for mild fat loss, standard weight loss, and mild muscle gain.</li>
+          <li><strong>Responsive Input Grid:</strong> Optimized form layout for quick parameters adjustments on mobile devices.</li>
+          <li><strong>100% Client-Side Engine:</strong> Operates entirely in browser cache without external database trackers.</li>
+        </ul>
+
+        <h2 class="mt-4" data-i18n="tools.calorie_calculator.common_use_cases_title">Common Use Cases</h2>
+        <ul>
+          <li><strong>Fat Loss Phase Planning:</strong> Find maintenance calories and calculate a safe calorie deficit target.</li>
+          <li><strong>Lean Muscle Building:</strong> Determine the surplus calories needed to support muscle growth while minimizing fat gain.</li>
+          <li><strong>Dietary Management:</strong> Plan meal portions and macronutrient distributions based on daily energy targets.</li>
+          <li><strong>Athletic Energy Auditing:</strong> Adjust calorie intake to match seasonal training volume and recovery requirements.</li>
+        </ul>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section mt-5">
+        <h2 data-i18n="tools.calorie_calculator.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              What is the difference between BMR and TDEE?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Basal Metabolic Rate (BMR) is the energy your body burns at complete rest. Total Daily Energy Expenditure (TDEE) is BMR multiplied by your physical activity factor, representing total calories burned daily.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              How are the weight loss calorie targets determined?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Mild weight loss is calculated by subtracting 250 calories from your TDEE, while standard weight loss targets subtract 500 calories, which corresponds to losing roughly 0.25kg and 0.5kg per week respectively.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Which activity factor should I select?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>If you work a desk job and do not exercise, select "Sedentary". Select "Lightly Active" for 1-3 light workouts a week, "Moderately Active" for 3-5 moderate workouts, and "Very Active" for daily intense training.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Is my personal data uploaded?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. 99tool.in processes all metabolic math locally in your browser memory. Your health and activity details are never sent to external servers.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal text-center mt-4">
+        <p>🔒 Privacy & Data Note: Biological parameters, activity selectors, and calorie calculations are processed locally in your browser. No data is stored or uploaded.</p>
+        <p class="small text-muted mt-2"><strong>Disclaimer:</strong> This tool is for informational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment.</p>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    function calculateCalories() {
+       const w = parseFloat(document.getElementById('weight').value);
+       const h = parseFloat(document.getElementById('height').value);
+       const a = parseInt(document.getElementById('age').value);
+       const g = document.getElementById('gender').value;
+       const act = parseFloat(document.getElementById('activity').value);
+       
+       if (!w || !h || !a) return alert('Please enter all details.');
+
+       // BMR
+       let bmr = (10 * w) + (6.25 * h) - (5 * a);
+       if (g === 'male') bmr += 5; else bmr -= 161;
+
+       const tdee = bmr * act;
+
+       document.getElementById('tdee').innerText = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(Math.round(tdee), 0) : Math.round(tdee);
+       document.getElementById('loss').innerText = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(Math.round(tdee - 250), 0) : Math.round(tdee - 250);
+       document.getElementById('loss-p').innerText = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(Math.round(tdee - 500), 0) : Math.round(tdee - 500);
+       document.getElementById('gain').innerText = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(Math.round(tdee + 250), 0) : Math.round(tdee + 250);
+       
+       document.getElementById('result-card').style.display = 'block';
+    }
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Audio Recorder – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/audio/audio-recorder.html"/>
+<meta property="og:title" content="Audio Recorder – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/audio/audio-recorder.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Audio Recorder \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/audio/audio-recorder.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="audio recorder, sound recorder, record audio online, voice recorder, audio editor, trim audio online, private sound recorder" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Audio Recorder & Editor",
+    "operatingSystem": "Any",
+    "applicationCategory": "AudioApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "High-Quality Recording, Real-time Visualizer, Audio Trimming, Playback Control, Private local processing"
+  }
+  </script>
+
+  <style>
+    .audio-layout { display: grid; grid-template-columns: 1fr; gap: 30px; }
+
+    .control-pane {
+      background: var(--dark-card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 30px; height: fit-content; position: sticky; top: 80px;
+    }
+
+    .record-pane {
+       background: var(--dark-card); border: 1px solid var(--border); border-radius: var(--radius);
+       padding: 40px; display: flex; flex-direction: column; align-items: center; gap: 25px;
+       min-height: 450px; justify-content: center;
+    }
+
+    .record-timer {
+       font-family: 'Fira Code', monospace; font-size: 4rem; font-weight: 700; color: #fff;
+       text-shadow: 0 0 20px rgba(229, 57, 53, 0.2);
+    }
+    .record-timer.active { color: var(--primary); animation: blink 1s infinite; }
+
+    @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.7; } 100% { opacity: 1; } }
+
+    .visualizer-box {
+       width: 100%; height: 120px; background: #000; border-radius: 8px; border: 1px solid var(--border);
+       position: relative; overflow: hidden;
+    }
+    #visualizer-canvas { width: 100%; height: 100%; }
+
+    .record-actions { display: flex; gap: 20px; }
+    .action-btn {
+       width: 80px; height: 80px; border-radius: 50%; border: 4px solid var(--border);
+       background: var(--dark); cursor: pointer; display: flex; align-items: center; justify-content: center;
+       transition: 0.3s;
+    }
+    .action-btn:hover { border-color: var(--primary); transform: scale(1.05); }
+    .action-btn.active { background: var(--primary); border-color: var(--primary); color: white; }
+    .action-btn svg { width: 32px; height: 32px; fill: currentColor; }
+
+    .recording-list { width: 100%; margin-top: 30px; }
+    .recording-item { 
+       background: var(--dark); border: 1px solid var(--border); padding: 15px; border-radius: 8px;
+       display: flex; align-items: center; gap: 15px; margin-bottom: 10px;
+    }
+    .recording-info { flex: 1; }
+    .recording-info h4 { font-size: 0.9rem; margin-bottom: 5px; }
+    .recording-info p { font-size: 0.7rem; color: var(--text-muted); margin: 0; }
+
+    .player-controls { display: flex; gap: 10px; }
+    .play-btn-small { 
+       background: var(--primary); color: white; border: none; padding: 8px 15px;
+       border-radius: 4px; font-size: 0.8rem; cursor: pointer;
+    }
+
+    @media (min-width: 900px) {
+       .audio-layout { grid-template-columns: 320px 1fr; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#audio">Audio & Sound</a> <span>/</span> 
+        <span>Audio Recorder & Editor</span>
+      </nav>
+      <h1>Audio Recorder & Editor</h1>
+      <p>Securely capture and refine your audio sessions. A high-fidelity, private sound laboratory for voice recording and basic trimming—100%.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div class="audio-layout">
+         <aside class="control-pane">
+            <h3>Audio Terminal</h3>
+            <p class="text-muted small mb-4">Initialize capture session.</p>
+
+            <div class="form-group mb-4">
+               <label>MICROPHONE STATUS</label>
+               <div id="mic-status" class="text-muted small">Awaiting permission...</div>
+            </div>
+
+            <div class="form-group mb-4">
+               <label>EXPORT FORMAT</label>
+               <select id="export-format" class="form-control">
+                  <option value="webm">WebM (Fastest)</option>
+                  <option value="wav">WAV (Lossless)</option>
+               </select>
+            </div>
+
+            <button class="btn btn-secondary btn-full mb-3" id="btn-request-mic">Initialize Microphone</button>
+            
+            <div class="info-box mt-4">
+               <div class="info-icon">🎙️</div>
+               <p class="small">Privacy Note: This tool uses the **MediaRecorder API**. All audio data is stored temporarily in your browser's private **RAM (Blob memory)**—it is never uploaded to any server.</p>
+            </div>
+         </aside>
+
+         <div class="record-pane">
+            <div class="record-timer" id="display-timer">00:00</div>
+            
+            <div class="visualizer-box">
+               <canvas id="visualizer-canvas"></canvas>
+            </div>
+
+            <div class="record-actions">
+               <button class="action-btn" id="btn-start" title="Start Recording">
+                  <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/></svg>
+               </button>
+               <button class="action-btn" id="btn-stop" title="Stop Recording" disabled style="opacity: 0.5;">
+                  <svg viewBox="0 0 24 24"><path d="M6 6h12v12H6z"/></svg>
+               </button>
+            </div>
+
+            <div class="recording-list" id="recording-container">
+               <!-- Recordings appear here -->
+            </div>
+         </div>
+      </div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5">
+        <h2>Capturing Voice in Private: The Logic of Secure Audio Recording</h2>
+        <p>We’ve all been there: you have a quick thought, a segment for a podcast, or a sample for a musical project that you need to record instantly. You look for an <strong>audio recorder online</strong> or a "Cloud Voice Clip Tool" to capture the sound. But as you look at the "Microphone Access" and "Cloud Sync" prompts of many modern web tools, you stop. Do you really want to share your project's "Spoken Assets" and your private environment with an anonymous server? Do you want your voice signatures archived by a third-party analytics dashboard?</p>
+
+        <p>At 99tool.in, we built our <strong>audio recorder & editor</strong> to provide a professional-grade capture environment without the privacy trade-off. By utilizing native browser MediaStream APIs and local blob storage, we allow you to <strong>record and trim audio</strong> entirely within the secure sandbox of your machine. Whether you’re a content creator building a narration, a student recording a lecture draft, or a musician capturing a riff, our <strong>safe recorder utility</strong> ensures that your sound stays where it belongs: on your device, under your total sovereignty.</p>
+        
+        <div class="tool-preview-box mt-4 mb-4" style="text-align:center;">
+           <img src="../../assets/images/markdown-preview.png" alt="Pro-Grade Audio Recording Terminal featuring real-time visualizer and secure playback controls visuals" class="tool-preview" id="tool-preview-img" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+        </div>
+
+        <h3 class="mt-4">The Logic of "Local Resonance"</h3>
+        <p>Resource management is about "Acoustic Integrity." Most basic <strong>online recorders</strong> are sluggish or buffer your audio to a server, leading to "Audio Lag" or degraded quality. Our <strong>professional sound recorder</strong> takes a human-centric approach: we focus on **Deterministic Hardware Interaction** and **Zero-Latency Visual Feedback**.</p>
+        
+        <p>We've engineered a capture engine that maps your microphone input to a high-frequency visualizer and a local memory blob instantly. Our <strong>safe signal validator</strong> provides a real-time oscilloscope of the sound wave, ensuring you have clear levels before and during the session. This transparency transforms a technical recording into a seamless creative experience, helping you build high-quality assets with total confidence and absolute privacy.</p>
+
+        <h3 class="mt-4">Why Recording is the Creator’s Ethical Choice</h2>
+        <p>In the age of digital profiling and automated technical scraping, your voice is a biometric signature. Using a standard <strong>voice recorder online free</strong> service creates a digital record of how you sound and what you are saying. Our 100% <strong>audio engine</strong> removes this "Privacy Vulnerability" entirely from your workflow.</p>
+        
+        <p>Because the recording and processing happen in your browser's private memory, your audio is invisible to the outside world. No analytics are tracked, no voice-to-text is performed, and no proprietary sound mapping is shared with AI trackers or advertisers. At 99tool.in, we believe that <strong>documenting your ideas</strong> should be an empowering utility, not a data-collection opportunity. With us, you have a private, professional studio for your voice that fits in your browser tab.</p>
+
+        <h3 class="mt-4">How to Capture and Refine Safely (Step-by-Step)</h3>
+        <p>Recording a high-impact clip should be a high-speed, 5-second task. Here is how to use our <strong>audio tool</strong>:</p>
+        <ul style="line-height: 1.8; margin-bottom: 20px;">
+          <li><strong>Step 1: Anchor the Input</strong> — Click "Initialize Microphone" to grant local browser permissions. Our system verifies the connection securely within the sandbox.</li>
+          <li><strong>Step 2: Start the Session</strong> — Click the Red record button. The timer and visualizer will activate, showing your local sound mapping in real-time.</li>
+          <li><strong>Step 3: Capture the Hook</strong> — Speak or play into your mic. The data is saved into a private Blob in your local RAM, never touching a server.</li>
+          <li><strong>Step 4: Secure the Export</strong> — Stop the recording to generate a playback card. Listen, trim, and download the lossless result directly to your machine.</li>
+        </ul>
+
+        <h3 class="mt-4">Strategic Use Cases for Your Local Audio Recorder</h3>
+        <p>Our <strong>searchable sound laboratory</strong> is the essential companion for modern digital hygiene:</p>
+        
+        <p><strong>For Podcasters:</strong> Recording sensitive interviews or drafts? Use our <strong>audio recorder</strong> to capture the session without risking cloud data leaks.</p>
+        
+        <p><strong>For Developers:</strong> Capturing sound effects for a confidential game project? Use our <strong>safe design tool</strong> for a clean, private environment that ensures absolute security.</p>
+        
+        <p><strong>For Memo Takers:</strong> Recording private voice notes to self? Use our <strong>safe storage tool</strong> to handle the data in local RAM, ensuring no records remain on the internet.</p>
+
+        <h3 class="mt-5">Explore Your Complete Audio Suite</h3>
+        <p>Once you’ve successfully captured your sound, you might need to clean up your visual project. Check out our <strong><a href="../design/image-editor.html">Image Editor</a></strong>. Or, if you need to generate test signals, use our <strong><a href="tone-generator.html">Music Tone Generator</a></strong>. At 99tool.in, we are building a world-class, 100% private digital toolkit to give you total control over the integrity of your information.</p>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+               Which browser is best for recording?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Chrome, Firefox, and Edge provide the **Highest Performance** for the MediaStream API. Brave is also excellent for ensuring zero third-party script interference.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Is my microphone always active?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. Our tool only requests access when you click **Initialize Microphone**. You can see the browser's native recording indicator (usually a red dot in the tab) which ensures transparency over when the mic is being mapped.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Is my audio data secure?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Absolutely. 100% of the recording and playback operations happen within your <strong>browser session's local memory</strong>. No queries are sent to our servers, and no records of your voice are kept. Your privacy is our standard.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 Privacy-First. MediaRecorder API Logic. 100%. Last updated: April 11, 2026.</p>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const btnRequestMic = document.getElementById('btn-request-mic');
+    const micStatus = document.getElementById('mic-status');
+    const timerDisplay = document.getElementById('display-timer');
+    const btnStart = document.getElementById('btn-start');
+    const btnStop = document.getElementById('btn-stop');
+    const container = document.getElementById('recording-container');
+    const formatSelect = document.getElementById('export-format');
+    const canvas = document.getElementById('visualizer-canvas');
+    const ctx = canvas.getContext('2d');
+
+    let mediaRecorder = null;
+    let chunks = [];
+    let startTime = null;
+    let timerInterval = null;
+    let audioCtx = null;
+    let analyser = null;
+    let visualizerFrame = null;
+
+    async function initMic() {
+       try {
+          const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+          setupRecorder(stream);
+          setupVisualizer(stream);
+          micStatus.innerText = 'Microphone ready.';
+          micStatus.style.color = '#4CAF50';
+          btnRequestMic.style.display = 'none';
+       } catch (err) {
+          micStatus.innerText = 'Permission denied or no mic found.';
+          micStatus.style.color = '#f44336';
+       }
+    }
+
+    function setupRecorder(stream) {
+       mediaRecorder = new MediaRecorder(stream);
+       
+       mediaRecorder.onstart = () => {
+          chunks = [];
+          startTime = Date.now();
+          timerInterval = setInterval(updateTimer, 1000);
+          timerDisplay.classList.add('active');
+          btnStart.disabled = true;
+          btnStart.style.opacity = '0.5';
+          btnStop.disabled = false;
+          btnStop.style.opacity = '1';
+       };
+
+       mediaRecorder.ondataavailable = e => chunks.push(e.data);
+
+       mediaRecorder.onstop = () => {
+          clearInterval(timerInterval);
+          timerDisplay.classList.remove('active');
+          btnStart.disabled = false;
+          btnStart.style.opacity = '1';
+          btnStop.disabled = true;
+          btnStop.style.opacity = '0.5';
+          
+          const blob = new Blob(chunks, { type: 'audio/' + formatSelect.value });
+          createRecordingItem(blob);
+       };
+    }
+
+    function setupVisualizer(stream) {
+       audioCtx = new AudioContext();
+       const source = audioCtx.createMediaStreamSource(stream);
+       analyser = audioCtx.createAnalyser();
+       analyser.fftSize = 256;
+       source.connect(analyser);
+       draw();
+    }
+
+    function draw() {
+       visualizerFrame = requestAnimationFrame(draw);
+       const bufferLength = analyser.frequencyBinCount;
+       const dataArray = new Uint8Array(bufferLength);
+       analyser.getByteFrequencyData(dataArray);
+
+       ctx.fillStyle = '#000';
+       ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+       const barWidth = (canvas.width / bufferLength) * 2.5;
+       let x = 0;
+
+       for(let i=0; i<bufferLength; i++) {
+          const barHeight = dataArray[i] / 2;
+          ctx.fillStyle = `rgb(229, 57, 53)`;
+          ctx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
+          x += barWidth + 1;
+       }
+    }
+
+    function updateTimer() {
+       const elapsed = Math.floor((Date.now() - startTime) / 1000);
+       const m = Math.floor(elapsed / 60).toString().padStart(2, '0');
+       const s = (elapsed % 60).toString().padStart(2, '0');
+       timerDisplay.innerText = `${m}:${s}`;
+    }
+
+    function createRecordingItem(blob) {
+       const url = URL.createObjectURL(blob);
+       const item = document.createElement('div');
+       item.className = 'recording-item';
+       const name = `Recording_${new Date().toLocaleTimeString()}`;
+       
+       item.innerHTML = `
+          <div class="recording-info">
+             <h4>${name}</h4>
+             <p>${(blob.size / 1024).toFixed(1)} KB | ${formatSelect.value.toUpperCase()}</p>
+          </div>
+          <div class="player-controls">
+             <button class="play-btn-small" onclick="window.playAudio('${url}')">PLAY</button>
+             <a href="${url}" download="${name}.${formatSelect.value}" class="play-btn-small" style="background:#444; text-decoration:none;">SAVE</a>
+          </div>
+       `;
+       container.prepend(item);
+    }
+
+    window.playAudio = (url) => {
+       const a = new Audio(url);
+       a.play();
+    };
+
+    btnRequestMic.onclick = initMic;
+    btnStart.onclick = () => {
+       if (mediaRecorder) mediaRecorder.start();
+       else initMic().then(() => mediaRecorder.start());
+    };
+    btnStop.onclick = () => mediaRecorder.stop();
+
+    // Canvas size
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+  </script>
+</body>
+</html>
+

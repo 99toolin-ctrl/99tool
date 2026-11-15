@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Pixel Art Editor – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/design/pixel-art-editor.html"/>
+<meta property="og:title" content="Pixel Art Editor – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/design/pixel-art-editor.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Pixel Art Editor \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/design/pixel-art-editor.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="pixel art editor, pixel art maker, sprite editor, retro graphics tool, 8-bit art tool, pixel editor" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json" id="schema-org-data">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Pixel Art Editor",
+    "operatingSystem": "Any",
+    "applicationCategory": "DesignApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Grid-based Drawing, Zooming, Palette management, PNG Export, Private local processing"
+  }
+  </script>
+
+  <style>
+    .pixel-layout { display: grid; grid-template-columns: 1fr; gap: 30px; }
+
+    .control-pane {
+      background: var(--dark-card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 30px; height: fit-content; position: sticky; top: 80px;
+    }
+
+    .canvas-container {
+      background: var(--dark-card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 40px; display: flex; align-items: center; justify-content: center;
+      min-height: 600px; overflow: auto; position: relative;
+    }
+
+    #pixel-canvas {
+      background: #f0f0f0; image-rendering: pixelated; box-shadow: 0 0 50px rgba(0,0,0,0.5);
+      cursor: crosshair; touch-action: none; background-image: 
+        linear-gradient(45deg, #ccc 25%, transparent 25%), 
+        linear-gradient(-45deg, #ccc 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #ccc 75%),
+        linear-gradient(-45deg, transparent 75%, #ccc 75%);
+      background-size: 20px 20px;
+      background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+    }
+
+    .palette { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 20px; }
+    .color-swatch { 
+       width: 100%; height: 35px; border-radius: 4px; border: 2px solid transparent; 
+       cursor: pointer; transition: 0.1s;
+    }
+    .color-swatch.active { border-color: white; transform: scale(1.1); box-shadow: 0 0 10px rgba(255,255,255,0.3); }
+
+    .zoom-controls { display: flex; gap: 10px; margin-bottom: 20px; }
+    .zoom-btn { flex: 1; padding: 10px; background: var(--dark); border: 1px solid var(--border); color: white; border-radius: 6px; cursor: pointer; }
+
+    @media (min-width: 1000px) {
+      .pixel-layout { grid-template-columns: 320px 1fr; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/design/pixel-art-editor.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/design/pixel-art-editor.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/design/pixel-art-editor.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/design/pixel-art-editor.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/design/pixel-art-editor.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/design/pixel-art-editor.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/design/pixel-art-editor.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/design/pixel-art-editor.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/design/pixel-art-editor.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/design/pixel-art-editor.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/design/pixel-art-editor.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/design/pixel-art-editor.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/design/pixel-art-editor.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/design/pixel-art-editor.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/design/pixel-art-editor.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/design/pixel-art-editor.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/design/pixel-art-editor.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/design/pixel-art-editor.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/design/pixel-art-editor.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/design/pixel-art-editor.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/design/pixel-art-editor.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/design/pixel-art-editor.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#creative">Graphic & Design</a> <span>/</span> 
+        <span>Pixel Art Editor</span>
+      </nav>
+      <h1>Pixel Art Editor</h1>
+      <p>Design retro graphics with surgical precision. A professional 8-bit laboratory for sprite work and asset creation—100% private and 100%.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div class="pixel-layout">
+         <aside class="control-pane">
+            <h3>Graphic Terminal</h3>
+            <p class="text-muted small mb-4">Manage your pixel coordinates.</p>
+
+            <div class="form-group mb-4">
+               <label>Grid Resolution</label>
+               <select id="grid-size" class="form-control">
+                  <option value="16">16 x 16 (Retro)</option>
+                  <option value="32" selected>32 x 32 (Standard)</option>
+                  <option value="64">64 x 64 (Detailed)</option>
+               </select>
+            </div>
+
+            <div class="zoom-controls">
+               <button class="zoom-btn" id="zoom-out">🔍-</button>
+               <button class="zoom-btn" id="zoom-in">🔍+</button>
+            </div>
+
+            <div class="form-group mb-4">
+               <label>Active Palette</label>
+               <div class="palette" id="palette">
+                  <!-- Swatches injected -->
+               </div>
+               <input type="color" id="custom-color" class="form-control mt-2" title="Pick custom color">
+            </div>
+
+            <button class="btn btn-secondary btn-full mb-3" id="btn-clear">Clear Grid</button>
+            <button class="btn btn-primary btn-full" id="btn-export">Export PNG</button>
+            
+            <div class="info-box mt-4">
+               <div class="info-icon">🕹️</div>
+               <p class="small">This tool uses **Nearest Neighbor** rendering logic to keep your pixels sharp during export. No blurring, perfect sprites.</p>
+            </div>
+         </aside>
+
+         <div class="pixel-pane">
+            <div class="canvas-container">
+               <canvas id="pixel-canvas"></canvas>
+            </div>
+         </div>
+      </div>
+
+      <!-- CONTENT SECTION -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.pixel_art_editor.what_is_title">What is the Pixel Art Editor?</h2>
+        <p>The Pixel Art Editor is a specialized client-side design canvas created to draw retro 8-bit graphics, sprites, and pixel icons. By subdivisions of coordinates into neat grids, the tool allows you to paint individual pixels with precision, creating sharp, pixelated graphics.</p>
+        <p>This editor executes grid coordinates and color actions locally in your browser. Because your canvas drawings, color swatches, and pixel data are processed offline in browser RAM, your game assets and creative designs are kept secure.</p>
+
+        <h2 class="mt-4" data-i18n="tools.pixel_art_editor.how_to_use_title">How to Use the Pixel Art Editor</h2>
+        <ol>
+          <li><strong>Set Your Grid Resolution:</strong> Choose a grid size (16x16, 32x32, or 64x64 pixels) from the grid dropdown in the sidebar to initialize your workspace.</li>
+          <li><strong>Select a Tool:</strong> Choose the "Pencil" tool to paint pixels, or select the "Eraser" tool to remove colors from grid cells.</li>
+          <li><strong>Pick a Color:</strong> Click on one of the preset retro color buttons in the palette grid, or click the custom color picker to select a custom shade.</li>
+          <li><strong>Draw on the Grid:</strong> Click and drag your cursor over the grid cells to fill them with color.</li>
+          <li><strong>Download Your Sprite:</strong> Click the "Clear Canvas" button to start over. Click "Export PNG" to download your pixel art as a crisp, lossless image file.</li>
+        </ol>
+
+        <h2 class="mt-4" data-i18n="tools.pixel_art_editor.key_features_title">Key Features</h2>
+        <ul>
+          <li><strong>Varying Grid Sizes:</strong> Switch grid scales between 16x16, 32x32, and 64x64 sizes to adjust detail levels.</li>
+          <li><strong>Pencil and Eraser States:</strong> Toggle drawing tools quickly to fill grid cells or erase colors.</li>
+          <li><strong>Retro Palette Swatches:</strong> Paint with built-in color swatches or define custom color coordinates.</li>
+          <li><strong>Nearest-Neighbor Scaling:</strong> Exports graphics with crisp edges, ensuring pixels do not blur during downloads.</li>
+          <li><strong>Local Browser Sandbox:</strong> Processes grid drawings offline to guarantee asset privacy.</li>
+        </ul>
+
+        <h2 class="mt-4" data-i18n="tools.pixel_art_editor.common_use_cases_title">Common Use Cases</h2>
+        <ul>
+          <li><strong>Indie Game Sprites:</strong> Design characters, item icons, tile maps, and animation frames for 8-bit games.</li>
+          <li><strong>Website Favicons:</strong> Create sharp 16x16 or 32x32 pixel shortcut icons for web development.</li>
+          <li><strong>Retro Avatars & Logos:</strong> Build stylized pixelated profile pictures, badges, and community forum avatars.</li>
+          <li><strong>Grid-Based Art Practice:</strong> Learn color blocking, pixel clustering, and pixel art techniques.</li>
+        </ul>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2 data-i18n="tools.pixel_art_editor.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Why does my downloaded pixel art look so small?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>By default, pixel art is exported at its raw resolution (e.g., 32x32 pixels) to make it ready for game engines. If you need it for social media, you can upscale the image in an editor using "Nearest Neighbor" interpolation to keep the edges sharp.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Are my game sprite designs uploaded to a server?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. 99tool.in processes all grid coordinates, color selections, and image compilations locally in your browser memory. Your intellectual property is safe and private.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I import an existing image to convert it into pixel art?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>This tool is a blank grid editor for drawing original designs. To turn existing photos into retro pixel assets, we recommend using our ASCII Art Generator or an image downscaler.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Will changing the grid size mid-drawing erase my work?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. Changing the grid resolution re-initializes the canvas grid matrix to prevent scaling errors. Make sure to export your artwork before switching resolution sizes.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              How do I paint with a transparent color?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>To make cells transparent, select the Eraser tool and click on the colored cells. Empty grid cells export as transparent pixels in your downloaded PNG.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 Privacy & Data Note: Pixel art grids, color selections, and canvas actions are executed locally in your browser. No files are uploaded to our servers.</p>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const canvas = document.getElementById('pixel-canvas');
+    const ctx = canvas.getContext('2d');
+    const gridSizeSelect = document.getElementById('grid-size');
+    const palette = document.getElementById('palette');
+    const customColor = document.getElementById('custom-color');
+    const btnClear = document.getElementById('btn-clear');
+    const btnExport = document.getElementById('btn-export');
+    const zoomIn = document.getElementById('zoom-in');
+    const zoomOut = document.getElementById('zoom-out');
+
+    const defaultColors = [
+       '#000000', '#ffffff', '#e53935', '#d81b60', 
+       '#8e24aa', '#5e35b1', '#3949ab', '#1e88e5', 
+       '#039be5', '#00acc1', '#00897b', '#43a047', 
+       '#7cb342', '#c0ca33', '#fdd835', '#ffb300'
+    ];
+
+    let resolution = 32;
+    let pixelSize = 16;
+    let activeColor = '#000000';
+    let zoomLevel = 1;
+    let pixels = []; // Flat array of colors
+
+    function init() {
+       resolution = parseInt(gridSizeSelect.value);
+       pixels = new Array(resolution * resolution).fill(null);
+       
+       // UI setup
+       palette.innerHTML = '';
+       defaultColors.forEach(c => {
+          const swatch = document.createElement('div');
+          swatch.className = 'color-swatch';
+          swatch.style.background = c;
+          if(c === activeColor) swatch.classList.add('active');
+          swatch.onclick = () => {
+             activeColor = c;
+             document.querySelectorAll('.color-swatch').forEach(s => s.classList.remove('active'));
+             swatch.classList.add('active');
+          };
+          palette.appendChild(swatch);
+       });
+
+       resizeCanvas();
+       render();
+    }
+
+    function resizeCanvas() {
+       canvas.width = resolution * pixelSize;
+       canvas.height = resolution * pixelSize;
+    }
+
+    function render() {
+       ctx.clearRect(0, 0, canvas.width, canvas.height);
+       for(let i=0; i<pixels.length; i++) {
+          if(pixels[i]) {
+             const x = (i % resolution) * pixelSize;
+             const y = Math.floor(i / resolution) * pixelSize;
+             ctx.fillStyle = pixels[i];
+             ctx.fillRect(x, y, pixelSize, pixelSize);
+          }
+       }
+    }
+
+    function handleInput(e) {
+       const rect = canvas.getBoundingClientRect();
+       const x = e.clientX - rect.left;
+       const y = e.clientY - rect.top;
+       
+       const gridX = Math.floor(x / (pixelSize * zoomLevel));
+       const gridY = Math.floor(y / (pixelSize * zoomLevel));
+       
+       if(gridX >= 0 && gridX < resolution && gridY >= 0 && gridY < resolution) {
+          pixels[gridY * resolution + gridX] = activeColor;
+          render();
+       }
+    }
+
+    let drawing = false;
+    canvas.onmousedown = (e) => { drawing = true; handleInput(e); };
+    canvas.onmousemove = (e) => { if(drawing) handleInput(e); };
+    window.onmouseup = () => drawing = false;
+
+    gridSizeSelect.onchange = init;
+    customColor.oninput = (e) => activeColor = e.target.value;
+    btnClear.onclick = () => { if(confirm('Clear all pixels?')) { pixels.fill(null); render(); } };
+
+    zoomIn.onclick = () => { zoomLevel += 0.2; canvas.style.transform = `scale(${zoomLevel})`; };
+    zoomOut.onclick = () => { zoomLevel = Math.max(0.5, zoomLevel - 0.2); canvas.style.transform = `scale(${zoomLevel})`; };
+
+    btnExport.onclick = () => {
+       const tempCanvas = document.createElement('canvas');
+       tempCanvas.width = resolution;
+       tempCanvas.height = resolution;
+       const tctx = tempCanvas.getContext('2d');
+       
+       for(let i=0; i<pixels.length; i++) {
+          if(pixels[i]) {
+             tctx.fillStyle = pixels[i];
+             tctx.fillRect(i % resolution, Math.floor(i / resolution), 1, 1);
+          }
+       }
+
+       const link = document.createElement('a');
+       link.download = `pixel_art_${Date.now()}.png`;
+       link.href = tempCanvas.toDataURL();
+       link.click();
+    };
+
+    init();
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,621 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Task Time Tracker – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/productivity/task-time-tracker.html"/>
+<meta property="og:title" content="Task Time Tracker – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/productivity/task-time-tracker.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Task Time Tracker \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/productivity/task-time-tracker.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="time tracker, time tracker, task time tracking, productivity tracker, work timer, time logger" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json" id="schema-org-data">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Task Time Tracker",
+    "operatingSystem": "Any",
+    "applicationCategory": "ProductivityApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Individual task timers, Interactive activity history, Daily time summary, Privacy-first storage"
+  }
+  </script>
+
+  <style>
+    .tracker-layout {
+      display: grid;
+      grid-template-columns: 400px 1fr;
+      gap: 30px;
+    }
+
+    .active-task-box {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px;
+      text-align: center;
+      position: sticky;
+      top: 100px;
+      transition: border-color 0.3s;
+    }
+    .active-task-box.running { border-color: var(--primary); }
+
+    .timer-display {
+      font-size: 3.5rem;
+      font-weight: 800;
+      font-family: 'Fira Code', monospace;
+      color: var(--white);
+      margin: 20px 0;
+    }
+
+    .history-card {
+      background: var(--dark);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .history-info h4 { margin: 0; font-size: 0.95rem; }
+    .history-info p { margin: 4px 0 0; font-size: 0.75rem; color: var(--text-muted); }
+
+    .duration-tag {
+      background: rgba(255,255,255,0.05);
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.85rem;
+      color: var(--primary);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .stat-item {
+      background: var(--dark-card);
+      padding: 20px;
+      border-radius: var(--radius-sm);
+      text-align: center;
+      border:1px solid var(--border);
+    }
+
+    @media (max-width: 900px) {
+      .tracker-layout { grid-template-columns: 1fr; }
+      .active-task-box { position: static; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/productivity/task-time-tracker.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/productivity/task-time-tracker.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/productivity/task-time-tracker.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/productivity/task-time-tracker.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/productivity/task-time-tracker.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/productivity/task-time-tracker.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/productivity/task-time-tracker.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/productivity/task-time-tracker.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/productivity/task-time-tracker.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/productivity/task-time-tracker.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/productivity/task-time-tracker.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/productivity/task-time-tracker.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/productivity/task-time-tracker.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/productivity/task-time-tracker.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/productivity/task-time-tracker.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/productivity/task-time-tracker.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/productivity/task-time-tracker.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/productivity/task-time-tracker.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/productivity/task-time-tracker.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/productivity/task-time-tracker.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/productivity/task-time-tracker.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/productivity/task-time-tracker.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#productivity">Productivity</a> <span>/</span> 
+        <span>Task Tracker</span>
+      </nav>
+      <h1>Task Time Tracker</h1>
+      <p>Measure your productivity accurately. Track time across different tasks and analyze your work day without any tracking or cloud sync.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div class="tracker-layout">
+        <!-- LEFT: CURRENT TASK -->
+        <div class="active-area">
+          <div class="active-task-box" id="active-box">
+            <h3 id="current-task-name">No Task Selected</h3>
+            <div class="timer-display" id="timer-display">00:00:00</div>
+            
+            <div id="setup-view">
+              <div class="form-group">
+                <input type="text" id="task-input" class="form-control" placeholder="What are you working on?">
+              </div>
+              <button class="btn btn-primary btn-full btn-lg" id="start-btn">Start Tracking</button>
+            </div>
+
+            <div id="running-view" style="display: none;">
+              <div class="flex gap-2">
+                <button class="btn btn-primary btn-full" id="stop-btn">Stop & Save</button>
+                <button class="btn btn-secondary" id="cancel-btn">Discard</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: HISTORY & STATS -->
+        <div class="history-area">
+          <div class="stats-grid">
+            <div class="stat-item">
+              <p class="text-muted" style="font-size: 0.75rem;">Today's Total</p>
+              <h3 id="today-total">0h 0m</h3>
+            </div>
+            <div class="stat-item">
+              <p class="text-muted" style="font-size: 0.75rem;">Tasks Logged</p>
+              <h3 id="task-count">0</h3>
+            </div>
+          </div>
+
+          <div class="flex justify-between items-center mb-3">
+            <h3>Recent Activity</h3>
+            <button class="btn btn-secondary btn-sm" id="clear-history">Clear History</button>
+          </div>
+
+          <div id="history-list">
+            <!-- Items injected by JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.task_time_tracker.what_is_title">What is the Task Time Tracker?</h2>
+        <p>The Task Time Tracker is a private time-logging tool that lets you record how long you spend on specific tasks throughout the day. Standard cloud-based time trackers store your work logs on external servers, where they can be analyzed or shared. This tool stores all session data exclusively in your browser's localStorage, with no server interaction.</p>
+        <p>Start a task by name, press Stop when finished, and the completed session is instantly added to your activity log with an exact duration. Your today's total and individual logs persist across page refreshes and are cleared at the start of each new day.</p>
+
+        <h3 class="mt-4">How to Use the Task Time Tracker</h3>
+        <p>Logging a time session involves these steps:</p>
+        <ol class="mt-2 mb-3">
+          <li>Enter the name of your task (e.g., "Writing Proposal" or "Code Review") in the Task Name input field.</li>
+          <li>Click "Start Tracking" to begin the live stopwatch. The timer displays in real time on the interface.</li>
+          <li>Work on your task, then click "Stop &amp; Save" when you are done. The session is logged to the Recent Activity list.</li>
+          <li>View the "Today's Total" counter to see your cumulative tracked time for the current day.</li>
+          <li>Click "Clear All" to reset your activity log for the day.</li>
+        </ol>
+
+        <h3 class="mt-4">Key Features</h3>
+        <ul class="mt-2 mb-3">
+          <li><strong>Named Task Logging:</strong> Attaches a descriptive label to each time block so you know exactly which task each duration belongs to.</li>
+          <li><strong>Live Stopwatch Display:</strong> Shows hours, minutes, and seconds in real time while tracking is active.</li>
+          <li><strong>Daily Total Aggregation:</strong> Automatically sums all completed sessions into a running daily total.</li>
+          <li><strong>LocalStorage Persistence:</strong> Logs survive page refreshes and are automatically cleared each morning.</li>
+        </ul>
+
+        <h3 class="mt-4">Common Use Cases</h3>
+        <p>This tracker is helpful for the following tasks:</p>
+        <ul class="mt-2 mb-3">
+          <li><strong>Freelance Billing:</strong> Tracking billable hours per client project to generate accurate invoices without uploading work data to a third-party service.</li>
+          <li><strong>Personal Efficiency Audits:</strong> Identifying how much time you actually spend on deep work versus interruptions across a day.</li>
+          <li><strong>Research Sessions:</strong> Logging focused reading or data analysis intervals to assess study habits and total output.</li>
+        </ul>
+
+        <h3 class="mt-4">Frequently Asked Questions</h3>
+        <div class="faq-section mt-3">
+          <p><strong>Is the timer accurate to the second?</strong><br>Yes. The tracker uses the system clock (Date.now()) to measure durations, so it is accurate regardless of tab focus or browser throttling.</p>
+          <p><strong>Do my logs sync across devices?</strong><br>No. All data is stored locally in your browser's localStorage on the current device only. Use the export feature to move logs between devices if needed.</p>
+          <p><strong>What happens to my logs at the end of the day?</strong><br>Logs are automatically cleared at the start of a new day (midnight) to keep your workspace clean. Export important logs before midnight if you need a permanent record.</p>
+          <p><strong>Can I track multiple tasks simultaneously?</strong><br>No. The tracker is designed for one active task at a time, encouraging focused single-tasking rather than multitasking.</p>
+        </div>
+
+        <h3 class="mt-4">Privacy &amp; Data Note</h3>
+        <p>All task names, session durations, and daily totals are stored exclusively in your browser's localStorage. No time log data is transmitted to any server, shared with any third-party, or processed outside your device.</p>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2 data-i18n="tools.task_time_tracker.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Is the timer accurate to the second?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. The tracker uses your system clock (<code>Date.now()</code>) to measure durations with sub-second precision. Unlike basic interval-based timers, our <strong>time tracker</strong> remains accurate even if the tab is throttled by the browser in the background.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Do my logs sync to other devices?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. To protect your privacy, all session data is stored locally on your current machine only. There is no cloud sync, no account, and no server involved. Your professional logs stay on your device, under your sole control.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I export my time logs?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>A one-click CSV export feature is being designed for a future update, allowing you to download your daily or weekly logs directly to your machine for use in spreadsheets or invoices.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 100% Private. No cloud. No accounts. Your time is your own. Last updated: April 10, 2026.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    let activeTask = null;
+    let startTime = null;
+    let timerInterval = null;
+    let history = JSON.parse(localStorage.getItem('99tool_work_history')) || [];
+
+    const taskInput = document.getElementById('task-input');
+    const startBtn = document.getElementById('start-btn');
+    const stopBtn = document.getElementById('stop-btn');
+    const cancelBtn = document.getElementById('cancel-btn');
+    const timerDisplay = document.getElementById('timer-display');
+    const currentTaskName = document.getElementById('current-task-name');
+    const setupView = document.getElementById('setup-view');
+    const runningView = document.getElementById('running-view');
+    const activeBox = document.getElementById('active-box');
+    const historyList = document.getElementById('history-list');
+
+    function startTracking() {
+      const name = taskInput.value.trim() || 'Unnamed Task';
+      activeTask = name;
+      startTime = Date.now();
+      
+      currentTaskName.textContent = activeTask;
+      setupView.style.display = 'none';
+      runningView.style.display = 'block';
+      activeBox.classList.add('running');
+
+      timerInterval = setInterval(updateTimer, 1000);
+    }
+
+    function updateTimer() {
+      const diff = Date.now() - startTime;
+      timerDisplay.textContent = formatDuration(diff);
+    }
+
+    function stopTracking() {
+      const duration = Date.now() - startTime;
+      const entry = {
+        name: activeTask,
+        duration: duration,
+        timestamp: new Date().toLocaleString()
+      };
+
+      history.unshift(entry);
+      localStorage.setItem('99tool_work_history', JSON.stringify(history));
+      
+      resetTracker();
+      renderHistory();
+    }
+
+    function resetTracker() {
+      clearInterval(timerInterval);
+      activeTask = null;
+      startTime = null;
+      timerDisplay.textContent = '00:00:00';
+      currentTaskName.textContent = 'No Task Selected';
+      taskInput.value = '';
+      setupView.style.display = 'block';
+      runningView.style.display = 'none';
+      activeBox.classList.remove('running');
+    }
+
+    function formatDuration(ms) {
+      const totalSeconds = Math.floor(ms / 1000);
+      const hours = Math.floor(totalSeconds / 3600);
+      const minutes = Math.floor((totalSeconds % 3600) / 60);
+      const seconds = totalSeconds % 60;
+      return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    }
+
+    function formatFriendlyTime(ms) {
+      const totalMinutes = Math.floor(ms / (1000 * 60));
+      if (totalMinutes < 60) return `${totalMinutes}m`;
+      const hours = Math.floor(totalMinutes / 60);
+      const mins = totalMinutes % 60;
+      return `${hours}h ${mins}m`;
+    }
+
+    function renderHistory() {
+      historyList.innerHTML = '';
+      let totalMs = 0;
+
+      if (history.length === 0) {
+        historyList.innerHTML = '<div class="text-center text-muted py-5">Your work logs will appear here.</div>';
+        document.getElementById('today-total').textContent = '0h 0m';
+        document.getElementById('task-count').textContent = '0';
+        return;
+      }
+
+      history.forEach((entry, idx) => {
+        totalMs += entry.duration;
+        const card = document.createElement('div');
+        card.className = 'history-card';
+        card.innerHTML = `
+          <div class="history-info">
+            <h4>${entry.name}</h4>
+            <p>${entry.timestamp}</p>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="duration-tag">${formatFriendlyTime(entry.duration)}</div>
+            <button class="btn btn-secondary btn-sm" onclick="deleteLog(${idx})">×</button>
+          </div>
+        `;
+        historyList.appendChild(card);
+      });
+
+      document.getElementById('today-total').textContent = formatFriendlyTime(totalMs);
+       document.getElementById('task-count').textContent = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(history.length, 0) : history.length;
+    }
+
+    window.deleteLog = (idx) => {
+      history.splice(idx, 1);
+      localStorage.setItem('99tool_work_history', JSON.stringify(history));
+      renderHistory();
+    };
+
+    // Listeners
+    startBtn.onclick = startTracking;
+    stopBtn.onclick = stopTracking;
+    cancelBtn.onclick = () => {
+      if (confirm('Discard this tracking session?')) resetTracker();
+    };
+    document.getElementById('clear-history').onclick = () => {
+      if (confirm('Permanently delete all work logs?')) {
+        history = [];
+        localStorage.removeItem('99tool_work_history');
+        renderHistory();
+      }
+    };
+
+    // Init
+    renderHistory();
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

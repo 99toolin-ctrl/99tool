@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Spacebar Counter – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/network/spacebar-counter.html"/>
+<meta property="og:title" content="Spacebar Counter – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/network/spacebar-counter.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Spacebar Counter \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/network/spacebar-counter.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .counter-workspace {
+      max-width: 600px;
+      margin: 2rem auto;
+      text-align: center;
+    }
+    .space-box {
+      width: 100%;
+      height: 250px;
+      background: var(--bg-secondary);
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 2rem;
+      transition: all 0.1s;
+    }
+    .space-box.active {
+      transform: translateY(4px);
+      box-shadow: inset 0 4px 10px rgba(0,0,0,0.5);
+      border-color: var(--primary);
+    }
+    .count-val {
+      font-size: 6rem;
+      font-weight: 900;
+      color: var(--primary);
+    }
+    .count-label {
+       font-size: 1.2rem;
+       font-weight: 700;
+       color: var(--text-muted);
+       text-transform: uppercase;
+       letter-spacing: 2px;
+    }
+    .history-card {
+       background: var(--dark-card);
+       border: 1px solid var(--border);
+       padding: 1.5rem;
+       border-radius: 10px;
+       margin-top: 2rem;
+       text-align: left;
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/network/spacebar-counter.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/network/spacebar-counter.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/network/spacebar-counter.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/network/spacebar-counter.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/network/spacebar-counter.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/network/spacebar-counter.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/network/spacebar-counter.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/network/spacebar-counter.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/network/spacebar-counter.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/network/spacebar-counter.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/network/spacebar-counter.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/network/spacebar-counter.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/network/spacebar-counter.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/network/spacebar-counter.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/network/spacebar-counter.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/network/spacebar-counter.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/network/spacebar-counter.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/network/spacebar-counter.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/network/spacebar-counter.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/network/spacebar-counter.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/network/spacebar-counter.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/network/spacebar-counter.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Infinite Spacebar Counter</h1>
+      <p>Simply press your spacebar to count. Ideal for auditing hardware and tracking performance stats.</p>
+    </div>
+
+    <div class="counter-workspace">
+      <div class="space-box" id="space-box">
+         <div class="count-val" id="val">0</div>
+         <div class="count-label">Total Presses</div>
+      </div>
+
+      <div class="d-flex justify-content-center gap-3">
+         <button onclick="resetCounter()" class="btn btn-secondary btn-lg">Reset Local Count</button>
+      </div>
+
+      <div class="history-card">
+         <h3 style="font-size: 1rem; margin-bottom: 10px;">📊 Session Stats</h3>
+         <p id="stats-msg" style="color: var(--text-muted); font-size: 0.9rem;">Start pressing the spacebar to see statistics.</p>
+      </div>
+
+      <!-- SEO CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.spacebar_counter.what_is_title">What is the Infinite Spacebar Counter?</h2>
+        <p>The Infinite Spacebar Counter is a keyboard hardware diagnostic tool designed to record, count, and track mechanical inputs specifically for the spacebar key. As the largest and one of the most frequently pressed keys on standard layouts, the spacebar relies on stabilizers in addition to its primary switch. Keeping track of inputs makes it easy to audit response accuracy and key return travel time.</p>
+        <p>This utility captures keyboard events natively in the browser without loading delays. It records your active session statistics, including total presses, elapsed duration, and average presses per second, creating a clean audit dashboard for your input hardware.</p>
+
+        <h3 class="mt-4">How to Use the Spacebar Counter</h3>
+        <p>Using the input checker is simple and requires no configuration:</p>
+        <ol class="mt-2 mb-3">
+          <li>Ensure your browser window has active focus by clicking anywhere on the page.</li>
+          <li>Press the Spacebar key on your physical keyboard. The large digital counter will increment instantly.</li>
+          <li>Observe the live "Session Stats" card to review elapsed time and average speed.</li>
+          <li>Check that the count increments exactly once per key depression. If it skips or double-counts, your key might have contact anomalies.</li>
+          <li>Click the "Reset Local Count" button to wipe the memory cache and start a new audit.</li>
+        </ol>
+
+        <h3 class="mt-4">Key Features of the Key Audit Tool</h3>
+        <ul class="mt-2 mb-3">
+          <li><strong>Persistent Storage Count:</strong> Automatically saves your session totals using local storage so you do not lose progress if you refresh the page.</li>
+          <li><strong>Interactive Key Feedback:</strong> The digital display reacts visually to standard key-down and key-up states.</li>
+          <li><strong>Live Session Analytics:</strong> Calculates typing duration and averages key frequency in real-time.</li>
+          <li><strong>Dedicated Reset Switch:</strong> Allows immediate initialization to clear metrics for testing different keyboards.</li>
+        </ul>
+
+        <h3 class="mt-4">Common Use Cases</h3>
+        <p>This spacebar tracker is helpful for the following tasks:</p>
+        <ul class="mt-2 mb-3">
+          <li><strong> stabilizer Alignment Auditing:</strong> Inspecting mechanical keyboard stabilizers for uneven balance, sticking, or friction issues.</li>
+          <li><strong>Key Chatter Diagnosis:</strong> Detecting contact bounce (chatter) where a single switch press registers two or more inputs due to dust or wear.</li>
+          <li><strong>General Event Counting:</strong> Using the spacebar as a large manual button to count items, tasks, or event occurrences without looking at the screen.</li>
+        </ul>
+
+        <h3 class="mt-4">Frequently Asked Questions</h3>
+        <div class="faq-section mt-3">
+          <p><strong>What is keyboard chatter?</strong><br>Keyboard chatter occurs when a switch's metal leaf contacts bounce repeatedly, causing the computer to register multiple presses (e.g., double-spacing) from a single physical tap.</p>
+          <p><strong>Why is my count not updating when I press space?</strong><br>Ensure the web page is active by clicking on the window. Web browsers only capture keyboard events when the page has active focus.</p>
+          <p><strong>Does this counter test stabilizer balancing?</strong><br>Yes. You can test your stabilizers by pressing the spacebar on the far left edge, center, and far right edge to confirm that inputs register consistently from all positions.</p>
+          <p><strong>Can I use this tool on a mobile device?</strong><br>Yes. Tapping the virtual spacebar block on your screen or using an external Bluetooth keyboard will trigger the counter on smartphones and tablets.</p>
+        </div>
+
+        <h3 class="mt-4">Privacy & Data Note</h3>
+        <p>All key press events, duration intervals, and count values are processed entirely inside your browser's local sandbox memory. No keystroke logs or timing configurations are transmitted to external servers.</p>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const box = document.getElementById('space-box');
+    const valEl = document.getElementById('val');
+    const statsMsg = document.getElementById('stats-msg');
+    
+    let count = parseInt(localStorage.getItem('99tool_space_count')) || 0;
+    let startTime = null;
+    
+    valEl.innerText = count;
+
+    window.addEventListener('keydown', (e) => {
+       if (e.code === 'Space') {
+          e.preventDefault();
+          if (!startTime) startTime = performance.now();
+          
+          count++;
+          valEl.innerText = count;
+          box.classList.add('active');
+          localStorage.setItem('99tool_space_count', count);
+          updateStats();
+       }
+    });
+
+    window.addEventListener('keyup', (e) => {
+       if (e.code === 'Space') {
+          box.classList.remove('active');
+       }
+    });
+
+    function resetCounter() {
+       if(confirm('Reset total spacebar count?')) {
+          count = 0;
+          valEl.innerText = '0';
+          localStorage.setItem('99tool_space_count', 0);
+          startTime = null;
+          statsMsg.innerText = 'Start pressing the spacebar to see statistics.';
+       }
+    }
+
+    function updateStats() {
+       const elapsed = (performance.now() - startTime) / 1000;
+       const avg = (count / (elapsed || 0.1)).toFixed(2);
+       statsMsg.innerHTML = `Running for <strong>${Math.round(elapsed)}s</strong> | Average: <strong>${avg} presses/sec</strong>`;
+    }
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>

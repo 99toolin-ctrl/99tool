@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Diff Checker – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/developer/diff-checker.html"/>
+<meta property="og:title" content="Diff Checker – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/developer/diff-checker.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Diff Checker \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/developer/diff-checker.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="diff checker, compare text, file comparison tool, text diff tool, side by side diff" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json" id="schema-org-data">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Diff Checker",
+    "operatingSystem": "Any",
+    "applicationCategory": "DeveloperApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Side-by-side comparison, Line-by-line Diff, Addition/Deletion Highlighting, Sync Scrolling"
+  }
+  </script>
+
+  <style>
+    .diff-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .diff-inputs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .input-box {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .diff-textarea {
+      height: 300px;
+      font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', monospace;
+      font-size: 0.85rem;
+      line-height: 1.5;
+      padding: 15px;
+    }
+
+    .diff-viewer {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-top: 30px;
+    }
+
+    .diff-pane {
+      background: var(--dark-card);
+      height: 500px;
+      overflow: auto;
+      padding: 20px;
+      font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', monospace;
+      font-size: 0.82rem;
+      line-height: 1.6;
+      white-space: pre;
+    }
+
+    .diff-line {
+       display: flex;
+       gap: 10px;
+       min-height: 1.6em;
+    }
+
+    .ln {
+      color: var(--text-muted);
+      width: 40px;
+      text-align: right;
+      user-select: none;
+      flex-shrink: 0;
+    }
+
+    .line-content { flex: 1; }
+
+    .diff-added { background: rgba(76, 175, 80, 0.2); }
+    .diff-added .ln { color: #81c784; font-weight: 700; }
+    .diff-removed { background: rgba(229, 57, 53, 0.2); }
+    .diff-removed .ln { color: #ef5350; font-weight: 700; }
+    .diff-empty { background: rgba(0,0,0,0.1); }
+
+    .action-bar {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 900px) {
+      .diff-inputs, .diff-viewer { grid-template-columns: 1fr; }
+      .diff-pane { height: 350px; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/developer/diff-checker.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/developer/diff-checker.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/developer/diff-checker.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/developer/diff-checker.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/developer/diff-checker.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/developer/diff-checker.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/developer/diff-checker.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/developer/diff-checker.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/developer/diff-checker.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/developer/diff-checker.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/developer/diff-checker.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/developer/diff-checker.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/developer/diff-checker.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/developer/diff-checker.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/developer/diff-checker.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/developer/diff-checker.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/developer/diff-checker.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/developer/diff-checker.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/developer/diff-checker.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/developer/diff-checker.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/developer/diff-checker.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/developer/diff-checker.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#developer">Developer</a> <span>/</span> 
+        <span>Diff Checker</span>
+      </nav>
+      <h1>Diff Checker (File Comparison)</h1>
+      <p>Compare two versions of code or text side-by-side. Highlight additions and deletions instantly. 100% private.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div class="diff-layout">
+        <div class="diff-inputs">
+           <div class="input-box">
+              <label>Original Text (Old)</label>
+              <textarea id="text-left" class="form-control diff-textarea" placeholder="Paste original text here..."></textarea>
+           </div>
+           <div class="input-box">
+              <label>Changed Text (New)</label>
+              <textarea id="text-right" class="form-control diff-textarea" placeholder="Paste changed text here..."></textarea>
+           </div>
+        </div>
+
+        <div class="action-bar">
+          <button class="btn btn-primary" id="compare-btn">Find Differences</button>
+          <button class="btn btn-secondary" id="swap-btn">Swap</button>
+          <button class="btn btn-secondary" id="clear-btn">Clear</button>
+        </div>
+
+        <div id="diff-results" class="diff-viewer" style="display:none;">
+           <div id="pane-left" class="diff-pane"></div>
+           <div id="pane-right" class="diff-pane"></div>
+        </div>
+      </div>
+
+      <!-- CONTENT SECTION -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.diff_checker.what_is_title">What is the Diff Checker?</h2>
+        <p>The Diff Checker is an interactive client-side text comparison tool built to highlight modifications, deletions, and insertions between two blocks of text. By positioning original and changed texts side by side, developers and writers can quickly spot differences without manual scanning.</p>
+        <p>This comparison tool runs all line alignment analyses locally in your browser memory. Since no paragraphs, code strings, or document assets are sent to external web servers, your proprietary scripts, legal documents, and private drafts remain secure.</p>
+
+        <h2 class="mt-4" data-i18n="tools.diff_checker.how_to_use_title">How to Use the Diff Checker</h2>
+        <ol>
+          <li><strong>Paste the Original Text:</strong> Paste your base text (the original version) into the left textarea labeled "Original Text".</li>
+          <li><strong>Paste the Changed Text:</strong> Paste your modified text (the new version) into the right textarea labeled "Changed Text".</li>
+          <li><strong>Run the Comparison:</strong> Click the "Find Differences" button. The side-by-side view will display below, highlighting changes.</li>
+          <li><strong>Analyze the Highlights:</strong> Review the highlighted text blocks. Deletions from the original version are marked in red, while additions to the changed version are marked in green.</li>
+          <li><strong>Manage Your Workspace:</strong> Use the "Swap" button to switch the left and right inputs, or click "Clear" to reset both text panels.</li>
+        </ol>
+
+        <h2 class="mt-4" data-i18n="tools.diff_checker.key_features_title">Key Features</h2>
+        <ul>
+          <li><strong>Side-by-Side Comparison:</strong> Compares original and revised text blocks in adjacent panels for quick scanning.</li>
+          <li><strong>Color-Coded Difference Map:</strong> Highlights insertions in green and deletions in red to pinpoint modifications.</li>
+          <li><strong>Instant Text Swapping:</strong> Quickly swap original and changed panels to fix copy-paste order errors.</li>
+          <li><strong>Varying File Formats:</strong> Works with source code, plain text blocks, database exports, and Markdown scripts.</li>
+          <li><strong>100% Offline Reconciliation:</strong> Performs line matching algorithms locally in browser memory.</li>
+        </ul>
+
+        <h2 class="mt-4" data-i18n="tools.diff_checker.common_use_cases_title">Common Use Cases</h2>
+        <ul>
+          <li><strong>Source Code Audits:</strong> Compare script files to track down bugs, refactor layouts, or review modifications before commits.</li>
+          <li><strong>Document Draft Alignment:</strong> Identify clause modifications, sentence deletions, or additions between legal contract drafts.</li>
+          <li><strong>Configuration File Inspections:</strong> Verify parameter updates in server settings, environment variables, or schema scripts.</li>
+          <li><strong>Markdown and Text Reviews:</strong> Review content revisions in blog posts, technical documentation, or long-form articles.</li>
+        </ul>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section mt-5">
+        <div class="container-sm">
+          <h2 data-i18n="tools.diff_checker.faq_title">Frequently Asked Questions</h2>
+          <div class="faq-grid">
+            <div class="faq-item">
+              <button class="faq-question">Are my files or text inputs uploaded to a server?<span class="faq-icon">+</span></button>
+              <div class="faq-answer">
+                <p>No. 99tool.in processes all diffing algorithms, line highlighting, and panel updates locally on your device. None of your text inputs are uploaded, stored, or processed externally.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question">What is the "Swap" button for?<span class="faq-icon">+</span></button>
+              <div class="faq-answer">
+                <p>The Swap button exchanges the contents of the left and right panels. If you accidentally paste the newer text on the left, click Swap to fix the comparison direction.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question">Can I compare binary files like images or PDFs?<span class="faq-icon">+</span></button>
+              <div class="faq-answer">
+                <p>This checker is built specifically for text comparisons. For images or documents, we recommend converting files to plain text or using image comparison tools.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question">Is there a limit on the text size I can compare?<span class="faq-icon">+</span></button>
+              <div class="faq-answer">
+                <p>You can compare thousands of lines of text comfortably. For extremely large log files, your browser's processing speed may slow down. We recommend breaking large documents into smaller sections for best performance.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question">Does the diff tool work offline?<span class="faq-icon">+</span></button>
+              <div class="faq-answer">
+                <p>Yes. Once the page is loaded, the diff utility functions without an active internet connection, making it suitable for private, isolated development environments.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 Privacy & Data Note: Text comparisons, panel swaps, and line highlighting are processed locally in your browser. None of your text is uploaded. Updated: April 11, 2026.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const compareBtn = document.getElementById('compare-btn');
+    const swapBtn = document.getElementById('swap-btn');
+    const clearBtn = document.getElementById('clear-btn');
+    const results = document.getElementById('diff-results');
+    const paneLeft = document.getElementById('pane-left');
+    const paneRight = document.getElementById('pane-right');
+    const textLeft = document.getElementById('text-left');
+    const textRight = document.getElementById('text-right');
+
+    function simpleDiff(oldText, newText) {
+      const oldLines = oldText.split(/\r?\n/);
+      const newLines = newText.split(/\r?\n/);
+      
+      const resOld = [];
+      const resNew = [];
+      
+      let i = 0, j = 0;
+      while (i < oldLines.length || j < newLines.length) {
+        if (i < oldLines.length && j < newLines.length) {
+           if (oldLines[i] === newLines[j]) {
+              resOld.push({ type: 'normal', content: oldLines[i], ln: i + 1 });
+              resNew.push({ type: 'normal', content: newLines[j], ln: j + 1 });
+              i++; j++;
+           } else {
+              // Simple lookahead for match
+              let found = false;
+              for (let k = 1; k < 5; k++) {
+                if (i + k < oldLines.length && oldLines[i+k] === newLines[j]) {
+                   for (let m = 0; m < k; m++) {
+                      resOld.push({ type: 'removed', content: oldLines[i+m], ln: i + m + 1 });
+                      resNew.push({ type: 'empty', content: '', ln: '' });
+                   }
+                   i += k;
+                   found = true;
+                   break;
+                }
+                if (j + k < newLines.length && oldLines[i] === newLines[j+k]) {
+                   for (let m = 0; m < k; m++) {
+                      resOld.push({ type: 'empty', content: '', ln: '' });
+                      resNew.push({ type: 'added', content: newLines[j+m], ln: j + m + 1 });
+                   }
+                   j += k;
+                   found = true;
+                   break;
+                }
+              }
+              
+              if (!found) {
+                resOld.push({ type: 'removed', content: oldLines[i], ln: i + 1 });
+                resNew.push({ type: 'added', content: newLines[j], ln: j + 1 });
+                i++; j++;
+              }
+           }
+        } else if (i < oldLines.length) {
+           resOld.push({ type: 'removed', content: oldLines[i], ln: i + 1 });
+           resNew.push({ type: 'empty', content: '', ln: '' });
+           i++;
+        } else {
+           resOld.push({ type: 'empty', content: '', ln: '' });
+           resNew.push({ type: 'added', content: newLines[j], ln: j + 1 });
+           j++;
+        }
+      }
+      return { old: resOld, new: resNew };
+    }
+
+    function renderDiff() {
+      const diff = simpleDiff(textLeft.value, textRight.value);
+      paneLeft.innerHTML = '';
+      paneRight.innerHTML = '';
+      
+      diff.old.forEach(line => {
+        const div = document.createElement('div');
+        div.className = `diff-line diff-${line.type}`;
+        div.innerHTML = `<span class="ln">${line.ln}</span><span class="line-content">${escapeHTML(line.content)}</span>`;
+        paneLeft.appendChild(div);
+      });
+
+      diff.new.forEach(line => {
+        const div = document.createElement('div');
+        div.className = `diff-line diff-${line.type}`;
+        div.innerHTML = `<span class="ln">${line.ln}</span><span class="line-content">${escapeHTML(line.content)}</span>`;
+        paneRight.appendChild(div);
+      });
+
+      results.style.display = 'grid';
+    }
+
+    function escapeHTML(str) {
+      const div = document.createElement('div');
+      div.textContent = str;
+      return div.innerHTML;
+    }
+
+    // Sync scrolling
+    paneLeft.onscroll = () => paneRight.scrollTop = paneLeft.scrollTop;
+    paneRight.onscroll = () => paneLeft.scrollTop = paneRight.scrollTop;
+
+    compareBtn.onclick = renderDiff;
+    swapBtn.onclick = () => {
+       const tmp = textLeft.value;
+       textLeft.value = textRight.value;
+       textRight.value = tmp;
+       if (results.style.display === 'grid') renderDiff();
+    };
+    clearBtn.onclick = () => {
+       textLeft.value = '';
+       textRight.value = '';
+       results.style.display = 'none';
+    };
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

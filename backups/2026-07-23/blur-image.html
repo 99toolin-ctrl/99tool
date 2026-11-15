@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Blur Image – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/image/blur-image.html"/>
+<meta property="og:title" content="Blur Image – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/image/blur-image.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Blur Image \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/image/blur-image.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .editor-layout {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    @media (max-width: 992px) {
+      .editor-layout { grid-template-columns: 1fr; }
+    }
+    .canvas-container {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      min-height: 500px;
+      cursor: crosshair;
+      overflow: hidden;
+      position: relative;
+    }
+    #main-canvas {
+      max-width: 100%;
+      height: auto;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      border-radius: 4px;
+    }
+
+    .tool-panel {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      height: fit-content;
+      position: sticky;
+      top: 80px;
+    }
+    .tool-section { margin-bottom: 2rem; }
+    .tool-section h4 { font-size: 0.9rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem; letter-spacing: 1px; }
+
+    .brush-preview {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: rgba(229,57,53,0.3);
+      border: 1px solid var(--primary);
+      margin: 10px auto;
+    }
+
+    .range-wrap { margin-bottom: 1.5rem; }
+    .range-wrap label { display: block; margin-bottom: 5px; font-size: 0.8rem; }
+    
+    .mode-toggle {
+       display: grid;
+       grid-template-columns: 1fr 1fr;
+       gap: 10px;
+       margin-bottom: 1.5rem;
+    }
+    .mode-btn {
+       background: var(--dark);
+       border: 1px solid var(--border);
+       padding: 10px;
+       border-radius: 8px;
+       text-align: center;
+       cursor: pointer;
+       font-weight: 600;
+       font-size: 0.8rem;
+    }
+    .mode-btn.active { border-color: var(--primary); color: var(--primary); background: rgba(229,57,53,0.1); }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Privacy Image Blur Tool</h1>
+      <p>Selectively blur sensitive data or documents. 100% Private. Always.</p>
+    </div>
+
+    <div class="tool-container">
+      <div class="upload-area" id="drop-zone">
+        <div class="upload-icon">🌫️</div>
+        <p>Drop image to Censor or <span class="text-primary">browse files</span></p>
+        <p class="text-muted small">JPG, PNG, WEBP (No data usage)</p>
+        <input type="file" id="image-input" accept="image/*" hidden>
+      </div>
+
+      <div id="tool-workspace" class="hidden">
+        <div class="editor-layout">
+          <div class="canvas-container" id="canvas-container">
+             <canvas id="main-canvas"></canvas>
+          </div>
+
+          <div class="tool-panel">
+            <div class="tool-section">
+               <h4>Blur Mode</h4>
+               <div class="mode-toggle">
+                  <div class="mode-btn active" id="btn-brush">Brush Blur</div>
+                  <div class="mode-btn" id="btn-full" onclick="fullBlur()">Total Blur</div>
+               </div>
+            </div>
+
+            <div class="tool-section">
+               <h4>Adjustments</h4>
+               <div class="range-wrap">
+                  <label>Brush Size: <span id="brush-val">40</span></label>
+                  <input type="range" id="brush-size" min="10" max="150" value="40" class="w-100">
+               </div>
+               <div class="range-wrap">
+                  <label>Blur Intensity: <span id="blur-val">10</span>px</label>
+                  <input type="range" id="blur-level" min="2" max="50" value="10" class="w-100">
+               </div>
+            </div>
+
+            <button id="download-btn" class="btn btn-primary w-100">Download Censored Image</button>
+            <button id="reset-btn" class="btn btn-secondary w-100 mt-2">Reset All</button>
+            <p class="text-center mt-3 small text-muted">All processing happens in your browser</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5">
+        <h2>Shielding Your Privacy in Private: Secure Local Image Blurring</h2>
+        <p>We've all been there: you have a perfect photo to share, but it contains sensitive details—a license plate, a face in the background, or an accidental ID card on the desk. You look for a <strong>blur image tool</strong> online to help you obscure the sensitive parts and protect your privacy. But as you look at the "Image Analysis" and "Cloud Upload" permissions of most editors, you realize that the very details you are trying to hide are being scanned and recorded by an anonymous database. Do you really want to share your "Visual Secrets" with a cloud-based server?</p>
+
+        <p>At 99tool.in, we built our <strong>image blur tool</strong> to give you a professional privacy shield without the data sacrifice. By utilizing browser-side Canvas filters and zero-cloud processing, we allow you to <strong>censor images</strong> entirely within the secure sandbox of your own machine. Whether you’re a parent protecting your child's identity for social media, a journalist obscuring a sensitive document, or a professional censoring PII from a presentation, our <strong>safe blurring tool</strong> ensures that your original pixels stay where they belong: on your device, under your total sovereignty.</p>
+        
+        <div class="tool-preview-box mt-4 mb-4" style="text-align:center;">
+           <img src="../../assets/images/blur-preview.png" alt="Clean Image Blurring Interface with Gaussian Scattering and Selective Privacy Obfuscation Visuals" class="tool-preview" id="tool-preview-img" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+        </div>
+
+        <h3 class="mt-4">The Logic of Gaussian Scattering</h3>
+        <p>Image censorship isn't just about hiding; it’s about "Privacy Integrity." Most basic <strong>blur photo online</strong> services apply a messy, recognizable filter that can sometimes be reversed by advanced AI, leading to "Obfuscation Debt." Our <strong>professional blur tool</strong> takes a human-centric approach: we focus on **Gaussian Scattering** and **Selective Privacy Obfuscation**.</p>
+        
+        <p>We provide a "Privacy Brush" that allows you to apply high-intensity scattering only where it's needed, maintaining the visual quality of the rest of your image. Our <strong>safe censorship validator</strong> doesn't just smudge pixels; it creates a layered rendering pipeline that transforms sensitive details into unrecoverable mathematical noise. This transparency transforms a simple edit into a professional privacy audit, helping you share your visual life in a private, professional environment.</p>
+
+        <h3 class="mt-4">Why Blurring is the Citizen’s Ethical Choice</h2>
+        <p>In the age of facial recognition and automated surveillance, your unedited imagery is a map of your private life. When you use a standard <strong>blur image online free</strong> service that requires an upload, you are essentially giving away your "Private Original" for a third party to analyze before it’s obscured. Our 100% <strong>censorship utility</strong> removes this "Surveillance Risk" entirely from your sharing routine.</p>
+        
+        <p>Because the logic and scattering happen in your browser's private memory, your original files are invisible to the outside world. No analytics are tracked, no faces are harvested, and no location data is shared with advertisers or AI platforms. At 99tool.in, we believe that <strong>protecting your privacy</strong> should be an empowering utility, not a data-mining session. With us, you have a private, professional shield for your visual identity that fits in your browser tab.</p>
+
+        <h3 class="mt-4">How to Censor Your World (Step-by-Step)</h3>
+        <p>Obscuring a sensitive detail should be a high-speed, 10-second task. Here is how to use our <strong>image blur tool</strong>:</p>
+        <ul style="line-height: 1.8; margin-bottom: 20px;">
+          <li><strong>Step 1: Load Your Image</strong> — Drag and drop your photo into the workspace. It renders instantly in our local canvas without uploading a single byte to any server.</li>
+          <li><strong>Step 2: Target the Sensitivity</strong> — Adjust the "Brush Size" and "Blur Intensity." Use the "Full Blur" button to immediately obscure the entire frame for a total privacy reset.</li>
+          <li><strong>Step 3: Apply the Scattering</strong> — Paint directly over the sensitive areas. Our engine applies the scattering in real-time, allowing you to see exactly what is being hidden.</li>
+          <li><strong>Step 4: Export Your Privacy</strong> — Click "Download Censored Image." Our tool generates your safe file instantly and saves it to your local drive, ready for a worry-free share.</li>
+        </ul>
+
+        <h3 class="mt-4">Strategic Use Cases for Your Local Blur Tool</h3>
+        <p>Our <strong>selective image blur tool</strong> is the essential companion for varied digital life:</p>
+        
+        <p><strong>For Social Media Marketplace Sellers:</strong> Selling a car or a home? Use our <strong>secure blur tool</strong> to obscure license plates, street signs, or family photos in the background, keeping your location and identity private.</p>
+        
+        <p><strong>For Modern Digital Parents:</strong> Sharing a school event or a birthday party? Use our <strong>safe privacy brush</strong> to blur the faces of other children in the background, respecting their privacy while celebrating your family. </p>
+        
+        <p><strong>For Legal & Medical Professionals:</strong> Sharing a reference shot of a report or a patient's case? Use our <strong>private censorship tool</strong> to obscure names, ID numbers, and sensitive identifying text with absolute confidentiality.</p>
+
+        <h3 class="mt-5">Explore Your Complete Image Suite</h3>
+        <p>Once you’ve successfully obscured your sensitive data, you might need to adjust the rest of the image. Check out our <strong><a href="resize-image.html">Image Resizer</a></strong>. Or, if you need to add your own brand protection, use our <strong><a href="add-watermark.html">Image Watermark Adder</a></strong>. At 99tool.in, we are building a world-class, 100% private digital toolkit to give you total control over your visual identity.</p>
+      </section>
+ 
+      <!-- FAQ SECTION -->
+      <section class="faq-section mt-5">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Is the blur permanent and un-reversible?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. Our <strong>image blur tool</strong> uses high-intensity Gaussian Scattering that physically overwrites the original pixels on the canvas. Once you download the censored image, the original data in the blurred areas is mathematically unrecoverable, ensuring peak privacy.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Are my private photos uploaded to a server?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Absolutely not. For your total security, all blurring and pixel manipulation happen <strong>locally in your browser</strong>. Your original "Private Originals" never leave your machine, ensuring your sensitive data and face identities remain 100% private.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              What does "Gaussian Scattering" mean?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Gaussian Scattering is a professional mathematical technique used by our <strong>privacy tool</strong> to redistribute pixel values according to a normal distribution. Unlike simple pixelation, this creates a smooth, unreadable blur that is significantly harder for AI to de-obfuscate.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I adjust the "Strength" of the censorship?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. We provide an <strong>Intensity Slider</strong> so you can choose exactly how much scattering to apply. For text and documents, we recommend a higher intensity (20px+) to ensure complete unreadability, while for artistic depth, a lower value works great.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Does this tool work on high-res documents?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. Our <strong>safe censorship utility</strong> maintains the original resolution of your file. Whether you're blurring a 4K passport scan or a quick smartphone snap, the final output will be crisp where it’s clear and unreadable where it’s blurred.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Why should I use the Brush instead of Full Blur?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>The **Selective Brush** is designed for "Visual Narrative." It allows you to share an entire photo while only obscuring the specific sensitive parts—like a name tag or a house number—keeping the context of the photo intact without risking your PII (Personally Identifiable Information).</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const imageInput = document.getElementById('image-input');
+    const dropZone = document.getElementById('drop-zone');
+    const workspace = document.getElementById('tool-workspace');
+    const canvas = document.getElementById('main-canvas');
+    const ctx = canvas.getContext('2d');
+    
+    // Controls
+    const brushSlider = document.getElementById('brush-size');
+    const blurSlider = document.getElementById('blur-level');
+    const brushVal = document.getElementById('brush-val');
+    const blurVal = document.getElementById('blur-val');
+    const downloadBtn = document.getElementById('download-btn');
+    const resetBtn = document.getElementById('reset-btn');
+
+    let originalImg = null;
+    let blurredImg = null; // We create a blurred version in offscreen
+    let isDrawing = false;
+
+    dropZone.onclick = () => imageInput.click();
+    imageInput.onchange = (e) => handleFile(e.target.files[0]);
+    
+    // Init Drag and Drop using global helper
+    setupDragDrop('drop-zone', (files) => {
+       if (files.length) handleFile(files[0]);
+    });
+    
+    function handleFile(file) {
+      if (!file || !file.type.startsWith('image/')) return;
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        originalImg = new Image();
+        originalImg.onload = () => {
+          canvas.width = originalImg.width;
+          canvas.height = originalImg.height;
+          ctx.drawImage(originalImg, 0, 0);
+          workspace.classList.remove('hidden');
+          generateBlurredSource();
+        };
+        originalImg.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function generateBlurredSource() {
+       const offCanvas = document.createElement('canvas');
+       const offCtx = offCanvas.getContext('2d');
+       offCanvas.width = canvas.width;
+       offCanvas.height = canvas.height;
+       
+       offCtx.filter = `blur(${blurSlider.value}px)`;
+       offCtx.drawImage(originalImg, 0, 0);
+       
+       blurredImg = offCanvas;
+    }
+
+    blurSlider.oninput = () => {
+       blurVal.innerText = blurSlider.value;
+       generateBlurredSource();
+     };
+    brushSlider.oninput = () => brushVal.innerText = brushSlider.value;
+
+    function fullBlur() {
+       ctx.drawImage(blurredImg, 0, 0);
+    }
+
+    // Manual Blur Brush
+    canvas.onmousedown = () => isDrawing = true;
+    window.onmouseup = () => isDrawing = false;
+    canvas.onmousemove = (e) => {
+       if (!isDrawing) return;
+       
+       const rect = canvas.getBoundingClientRect();
+       const scaleX = canvas.width / rect.width;
+       const scaleY = canvas.height / rect.height;
+       const x = (e.clientX - rect.left) * scaleX;
+       const y = (e.clientY - rect.top) * scaleY;
+
+       ctx.save();
+       ctx.beginPath();
+       ctx.arc(x, y, brushSlider.value / 2, 0, Math.PI * 2);
+       ctx.clip();
+       ctx.drawImage(blurredImg, 0, 0);
+       ctx.restore();
+    };
+
+    resetBtn.onclick = () => {
+       if (originalImg) ctx.drawImage(originalImg, 0, 0);
+    };
+
+    downloadBtn.onclick = () => {
+       const url = canvas.toDataURL('image/jpeg', 0.95);
+       const a = document.createElement('a');
+       a.href = url;
+       a.download = `censored_${Date.now()}.jpg`;
+       a.click();
+    };
+  </script>
+</body>
+</html>

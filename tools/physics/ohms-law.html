@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Ohms Law – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/physics/ohms-law.html"/>
+<meta property="og:title" content="Ohms Law – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/physics/ohms-law.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Ohms Law \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/physics/ohms-law.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .physics-workspace {
+      max-width: 650px;
+      margin: 2rem auto;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      border-radius: 20px;
+    }
+    .input-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+    .input-group { position: relative; }
+    label { display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-muted); }
+    input {
+      width: 100%;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.8rem;
+      border-radius: 8px;
+      font-size: 1.1rem;
+    }
+    .unit-label {
+      position: absolute;
+      right: 1rem;
+      bottom: 0.8rem;
+      color: var(--primary);
+      font-weight: 700;
+      pointer-events: none;
+    }
+    .result-area {
+       background: rgba(255,255,255,0.03);
+       padding: 1.5rem;
+       border-radius: 12px;
+       margin-top: 2rem;
+       text-align: center;
+       border: 1px solid var(--border);
+       display: none;
+    }
+    .res-val { font-size: 2.5rem; font-weight: 900; color: var(--primary); margin-bottom: 0.5rem; }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/physics/ohms-law.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/physics/ohms-law.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/physics/ohms-law.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/physics/ohms-law.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/physics/ohms-law.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/physics/ohms-law.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/physics/ohms-law.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/physics/ohms-law.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/physics/ohms-law.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/physics/ohms-law.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/physics/ohms-law.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/physics/ohms-law.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/physics/ohms-law.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/physics/ohms-law.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/physics/ohms-law.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/physics/ohms-law.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/physics/ohms-law.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/physics/ohms-law.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/physics/ohms-law.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/physics/ohms-law.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/physics/ohms-law.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/physics/ohms-law.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Infinite Ohm's Law Calculator</h1>
+      <p>Analyze electrical circuits instantly. Enter any two values to solve for the third.</p>
+    </div>
+
+    <div class="physics-workspace">
+      <div class="input-grid">
+         <div class="input-group">
+            <label>Voltage (V)</label>
+            <input type="number" id="v" placeholder="Enter Voltage">
+            <span class="unit-label">V</span>
+         </div>
+         <div class="input-group">
+            <label>Current (I)</label>
+            <input type="number" id="i" placeholder="Enter Current">
+            <span class="unit-label">A</span>
+         </div>
+         <div class="input-group">
+            <label>Resistance (R)</label>
+            <input type="number" id="r" placeholder="Enter Resistance">
+            <span class="unit-label">Ω</span>
+         </div>
+      </div>
+      
+      <div class="mt-4 d-flex gap-3">
+         <button onclick="calculate()" class="btn btn-primary btn-lg btn-full">Calculate</button>
+         <button onclick="clearFields()" class="btn btn-secondary btn-lg btn-full">Clear</button>
+      </div>
+
+      <div class="result-area" id="result-box">
+         <div class="small text-muted mb-2">Calculated Result</div>
+         <div class="res-val" id="res-val">0</div>
+         <div id="res-formula" class="font-weight-bold">V = I × R</div>
+      </div>
+
+      <!-- SEO CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.ohms_law_calculator.what_is_title">What is the Infinite Ohm's Law Calculator?</h2>
+        <p>The Infinite Ohm's Law Calculator is an interactive electrical circuit diagnostic designed to calculate the relationship between Voltage ($V$), Current ($I$), and Resistance ($R$). Ohm's Law is a core concept in electrical engineering and physics, defined by the formula $V = I \times R$. This equation states that the current flowing through a conductor between two points is directly proportional to the voltage across the two points, and inversely proportional to the resistance between them.</p>
+        <p>This utility allows you to enter any two known variables to immediately solve for the third missing value. It helps students, engineers, and makers visualize circuit parameters and verify theoretical designs.</p>
+
+        <h3 class="mt-4">How to Use the Ohm's Law Solver</h3>
+        <p>You can calculate the missing value by inputting any two parameters:</p>
+        <ol class="mt-2 mb-3">
+          <li>Identify the two values you already know (Voltage, Current, or Resistance).</li>
+          <li>Enter the known variables into their respective input fields:
+            <ul>
+              <li>Voltage in Volts (V)</li>
+              <li>Current in Amperes (A)</li>
+              <li>Resistance in Ohms (Ω)</li>
+            </ul>
+          </li>
+          <li>Leave the field you want to solve for completely blank.</li>
+          <li>Click the "Calculate" button to compute the missing variable.</li>
+          <li>Review the solved value, which will automatically populate the empty input field, and inspect the formula breakdown in the result panel.</li>
+          <li>Click "Clear" to wipe all fields and start a new circuit calculation.</li>
+        </ol>
+
+        <h3 class="mt-4">Key Features</h3>
+        <ul class="mt-2 mb-3">
+          <li><strong>Dynamic Multi-Variable Solver:</strong> Automatically detects which two values are provided and selects the correct formula configuration ($V = I \times R$, $I = V / R$, or $R = V / I$).</li>
+          <li><strong>Precise Formatting Output:</strong> Calculates results to three decimal places with correct electrical unit suffixes.</li>
+          <li><strong>Formula Breakdown Panel:</strong> Shows the exact mathematical steps used to solve your specific parameters.</li>
+          <li><strong>Offline Circuit Sandbox:</strong> Runs calculations locally using instant mathematical loops.</li>
+        </ul>
+
+        <h3 class="mt-4">Common Use Cases</h3>
+        <p>This electrical calculator is designed for the following applications:</p>
+        <ul class="mt-2 mb-3">
+          <li><strong>LED Resistor Sizing:</strong> Calculating the resistance required to limit current and protect LEDs from burning out.</li>
+          <li><strong>Breadboard Circuit Audits:</strong> Checking current draws on prototype circuits to ensure power supplies are not overloaded.</li>
+          <li><strong>Appliance Diagnostics:</strong> Estimating the resistance of heating elements or motors based on rated voltage and operational current.</li>
+        </ul>
+
+        <h3 class="mt-4">Frequently Asked Questions</h3>
+        <div class="faq-section mt-3">
+          <p><strong>What is Voltage?</strong><br>Voltage is the electrical potential difference or force that pushes electric charge (electrons) through a conducting loop, measured in Volts (V).</p>
+          <p><strong>What is Current?</strong><br>Current is the rate at which electrical charge flows past a point in a circuit, measured in Amperes or Amps (A).</p>
+          <p><strong>What is Resistance?</strong><br>Resistance is the measure of opposition to current flow in an electrical circuit, measured in Ohms (Ω).</p>
+          <p><strong>Can I enter milli-amps (mA) directly?</strong><br>No. The calculator uses base SI units (Amps, Volts, and Ohms). You should convert milliamperes to Amps by dividing by 1,000 before entering the value.</p>
+        </div>
+
+        <h3 class="mt-4">Privacy & Data Note</h3>
+        <p>All circuit calculations, values, and formula parameters are processed locally within your browser window. No input numbers or solved results are saved or sent to any remote servers.</p>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    function calculate() {
+       const vEl = document.getElementById('v');
+       const iEl = document.getElementById('i');
+       const rEl = document.getElementById('r');
+       
+       const v = parseFloat(vEl.value);
+       const i = parseFloat(iEl.value);
+       const r = parseFloat(rEl.value);
+
+       const box = document.getElementById('result-box');
+       const valEl = document.getElementById('res-val');
+       const formEl = document.getElementById('res-formula');
+
+       let result = "";
+       let formula = "";
+
+       if (!isNaN(v) && !isNaN(i)) {
+          // Solv for R
+          const res = v / i;
+          result = res.toFixed(3) + " Ω";
+          formula = `R = V / I (${v} / ${i})`;
+          rEl.value = res.toFixed(3);
+       } else if (!isNaN(v) && !isNaN(r)) {
+          // Solv for I
+          const res = v / r;
+          result = res.toFixed(3) + " A";
+          formula = `I = V / R (${v} / ${r})`;
+          iEl.value = res.toFixed(3);
+       } else if (!isNaN(i) && !isNaN(r)) {
+          // Solv for V
+          const res = i * r;
+          result = res.toFixed(3) + " V";
+          formula = `V = I × R (${i} × ${r})`;
+          vEl.value = res.toFixed(3);
+       } else {
+          return alert('Please enter at least two values.');
+       }
+
+       valEl.innerText = result;
+       formEl.innerText = formula;
+       box.style.display = 'block';
+    }
+
+    function clearFields() {
+       document.getElementById('v').value = '';
+       document.getElementById('i').value = '';
+       document.getElementById('r').value = '';
+       document.getElementById('result-box').style.display = 'none';
+    }
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>

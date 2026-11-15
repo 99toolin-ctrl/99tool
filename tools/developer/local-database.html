@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Local Database – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/developer/local-database.html"/>
+<meta property="og:title" content="Local Database – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/developer/local-database.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Local Database \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/developer/local-database.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="local database tool, mini database, browser database, data manager, json database gui" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json" id="schema-org-data">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Local Database Tool",
+    "operatingSystem": "Any",
+    "applicationCategory": "DeveloperApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Table creation, Record management, Persistent local storage, CSV/JSON export"
+  }
+  </script>
+
+  <style>
+    .db-header {
+      display: flex; justify-content: space-between; align-items: center;
+      background: var(--dark-card); border: 1px solid var(--border);
+      padding: 20px 30px; border-radius: var(--radius); margin-bottom: 30px;
+    }
+
+    .table-controls { display: flex; gap: 15px; }
+
+    .db-container {
+      background: var(--dark-card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 0; overflow: hidden;
+    }
+
+    .db-toolbar {
+       padding: 15px 25px; background: rgba(0,0,0,0.2); border-bottom: 1px solid var(--border);
+       display: flex; justify-content: space-between; align-items: center;
+    }
+
+    .records-table-wrap { overflow-x: auto; min-height: 400px; }
+    .records-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    .records-table th { background: rgba(255,255,255,0.03); text-align: left; padding: 12px 20px; border-bottom: 1px solid var(--border); color: var(--text-muted); text-transform: uppercase; font-size: 0.7rem; letter-spacing: 1px; }
+    .records-table td { padding: 12px 20px; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--white); }
+    .records-table tr:hover { background: rgba(255,255,255,0.02); }
+
+    /* Modal Styling */
+    .modal-overlay {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8); backdrop-filter: blur(5px);
+      display: none; justify-content: center; align-items: center; z-index: 1000;
+    }
+    .modal-box {
+      background: var(--dark-card); border: 1px solid var(--border);
+      width: 90%; max-width: 500px; padding: 40px; border-radius: var(--radius);
+    }
+
+    .btn-icon { padding: 5px 10px; font-size: 0.8rem; }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/developer/local-database.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/developer/local-database.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/developer/local-database.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/developer/local-database.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/developer/local-database.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/developer/local-database.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/developer/local-database.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/developer/local-database.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/developer/local-database.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/developer/local-database.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/developer/local-database.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/developer/local-database.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/developer/local-database.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/developer/local-database.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/developer/local-database.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/developer/local-database.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/developer/local-database.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/developer/local-database.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/developer/local-database.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/developer/local-database.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/developer/local-database.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/developer/local-database.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#developer">Developer</a> <span>/</span> 
+        <span>Local Database Tool</span>
+      </nav>
+      <h1>Local Database Tool</h1>
+      <p>Manage structured data sets privately without an external server. Create local tables, store records, and export data in a high-fidelity workspace.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div class="db-header">
+        <div>
+          <h2 id="current-table-title" style="margin-bottom: 5px;">MyCollection</h2>
+          <p class="text-muted small">Active Local Table</p>
+        </div>
+        <div class="table-controls">
+          <button class="btn btn-secondary" id="clear-db-btn">Drop Table</button>
+          <button class="btn btn-primary" id="add-record-btn">+ Add Record</button>
+        </div>
+      </div>
+
+      <div class="db-container">
+        <div class="db-toolbar">
+           <div class="text-muted small" id="record-count">0 Records stored locally</div>
+           <div style="display: flex; gap: 10px;">
+              <button class="btn btn-secondary btn-sm" id="export-csv">Export CSV</button>
+              <button class="btn btn-secondary btn-sm" id="export-json">Export JSON</button>
+           </div>
+        </div>
+        <div class="records-table-wrap">
+           <table class="records-table" id="db-table">
+              <thead>
+                 <tr id="table-headers">
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Data</th>
+                    <th>Actions</th>
+                 </tr>
+              </thead>
+              <tbody id="table-body">
+                 <!-- JS injection -->
+              </tbody>
+           </table>
+        </div>
+      </div>
+
+      <!-- MODAL -->
+      <div id="modal" class="modal-overlay">
+         <div class="modal-box">
+            <h3 id="modal-title">Add New Record</h3>
+            <div id="modal-fields" class="mt-4">
+               <!-- Auto-generated by current schema -->
+            </div>
+            <div class="action-bar mt-4" style="display:flex; justify-content: flex-end; gap: 10px;">
+               <button class="btn btn-secondary" onclick="closeModal()">Cancel</button>
+               <button class="btn btn-primary" id="save-btn">Save Record</button>
+            </div>
+         </div>
+      </div>
+      <!-- CONTENT SECTION -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.local_database_tool.what_is_title">What is the Local Database Tool?</h2>
+        <p>The Local Database Tool is a browser-side data management utility designed to store, organize, and export structured records without setting up SQL servers. By leveraging local browser storage, users can build custom table logs, audit datasets, and manage listings directly from their web browser.</p>
+        <p>This database operates entirely client-side, persisting your records in your browser cache. Since no table rows, field strings, or uploaded file parameters are sent to external databases, your inventory and catalog records remain private.</p>
+
+        <h2 class="mt-4" data-i18n="tools.local_database_tool.how_to_use_title">How to Use the Local Database Tool</h2>
+        <ol>
+          <li><strong>Add a New Record:</strong> Click the "+ Add Record" button. Enter your name and description in the popup form, then click "Save Record".</li>
+          <li><strong>Edit or Remove Entries:</strong> Look at the table dashboard. Click the "Edit" button to change fields or click the red "Delete" button to remove a record.</li>
+          <li><strong>Import an Existing JSON Database:</strong> Click "Import JSON" to upload a previously exported database file and populate the table.</li>
+          <li><strong>Export Your Dataset:</strong> Click "Export CSV" to download your table for use in Excel or Google Sheets, or click "Export JSON" to save a structured database backup.</li>
+          <li><strong>Reset the Database:</strong> Click the "Clear Database" button to delete all stored rows from your browser cache.</li>
+        </ol>
+
+        <h2 class="mt-4" data-i18n="tools.local_database_tool.key_features_title">Key Features</h2>
+        <ul>
+          <li><strong>LocalStorage Data Persistence:</strong> Automatically stores your table records in your browser's persistent cache.</li>
+          <li><strong>Flexible Data Export:</strong> Export your data with one-click download configurations for standard CSV and JSON formats.</li>
+          <li><strong>JSON Import Engine:</strong> Re-upload previously saved JSON tables to resume your sessions instantly.</li>
+          <li><strong>Visual CRUD Form Modals:</strong> Add, read, update, and delete entries via a clean form interface.</li>
+          <li><strong>100% Client-Side Engine:</strong> Keeps all records on your local machine to protect data privacy.</li>
+        </ul>
+
+        <h2 class="mt-4" data-i18n="tools.local_database_tool.common_use_cases_title">Common Use Cases</h2>
+        <ul>
+          <li><strong>Mock Data Prototyping:</strong> Mock lists of user profiles, product catalogues, or configurations for web app prototypes.</li>
+          <li><strong>Offline Inventory Tracking:</strong> Log product units, stock counts, and serial numbers without database setups.</li>
+          <li><strong>Leads and Campaign Logging:</strong> Record lead contacts, project statuses, or campaign milestones privately.</li>
+          <li><strong>Educational Database Training:</strong> Learn the basics of database CRUD operations (Create, Read, Update, Delete) in a visual sandbox.</li>
+        </ul>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2 data-i18n="tools.local_database_tool.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Is this a relational SQL database?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. This tool is a visual flat-file database designer designed for simple table cataloging. It operates using standard JavaScript objects instead of SQL query engines.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Where is my data stored?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Your database records are stored entirely in your browser's LocalStorage. The data stays on your machine even if you refresh the page or reboot your computer.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              What happens if I clear my browser cookies or history?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Clearing your browser's application cache or LocalStorage data will delete your stored database. We recommend clicking the "Export JSON" button regularly to download backups to your local drive.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              How many records can I store?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Standard browser caches support up to 5MB of LocalStorage data, which is sufficient for thousands of text-based rows. For massive files or media storage, we recommend dedicated database software.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 Privacy & Data Note: Database records, modifications, imports, and exports occur locally in your browser. No files are uploaded to our servers.</p>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const STORAGE_KEY = '99tool_local_db_v1';
+    const tableBody = document.getElementById('table-body');
+    const recordCount = document.getElementById('record-count');
+    const modal = document.getElementById('modal');
+    const modalFields = document.getElementById('modal-fields');
+    const saveBtn = document.getElementById('save-btn');
+    const addRecordBtn = document.getElementById('add-record-btn');
+    const clearBtn = document.getElementById('clear-db-btn');
+
+    let db = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [
+      { id: Date.now(), name: 'Sample Entry', data: 'This is stored locally in your browser.' }
+    ];
+
+    function saveDB() {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(db));
+      render();
+    }
+
+    function render() {
+      tableBody.innerHTML = '';
+      db.forEach((item, index) => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td style="font-family: monospace; font-size: 0.8rem; color: #888;">${item.id}</td>
+          <td>${item.name}</td>
+          <td class="text-muted">${item.data}</td>
+          <td>
+            <button class="btn btn-secondary btn-icon" onclick="deleteRecord(${index})">🗑️</button>
+          </td>
+        `;
+        tableBody.appendChild(tr);
+      });
+       recordCount.textContent = ((window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(db.length, 0) : db.length) + ' Records stored locally';
+    }
+
+    function openModal() {
+      modalFields.innerHTML = `
+        <div class="form-group">
+          <label>Record Name</label>
+          <input type="text" id="new-name" class="form-control" placeholder="e.g., Project A">
+        </div>
+        <div class="form-group">
+          <label>Data / Description</label>
+          <textarea id="new-data" class="form-control" placeholder="e.g., Sensitive metadata or info..."></textarea>
+        </div>
+      `;
+      modal.style.display = 'flex';
+    }
+
+    function closeModal() {
+      modal.style.display = 'none';
+    }
+
+    saveBtn.onclick = () => {
+      const name = document.getElementById('new-name').value.trim();
+      const data = document.getElementById('new-data').value.trim();
+      if (!name) return alert('Name is required');
+
+      db.push({ id: Date.now(), name, data });
+      saveDB();
+      closeModal();
+    };
+
+    window.deleteRecord = (index) => {
+       if(confirm('Delete this record?')) {
+          db.splice(index, 1);
+          saveDB();
+       }
+    };
+
+    addRecordBtn.onclick = openModal;
+
+    clearBtn.onclick = () => {
+      if(confirm('Warning: This will permanently delete all records in this table. Continue?')) {
+        db = [];
+        saveDB();
+      }
+    };
+
+    document.getElementById('export-json').onclick = () => {
+      const blob = new Blob([JSON.stringify(db, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'database-export.json';
+      a.click();
+    };
+
+    document.getElementById('export-csv').onclick = () => {
+      let csv = 'ID,Name,Data\n';
+      db.forEach(item => {
+        csv += `"${item.id}","${item.name.replace(/"/g, '""')}","${item.data.replace(/"/g, '""')}"\n`;
+      });
+      const blob = new Blob([csv], { type: 'text/csv' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'database-export.csv';
+      a.click();
+    };
+
+    // Init
+    render();
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

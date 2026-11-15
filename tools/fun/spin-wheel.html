@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Spin Wheel – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/fun/spin-wheel.html"/>
+<meta property="og:title" content="Spin Wheel – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/fun/spin-wheel.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Spin Wheel \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/fun/spin-wheel.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .wheel-workspace {
+      display: grid;
+      grid-template-columns: 1fr 350px;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .wheel-container {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 3rem;
+      overflow: hidden;
+    }
+    
+    .wheel-wrapper {
+      position: relative;
+      width: 400px;
+      height: 400px;
+    }
+    
+    #wheel {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 10px solid #222;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+      transition: transform 4s cubic-bezier(0.1, 0, 0.2, 1);
+    }
+    
+    .pointer {
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 40px;
+      background: var(--primary);
+      clip-path: polygon(50% 100%, 0 0, 100% 0);
+      z-index: 10;
+      filter: drop-shadow(0 4px 4px rgba(0,0,0,0.5));
+    }
+
+    .options-pane {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    
+    textarea {
+      background: var(--dark);
+      border: 1px solid var(--border);
+      color: white;
+      padding: 1rem;
+      border-radius: 8px;
+      resize: none;
+      height: 200px;
+      font-size: 0.9rem;
+    }
+
+    .winner-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.8);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      z-index: 100;
+      border-radius: 20px;
+      animation: fadeIn 0.3s ease;
+    }
+    .winner-card {
+      background: var(--dark-card);
+      border: 2px solid var(--primary);
+      padding: 3rem;
+      border-radius: 20px;
+      text-align: center;
+      transform: scale(0.8);
+      animation: popOut 0.5s forwards cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .winner-card h2 { font-size: 3rem; color: var(--primary); margin: 1rem 0; }
+
+    @keyframes popOut { to { transform: scale(1); } }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    @media (max-width: 992px) {
+      .wheel-workspace { grid-template-columns: 1fr; }
+      .wheel-wrapper { width: 300px; height: 300px; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/fun/spin-wheel.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/fun/spin-wheel.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/fun/spin-wheel.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/fun/spin-wheel.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/fun/spin-wheel.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/fun/spin-wheel.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/fun/spin-wheel.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/fun/spin-wheel.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/fun/spin-wheel.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/fun/spin-wheel.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/fun/spin-wheel.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/fun/spin-wheel.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/fun/spin-wheel.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/fun/spin-wheel.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/fun/spin-wheel.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/fun/spin-wheel.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/fun/spin-wheel.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/fun/spin-wheel.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/fun/spin-wheel.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/fun/spin-wheel.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/fun/spin-wheel.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/fun/spin-wheel.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-hero text-center">
+      <nav class="breadcrumb justify-content-center">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#fun">Fun</a> <span>/</span> 
+        <span>Spin Wheel Picker</span>
+      </nav>
+      <h1>Spin Wheel Random Picker</h1>
+      <p>The ultimate decision maker. Add your choices, spin the wheel, and let fate decide.</p>
+    </div>
+
+    <div class="wheel-workspace">
+      <section class="wheel-container">
+        <div class="winner-overlay" id="winner-overlay">
+          <div class="winner-card">
+             <p class="text-muted text-uppercase small">The Winner is:</p>
+             <h2 id="winner-text">Result</h2>
+             <button class="btn btn-primary" onclick="closeWinner()">Spin Again</button>
+          </div>
+        </div>
+
+        <div class="wheel-wrapper">
+          <div class="pointer"></div>
+          <canvas id="wheel"></canvas>
+        </div>
+        <button class="btn btn-primary btn-lg mt-5" id="spin-btn" onclick="spin()">SPIN THE WHEEL</button>
+      </section>
+
+      <aside class="options-pane">
+        <h3>Wheel Options</h3>
+        <p class="text-muted small">Enter one option per line</p>
+        <textarea id="options-input" oninput="drawWheel()">Pizza\nBurgers\nSushi\nTacos\nSalad\nThai</textarea>
+        <button class="btn btn-secondary" onclick="shuffleOptions()">Shuffle Options</button>
+      </aside>
+    </div>
+
+    <!-- CONTENT SECTION -->
+    <section class="seo-content mt-5 text-start">
+      <h2 data-i18n="tools.spin_wheel_picker.what_is_title">What is the Spin Wheel Random Picker?</h2>
+      <p>The Spin Wheel Random Picker is an interactive, client-side decision-making utility developed to pick items or options randomly. By inputting custom lists and spinning the wheel, users can choose random names, raffle winners, or options using canvas physics animations.</p>
+      <p>This spinner performs all canvas animations, sector math, and rotational easing locally in your browser memory. Your list entries, options, and spin results are kept strictly inside your active browser tab, ensuring complete data security.</p>
+
+      <h2 class="mt-4" data-i18n="tools.spin_wheel_picker.how_to_use_title">How to Use the Spin Wheel Random Picker</h2>
+      <ol>
+        <li><strong>Input Your Options:</strong> Enter your choices in the "Wheel Options" textarea, with one option per line. The canvas wheel redraws segments dynamically.</li>
+        <li><strong>Shuffle Choices:</strong> Click the "Shuffle Options" button to randomize the order of the segments on the wheel.</li>
+        <li><strong>Spin the Wheel:</strong> Click the "SPIN THE WHEEL" button to initiate the rotation animation.</li>
+        <li><strong>Read the Winner:</strong> Wait for the wheel to slow down and stop. Review the winner name highlighted in the alert overlay.</li>
+      </ol>
+
+      <h2 class="mt-4" data-i18n="tools.spin_wheel_picker.key_features_title">Key Features</h2>
+      <ul>
+        <li><strong>Dynamic Sector Resizing:</strong> Automatically splits and adjusts the wheel sections based on your options count.</li>
+        <li><strong>Realistic Easing Physics:</strong> Simulates a physical wheel spin with smooth deceleration math.</li>
+        <li><strong>Shuffle Operations:</strong> Re-orders items instantly to make the spin outcome even more unpredictable.</li>
+        <li><strong>Interactive Pointer:</strong> A clean indicator pointing to the winning segment upon stopping.</li>
+        <li><strong>100% Client-Side Processing:</strong> No server connections or database uploads are used.</li>
+      </ul>
+
+      <h2 class="mt-4" data-i18n="tools.spin_wheel_picker.common_use_cases_title">Common Use Cases</h2>
+      <ul>
+        <li><strong>Classroom Name Picker:</strong> Teachers picking students randomly for questions or presentation turns.</li>
+        <li><strong>Lunch or Dinner Chooser:</strong> Settle group debate decisions on what type of food to order.</li>
+        <li><strong>Raffles and Giveaways:</strong> Pick random winning tickets from an input list of participants.</li>
+        <li><strong>Game Nights:</strong> Select challenges, topics, or players randomly for board games.</li>
+      </ul>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-section mt-5">
+      <h2 data-i18n="tools.spin_wheel_picker.faq_title">Frequently Asked Questions</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <button class="faq-question">
+            Is there a limit on how many options I can add?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>You can add dozens of options. The canvas wheel will automatically scale and color-code sections. For readability, we recommend keeping it under 30 options.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Does the tool save my list of options?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Your options are saved in temporary session memory. Refreshing the tab will reset the options textarea to the default list.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Can I use this tool offline?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. The wheel is drawn on an HTML5 canvas and animated locally using JavaScript, making it fully operational offline.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Is the spin outcome mathematically fair?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. The simulator uses a pseudo-random number generator to determine the landing angle before the spin animation starts, ensuring each segment has a mathematically equal chance.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust-signal">
+      <p>🔒 Privacy & Data Note: Options inputs, canvas drawing actions, and spin calculations are executed locally in your browser. No data is stored or transmitted.</p>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const canvas = document.getElementById('wheel');
+    const ctx = canvas.getContext('2d');
+    const input = document.getElementById('options-input');
+    
+    let options = [];
+    let currentRotation = 0;
+    let isSpinning = false;
+
+    // Set canvas resolution
+    canvas.width = 800;
+    canvas.height = 800;
+
+    function drawWheel() {
+      options = input.value.split('\n').filter(opt => opt.trim().length > 0);
+      if (options.length === 0) return;
+
+      const arc = (2 * Math.PI) / options.length;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      options.forEach((opt, i) => {
+        const angle = i * arc;
+        
+        ctx.beginPath();
+        ctx.fillStyle = `hsl(${(i * 360) / options.length}, 70%, 40%)`;
+        ctx.moveTo(400, 400);
+        ctx.arc(400, 400, 380, angle, angle + arc);
+        ctx.lineTo(400, 400);
+        ctx.fill();
+
+        // Draw Text
+        ctx.save();
+        ctx.translate(400, 400);
+        ctx.rotate(angle + arc / 2);
+        ctx.textAlign = 'right';
+        ctx.fillStyle = 'white';
+        ctx.font = 'bold 24px Inter';
+        ctx.fillText(opt.substring(0, 15), 360, 10);
+        ctx.restore();
+      });
+    }
+
+    function shuffleOptions() {
+      const arr = input.value.split('\n').filter(o => o.trim());
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+      input.value = arr.join('\n');
+      drawWheel();
+    }
+
+    function spin() {
+      if (isSpinning || options.length === 0) return;
+      isSpinning = true;
+      document.getElementById('spin-btn').disabled = true;
+
+      const extraSpins = 5 + Math.floor(Math.random() * 5);
+      const stopAngle = Math.random() * (2 * Math.PI);
+      const totalRotation = extraSpins * 2 * Math.PI + stopAngle;
+      
+      currentRotation += totalRotation;
+      canvas.style.transform = `rotate(${currentRotation}rad)`;
+
+      setTimeout(() => {
+        isSpinning = false;
+        document.getElementById('spin-btn').disabled = false;
+        
+        // Calculate result
+        // The pointer is at -90deg (top). We need to see which arc aligns with it.
+        const normalizedAngle = (currentRotation % (2 * Math.PI));
+        const arc = (2 * Math.PI) / options.length;
+        // Pointer is at -PI/2. The wheel rotates clockwise.
+        // ResultIndex = Math.floor( ( (3/2 * PI) - normAngle) / arc ) % options.length
+        let resultIdx = Math.floor(((1.5 * Math.PI) - normalizedAngle) / arc) % options.length;
+        if (resultIdx < 0) resultIdx += options.length;
+        
+        showWinner(options[resultIdx]);
+      }, 4000);
+    }
+
+    function showWinner(text) {
+      document.getElementById('winner-text').innerText = text;
+      document.getElementById('winner-overlay').style.display = 'flex';
+    }
+
+    function closeWinner() {
+      document.getElementById('winner-overlay').style.display = 'none';
+    }
+
+    drawWheel();
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Shortcut Manager – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/productivity/shortcut-manager.html"/>
+<meta property="og:title" content="Shortcut Manager – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/productivity/shortcut-manager.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Shortcut Manager \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/productivity/shortcut-manager.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="keyboard shortcut manager, shortcut creator tool, hotkey manager, productivity shortcuts, custom hotkeys, web keyboard manager" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json" id="schema-org-data">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Keyboard Shortcut Manager",
+    "operatingSystem": "Any",
+    "applicationCategory": "ProductivityApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Custom hotkey recording, Site-wide navigation triggers, Browser shortcut reference, data persistence"
+  }
+  </script>
+
+  <style>
+    .shortcut-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .shortcut-card {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.3s;
+    }
+    .shortcut-card:hover { border-color: var(--primary); }
+
+    .key-combo {
+      font-family: 'Fira Code', monospace;
+      font-weight: 700;
+      background: var(--dark);
+      border: 1px solid var(--border);
+      padding: 4px 8px;
+      border-radius: 4px;
+      color: var(--primary);
+      text-transform: uppercase;
+      font-size: 0.9rem;
+    }
+
+    .action-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .recorder-box {
+      background: rgba(229, 57, 53, 0.05);
+      border: 1px dashed var(--primary);
+      padding: 30px;
+      border-radius: var(--radius);
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .active-keys {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--white);
+      margin: 15px 0;
+      min-height: 40px;
+    }
+
+    .cheat-sheet {
+       margin-top: 50px;
+       background: var(--dark-card);
+       padding: 30px;
+       border-radius: var(--radius);
+    }
+    .cheat-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.85rem;
+    }
+    .cheat-row:last-child { border: none; }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/productivity/shortcut-manager.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/productivity/shortcut-manager.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/productivity/shortcut-manager.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/productivity/shortcut-manager.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/productivity/shortcut-manager.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/productivity/shortcut-manager.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/productivity/shortcut-manager.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/productivity/shortcut-manager.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/productivity/shortcut-manager.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/productivity/shortcut-manager.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/productivity/shortcut-manager.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/productivity/shortcut-manager.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/productivity/shortcut-manager.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/productivity/shortcut-manager.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/productivity/shortcut-manager.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/productivity/shortcut-manager.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/productivity/shortcut-manager.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/productivity/shortcut-manager.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/productivity/shortcut-manager.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/productivity/shortcut-manager.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/productivity/shortcut-manager.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/productivity/shortcut-manager.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#productivity">Productivity</a> <span>/</span> 
+        <span>Shortcut Manager</span>
+      </nav>
+      <h1>Keyboard Shortcut Manager</h1>
+      <p>Supercharge your workflow. Assign custom key combinations to navigate 99tool.in and master the art of the "keyboard-only" productivity.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <!-- RECORDER -->
+      <div class="recorder-box">
+        <h3>Record New Shortcut</h3>
+        <p class="text-muted">Click the field below and press your keys (e.g., Shift + T)</p>
+        <div class="active-keys" id="record-display">Press Keys...</div>
+        
+        <div class="flex gap-2 justify-center mt-3">
+           <select id="action-select" class="form-control" style="max-width: 250px;">
+              <option value="">Select Action...</option>
+              <option value="../../">Go to Homepage</option>
+              <option value="../productivity/PRIVATE-to-do-list-manager.html">Open To-Do List</option>
+              <option value="../productivity/pomodoro-timer.html">Open Pomodoro</option>
+              <option value="../security/secure-password-vault.html">Open Password Vault</option>
+              <option value="../productivity/journal-app.html">Open Journal</option>
+           </select>
+           <button class="btn btn-primary" id="save-shortcut-btn">Save Shortcut</button>
+        </div>
+      </div>
+
+      <!-- SAVED SHORTCUTS -->
+      <h3>Active Shortcuts</h3>
+      <div id="shortcut-list" class="shortcut-grid mt-3">
+        <!-- Shortcuts injected here -->
+      </div>
+
+      <!-- CHEAT SHEET -->
+      <div class="cheat-sheet">
+         <h3>Master the Web: Essential Browser Hotkeys</h3>
+         <div class="cheat-row"><span>New Tab</span> <span class="key-combo">Ctrl + T</span></div>
+         <div class="cheat-row"><span>Close Tab</span> <span class="key-combo">Ctrl + W</span></div>
+         <div class="cheat-row"><span>Reopen Closed Tab</span> <span class="key-combo">Ctrl + Shift + T</span></div>
+         <div class="cheat-row"><span>Search Page</span> <span class="key-combo">Ctrl + F</span></div>
+         <div class="cheat-row"><span>Hard Refresh</span> <span class="key-combo">Ctrl + Shift + R</span></div>
+      </div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.keyboard_shortcut_manager.what_is_title">What is the Keyboard Shortcut Manager?</h2>
+        <p>The Keyboard Shortcut Manager is a local customization utility that maps keyboard combinations to navigation actions. Standard web navigation requires multiple mouse clicks, which disrupts workflow flow. This tool allows you to create custom key combinations to trigger navigation shortcuts.</p>
+        <p>Running entirely offline in your browser, this manager protects your workflow patterns and navigation configurations. It saves your shortcuts in local browser storage, ensuring your navigation setups are retained without being synced to cloud servers.</p>
+
+        <h3 class="mt-4">How to Use the Keyboard Shortcut Manager</h3>
+        <p>To record and use your custom navigation shortcuts, follow these steps:</p>
+        <ol class="mt-2 mb-3">
+          <li>Locate the "Record New Shortcut" card.</li>
+          <li>Click inside the "Press Keys..." box to place the recorder in listening mode.</li>
+          <li>Press your desired key combination (e.g., Shift + J) on your keyboard. The detected keys will appear in the box.</li>
+          <li>Select a target tool page (such as the To-Do List or Password Vault) from the "Select Action..." dropdown menu.</li>
+          <li>Click the "Save Shortcut" button. The new combo card will appear in the "Active Shortcuts" grid.</li>
+          <li>Press your key combination on this page to jump instantly to the linked destination.</li>
+          <li>Click the "×" button on any active card to delete that shortcut.</li>
+        </ol>
+
+        <h3 class="mt-4">Key Features of the Shortcut Customizer</h3>
+        <ul class="mt-2 mb-3">
+          <li><strong>Keyboard Event Capture:</strong> Instantly detects modifier keys (Ctrl, Shift, Alt) and primary keys on keydown.</li>
+          <li><strong>Linked Navigation Actions:</strong> Connects custom combinations to popular productivity tools in the workspace.</li>
+          <li><strong>Integrated Cheat Sheet:</strong> Displays standard browser shortcuts (like opening tabs or search bars) for reference.</li>
+          <li><strong>Storage Sandbox Sync:</strong> Saves your customized command list in browser cache for persistence.</li>
+        </ul>
+
+        <h3 class="mt-4">Common Use Cases</h3>
+        <p>This manager is helpful for the following setups:</p>
+        <ul class="mt-2 mb-3">
+          <li><strong>Mouse-Free Navigation:</strong> Navigating between text tools and converters quickly without moving your hands from the keyboard.</li>
+          <li><strong>Quick Dashboard Jumps:</strong> Mapping quick combinations to access the Kanban Board or Daily Habit Tracker.</li>
+          <li><strong>Workflow Optimization:</strong> Speeding up daily operations by mapping frequently used pages.</li>
+        </ul>
+
+        <h3 class="mt-4">Frequently Asked Questions</h3>
+        <div class="faq-section mt-3">
+          <p><strong>Can I override browser shortcuts like Ctrl + T?</strong><br>No. Browsers block websites from overriding system shortcuts (such as opening new tabs or printing pages) for security reasons. We recommend using combinations like Shift or Alt key combinations.</p>
+          <p><strong>Do these shortcuts work on other websites?</strong><br>No. These configurations apply only to the workspace here. The shortcuts run within this active tab session.</p>
+          <p><strong>Does this tool monitor or log my keystrokes?</strong><br>No. The tool only monitors key presses when recording a shortcut or listening for a saved combination. Your inputs are processed locally.</p>
+          <p><strong>How do I clear all my custom shortcuts?</strong><br>You can delete shortcuts individually using the "×" button on each card, or clear your browser's site cookies and storage to reset the tool.</p>
+        </div>
+
+        <h3 class="mt-4">Privacy & Data Note</h3>
+        <p>All custom keybind configurations, navigation actions, and keystroke events are processed locally on your computer. Your settings are saved securely in your browser's local cache and are never shared with external tracking scripts.</p>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 100% Local. Zero tracking. Just pure speed. Last updated: April 10, 2026.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    let shortcuts = JSON.parse(localStorage.getItem('99tool_shortcuts')) || [
+      { combo: 'Shift + H', action: '../../', label: 'Go to Homepage' }
+    ];
+
+    const recordDisplay = document.getElementById('record-display');
+    const shortcutList = document.getElementById('shortcut-list');
+    const actionSelect = document.getElementById('action-select');
+    const saveBtn = document.getElementById('save-shortcut-btn');
+
+    let currentCombo = [];
+
+    window.addEventListener('keydown', (e) => {
+      // Logic for recording
+      if (document.activeElement === document.body || document.activeElement === recordDisplay) {
+         if (['Control', 'Shift', 'Alt', 'Meta'].includes(e.key)) return;
+         
+         const parts = [];
+         if (e.ctrlKey) parts.push('Ctrl');
+         if (e.shiftKey) parts.push('Shift');
+         if (e.altKey) parts.push('Alt');
+         parts.push(e.key.toUpperCase());
+         
+         const comboStr = parts.join(' + ');
+         
+         // If we are "recording" (focus on box)
+         if (document.activeElement === recordDisplay.parentElement || e.target.id === 'record-display') {
+             recordDisplay.textContent = comboStr;
+             return;
+         }
+
+         // Global Listener for Execution
+         const match = shortcuts.find(s => s.combo === comboStr);
+         if (match) {
+            e.preventDefault();
+            location.href = match.action;
+         }
+      }
+    });
+
+    recordDisplay.onclick = () => {
+       recordDisplay.textContent = 'Recording... Press Keys';
+       recordDisplay.tabIndex = 0;
+       recordDisplay.focus();
+    };
+
+    saveBtn.onclick = () => {
+       const combo = recordDisplay.textContent;
+       const action = actionSelect.value;
+       const label = actionSelect.options[actionSelect.selectedIndex].text;
+
+       if (combo === 'Recording...' || combo === 'Press Keys...' || !action) {
+          alert('Please record a combo and select an action.');
+          return;
+       }
+
+       shortcuts.push({ combo, action, label });
+       localStorage.setItem('99tool_shortcuts', JSON.stringify(shortcuts));
+       renderShortcuts();
+       
+       recordDisplay.textContent = 'Saved!';
+       setTimeout(() => recordDisplay.textContent = 'Press Keys...', 1500);
+    };
+
+    function renderShortcuts() {
+      shortcutList.innerHTML = '';
+      shortcuts.forEach((s, idx) => {
+        const card = document.createElement('div');
+        card.className = 'shortcut-card';
+        card.innerHTML = `
+          <div>
+            <div class="key-combo">${s.combo}</div>
+            <div class="action-label">${s.label}</div>
+          </div>
+          <button class="btn btn-secondary btn-sm" onclick="deleteShortcut(${idx})">×</button>
+        `;
+        shortcutList.appendChild(card);
+      });
+    }
+
+    window.deleteShortcut = (idx) => {
+      shortcuts.splice(idx, 1);
+      localStorage.setItem('99tool_shortcuts', JSON.stringify(shortcuts));
+      renderShortcuts();
+    };
+
+    renderShortcuts();
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

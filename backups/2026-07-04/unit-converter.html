@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Unit Converter – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/learning/unit-converter.html"/>
+<meta property="og:title" content="Unit Converter – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/learning/unit-converter.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Unit Converter \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/learning/unit-converter.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .converter-workspace {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 3rem;
+    }
+    
+    .category-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .cat-tab {
+      padding: 10px 20px;
+      border-radius: 30px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.03);
+      cursor: pointer;
+      color: var(--text-muted);
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    .cat-tab.active { background: var(--primary); color: white; border-color: var(--primary); }
+
+    .conversion-grid {
+      display: grid;
+      grid-template-columns: 1fr 40px 1fr;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    
+    .unit-box {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .unit-input {
+      background: var(--dark);
+      border: 1.5px solid var(--border);
+      color: white;
+      font-size: 1.5rem;
+      padding: 15px;
+      border-radius: 12px;
+      width: 100%;
+      outline: none;
+    }
+    .unit-input:focus { border-color: var(--primary); }
+    
+    select {
+      background: var(--dark);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 8px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .arrow { font-size: 1.5rem; text-align: center; color: var(--primary); }
+
+    @media (max-width: 768px) {
+      .conversion-grid { grid-template-columns: 1fr; }
+      .arrow { transform: rotate(90deg); margin: 10px 0; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-hero text-center mb-5">
+      <nav class="breadcrumb justify-content-center">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#learning">Learning</a> <span>/</span> 
+        <span>Unit Converter</span>
+      </nav>
+      <h1>Unit Converter</h1>
+      <p>Convert measurements instantly between metric, imperial, and other standards. 100%.</p>
+    </div>
+
+    <div class="converter-workspace">
+      <div class="category-tabs">
+        <button class="cat-tab active" data-cat="length">📏 Length</button>
+        <button class="cat-tab" data-cat="weight">⚖️ Weight</button>
+        <button class="cat-tab" data-cat="temp">🌡️ Temperature</button>
+        <button class="cat-tab" data-cat="speed">🚀 Speed</button>
+        <button class="cat-tab" data-cat="area">📐 Area</button>
+        <button class="cat-tab" data-cat="volume">🧪 Volume</button>
+      </div>
+
+      <div class="conversion-grid">
+        <div class="unit-box">
+          <input type="number" id="input-left" class="unit-input" value="1" oninput="convert(true)">
+          <select id="select-left" onchange="convert(true)"></select>
+        </div>
+
+        <div class="arrow">⇄</div>
+
+        <div class="unit-box">
+          <input type="number" id="input-right" class="unit-input" value="0" oninput="convert(false)">
+          <select id="select-right" onchange="convert(true)"></select>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEO CONTENT -->
+    <section class="seo-content mt-5 container">
+      <h2>Industrial-Grade Precision Measurement Conversions</h2>
+      <p>Whether you are a chef adjusting a recipe, an engineer reading a blueprint, or a student solving physics problems, you need a reliable way to translate between measurement systems. Our <strong>unit converter</strong> provides a high-fidelity interface for length, weight, speed, and area conversions without the need for an internet connection. By removing the clutter of ad-heavy <strong>converter websites</strong>, we offer a pure, focused utility designed for accuracy.</p>
+      
+      <h3 class="mt-4">Expanding Your Measurement Horizons</h3>
+      <p>We've expanded our tool to include **Speed, Area, and Volume** logic. From calculating hectares in land surveys to converting knots for maritime navigation, our <strong>measurement conversion tool</strong> uses standardized mathematical constants to ensure that every calculation is precise. A consistent <strong>unit diagnostic auditor</strong> is key to maintaining data integrity in professional and academic environments.</p>
+
+      <ul style="line-height: 1.8; margin-top: 15px;">
+        <li><strong>Multivariate Support:</strong> Length, Weight, Temp, Speed, Area, Volume.</li>
+        <li><strong>Bi-directional Engine:</strong> Convert from either side instantly.</li>
+        <li><strong>Scientific Accuracy:</strong> 100% locally calculated constants.</li>
+      </ul>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const units = {
+      length: {
+        meters: 1,
+        kilometers: 1000,
+        centimeters: 0.01,
+        millimeters: 0.001,
+        inches: 0.0254,
+        feet: 0.3048,
+        yards: 0.9144,
+        miles: 1609.34
+      },
+      weight: {
+        grams: 1,
+        kilograms: 1000,
+        milligrams: 0.001,
+        pounds: 453.592,
+        ounces: 28.3495
+      },
+      speed: {
+        'meters/sec': 1,
+        'km/h': 1/3.6,
+        'miles/h': 0.44704,
+        'knots': 0.514444
+      },
+      area: {
+        'sq meters': 1,
+        'sq km': 1000000,
+        'sq feet': 0.092903,
+        'acres': 4046.86,
+        'hectares': 10000
+      },
+      volume: {
+        'liters': 1,
+        'milliliters': 0.001,
+        'gallons (US)': 3.78541,
+        'cubic meters': 1000
+      },
+      temp: {
+        celsius: 'c',
+        fahrenheit: 'f',
+        kelvin: 'k'
+      }
+    };
+
+    let currentCat = 'length';
+    const leftInput = document.getElementById('input-left');
+    const rightInput = document.getElementById('input-right');
+    const leftSelect = document.getElementById('select-left');
+    const rightSelect = document.getElementById('select-right');
+
+    function init() {
+      const catUnits = Object.keys(units[currentCat]);
+      leftSelect.innerHTML = "";
+      rightSelect.innerHTML = "";
+      catUnits.forEach(u => {
+        leftSelect.add(new Option(u, u));
+        rightSelect.add(new Option(u, u));
+      });
+      rightSelect.selectedIndex = Math.min(1, catUnits.length - 1);
+      convert(true);
+    }
+
+    function convert(leftToRight) {
+      const cat = units[currentCat];
+      if (currentCat === 'temp') {
+        let val = parseFloat(leftToRight ? leftInput.value : rightInput.value);
+        let from = leftToRight ? leftSelect.value : rightSelect.value;
+        let to = leftToRight ? rightSelect.value : leftSelect.value;
+        
+        let celsius;
+        if (from === 'celsius') celsius = val;
+        else if (from === 'fahrenheit') celsius = (val - 32) * 5/9;
+        else celsius = val - 273.15;
+
+        let res;
+        if (to === 'celsius') res = celsius;
+        else if (to === 'fahrenheit') res = (celsius * 9/5) + 32;
+        else res = celsius + 273.15;
+
+        if (leftToRight) rightInput.value = isNaN(res) ? "" : res.toFixed(2);
+        else leftInput.value = isNaN(res) ? "" : res.toFixed(2);
+      } else {
+        const factorLeft = cat[leftSelect.value];
+        const factorRight = cat[rightSelect.value];
+        if (leftToRight) {
+          const base = leftInput.value * factorLeft;
+          rightInput.value = (base / factorRight).toFixed(4).replace(/\.?0+$/, "");
+        } else {
+          const base = rightInput.value * factorRight;
+          leftInput.value = (base / factorLeft).toFixed(4).replace(/\.?0+$/, "");
+        }
+      }
+    }
+
+    document.querySelectorAll('.cat-tab').forEach(tab => {
+      tab.onclick = () => {
+        document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        currentCat = tab.dataset.cat;
+        init();
+      };
+    });
+
+    init();
+  </script>
+</body>
+</html>
+

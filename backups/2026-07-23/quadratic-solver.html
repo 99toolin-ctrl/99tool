@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Quadratic Solver – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/math/quadratic-solver.html"/>
+<meta property="og:title" content="Quadratic Solver – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/math/quadratic-solver.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Quadratic Solver \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/math/quadratic-solver.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .math-workspace {
+      max-width: 600px;
+      margin: 2rem auto;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      border-radius: 20px;
+    }
+    .eqn-display {
+       font-size: 1.8rem;
+       text-align: center;
+       margin-bottom: 2rem;
+       font-weight: 700;
+       color: var(--primary);
+    }
+    .coeff-inputs {
+       display: grid;
+       grid-template-columns: repeat(3, 1fr);
+       gap: 1.5rem;
+       margin-bottom: 2rem;
+    }
+    .coeff-group { text-align: center; }
+    label { display: block; margin-bottom: 8px; color: var(--text-muted); font-size: 0.9rem; }
+    input {
+       width: 100%;
+       background: var(--bg-secondary);
+       border: 1px solid var(--border);
+       color: var(--text);
+       padding: 0.8rem;
+       border-radius: 8px;
+       font-size: 1.2rem;
+       text-align: center;
+    }
+    .result-area {
+       background: rgba(255,255,255,0.03);
+       border: 1px dashed var(--border);
+       padding: 1.5rem;
+       border-radius: 12px;
+       display: none;
+       margin-top: 2rem;
+    }
+    .root-box {
+       display: grid;
+       grid-template-columns: 1fr 1fr;
+       gap: 20px;
+       margin-top: 15px;
+    }
+    .stat {
+       background: rgba(0,0,0,0.2);
+       padding: 1rem;
+       border-radius: 8px;
+       text-align: center;
+    }
+    .stat-val { font-size: 1.5rem; font-weight: 800; color: var(--primary); }
+    .stat-lab { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; margin-top: 4px; }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Infinite Quadratic Solver</h1>
+      <p>Solve $ax^2 + bx + c = 0$ instantly. Find roots and predict equation behavior with zero effort.</p>
+    </div>
+
+    <div class="math-workspace">
+      <div class="eqn-display" id="eqn-viz">ax² + bx + c = 0</div>
+      
+      <div class="coeff-inputs">
+         <div class="coeff-group">
+            <label>a</label>
+            <input type="number" id="a" value="1" oninput="updateEqn()">
+         </div>
+         <div class="coeff-group">
+            <label>b</label>
+            <input type="number" id="b" value="5" oninput="updateEqn()">
+         </div>
+         <div class="coeff-group">
+            <label>c</label>
+            <input type="number" id="c" value="6" oninput="updateEqn()">
+         </div>
+      </div>
+
+      <button onclick="solve()" class="btn btn-primary btn-lg btn-full">Solve Equation</button>
+
+      <div class="result-area" id="res-area">
+         <div class="text-center">
+            <div id="nature" class="badge badge-primary py-2 px-3 mb-2">Real & Distinct</div>
+            <div class="small text-muted">Discriminant (Δ) = <span id="disc">0</span></div>
+         </div>
+         
+         <div class="root-box">
+            <div class="stat">
+               <div class="stat-val" id="x1">0</div>
+               <div class="stat-lab">Root X₁</div>
+            </div>
+            <div class="stat">
+               <div class="stat-val" id="x2">0</div>
+               <div class="stat-lab">Root X₂</div>
+            </div>
+         </div>
+         
+         <div class="mt-4 p-3 bg-dark rounded small text-center">
+            <strong>Formula used:</strong> x = (-b ± √Δ) / 2a
+         </div>
+      </div>
+
+      <!-- SEO CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2>How to Solve Quadratic Equations</h2>
+        <p>A quadratic equation is a second-order polynomial equation of the form $ax^2 + bx + c = 0$. Our <strong>online quadratic solver</strong> uses the quadratic formula to find the values of $x$ (roots) that satisfy the equation. By calculating the **discriminant ($Δ = b^2 - 4ac$)**, we can determine if the roots are real, complex, or a single repeated value. This is a vital <strong>algebra auditor tool</strong> for high school and university students.</p>
+
+        <h3 class="mt-4">Understanding Root Nature</h2>
+        <p>If $Δ > 0$, the equation has two distinct real roots. If $Δ = 0$, there is exactly one real root (a double root). If $Δ < 0$, the roots are complex conjugates. Using our <strong>roots diagnostic auditor</strong>, you can instantly see this classification alongside numerical results. A consistent <strong>polynomial math tool</strong> is essential for curve fitting, physics modeling, and structural engineering diagnostics.</p>
+
+        <h3 class="mt-4">Privacy and Instant Solving</h2>
+        <p>At 99tool.in, we prioritize secure, client-side computations. Our <strong>private quadratic tool</strong> performs all polynomial math in your local browser window. No coefficient data ($a, b, c$) is ever sent to a server. This <strong>secure algebra calculator</strong> provides professional mathematical precision while maintaining your absolute data privacy.</p>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    function updateEqn() {
+       const a = document.getElementById('a').value;
+       const b = document.getElementById('b').value;
+       const c = document.getElementById('c').value;
+       document.getElementById('eqn-viz').innerText = `${a}x² + ${b}x + ${c} = 0`;
+    }
+
+    function solve() {
+       const a = parseFloat(document.getElementById('a').value);
+       const b = parseFloat(document.getElementById('b').value);
+       const c = parseFloat(document.getElementById('c').value);
+
+       if (isNaN(a) || isNaN(b) || isNaN(c)) return alert('Please enter all coefficients.');
+       if (a === 0) return alert('Coefficient "a" cannot be 0 for a quadratic equation.');
+
+       const d = (b * b) - (4 * a * c);
+       const discEl = document.getElementById('disc');
+       const natureEl = document.getElementById('nature');
+       const x1El = document.getElementById('x1');
+       const x2El = document.getElementById('x2');
+       const area = document.getElementById('res-area');
+
+       discEl.innerText = d.toFixed(2);
+       
+       if (d > 0) {
+          natureEl.innerText = "Real & Distinct";
+          natureEl.style.background = "#4caf50";
+          const x1 = (-b + Math.sqrt(d)) / (2 * a);
+          const x2 = (-b - Math.sqrt(d)) / (2 * a);
+          x1El.innerText = x1.toFixed(4);
+          x2El.innerText = x2.toFixed(4);
+       } else if (d === 0) {
+          natureEl.innerText = "Real & Repeated";
+          natureEl.style.background = "#2196f3";
+          const x = -b / (2 * a);
+          x1El.innerText = x.toFixed(4);
+          x2El.innerText = x.toFixed(4);
+       } else {
+          natureEl.innerText = "Complex Roots";
+          natureEl.style.background = "#ff9800";
+          const real = (-b / (2 * a)).toFixed(4);
+          const imag = (Math.sqrt(-d) / (2 * a)).toFixed(4);
+          x1El.innerText = `${real} + ${imag}i`;
+          x2El.innerText = `${real} - ${imag}i`;
+       }
+
+       area.style.display = 'block';
+    }
+  </script>
+</body>
+</html>

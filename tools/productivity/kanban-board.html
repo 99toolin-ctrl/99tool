@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Kanban Board – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/productivity/kanban-board.html"/>
+<meta property="og:title" content="Kanban Board – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/productivity/kanban-board.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Kanban Board \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/productivity/kanban-board.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="kanban board, kanban board, task board tool, project management board, kanban tool free, drag and drop task board" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json" id="schema-org-data">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Kanban Board",
+    "operatingSystem": "Any",
+    "applicationCategory": "ProductivityApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Drag-and-drop task management, Persistent columns, Local storage sync, Visual project tracking"
+  }
+  </script>
+
+  <style>
+    .kanban-board {
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      padding-bottom: 20px;
+      min-height: 500px;
+    }
+
+    .kanban-column {
+      flex: 1;
+      min-width: 300px;
+      background: var(--dark-card);
+      border-radius: var(--radius);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--border);
+    }
+
+    .column-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .column-header h3 { font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; margin: 0; color: var(--text-muted); }
+    .task-count { font-size: 0.75rem; background: var(--dark); padding: 2px 8px; border-radius: 50px; }
+
+    .kanban-tasks {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-height: 100px;
+    }
+
+    .kanban-card {
+      background: var(--dark);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      cursor: grab;
+      transition: all 0.2s;
+    }
+    .kanban-card:active { cursor: grabbing; opacity: 0.7; }
+    .kanban-card:hover { border-color: var(--primary); }
+
+    .card-footer {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      margin-top: 10px;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .kanban-card:hover .card-footer { opacity: 1; }
+
+    .dragging { opacity: 0.5; }
+    .drag-over { border-color: var(--primary); background: rgba(229, 57, 53, 0.05); }
+
+    .add-task-btn {
+      width: 100%;
+      background: transparent;
+      border: 1px dashed var(--border);
+      color: var(--text-muted);
+      padding: 10px;
+      border-radius: var(--radius-sm);
+      margin-top: 16px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .add-task-btn:hover { border-color: var(--primary); color: var(--primary); }
+
+    /* Modal */
+    .modal {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8);
+      backdrop-filter: blur(5px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 20px;
+    }
+    .modal.show { display: flex; }
+    .modal-content {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      width: 100%;
+      max-width: 400px;
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/productivity/kanban-board.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/productivity/kanban-board.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/productivity/kanban-board.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/productivity/kanban-board.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/productivity/kanban-board.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/productivity/kanban-board.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/productivity/kanban-board.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/productivity/kanban-board.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/productivity/kanban-board.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/productivity/kanban-board.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/productivity/kanban-board.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/productivity/kanban-board.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/productivity/kanban-board.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/productivity/kanban-board.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/productivity/kanban-board.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/productivity/kanban-board.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/productivity/kanban-board.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/productivity/kanban-board.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/productivity/kanban-board.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/productivity/kanban-board.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/productivity/kanban-board.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/productivity/kanban-board.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#productivity">Productivity</a> <span>/</span> 
+        <span>Kanban Board</span>
+      </nav>
+      <h1>Kanban Board</h1>
+      <p>Organize your work visually. Drag, drop, and manage tasks across your project's lifecycle with 100% privacy.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div class="kanban-board">
+        <!-- TO DO -->
+        <div class="kanban-column" id="todo" ondragover="allowDrop(event)" ondrop="drop(event)" ondragleave="dragLeave(event)">
+          <div class="column-header">
+            <h3>To Do</h3>
+            <span class="task-count" id="count-todo">0</span>
+          </div>
+          <div class="kanban-tasks" id="tasks-todo"></div>
+          <button class="add-task-btn" onclick="openModal('todo')">+ Add Task</button>
+        </div>
+
+        <!-- DOING -->
+        <div class="kanban-column" id="doing" ondragover="allowDrop(event)" ondrop="drop(event)" ondragleave="dragLeave(event)">
+          <div class="column-header">
+            <h3>In Progress</h3>
+            <span class="task-count" id="count-doing">0</span>
+          </div>
+          <div class="kanban-tasks" id="tasks-doing"></div>
+          <button class="add-task-btn" onclick="openModal('doing')">+ Add Task</button>
+        </div>
+
+        <!-- DONE -->
+        <div class="kanban-column" id="done" ondragover="allowDrop(event)" ondrop="drop(event)" ondragleave="dragLeave(event)">
+          <div class="column-header">
+            <h3>Done</h3>
+            <span class="task-count" id="count-done">0</span>
+          </div>
+          <div class="kanban-tasks" id="tasks-done"></div>
+          <button class="add-task-btn" onclick="openModal('done')">+ Add Task</button>
+        </div>
+      </div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.kanban_board.what_is_title">What is the Kanban Board?</h2>
+        <p>The Kanban Board is a visual task management board designed to help you organize workflows and track project progress. Standard project tools sync your tasks and checklists with external servers. In contrast, this Kanban organizer runs entirely offline in your browser, keeping your workflow data private.</p>
+        <p>Using a three-column pipeline (To Do, In Progress, Done), this tool lets you visualize task progression. It integrates with your browser's local storage to save your cards on your device.</p>
+
+        <h3 class="mt-4">How to Use the Kanban Board</h3>
+        <p>To organize your tasks visually, follow these steps:</p>
+        <ol class="mt-2 mb-3">
+          <li>Click the "+ Add Task" button at the bottom of any column (To Do, In Progress, or Done) to open the task creation modal.</li>
+          <li>Type your card details in the "Task Description" text box.</li>
+          <li>Click the "Add to Board" button. The card will appear at the bottom of the column with an updated column counter.</li>
+          <li>To change a task's status, click and drag the card, then drop it into your target column.</li>
+          <li>Click the "×" button on any card to permanently delete it.</li>
+        </ol>
+
+        <h3 class="mt-4">Key Features of the Task Board</h3>
+        <ul class="mt-2 mb-3">
+          <li><strong>Three-Column Pipeline:</strong> Follows standard productivity methods with To Do, In Progress, and Done columns.</li>
+          <li><strong>Drag-and-Drop Interface:</strong> Uses native browser drag actions for moving cards between columns.</li>
+          <li><strong>Dynamic Card Counters:</strong> Features real-time counters at the top of each column to display current task volumes.</li>
+          <li><strong>Local Storage Sync:</strong> Automatically saves all card text and column positions in your browser's local storage.</li>
+        </ul>
+
+        <h3 class="mt-4">Common Use Cases</h3>
+        <p>This visual board is helpful for the following tasks:</p>
+        <ul class="mt-2 mb-3">
+          <li><strong>Software Sprints:</strong> Tracking features, documentation tasks, and bugs without sharing code details with cloud services.</li>
+          <li><strong>Content Production:</strong> Planning drafts, edits, and publication dates for blogs or social channels.</li>
+          <li><strong>Event Organization:</strong> Managing vendor bookings, invitations, and setup schedules for local events.</li>
+        </ul>
+
+        <h3 class="mt-4">Frequently Asked Questions</h3>
+        <div class="faq-section mt-3">
+          <p><strong>Can I add custom columns to the board?</strong><br>To maintain structural simplicity and layout responsiveness, this tool features a fixed three-column pipeline (To Do, In Progress, Done).</p>
+          <p><strong>Does drag-and-drop work on mobile devices?</strong><br>While mobile browsers support task creation and deletion, the drag-and-drop interface is optimized for mouse and trackpad inputs on desktop computers.</p>
+          <p><strong>Can I create multiple boards?</strong><br>This utility features one main board. For tracking multiple projects, we recommend using text prefixes on your cards (e.g., "[Design] Update Logo").</p>
+          <p><strong>Will clearing my browser cache delete my tasks?</strong><br>Yes. Clearing your browser's site cookies and site data will delete your saved board configuration.</p>
+        </div>
+
+        <h3 class="mt-4">Privacy & Data Note</h3>
+        <p>All tasks, column assignments, and board details are processed and saved locally on your device. Your data is stored securely in your browser's local storage and is never uploaded to external servers.</p>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 100%. Drag, drop, and conquer your tasks privately. Last updated: April 10, 2026.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ADD TASK MODAL -->
+  <div id="task-modal" class="modal">
+    <div class="modal-content">
+      <h3 class="mb-3">Add New Task</h3>
+      <div class="form-group">
+        <label>Task Description</label>
+        <textarea id="task-text" class="form-control" placeholder="What needs to be done?" style="min-height: 100px;"></textarea>
+      </div>
+      <div class="flex gap-2 mt-4">
+        <button class="btn btn-primary btn-full" id="save-task-btn">Add to Board</button>
+        <button class="btn btn-secondary" onclick="closeModal()">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    let boardData = JSON.parse(localStorage.getItem('99tool_kanban')) || {
+      todo: [],
+      doing: [],
+      done: []
+    };
+
+    let targetColumn = '';
+
+    function renderBoard() {
+      ['todo', 'doing', 'done'].forEach(col => {
+        const container = document.getElementById(`tasks-${col}`);
+        const count = document.getElementById(`count-${col}`);
+        container.innerHTML = '';
+        
+        boardData[col].forEach((task, idx) => {
+          const card = document.createElement('div');
+          card.className = 'kanban-card';
+          card.draggable = true;
+          card.id = `task-${col}-${idx}`;
+          card.innerHTML = `
+            <div class="card-text">${escapeHTML(task)}</div>
+            <div class="card-footer">
+              <button class="btn-sm btn-secondary" style="padding: 2px 8px;" onclick="deleteTask('${col}', ${idx})">×</button>
+            </div>
+          `;
+          card.ondragstart = (e) => onDragStart(e, col, idx);
+          container.appendChild(card);
+        });
+        
+       count.textContent = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(boardData[col].length, 0) : boardData[col].length;
+      });
+      localStorage.setItem('99tool_kanban', JSON.stringify(boardData));
+    }
+
+    // --- Drag & Drop Logic ---
+    function onDragStart(event, col, idx) {
+      event.dataTransfer.setData('sourceCol', col);
+      event.dataTransfer.setData('sourceIdx', idx);
+      event.target.classList.add('dragging');
+    }
+
+    function allowDrop(event) {
+      event.preventDefault();
+      const col = event.currentTarget;
+      col.classList.add('drag-over');
+    }
+
+    function dragLeave(event) {
+      event.currentTarget.classList.remove('drag-over');
+    }
+
+    function drop(event) {
+      event.preventDefault();
+      const targetCol = event.currentTarget.id;
+      event.currentTarget.classList.remove('drag-over');
+
+      const sourceCol = event.dataTransfer.getData('sourceCol');
+      const sourceIdx = parseInt(event.dataTransfer.getData('sourceIdx'));
+
+      if (sourceCol === targetCol) return;
+
+      const task = boardData[sourceCol].splice(sourceIdx, 1)[0];
+      boardData[targetCol].push(task);
+      
+      renderBoard();
+    }
+
+    // --- Actions ---
+    function openModal(col) {
+      targetColumn = col;
+      document.getElementById('task-modal').classList.add('show');
+      document.getElementById('task-text').focus();
+    }
+
+    function closeModal() {
+      document.getElementById('task-modal').classList.remove('show');
+      document.getElementById('task-text').value = '';
+    }
+
+    document.getElementById('save-task-btn').onclick = () => {
+      const text = document.getElementById('task-text').value.trim();
+      if (!text) return;
+      
+      boardData[targetColumn].push(text);
+      renderBoard();
+      closeModal();
+    };
+
+    window.deleteTask = (col, idx) => {
+      boardData[col].splice(idx, 1);
+      renderBoard();
+    };
+
+    function escapeHTML(str) {
+      const p = document.createElement('p');
+      p.textContent = str;
+      return p.innerHTML;
+    }
+
+    // Init
+    renderBoard();
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

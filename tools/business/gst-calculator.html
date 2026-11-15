@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Gst Calculator – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/business/gst-calculator.html"/>
+<meta property="og:title" content="Gst Calculator – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/business/gst-calculator.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Gst Calculator \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/business/gst-calculator.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    .gst-workspace {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      border-radius: 20px;
+    }
+    .input-row { display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem; margin-bottom: 2rem; }
+    label { display: block; margin-bottom: 0.5rem; color: var(--text-muted); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; }
+    input, select {
+      width: 100%;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 1rem;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    
+    .toggle-bar {
+       display: flex;
+       justify-content: center;
+       gap: 10px;
+       margin-bottom: 2rem;
+    }
+    .btn-toggle {
+       background: rgba(255,255,255,0.05);
+       border: 1px solid var(--border);
+       padding: 8px 20px;
+       border-radius: 30px;
+       font-size: 0.8rem;
+       font-weight: 600;
+       color: var(--text-muted);
+       cursor: pointer;
+    }
+    .btn-toggle.active { background: var(--primary); color: white; border-color: var(--primary); }
+    
+    .tax-report {
+       margin-top: 2rem;
+       display: none;
+    }
+    .main-total {
+       background: rgba(var(--primary-rgb), 0.05);
+       border: 1px solid var(--primary);
+       padding: 2rem;
+       border-radius: 20px;
+       text-align: center;
+       margin-bottom: 20px;
+    }
+    .total-val { font-size: 3.5rem; font-weight: 800; color: var(--primary); font-family: 'JetBrains Mono', monospace; line-height: 1; }
+    .total-lab { font-size: 0.9rem; color: var(--text-muted); margin-top: 5px; text-transform: uppercase; letter-spacing: 1px; }
+    
+    .gst-table {
+       width: 100%;
+       border-collapse: collapse;
+       margin-top: 1rem;
+    }
+    .gst-table th, .gst-table td {
+       padding: 12px;
+       border-bottom: 1px solid var(--border);
+       text-align: left;
+    }
+    .gst-table th { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; }
+    .gst-table td { font-family: 'JetBrains Mono', monospace; font-weight: 600; }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/business/gst-calculator.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/business/gst-calculator.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/business/gst-calculator.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/business/gst-calculator.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/business/gst-calculator.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/business/gst-calculator.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/business/gst-calculator.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/business/gst-calculator.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/business/gst-calculator.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/business/gst-calculator.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/business/gst-calculator.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/business/gst-calculator.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/business/gst-calculator.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/business/gst-calculator.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/business/gst-calculator.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/business/gst-calculator.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/business/gst-calculator.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/business/gst-calculator.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/business/gst-calculator.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/business/gst-calculator.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/business/gst-calculator.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/business/gst-calculator.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Infinite GST Tax Auditor (India)</h1>
+      <p>Precision tax auditing for the Indian market. Handle GST inclusive and exclusive calculations with automated splits.</p>
+    </div>
+
+    <div class="gst-workspace">
+      <div class="toggle-bar">
+         <button class="btn-toggle active" id="mode-excl" onclick="setMode('excl')">GST Exclusive</button>
+         <button class="btn-toggle" id="mode-incl" onclick="setMode('incl')">GST Inclusive</button>
+      </div>
+
+      <div class="input-row">
+         <div>
+            <label id="price-label">Net Amount (Price)</label>
+            <input type="number" id="gst-amount-in" placeholder="0.00" oninput="solve()">
+         </div>
+         <div>
+            <label>GST Rate (%)</label>
+            <select id="gst-rate" onchange="solve()">
+               <option value="5">5%</option>
+               <option value="12">12%</option>
+               <option value="18" selected>18%</option>
+               <option value="28">28%</option>
+            </select>
+         </div>
+      </div>
+
+      <div class="tax-report" id="tax-panel">
+         <div class="main-total">
+            <div class="total-lab" id="res-total-lab">Total Amount</div>
+            <div class="total-val" id="res-total">₹0.00</div>
+         </div>
+
+         <table class="gst-table">
+            <thead>
+               <tr>
+                  <th>Description</th>
+                  <th>Amount (₹)</th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr>
+                  <td>Base Amount</td>
+                  <td id="res-base">₹0.00</td>
+               </tr>
+               <tr>
+                  <td>Total GST</td>
+                  <td id="res-gst-total">₹0.00</td>
+               </tr>
+               <tr>
+                  <td>CGST (Central)</td>
+                  <td id="res-cgst">₹0.00</td>
+               </tr>
+               <tr>
+                  <td>SGST / UTGST (State)</td>
+                  <td id="res-sgst">₹0.00</td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+
+      <!-- CONTENT SECTION -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.gst_calculator.what_is_title">What is the Infinite GST Tax Auditor (India)?</h2>
+        <p>The Infinite GST Tax Auditor (India) is a direct client-side utility designed to calculate the Goods and Services Tax (GST) for commercial transactions under the Indian taxation framework. By inputting a transaction value and selecting the applicable tax slab, the tool computes base values, tax elements, and final totals. It serves as an instant auditor for invoicing compliance and retail transactions.</p>
+        <p>A key requirement in standard Indian GST invoicing is the separation of taxes into Central GST (CGST) and State GST (SGST) or Union Territory GST (UTGST). This tool automatically splits the total tax amount to help you generate accurate ledger entries. Because all calculations take place inside your browser tab, your transaction values and tax records remain fully confidential.</p>
+
+        <h2 class="mt-4" data-i18n="tools.gst_calculator.how_to_use_title">How to Use the Infinite GST Tax Auditor (India)</h2>
+        <ol>
+          <li><strong>Select Calculation Mode:</strong> Choose "GST Exclusive" if you want to add tax to a net base amount, or "GST Inclusive" if you want to extract the base tax elements from a total gross amount.</li>
+          <li><strong>Input the Amount:</strong> Type your transaction amount into the numeric field. This represents the Net Amount for exclusive calculations or the Gross Amount for inclusive calculations.</li>
+          <li><strong>Select the Tax Slab:</strong> Choose the target GST rate from the dropdown options: 5% (common household goods), 12% (processed foods/electronics), 18% (standard services and capital goods), or 28% (luxury items).</li>
+          <li><strong>Review the Tax Report:</strong> The results panel appears instantly upon typing. It details the Total Amount, Base Amount, Total GST, and the specific CGST and SGST splits.</li>
+        </ol>
+
+        <h2 class="mt-4" data-i18n="tools.gst_calculator.key_features_title">Key Features</h2>
+        <ul>
+          <li><strong>Bi-directional Calculations:</strong> Switch easily between adding tax (exclusive) and extracting tax (inclusive) with a single click.</li>
+          <li><strong>Standard Indian Slabs:</strong> Built-in rate options covering 5%, 12%, 18%, and 28% to match standard GST council classifications.</li>
+          <li><strong>Automated CGST & SGST Split:</strong> Automatically divides the calculated tax into 50% Central GST and 50% State GST for intra-state invoicing.</li>
+          <li><strong>Instant Live Updates:</strong> View output shifts in real time as you adjust rates or type new numbers.</li>
+          <li><strong>Secure Offline Processing:</strong> Client-side execution keeps sensitive business sales figures and ledger amounts safe from cloud tracking.</li>
+        </ul>
+
+        <h2 class="mt-4" data-i18n="tools.gst_calculator.common_use_cases_title">Common Use Cases</h2>
+        <ul>
+          <li><strong>Freelance & Consulting Invoicing:</strong> Determine CGST and SGST splits to draft tax-compliant invoices for local clients.</li>
+          <li><strong>Small Business Tax Auditing:</strong> Quickly cross-examine supplier bills and receipts to ensure that GST has been calculated correctly before entry.</li>
+          <li><strong>Consumer Bill Audits:</strong> Verify whether a restaurant, hotel, or retail outlet is applying the correct GST rate to your final tab.</li>
+          <li><strong>E-commerce Pricing Setup:</strong> Calculate backward from target consumer-facing inclusive prices to discover your actual base profit margins.</li>
+        </ul>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2 data-i18n="tools.gst_calculator.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              What is the difference between GST Inclusive and Exclusive?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>GST Exclusive means the tax is calculated on top of the net amount (e.g., Net Amount + 18% GST = Total). GST Inclusive means the tax amount is already factored into the gross price (e.g., Total / 1.18 = Base Price, and the remainder is GST).</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Why does the tool split tax into CGST and SGST?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>For intra-state transactions in India (sales within the same state), the GST amount is divided equally between the Central Government (CGST) and the State Government (SGST/UTGST). The tool automatically divides the total GST by two to reflect this billing requirement.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Are my transaction amounts uploaded or saved?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. 99tool.in processes all numbers locally in your browser. No financial data is sent to external databases or servers. Your commercial pricing and billing metrics remain entirely private.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Which Indian GST slab should I select?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>The rate depends on the product or service category under the GST law. Most professional services fall under 18%, essential food items under 5%, electronic appliances under 12% or 18%, and luxury goods under 28%.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Does this tool calculate IGST for interstate transactions?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. For interstate sales (between different states), the Integrated GST (IGST) is applied. The IGST rate is the same as the total GST percentage. So the "Total GST" figure shown in the report represents the IGST value.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 Privacy & Data Note: All tax components are calculated locally in your browser session. None of your ledger balances, transactions, or values are uploaded to our servers.</p>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    let currentMode = 'excl';
+
+    function setMode(mode) {
+       currentMode = mode;
+       document.querySelectorAll('.btn-toggle').forEach(b => b.classList.remove('active'));
+       document.getElementById('mode-' + mode).classList.add('active');
+       document.getElementById('price-label').innerText = (mode === 'excl') ? "Net Amount (Price)" : "Gross Amount (Total)";
+       solve();
+    }
+
+    function solve() {
+       const amount = parseFloat(document.getElementById('gst-amount-in').value) || 0;
+       const rate = parseFloat(document.getElementById('gst-rate').value);
+
+       if (amount <= 0) {
+          document.getElementById('tax-panel').style.display = 'none';
+          return;
+       }
+
+       let base, gst;
+       if (currentMode === 'excl') {
+          gst = amount * (rate / 100);
+          base = amount;
+       } else {
+          base = amount / (1 + (rate / 100));
+          gst = amount - base;
+       }
+
+       const total = base + gst;
+       const splitGst = gst / 2;
+
+       // Render
+       document.getElementById('res-total').innerText = (window.i18n && window.i18n.formatCurrency) ? window.i18n.formatCurrency(total, 2) : '' + total.toFixed(2);
+       document.getElementById('res-base').innerText = (window.i18n && window.i18n.formatCurrency) ? window.i18n.formatCurrency(base, 2) : '' + base.toFixed(2);
+       document.getElementById('res-gst-total').innerText = (window.i18n && window.i18n.formatCurrency) ? window.i18n.formatCurrency(gst, 2) : '' + gst.toFixed(2);
+       document.getElementById('res-cgst').innerText = (window.i18n && window.i18n.formatCurrency) ? window.i18n.formatCurrency(splitGst, 2) : '' + splitGst.toFixed(2);
+       document.getElementById('res-sgst').innerText = (window.i18n && window.i18n.formatCurrency) ? window.i18n.formatCurrency(splitGst, 2) : '' + splitGst.toFixed(2);
+       
+       document.getElementById('res-total-lab').innerText = (currentMode === 'excl') ? "Total Amount (Incl. GST)" : "Gross Amount (Input Total)";
+       document.getElementById('tax-panel').style.display = 'block';
+    }
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>

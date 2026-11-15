@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Palette Generator – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/design/palette-generator.html"/>
+<meta property="og:title" content="Palette Generator – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/design/palette-generator.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Palette Generator \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/design/palette-generator.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="color palette generator, color scheme maker, palette creator, web design colors, color tool, hex color generator" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Color Palette Generator",
+    "operatingSystem": "Any",
+    "applicationCategory": "DesignApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Random Palette Generation, Color Locking, HEX Copying, Private local processing"
+  }
+  </script>
+
+  <style>
+    .palette-container {
+      display: flex; height: 500px; gap: 10px; margin-bottom: 30px; border-radius: var(--radius); overflow: hidden;
+    }
+
+    .color-block {
+      flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end;
+      padding-bottom: 30px; position: relative; transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer; border-radius: 8px;
+    }
+    .color-block:hover { flex: 1.3; }
+
+    .color-info {
+       background: rgba(0,0,0,0.7); backdrop-filter: blur(10px); color: white;
+       padding: 15px; border-radius: 12px; text-align: center; width: 80%;
+       border: 1px solid rgba(255,255,255,0.1);
+    }
+    .color-hex { font-family: 'Fira Code', monospace; font-weight: 700; font-size: 1.1rem; margin-bottom: 10px; text-transform: uppercase; }
+    
+    .lock-btn {
+       width: 40px; height: 40px; border-radius: 50%; background: white; color: black;
+       display: flex; align-items: center; justify-content: center; border: none; cursor: pointer;
+       position: absolute; top: 20px; transition: 0.2s;
+    }
+    .lock-btn.locked { background: var(--primary); color: white; }
+
+    .controls-row {
+       display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 40px;
+    }
+
+    @media (max-width: 768px) {
+       .palette-container { flex-direction: column; height: auto; }
+       .color-block { height: 100px; flex-direction: row; justify-content: space-between; align-items: center; padding: 20px; }
+       .color-info { width: auto; margin: 0; }
+       .lock-btn { position: static; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#creative">Graphic & Design</a> <span>/</span> 
+        <span>Color Palette Generator</span>
+      </nav>
+      <h1>Color Palette Generator</h1>
+      <p>Discover professional color schemes for your next project. Generate random palettes, lock your favorites, and copy codes instantly—all within your private browser session.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div class="palette-container" id="palette-view">
+         <!-- Blocks injected -->
+      </div>
+
+      <div class="controls-row">
+         <button class="btn btn-primary btn-lg" id="btn-generate" style="min-width: 250px;">Generate New Palette</button>
+         <button class="btn btn-secondary btn-lg" id="btn-copy-all">Copy All (HEX)</button>
+      </div>
+
+      <div class="info-box text-center" style="max-width: 600px; margin: 0 auto;">
+         <div class="info-icon">💡</div>
+         <p>Pro Tip: Press the **Spacebar** to rapidly randomize the palette locally! Click any color block to copy its HEX code instantly.</p>
+      </div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5">
+        <h2>Curating Your Brand in Private: The Logic of Secure Color Generation</h2>
+        <p>We’ve all been there: you’re starting a new project—perhaps a website redesign, a brand identity, or a deck for a presentation—and you need the perfect combination of colors. You look for a <strong>color palette generator online</strong> or a "Cloud Scheme Maker" to find inspiration. But as you look at the "Share to Social" and "Trending Palettes" sections of many modern design apps, you recognize that your specific aesthetic choices and project directions are being analyzed by an anonymous database. Do you really want to share your "Visual Inspiration" with a third-party tracking engine?</p>
+
+        <p>At 99tool.in, we built our <strong>color palette generator</strong> to provide a professional-grade design laboratory without the privacy trade-off. By utilizing native browser randomizers and HSL mathematical logic, we allow you to <strong>create color schemes</strong> entirely within the secure sandbox of your machine. Whether you’re a UI designer building a mockup, a product manager defining a brand, or an enthusiast exploring color theory, our <strong>safe palette utility</strong> ensures that your inspiration stays where it belongs: on your device, under your total sovereignty.</p>
+        
+        <div class="tool-preview-box mt-4 mb-4" style="text-align:center;">
+           <img src="../../assets/images/markdown-preview.png" alt="High-Performance Palette Interface featuring dynamic color locking and instant HEX copy visuals" class="tool-preview" id="tool-preview-img" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+        </div>
+
+        <h3 class="mt-4">The Logic of "Aesthetic Harmony"</h3>
+        <p>Resource management is about "Visual Cohesion." Most basic <strong>online color generators</strong> produce random noise that often results in "Palette Friction"—colors that look good individually but fail to work together. Our <strong>professional palette creator</strong> takes a human-centric approach: we focus on **Deterministic HSL Harmonization** and **Instant Accessibility**.</p>
+        
+        <p>We've engineered a generation engine that balances saturation and lightness to ensure that every random palette is vibrant, readable, and design-ready. Our <strong>safe color validator</strong> provides an interactive interface where you can lock individual colors and re-generate the rest. This transparency transforms a technical search for colors into a frictionless creative exploration, helping you build professional palettes with total confidence and absolute privacy.</p>
+
+        <h3 class="mt-4">Why Design is the Designer’s Ethical Choice</h2>
+        <p>In the age of digital profiling and automated technical scraping, your color choices are the first step in your creative process. Using a standard <strong>color tool online free</strong> service creates a digital record of the brands and products you are imagining. Our 100% <strong>design engine</strong> removes this "Privacy Vulnerability" entirely from your creative routine.</p>
+        
+        <p>Because the generation and storage happen in your browser's private memory, your palettes are invisible to the outside world. No analytics are tracked, no color combinations are harvested, and no proprietary data mapping is shared with AI trackers or advertisers. At 99tool.in, we believe that <strong>innovation</strong> should be an empowering utility, not a data-collection opportunity. With us, you have a private, professional darkroom for your aesthetics that fits in your browser tab.</p>
+
+        <h3 class="mt-4">How to Curate Your Palette Safely (Step-by-Step)</h3>
+        <p>Finding the perfect color scheme should be a high-speed, 5-second task. Here is how to use our <strong>palette tool</strong>:</p>
+        <ul style="line-height: 1.8; margin-bottom: 20px;">
+          <li><strong>Step 1: Trigger the Spark</strong> — Click "Generate" or hit the Spacebar. Our system randomizes five distinct HSL values instantly.</li>
+          <li><strong>Step 2: Lock Your Anchor</strong> — Found a color you love? Click the lock icon. Our local engine will preserve that specific tone while you randomize the others.</li>
+          <li><strong>Step 3: Refine the Balance</strong> — Continue generating until the remaining colors align with your vision. Every iteration happens entirely in your local RAM.</li>
+          <li><strong>Step 4: Secure Your Codes</strong> — Click a block to copy a single HEX code, or use "Copy All" for the entire set. Your choices never leave your sight.</li>
+        </ul>
+
+        <h3 class="mt-4">Strategic Use Cases for Your Local Palette Tool</h3>
+        <p>Our <strong>searchable creative laboratory</strong> is the essential companion for modern digital hygiene:</p>
+        
+        <p><strong>For Brand Designers:</strong> Developing a confidential color system for a startup? Use our <strong>palette generator</strong> to explore options without broadcasting your choices to cloud tools.</p>
+        
+        <p><strong>For Web Developers:</strong> Grabbing a quick set of secondary colors for a UI component? Use our <strong>safe design tool</strong> for a frictionless, no-ad experience that stays responsive.</p>
+        
+        <p><strong>For Social Media Managers:</strong> Creating a consistent look for a seasonal campaign? Use our <strong>safe storage tool</strong> to find and save your hex codes privately in your browser.</p>
+
+        <h3 class="mt-5">Explore Your Complete Design Suite</h3>
+        <p>Once you’ve successfully curated your palette, you might need to test them in a layout. Check out our <strong><a href="drawing-app.html">Simple Drawing App</a></strong>. Or, if you need to create CSS assets, use our <strong><a href="gradient-generator.html">CSS Gradient Generator</a></strong>. At 99tool.in, we are building a world-class, 100% private digital toolkit to give you total control over the integrity of your information.</p>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              How do the random colors work?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>We use a specialized **HSL Algorithm** that keeps saturation and lightness within a "harmonious range." This ensures that the generated colors are vibrant enough for design while maintaining high contrast.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I input my own HEX codes?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>For your speed, this tool currently focuses on **Discovery**. You can lock a random color that matches your brand and then generate others around it to build your unique palette.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Is my palette data secure?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Absolutely. 100% of the color generation and copying operations happen within your <strong>browser session's local memory</strong>. No data is sent to our servers, and no records of your palettes are kept. Your privacy is our standard.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 Privacy-First. HSL Harmonization. 100%. Last updated: April 11, 2026.</p>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const paletteView = document.getElementById('palette-view');
+    const btnGenerate = document.getElementById('btn-generate');
+    const btnCopyAll = document.getElementById('btn-copy-all');
+
+    let colors = [
+       { hex: '#e53935', locked: false },
+       { hex: '#1e88e5', locked: false },
+       { hex: '#43a047', locked: false },
+       { hex: '#ffb300', locked: false },
+       { hex: '#8e24aa', locked: false }
+    ];
+
+    function generatePalette() {
+       colors = colors.map(c => {
+          if(c.locked) return c;
+          return { hex: getRandomHex(), locked: false };
+       });
+       render();
+    }
+
+    function getRandomHex() {
+       // Using HSL to avoid muddy/grey colors
+       const h = Math.floor(Math.random() * 360);
+       const s = 60 + Math.random() * 30; // 60-90%
+       const l = 45 + Math.random() * 15; // 45-60%
+       return hslToHex(h, s, l);
+    }
+
+    function hslToHex(h, s, l) {
+       l /= 100;
+       const a = s * Math.min(l, 1 - l) / 100;
+       const f = n => {
+          const k = (n + h / 30) % 12;
+          const color = l - a * Math.max(Math.min(k - 3, 9 - k, 1), -1);
+          return Math.round(255 * color).toString(16).padStart(2, '0');
+       };
+       return `#${f(0)}${f(8)}${f(4)}`;
+    }
+
+    function render() {
+       paletteView.innerHTML = '';
+       colors.forEach((c, i) => {
+          const block = document.createElement('div');
+          block.className = 'color-block';
+          block.style.background = c.hex;
+          
+          const info = document.createElement('div');
+          info.className = 'color-info';
+          info.innerHTML = `
+             <div class="color-hex">${c.hex}</div>
+             <div class="small text-muted">Click to Copy</div>
+          `;
+          
+          const lock = document.createElement('button');
+          lock.className = `lock-btn ${c.locked ? 'locked' : ''}`;
+          lock.innerHTML = c.locked ? '🔒' : '🔓';
+          lock.onclick = (e) => {
+             e.stopPropagation();
+             colors[i].locked = !colors[i].locked;
+             render();
+          };
+
+          block.onclick = () => copyHex(c.hex, block);
+          block.appendChild(lock);
+          block.appendChild(info);
+          paletteView.appendChild(block);
+       });
+    }
+
+    function copyHex(hex, el) {
+       copyToClipboard(hex, null);
+       const original = el.querySelector('.color-hex').innerText;
+       el.querySelector('.color-hex').innerText = 'COPIED!';
+       setTimeout(() => el.querySelector('.color-hex').innerText = hex, 800);
+    }
+
+    btnGenerate.onclick = generatePalette;
+    
+    window.onkeydown = (e) => {
+       if (e.code === 'Space') {
+          e.preventDefault();
+          generatePalette();
+       }
+    };
+
+    btnCopyAll.onclick = () => {
+       const all = colors.map(c => c.hex).join(', ');
+       copyToClipboard(all, btnCopyAll);
+    };
+
+    generatePalette();
+  </script>
+</body>
+</html>
+

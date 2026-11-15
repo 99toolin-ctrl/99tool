@@ -1,0 +1,511 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">File Locker – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/security/file-locker.html"/>
+<meta property="og:title" content="File Locker – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/security/file-locker.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "File Locker \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/security/file-locker.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .locker-workspace {
+      max-width: 700px;
+      margin: 2rem auto;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 3rem;
+      text-align: center;
+    }
+    .drop-zone {
+      border: 2px dashed var(--border);
+      border-radius: 12px;
+      padding: 3rem;
+      margin-bottom: 2rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .drop-zone:hover, .drop-zone.dragover { border-color: var(--primary); background: rgba(229, 57, 53, 0.05); }
+    
+    .file-info {
+        display: none;
+        background: rgba(255,255,255,0.03);
+        border: 1px solid var(--border);
+        padding: 1rem;
+        border-radius: 12px;
+        margin-bottom: 2rem;
+        align-items: center;
+        gap: 15px;
+        text-align: left;
+    }
+    .file-icon { font-size: 2rem; }
+    
+    .password-pane { display: none; flex-direction: column; gap: 15px; }
+
+    .status-msg { margin-top: 1rem; font-size: 0.9rem; }
+    .status-msg.error { color: #e03131; }
+    .status-msg.success { color: #2f9e44; }
+
+    .progress-bar {
+        height: 6px; width: 100%; background: var(--border); border-radius: 3px; overflow: hidden; margin-top: 20px; display: none;
+    }
+    .progress-fill { height: 100%; background: var(--primary); width: 0%; transition: width 0.3s; }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/security/file-locker.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/security/file-locker.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/security/file-locker.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/security/file-locker.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/security/file-locker.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/security/file-locker.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/security/file-locker.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/security/file-locker.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/security/file-locker.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/security/file-locker.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/security/file-locker.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/security/file-locker.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/security/file-locker.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/security/file-locker.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/security/file-locker.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/security/file-locker.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/security/file-locker.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/security/file-locker.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/security/file-locker.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/security/file-locker.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/security/file-locker.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/security/file-locker.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-hero text-center">
+      <nav class="breadcrumb justify-content-center">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#security">Security</a> <span>/</span> 
+        <span>File Locker</span>
+      </nav>
+      <h1>File Locker (AES-256)</h1>
+      <p>Military-grade file encryption that never leaves your browser. 100% private and secure.</p>
+    </div>
+
+    <div class="locker-workspace">
+      <div id="drop-zone" class="drop-zone">
+        <div class="file-icon">📁</div>
+        <h3 class="mt-3">Drop file here or click to select</h3>
+        <p class="text-muted">Supports all file types up to 100MB</p>
+        <input type="file" id="file-input" style="display: none;">
+      </div>
+
+      <div id="file-info" class="file-info">
+          <div class="file-icon" id="info-icon">📄</div>
+          <div>
+              <div id="info-name" style="font-weight: 600;">filename.txt</div>
+              <div id="info-size" class="small text-muted">2.4 MB</div>
+          </div>
+          <button class="btn btn-secondary btn-sm ms-auto" onclick="reset()">Change</button>
+      </div>
+
+      <div id="password-pane" class="password-pane">
+          <div class="form-group">
+              <label>Security Password</label>
+              <input type="password" id="locker-password" placeholder="Enter password to encrypt/decrypt...">
+          </div>
+          <div class="flex gap-3">
+              <button class="btn btn-primary btn-full" onclick="processFile(true)">Encrypt & Lock</button>
+              <button class="btn btn-secondary btn-full" onclick="processFile(false)">Unlock & Decrypt</button>
+          </div>
+          <div id="status" class="status-msg"></div>
+          <div class="progress-bar" id="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+      </div>
+    </div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.file_locker.what_is_title">What is the File Locker (AES-256)?</h2>
+        <p>The File Locker is a browser-based tool that encrypts any file using AES-256-GCM — the same military-grade encryption standard used in secure messaging apps and enterprise data protection. Your file is encrypted entirely in your browser using the Web Crypto API. The encrypted output is downloaded as a <code>.locked</code> file that can be safely stored anywhere without risk of unauthorized access.</p>
+        <p>To decrypt, simply upload the <code>.locked</code> file, enter the same password used during encryption, and download the restored original. The entire process is local — no file data ever reaches a server.</p>
+
+        <h3 class="mt-4">How to Use the File Locker</h3>
+        <p>Encrypting a file involves these steps:</p>
+        <ol class="mt-2 mb-3">
+          <li>Click "Choose File" or drag and drop any file (PDF, image, document, ZIP, etc.) into the upload area.</li>
+          <li>Enter a strong password in the Password field. This password is used to derive your AES-256 encryption key via PBKDF2.</li>
+          <li>Click "Encrypt &amp; Lock" to process the file. Encryption happens locally in your browser's memory.</li>
+          <li>Download the encrypted <code>.locked</code> output file. Store it anywhere — cloud storage, USB, or email.</li>
+          <li>To unlock, upload the <code>.locked</code> file, enter the same password, and click "Decrypt &amp; Unlock". The original file is restored.</li>
+        </ol>
+
+        <h3 class="mt-4">Key Features</h3>
+        <ul class="mt-2 mb-3">
+          <li><strong>AES-256-GCM Encryption:</strong> Authenticated encryption that protects file integrity in addition to confidentiality.</li>
+          <li><strong>PBKDF2 Key Derivation:</strong> Derives a 256-bit key from your password using 100,000 rounds, making brute-force attacks impractical.</li>
+          <li><strong>Universal File Support:</strong> Encrypts any file type — documents, images, videos, archives, executables.</li>
+          <li><strong>Zero Upload:</strong> Files are never transmitted. All processing occurs in browser RAM via the Web Crypto API.</li>
+        </ul>
+
+        <h3 class="mt-4">Common Use Cases</h3>
+        <p>This tool is helpful for the following tasks:</p>
+        <ul class="mt-2 mb-3">
+          <li><strong>Protecting Cloud Uploads:</strong> Encrypting sensitive files before uploading them to Google Drive, Dropbox, or OneDrive.</li>
+          <li><strong>Secure USB Storage:</strong> Locking files before placing them on a USB drive that could be lost or stolen.</li>
+          <li><strong>Confidential Transfers:</strong> Sending encrypted files over email or messaging apps where the recipient has your shared password.</li>
+        </ul>
+
+        <h3 class="mt-4">Frequently Asked Questions</h3>
+        <div class="faq-section mt-3">
+          <p><strong>What file types can I lock?</strong><br>Any file type — PDF, DOCX, XLSX, JPG, PNG, MP4, ZIP, and more. The tool treats each file as raw binary data, so format is irrelevant.</p>
+          <p><strong>Is there a file size limit?</strong><br>No hard limit is set in the tool. In practice, browser memory allows files up to ~100-500MB. For very large files, use desktop encryption software.</p>
+          <p><strong>Can I recover the file if I forget my password?</strong><br>No. Zero-knowledge architecture means no password is stored anywhere. Without the exact password, the file is mathematically unrecoverable.</p>
+          <p><strong>Are my files uploaded to your servers?</strong><br>Never. All encryption and decryption runs entirely in your browser's RAM. No file data, filename, or password is transmitted to any server.</p>
+        </div>
+
+        <h3 class="mt-4">Privacy &amp; Data Note</h3>
+        <p>All file processing, encryption, and decryption run entirely inside your browser using the Web Crypto API. No file content, filename, or password is transmitted to any server or stored outside your device.</p>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2 data-i18n="tools.file_locker.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">What file types can I lock?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>Any file type — PDF, DOCX, JPG, MP4, ZIP, and more. The tool treats each file as raw binary data, ensuring universal compatibility across all formats.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">Can I recover a file if I lose my password?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>No. This tool uses zero-knowledge architecture — no password is stored anywhere. The file is mathematically unrecoverable without the exact password used during encryption.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">Are my files uploaded to your servers?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>Never. All encryption and decryption happens locally in your browser's RAM. No file data, filename, or password ever leaves your device.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>&#128274; AES-256 Encryption. Zero Upload. Your files never leave your device. Last updated: April 10, 2026.</p>
+      </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const dropZone = document.getElementById('drop-zone');
+    const fileInput = document.getElementById('file-input');
+    const infoPane = document.getElementById('file-info');
+    const passPane = document.getElementById('password-pane');
+    const status = document.getElementById('status');
+    let selectedFile = null;
+
+    dropZone.onclick = () => fileInput.click();
+    fileInput.onchange = (e) => handleFile(e.target.files[0]);
+
+    // Init Drag and Drop using global helper
+    setupDragDrop('drop-zone', (files) => {
+       handleFile(files[0]);
+    });
+
+    function handleFile(file) {
+      if (!file) return;
+      if (file.size > 100 * 1024 * 1024) {
+          alert("File too large. Maximum size is 100MB for browser processing.");
+          return;
+      }
+      selectedFile = file;
+      document.getElementById('info-name').innerText = file.name;
+      document.getElementById('info-size').innerText = (file.size / (1024 * 1024)).toFixed(2) + " MB";
+      dropZone.style.display = 'none';
+      infoPane.style.display = 'flex';
+      passPane.style.display = 'flex';
+    }
+
+    function reset() {
+        selectedFile = null;
+        dropZone.style.display = 'block';
+        infoPane.style.display = 'none';
+        passPane.style.display = 'none';
+        status.innerText = "";
+    }
+
+    async function deriveKey(password, salt) {
+      const enc = new TextEncoder();
+      const baseKey = await crypto.subtle.importKey("raw", enc.encode(password), "PBKDF2", false, ["deriveKey"]);
+      return await crypto.subtle.deriveKey(
+        { name: "PBKDF2", salt: salt, iterations: 100000, hash: "SHA-256" },
+        baseKey,
+        { name: "AES-GCM", length: 256 },
+        false,
+        ["encrypt", "decrypt"]
+      );
+    }
+
+    async function processFile(isEncrypt) {
+      const password = document.getElementById('locker-password').value;
+      if (!password) { status.innerText = "Please enter a security password."; status.className = "status-msg error"; return; }
+
+      status.innerText = isEncrypt ? "Encrypting file..." : "Decrypting file...";
+      status.className = "status-msg";
+      document.getElementById('progress-bar').style.display = 'block';
+      let progress = 0;
+      const progressFill = document.getElementById('progress-fill');
+
+      try {
+        const fileData = await selectedFile.arrayBuffer();
+        if (isEncrypt) {
+          const salt = crypto.getRandomValues(new Uint8Array(16));
+          const iv = crypto.getRandomValues(new Uint8Array(12));
+          const key = await deriveKey(password, salt);
+          const encrypted = await crypto.subtle.encrypt({ name: "AES-GCM", iv: iv }, key, fileData);
+          
+          const result = new Uint8Array(salt.length + iv.length + encrypted.byteLength);
+          result.set(salt, 0);
+          result.set(iv, salt.length);
+          result.set(new Uint8Array(encrypted), salt.length + iv.length);
+          
+          downloadFile(result, selectedFile.name + ".locked");
+          status.innerText = "Successfully locked! Your file is secured.";
+          status.className = "status-msg success";
+        } else {
+          const salt = new Uint8Array(fileData.slice(0, 16));
+          const iv = new Uint8Array(fileData.slice(16, 28));
+          const encryptedContent = fileData.slice(28);
+          const key = await deriveKey(password, salt);
+          const decrypted = await crypto.subtle.decrypt({ name: "AES-GCM", iv: iv }, key, encryptedContent);
+          
+          const newName = selectedFile.name.replace(".locked", "");
+          downloadFile(decrypted, newName);
+          status.innerText = "Successfully unlocked! Your file is restored.";
+          status.className = "status-msg success";
+        }
+      } catch (e) {
+        status.innerText = "Error: Invalid password or corrupted file.";
+        status.className = "status-msg error";
+      } finally {
+          document.getElementById('progress-bar').style.display = 'none';
+      }
+    }
+
+    function downloadFile(data, name) {
+      const blob = new Blob([data], { type: "application/octet-stream" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = name;
+      a.click();
+    }
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

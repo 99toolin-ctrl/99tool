@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Convert Image – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/image/convert-image.html"/>
+<meta property="og:title" content="Convert Image – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/image/convert-image.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Convert Image \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/image/convert-image.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <style>
+    .converter-controls {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .format-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 1rem;
+    }
+    .format-btn {
+      background: var(--dark);
+      border: 1px solid var(--border);
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: center;
+      cursor: pointer;
+      transition: all var(--transition);
+      font-weight: 600;
+    }
+    .format-btn:hover { border-color: var(--primary); }
+    .format-btn.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: white;
+    }
+    
+    .file-list {
+      margin-top: 2rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .file-item {
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+      background: var(--dark-card);
+      border-bottom: 1px solid var(--border);
+      gap: 1rem;
+    }
+    .file-item:last-child { border-bottom: none; }
+    .file-thumb {
+      width: 50px; height: 50px;
+      border-radius: 4px;
+      object-fit: cover;
+    }
+    .file-status {
+      margin-left: auto;
+      font-size: 0.8rem;
+    }
+    .status-badge {
+       padding: 2px 8px;
+       border-radius: 10px;
+       background: rgba(255,255,255,0.1);
+    }
+
+    #loading-overlay {
+      display: none;
+      text-align: center;
+      padding: 2rem;
+    }
+    .spinner {
+      border: 3px solid rgba(229,57,53,0.1);
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      border-left-color: var(--primary);
+      animation: spin 1s linear infinite;
+      margin: 0 auto 10px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Batch Image Converter</h1>
+      <p>Switch between JPG, PNG, WEBP and more instantly. One file or one hundred. 100% private.</p>
+    </div>
+
+    <div class="tool-container">
+      <div class="upload-area" id="drop-zone">
+        <div class="upload-icon">🔄</div>
+        <p>Drop images here or <span class="text-primary">browse folders</span></p>
+        <p class="text-muted small">Supports all major image types</p>
+        <input type="file" id="image-input" accept="image/*" multiple hidden>
+      </div>
+
+      <div id="tool-workspace" class="hidden">
+        <div class="converter-controls">
+          <div>
+            <label class="block mb-3 font-bold">Target Format</label>
+            <div class="format-grid" id="format-grid">
+              <div class="format-btn active" data-format="image/jpeg">JPG</div>
+              <div class="format-btn" data-format="image/png">PNG</div>
+              <div class="format-btn" data-format="image/webp">WEBP</div>
+            </div>
+          </div>
+
+          <button id="convert-btn" class="btn btn-primary w-100">Convert Everything & Download ZIP</button>
+        </div>
+
+        <div class="file-list" id="file-list"></div>
+      </div>
+
+      <div id="loading-overlay">
+        <div class="spinner"></div>
+        <p>Converting document structure in your browser memory...</p>
+      </div>
+
+      <div id="status-msg" class="text-center mt-3 small"></div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5">
+        <h2>Adapting Your Format in Private: Secure Local Image Conversion</h2>
+        <p>We've all been there: you have a beautiful image in a niche format like WebP or TIFF, but the platform you're using requires a classic JPG or PNG. You look for an <strong>image converter</strong> online to help you switch formats and ensure absolute compatibility. But as you look at the "File Processing" and "Cloud Queue" features of most legacy checkers, you realize that your proprietary designs and personal photos are being converted on an anonymous server. Do you really want to share your "Source Files" with a third-party algorithm?</p>
+
+        <p>At 99tool.in, we built our <strong>image converter</strong> to give you a professional transcoding station without the privacy sacrifice. By utilizing browser-side rendering and local format logic, we allow you to <strong>convert images between formats</strong> entirely within the secure sandbox of your own machine. Whether you’re a photographer preparing a batch of JPGs for a client, a web developer optimizing an icon set to WEBP, or a designer switching between PNG and HEIC, our <strong>safe conversion tool</strong> ensures that your original files stay where they belong: on your device, under your total sovereignty.</p>
+        
+        <div class="tool-preview-box mt-4 mb-4" style="text-align:center;">
+           <img src="../../assets/images/convert-preview.png" alt="Clean Image Converter Interface with Cross-Format Compatibility and Lossless Transcoding Logic Visuals" class="tool-preview" id="tool-preview-img" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+        </div>
+
+        <h3 class="mt-4">The Logic of Cross-Format Compatibility</h3>
+        <p>Digital format switching isn't just about changing an extension; it’s about "Transcoding Logic." Most basic <strong>image converter online free</strong> services use "lossy" routines that re-compress your data multiple times, leading to "Generation Loss"—that fuzzy, pixelated look. Our <strong>professional image converter</strong> takes a human-centric approach: we focus on **Cross-Format Compatibility** and **Lossless Transcoding Logic**.</p>
+        
+        <p>We provide a direct rendering pipeline that reads the raw pixel data and maps it precisely to the new format container. Our <strong>safe format validator</strong> doesn't just rename files; it ensures that your transparencies (Alpha channels) and color profiles are preserved during the shift. This transparency transforms a technical hurdle into a professional workflow, helping you adapt your assets in a private, professional environment.</p>
+
+        <h3 class="mt-4">Why Conversion is the Designer’s Ethical Choice</h2>
+        <p>In the age of automated data harvesting, your "Source Library" is your competitive advantage. When you use a standard <strong>image format converter</strong> that requires an upload, you are essentially trust-falling into an anonymous database. Even if they "delete" the result, the metadata and the visual content were processed on a remote machine. Our 100% <strong>conversion utility</strong> removes this "Asset Risk" entirely from your creative routine.</p>
+        
+        <p>Because the logic and transcoding happen in your browser's private memory, your images are invisible to the outside world. No analytics are tracked, no pixels are harvested, and no proprietary data is shared with advertisers or AI platforms. At 99tool.in, we believe that <strong>converting your work</strong> should be an empowering utility, not a data-mining trade-off. With us, you have a private, professional desk for your format needs that fits in your browser tab.</p>
+
+        <h3 class="mt-4">How to Switch Formats Safely (Step-by-Step)</h3>
+        <p>Adapting your files for a new destination should be a high-speed, 10-second task. Here is how to use our <strong>image converter</strong>:</p>
+        <ul style="line-height: 1.8; margin-bottom: 20px;">
+          <li><strong>Step 1: Load Your Source</strong> — Drag your files into the workspace. It supports batch processing, allowing you to load one or one hundred files instantly.</li>
+          <li><strong>Step 2: Select Target Format</strong> — Choose from our professional presets (JPG, PNG, or WEBP) based on your needs for compatibility, transparency, or speed.</li>
+          <li><strong>Step 3: Trigger the Transcoding</strong> — Click "Convert Everything." Our system renders each file in the background, utilizing your local processing power for maximum security.</li>
+          <li><strong>Step 4: Commit Your Export</strong> — Download your freshly converted files. Our tool bundles them into a clean ZIP file, ensuring your directory structure remains organized and ready for use.</li>
+        </ul>
+
+        <h3 class="mt-4">Strategic Use Cases for Your Local Converter</h3>
+        <p>Our <strong>selective image converter</strong> is the essential companion for varied professional life:</p>
+        
+        <p><strong>For Web Developers & IT:</strong> Need to modernize your site's asset library? Use our <strong>secure conversion tool</strong> to batch convert legacy PNGs to WEBP, significantly improving your page speed and SEO performance safely.</p>
+        
+        <p><strong>For Creative Professionals & Designers:</strong> Working across different design ecosystems? Use our <strong>safe format converter</strong> to switch between high-fidelity PNGs and web-ready JPEGs, ensuring your client deliverables are always in the perfect format.</p>
+        
+        <p><strong>For Admin & Operations:</strong> Preparing a project report with Mixed-Format assets? Use our <strong>private converter</strong> to standardize all your imagery to a single format, ensuring no one on your team has trouble opening the final document.</p>
+
+        <h3 class="mt-5">Explore Your Complete Image Suite</h3>
+        <p>Once you’ve successfully converted your assets, you might need to adjust their individual sizes. Check out our <strong><a href="compress-image.html">Image Compressor</a></strong>. Or, if you need to combine your new files into a layout, use our <strong><a href="collage-maker.html">Image Collage Maker</a></strong>. At 99tool.in, we are building a world-class, 100% private digital toolkit to give you total control over your visual assets.</p>
+      </section>
+ 
+      <!-- FAQ SECTION -->
+      <section class="faq-section mt-5">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Which image formats are supported?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Our <strong>batch image converter</strong> supports all standard web formats, including JPG, PNG, and WEBP. You can load any of these as a source and instantly transcode them to your desired target format with high-fidelity output.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Are my photos uploaded to 99tool.in?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Absolutely not. Your privacy is our technical priority. All format transcoding and ZIP bundling happen <strong>locally in your browser's private memory</strong>. Your original photos and proprietary designs never leave your device.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Does converting lower the image quality?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Our <strong>professional format converter</strong> uses high-quality rendering logic to map pixels from the source to the target container. While formats like JPG have inherent compression, we set our local encoders to high-fidelity (90%+) to ensure minimal visual loss during the shift.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I convert transparent PNGs to other formats?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. If you convert a transparent PNG to WEBP, the **Alpha-Channel transparency** is preserved. If you convert to JPG, the transparent areas will automatically be filled with a clean white background, as the JPG format does not support transparency.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Is there a limit to how many files I can convert?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Because our <strong>safe conversion utility</strong> runs entirely on your local hardware, it can handle large batches effectively. We've optimized the process to convert "one or one hundred" files instantly, utilizing your device's native processing power.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Why use a local converter instead of a cloud one?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Most online converters harvest your "Asset Library" for data-mining or AI training. A <strong>private transcoding tool</strong> removes this risk. It's faster (no uploads/downloads), safer (no data leakage), and gives you total sovereignty over your original files.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const imageInput = document.getElementById('image-input');
+    const dropZone = document.getElementById('drop-zone');
+    const workspace = document.getElementById('tool-workspace');
+    const fileList = document.getElementById('file-list');
+    const convertBtn = document.getElementById('convert-btn');
+    const formatBtns = document.querySelectorAll('.format-btn');
+    const loadingOverlay = document.getElementById('loading-overlay');
+    
+    let imageQueue = [];
+    let targetFormat = 'image/jpeg';
+
+    // Format Logic
+    formatBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        formatBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        targetFormat = btn.dataset.format;
+      });
+    });
+
+    // File Selection
+    dropZone.onclick = () => imageInput.click();
+    imageInput.onchange = (e) => handleFiles(e.target.files);
+    
+    // Init Drag and Drop using global helper
+    setupDragDrop('drop-zone', (files) => {
+       handleFiles(files);
+    });
+
+    function handleFiles(files) {
+      const validFiles = Array.from(files).filter(f => f.type.startsWith('image/'));
+      if (validFiles.length === 0) return;
+
+      workspace.classList.remove('hidden');
+      
+      for (const file of validFiles) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          const img = new Image();
+          img.onload = () => {
+            imageQueue.push({ file, img });
+            renderFileList();
+          };
+          img.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+
+    function renderFileList() {
+      fileList.innerHTML = '';
+      imageQueue.forEach((item, index) => {
+        const div = document.createElement('div');
+        div.className = 'file-item';
+        div.innerHTML = `
+          <img src="${item.img.src}" class="file-thumb">
+          <div>
+            <div class="font-bold small">${item.file.name}</div>
+            <div class="text-muted small">${(item.file.size / 1024).toFixed(1)} KB</div>
+          </div>
+          <div class="file-status">
+            <span class="status-badge">${item.file.type.split('/')[1].toUpperCase()}</span>
+          </div>
+        `;
+        fileList.appendChild(div);
+      });
+    }
+
+    convertBtn.onclick = async () => {
+      if (imageQueue.length === 0) return;
+      loadingOverlay.style.display = 'block';
+      convertBtn.disabled = true;
+
+      const zip = new JSZip();
+      const canvas = document.createElement('canvas');
+      const ctx = canvas.getContext('2d');
+
+      const extension = targetFormat.split('/')[1].replace('jpeg', 'jpg');
+
+      try {
+        for (const item of imageQueue) {
+          canvas.width = item.img.width;
+          canvas.height = item.img.height;
+          ctx.drawImage(item.img, 0, 0);
+
+          const dataUrl = canvas.toDataURL(targetFormat, 0.9);
+          const base64 = dataUrl.split(',')[1];
+          const fileName = item.file.name.split('.')[0] + '.' + extension;
+          
+          zip.file(fileName, base64, { base64: true });
+        }
+
+        const content = await zip.generateAsync({ type: "blob" });
+        const url = URL.createObjectURL(content);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `converted_images_${Date.now()}.zip`;
+        a.click();
+        URL.revokeObjectURL(url);
+
+        document.getElementById('status-msg').innerText = "Successfully converted and zipped!";
+        document.getElementById('status-msg').style.color = "green";
+      } catch (err) {
+        console.error(err);
+        document.getElementById('status-msg').innerText = "Error in batch conversion.";
+        document.getElementById('status-msg').style.color = "red";
+      } finally {
+        loadingOverlay.style.display = 'none';
+        convertBtn.disabled = false;
+      }
+    };
+  </script>
+</body>
+</html>
+

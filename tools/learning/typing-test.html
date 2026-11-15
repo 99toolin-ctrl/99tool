@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Typing Test – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/learning/typing-test.html"/>
+<meta property="og:title" content="Typing Test – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/learning/typing-test.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Typing Test \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/learning/typing-test.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    .typing-workspace {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 3rem;
+    }
+    .stats-main {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .stat-box {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      padding: 1rem;
+      border-radius: 12px;
+      text-align: center;
+    }
+    .stat-val { font-size: 2rem; font-weight: 800; color: var(--primary); display: block; }
+    .stat-label { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+
+    .text-display {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.4rem;
+      line-height: 1.8;
+      background: var(--dark);
+      padding: 2rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      margin-bottom: 2rem;
+      color: #666;
+      position: relative;
+      user-select: none;
+    }
+    .char { position: relative; }
+    .char.correct { color: #eee; }
+    .char.wrong { color: #e03131; background: rgba(224, 49, 49, 0.1); }
+    .char.current { color: var(--primary); border-bottom: 2px solid var(--primary); }
+
+    .typing-input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+    
+    .start-overlay {
+      position: absolute; inset: 0;
+      background: rgba(0,0,0,0.8);
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 12px; z-index: 10;
+      cursor: pointer;
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/learning/typing-test.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/learning/typing-test.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/learning/typing-test.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/learning/typing-test.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/learning/typing-test.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/learning/typing-test.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/learning/typing-test.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/learning/typing-test.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/learning/typing-test.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/learning/typing-test.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/learning/typing-test.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/learning/typing-test.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/learning/typing-test.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/learning/typing-test.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/learning/typing-test.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/learning/typing-test.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/learning/typing-test.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/learning/typing-test.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/learning/typing-test.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/learning/typing-test.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/learning/typing-test.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/learning/typing-test.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-hero text-center">
+      <nav class="breadcrumb justify-content-center">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#learning">Learning</a> <span>/</span> 
+        <span>Typing Speed Test</span>
+      </nav>
+      <h1>Typing Speed Test</h1>
+      <p>Measure your baseline WPM and accuracy with this professional-grade tester.</p>
+    </div>
+
+    <div class="typing-workspace">
+      <div class="stats-main">
+        <div class="stat-box">
+          <span class="stat-val" id="wpm">0</span>
+          <span class="stat-label">WPM</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-val" id="accuracy">100%</span>
+          <span class="stat-label">Accuracy</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-val" id="timer">60</span>
+          <span class="stat-label">Time Remaining</span>
+        </div>
+      </div>
+
+      <div class="text-display" id="display-area">
+        <div class="start-overlay" id="start-overlay" onclick="startTest()">
+          <button class="btn btn-primary">Click to Start Test</button>
+        </div>
+        <!-- Words go here -->
+      </div>
+      
+      <input type="text" id="typing-input" class="typing-input" autocomplete="off">
+      <p class="text-center text-muted small">Type the highlighted text as fast as you can. Mistakes slow you down!</p>
+    </div>
+
+    <!-- CONTENT SECTION -->
+    <section class="seo-content mt-5 text-start">
+      <h2 data-i18n="tools.typing_speed_test.what_is_title">What is the Typing Speed Test?</h2>
+      <p>The Typing Speed Test is a client-side keyboard training utility designed to calculate touch-typing speed and keystroke precision. By typing along with a highlighted paragraph of text, users can measure their WPM (Words Per Minute), accuracy percentages, and net speeds in real-time.</p>
+      <p>This typing test computes all keystroke intervals, correct character matches, error tracking, and WPM rates locally in your browser session. Since no keystroke logs, words typed, or performance histories are sent to remote servers, your private inputs remain secure.</p>
+
+      <h2 class="mt-4" data-i18n="tools.typing_speed_test.how_to_use_title">How to Use the Typing Speed Test</h2>
+      <ol>
+        <li><strong>Start the Test:</strong> Click the "Click to Start Test" button in the display area to start the 60-second timer.</li>
+        <li><strong>Observe the Prompt:</strong> Look at the highlighted word in the text display panel.</li>
+        <li><strong>Begin Typing:</strong> Type the highlighted word into the input field below. The display area highlights correct letters in green and mistakes in red.</li>
+        <li><strong>Keep Typing:</strong> Press the Spacebar after completing each word to move to the next word in the sequence.</li>
+        <li><strong>Analyze Your Score:</strong> Once the 60-second timer hits zero, review your final WPM count, accuracy score, and keystroke logs in the metrics header.</li>
+      </ol>
+
+      <h2 class="mt-4" data-i18n="tools.typing_speed_test.key_features_title">Key Features</h2>
+      <ul>
+        <li><strong>Dynamic WPM Calculations:</strong> Computes typing speed using standard characters-per-minute formulas.</li>
+        <li><strong>Precision Accuracy Tracking:</strong> Deducts points for incorrect characters to encourage clean touch-typing habits.</li>
+        <li><strong>Letter-by-Letter Visual Feedback:</strong> Colors text instantly (green for correct, red for incorrect) to guide your typing rhythm.</li>
+        <li><strong>Standardized Time Intervals:</strong> Runs a 60-second timer to establish a consistent, professional speed benchmark.</li>
+        <li><strong>100% Client-Side Engine:</strong> Operates entirely in browser cache without third-party tracking scripts.</li>
+      </ul>
+
+      <h2 class="mt-4" data-i18n="tools.typing_speed_test.common_use_cases_title">Common Use Cases</h2>
+      <ul>
+        <li><strong>Touch Typing Training:</strong> Practice finger positioning and muscle memory to increase typing speed.</li>
+        <li><strong>Data Entry Prep:</strong> Build the typing speed and high accuracy required for administrative and data entry roles.</li>
+        <li><strong>Coding Speed Improvements:</strong> Help developers type syntactical words quickly without needing to look at the keyboard.</li>
+        <li><strong>Regular Typing Audits:</strong> Periodically check WPM and accuracy metrics to measure improvement.</li>
+      </ul>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-section mt-5">
+      <h2 data-i18n="tools.typing_speed_test.faq_title">Frequently Asked Questions</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <button class="faq-question">
+            How is WPM (Words Per Minute) calculated?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>WPM is calculated using the standard formula where one word equals five keystrokes. The formula is: <code>((Total Characters Typed / 5) / Time in Minutes)</code>.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Does the typing test log my keystrokes?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>No. All event listeners and character evaluations run locally inside your browser tab. No typing data is stored or uploaded.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            How does accuracy affect my WPM?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>While incorrect letters do not stop the timer, correcting mistakes slows down your rhythm. Aiming for high accuracy is the most effective way to build a high WPM.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Can I reset the typing test early?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. If you wish to restart your training session, simply refresh the browser tab to reset the timer, counters, and text prompt to their initial states.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust-signal">
+      <p>🔒 Privacy & Data Note: Keystrokes, timing loops, and WPM score logs are processed locally in your browser. No data is stored or transmitted.</p>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const sampleText = "Spaced repetition is a learning technique that incorporates increasing intervals of time between subsequent review of previously learned material in order to exploit the psychological spacing effect. The efficiency of learning is significantly increased by focusing on material that is difficult to remember. At 99tool we believe in private learning without trackers. Speed and accuracy are the keys to professional excellence in a modern digital workspace.";
+    
+    let timer = 60;
+    let isActive = false;
+    let interval = null;
+    let charIdx = 0;
+    let mistakes = 0;
+    let charsTyped = 0;
+
+    const display = document.getElementById('display-area');
+    const input = document.getElementById('typing-input');
+    const timerText = document.getElementById('timer');
+    const wpmText = document.getElementById('wpm');
+    const accText = document.getElementById('accuracy');
+
+    // Initialize display
+    function initDisplay() {
+      const chars = sampleText.split('');
+      display.innerHTML = '<div class="start-overlay" id="start-overlay" onclick="startTest()"><button class="btn btn-primary">Click to Start Test</button></div>';
+      chars.forEach((c, i) => {
+        const span = document.createElement('span');
+        span.className = 'char';
+        span.innerText = c;
+        display.appendChild(span);
+      });
+      charIdx = 0;
+      updateCursor();
+    }
+
+    function startTest() {
+      if (isActive) return;
+      initDisplay();
+      document.getElementById('start-overlay').style.display = 'none';
+      input.focus();
+      isActive = true;
+      mistakes = 0;
+      charsTyped = 0;
+      timer = 60;
+      
+      interval = setInterval(() => {
+        timer--;
+        timerText.innerText = timer;
+        if (timer <= 0) endTest();
+        calculateStats();
+      }, 1000);
+    }
+
+    function calculateStats() {
+      const timeSpent = (60 - timer) / 60;
+      if (timeSpent === 0) return;
+      const wpm = Math.round((charsTyped / 5) / timeSpent);
+      const acc = Math.round(((charsTyped - mistakes) / charsTyped) * 100) || 100;
+      
+       wpmText.innerText = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(wpm, 0) : wpm;
+       accText.innerText = ((window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(acc, 0) : acc) + '%';
+    }
+
+    function updateCursor() {
+      const spans = display.querySelectorAll('.char');
+      spans.forEach(s => s.classList.remove('current'));
+      if (spans[charIdx]) spans[charIdx].classList.add('current');
+    }
+
+    input.oninput = (e) => {
+      if (!isActive) return;
+      const spans = display.querySelectorAll('.char');
+      const typedChar = input.value.slice(-1);
+      const targetChar = sampleText[charIdx];
+
+      if (typedChar === targetChar) {
+        spans[charIdx].classList.add('correct');
+      } else {
+        spans[charIdx].classList.add('wrong');
+        mistakes++;
+      }
+      
+      charsTyped++;
+      charIdx++;
+      input.value = "";
+      
+      if (charIdx >= sampleText.length) endTest();
+      updateCursor();
+    };
+
+    function endTest() {
+      isActive = false;
+      clearInterval(interval);
+      input.blur();
+      calculateStats();
+      const finalWpm = wpmText.innerText;
+      const finalAcc = accText.innerText;
+      alert(`Test Complete!\nWPM: ${finalWpm}\nAccuracy: ${finalAcc}`);
+      initDisplay();
+    }
+
+    initDisplay();
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

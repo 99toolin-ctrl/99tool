@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Dns Lookup – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/network/dns-lookup.html"/>
+<meta property="og:title" content="Dns Lookup – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/network/dns-lookup.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Dns Lookup \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/network/dns-lookup.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .dns-input-group {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 2rem;
+      background: var(--bg-secondary);
+      padding: 1.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+    .dns-input-group input {
+      flex: 1;
+      padding: 12px 20px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--bg-primary);
+      color: var(--text);
+      font-size: 1rem;
+    }
+    .dns-input-group select {
+      padding: 0 15px;
+      background: var(--bg-primary);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-weight: 500;
+    }
+    .records-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      margin-top: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .records-table th {
+      background: var(--bg-primary);
+      padding: 15px;
+      text-align: left;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border);
+    }
+    .records-table td {
+      padding: 15px;
+      background: var(--bg-secondary);
+      border-bottom: 1px solid var(--border);
+      font-size: 0.95rem;
+      font-family: 'Courier New', Courier, monospace;
+    }
+    .record-type-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      background: var(--primary);
+      color: white;
+    }
+    .no-records {
+      padding: 3rem;
+      text-align: center;
+      background: var(--bg-secondary);
+      color: var(--text-muted);
+      border-radius: 8px;
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>DNS Lookup Tool</h1>
+      <p>Inspect and verify domain records across the global DNS system.</p>
+    </div>
+
+    <div class="tool-container">
+      <div class="dns-input-group">
+        <input type="text" id="domain-input" placeholder="example.com" value="google.com">
+        <select id="record-type">
+          <option value="A">A (IPv4)</option>
+          <option value="AAAA">AAAA (IPv6)</option>
+          <option value="MX">MX (Mail)</option>
+          <option value="TXT">TXT (Security/Info)</option>
+          <option value="NS">NS (Nameservers)</option>
+          <option value="CNAME">CNAME (Alias)</option>
+          <option value="ANY">ANY (Diagnostic)</option>
+        </select>
+        <button id="lookup-btn" class="btn btn-primary">DNS Lookup</button>
+      </div>
+
+      <div id="results-area">
+        <div class="no-records">Enter a domain and click Lookup to see results.</div>
+      </div>
+
+      <!-- SEO CONTENT -->
+      <section class="seo-content mt-5">
+        <h2>What is DNS and Why Should You Check It?</h2>
+        <p>The Domain Name System (DNS) is often called the "phonebook of the internet." It is the technology that translates human-readable addresses like <code>99tool.in</code> into numeric IP addresses that computers use to talk to each other. When you use a <strong>dns lookup tool</strong>, you are peering into the live configuration of a domain to see how it routes traffic, handles mail, and verifies security.</p>
+
+        <h3 class="mt-4">Common DNS Record Types</h3>
+        <p>A professional <strong>dns checker</strong> helps you identify several critical record types:
+        <ul>
+          <li><strong>A Records</strong>: The core link that points a domain to an IPv4 address.</li>
+          <li><strong>MX Records</strong>: Mail Exchange records that dictate which servers handle a domain's email. Incorrect MX records mean lost messages.</li>
+          <li><strong>TXT Records</strong>: Often used for domain verification (like for <strong>Google Search Console</strong>) and security frameworks like SPF and DKIM to prevent email spoofing.</li>
+          <li><strong>CNAME</strong>: Used to point one domain or subdomain to another domain address.</li>
+        </ul></p>
+
+        <h3 class="mt-4">Troubleshooting Propagation</h3>
+        <p>If you've recently moved your website or changed your email provider, you likely need a <strong>check dns records</strong> utility to see if those changes have "propagated" globally. DNS changes don't happen instantly; they take time to ripple across servers. Our <strong>dns record finder</strong> queries the Google Public DNS infrastructure directly, providing you with a high-fidelity snapshot of current global values.</p>
+
+        <h3 class="mt-4">Why use this tool instead of command line?</h3>
+        <p>While power users use <code>dig</code> or <code>nslookup</code>, our <strong>online dns lookup</strong> provides a clean, visual table that's easier to read and share. We handle the complex JSON parsing from global DNS nodes and present it in a readable format, making it the perfect <strong>domain dns checker</strong> for both developers and business owners diagnosing technical issues.</p>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const lookupBtn = document.getElementById('lookup-btn');
+    const domainInput = document.getElementById('domain-input');
+    const typeSelect = document.getElementById('record-type');
+    const resultsArea = document.getElementById('results-area');
+
+    lookupBtn.addEventListener('click', runLookup);
+
+    async function runLookup() {
+      const domain = domainInput.value.trim();
+      const type = typeSelect.value;
+      if (!domain) return;
+
+      lookupBtn.disabled = true;
+      lookupBtn.innerText = "Querying...";
+      resultsArea.innerHTML = '<div class="no-records">Querying global DNS nodes...</div>';
+
+      try {
+        // Using Google Public DNS JSON API
+        const response = await fetch(`https://dns.google/resolve?name=${domain}&type=${type}`);
+        const data = await response.json();
+
+        if (data.Status !== 0) {
+           resultsArea.innerHTML = `<div class="no-records text-danger">DNS Error: Domain not found or invalid query (Status ${data.Status})</div>`;
+           return;
+        }
+
+        if (!data.Answer || data.Answer.length === 0) {
+           resultsArea.innerHTML = `<div class="no-records">No ${type} records found for ${domain}.</div>`;
+           return;
+        }
+
+        renderTable(data.Answer);
+
+      } catch (err) {
+        console.error(err);
+        resultsArea.innerHTML = '<div class="no-records text-danger">Failed to connect to DNS API. Please check your connection.</div>';
+      } finally {
+        lookupBtn.disabled = false;
+        lookupBtn.innerText = "DNS Lookup";
+      }
+    }
+
+    function renderTable(answers) {
+       let html = `
+         <table class="records-table">
+           <thead>
+             <tr>
+               <th>Name</th>
+               <th>Type</th>
+               <th>TTL</th>
+               <th>Data / Content</th>
+             </tr>
+           </thead>
+           <tbody>
+       `;
+
+       const typeMap = {
+         1: 'A', 28: 'AAAA', 15: 'MX', 16: 'TXT', 2: 'NS', 5: 'CNAME'
+       };
+
+       answers.forEach(ans => {
+         const typeLabel = typeMap[ans.type] || 'Other ('+ans.type+')';
+         html += `
+           <tr>
+             <td>${ans.name}</td>
+             <td><span class="record-type-badge">${typeLabel}</span></td>
+             <td>${ans.TTL}s</td>
+             <td>${ans.data}</td>
+           </tr>
+         `;
+       });
+
+       html += '</tbody></table>';
+       resultsArea.innerHTML = html;
+    }
+
+    // Enter key support
+    domainInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') runLookup();
+    });
+  </script>
+</body>
+</html>

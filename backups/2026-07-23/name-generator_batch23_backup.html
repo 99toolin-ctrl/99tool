@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Name Generator – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/writing/name-generator.html"/>
+<meta property="og:title" content="Name Generator – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/writing/name-generator.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Name Generator \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/writing/name-generator.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="random name generator, character name maker, business name generator, fantasy name tool, random identity generator, name tool" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Random Name Generator",
+    "operatingSystem": "Any",
+    "applicationCategory": "DesignApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Fantasy Name Logic, Business Identity Maker, Person Categories, Instant Copy, Private local processing"
+  }
+  </script>
+
+  <style>
+    .name-layout { display: grid; grid-template-columns: 1fr; gap: 30px; }
+
+    .control-pane {
+      background: var(--dark-card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 30px; height: fit-content; position: sticky; top: 80px;
+    }
+
+    .output-pane {
+       background: var(--dark-card); border: 1px solid var(--border); border-radius: var(--radius);
+       padding: 30px; display: flex; flex-direction: column; gap: 20px;
+    }
+
+    .results-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; }
+
+    .name-card {
+       background: var(--dark); border: 1px solid var(--border); padding: 20px;
+       border-radius: 8px; text-align: center; cursor: pointer; transition: 0.2s;
+       position: relative; overflow: hidden;
+    }
+    .name-card:hover { border-color: var(--primary); transform: translateY(-3px); }
+    .name-card h4 { font-size: 1.1rem; color: #fff; margin: 0; }
+    .name-card .copy-hint { 
+       position: absolute; bottom: 5px; right: 10px; font-size: 0.6rem; color: var(--text-muted);
+       text-transform: uppercase;
+    }
+
+    .filter-pills { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 25px; }
+    .pill {
+       padding: 8px 16px; border-radius: 20px; border: 1px solid var(--border);
+       background: var(--dark); color: var(--text-muted); cursor: pointer; font-size: 0.8rem; font-weight: 600;
+       transition: 0.2s;
+    }
+    .pill.active { background: var(--primary); color: white; border-color: var(--primary); }
+
+    @media (min-width: 900px) {
+       .name-layout { grid-template-columns: 320px 1fr; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#writing">Writing & Content</a> <span>/</span> 
+        <span>Random Name Generator</span>
+      </nav>
+      <h1>Random Name Generator</h1>
+      <p>Discover the perfect identity with algorithmic precision. Generate names for characters, brands, and projects across diverse categories—100% and secure.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div class="name-layout">
+         <aside class="control-pane">
+            <h3>Identity Terminal</h3>
+            <p class="text-muted small mb-4">Select your category and trigger a batch.</p>
+
+            <div class="filter-pills" id="category-pills">
+               <div class="pill active" data-cat="fantasy">Fantasy</div>
+               <div class="pill" data-cat="person">Person</div>
+               <div class="pill" data-cat="business">Business</div>
+               <div class="pill" data-cat="heroic">Heroic</div>
+            </div>
+
+            <div class="form-group mb-4">
+               <label>Quantity</label>
+               <input type="number" id="gen-count" class="form-control" value="12" min="1" max="50">
+            </div>
+
+            <button class="btn btn-primary btn-full mb-3" id="btn-generate">Generate Names</button>
+            <button class="btn btn-secondary btn-full" id="btn-copy-all">Copy All to Clipboard</button>
+            
+            <div class="info-box mt-4">
+               <div class="info-icon">🎲</div>
+               <p class="small">Privacy Note: This is a **Rule-Based Engine**. It uses local datasets to combine prefixes and suffixes—no data leaves your machine.</p>
+            </div>
+         </aside>
+
+         <div class="output-pane">
+            <h3 class="mb-0" id="results-title">Generated Identities</h3>
+            <div class="results-grid" id="results-container">
+               <!-- Names injected here -->
+            </div>
+         </div>
+      </div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5">
+        <h2>Mapping Identities in Private: The Logic of Secure Random Naming</h2>
+        <p>We’ve all been there: you’re starting a new project—perhaps a novel, a business, or a tactical character—and you need a name that resonates. You look for a <strong>random name generator online</strong> or a "Cloud Identity Maker" to find inspiration. But as you scroll through the "Trending Names" and "User Choices" of many web tools, you recognize that your project's "Conceptual Anchor" and unique preferences are being indexed by an anonymous database. Do you really want to share your project's "Identity Strategy" with a third-party tracking engine?</p>
+
+        <p>At 99tool.in, we built our <strong>random name generator</strong> to provide a professional-grade creative laboratory without the privacy trade-off. By utilizing native browser randomizers and deterministic linguistic mapping, we allow you to <strong>generate names</strong> entirely within the secure sandbox of your machine. Whether you’re an entrepreneur building a brand, a writer creating a cast of characters, or a gamer designing an avatar, our <strong>safe naming utility</strong> ensures that your identities stay where they belong: on your device, under your total sovereignty.</p>
+        
+        <div class="tool-preview-box mt-4 mb-4" style="text-align:center;">
+           <img src="../../assets/images/markdown-preview.png" alt="High-Performance Name Dashboard featuring multi-category selection and instant copy visuals" class="tool-preview" id="tool-preview-img" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+        </div>
+
+        <h3 class="mt-4">The Logic of "Phonetic Harmony"</h3>
+        <p>Identity is about "Visual and Auditory Resonance." Most basic <strong>online name tools</strong> produce chaotic strings that often result in "Naming Friction"—identities that look like random noise. Our <strong>professional name creator</strong> takes a human-centric approach: we focus on **Deterministic Prefix-Suffix Logic** and **Genre-Specific Archetypes**.</p>
+        
+        <p>We've engineered a generation engine that maps selected linguistic building blocks with mathematical precision, ensuring that "Fantasy" names feel ancient and "Business" names feel modern. Our <strong>safe design validator</strong> provides an interactive interface where you can generate large batches and select the perfect fit instantly. This transparency transforms a technical session into a meticulous creative journey, helping you build high-impact identities with total confidence and absolute privacy.</p>
+
+        <h3 class="mt-4">Why Generation is the Creative’s Ethical Choice</h2>
+        <p>In the age of digital profiling and automated technical scraping, your name lists are a map of your work priorities. Using a standard <strong>name tool online free</strong> service creates a digital record of what you are inventing. Our 100% <strong>identity engine</strong> removes this "IP Risk" entirely from your development routine.</p>
+        
+        <p>Because the generation and storage happen in your browser's private memory, your names are invisible to the outside world. No analytics are tracked, no combinations are harvested, and no proprietary data mapping is shared with AI trackers or advertisers. At 99tool.in, we believe that <strong>having an identity</strong> should be an empowering utility, not a data-collection opportunity. With us, you have a private, professional darkroom for your project's voice that fits in your browser tab.</p>
+
+        <h3 class="mt-4">How to Map Your Identity Safely (Step-by-Step)</h3>
+        <p>Finding a high-impact name should be a high-speed, 5-second task. Here is how to use our <strong>name tool</strong>:</p>
+        <ul style="line-height: 1.8; margin-bottom: 20px;">
+          <li><strong>Step 1: Calibrate Your Genre</strong> — Select your category (Fantasy, Business, or Person). Our system re-indexes the secure local linguistic arrays instantly.</li>
+          <li><strong>Step 2: Trigger the Batch</strong> — Click "Generate Names." Our system performs the private randomized mapping within the local RAM.</li>
+          <li><strong>Step 3: Discover the Fit</strong> — Browse the generated list. Our system provides a clean, responsive layout for easy scanning.</li>
+          <li><strong>Step 4: Secure Your Choice</strong> — Click any name to copy it instantly, or use "Copy All" to move the entire batch to your private document.</li>
+        </ul>
+
+        <h3 class="mt-4">Strategic Use Cases for Your Local Name Generator</h3>
+        <p>Our <strong>searchable creative laboratory</strong> is the essential companion for modern digital hygiene:</p>
+        
+        <p><strong>For Fiction Authors:</strong> Establishing the cast of your next series? Use our <strong>name generator</strong> to find consistent characters without broadcasting your choices.</p>
+        
+        <p><strong>For Startup Founders:</strong> Testing brand names for a confidential project? Use our <strong>safe design tool</strong> for a clean, private environment that ensures absolute security.</p>
+        
+        <p><strong>For Game Developers:</strong> Generating varied names for procedural NPCs? Use our <strong>safe storage tool</strong> to build high-fidelity identities without using ad-heavy cloud sites.</p>
+
+        <h3 class="mt-5">Explore Your Complete Content Suite</h3>
+        <p>Once you’ve successfully mapped your identities, you might need to find the perfect plot for them. Check out our <strong><a href="story-assistant.html">Story Writing Assistant</a></strong>. Or, if you need to create a visual mark for your brand, use our <strong><a href="../design/logo-generator.html">Simple Logo Generator</a></strong>. At 99tool.in, we are building a world-class, 100% private digital toolkit to give you total control over the integrity of your information.</p>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+               Are the business names available as domains?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>For your privacy, this tool does **not check domain availability** online. It focuses on generating "High-Impact Concepts." We recommend checking availability manually through a secure registrar once you find a name you love.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I generate names from specific cultures?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Our "Person" category uses a diverse, global set of phonemes and root names to provide a wide variety of realistic identities completely.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Is my name data secure?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Absolutely. 100% of the name generation and copying operations happen within your <strong>browser session's local memory</strong>. No data is sent to our servers, and no records of your work are kept. Your privacy is our standard.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 Privacy-First. Linguistic Mapping Logic. 100%. Last updated: April 11, 2026.</p>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const container = document.getElementById('results-container');
+    const btnGen = document.getElementById('btn-generate');
+    const btnCopyAll = document.getElementById('btn-copy-all');
+    const pills = document.querySelectorAll('.pill');
+    const countInput = document.getElementById('gen-count');
+
+    let currentCat = 'fantasy';
+
+    const library = {
+       fantasy: {
+          pre: ["El", "Val", "Aer", "Gal", "Mor", "Aza", "Thal", "Fin", "Zyr", "Bel"],
+          post: ["dris", "wyn", "thor", "ian", "gorn", "ith", "on", "ar", "riel", "vorn"]
+       },
+       person: {
+          pre: ["James", "Sarah", "Alex", "Maria", "Liam", "Hiro", "Elena", "Omar", "Noah", "Anya"],
+          post: ["Smith", "Chen", "Garcia", "Miller", "Ivanov", "Sato", "Khan", "O'Reilly", "Lee", "Dubois"]
+       },
+       business: {
+          pre: ["Cloud", "Nova", "Stellar", "Core", "Apex", "Vortex", "Prime", "Quantum", "Solar", "Logic"],
+          post: ["Systems", "Dynamics", "Labs", "Solutions", "Media", "Technologies", "Works", "Hub", "Group", "Forge"]
+       },
+       heroic: {
+          pre: ["Iron", "Storm", "Night", "Frost", "Shadow", "Thunder", "Steel", "Flame", "Ghost", "Void"],
+          post: ["Blade", "Heart", "Stalker", "Walker", "Claw", "Shield", "Fist", "Rider", "Soul", "Bane"]
+       }
+    };
+
+    function generate() {
+       const count = Math.min(50, Math.max(1, countInput.value));
+       const data = library[currentCat];
+       container.innerHTML = '';
+       
+       for(let i=0; i<count; i++) {
+          const name = data.pre[Math.floor(Math.random()*data.pre.length)] + (currentCat === 'person' || currentCat === 'business' ? ' ' : '') + data.post[Math.floor(Math.random()*data.post.length)];
+          const card = document.createElement('div');
+          card.className = 'name-card';
+          card.innerHTML = `<h4>${name}</h4><span class="copy-hint">Click to Copy</span>`;
+          card.onclick = () => {
+             copyToClipboard(name, null);
+             const h4 = card.querySelector('h4');
+             const old = h4.innerText;
+             h4.innerText = 'COPIED!';
+             setTimeout(() => h4.innerText = name, 800);
+          };
+          container.appendChild(card);
+       }
+    }
+
+    pills.forEach(p => {
+       p.onclick = () => {
+          pills.forEach(x => x.classList.remove('active'));
+          p.classList.add('active');
+          currentCat = p.dataset.cat;
+          generate();
+       };
+    });
+
+    btnGen.onclick = generate;
+    btnCopyAll.onclick = () => {
+       const all = Array.from(container.querySelectorAll('h4')).map(h => h.innerText).join('\n');
+       copyToClipboard(all, btnCopyAll);
+    };
+
+    generate();
+  </script>
+</body>
+</html>
+

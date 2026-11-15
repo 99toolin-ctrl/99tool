@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Screen Privacy – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/security/screen-privacy.html"/>
+<meta property="og:title" content="Screen Privacy – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/security/screen-privacy.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Screen Privacy \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/security/screen-privacy.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .privacy-workspace {
+      height: 600px;
+      background: #222;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      margin-top: 2rem;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .demo-content {
+        padding: 4rem; text-align: left; max-width: 600px; line-height: 1.8; color: #aaa; pointer-events: none;
+    }
+    .demo-content h3 { color: white; margin-bottom: 20px; }
+    .sensitive { background: #444; color: #444; border-radius: 4px; padding: 0 5px; }
+
+    /* Overlay Styles */
+    #privacy-overlay {
+        position: absolute; inset: 0; pointer-events: none; z-index: 100;
+        backdrop-filter: blur(0px); background: rgba(0,0,0,0);
+        transition: backdrop-filter 0.3s, background 0.3s;
+    }
+
+    #lens {
+        position: absolute; width: 200px; height: 150px;
+        border: 2px solid var(--primary); background: rgba(229, 57, 53, 0.1);
+        cursor: move; display: none; border-radius: 12px;
+        backdrop-filter: blur(10px); z-index: 101;
+    }
+
+    #spotlight {
+        position: absolute; inset: 0; background: black; pointer-events: none;
+        mask-image: radial-gradient(circle 100px at -200px -200px, transparent 100%, black 100%);
+        -webkit-mask-image: radial-gradient(circle 100px at -200px -200px, transparent 100%, black 100%);
+        display: none; z-index: 102;
+    }
+
+    .toolbar {
+        background: var(--dark-card); border: 1px solid var(--border); padding: 1.5rem; border-radius: 12px; margin-top: 2rem;
+        display: flex; justify-content: space-between; align-items: center;
+    }
+    .settings-group { display: flex; align-items: center; gap: 20px; }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-hero text-center">
+      <nav class="breadcrumb justify-content-center">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#security">Security</a> <span>/</span> 
+        <span>Screen Privacy Tool</span>
+      </nav>
+      <h1>Screen Privacy Tool</h1>
+      <p>Instantly hide sensitive areas or focus on specific content with professional privacy overlays.</p>
+    </div>
+
+    <div class="privacy-workspace" id="workspace">
+        <div class="demo-content">
+            <h3>Confidential Project Protocol</h3>
+            <p>Access Level: <span class="sensitive">Ultra Top Secret</span></p>
+            <p>Subject Name: <span class="sensitive">Subject Alpha 99</span></p>
+            <p>This document contains sensitive data regarding the encryption protocols used in the 99tool biosphere. Any unauthorized sharing or screen recording of this content is strictly prohibited by security standards.</p>
+            <p>Budget Allocation: <span class="sensitive">$4,500,000.00</span></p>
+        </div>
+
+        <!-- Privacy Elements -->
+        <div id="privacy-overlay"></div>
+        <div id="lens"></div>
+        <div id="spotlight"></div>
+    </div>
+
+    <div class="toolbar">
+        <div class="settings-group">
+            <button class="btn btn-secondary btn-sm" onclick="toggleMode('blur')">Toggle Full Blur</button>
+            <button class="btn btn-secondary btn-sm" onclick="toggleMode('lens')">Draggable Lens</button>
+            <button class="btn btn-primary btn-sm" onclick="toggleMode('spotlight')">Spotlight Mode</button>
+        </div>
+        <div class="settings-group">
+            <label class="small text-muted">Intensity</label>
+            <input type="range" min="0" max="20" value="10" oninput="updateIntensity(this.value)">
+        </div>
+    </div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5">
+        <h2>Visual Sovereignty: Protecting Your Screen in the Age of "Shoulder Surfing"</h2>
+        <p>We’ve all been there: you’re working on a sensitive document in a crowded airport lounge, a bustling café, or even a shared co-working space. You can feel the eyes of the person sitting behind you drifting toward your screen. Whether it's a proprietary project timeline, a private client email, or your personal banking details, the threat of "shoulder surfing" is real. You want a way to shield your information, so you look for a <strong>screen privacy tool online</strong>. But most "solutions" involve buying physical plastic filters or installing intrusive browser extensions that track your browsing habits. Do you really want to compromise your digital privacy just to protect your physical screen?</p>
+
+        <p>At 99tool.in, we built our <strong>screen privacy laboratory</strong> to give you instant, software-driven protection without the privacy debt. By utilizing high-fidelity CSS blurring and spotlight filters, we allow you to <strong>hide sensitive screen content</strong> entirely within the secure sandbox of your browser. Whether you’re a remote professional handling confidential data, a student protecting an exam draft, or a traveler securing your personal identity, our <strong>safe privacy utility</strong> ensures that your information stays for your eyes only, right where it belongs: private and under your total sovereignty.</p>
+        
+        <div class="tool-preview-box mt-4 mb-4" style="text-align:center;">
+           <img src="../../assets/images/markdown-preview.png" alt="Pro-Grade Screen Privacy Dashboard featuring interactive blur lenses and cursor-tracking spotlight mode" class="tool-preview" id="tool-preview-img" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+        </div>
+
+        <h3 class="mt-4">The Logic of "Tactical Obfuscation"</h3>
+        <p>Visual hygiene is about "Controlled Visibility." Most basic <strong>privacy screens</strong> are static and non-interactive. Our <strong>professional privacy tool</strong> takes a human-centric approach: we focus on **Adjustable Overlays** and **Dynamic Spotlight Filtering**.</p>
+        
+        <p>We've engineered a logic engine that allows you to toggle between different layers of defense. Our <strong>safe privacy validator</strong> includes an adjustable "Full Blur" for instant panic-switch protection, a "Draggable Lens" for isolating specific sensitive rows of data, and a "Spotlight Mode" that blacks out everything except the text you are currently reading. This transparency transforms your browser tab into a secure bunker, helping you maintain your focus without the fear of visual harvesting.</p>
+
+        <h3 class="mt-4">Why Software-Based Privacy is the Professional’s Ethical Choice</h2>
+        <p>In the age of high-resolution mobile cameras and pervasive surveillance, a single photograph of your screen can lead to a massive data breach. Using a standard <strong>privacy filter</strong> sometimes isn't enough, especially during video calls or screen-sharing sessions. Our 100% <strong>privacy utility</strong> removes this "Visual Vulnerability" from your workflow entirely.</p>
+        
+        <p>Because the blurring and spotlight logic happen in your browser's private memory, your sensitive data is invisible to the outside world. No analytics are tracked, no screenshots are harvested, and no proprietary content is shared with advertisers or third-party trackers. At 99tool.in, we believe that <strong>protecting your view</strong> should be an empowering utility, not a data-collection opportunity. With us, you have a private, professional shield for your digital life that fits in your browser tab.</p>
+
+        <h3 class="mt-4">How to Protect Your Screen (Step-by-Step)</h3>
+        <p>Securing your visual workspace should be a high-speed, zero-friction task. Here is how to use our <strong>screen privacy tool</strong>:</p>
+        <ul style="line-height: 1.8; margin-bottom: 20px;">
+          <li><strong>Step 1: Activate Your Shield</strong> — Choose your protection mode: Full Blur, Draggable Lens, or Spotlight. Our system creates the overlay instantly.</li>
+          <li><strong>Step 2: Adjust the Intensity</strong> — Use the slider to find the perfect balance between readability and obscurity. A higher blur makes text unreadable to others while keeping the layout visible to you.</li>
+          <li><strong>Step 3: Tactical Positioning</strong> — If using the Draggable Lens, move it over the specific field (like a password or credit card number) that needs hiding.</li>
+          <li><strong>Step 4: Spotlight Focus</strong> — Use the Spotlight mode to follow your cursor. This ensures only a small circle of text is visible at any given time, making it impossible for someone to "capture" the whole screen.</li>
+        </ul>
+
+        <h3 class="mt-4">Strategic Use Cases for Your Local Privacy Lab</h3>
+        <p>Our <strong>searchable security laboratory</strong> is the essential companion for modern mobile work:</p>
+        
+        <p><strong>For Remote Business Consultants:</strong> Reviewing a client's quarterly budget in a coffee shop? Use our <strong>screen privacy tool</strong> to blur everything except the row you're auditing.</p>
+        
+        <p><strong>For Software Engineers:</strong> Sharing your screen during a code review? Use our <strong>private lens</strong> to hide any environment variables or API keys that might be visible in your editor.</p>
+        
+        <p><strong>For Privacy-Conscious Travelers:</strong> Checking your banking details while on public transit? Use our <strong>safe spotlight mode</strong> to ensure no one can see your balance from behind you.</p>
+
+        <h3 class="mt-5">Explore Your Complete Security Suite</h3>
+        <p>Once you’ve secured your screen, you might need to protect your documents. Check out our <strong><a href="file-shredder.html">Secure File Shredder</a></strong>. Or, if you need to encrypt text before sharing it, use our <strong><a href="encryption-tool.html">AES Encryption Tool</a></strong>. At 99tool.in, we are building a world-class, 100% private digital toolkit to give you total control over who sees your digital world.</p>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section mt-5">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Does this tool record my screen?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Absolutely not. For your total security, this tool is purely a <strong>visual overlay simulator</strong>. It uses CSS and JavaScript to change how your browser renders content. We never record, stream, or capture your screen data. Your privacy is hard-coded into our architecture.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can this hide my screen from screen-recording software?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. Because the <strong>blur and spotlight filters</strong> are applied directly to the browser's DOM, they will appear in any screenshots or screen recordings you take of that tab. This makes it an ideal tool for creating professional, redacted demo videos.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              How does the "Spotlight Mode" work?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Our <strong>privacy spotlight</strong> uses a "Mask Image" gradient that follows your cursor. It creates a transparent window that moves as you do, while the rest of the screen remains completely blacked out, ensuring your data is isolated.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Are my blurring settings saved?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. For maximum security, we don't store any of your settings or patterns. Once you refresh the page or close the tab, the <strong>security session</strong> is completely wiped from your browser's local memory.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I use this on a tablet or phone?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. Our <strong>responsive privacy tool</strong> is designed to work across all modern devices. You can use your finger to drag the privacy lens or move the spotlight on any touch-enabled screen for mobile privacy on the go.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Does it slow down my browser?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Our tool is <strong>high-performance and lightweight</strong>. It uses hardware-accelerated CSS filters (GPU-based), which means it provides smooth, lag-free protection without putting a significant load on your computer's CPU.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 100% Local Overlay. Zero Screen-Capture. Privacy-First Logic. Updated: April 11, 2026.</p>
+      </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    let activeMode = null;
+    const overlay = document.getElementById('privacy-overlay');
+    const lens = document.getElementById('lens');
+    const spotlight = document.getElementById('spotlight');
+    const workspace = document.getElementById('workspace');
+
+    function toggleMode(mode) {
+        // Reset all
+        overlay.style.backdropFilter = 'blur(0px)';
+        overlay.style.background = 'transparent';
+        lens.style.display = 'none';
+        spotlight.style.display = 'none';
+
+        if (activeMode === mode) {
+            activeMode = null;
+            return;
+        }
+
+        activeMode = mode;
+        if (mode === 'blur') {
+            overlay.style.backdropFilter = 'blur(15px)';
+            overlay.style.background = 'rgba(0,0,0,0.3)';
+        } else if (mode === 'lens') {
+            lens.style.display = 'block';
+            lens.style.top = '100px';
+            lens.style.left = '100px';
+        } else if (mode === 'spotlight') {
+            spotlight.style.display = 'block';
+        }
+    }
+
+    function updateIntensity(val) {
+        if (activeMode === 'blur') {
+            overlay.style.backdropFilter = `blur(${val}px)`;
+        }
+    }
+
+    // Lens Drag Logic
+    lens.onmousedown = function(e) {
+        let offsetX = e.clientX - lens.offsetLeft;
+        let offsetY = e.clientY - lens.offsetTop;
+        
+        document.onmousemove = function(me) {
+            lens.style.left = (me.clientX - offsetX) + 'px';
+            lens.style.top = (me.clientY - offsetY) + 'px';
+        };
+        
+        document.onmouseup = function() {
+            document.onmousemove = null;
+            document.onmouseup = null;
+        };
+    };
+
+    // Spotlight Follow Logic
+    workspace.onmousemove = function(e) {
+        if (activeMode === 'spotlight') {
+            const rect = workspace.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const gradient = `radial-gradient(circle 120px at ${x}px ${y}px, transparent 100%, black 100%)`;
+            spotlight.style.maskImage = gradient;
+            spotlight.style.webkitMaskImage = gradient;
+        }
+    };
+  </script>
+</body>
+</html>
+

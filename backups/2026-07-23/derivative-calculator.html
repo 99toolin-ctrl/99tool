@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Derivative Calculator – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/math/derivative-calculator.html"/>
+<meta property="og:title" content="Derivative Calculator – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/math/derivative-calculator.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Derivative Calculator \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/math/derivative-calculator.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    .math-workspace {
+      max-width: 650px;
+      margin: 2rem auto;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      border-radius: 20px;
+    }
+    .form-group { margin-bottom: 1.5rem; }
+    label { display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-muted); }
+    input {
+      width: 100%;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.8rem;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .hint { font-size: 0.75rem; color: var(--text-muted); margin-top: 5px; }
+    
+    .result-card {
+      background: rgba(229, 57, 53, 0.05);
+      padding: 2rem;
+      border-radius: 12px;
+      margin-top: 2rem;
+      text-align: center;
+      display: none;
+      border: 1px solid var(--primary);
+    }
+    .res-val { font-size: 3rem; font-weight: 800; color: var(--primary); }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Infinite Derivative Calculator</h1>
+      <p>Analyze rates of change instantly. High-accuracy numerical differentiation at any point.</p>
+    </div>
+
+    <div class="math-workspace">
+      <div class="form-group">
+        <label>Function $f(x)$</label>
+        <input type="text" id="func" placeholder="e.g., x*x + 5*x" value="x*x">
+        <div class="hint">Use standard JS math symbols: +, -, *, /, Math.sin(x), Math.exp(x), etc.</div>
+      </div>
+      <div class="form-group">
+        <label>At Point $x$</label>
+        <input type="number" id="point" value="1">
+      </div>
+      
+      <button onclick="calculateDerivative()" class="btn btn-primary btn-lg btn-full">Compute Derivative</button>
+
+      <div class="result-card" id="result-card">
+         <div class="small text-muted mb-2">Estimated Slope $f'(x)$</div>
+         <div class="res-val" id="res">0</div>
+         <p class="mt-3 text-muted small">Calculated using center-difference numerical approximation with step size $h=10^{-7}$.</p>
+      </div>
+
+      <!-- SEO CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2>What is a Numerical Derivative?</h2>
+        <p>In calculus, the derivative and rate of change at a point can be estimated without complex symbolic rules by using **Numerical Differentiation**. Our <strong>online derivative solver</strong> uses the central difference method: $f'(x) \approx (f(x+h) - f(x-h)) / 2h$. This provides high-accuracy results for students and engineers who need the gradient of a curve at a specific point instantly. A consistent <strong>calculus diagnostic auditor</strong> is key to analyzing function behavior in physics and economics.</p>
+
+        <h3 class="mt-4">How to Input Functions</h2>
+        <p>You can input any valid JavaScript mathematical expression. For example, use <code>Math.sin(x)</code> for sine, <code>Math.pow(x, 2)</code> or <code>x*x</code> for $x^2$, and <code>Math.exp(x)</code> for $e^x$. By using our <strong>gradient diagnostic tool</strong>, you can verify your manual symbolic derivations against numerical benchmarks. This <strong>advanced math auditor</strong> is essential for optimizing machine learning models and structural engineering diagnostics.</p>
+
+        <h3 class="mt-4">Privacy and Pure Calculus</h2>
+        <p>At 99tool.in, we perform all function evaluations locally in your browser sandbox. We do not store your mathematical functions or the points you analyze. This <strong>private derivative tool</strong> provides professional-grade results without any third-party telemetry. Whether you are solving for tangents or examining local extrema, our <strong>secure calculus calculator</strong> ensures your data remains purely yours.</p>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    function calculateDerivative() {
+       const fStr = document.getElementById('func').value;
+       const x = parseFloat(document.getElementById('point').value);
+       
+       if (!fStr || isNaN(x)) return alert('Please enter a valid function and point.');
+
+       try {
+          const h = 0.0000001; 
+          
+          // Helper to evaluate function at x
+          const f = (val) => {
+             // Create a function scope where 'x' is defined
+             return (new Function('x', `return ${fStr}`))(val);
+          };
+
+          const slope = (f(x + h) - f(x - h)) / (2 * h);
+          
+          document.getElementById('res').innerText = Number.isInteger(slope) ? slope : slope.toFixed(6).replace(/\.?0+$/, "");
+          document.getElementById('result-card').style.display = 'block';
+       } catch (e) {
+          alert("Mathematical Error: Please ensure your function is valid (e.g., x*x + Math.sin(x))");
+       }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Dashboard – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/productivity/dashboard.html"/>
+<meta property="og:title" content="Dashboard – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/productivity/dashboard.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Dashboard \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/productivity/dashboard.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    .dashboard-workspace {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .widget {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      position: relative;
+      transition: box-shadow 0.3s;
+    }
+    .widget:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.3); border-color: var(--primary); }
+
+    .widget-header {
+        display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 10px;
+    }
+    .widget-title { font-weight: 700; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1px; color: var(--text-muted); }
+
+    .widget textarea { 
+        flex: 1; background: none; border: none; color: #ddd; resize: none; outline: none; font-size: 0.95rem; line-height: 1.6;
+    }
+
+    .clock-widget { font-size: 3rem; font-weight: 800; color: var(--primary); text-align: center; font-family: 'JetBrains Mono', monospace; }
+    
+    .todo-item { display: flex; align-items: center; gap: 10px; font-size: 0.9rem; }
+    .todo-item input[type="checkbox"] { accent-color: var(--primary); width: 18px; height: 18px; cursor: pointer; }
+
+    .add-widget-bar {
+        background: var(--dark-card); border: 1px solid var(--border); padding: 1rem; border-radius: 50px; margin-top: 3rem;
+        display: flex; justify-content: center; gap: 15px;
+    }
+
+    .btn-circle { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: var(--dark); border: 1px solid var(--border); color: white; cursor: pointer; font-size: 1.2rem; }
+    .btn-circle:hover { background: var(--primary); color: white; border-color: var(--primary); }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/productivity/dashboard.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/productivity/dashboard.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/productivity/dashboard.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/productivity/dashboard.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/productivity/dashboard.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/productivity/dashboard.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/productivity/dashboard.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/productivity/dashboard.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/productivity/dashboard.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/productivity/dashboard.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/productivity/dashboard.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/productivity/dashboard.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/productivity/dashboard.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/productivity/dashboard.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/productivity/dashboard.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/productivity/dashboard.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/productivity/dashboard.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/productivity/dashboard.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/productivity/dashboard.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/productivity/dashboard.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/productivity/dashboard.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/productivity/dashboard.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-hero text-center">
+      <nav class="breadcrumb justify-content-center">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#productivity">Productivity</a> <span>/</span> 
+        <span>Dashboard</span>
+      </nav>
+      <h1>Personal Productivity Dashboard</h1>
+      <p>Your modular command center. Configure widgets for tasks, notes, and local tools in one private place.</p>
+    </div>
+
+    <div id="dashboard-grid" class="dashboard-workspace">
+        <!-- Widgets injected here -->
+    </div>
+
+    <div class="add-widget-bar">
+        <button class="btn btn-secondary btn-sm" onclick="addWidget('clock')">Add Clock</button>
+        <button class="btn btn-secondary btn-sm" onclick="addWidget('note')">Add Quick Note</button>
+        <button class="btn btn-secondary btn-sm" onclick="addWidget('tasks')">Add Task List</button>
+        <button class="btn btn-primary btn-sm" onclick="saveDashboard()">Save Layout</button>
+    </div>
+
+    <section class="seo-content mt-5 text-start">
+      <h2 data-i18n="tools.personal_productivity_dashboard.what_is_title">What is the Personal Productivity Dashboard?</h2>
+      <p>The Personal Productivity Dashboard is a modular workspace that lets you add, arrange, and configure widgets — including notes, task lists, and a live clock — all on a single screen. Standard dashboard tools require a cloud account and sync your workspace layout to remote servers. This tool stores your widget configuration and content exclusively in your browser's localStorage.</p>
+      <p>Click "Save Layout" to persist your current setup. When you return, your widgets and their content are restored exactly as you left them, with no login required and no data ever leaving your device.</p>
+
+      <h3 class="mt-4">How to Use the Personal Productivity Dashboard</h3>
+      <p>Building your workspace involves these steps:</p>
+      <ol class="mt-2 mb-3">
+        <li>Use the "Add Widget" buttons in the toolbar to add a Clock, Notes Pad, or Task List widget to your dashboard.</li>
+        <li>Drag and drop widgets to rearrange them on the canvas to match your preferred layout.</li>
+        <li>Click inside a Notes widget to start typing directly. Content saves automatically to localStorage.</li>
+        <li>Add tasks in a Task List widget by typing in the input field and pressing Enter. Check off completed items.</li>
+        <li>Click "Save Layout" to commit your widget arrangement to localStorage so it persists on reload.</li>
+        <li>Click the ✕ button on any widget to remove it from the dashboard.</li>
+      </ol>
+
+      <h3 class="mt-4">Key Features</h3>
+      <ul class="mt-2 mb-3">
+        <li><strong>Modular Widget System:</strong> Add any combination of Clock, Notes, and Task List widgets to a single, unified screen.</li>
+        <li><strong>Drag-and-Drop Layout:</strong> Rearrange widgets by dragging to build a layout that matches your mental workflow.</li>
+        <li><strong>Persistent Workspace:</strong> "Save Layout" commits your full configuration to localStorage, surviving page refreshes and browser restarts.</li>
+        <li><strong>Zero-Account Setup:</strong> No login, no cloud sync, and no data transmission — your dashboard is exclusively yours.</li>
+      </ul>
+
+      <h3 class="mt-4">Common Use Cases</h3>
+      <p>This dashboard is helpful for the following tasks:</p>
+      <ul class="mt-2 mb-3">
+        <li><strong>Morning Startup Routine:</strong> Opening one tab to see your clock, today's tasks, and a scratchpad for notes instead of switching between multiple apps.</li>
+        <li><strong>Freelance Project Hub:</strong> Keeping active project notes and daily task lists side-by-side in a private, account-free workspace.</li>
+        <li><strong>Study Dashboard:</strong> Arranging a notes widget for key concepts alongside a task list for study targets and a clock for timed sessions.</li>
+      </ul>
+
+      <h3 class="mt-4">Frequently Asked Questions</h3>
+      <div class="faq-section mt-3">
+        <p><strong>What widgets are available?</strong><br>The current version supports a Live Clock widget, a free-form Notes Pad, and a basic Task List. More widgets (calendar, Pomodoro timer, habit tracker) are planned for future updates.</p>
+        <p><strong>Is my dashboard saved automatically?</strong><br>Widget content (notes, tasks) is auto-saved as you type. The widget layout requires a manual click on "Save Layout" to persist the arrangement.</p>
+        <p><strong>Can I use this on multiple monitors?</strong><br>Yes. Open the tool in a separate browser window and arrange it on your second monitor as a persistent command center.</p>
+        <p><strong>Does clearing browser data erase my dashboard?</strong><br>Yes. Clearing site data for 99tool.in removes your saved layout and widget content. Export important notes before a browser reset.</p>
+      </div>
+
+      <h3 class="mt-4">Privacy &amp; Data Note</h3>
+      <p>All widget content, layout configuration, and task data are stored entirely inside your browser's localStorage. No dashboard data is transmitted to any server or third-party service.</p>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-section">
+      <h2 data-i18n="tools.personal_productivity_dashboard.faq_title">Frequently Asked Questions</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <button class="faq-question">
+            What widgets are available right now?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>The current version supports a Live Clock, a free-form Notes Pad, and a basic Task List. Our roadmap includes a Pomodoro Timer widget, a Habit Tracker tile, and a mini Calendar. Each new widget will continue our <strong>private dashboard</strong> philosophy — all data stored locally, zero cloud.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Is my data auto-saved?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, your widget content (notes and tasks) auto-saves as you type. For the widget layout itself, use the <strong>"Save Layout"</strong> button after making changes. This two-step design prevents accidental overwrites of your workspace config.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Is this truly private?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>100%. There are no servers, no analytics, and no accounts. Your <strong>personal dashboard</strong> is a fully local application. The only place your data lives is in your browser's sandboxed localStorage on your own machine.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <div class="trust-signal">
+      <p>🔒 Your command center. Your data. 100% Private. Last updated: April 10, 2026.</p>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    let widgets = [];
+
+    function init() {
+        const saved = localStorage.getItem('99tool_dashboard');
+        if (saved) {
+            widgets = JSON.parse(saved);
+        } else {
+            // Default setup
+            widgets = [
+                { id: 'w1', type: 'clock', title: 'Global Time' },
+                { id: 'w2', type: 'note', title: 'Quick Thoughts', content: 'Focus on priorities today.' },
+                { id: 'w3', type: 'tasks', title: 'Today\'s Wins', items: [{ text: 'Deep Work Session', done: false }] }
+            ];
+        }
+        renderDashboard();
+        startClock();
+    }
+
+    function renderDashboard() {
+        const grid = document.getElementById('dashboard-grid');
+        grid.innerHTML = "";
+        widgets.forEach(w => {
+            const widget = document.createElement('div');
+            widget.className = 'widget';
+            widget.innerHTML = `
+                <div class="widget-header">
+                    <span class="widget-title">${w.title}</span>
+                    <button class="btn btn-sm" style="color:red; opacity:0.3;" onclick="removeWidget('${w.id}')">×</button>
+                </div>
+                <div class="widget-body" id="body-${w.id}">
+                    ${renderWidgetBody(w)}
+                </div>
+            `;
+            grid.appendChild(widget);
+        });
+    }
+
+    function renderWidgetBody(w) {
+        if (w.type === 'clock') {
+            return `<div class="clock-widget" id="clock-display">00:00:00</div>`;
+        } else if (w.type === 'note') {
+            return `<textarea placeholder="Write something..." oninput="updateNote('${w.id}', this.value)">${w.content || ""}</textarea>`;
+        } else if (w.type === 'tasks') {
+            let html = `<div class="flex flex-col gap-2">`;
+            (w.items || []).forEach((item, i) => {
+                html += `
+                    <div class="todo-item">
+                        <input type="checkbox" ${item.done ? 'checked' : ''} onclick="toggleTask('${w.id}', ${i})">
+                        <span style="${item.done ? 'text-decoration:line-through; opacity:0.5;' : ''}">${item.text}</span>
+                    </div>`;
+            });
+            html += `<input type="text" class="form-control mt-2" placeholder="+ Add task" onkeypress="if(event.key==='Enter') addTask('${w.id}', this)"></div>`;
+            return html;
+        }
+    }
+
+    function addWidget(type) {
+        widgets.push({ 
+            id: 'w' + Date.now(), 
+            type, 
+            title: type.toUpperCase() + " WIDGET",
+            content: "",
+            items: [] 
+        });
+        renderDashboard();
+    }
+
+    function removeWidget(id) {
+        widgets = widgets.filter(w => w.id !== id);
+        renderDashboard();
+    }
+
+    function updateNote(id, val) {
+        const w = widgets.find(x => x.id === id);
+        if (w) w.content = val;
+    }
+
+    function addTask(id, input) {
+        if (!input.value.trim()) return;
+        const w = widgets.find(x => x.id === id);
+        if (w) {
+            w.items.push({ text: input.value, done: false });
+            renderDashboard();
+        }
+    }
+
+    function toggleTask(wid, idx) {
+        const w = widgets.find(x => x.id === wid);
+        if (w) {
+            w.items[idx].done = !w.items[idx].done;
+            renderDashboard();
+        }
+    }
+
+    function startClock() {
+        setInterval(() => {
+            const disp = document.getElementById('clock-display');
+            if (disp) {
+                disp.innerText = new Date().toLocaleTimeString();
+            }
+        }, 1000);
+    }
+
+    function saveDashboard() {
+        localStorage.setItem('99tool_dashboard', JSON.stringify(widgets));
+        alert("Dashboard layout saved locally.");
+    }
+
+    init();
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

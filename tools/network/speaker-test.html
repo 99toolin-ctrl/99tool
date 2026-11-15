@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Speaker Test – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/network/speaker-test.html"/>
+<meta property="og:title" content="Speaker Test – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/network/speaker-test.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Speaker Test \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/network/speaker-test.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .speaker-workspace {
+      margin-top: 2rem;
+      background: var(--bg-secondary);
+      padding: 3rem;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+    .test-controls {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+    .test-card {
+      background: var(--bg-primary);
+      padding: 2rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .test-card:hover { border-color: var(--primary); transform: scale(1.02); }
+    .test-card.active { border-color: var(--primary); background: rgba(255,71,87,0.05); }
+    
+    .test-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+    .test-label { font-weight: 700; font-size: 1.1rem; color: var(--text); }
+    
+    .frequency-range {
+      margin-top: 2rem;
+      background: var(--bg-primary);
+      padding: 2rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+    .hz-display {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--primary);
+      font-family: monospace;
+      margin: 1rem 0;
+    }
+    input[type=range] { width: 100%; margin-top: 20px; }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/network/speaker-test.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/network/speaker-test.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/network/speaker-test.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/network/speaker-test.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/network/speaker-test.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/network/speaker-test.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/network/speaker-test.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/network/speaker-test.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/network/speaker-test.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/network/speaker-test.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/network/speaker-test.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/network/speaker-test.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/network/speaker-test.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/network/speaker-test.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/network/speaker-test.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/network/speaker-test.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/network/speaker-test.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/network/speaker-test.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/network/speaker-test.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/network/speaker-test.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/network/speaker-test.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/network/speaker-test.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Speaker & Stereo Tester</h1>
+      <p>Verify sound balance, audio fidelity, and frequency output.</p>
+    </div>
+
+    <div class="tool-container text-center">
+      <div class="speaker-workspace">
+        <div class="test-controls">
+          <div class="test-card" onclick="playTest('left')">
+             <div class="test-icon">⬅️</div>
+             <div class="test-label">Left Speaker</div>
+          </div>
+          <div class="test-card" onclick="playTest('right')">
+             <div class="test-icon">➡️</div>
+             <div class="test-label">Right Speaker</div>
+          </div>
+          <div class="test-card" onclick="playTest('both')">
+             <div class="test-icon">🔊</div>
+             <div class="test-label">Stereo Both</div>
+          </div>
+        </div>
+
+        <div class="frequency-range">
+          <div class="detail-label" style="text-transform: uppercase;">Frequency Generator</div>
+          <div class="hz-display" id="hz-val">440<span> Hz</span></div>
+          <input type="range" id="freq-slider" min="20" max="20000" value="440" step="1">
+          <div class="d-flex justify-content-between text-muted small mt-2">
+            <span>20Hz (Bass)</span>
+            <span>20kHz (Treble)</span>
+          </div>
+          <button id="toggle-freq" class="btn btn-secondary mt-4">Play Frequency</button>
+        </div>
+      </div>
+
+      <!-- SEO CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2>Why You Should Test Your Speakers Regularly</h2>
+        <p>Your audio hardware is the primary way you consume media, from music to video calls. A <strong>speaker test online</strong> is the fastest way to identify hardware failure, such as blown drivers or silent channels. Our <strong>online sound checker</strong> provides precision-tuned audio signals to help you troubleshoot your speakers, headphones, or high-end studio monitors instantly.</p>
+
+        <h3 class="mt-4">Testing Stereo Balance (Left vs. Right)</h3>
+        <p>If you're using headphones or a multi-channel sound system, an <strong>audio balance test</strong> is vital. Sometimes a loose cable or a software setting can cause one side to sound quieter than the other. Our <strong>speaker check tool</strong> allows you to isolate the left and right channels, ensuring your stereo image is centered and your spatial audio is working correctly.</p>
+
+        <h3 class="mt-4">Checking Frequency Range (20Hz - 20kHz)</h3>
+        <p>Human hearing typically ranges from 20Hz (deep bass) to 20,000Hz (sharp treble). As hardware ages—or as our own hearing changes—we might lose sensitivity at certain frequencies. Our <strong>frequency sweep tester</strong> allows you to manually slide through the entire audible spectrum. This is a professional <strong>audio range test</strong> that identifies if your tweeters are failing or if your subwoofers are underperforming.</p>
+
+        <h3 class="mt-4">High-Fidelity Audio Privacy</h3>
+        <p>At 99tool.in, we believe in lightweight utilities. Our <strong>speaker tester tool</strong> uses the built-in Oscillator of the Web Audio API to generate pure sine waves without downloading large MP3 files. This makes the <strong>sound test online</strong> fast, private, and extremely accurate, as it doesn't rely on pre-recorded audio that might be limited by compression artifacts.</p>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    let audioCtx;
+    let oscillator;
+    let gainNode;
+    let isPlaying = false;
+
+    function initAudio() {
+       if (!audioCtx) {
+          audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+          gainNode = audioCtx.createGain();
+          gainNode.connect(audioCtx.destination);
+       }
+    }
+
+    function playTest(side) {
+       initAudio();
+       if (isPlaying) stopFreq();
+
+       const panner = audioCtx.createStereoPanner();
+       if (side === 'left') panner.pan.value = -1;
+       else if (side === 'right') panner.pan.value = 1;
+       else panner.pan.value = 0;
+
+       const osc = audioCtx.createOscillator();
+       const g = audioCtx.createGain();
+       
+       osc.type = 'sine';
+       osc.frequency.value = 440;
+       
+       osc.connect(g);
+       g.connect(panner);
+       panner.connect(audioCtx.destination);
+
+       osc.start();
+       g.gain.setValueAtTime(0, audioCtx.currentTime);
+       g.gain.linearRampToValueAtTime(0.5, audioCtx.currentTime + 0.1);
+       g.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 1.5);
+       
+       setTimeout(() => osc.stop(), 2000);
+    }
+
+    const freqSlider = document.getElementById('freq-slider');
+    const hzVal = document.getElementById('hz-val');
+    const toggleBtn = document.getElementById('toggle-freq');
+
+    freqSlider.oninput = () => {
+       const val = freqSlider.value;
+       hzVal.innerHTML = `${val}<span> Hz</span>`;
+       if (oscillator && isPlaying) {
+          oscillator.frequency.setValueAtTime(val, audioCtx.currentTime);
+       }
+    };
+
+    toggleBtn.onclick = () => {
+       if (isPlaying) {
+          stopFreq();
+       } else {
+          startFreq();
+       }
+    };
+
+    function startFreq() {
+       initAudio();
+       isPlaying = true;
+       toggleBtn.innerText = "Stop Frequency";
+       toggleBtn.classList.add('btn-primary');
+
+       oscillator = audioCtx.createOscillator();
+       oscillator.type = 'sine';
+       oscillator.frequency.value = freqSlider.value;
+       oscillator.connect(gainNode);
+       oscillator.start();
+       
+       gainNode.gain.setValueAtTime(0, audioCtx.currentTime);
+       gainNode.gain.linearRampToValueAtTime(0.3, audioCtx.currentTime + 0.1);
+    }
+
+    function stopFreq() {
+       if (!oscillator) return;
+       isPlaying = false;
+       toggleBtn.innerText = "Play Frequency";
+       toggleBtn.classList.remove('btn-primary');
+       
+       gainNode.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 0.1);
+       setTimeout(() => oscillator.stop(), 200);
+    }
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Screenshot Editor – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/image/screenshot-editor.html"/>
+<meta property="og:title" content="Screenshot Editor – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/image/screenshot-editor.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Screenshot Editor \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/image/screenshot-editor.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .editor-layout {
+      display: grid;
+      grid-template-columns: 80px 1fr 280px;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    @media (max-width: 992px) {
+      .editor-layout { grid-template-columns: 1fr; }
+      .toolbar { order: 2; flex-direction: row !important; height: auto !important; }
+      .sidebar { order: 3; }
+    }
+    
+    .toolbar {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      height: fit-content;
+      position: sticky;
+      top: 80px;
+    }
+    .tool-btn {
+      width: 44px; height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--dark);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      transition: all 0.2s ease;
+      color: var(--text-muted);
+    }
+    .tool-btn:hover { border-color: var(--primary); color: var(--white); }
+    .tool-btn.active { background: var(--primary); border-color: var(--primary); color: white; }
+
+    .canvas-area {
+      background: #111;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 500px;
+      overflow: hidden;
+      position: relative;
+    }
+    #main-canvas {
+      max-width: 100%;
+      height: auto;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+      background: #fff;
+    }
+
+    .sidebar {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      height: fit-content;
+      position: sticky;
+      top: 80px;
+    }
+    .setting-group { margin-bottom: 2rem; }
+    .setting-group h4 { font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem; letter-spacing: 1px; }
+
+    .color-swatches { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+    .color-swatch { width: 100%; aspect-ratio: 1; border-radius: 4px; cursor: pointer; border: 2px solid transparent; }
+    .color-swatch.active { border-color: var(--white); transform: scale(1.1); }
+
+    .range-wrap label { display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-muted); margin-bottom: 4px; }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/image/screenshot-editor.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/image/screenshot-editor.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/image/screenshot-editor.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/image/screenshot-editor.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/image/screenshot-editor.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/image/screenshot-editor.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/image/screenshot-editor.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/image/screenshot-editor.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/image/screenshot-editor.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/image/screenshot-editor.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/image/screenshot-editor.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/image/screenshot-editor.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/image/screenshot-editor.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/image/screenshot-editor.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/image/screenshot-editor.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/image/screenshot-editor.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/image/screenshot-editor.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/image/screenshot-editor.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/image/screenshot-editor.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/image/screenshot-editor.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/image/screenshot-editor.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/image/screenshot-editor.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Pro Screenshot Editor</h1>
+      <p>Annotate, highlight, and polish your screens. Fast, private, and 100% local-first.</p>
+    </div>
+
+    <div class="tool-container">
+      <div class="upload-area" id="drop-zone">
+        <div class="upload-icon">📸</div>
+        <p>Drop screenshot or <span class="text-primary">paste image (Ctrl+V)</span></p>
+        <p class="text-muted small">Edit locally without uploading folders</p>
+        <input type="file" id="image-input" accept="image/*" hidden>
+      </div>
+
+      <div id="tool-workspace" class="hidden">
+        <div class="editor-layout">
+          <!-- TOOLS -->
+          <div class="toolbar">
+             <div class="tool-btn active" data-tool="pen" title="Free Pen">✏️</div>
+             <div class="tool-btn" data-tool="arrow" title="Add Arrow">🏹</div>
+             <div class="tool-btn" data-tool="rect" title="Rectangle">⬜</div>
+             <div class="tool-btn" data-tool="highlighter" title="Highlighter">🖍️</div>
+             <div class="tool-btn" data-tool="text" title="Add Text">T</div>
+             <div class="tool-btn" data-tool="blur" title="Censor/Blur">🌫️</div>
+             <div style="flex-grow:1"></div>
+             <div class="tool-btn" onclick="undo()" title="Undo">↩️</div>
+          </div>
+
+          <!-- CANVAS -->
+          <div class="canvas-area">
+             <canvas id="main-canvas"></canvas>
+          </div>
+
+          <!-- SETTINGS -->
+          <div class="sidebar">
+             <div class="setting-group">
+                <h4>Color</h4>
+                <div class="color-swatches">
+                   <div class="color-swatch active" style="background: #e53935;" data-color="#e53935"></div>
+                   <div class="color-swatch" style="background: #4caf50;" data-color="#4caf50"></div>
+                   <div class="color-swatch" style="background: #2196f3;" data-color="#2196f3"></div>
+                   <div class="color-swatch" style="background: #ffeb3b;" data-color="#ffeb3b"></div>
+                   <div class="color-swatch" style="background: #ffffff;" data-color="#ffffff"></div>
+                   <div class="color-swatch" style="background: #000000;" data-color="#000000"></div>
+                </div>
+             </div>
+
+             <div class="setting-group">
+                <h4>Line Weight</h4>
+                <div class="range-wrap">
+                   <label>Size: <span id="weight-val">5</span>px</label>
+                   <input type="range" id="stroke-weight" min="1" max="50" value="5" class="w-100">
+                </div>
+             </div>
+
+             <button id="download-btn" class="btn btn-primary w-100">Download Edited Screen</button>
+             <button id="reset-btn" class="btn btn-secondary w-100 mt-2">Clear All</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5">
+        <h2 data-i18n="tools.screenshot_editor.what_is_title">What is Pro Screenshot Editor</h2>
+        <p>The Pro Screenshot Editor is a client-side annotation utility designed to help you crop, mark up, and sanitize your screen captures. Equipped with arrows, text tools, shape creators, highlighters, and blur brushes, this tool allows you to add context and protect personal data directly in your browser.</p>
+        <p>Your screenshots are processed locally using your device's memory. Since no files are uploaded to any external server, your proprietary console logs, staging mockups, and private conversations remain completely confidential.</p>
+
+        <h3 class="mt-4">How to Use Pro Screenshot Editor</h3>
+        <ol style="line-height: 1.8; margin-bottom: 20px; padding-left: 20px;">
+          <li><strong>Load your screenshot:</strong> Drag and drop your image file into the upload zone, browse your files, or simply paste an image directly from your clipboard using <strong>Ctrl+V</strong> (or Cmd+V on Mac).</li>
+          <li><strong>Select an annotation tool:</strong> In the vertical toolbar on the left, choose your active tool: Free Pen (✏️), Add Arrow (🏹), Rectangle (⬜), Highlighter (🖍️), Add Text (T), or Censor/Blur (🌫️).</li>
+          <li><strong>Choose your style:</strong> In the right sidebar, pick a color from the swatches and adjust the brush/border size using the <strong>Line Weight</strong> slider.</li>
+          <li><strong>Draw on the canvas:</strong> Click and drag on the screenshot to add shapes, point arrows, highlight content, or draw freehand. To add text, click where you want the text to appear and enter your text when prompted.</li>
+          <li><strong>Sanitize sensitive information:</strong> Select the Blur tool (🌫️) and brush over passwords, email addresses, names, or keys to obscure them.</li>
+          <li><strong>Undo mistakes:</strong> Click the <strong>Undo</strong> button (↩️) to step backward through your edit history. Click <strong>Clear All</strong> to reset the image and remove all overlays.</li>
+          <li><strong>Download your edit:</strong> Click the <strong>Download Edited Screen</strong> button to save the completed, flattened PNG image to your local device.</li>
+        </ol>
+
+        <h3 class="mt-4">Key Features</h3>
+        <ul style="line-height: 1.8; margin-bottom: 20px; padding-left: 20px;">
+          <li><strong>Clipboard Paste Support:</strong> Paste screenshots directly into the browser workspace for rapid, friction-free editing.</li>
+          <li><strong>Versatile Annotation Deck:</strong> Annotate with arrows, rectangle borders, semi-transparent highlighters, and bold text stamps.</li>
+          <li><strong>Sensitive Data Blurring:</strong> Protect private data with a pixelating blur brush that permanently masks sensitive details.</li>
+          <li><strong>Color & Weight Tuning:</strong> Select from six vibrant colors and adjust line thicknesses dynamically.</li>
+          <li><strong>Robust Undo System:</strong> Revert accidental markups easily with a 20-step local history buffer.</li>
+        </ul>
+
+        <h3 class="mt-4">Common Use Cases</h3>
+        <ul style="line-height: 1.8; margin-bottom: 20px; padding-left: 20px;">
+          <li><strong>Software Developers:</strong> Drawing arrows and highlighting error logs on screenshots to report bugs to QA teams.</li>
+          <li><strong>Product Designers:</strong> Adding feedback boxes and text annotations directly over website UI mockups.</li>
+          <li><strong>Security Officers:</strong> Obscuring personal information, API keys, or database credentials before sharing technical logs.</li>
+          <li><strong>Educators:</strong> Creating visual step-by-step tutorial assets with numbered boxes and directional arrows.</li>
+        </ul>
+
+        <h3 class="mt-4">Privacy & Data Note</h3>
+        <p>All markups, text stamps, and blurring actions are compiled within your browser's memory sandbox. No data is stored, cached, or uploaded to external servers.</p>
+      </section>
+ 
+      <!-- FAQ SECTION -->
+      <section class="faq-section mt-5">
+        <h2 data-i18n="tools.screenshot_editor.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Does pasting from the clipboard work on all browsers?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes, most modern browsers support clipboard paste operations. Simply select the tab and press standard keyboard paste shortcuts to import your screenshot.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Is the blur effect permanent?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. During export, the tool flattens all drawing and blur layers onto the canvas. The original pixels in the blurred areas are overwritten and cannot be recovered.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I move or resize an annotation after drawing it?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Annotations are drawn directly onto the canvas buffer. To adjust an item, click the **Undo** button in the toolbar to erase it, then redraw it with your preferred coordinates or settings.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Does this editor support high-definition screens?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. The canvas automatically matches the resolution of your source image, ensuring that high-res screenshots remain clear.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Is there a limit to how many screenshots I can edit?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>There are no limits. You can annotate and download as many screens as you need, all processed 100% locally.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const imageInput = document.getElementById('image-input');
+    const dropZone = document.getElementById('drop-zone');
+    const workspace = document.getElementById('tool-workspace');
+    const canvas = document.getElementById('main-canvas');
+    const ctx = canvas.getContext('2d');
+    
+    // Tools
+    const toolBtns = document.querySelectorAll('.tool-btn[data-tool]');
+    const colorSwatches = document.querySelectorAll('.color-swatch');
+    const weightSlider = document.getElementById('stroke-weight');
+    const weightVal = document.getElementById('weight-val');
+    const downloadBtn = document.getElementById('download-btn');
+    const resetBtn = document.getElementById('reset-btn');
+
+    let originalImg = null;
+    let activeTool = 'pen';
+    let activeColor = '#e53935';
+    let history = []; // Each item is a imageData snapshot
+    
+    let isDrawing = false;
+    let startX, startY;
+
+    // Tool Management
+    toolBtns.forEach(btn => {
+       btn.onclick = () => {
+          toolBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          activeTool = btn.dataset.tool;
+       };
+    });
+
+    colorSwatches.forEach(c => {
+       c.onclick = () => {
+          colorSwatches.forEach(s => s.classList.remove('active'));
+          c.classList.add('active');
+          activeColor = c.dataset.color;
+       };
+    });
+
+       weightSlider.oninput = () => weightVal.innerText = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(weightSlider.value, 0) : weightSlider.value;
+
+    // File/Paste logic
+    dropZone.onclick = () => imageInput.click();
+    imageInput.onchange = (e) => handleFile(e.target.files[0]);
+    
+    // Init Drag and Drop using global helper
+    setupDragDrop('drop-zone', (files) => {
+       if (files.length) handleFile(files[0]);
+    });
+    
+    document.onpaste = (e) => {
+       const items = e.clipboardData.items;
+       for (const item of items) {
+          if (item.type.indexOf("image") !== -1) handleFile(item.getAsFile());
+       }
+    };
+
+    function handleFile(file) {
+      if (!file || !file.type.startsWith('image/')) return;
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        originalImg = new Image();
+        originalImg.onload = () => {
+          canvas.width = originalImg.width;
+          canvas.height = originalImg.height;
+          ctx.drawImage(originalImg, 0, 0);
+          saveHistory();
+          workspace.classList.remove('hidden');
+          dropZone.classList.add('hidden');
+        };
+        originalImg.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+
+    // Interaction
+    canvas.onmousedown = (e) => {
+       isDrawing = true;
+       const pos = getMousePos(e);
+       startX = pos.x;
+       startY = pos.y;
+       if (activeTool === 'text') {
+          const text = prompt("Enter text annotation:");
+          if (text) {
+             ctx.fillStyle = activeColor;
+             ctx.font = `bold ${weightSlider.value * 4}px Inter, sans-serif`;
+             ctx.fillText(text, startX, startY);
+             saveHistory();
+          }
+          isDrawing = false;
+       }
+    };
+
+    canvas.onmousemove = (e) => {
+       if (!isDrawing) return;
+       const pos = getMousePos(e);
+       
+       if (activeTool === 'pen' || activeTool === 'blur') {
+          drawFree(pos.x, pos.y);
+       } else {
+          // Shapes need "preview" - restore last history before drawing new shape
+          restoreLastHistory();
+          drawShape(pos.x, pos.y);
+       }
+    };
+
+    canvas.onmouseup = () => {
+       if (isDrawing) saveHistory();
+       isDrawing = false;
+    };
+
+    function getMousePos(e) {
+       const rect = canvas.getBoundingClientRect();
+       const scaleX = canvas.width / rect.width;
+       const scaleY = canvas.height / rect.height;
+       return {
+          x: (e.clientX - rect.left) * scaleX,
+          y: (e.clientY - rect.top) * scaleY
+       };
+    }
+
+    function drawFree(x, y) {
+       ctx.lineCap = 'round';
+       ctx.lineJoin = 'round';
+       ctx.lineWidth = weightSlider.value;
+       
+       if (activeTool === 'blur') {
+          ctx.save();
+          ctx.beginPath();
+          ctx.arc(x, y, weightSlider.value * 2, 0, Math.PI * 2);
+          ctx.clip();
+          ctx.filter = 'blur(10px)';
+          ctx.drawImage(canvas, 0, 0);
+          ctx.restore();
+       } else {
+          ctx.strokeStyle = activeColor;
+          ctx.lineTo(x, y);
+          ctx.stroke();
+          ctx.beginPath();
+          ctx.moveTo(x, y);
+       }
+    }
+
+    function drawShape(x, y) {
+       ctx.strokeStyle = activeColor;
+       ctx.lineWidth = weightSlider.value;
+       
+       if (activeTool === 'rect') {
+          ctx.strokeRect(startX, startY, x - startX, y - startY);
+       } else if (activeTool === 'highlighter') {
+          ctx.globalAlpha = 0.3;
+          ctx.fillStyle = activeColor;
+          ctx.fillRect(startX, startY, x - startX, y - startY);
+          ctx.globalAlpha = 1.0;
+       } else if (activeTool === 'arrow') {
+          drawArrow(startX, startY, x, y);
+       }
+    }
+
+    function drawArrow(x1, y1, x2, y2) {
+       const headlen = weightSlider.value * 3;
+       const angle = Math.atan2(y2 - y1, x2 - x1);
+       ctx.beginPath();
+       ctx.moveTo(x1, y1);
+       ctx.lineTo(x2, y2);
+       ctx.lineTo(x2 - headlen * Math.cos(angle - Math.PI / 6), y2 - headlen * Math.sin(angle - Math.PI / 6));
+       ctx.moveTo(x2, y2);
+       ctx.lineTo(x2 - headlen * Math.cos(angle + Math.PI / 6), y2 - headlen * Math.sin(angle + Math.PI / 6));
+       ctx.stroke();
+    }
+
+    // History System
+    function saveHistory() {
+       if (history.length > 20) history.shift();
+       history.push(ctx.getImageData(0, 0, canvas.width, canvas.height));
+    }
+    
+    function restoreLastHistory() {
+       if (history.length > 0) ctx.putImageData(history[history.length - 1], 0, 0);
+    }
+
+    window.undo = () => {
+       if (history.length > 1) {
+          history.pop();
+          ctx.putImageData(history[history.length - 1], 0, 0);
+       } else if (history.length === 1 && originalImg) {
+          ctx.drawImage(originalImg, 0, 0);
+          history = [ctx.getImageData(0, 0, canvas.width, canvas.height)];
+       }
+    };
+
+    resetBtn.onclick = () => {
+       if (originalImg) {
+          ctx.drawImage(originalImg, 0, 0);
+          history = [ctx.getImageData(0, 0, canvas.width, canvas.height)];
+       }
+    };
+
+    downloadBtn.onclick = () => {
+       const url = canvas.toDataURL('image/png');
+       const a = document.createElement('a');
+       a.href = url;
+       a.download = `annotated_${Date.now()}.png`;
+       a.click();
+    };
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

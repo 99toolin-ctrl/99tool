@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Mind Map – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/learning/mind-map.html"/>
+<meta property="og:title" content="Mind Map – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/learning/mind-map.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Mind Map \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/learning/mind-map.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .workspace {
+      height: calc(100vh - 200px);
+      background: #141414;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      margin-top: 2rem;
+      position: relative;
+      overflow: hidden;
+      cursor: grab;
+    }
+    .workspace:active { cursor: grabbing; }
+    
+    #canvas {
+      width: 5000px; height: 5000px;
+      position: absolute; top: 0; left: 0;
+      transform-origin: 0 0;
+    }
+
+    .node {
+      position: absolute;
+      background: var(--dark-card);
+      border: 2px solid var(--border);
+      padding: 12px 24px;
+      border-radius: 50px;
+      color: white;
+      white-space: nowrap;
+      cursor: move;
+      user-select: none;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      display: flex; align-items: center; gap: 10px;
+      z-index: 2;
+    }
+    .node:hover { border-color: var(--primary); }
+    .node.root { border-color: var(--primary); background: var(--primary); font-weight: 700; }
+    
+    .node-add { width: 24px; height: 24px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-weight: bold; }
+    .node-add:hover { background: white; color: var(--primary); }
+
+    svg { pointer-events: none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+    line { stroke: var(--border); stroke-width: 2; }
+
+    .controls {
+      position: absolute; bottom: 20px; left: 20px;
+      display: flex; gap: 10px; z-index: 10;
+    }
+    .instructions {
+      position: absolute; top: 20px; right: 20px;
+      background: rgba(0,0,0,0.5); padding: 10px 20px; border-radius: 30px; font-size: 0.8rem; color: var(--text-muted);
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container-fluid px-4 py-4">
+    <div class="tool-hero text-center">
+       <h1>Mind Map Explorer</h1>
+       <p>Map your thoughts, structure projects, and brainstorm visually in a infinite workspace.</p>
+    </div>
+
+    <div class="workspace" id="workspace">
+      <div id="canvas">
+        <svg id="svg-layer"></svg>
+        <!-- Nodes injected here -->
+      </div>
+      
+      <div class="instructions">Drag to Move • Double Click Node to Edit • "+" to Add Child • Right Click to Delete</div>
+      
+      <div class="controls">
+         <button class="btn btn-primary btn-sm" onclick="exportMap()">Export JSON</button>
+         <button class="btn btn-secondary btn-sm" onclick="resetMap()">Reset Map</button>
+      </div>
+    </div>
+
+    <!-- SEO CONTENT -->
+    <section class="seo-content mt-5 container">
+      <h2>Professional Brainstorming Without the Privacy Tax</h2>
+      <p>Visualizing complex relationships is a fundamental part of problem-solving. But most <strong>mind mapping tools online</strong> require you to upload your sensitive business plans, academic research, or project architectures to their servers. 99tool.in offers a **private mind mapping tool** that keeps your intellectual property where it belongs—on your machine.</p>
+      
+      <h3 class="mt-4">Designed for Fluid Creative Flow</h3>
+      <p>Creativity happens when friction is removed. Our <strong>idea organizer</strong> features a minimalist "Infinite Canvas" where nodes and connections can grow organically. Whether you are mapping out a website's information architecture or organizing chapters for a novel, the <strong>visual brainstorming utility</strong> provides a tactile, draggable interface that mimics the freedom of a whiteboard.</p>
+
+      <ul style="line-height: 1.8; margin-top: 15px;">
+        <li><strong>Auto-Connections:</strong> Lines update dynamically as you move your ideas around the board.</li>
+        <li><strong>Hierarchical Logic:</strong> Structured parent-child relationships for clean conceptual trees.</li>
+        <li><strong>Vector-Based:</strong> High-fidelity SVG lines ensure your connections remain crisp at any zoom.</li>
+      </ul>
+
+      <h3 class="mt-4">Zero Sync, Infinite Performance</h3>
+      <p>The biggest enemy of a <strong>mind mapping app</strong> is lag. Many browser-based tools stutter when handling dozens of nodes because they are constantly syncing with a remote database. 99tool.in runs 100% locally. This allows for smooth, 60fps interaction even as your maps grow in complexity. It’s the perfect <strong>private conceptual explorer</strong> for high-stakes brainstorming sessions.</p>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    let nodes = JSON.parse(localStorage.getItem('99tool_mindmap_nodes')) || [
+      { id: Date.now(), text: "Central Concept", x: 2500, y: 2500, parentId: null, isRoot: true }
+    ];
+
+    const canvas = document.getElementById('canvas');
+    const svg = document.getElementById('svg-layer');
+    const workspace = document.getElementById('workspace');
+
+    let isPanning = false;
+    let panX = -2000, panY = -2200;
+
+    function save() {
+      localStorage.setItem('99tool_mindmap_nodes', JSON.stringify(nodes));
+      render();
+    }
+
+    function render() {
+      // Clear
+      const existing = canvas.querySelectorAll('.node');
+      existing.forEach(n => n.remove());
+      svg.innerHTML = "";
+
+      nodes.forEach(node => {
+        const div = document.createElement('div');
+        div.className = `node ${node.isRoot ? 'root' : ''}`;
+        div.style.left = node.x + 'px';
+        div.style.top = node.y + 'px';
+        div.innerHTML = `<span>${node.text}</span> <div class="node-add" onclick="addChild(${node.id})">+</div>`;
+        
+        // Drag logic
+        div.onmousedown = (e) => {
+          e.stopPropagation();
+          let startX = e.clientX, startY = e.clientY;
+          document.onmousemove = (me) => {
+            const dx = me.clientX - startX;
+            const dy = me.clientY - startY;
+            node.x += dx; node.y += dy;
+            startX = me.clientX; startY = me.clientY;
+            render();
+          };
+          document.onmouseup = () => { document.onmousemove = document.onmouseup = null; save(); };
+        };
+
+        div.ondblclick = () => {
+          const newText = prompt("Edit text:", node.text);
+          if (newText) { node.text = newText; save(); }
+        };
+
+        div.oncontextmenu = (e) => {
+          e.preventDefault();
+          if (node.isRoot) return;
+          if(confirm("Delete this node?")) {
+            nodes = nodes.filter(n => n.id !== node.id && n.parentId !== node.id);
+            save();
+          }
+        };
+
+        canvas.appendChild(div);
+
+        // Render line to parent
+        if (node.parentId) {
+          const parent = nodes.find(n => n.id === node.parentId);
+          if (parent) {
+             const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+             line.setAttribute("x1", parent.x + 50);
+             line.setAttribute("y1", parent.y + 25);
+             line.setAttribute("x2", node.x + 50);
+             line.setAttribute("y2", node.y + 25);
+             svg.appendChild(line);
+          }
+        }
+      });
+      
+      canvas.style.transform = `translate(${panX}px, ${panY}px)`;
+    }
+
+    function addChild(pid) {
+      const parent = nodes.find(n => n.id === pid);
+      nodes.push({
+        id: Date.now(),
+        text: "New Idea",
+        x: parent.x + 150,
+        y: parent.y + (Math.random() * 200 - 100),
+        parentId: pid
+      });
+      save();
+    }
+
+    // Panning
+    workspace.onmousedown = (e) => {
+      isPanning = true;
+      let startX = e.clientX, startY = e.clientY;
+      document.onmousemove = (me) => {
+        panX += me.clientX - startX;
+        panY += me.clientY - startY;
+        startX = me.clientX; startY = me.clientY;
+        canvas.style.transform = `translate(${panX}px, ${panY}px)`;
+      };
+      document.onmouseup = () => { isPanning = false; document.onmousemove = document.onmouseup = null; };
+    };
+
+    function exportMap() {
+      const data = JSON.stringify(nodes, null, 2);
+      const blob = new Blob([data], {type: 'application/json'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'my-mindmap.json';
+      a.click();
+    }
+    
+    function resetMap() {
+      if(confirm("Reset entire mind map?")) {
+        nodes = [{ id: Date.now(), text: "Central Concept", x: 2500, y: 2500, parentId: null, isRoot: true }];
+        save();
+      }
+    }
+
+    render();
+  </script>
+</body>
+</html>
+

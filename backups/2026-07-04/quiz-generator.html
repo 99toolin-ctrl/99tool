@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Quiz Generator – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/learning/quiz-generator.html"/>
+<meta property="og:title" content="Quiz Generator – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/learning/quiz-generator.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Quiz Generator \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/learning/quiz-generator.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .workspace {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .input-pane, .output-pane {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    textarea {
+      width: 100%;
+      height: 300px;
+      background: var(--dark);
+      border: 1px solid var(--border);
+      color: white;
+      padding: 1rem;
+      border-radius: 8px;
+      resize: none;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    textarea:focus { border-color: var(--primary); outline: none; }
+
+    .quiz-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .question-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      padding: 1rem;
+      border-radius: 8px;
+    }
+    .options {
+      margin-top: 10px;
+      display: grid;
+      gap: 8px;
+    }
+    .option {
+      padding: 10px;
+      background: var(--dark);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+    }
+    .option:hover { background: rgba(255,255,255,0.05); }
+    .option.correct { background: #2f9e44; color: white; border-color: #2f9e44; }
+    .option.wrong { background: #e03131; color: white; border-color: #e03131; }
+
+    @media (max-width: 992px) {
+      .workspace { grid-template-columns: 1fr; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-hero text-center">
+      <nav class="breadcrumb justify-content-center">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#learning">Learning</a> <span>/</span> 
+        <span>Quiz Generator</span>
+      </nav>
+      <h1>Quiz Generator</h1>
+      <p>Convert any text into a multiple-choice quiz instantly. 100% and secure.</p>
+    </div>
+
+    <div class="workspace">
+      <div class="input-pane">
+        <h3>Input Text</h3>
+        <p class="text-muted small">Paste an article, paragraph, or notes here.</p>
+        <textarea id="quiz-input" placeholder="Example: The solar system consists of the Sun and everything that orbits it..."></textarea>
+        <button class="btn btn-primary" onclick="generateQuiz()">Generate Quiz →</button>
+      </div>
+
+      <div class="output-pane">
+        <div id="no-quiz" class="text-center py-5">
+          <p class="text-muted">Generated questions will appear here.</p>
+        </div>
+        <div id="quiz-result" class="quiz-container" style="display: none;">
+          <!-- Questions -->
+        </div>
+      </div>
+    </div>
+
+    <!-- SEO CONTENT -->
+    <section class="seo-content mt-5">
+      <h2>Transform Reading into Active Learning</h2>
+      <p>Passive reading is often an inefficient way to retain information. Our <strong>quiz generator</strong> helps you transition to "Active Recall" by turning your study materials into interactive tests. Whether you are a student preparing for exams or a teacher creating quick classroom check-ins, our <strong>free quiz maker</strong> provides a fast, automated way to challenge your knowledge.</p>
+      
+      <h3 class="mt-4">How the Rule-Based Generator Works</h3>
+      <p>Our tool uses a deterministic linguistic algorithm to identify key sentences and important terms within your text. It selectively hides critical keywords to create "fill-in-the-blank" questions and generates plausible distractors from the surrounding context. Because this happens entirely in your browser using JavaScript, your source material is never uploaded to the cloud.</p>
+
+      <ul style="line-height: 1.8; margin-top: 15px;">
+        <li><strong>Analyze:</strong> We scan the text for high-value nouns and proper names.</li>
+        <li><strong>Generate:</strong> We create questions based on factual statements in the text.</li>
+        <li><strong>Test:</strong> We provide instant feedback on your answers to reinforce memory.</li>
+      </ul>
+
+      <h3 class="mt-4">A Private Solution for Sensitive Information</h3>
+      <p>In many corporate or academic settings, study materials might contain proprietary or sensitive data. Using an <strong>online test generator</strong> that requires a cloud upload is a security risk. 99tool.in solves this by keeping the data strictly on your local machine. It's the perfect <strong>private quiz generator</strong> for professionals who need to test their comprehension of sensitive documents.</p>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    function generateQuiz() {
+      const input = document.getElementById('quiz-input').value.trim();
+      if (!input) return;
+
+      const sentences = input.split(/[.!?]+/).filter(s => s.trim().length > 20);
+      if (!sentences.length) {
+        alert("Please provide a longer text to generate questions.");
+        return;
+      }
+
+      const questions = [];
+      sentences.slice(0, 10).forEach(sentence => {
+        const words = sentence.trim().split(' ').filter(w => w.length > 4);
+        if (words.length < 5) return;
+
+        // Pick a keyword to hide
+        const keywordIdx = Math.floor(Math.random() * words.length);
+        const keyword = words[keywordIdx].replace(/[,.]/g, '');
+        const qText = sentence.replace(keyword, '_______');
+        
+        // Generate distractors (simple logic: random words from text)
+        const distractors = [...new Set(input.split(' ')
+            .filter(w => w.length > 4 && w.toLowerCase() !== keyword.toLowerCase())
+            .map(w => w.replace(/[,.]/g, ''))
+        )].sort(() => 0.5 - Math.random()).slice(0, 3);
+
+        const options = [keyword, ...distractors].sort(() => 0.5 - Math.random());
+        questions.push({ q: qText, options, answer: keyword });
+      });
+
+      renderQuiz(questions);
+    }
+
+    function renderQuiz(questions) {
+      const target = document.getElementById('quiz-result');
+      const empty = document.getElementById('no-quiz');
+      
+      empty.style.display = 'none';
+      target.style.display = 'flex';
+      target.innerHTML = `<h3>Generated Quiz (${questions.length} questions)</h3>`;
+
+      questions.forEach((q, qIdx) => {
+        const card = document.createElement('div');
+        card.className = 'question-card';
+        card.innerHTML = `<p><strong>Q${qIdx+1}:</strong> ${q.q}</p>`;
+        
+        const optsContainer = document.createElement('div');
+        optsContainer.className = 'options';
+        
+        q.options.forEach(opt => {
+          const o = document.createElement('div');
+          o.className = 'option';
+          o.innerText = opt;
+          o.onclick = () => {
+            if (o.parentElement.classList.contains('answered')) return;
+            o.parentElement.classList.add('answered');
+            if (opt === q.answer) {
+              o.classList.add('correct');
+            } else {
+              o.classList.add('wrong');
+              // show correct one
+              Array.from(o.parentElement.children).forEach(child => {
+                if (child.innerText === q.answer) child.classList.add('correct');
+              });
+            }
+          };
+          optsContainer.appendChild(o);
+        });
+        
+        card.appendChild(optsContainer);
+        target.appendChild(card);
+      });
+    }
+  </script>
+</body>
+</html>
+

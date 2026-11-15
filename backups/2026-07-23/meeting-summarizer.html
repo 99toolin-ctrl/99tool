@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Meeting Summarizer – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/productivity/meeting-summarizer.html"/>
+<meta property="og:title" content="Meeting Summarizer – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/productivity/meeting-summarizer.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Meeting Summarizer \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/productivity/meeting-summarizer.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="meeting notes summarizer, notes summarizer, summarize notes tool, meeting summary generator, notes organizer, action item extractor" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Meeting Notes Summarizer",
+    "operatingSystem": "Any",
+    "applicationCategory": "ProductivityApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Rule-based action item extraction, Keyword detection, One-click clean summary, Privacy-first processing"
+  }
+  </script>
+
+  <style>
+    .summarizer-layout {
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .editor-section textarea {
+      width: 100%;
+      min-height: 450px;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      color: var(--text);
+      font-family: 'Fira Code', monospace;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      resize: vertical;
+      outline: none;
+    }
+    .editor-section textarea:focus { border-color: var(--primary); }
+
+    .summary-panel {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      position: sticky;
+      top: 100px;
+      height: fit-content;
+    }
+
+    .summary-section {
+      margin-bottom: 24px;
+    }
+    .summary-section h4 {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--primary);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .summary-item {
+      font-size: 0.85rem;
+      margin-bottom: 8px;
+      padding-left: 12px;
+      border-left: 2px solid var(--border);
+      color: var(--text-muted);
+    }
+    .summary-item b { color: var(--white); }
+
+    .empty-state {
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--text-muted);
+      border: 2px dashed var(--border);
+      border-radius: 8px;
+    }
+
+    @media (max-width: 900px) {
+      .summarizer-layout { grid-template-columns: 1fr; }
+      .summary-panel { position: static; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#productivity">Productivity</a> <span>/</span> 
+        <span>Meeting Summarizer</span>
+      </nav>
+      <h1>Meeting Notes Summarizer</h1>
+      <p>Clean up your messy notes instantly. Our rule-based engine extracts action items and key decisions without ever sending your sensitive data to the cloud.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div class="summarizer-layout">
+        <!-- INPUT AREA -->
+        <div class="editor-section">
+          <div class="flex justify-between items-center mb-3">
+            <h3>Your Meeting Notes</h3>
+            <button class="btn btn-secondary btn-sm" onclick="clearNotes()">Clear All</button>
+          </div>
+          <textarea id="notes-input" placeholder="Paste your raw meeting notes here...&#10;&#10;Use prefixes like:&#10;Action: Fix the bug&#10;Decision: Switch to dark mode&#10;Important: Deadline is Friday"></textarea>
+          
+          <div class="trust-signal mt-3">
+             <p>✨ <b>Pro Tip:</b> Use dashes (-), dots (•) or keywords like "Tasks" to help the engine find your action items.</p>
+          </div>
+        </div>
+
+        <!-- SUMMARY PANEL -->
+        <div class="summary-area">
+          <div class="summary-panel">
+            <h3 class="mb-4">Live Summary</h3>
+            
+            <div id="summary-content">
+               <div class="empty-state">
+                  <span style="font-size: 2rem;">📋</span>
+                  <p class="mt-2">Start typing to see highlights</p>
+               </div>
+            </div>
+
+            <button class="btn btn-primary btn-full mt-4" id="export-summary">Copy Clean Summary</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5">
+        <h2>Distilling Your Discussions in Private: Secure Local Meeting Summarization</h2>
+        <p>We’ve all been there: you’ve just finished a marathon strategy meeting, and you have pages of messy notes, rapid-fire scribbles, and key action items that need to be distilled into a clear, actionable summary. You look for a <strong>meeting summarizer</strong> online to help you synthesize the conversation and ensure nothing important is forgotten. But as you look at the "Transcription Upload" and "AI Model Analysis" features of most summarizers, you realize that your proprietary discussions, corporate secrets, and core "Decision Logic" are being processed by an anonymous database. Do you really want to share your "Strategic Roadmap" with a third-party algorithm?</p>
+
+        <p>At 99tool.in, we built our <strong>notes summarizer</strong> to give you a professional secretary without the privacy gamble. By utilizing browser-side rule-base parsing and local string logic, we allow you to <strong>summarize meeting notes</strong> entirely within the secure sandbox of your own machine. Whether you’re an executive documenting an internal roadmap, a consultant managing a sensitive client brief, or a project lead extracting tasks from a brainstorm, our <strong>safe summary tool</strong> ensures that your discussions stay where they belong: on your device, under your total sovereignty.</p>
+        
+        <div class="tool-preview-box mt-4 mb-4" style="text-align:center;">
+           <img src="../../assets/images/summarizer-preview.png" alt="Clean Meeting Summarizer Interface with Logic-Based Highlights and Actions" class="tool-preview" id="tool-preview-img" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+        </div>
+
+        <h3 class="mt-4">The Logic of Intent Extraction</h3>
+        <p>Summarization isn't just about cutting text; it’s about "Actionable Extraction." Most basic <strong>note organizers</strong> simply hide lines, leaving you with a fragmented view. Our <strong>professional meeting summarizer</strong> takes a human-centric approach: we focus on **Pattern-Match Extraction** and **Instant Rule Synthesis**.</p>
+        
+        <p>We provide a "Keyword-First" engine that looks for specific intent markers like "Action:", "Decision:", or "Important:". Our <strong>safe notes validator</strong> doesn't just display text; it provides a real-time rendered "Live Summary" that isolates your goals and outcomes from the surrounding noise. This transparency transforms a chaotic draft into a structured list of deliverables, helping you maintain momentum and clarity after the meeting ends.</p>
+
+        <h3 class="mt-4">Why Rule-Based Extraction is the Professional’s Ethical Choice</h2>
+        <p>In the age of digital surveillance, the way your team talks and decides is a valuable blueprint of your success. When you use a standard <strong>meeting summary generator online free</strong> service, you are essentially giving away your "Intent Data" for a third party to analyze. Our 100% <strong>notes utility</strong> removes this "Surveillance Risk" entirely from your professional routine.</p>
+        
+        <p>Because the logic and extraction happen in your browser's private memory, your notes and their summaries are invisible to the outside world. No analytics are tracked, no discussions are harvested, and no proprietary secrets are shared with advertisers or AI models. At 99tool.in, we believe that <strong>summarizing your progress</strong> should be an empowering utility, not a data-mining exercise. With us, you have a private, professional distillation hub that fits in your browser tab.</p>
+
+        <h3 class="mt-4">How to Distill Your Dialogue (Step-by-Step)</h3>
+        <p>Extracting the "Gold" from your notes should be a high-speed, 5-second task. Here is how to use our <strong>meeting summarizer</strong>:</p>
+        <ul style="line-height: 1.8; margin-bottom: 20px;">
+          <li><strong>Step 1: Input Your Raw Draft</strong> — Paste your unedited meeting notes into the editor pane. Don't worry about formatting yet; focus on capturing the raw information.</li>
+          <li><strong>Step 2: Markup Your Intent</strong> — Use simple prefixes like "Action:" for tasks or "Decision:" for final outcomes. Our engine will "Watch" these markers in real-time.</li>
+          <li><strong>Step 3: Review the Live Highlight</strong> — Watch the right-hand panel as it automatically categorizes your 🚀 Action Items, ⚖️ Decisions, and ⭐ Important points.</li>
+          <li><strong>Step 4: Secure Your Insight</strong> — Click "Copy Clean Summary" to move your formatted highlights to your email or PM tool. Your original raw data survives browser restarts locally, but never touches the cloud.</li>
+        </ul>
+
+        <h3 class="mt-4">Strategic Use Cases for Your Local Meeting Summarizer</h3>
+        <p>Our <strong>notes extraction tool</strong> is the essential companion for varied professional life:</p>
+        
+        <p><strong>For Executive Boards:</strong> Summarizing high-stakes strategy sessions? Use our <strong>meeting summarizer</strong> to keep the proprietary decision logic private, ensuring sensitive roadmaps never leave your trusted environment.</p>
+        
+        <p><strong>For Legal & Compliance Teams:</strong> Tracking specific agreed-upon terms or follow-ups? Use our <strong>safe notes summarizer</strong> to ensure your legal brief remains your exclusive property without the risk of an external AI indexing your case details.</p>
+        
+        <p><strong>For Agile Product Teams:</strong> Distilling daily standups or sprint retros? Use our <strong>simple summary tool</strong> to keep your team velocity and internal bug lists private, maintaining your competitive edge.</p>
+
+        <h3 class="mt-5">Explore Your Complete Productivity Suite</h3>
+        <p>Once you’ve successfully distilled your discussions, you might need to organize your broader knowledge. Check out our <strong><a href="knowledge-base.html">Knowledge Base</a></strong>. Or, if you need to manage your tactical tasks, use our <strong><a href="PRIVATE-to-do-list-manager.html">To-Do List Manager</a></strong>. At 99tool.in, we are building a world-class, 100% private digital toolkit to give you total control over your digital future.</p>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Does this tool actually understand "meaning"?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. We want to be honest: this is a <strong>rule-based notes organizer</strong>, not AI. It doesn't "understand" concepts, but it is extremely good at finding sections you've marked as important. It relies on your patterns—if you mark something as "Decision:", this tool will find it every time.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Is my confidential data safe?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>100% Yes. Unlike AI-based summarizers that require an internet connection, our <strong>notes summarizer</strong> processes everything directly in your browser tab. Your notes never leave your machine, making it safe for sensitive corporate or government work.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I customize the keywords it looks for?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>The current version uses a pre-baked list of professional keywords (Action, Task, TODO, Decision, Goal, Important). We are working on a customizable version that lets you define your own "trigger words," but the current set covers 95% of standard meeting scenarios.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 Zero AI. Zero cloud. 100% logic-based privacy. Last updated: April 10, 2026.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const input = document.getElementById('notes-input');
+    const display = document.getElementById('summary-content');
+    const exportBtn = document.getElementById('export-summary');
+
+    input.oninput = updateSummary;
+
+    function updateSummary() {
+      const text = input.value;
+      if (!text.trim()) {
+        display.innerHTML = `
+          <div class="empty-state">
+            <span style="font-size: 2rem;">📋</span>
+            <p class="mt-2">Start typing to see highlights</p>
+          </div>
+        `;
+        return;
+      }
+
+      const lines = text.split('\n');
+      const results = {
+        actions: [],
+        decisions: [],
+        important: []
+      };
+
+      const keywords = {
+        actions: /^(action|task|todo|to-do|follow-up|assign):?\s*/i,
+        decisions: /^(decision|agreed|outcome|decided):?\s*/i,
+        important: /^(important|key|goal|alert|warning|note):?\s*/i
+      };
+
+      lines.forEach(line => {
+        const trimmed = line.trim();
+        if (!trimmed) return;
+
+        // Check patterns
+        if (keywords.actions.test(trimmed)) {
+          results.actions.push(trimmed.replace(keywords.actions, '').trim());
+        } else if (keywords.decisions.test(trimmed)) {
+          results.decisions.push(trimmed.replace(keywords.decisions, '').trim());
+        } else if (keywords.important.test(trimmed)) {
+          results.important.push(trimmed.replace(keywords.important, '').trim());
+        } 
+        // Bonus: Bullet points that look like tasks
+        else if (/^[-*•]\s+(?:need to|should|will|must)\s+/i.test(trimmed)) {
+          results.actions.push(trimmed.replace(/^[-*•]\s+/i, '').trim());
+        }
+      });
+
+      renderSummary(results);
+    }
+
+    function renderSummary(res) {
+      if (res.actions.length === 0 && res.decisions.length === 0 && res.important.length === 0) {
+        display.innerHTML = `
+           <div class="empty-state">
+              <p>No structural markers found yet.<br><small>(Try starting lines with "Action:" or "Decision:")</small></p>
+           </div>
+        `;
+        return;
+      }
+
+      let html = '';
+      if (res.actions.length > 0) {
+        html += `<div class="summary-section">
+          <h4>🚀 Action Items (${res.actions.length})</h4>
+          ${res.actions.map(a => `<div class="summary-item">${a}</div>`).join('')}
+        </div>`;
+      }
+      if (res.decisions.length > 0) {
+        html += `<div class="summary-section">
+          <h4>⚖️ Decisions (${res.decisions.length})</h4>
+          ${res.decisions.map(d => `<div class="summary-item"><b>${d}</b></div>`).join('')}
+        </div>`;
+      }
+      if (res.important.length > 0) {
+        html += `<div class="summary-section">
+          <h4>⭐ Important (${res.important.length})</h4>
+          ${res.important.map(i => `<div class="summary-item">${i}</div>`).join('')}
+        </div>`;
+      }
+
+      display.innerHTML = html;
+    }
+
+    exportBtn.onclick = () => {
+      const summaryText = display.innerText;
+      if (!summaryText || summaryText.includes('Start typing')) return;
+
+      navigator.clipboard.writeText(summaryText).then(() => {
+        const originalText = exportBtn.innerText;
+        exportBtn.innerText = 'Copied to Clipboard!';
+        exportBtn.classList.add('btn-success');
+        setTimeout(() => {
+          exportBtn.innerText = originalText;
+          exportBtn.classList.remove('btn-success');
+        }, 2000);
+      });
+    };
+
+    function clearNotes() {
+      if (confirm('Clear your meeting notes?')) {
+        input.value = '';
+        updateSummary();
+      }
+    }
+  </script>
+</body>
+</html>
+

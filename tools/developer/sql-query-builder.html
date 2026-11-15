@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Sql Query Builder – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/developer/sql-query-builder.html"/>
+<meta property="og:title" content="Sql Query Builder – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/developer/sql-query-builder.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Sql Query Builder \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/developer/sql-query-builder.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="sql query builder, visual sql generator, sql tool, build sql query, sql statement creator" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json" id="schema-org-data">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "SQL Query Builder",
+    "operatingSystem": "Any",
+    "applicationCategory": "DeveloperApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Visual query building, SELECT/INSERT/UPDATE/DELETE support, Condition builder, Real-time preview"
+  }
+  </script>
+
+  <style>
+    .builder-layout {
+      display: grid; grid-template-columns: 1fr; gap: 30px;
+    }
+
+    .config-panel {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px;
+    }
+
+    .preview-panel {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px;
+      position: sticky; top: 100px; height: fit-content;
+    }
+
+    .sql-output {
+      background: var(--dark);
+      border: 1px solid var(--border);
+      padding: 20px;
+      border-radius: var(--radius-sm);
+      font-family: 'Fira Code', monospace;
+      font-size: 0.95rem;
+      color: var(--primary-light);
+      min-height: 120px;
+      white-space: pre-wrap;
+      margin-bottom: 20px;
+    }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px; }
+
+    @media (min-width: 900px) {
+      .builder-layout { grid-template-columns: 1fr 450px; }
+    }
+
+    .type-pill {
+      cursor: pointer;
+      padding: 10px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      background: var(--dark);
+      text-align: center;
+      transition: 0.2s;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+    .type-pill.active {
+      border-color: var(--primary);
+      background: rgba(229, 57, 53, 0.1);
+      color: var(--white);
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/developer/sql-query-builder.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/developer/sql-query-builder.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/developer/sql-query-builder.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/developer/sql-query-builder.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/developer/sql-query-builder.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/developer/sql-query-builder.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/developer/sql-query-builder.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/developer/sql-query-builder.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/developer/sql-query-builder.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/developer/sql-query-builder.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/developer/sql-query-builder.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/developer/sql-query-builder.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/developer/sql-query-builder.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/developer/sql-query-builder.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/developer/sql-query-builder.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/developer/sql-query-builder.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/developer/sql-query-builder.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/developer/sql-query-builder.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/developer/sql-query-builder.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/developer/sql-query-builder.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/developer/sql-query-builder.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/developer/sql-query-builder.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#developer">Developer</a> <span>/</span> 
+        <span>SQL Query Builder</span>
+      </nav>
+      <h1>SQL Query Builder</h1>
+      <p>Build professional SQL statements visually. No cloud, no database connection required—just pure query generation.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div class="builder-layout">
+        <div class="config-panel">
+          <h3 class="mb-3">Query Configuration</h3>
+          
+          <div class="form-group">
+            <label>Statement Type</label>
+            <div class="grid" style="grid-template-columns: repeat(4, 1fr); gap: 10px;">
+              <div class="type-pill active" data-type="SELECT">SELECT</div>
+              <div class="type-pill" data-type="INSERT">INSERT</div>
+              <div class="type-pill" data-type="UPDATE">UPDATE</div>
+              <div class="type-pill" data-type="DELETE">DELETE</div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Table Name</label>
+              <input type="text" id="table-name" class="form-control" placeholder="e.g., users">
+            </div>
+            <div id="col-group" class="form-group">
+              <label>Columns (comma separated)</label>
+              <input type="text" id="columns" class="form-control" placeholder="e.g., id, name, email">
+            </div>
+          </div>
+
+          <div id="value-group" class="form-group hidden">
+            <label>Values (comma separated)</label>
+            <input type="text" id="values" class="form-control" placeholder="e.g., 1, 'John Doe', 'john@example.com'">
+          </div>
+
+          <div id="update-group" class="form-group hidden">
+            <label>Set Values (key=value, comma separated)</label>
+            <input type="text" id="update-sets" class="form-control" placeholder="e.g., status='active', views=views+1">
+          </div>
+
+          <div class="form-group">
+            <label>Conditions (WHERE clause)</label>
+            <input type="text" id="where" class="form-control" placeholder="e.g., id = 10 AND status = 'active'">
+          </div>
+
+          <div id="order-group" class="form-row">
+            <div class="form-group">
+               <label>Order By</label>
+               <input type="text" id="order-by" class="form-control" placeholder="e.g., created_at">
+            </div>
+            <div class="form-group">
+               <label>Limit</label>
+               <input type="number" id="limit" class="form-control" placeholder="e.g., 50">
+            </div>
+          </div>
+
+        </div>
+
+        <div class="preview-panel">
+          <h3>SQL Preview</h3>
+          <div class="sql-output" id="sql-display">SELECT id, name, email FROM users;</div>
+          <button class="btn btn-primary btn-full" id="copy-btn">Copy SQL to Clipboard</button>
+          <p class="text-center mt-3 small text-muted">Generation is 100% & private.</p>
+        </div>
+      </div>
+
+      <!-- CONTENT SECTION -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.sql_query_builder.what_is_title">What is the SQL Query Builder?</h2>
+        <p>The SQL Query Builder is a client-side visual query prototyping utility designed to write database statements. By selecting a query type and inputting table parameters, columns, and constraints, developers can compile standard SQL queries without writing boilerplate code.</p>
+        <p>This builder processes all string formatting, parameter insertions, and query updates locally in your browser memory. Since no database connection configurations, schemas, or server credentials are requested or uploaded, your internal schemas and keys remain private.</p>
+
+        <h2 class="mt-4" data-i18n="tools.sql_query_builder.how_to_use_title">How to Use the SQL Query Builder</h2>
+        <ol>
+          <li><strong>Select the Query Type:</strong> Choose your statement objective (SELECT, INSERT, UPDATE, or DELETE) from the dropdown selector.</li>
+          <li><strong>Set the Table Name:</strong> Type your target database table name (e.g., <code>users</code>) into the table input field.</li>
+          <li><strong>Enter Columns or Key-Value Pairs:</strong> Specify columns (separated by commas) or key-value structures based on your chosen statement.</li>
+          <li><strong>Apply Filtering Constraints:</strong> Enter optional conditions like <code>WHERE</code> clauses, sorting fields (ORDER BY), and limit bounds.</li>
+          <li><strong>Copy and Deploy:</strong> Review the dynamically updated script in the "SQL Preview" pane, then click "Copy SQL to Clipboard" to grab it.</li>
+        </ol>
+
+        <h2 class="mt-4" data-i18n="tools.sql_query_builder.key_features_title">Key Features</h2>
+        <ul>
+          <li><strong>Multiple Statement Builders:</strong> Build SELECT, INSERT, UPDATE, and DELETE query templates within a single utility.</li>
+          <li><strong>Real-Time Query Compiling:</strong> Refreshes the SQL preview pane instantly as you edit table, column, or constraint inputs.</li>
+          <li><strong>Standard SQL Compliance:</strong> Generates standard-compliant SQL queries compatible with MySQL, PostgreSQL, SQLite, and SQL Server.</li>
+          <li><strong>One-Click Clipboard Exports:</strong> Copy completed query templates directly to your clipboard for quick database migrations.</li>
+          <li><strong>100% Client-Side Engine:</strong> Operates entirely in browser cache without requiring database credentials.</li>
+        </ul>
+
+        <h2 class="mt-4" data-i18n="tools.sql_query_builder.common_use_cases_title">Common Use Cases</h2>
+        <ul>
+          <li><strong>Scaffolding Migration Scripts:</strong> Quickly build INSERT or UPDATE statements for system migrations and database seeders.</li>
+          <li><strong>Drafting Test Queries:</strong> Prototype filters and select clauses to test and execute queries in client shells.</li>
+          <li><strong>Boilerplate Code Reduction:</strong> Avoid writing repetitive SELECT syntax blocks when query testing.</li>
+          <li><strong>Relational Database Learning:</strong> Visualise how table parameters and WHERE filters map to standard ANSI SQL blocks.</li>
+        </ul>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2 data-i18n="tools.sql_query_builder.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Does this query builder connect to my database?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. The tool is a client-side string builder. It does not establish network connections, require credentials, or access database tables. You copy the generated SQL code to run in your own environment.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Are my database schemas or table names secure?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. Because the builder runs locally in your browser memory, all table names, column structures, and constraint inputs remain private to your local session.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Which SQL databases are supported?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>The generated queries follow standard ANSI SQL conventions, making them compatible with popular relational databases like PostgreSQL, MySQL, SQLite, Oracle, and Microsoft SQL Server.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I build complex JOIN queries?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>This builder is optimized for single-table CRUD operations. For complex JOIN networks or nested subqueries, you can prototype the base syntax here and edit the code after copying it.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 Privacy & Data Note: SQL query generation, parameter mappings, and clipboard copies are executed locally in your browser. No server connections are created.</p>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const typePills = document.querySelectorAll('.type-pill');
+    const tableInput = document.getElementById('table-name');
+    const colsInput = document.getElementById('columns');
+    const valsInput = document.getElementById('values');
+    const setsInput = document.getElementById('update-sets');
+    const whereInput = document.getElementById('where');
+    const orderInput = document.getElementById('order-by');
+    const limitInput = document.getElementById('limit');
+    const sqlDisplay = document.getElementById('sql-display');
+    const copyBtn = document.getElementById('copy-btn');
+
+    let currentType = 'SELECT';
+
+    function updateUI() {
+      const type = currentType;
+      document.getElementById('col-group').classList.toggle('hidden', type === 'DELETE');
+      document.getElementById('value-group').classList.toggle('hidden', type !== 'INSERT');
+      document.getElementById('update-group').classList.toggle('hidden', type !== 'UPDATE');
+      document.getElementById('order-group').classList.toggle('hidden', type === 'INSERT' || type === 'UPDATE');
+      generateSQL();
+    }
+
+    function generateSQL() {
+      const table = tableInput.value || '[table]';
+      const cols = colsInput.value || '*';
+      const vals = valsInput.value || '[values]';
+      const sets = setsInput.value || '[col=val]';
+      const where = whereInput.value.trim();
+      const order = orderInput.value.trim();
+      const limit = limitInput.value.trim();
+
+      let sql = "";
+      if (currentType === 'SELECT') {
+        sql = `SELECT ${cols} FROM ${table}`;
+        if (where) sql += ` WHERE ${where}`;
+        if (order) sql += ` ORDER BY ${order}`;
+        if (limit) sql += ` LIMIT ${limit}`;
+      } else if (currentType === 'INSERT') {
+        sql = `INSERT INTO ${table} (${cols}) VALUES (${vals})`;
+      } else if (currentType === 'UPDATE') {
+        sql = `UPDATE ${table} SET ${sets}`;
+        if (where) sql += ` WHERE ${where}`;
+      } else if (currentType === 'DELETE') {
+        sql = `DELETE FROM ${table}`;
+        if (where) sql += ` WHERE ${where}`;
+      }
+      
+      sqlDisplay.textContent = sql + ";";
+    }
+
+    typePills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        typePills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        currentType = pill.dataset.type;
+        updateUI();
+      });
+    });
+
+    [tableInput, colsInput, valsInput, setsInput, whereInput, orderInput, limitInput].forEach(el => {
+      el.addEventListener('input', generateSQL);
+    });
+
+    copyBtn.addEventListener('click', () => {
+      copyToClipboard(sqlDisplay.textContent, copyBtn);
+    });
+
+    // Init
+    updateUI();
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

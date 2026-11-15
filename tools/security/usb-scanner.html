@@ -1,0 +1,477 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Usb Scanner – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/security/usb-scanner.html"/>
+<meta property="og:title" content="Usb Scanner – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/security/usb-scanner.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Usb Scanner \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/security/usb-scanner.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .scanner-workspace {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 3rem;
+    }
+    .scan-circle {
+      width: 150px; height: 150px; border-radius: 50%; border: 4px solid var(--border);
+      margin: 0 auto 2rem; display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+    }
+    .scan-pulse {
+        position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+        background: linear-gradient(to bottom, transparent, var(--primary), transparent);
+        opacity: 0.3; transform: translateY(-100%);
+    }
+    .scanning .scan-pulse { animation: pulseMove 1.5s infinite linear; }
+    @keyframes pulseMove { from { transform: translateY(-100%); } to { transform: translateY(100%); } }
+
+    .result-list { display: none; flex-direction: column; gap: 15px; margin-top: 2rem; text-align: left; }
+    .result-item {
+        background: rgba(255,255,255,0.03); border: 1px solid var(--border);
+        padding: 1.5rem; border-radius: 12px; display: flex; align-items: center; gap: 20px;
+    }
+    .status-badge { padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
+    .status-safe { background: rgba(47, 158, 68, 0.1); color: #2f9e44; }
+    .status-suspicious { background: rgba(240, 140, 0, 0.1); color: #f08c00; }
+    .status-danger { background: rgba(224, 49, 49, 0.1); color: #e03131; }
+
+    .details { flex: 1; }
+    .details h4 { margin: 0; font-size: 1rem; color: #eee; }
+    .details p { margin: 5px 0 0; font-size: 0.85rem; color: var(--text-muted); }
+
+    .scanner-btn { font-size: 1.2rem; padding: 15px 40px; border-radius: 50px; }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/security/usb-scanner.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/security/usb-scanner.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/security/usb-scanner.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/security/usb-scanner.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/security/usb-scanner.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/security/usb-scanner.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/security/usb-scanner.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/security/usb-scanner.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/security/usb-scanner.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/security/usb-scanner.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/security/usb-scanner.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/security/usb-scanner.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/security/usb-scanner.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/security/usb-scanner.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/security/usb-scanner.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/security/usb-scanner.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/security/usb-scanner.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/security/usb-scanner.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/security/usb-scanner.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/security/usb-scanner.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/security/usb-scanner.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/security/usb-scanner.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-hero text-center">
+      <nav class="breadcrumb justify-content-center">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#security">Security</a> <span>/</span> 
+        <span>USB Security Scanner</span>
+      </nav>
+      <h1>USB File Security Scanner</h1>
+      <p>Analyze individual files for potential risks and suspicious indicators. 100% private analysis.</p>
+    </div>
+
+    <div class="scanner-workspace text-center">
+      <div id="drop-zone" class="scan-circle">
+          <div class="scan-pulse"></div>
+          <span id="scan-icon" style="font-size: 3rem;">📁</span>
+      </div>
+
+      <div id="initial-view">
+          <button class="btn btn-primary scanner-btn" onclick="document.getElementById('file-input').click()">Select Files to Scan</button>
+          <input type="file" id="file-input" style="display: none;" multiple onchange="startScan(this.files)">
+          <p class="text-muted mt-4">Scan files for double-extensions, type-mismatches, and size anomalies.</p>
+      </div>
+
+      <div id="scanning-view" style="display: none;">
+          <h3 id="scan-filename">Scanning file...</h3>
+          <p class="text-muted">Analyzing structure and metadata...</p>
+      </div>
+
+      <div id="results-view" class="result-list">
+          <!-- Results injected here -->
+          <div class="mt-4 text-center">
+              <button class="btn btn-secondary" onclick="location.reload()">Scan More Files</button>
+          </div>
+      </div>
+    </div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.usb_file_security_scanner.what_is_title">What is the USB File Security Scanner?</h2>
+        <p>The USB File Security Scanner is a browser-based tool that analyzes files from USB drives for suspicious indicators without uploading them to any server. It performs local file header analysis, extension mismatch detection, and structural anomaly checks to identify potential threats before you open them. All scanning runs in your browser's local memory — no file data is transmitted externally.</p>
+        <p>Drag files from a connected USB drive directly into the scanner interface. The tool checks magic bytes, file extension consistency, hidden content indicators, and other risk factors, then returns a threat assessment report.</p>
+
+        <h3 class="mt-4">How to Use the USB File Security Scanner</h3>
+        <p>Scanning files for threats involves these steps:</p>
+        <ol class="mt-2 mb-3">
+          <li>Connect your USB drive to your computer and open it in your file manager.</li>
+          <li>Drag and drop suspected files from the USB drive into the Scanner drop zone, or click "Choose Files" to select them.</li>
+          <li>The tool reads the file header bytes and metadata locally in your browser's memory.</li>
+          <li>Click "Scan Files" to run the security analysis. The tool checks for magic byte mismatches, suspicious extensions, and anomaly patterns.</li>
+          <li>Review the Threat Assessment report showing each file's risk level: Clean, Suspicious, or High Risk.</li>
+          <li>Do not open flagged files on your system. Use the report details to decide whether to delete or quarantine them.</li>
+        </ol>
+
+        <h3 class="mt-4">Key Features</h3>
+        <ul class="mt-2 mb-3">
+          <li><strong>File Header (Magic Byte) Analysis:</strong> Checks the actual file signature against the declared extension to detect disguised executables.</li>
+          <li><strong>Extension Mismatch Detection:</strong> Flags files where the extension does not match the file's internal format (e.g., a .pdf that is actually an .exe).</li>
+          <li><strong>Anomaly Pattern Scanning:</strong> Identifies structural irregularities commonly associated with malicious payloads.</li>
+          <li><strong>Zero Upload:</strong> Files are loaded into browser memory only. No file content is transmitted to any server.</li>
+        </ul>
+
+        <h3 class="mt-4">Common Use Cases</h3>
+        <p>This tool is helpful for the following tasks:</p>
+        <ul class="mt-2 mb-3">
+          <li><strong>Unknown USB Triage:</strong> Quickly assessing files on a USB drive received from an unknown source before opening them.</li>
+          <li><strong>Shared Device Safety:</strong> Checking files on drives used across multiple computers or offices for integrity before processing.</li>
+          <li><strong>Security Awareness:</strong> Demonstrating to users how disguised files and extension mismatches work as a training exercise.</li>
+        </ul>
+
+        <h3 class="mt-4">Frequently Asked Questions</h3>
+        <div class="faq-section mt-3">
+          <p><strong>Does this replace antivirus software?</strong><br>No. This tool performs static file header and structural analysis only. It cannot detect dynamically obfuscated malware, polymorphic viruses, or zero-day exploits. Always use a dedicated antivirus solution alongside this tool.</p>
+          <p><strong>Are my files uploaded to your servers?</strong><br>Never. Files are loaded into your browser's local memory for analysis only. No file content, filename, or scan results are transmitted anywhere.</p>
+          <p><strong>What types of threats can this detect?</strong><br>This tool detects extension mismatches, suspicious magic bytes, and known structural anomaly patterns. It is most effective at identifying disguised executables and structurally malformed files.</p>
+          <p><strong>What should I do if a file is flagged as High Risk?</strong><br>Do not open the file. If the USB drive belongs to you, scan it with a full antivirus suite. If the drive is from an unknown source, consider it compromised and do not use it.</p>
+        </div>
+
+        <h3 class="mt-4">Privacy &amp; Data Note</h3>
+        <p>All file analysis runs entirely inside your browser's local memory. No file content, filename, size, or scan results are transmitted to any server or stored outside your device.</p>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2 data-i18n="tools.usb_file_security_scanner.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">Does this replace antivirus software?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>No. This tool performs static file header and structural analysis only. It cannot detect dynamically obfuscated malware. Always use a dedicated antivirus solution in addition to this scanner.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">Are my files uploaded to your servers?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>Never. Files are loaded into your browser's local memory for analysis only. No file content, filename, or scan results are transmitted to any server at any point.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">What should I do if a file is flagged High Risk?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>Do not open the file. Scan the USB drive with a full antivirus suite. If the drive is from an unknown source, treat it as potentially compromised and avoid using it on sensitive systems.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>&#128274; 100% Local Analysis. Zero Upload. No file data leaves your device. Last updated: April 10, 2026.</p>
+      </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    // Init Drag and Drop using global helper
+    setupDragDrop('drop-zone', (files) => {
+       startScan(files);
+    });
+
+    async function startScan(files) {
+        if (!files.length) return;
+        document.getElementById('initial-view').style.display = 'none';
+        document.getElementById('scanning-view').style.display = 'block';
+        document.getElementById('drop-zone').classList.add('scanning');
+
+        const results = [];
+        for (let file of files) {
+            document.getElementById('scan-filename').innerText = `Analyzing: ${file.name}`;
+            await new Promise(r => setTimeout(r, 1000)); // Simulating analysis
+            results.push(analyzeFile(file));
+        }
+
+        renderResults(results);
+    }
+
+    function analyzeFile(file) {
+        const name = file.name.toLowerCase();
+        const size = file.size;
+        const issues = [];
+        let status = 'safe';
+
+        // Check for double extensions
+        const parts = name.split('.');
+        if (parts.length > 2) {
+            const disguised = ['exe', 'bat', 'vbs', 'scr', 'cmd'];
+            if (disguised.includes(parts[parts.length - 1])) {
+                issues.push("Double extension detected: Potential disguised executable.");
+                status = 'danger';
+            }
+        }
+
+        // Check for common dangerous extensions
+        const dangerous = ['exe', 'bat', 'vbs', 'scr', 'cmd', 'ps1', 'jar'];
+        if (dangerous.includes(name.split('.').pop()) && status !== 'danger') {
+            issues.push("Executable file type: Exercise caution before running.");
+            status = 'suspicious';
+        }
+
+        // Check for size anomalies (e.g. tiny images or huge text files)
+        if (name.endsWith('.txt') && size > 10 * 1024 * 1024) {
+            issues.push("Anomaly: Text file is unusually large (>10MB).");
+            status = 'suspicious';
+        }
+        if ((name.endsWith('.jpg') || name.endsWith('.png')) && size < 100) {
+            issues.push("Anomaly: Image file is unusually small. Check for corruption.");
+            status = 'suspicious';
+        }
+
+        if (issues.length === 0) issues.push("No obvious indicators of concern identified.");
+
+        return { name, size, status, issues };
+    }
+
+    function renderResults(results) {
+        const view = document.getElementById('results-view');
+        const scanning = document.getElementById('scanning-view');
+        scanning.style.display = 'none';
+        document.getElementById('drop-zone').classList.remove('scanning');
+        view.style.display = 'flex';
+
+        results.forEach(res => {
+            const div = document.createElement('div');
+            div.className = 'result-item';
+            div.innerHTML = `
+                <div style="font-size: 30px;">${res.status === 'safe' ? '✅' : res.status === 'suspicious' ? '⚠️' : '🚨'}</div>
+                <div class="details">
+                    <h4>${res.name}</h4>
+                    <p>${res.issues.join(' ')}</p>
+                </div>
+                <span class="status-badge status-${res.status}">${res.status}</span>
+            `;
+            view.insertBefore(div, view.lastElementChild);
+        });
+    }
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

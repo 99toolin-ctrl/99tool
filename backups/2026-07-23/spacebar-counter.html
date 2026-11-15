@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Spacebar Counter – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/network/spacebar-counter.html"/>
+<meta property="og:title" content="Spacebar Counter – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/network/spacebar-counter.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Spacebar Counter \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/network/spacebar-counter.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .counter-workspace {
+      max-width: 600px;
+      margin: 2rem auto;
+      text-align: center;
+    }
+    .space-box {
+      width: 100%;
+      height: 250px;
+      background: var(--bg-secondary);
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 2rem;
+      transition: all 0.1s;
+    }
+    .space-box.active {
+      transform: translateY(4px);
+      box-shadow: inset 0 4px 10px rgba(0,0,0,0.5);
+      border-color: var(--primary);
+    }
+    .count-val {
+      font-size: 6rem;
+      font-weight: 900;
+      color: var(--primary);
+    }
+    .count-label {
+       font-size: 1.2rem;
+       font-weight: 700;
+       color: var(--text-muted);
+       text-transform: uppercase;
+       letter-spacing: 2px;
+    }
+    .history-card {
+       background: var(--dark-card);
+       border: 1px solid var(--border);
+       padding: 1.5rem;
+       border-radius: 10px;
+       margin-top: 2rem;
+       text-align: left;
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Infinite Spacebar Counter</h1>
+      <p>Simply press your spacebar to count. Ideal for auditing hardware and tracking performance stats.</p>
+    </div>
+
+    <div class="counter-workspace">
+      <div class="space-box" id="space-box">
+         <div class="count-val" id="val">0</div>
+         <div class="count-label">Total Presses</div>
+      </div>
+
+      <div class="d-flex justify-content-center gap-3">
+         <button onclick="resetCounter()" class="btn btn-secondary btn-lg">Reset Local Count</button>
+      </div>
+
+      <div class="history-card">
+         <h3 style="font-size: 1rem; margin-bottom: 10px;">📊 Session Stats</h3>
+         <p id="stats-msg" style="color: var(--text-muted); font-size: 0.9rem;">Start pressing the spacebar to see statistics.</p>
+      </div>
+
+      <!-- SEO CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2>What is a Spacebar Counter?</h2>
+        <p>A spacebar counter is a simple but essential tool for auditing your keyboard's health. The spacebar is often the most used key on a physical keyboard, and its mechanical switches are usually the first to fail. Our <strong>online spacebar press checker</strong> provide a neutral environment to verify if every press is registering correctly without accidental double-clicks or "chatter."</p>
+
+        <h3 class="mt-4">Testing Keyboard Durability</h2>
+        <p>Mechanical keyboards are rated for millions of cycles. By using our <strong>keyboard audit tool</strong>, you can perform a stress test on your spacebar stabilizer. If the count skips or registers multiple hits for a single press, your hardware may be failing. This <strong>spacebar hit counter</strong> is a professional standard for hardware reviewers and custom keyboard builders.</p>
+
+        <h3 class="mt-4">Privacy and Minimalist Design</h2>
+        <p>At 99tool.in, we believe in lightweight high-fidelity tools. Our <strong>private spacebar counter</strong> runs 100% locally in your browser session. We do not track your input speed, patterns, or personal data. This <strong>secure counter</strong> is safe for all environments, providing the instant feedback you need with zero server-side storage.</p>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const box = document.getElementById('space-box');
+    const valEl = document.getElementById('val');
+    const statsMsg = document.getElementById('stats-msg');
+    
+    let count = parseInt(localStorage.getItem('99tool_space_count')) || 0;
+    let startTime = null;
+    
+    valEl.innerText = count;
+
+    window.addEventListener('keydown', (e) => {
+       if (e.code === 'Space') {
+          e.preventDefault();
+          if (!startTime) startTime = performance.now();
+          
+          count++;
+          valEl.innerText = count;
+          box.classList.add('active');
+          localStorage.setItem('99tool_space_count', count);
+          updateStats();
+       }
+    });
+
+    window.addEventListener('keyup', (e) => {
+       if (e.code === 'Space') {
+          box.classList.remove('active');
+       }
+    });
+
+    function resetCounter() {
+       if(confirm('Reset total spacebar count?')) {
+          count = 0;
+          valEl.innerText = '0';
+          localStorage.setItem('99tool_space_count', 0);
+          startTime = null;
+          statsMsg.innerText = 'Start pressing the spacebar to see statistics.';
+       }
+    }
+
+    function updateStats() {
+       const elapsed = (performance.now() - startTime) / 1000;
+       const avg = (count / (elapsed || 0.1)).toFixed(2);
+       statsMsg.innerHTML = `Running for <strong>${Math.round(elapsed)}s</strong> | Average: <strong>${avg} presses/sec</strong>`;
+    }
+  </script>
+</body>
+</html>

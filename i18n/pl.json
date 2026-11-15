@@ -1,0 +1,609 @@
+{
+  "common": {
+    "privacy_note": "🔒 Uwaga dotycząca prywatności i danych: Wszystkie przetwarzania odbywają się lokalnie w Twojej przeglądarce. Twoje dane nigdy nie opuszczają Twojego urządzenia i nie są wysyłane na żaden serwer.",
+    "no_signup_required": "Brak konieczności rejestracji, instalacji lub płatności.",
+    "offline_ready": "Działa całkowicie w trybie offline po załadowaniu strony."
+  },
+  "tools": {
+    "age_calculator": {
+      "page_title": "Kalkulator Wieku – 99tool.in",
+      "meta_description": "Darmowe narzędzie online od 99tool.in: oblicz swój dokładny wiek w latach, miesiącach i dniach. Szybko i bezpiecznie.",
+      "what_is_title": "Czym jest Nieskończony Kalkulator Wieku?",
+      "what_is_content": "Nieskończony Kalkulator Wieku to narzędzie kalendarzowe po stronie klienta przeznaczone do obliczania dokładnego wieku od daty urodzenia do chwili obecnej. Zamiast podawać szacunkowe dane, narzędzie szczegółowo przedstawia wiek w latach, miesiącach i dniach. Zapewnia to wysoką precyzję dla dokumentów, harmonogramów czy śledzenia rozwoju.\n\nDodatkowo kalkulator wykonuje pod-obliczenia, aby pokazać całkowitą długość życia w innych jednostkach, takich jak łączna liczba miesięcy, tygodni, dni i godzin, wraz z odliczaniem do najbliższych urodzin. Całe przetwarzanie odbywa się lokalnie na Twoim urządzeniu, co gwarantuje, że Twoja data urodzenia nigdy nie zostanie przesłana na serwer.",
+      "how_to_use_title": "Jak używać Nieskończonego Kalkulatora Wieku",
+      "how_to_use_steps": [
+        "<strong>Wybierz datę urodzenia:</strong> Kliknij pole wyboru daty pod napisem \"Wybierz datę urodzenia\", aby wybrać dzień, miesiąc i rok urodzenia z kalendarza.",
+        "<strong>Sprawdź swój wiek główny:</strong> Po wybraniu daty automatycznie wyświetlą się główne wskaźniki pokazujące wiek w Latach, Miesiącach i Dniach.",
+        "<strong>Sprawdź odliczanie do urodzin:</strong> Spójrz na wyróżniony baner tuż pod Twoim wiekiem. Pokazuje on dokładną liczbę dni pozostałych do Twoich najbliższych urodzin.",
+        "<strong>Przejrzyj szczegółowe statystyki życia:</strong> Przewiń w dół do listy statystyk, aby zobaczyć całkowity czas życia wyrażony w Łącznych Miesiącach, Tygodniach, Dniach i Godzinach."
+      ],
+      "key_features_title": "Kluczowe funkcje",
+      "key_features": [
+        "<strong>Szczegółowy podział wieku:</strong> Pokazuje dokładny wiek podzielony na lata, miesiące i dni, prawidłowo uwzględniając lata przestępne i różne długości miesięcy.",
+        "<strong>Odliczanie do najbliższych urodzin:</strong> Dynamiczny licznik dni pokazuje dokładnie, jak blisko jesteś kolejnych urodzin.",
+        "<strong>Wielojednostkowe statystyki życia:</strong> Przelicza Twój wiek na skumulowane miesiące, tygodnie, dni i godziny.",
+        "<strong>Automatyczne obliczenia lokalne:</strong> Obliczenia uruchamiają się natychmiast po wybraniu daty bez konieczności odświeżania strony.",
+        "<strong>Przetwarzanie po stronie klienta:</strong> Wszystkie obliczenia działają bezpośrednio w pamięci RAM przeglądarki, chroniąc Twoje dane."
+      ],
+      "common_use_cases_title": "Typowe zastosowania",
+      "common_use_cases": [
+        "<strong>Weryfikacja formularzy i wniosków:</strong> Potwierdź dokładny wiek w latach i miesiącach dla polis ubezpieczeniowych, pism urzędowych lub wniosków wizowych.",
+        "<strong>Kamienie milowe rozwoju dzieci:</strong> Śledź etapy wzrostu niemowląt i dzieci w dokładnych miesiącach i dniach.",
+        "<strong>Planowanie wydarzeń i urodzin:</strong> Śledź dni pozostałe do rocznic, aby na czas zarezerwować lokale i wysłać zaproszenia.",
+        "<strong>Ciekawość i zabawa:</strong> Dowiedz się, ile łącznie dni lub godzin już żyjesz."
+      ],
+      "faq_title": "Często zadawane pytania",
+      "faq": [
+        {
+          "question": "Jak to narzędzie uwzględnia lata przestępne?",
+          "answer": "Kalkulator wykorzystuje natywny obiekt Date języka JavaScript, który automatycznie i dokładnie uwzględnia lata przestępne (w tym 29 lutego) oraz różną liczbę dni w miesiącach (28, 30 lub 31 dni)."
+        },
+        {
+          "question": "Czy moja data urodzenia jest zapisywana lub przesyłana przez 99tool.in?",
+          "answer": "Nie. 99tool.in działa całkowicie w oparciu o kod po stronie klienta. Twoja data urodzenia jest przetwarzana lokalnie w przeglądarce i nigdy nie jest wysyłana na żaden serwer ani do bazy danych."
+        },
+        {
+          "question": "Czy mogę obliczyć wiek w odniesieniu do daty z przeszłości lub przyszłości?",
+          "answer": "To konkretne narzędzie oblicza wiek w odniesieniu do dzisiejszej daty. Jeśli chcesz znaleźć różnicę między dwiema dowolnymi datami, użyj naszego Kalkulatora Różnicy Dat."
+        },
+        {
+          "question": "Dlaczego narzędzie pokazuje ostrzeżenie, gdy wybiorę datę z przyszłości?",
+          "answer": "Obliczenia wieku reprezentują czas, który upłynął od urodzenia. Wybór daty z przyszłości skutkowałby ujemnym wiekiem, dlatego narzędzie blokuje wprowadzanie takich danych."
+        },
+        {
+          "question": "Czy obliczenie łącznej liczby godzin uwzględnia zmiany czasu na letni/zimowy?",
+          "answer": "Statystyka łącznej liczby godzin jest obliczana poprzez pomnożenie całkowitej liczby minionych dni przez 24 godziny. Jest to standardowe przeliczenie matematyczne بدون korekt na lokalne zmiany czasu."
+        }
+      ],
+      "privacy_note": "🔒 Uwaga dotycząca prywatności i danych: Twoja data urodzenia jest przetwarzana lokalnie w przeglądarce. Żadne dane osobowe nie są gromadzone, śledzone ani przesyłane na nasze serwery.",
+      "schema_org": {
+        "name": "Kalkulator Wieku – 99tool.in",
+        "description": "Darmowe narzędzie online od 99tool.in: szybko, bezpiecznie, bez konieczności rejestracji."
+      }
+    },
+    "audio_recorder": {
+      "page_title": "Rejestrator Audio – 99tool.in",
+      "meta_description": "Nagraj i edytuj dźwięk bezpośrednio w przeglądarce. Darmowe i prywatne narzędzie bez rejestracji od 99tool.in.",
+      "what_is_title": "Czym jest Rejestrator i Edytor Audio?",
+      "what_is_content": "To przeglądarkowe narzędzie do nagrywania i edycji dźwięku pozwala nagrywać notatki głosowe, dźwięki i przemówienia w wysokiej jakości bezpośrednio z przeglądarki. Zaprojektowane z myślą o pełnej prywatności, zmienia przeglądarkę Twojego urządzenia w bezpieczne studio nagrań. Nie wymaga zakładania konta ani rejestracji.\n\nDzięki wykorzystaniu natywnych interfejsów API przeglądarki narzędzie przetwarza wszystkie dane audio lokalnie. Oznacza to, że niezależnie od tego, czy nagrywasz klip głosowy, czy przycinasz notatkę, Twój plik pozostaje na Twoim urządzeniu. Strumień audio nigdy nie jest wysyłany na zdalne serwery, zapewniając pełną poufność."
+    },
+    "audio_recorder": {
+      "page_title": "Rejestrator Audio – 99tool.in",
+      "meta_description": "Nagraj i edytuj dźwięk bezpośrednio w przeglądarce. Darmowe i prywatne narzędzie bez rejestracji od 99tool.in.",
+      "what_is_title": "Czym jest Rejestrator i Edytor Audio?",
+      "what_is_content": "To przeglądarkowe narzędzie do nagrywania i edycji dźwięku pozwala nagrywać notatki głosowe, dźwięki i przemówienia w wysokiej jakości bezpośrednio z przeglądarki. Zaprojektowane z myślą o pełnej prywatności, zmienia przeglądarkę Twojego urządzenia w bezpieczne studio nagrań. Nie wymaga zakładania konta ani rejestracji.\n\nDzięki wykorzystaniu natywnych interfejsów API przeglądarki narzędzie przetwarza wszystkie dane audio lokalnie. Oznacza to, że niezależnie od tego, czy nagrywasz klip głosowy, czy przycinasz notatkę, Twój plik pozostaje na Twoim urządzeniu. Strumień audio nigdy nie jest wysyłany na zdalne serwery, zapewniając pełną poufność.",
+      "how_to_use_title": "Jak używać Rejestratora i Edytora Audio",
+      "how_to_use_steps": [
+        "<strong>Wybierz format eksportu:</strong> Wybierz WebM (idealny dla mniejszych plików i szybkiego przetwarzania) lub WAV (doskonały dla bezstratnego dźwięku wysokiej jakości) z rozwijanego menu.",
+        "<strong>Zainicjuj mikrofon:</strong> Kliknij przycisk \"Zainicjuj mikrofon\". Przeglądarka poprosi o udzielenie dostępu do mikrofonu.",
+        "<strong>Rozpocznij nagrywanie:</strong> Kliknij czerwony okrągły przycisk, aby rozpocząć nagrywanie dźwięku. Licznik czasu zacznie odliczać, a na ekranie pojawi się fala dźwiękowa w czasie rzeczywistym.",
+        "<strong>Zatrzymaj nagrywanie:</strong> Kliknij kwadratowy przycisk stopu, aby zakończyć nagrywanie. Narzędzie automatycznie przetworzy dźwięk i doda go do Twojej listy.",
+        "<strong>Odtwórz i zapisz:</strong> Kliknij przycisk \"ODTWÓRZ\", aby odsłuchać ścieżkę, lub przycisk \"ZAPISZ\", aby pobrać plik bezpośrednio na urządzenie."
+      ],
+      "key_features_title": "Kluczowe funkcje",
+      "key_features": [
+        "<strong>Formaty bezstratne i skompresowane:</strong> Eksportuj pliki audio w surowym formacie WAV lub w zoptymalizowanym formacie WebM.",
+        "<strong>Wizualizacja fali dźwiękowej w czasie rzeczywistym:</strong> Oscyloskop na płótnie zapewnia natychmiastową podgląd poziomów wejściowych i aktywności mikrofonu.",
+        "<strong>Bezpieczne przechowywanie w pamięci RAM:</strong> Nagrania są tymczasowo zapisywane w pamięci systemowej (adresy URL Blob) zamiast na serwerze.",
+        "<strong>Historia wielu sesji:</strong> Wykonaj wiele nagrań w jednej sesji i odtwarzaj je lub pobieraj indywidualnie w zależności od potrzeb.",
+        "<strong>Rresponsywny układ nagrywania:</strong> Interfejs zoptymalizowany pod kątem urządzeń mobilnych ułatwia nagrywanie notatek na smartfonach, tabletach lub komputerach."
+      ],
+      "common_use_cases_title": "Typowe zastosowania",
+      "common_use_cases": [
+        "<strong>Twórcy treści i podcasterzy:</strong> Nagrywaj lektora, wstępy lub wersje robocze bez konieczności instalowania ciężkiego oprogramowania.",
+        "<strong>Studenci i badacze:</strong> Rejestruj notatki z wykładów, przypomnienia do nauki lub wywiady w bezpiecznym środowisku.",
+        "<strong>Muzycy i projektanci dźwięku:</strong> Szybko nagrywaj pomysły muzyczne, próby wokalne lub efekty dźwiękowe.",
+        "<strong>Prywatne dyktando:</strong> Dyktuj poufne notatki lub pamiętniki bez obaw o wyciek danych do chmury."
+      ],
+      "faq_title": "Często zadawane pytania",
+      "faq": [
+        {
+          "question": "Czy moje nagranie audio jest zapisywane na Waszych serwerach?",
+          "answer": "Nie. 99tool.in przetwarza wszystkie dane audio wyłącznie w pamięci (RAM) lokalnej karty przeglądarki jako obiekt Blob. Twoje nagrania nigdy nie trafiają na nasze serwery i są usuwane po zamknięciu karty."
+        },
+        {
+          "question": "Dlaczego muszę udzielić uprawnień do mikrofonu?",
+          "answer": "Twoja przeglądarka wymaga wyraźnej zgody na dostęp do sprzętu wejściowego audio. Uprawnienie to jest zarządzane lokalnie i używane wyłącznie do nagrywania."
+        },
+        {
+          "question": "Czy mogę używać tego narzędzia w trybie offline?",
+          "answer": "Tak. Ponieważ interfejs opiera się na natywnych interfejsach API i przetwarzaniu po stronie klienta, po załadowaniu strony możesz nagrywać i pobierać dźwięk bez połączenia z Internetem."
+        },
+        {
+          "question": "Jaka jest różnica między WebM a WAV?",
+          "answer": "Pliki WAV są nieskompresowane i bezstratne, oferując najwyższą jakość dźwięku, ale mają większy rozmiar. Pliki WebM są skompresowane i zoptymalizowane pod kątem sieci."
+        },
+        {
+          "question": "Czy istnieje limit czasu nagrywania?",
+          "answer": "Narzędzie nie narzuca żadnego sztucznego limitu czasu. Długość nagrania jest ograniczona jedynie dostępną pamięcią systemową (RAM) Twojego urządzenia."
+        }
+      ],
+      "privacy_note": "🔒 Uwaga dotycząca prywatności i danych: Całe przechwytywanie i przetwarzanie dźwięku odbywa się w Twojej przeglądarce. Żadne pliki nie są przesyłane na nasze serwery.",
+      "schema_org": {
+        "name": "Rejestrator i Edytor Audio",
+        "description": "Wysokiej jakości nagrywanie audio, wizualizacja fali w czasie rzeczywistym, przycinanie dźwięku, sterowanie odtwarzaniem, bezpieczne przetwarzanie lokalne."
+      }
+    },
+    "bmi_calculator": {
+      "page_title": "Kalkulator BMI – 99tool.in",
+      "meta_description": "Dokładnie oblicz swój wskaźnik masy ciała (BMI). Darmowe, bezpieczne i szybkie narzędzie zdrowotne od 99tool.in.",
+      "what_is_title": "Czym jest Nieskończony Kalkulator BMI?",
+      "what_is_content": "Nieskończony Kalkulator BMI to narzędzie zdrowotne po stronie klienta przeznaczone do obliczania wskaźnika masy ciała (BMI) przy użyciu wartości wzrostu i wagi. Wprowadzając parametry metryczne, użytkownicy mogą określić swoją kategorię wagi i sprawdzić standardowe wskaźniki masy ciała.\n\nKalkulator ten przetwarza wszystkie obliczenia, dopasowania kategorii i korekty wskaźnika lokalnie w pamięci Twojej przeglądarki. Żadne wartości wzrostu, wagi ani obliczonego BMI nie są zapisywane ani przesyłane."
+    },
+    "bmi_calculator": {
+      "page_title": "Kalkulator BMI – 99tool.in",
+      "meta_description": "Dokładnie oblicz swój wskaźnik masy ciała (BMI). Darmowe, bezpieczne i szybkie narzędzie zdrowotne od 99tool.in.",
+      "what_is_title": "Czym jest Nieskończony Kalkulator BMI?",
+      "what_is_content": "Nieskończony Kalkulator BMI to narzędzie zdrowotne po stronie klienta przeznaczone do obliczania wskaźnika masy ciała (BMI) przy użyciu wartości wzrostu i wagi. Wprowadzając parametry metryczne, użytkownicy mogą określić swoją kategorię wagi i sprawdzić standardowe wskaźniki masy ciała.\n\nKalkulator ten przetwarza wszystkie obliczenia, dopasowania kategorii i korekty wskaźnika lokalnie w pamięci Twojej przeglądarki. Żadne wartości wzrostu, wagi ani obliczonego BMI nie są zapisywane ani przesyłane.",
+      "how_to_use_title": "Jak używać Nieskończonego Kalkulatora BMI",
+      "how_to_use_steps": [
+        "<strong>Wprowadź swoją wagę:</strong> Wpisz swoją wagę w kilogramach (kg) w polu wprowadzania wagi.",
+        "<strong>Wprowadź swój wzrost:</strong> Wpisz swój wzrost w centymetrach (cm) w polu wprowadzania wzrostu.",
+        "<strong>Kliknij Oblicz:</strong> Naciśnij przycisk \"Oblicz BMI\", aby uruchomić lokalny silnik matematyczny.",
+        "<strong>Sprawdź swój wynik:</strong> Zobacz panel wyników, aby sprawdzić wartość liczbową BMI, kategorię wagi oraz pozycję wskaźnika."
+      ],
+      "key_features_title": "Kluczowe funkcje",
+      "key_features": [
+        "<strong>Obsługa jednostek metrycznych:</strong> Wprowadzaj bezpośrednio standardowe wartości wagi (kg) i wzrostu (cm).",
+        "<strong>Wizualny wskaźnik zakresu:</strong> Dynamicznie przesuwa wskaźnik na kolorowym pasku, aby pokazać Twoją klasyfikację wagi.",
+        "<strong>Standardowe zakresy BMI:</strong> Ocenia dane wejściowe na podstawie wytycznych WHO (Niedowaga, Waga prawidłowa, Nadwaga, Otyłość).",
+        "<strong>Natychmiastowy pulpit wyników:</strong> Wyświetla wyniki liczbowe i nazwy kategorii w przejrzystej karcie.",
+        "<strong>Silnik 100% po stronie klienta:</strong> Wykonuje wszystkie działania matematyczne lokalnie w przeglądarce, chroniąc Twoje dane zdrowotne."
+      ],
+      "common_use_cases_title": "Typowe zastosowania",
+      "common_use_cases": [
+        "<strong>KONTROLA WAGI:</strong> Regularnie monitoruj trendy masy ciała podczas programów odchudzania lub treningów.",
+        "<strong>KONTROLA ZDROWIA I FITNESU:</strong> Szybko sprawdź ogólną kategorię masy ciała na potrzeby formularzy medycznych lub ubezpieczeniowych.",
+        "<strong>WYZNACZANIE CELE STYLU ŻYCIA:</strong> Ustal wyjściowe BMI, aby wyznaczyć realistyczne cele zdrowia fizycznego.",
+        "<strong>ZAJĘCIA SZKOLNE I EDUKACYJNE:</strong> Ucz uczniów o wskaźnikach ludzkiego ciała, stałych biologicznych i wzorach BMI."
+      ],
+      "faq_title": "Często zadawane pytania",
+      "faq": [
+        {
+          "question": "Jakie są standardowe zakresy BMI?",
+          "answer": "Oficjalne klasyfikacje WHO to: Niedowaga (poniżej 18,5), Waga prawidłowa (18,5 do 24,9), Nadwaga (25 do 29,9) oraz Otyłość (30 lub więcej)."
+        },
+        {
+          "question": "Czy ten kalkulator uwzględnia masę mięśniową lub gęstość kości?",
+          "answer": "Nie. BMI to ogólny wskaźnik oceny wykorzystujący tylko wzrost i wagę. Nie rozróżnia mięśni, tłuszczu ani masy kości."
+        },
+        {
+          "question": "Czy moje dane zdrowotne są udostępniane lub przesyłane?",
+          "answer": "Nie. Wszystkie obliczenia są wykonywane na Twoim urządzeniu za pomocą lokalnego kodu JavaScript. 99tool.in nie gromadzi ani nie zapisuje Twoich danych."
+        },
+        {
+          "question": "Czy w tym obliczeniu uwzględniono wiek lub płeć?",
+          "answer": "To narzędzie oblicza standardowy wskaźnik BMI dla dorosłych. W przypadku dzieci i kobiet w ciąży lekarze stosują specjalne siatki centylowe."
+        }
+      ],
+      "privacy_note": "🔒 Uwaga dotycząca prywatności i danych: Obliczenia wzrostu, wagi i BMI są przetwarzane lokalnie w przeglądarce. Żadne dane zdrowotne nie są przesyłane.\nZastrzeżenie: Narzędzie służy wyłącznie celom informacyjnym i nie zastępuje profesjonalnej porady medycznej.",
+      "schema_org": {
+        "name": "Kalkulator BMI – 99tool.in",
+        "description": "Darmowe narzędzie online od 99tool.in: szybko, bezpiecznie, bez konieczności rejestracji."
+      }
+    },
+    "csv_editor": {
+      "page_title": "Edytor CSV – 99tool.in",
+      "meta_description": "Otwieraj, edytuj i eksportuj pliki CSV w przeglądarce. Bezpieczne i darmowe narzędzie do danych od 99tool.in.",
+      "what_is_title": "Czym jest Przeglądarka i Edytor CSV?",
+      "what_is_content": "Przeglądarka i Edytor CSV to lekkie przeglądarkowe narzędzie do arkuszy kalkulacyjnych przeznaczone do otwierania, przeglądania i modyfikowania plików z wartościami rozdzielanymi przecinkami (CSV). Zamiast czekać na uruchomienie ciężkiego oprogramowania biurowego, możesz przeciągnąć i upuścić zestaw danych bezpośrednio na kartę przeglądarki.\n\nNarzędzie umożliwia edycję wartości komórek, sortowanie kolumn, wyszukiwanie rekordów oraz eksport zaktualizowanych plików. Ponieważ cała analiza plików i wyświetlanie tabel odbywa się lokalnie w pamięci RAM, Twoje wrażliwe dane nigdy nie są narażone na kontakt z serwerami zewnętrznymi."
+    },
+    "csv_editor": {
+      "page_title": "Edytor CSV – 99tool.in",
+      "meta_description": "Otwieraj, edytuj i eksportuj pliki CSV w przeglądarce. Bezpieczne i darmowe narzędzie do danych od 99tool.in.",
+      "what_is_title": "Czym jest Przeglądarka i Edytor CSV?",
+      "what_is_content": "Przeglądarka i Edytor CSV to lekkie przeglądarkowe narzędzie do arkuszy kalkulacyjnych przeznaczone do otwierania, przeglądania i modyfikowania plików z wartościami rozdzielanymi przecinkami (CSV). Zamiast czekać na uruchomienie ciężkiego oprogramowania biurowego, możesz przeciągnąć i upuścić zestaw danych bezpośrednio na kartę przeglądarki.\n\nNarzędzie umożliwia edycję wartości komórek, sortowanie kolumn, wyszukiwanie rekordów oraz eksport zaktualizowanych plików. Ponieważ cała analiza plików i wyświetlanie tabel odbywa się lokalnie w pamięci RAM, Twoje wrażliwe dane nigdy nie są narażone na kontakt z serwerami zewnętrznymi.",
+      "how_to_use_title": "Jak używać Przeglądarki i Edytora CSV",
+      "how_to_use_steps": [
+        "<strong>Zaimportuj zestaw danych:</strong> Przeciągnij i upuść plik CSV bezpośrednio na obszar z przerywaną linią lub kliknij \"Przeglądaj pliki\", aby wybrać go z dysku.",
+        "<strong>Edytuj wartości komórek:</strong> Kliknij bezpośrednio dowolną komórkę tabeli, aby zmodyfikować jej zawartość. Wpisz zmiany i kliknij poza komórką, aby zapisać lokalnie.",
+        "<strong>Filtruj i szukaj:</strong> Użyj pola wyszukiwania nad tabelą, aby szukać określonych wierszy lub filtrować wyniki w czasie rzeczywistym.",
+        "<strong>Sortuj według kolumn:</strong> Kliknij nagłówki kolumn, aby posortować wiersze tabeli alfabetycznie lub numerycznie w kolejności rosnącej lub malejącej.",
+        "<strong>Eksportuj zmiany:</strong> Kliknij \"Eksportuj CSV\", aby pobrać zaktualizowany arkusz kalkulacyjny na komputer."
+      ],
+      "key_features_title": "Kluczowe funkcje",
+      "key_features": [
+        "<strong>Edycja tabeli w czasie rzeczywistym:</strong> Edytuj wartości komórek bezpośrednio w interaktywnej tabeli z błyskawicznym zapisem lokalnym.",
+        "<strong>Sortowanie i wyszukiwanie kolumn:</strong> Szybko analizuj dane, sortując rekordy lub filtrując wiersze według słów kluczowych.",
+        "<strong>Szybki parser po stronie klienta:</strong> Wyświetlaj tysiące punktów danych lokalnie w milisekundach bez opóźnień serwera.",
+        "<strong>Obsługa znaków UTF-8:</strong> Zachowuje polskie znaki diakrytyczne oraz symbole specjalne podczas importu i eksportu.",
+        "<strong>Izolacja danych w trybie offline:</strong> Działa całkowicie offline, zapewniając bezpieczeństwo Twoich plików."
+      ],
+      "common_use_cases_title": "Typowe zastosowania",
+      "common_use_cases": [
+        "<strong>Aktualizacje magazynowe e-commerce:</strong> Edytuj opisy produktów, ceny lub ilości przed zaimportowaniem ich do sklepu.",
+        "<strong>Czyszczenie list kontaktów:</strong> Szukaj zduplikowanych wpisów lub poprawiaj błędy formatowania w listach e-mailowych.",
+        "<strong>Inspekcja logów i raportów:</strong> Przeglądaj eksporty logów serwera lub raporty finansowe w przejrzystej tabeli.",
+        "<strong>Weryfikacja wprowadzania danych:</strong> Sprawdzaj i formatuj układy kolumn przed przesłaniem danych do baz danych SQL."
+      ],
+      "faq_title": "Często zadawane pytania",
+      "faq": [
+        {
+          "question": "Czy istnieje limit rozmiaru przesyłanego pliku?",
+          "answer": "Dla optymalnego działania zalecamy używanie tego edytora do plików CSV o rozmiarze do 10-15 MB. Bardzo duże pliki mogą spowolnić przeglądarkę."
+        },
+        {
+          "question": "Czy edycja komórki aktualizuje oryginalny plik na moim komputerze?",
+          "answer": "Nie. Przeglądarki nie mogą bezpośrednio nadpisywać plików lokalnych ze względów bezpieczeństwa. Aby zapisać zmiany, kliknij przycisk \"Eksportuj CSV\"."
+        },
+        {
+          "question": "Czy moje dane są przesyłane lub śledzone?",
+          "answer": "Nie. 99tool.in przetwarza wszystkie pliki lokalnie. Twoje dane i wartości komórek pozostają bezpieczne w przeglądarce."
+        },
+        {
+          "question": "Czy to narzędzie obsługuje średniki lub tabulatory jako separatory?",
+          "answer": "Ta wersja jest zoptymalizowana pod kątem standardowych plików rozdzielanych przecinkami (.csv). Użycie średników może spowodować błędne wyrównanie kolumn."
+        },
+        {
+          "question": "Czy mogę dodawać nowe wiersze lub kolumny?",
+          "answer": "To narzędzie zostało zaprojektowane jako przeglądarka i edytor wartości istniejących tabel. Do dodawania nowych kolumn zalecamy pełny program do arkuszy."
+        }
+      ],
+      "privacy_note": "🔒 Uwaga dotycząca prywatności i danych: Analiza plików CSV i wyświetlanie tabel odbywa się w Twojej przeglądarce. Żadne pliki nie są wysyłane na serwery.",
+      "schema_org": {
+        "name": "Przeglądarka i Edytor CSV",
+        "description": "Analiza CSV, widok tabeli, edycja komórek, sortowanie kolumn, eksport danych."
+      }
+    },
+    "image_compressor": {
+      "page_title": "Kompresja Obrazów – 99tool.in",
+      "meta_description": "Zmniejsz rozmiar plików obrazów bez utraty jakości. Darmowe i szybkie narzędzie od 99tool.in.",
+      "what_is_title": "Czym jest Inteligentny Kompresor Obrazów?",
+      "what_is_content": "Inteligentny Kompresor Obrazów to narzędzie optymalizacyjne po stronie klienta przeznaczone do zmniejszania rozmiaru plików obrazów przy zachowaniu szczegółów wizualnych. Wykorzystując renderowanie na płótnie przeglądarki i dynamiczne dostosowanie jakości, możesz łatwo zmniejszyć duże pliki grafik, aby poprawić szybkość ładowania strony.\n\nWszystkie optymalizacje odbywają się całkowicie w lokalnej pamięci Twojej przeglądarki. Ponieważ żadne pliki nie są przesyłane na serwery zewnętrzne, Twoje oryginalne zdjęcia i projekty pozostają w pełni prywatne."
+    },
+    "image_compressor": {
+      "page_title": "Kompresja Obrazów – 99tool.in",
+      "meta_description": "Zmniejsz rozmiar plików obrazów bez utraty jakości. Darmowe i szybkie narzędzie od 99tool.in.",
+      "what_is_title": "Czym jest Inteligentny Kompresor Obrazów?",
+      "what_is_content": "Inteligentny Kompresor Obrazów to narzędzie optymalizacyjne po stronie klienta przeznaczone do zmniejszania rozmiaru plików obrazów przy zachowaniu szczegółów wizualnych. Wykorzystując renderowanie na płótnie przeglądarki i dynamiczne dostosowanie jakości, możesz łatwo zmniejszyć duże pliki grafik, aby poprawić szybkość ładowania strony.\n\nWszystkie optymalizacje odbywają się całkowicie w lokalnej pamięci Twojej przeglądarki. Ponieważ żadne pliki nie są przesyłane na serwery zewnętrzne, Twoje oryginalne zdjęcia i projekty pozostają w pełni prywatne.",
+      "how_to_use_title": "Jak używać Inteligentnego Kompresora Obrazów",
+      "how_to_use_steps": [
+        "<strong>Prześlij obraz:</strong> Kliknij obszar ramki lub przeciągnij i upuść plik obrazu (JPG, PNG lub WEBP) do przeglądarki.",
+        "<strong>Sprawdź rozmiar oryginalny:</strong> Zobacz kolumnę <strong>Oryginał</strong> w tabeli porównawczej, aby sprawdzić początkowy rozmiar pliku.",
+        "<strong>Wybierz poziom kompresji:</strong> Przeciągnij suwak <strong>Poziom kompresji</strong>, aby dostosować jakość. Przesunięcie w lewo zmniejsza rozmiar, w prawo zachowuje jakość.",
+        "<strong>Wybierz format docelowy:</strong> W menu <strong>Konwertuj na format</strong> wybierz zachowanie oryginalnego formatu lub konwersję do JPEG lub WEBP.",
+        "<strong>Oceń oszczędność:</strong> Porównaj podgląd <strong>Oryginał</strong> i <strong>Skompresowany</strong> obok siebie. Zielona odznaka pokazuje procent oszczędzonego miejsca.",
+        "<strong>Pobierz zoptymalizowany obraz:</strong> Kliknij przycisk <strong>Pobierz skompresowany obraz</strong>, aby zapisać plik na urządzeniu."
+      ],
+      "key_features_title": "Kluczowe funkcje",
+      "key_features": [
+        "<strong>Porównanie jakości obok siebie:</strong> Porównuj podgląd oryginalny i skompresowany bezpośrednio obok siebie, aby upewnić się, że tekst i detale pozostają ostre.",
+        "<strong>Precyzyjna kontrola jakości:</strong> Płynnie dostosowuj poziom kompresji od 10% do 100% w zależności od potrzeb.",
+        "<strong>Szybka konwersja formatów:</strong> Błyskawicznie konwertuj pliki do nowoczesnych formatów, takich jak WEBP lub uniwersalny JPEG.",
+        "<strong>Kalkulator oszczędności w czasie rzeczywistym:</strong> Oblicza procent oszczędzonego rozmiaru pliku w trakcie przesuwania suwaka.",
+        "<strong>Wykonanie po stronie klienta:</strong> Przetwarza wszystko lokalnie przez JavaScript, zapewniając brak śladów danych."
+      ],
+      "common_use_cases_title": "Typowe zastosowania",
+      "common_use_cases": [
+        "<strong>Programiści webowi:</strong> Kompresuj obrazy na stronach internetowych, aby poprawić szybkość ładowania i pozycjonowanie SEO.",
+        "<strong>Specjaliści ds. social media:</strong> Zmniejszaj rozmiar zdjęć, aby pasowały do limitów platform bez utraty jakości.",
+        "<strong>Pracownicy biurowi:</strong> Zmniejszaj rozmiar skanowanych dokumentów lub zrzutów ekranu na potrzeby załączników e-mail.",
+        "<strong>Bloggerzy:</strong> Twórz zoptymalizowane obrazy dla użytkowników mobilnych, aby przyspieszyć ładowanie strony."
+      ],
+      "faq_title": "Często zadawane pytania",
+      "faq": [
+        {
+          "question": "Czy mój obraz straci na jakości podczas kompresji?",
+          "answer": "Zalecamy utrzymanie suwaka w przedziale od 80% do 90%. W tym zakresie rozmiar pliku ulega znacznej redukcji, a różnice wizualne są prawie niezauważalne."
+        },
+        {
+          "question": "Czy moje prywatne zdjęcia są przesyłane na serwer?",
+          "answer": "Absolutnie nie. Całe przetwarzanie i zmiana rozmiaru odbywają się lokalnie w pamięci przeglądarki."
+        },
+        {
+          "question": "Jaka jest zaleta konwersji do formatu WEBP?",
+          "answer": "WEBP to nowoczesny format obrazu zapewniający lepszą kompresję w porównaniu z JPEG i PNG, co przekłada się na mniejsze pliki przy zachowaniu jakości."
+        },
+        {
+          "question": "Czy mogę kompresować przezroczyste obrazy PNG?",
+          "answer": "Tak. Aby zachować przezroczystość, wybierz \"Zachowaj oryginalny format\" lub konwertuj do \"WEBP\". Konwersja do JPEG zastąpi przezroczyste miejsca białym tłem."
+        },
+        {
+          "question": "Dlaczego mój plik zwiększył rozmiar po kompresji?",
+          "answer": "Może się to zdarzyć, jeśli oryginalny plik był już mocno zoptymalizowany. Przesuń suwak nieco w lewo, aby zmniejszyć rozmiar."
+        }
+      ],
+      "privacy_note": "Uwaga dotycząca prywatności i danych: Każdy krok kompresji jest wykonywany lokalnie na Twoim komputerze. Twoje pliki nie są przetwarzane na serwerach zewnętrznych.",
+      "schema_org": {
+        "name": "Kompresja Obrazów – 99tool.in",
+        "description": "Darmowe narzędzie online od 99tool.in: szybko, bezpiecznie, bez konieczności rejestracji."
+      }
+    },
+    "markdown_previewer": {
+      "page_title": "Podgląd Markdown – 99tool.in",
+      "meta_description": "Twórz i edytuj Markdown z konwersją na HTML w czasie rzeczywistym. Darmowe narzędzie programistyczne od 99tool.in.",
+      "what_is_title": "Czym jest Podgląd Markdown?",
+      "what_is_content": "Podgląd Markdown to edytor przeglądarkowy przeznaczony do pisania, formatowania i podglądu składni Markdown w czasie rzeczywistym. Pisząc kod po lewej stronie i widząc sformatowany wynik po prawej, możesz sprawdzić pliki README i dokumentację przed publikacją.\n\nTen edytor wykonuje wszystkie konwersje z Markdown na HTML lokalnie na Twoim komputerze. Ponieważ żaden projekt nie jest wysyłany do zewnętrznych baz danych, Twoje dokumenty pozostają w pełni bezpieczne.",
+      "how_to_use_title": "Jak używać Podglądu Markdown",
+      "how_to_use_steps": [
+        "<strong>Wprowadź Markdown:</strong> Wpisz lub wklej surową składnię Markdown w lewym panelu edytora.",
+        "<strong>Obserwuj podgląd na żywo:</strong> W prawym panelu sprawdzaj na bieżąco formatowanie nagłówków, list i tabel.",
+        "<strong>Skopiuj kod HTML:</strong> Kliknij \"Kopiuj HTML\", aby skopiować skompilowany kod HTML do schowka.",
+        "<strong>Pobierz plik źródłowy:</strong> Kliknij \"Pobierz .md\", aby zapisać swoją pracę jako plik Markdown na urządzeniu.",
+        "<strong>Wyczyść obszar:</strong> Kliknij \"Wyczyść wszystko\", aby zresetować edytor."
+      ],
+      "key_features_title": "Kluczowe funkcje",
+      "key_features": [
+        "<strong>Podgląd na żywo na podzielonym ekranie:</strong> Zamienia surową składnię na wizualne formatowanie HTML podczas pisania.",
+        "<strong>Zgodność z GFM:</strong> Obsługuje standardowe reguły GitHub Flavored Markdown dla tabel, pogrubień i list.",
+        "<strong>Kopiowanie wyjścia HTML:</strong> Zapisuje skompilowane elementy HTML w schowku w celu bezpośredniego wklejenia.",
+        "<strong>Lokalny eksport plików:</strong> Pobieraj gotowe projekty jako samodzielny plik <code>.md</code>.",
+        "<strong>Kompilator po stronie klienta:</strong> Renderuje style offline w pamięci podręcznej przeglądarki, chroniąc Twój tekst."
+      ],
+      "common_use_cases_title": "Typowe zastosowania",
+      "common_use_cases": [
+        "<strong>Pisanie plików README:</strong> Formatuj opisy projektów dla repozytoriów przed wysłaniem aktualizacji.",
+        "<strong>Podgląd dokumentacji API:</strong> Twórz i przeglądaj specyfikacje API i przykłady kodu.",
+        "<strong>Szkice artykułów technicznych:</strong> Przygotowuj wpisy w Markdown i sprawdzaj strukturę nagłówków.",
+        "<strong>Nauka składni Markdown:</strong> Ćwicz skróty Markdown w interaktywnym edytorze."
+      ],
+      "faq_title": "Często zadawane pytania",
+      "faq": [
+        {
+          "question": "Czy ten edytor jest zgodny z GitHub Flavored Markdown?",
+          "answer": "Tak. Podgląd obsługuje standardowe elementy GFM, takie jak listy zadań, tabele i bloki kodu."
+        },
+        {
+          "question": "Czy moje projekty są wysyłane na serwer?",
+          "answer": "Nie. 99tool.in przetwarza całą konwersję lokalnie w pamięci Twojej przeglądarki."
+        },
+        {
+          "question": "Jak wyświetlić obrazy w podglądzie?",
+          "answer": "Możesz odwołać się do dowolnego obrazu za pomocą standardowej składni (<code>![](url_obrazu)</code>)."
+        },
+        {
+          "question": "Czy pobrany plik .md zawiera kod HTML?",
+          "answer": "Nie. Przycisk \"Pobierz .md\" zapisuje edytowalny kod źródłowy Markdown. Użyj \"Kopiuj HTML\" dla kodu HTML."
+        }
+      ],
+      "privacy_note": "🔒 Uwaga dotycząca prywatności i danych: Renderowanie Markdown i eksport plików odbywają się lokalnie w przeglądarce.",
+      "schema_org": {
+        "name": "Podgląd Markdown",
+        "description": "Podgląd wyników na żywo, obsługa GFM, eksport HTML, podzielony ekran."
+      }
+    },
+    "pdf_merger": {
+      "page_title": "Łączenie PDF – 99tool.in",
+      "meta_description": "Połącz pliki PDF w kilka sekund bezpośrednio w przeglądarce. 100% darmowe i bezpieczne narzędzie od 99tool.in.",
+      "what_is_title": "Narzędzie do Łączenia PDF Szanujące Twoją Prywatność",
+      "what_is_content": "Wszyscy to znamy: masz kilka raportów, skanów i list motywacyjny, które należy połączyć w jeden plik PDF. Pierwszą myślą jest wyszukiwanie w sieci \"<strong>darmowe łączenie PDF online</strong>\". Pojawia się jednak obawa przed wysyłaniem poufnych umów czy dokumentów na nieznane serwery.\n\nW 99tool.in stworzyliśmy nasze <strong>narzędzie do łączenia PDF</strong>, aby rozwiązać ten problem. W przeciwieństwie do serwisów przetwarzających pliki na serwerach zewnętrznych, nasze narzędzie wykonuje działania na Twoim urządzeniu. Dzięki technologii <code>pdf-lib</code> w przeglądarce łączenie odbywa się w pamięci RAM Twojego komputera. Pliki nie opuszczają urządzenia ani na sekundę."
+    },
+    "pdf_merger": {
+      "page_title": "Łączenie PDF – 99tool.in",
+      "meta_description": "Połącz pliki PDF w kilka sekund bezpośrednio w przeglądarce. 100% darmowe i bezpieczne narzędzie od 99tool.in.",
+      "what_is_title": "Narzędzie do Łączenia PDF Szanujące Twoją Prywatność",
+      "what_is_content": "Wszyscy to znamy: masz kilka raportów, skanów i list motywacyjny, które należy połączyć w jeden plik PDF. Pierwszą myślą jest wyszukiwanie w sieci \"<strong>darmowe łączenie PDF online</strong>\". Pojawia się jednak obawa przed wysyłaniem poufnych umów czy dokumentów na nieznane serwery.\n\nW 99tool.in stworzyliśmy nasze <strong>narzędzie do łączenia PDF</strong>, aby rozwiązać ten problem. W przeciwieństwie do serwisów przetwarzających pliki na serwerach zewnętrznych, nasze narzędzie wykonuje działania na Twoim urządzeniu. Dzięki technologii <code>pdf-lib</code> w przeglądarce łączenie odbywa się w pamięci RAM Twojego komputera. Pliki nie opuszczają urządzenia ani na sekundę.",
+      "how_to_use_title": "Jak łączyć pliki PDF na 99tool.in (Krok po Kroku)",
+      "how_to_use_steps": [
+        "<strong>Krok 1: Wybierz pliki</strong> — Kliknij pole \"Wybierz PDF\" lub przeciągnij pliki bezpośrednio na stronę.",
+        "<strong>Krok 2: Sprawdź stan bezpieczeństwa</strong> — Zwróć uwagę na zieloną tarczę obok każdego pliku potwierdzającą brak skryptów.",
+        "<strong>Krok 3: Ustal kolejność</strong> — Przeciągaj karty plików w górę lub w dół, aby ustalić kolejność stron.",
+        "<strong>Krok 4: Połącz i pobierz</strong> — Kliknij \"Połącz pliki\". Proces trwa kilka sekund, po czym rozpocznie się pobieranie."
+      ],
+      "key_features_title": "Dlaczego Lokalne Łączenie PDF Jest Lepsze",
+      "key_features": [
+        "<strong>Wizualny obszar roboczy:</strong> Łatwo przeciągaj i upuszczaj pliki w dokładnej kolejności.",
+        "<strong>Aktywne skanowanie bezpieczeństwa:</strong> Skanuje strukturę pliku pod kątem ukrytych skryptów przed połączeniem.",
+        "<strong>Czysty montaż w przeglądarce:</strong> Działa w pamięci RAM dzięki pdf-lib i WebAssembly.",
+        "<strong>Brak przesyłania plików:</strong> Pełna ochrona prywatności umów i dokumentów medycznych."
+      ],
+      "common_use_cases_title": "Praktyczne Zastosowania",
+      "common_use_cases": [
+        "<strong>Dla prawników i doradców:</strong> Łącz dowody i pisma bez ryzyka wycieku danych.",
+        "<strong>Dla uczniów i nauczycieli:</strong> Łącz prace dyplomowe, strony tytułowe i bibliografię w jeden plik.",
+        "<strong>Dla branży nieruchomości i finansów:</strong> Łącz wnioski i raporty z zachowaniem poufności."
+      ],
+      "faq_title": "Często zadawane pytania",
+      "faq": [
+        {
+          "question": "Czy istnieje limit liczby łączonych plików PDF?",
+          "answer": "Limit zależy od pamięci RAM Twojego komputera. Większość nowoczesnych komputerów bez problemu łączy ponad 50 średnich plików."
+        },
+        {
+          "question": "Czy łączenie wpływa na jakość obrazów?",
+          "answer": "Nie. Nasze narzędzie zachowuje oryginalne dane każdej strony dzięki bibliotece pdf-lib bez ponownej kompresji."
+        },
+        {
+          "question": "Dlaczego widzę ostrzeżenie o bezpieczeństwie?",
+          "answer": "Niektóre pliki PDF zawierają elementy interaktywne lub skrypty JavaScript. Informujemy o tym dla pełnej przejrzystości."
+        },
+        {
+          "question": "Czy moje dokumenty są przesyłane na serwer?",
+          "answer": "Absolutnie nie. Całe przetwarzanie odbywa się lokalnie przez WASM i JavaScript w Twojej przeglądarce."
+        },
+        {
+          "question": "Czy mogę łączyć pliki PDF chronione hasłem?",
+          "answer": "Pliki chronione hasłem należy najpierw odblokować. Narzędzie nie omija zabezpieczeń haseł."
+        },
+        {
+          "question": "Czy to narzędzie działa na telefonach?",
+          "answer": "Tak. Dopóki przeglądarka mobilna obsługuje nowoczesne API JavaScript, możesz łączyć pliki PDF na telefonie."
+        }
+      ],
+      "privacy_note": "🔒 Lokalne przetwarzanie w ramach sesji. Brak przesyłania. Brak śledzenia. Aktualizacja: kwiecień 2026.",
+      "schema_org": {
+        "name": "Narzędzie do Łączenia PDF",
+        "description": "Łączenie PDF, wizualne ustalanie kolejności stron, skanowanie bezpieczeństwa, bezpieczne przetwarzanie lokalne."
+      }
+    },
+    "password_generator": {
+      "page_title": "Generator Haseł – 99tool.in",
+      "meta_description": "Generuj silne i losowe hasła w mgnieniu oka. 100% bezpieczne i lokalne narzędzie od 99tool.in.",
+      "what_is_title": "Czym jest Bezpieczny Generator Haseł?",
+      "what_is_content": "Bezpieczny Generator Haseł tworzy kryptograficznie bezpieczne losowe hasła przy użyciu Web Crypto API (window.crypto.getRandomValues) Twojej przeglądarki. Daje to prawdziwie losowe wyniki w porównaniu ze standardowymi funkcjami. Cały proces odbywa się lokalnie w przeglądarce.\n\nUstaw długość hasła i zestawy znaków (wielkie litery, małe litery, cyfry, symbole), a narzędzie natychmiast wygeneruje bezpieczne hasło. Skopiuj je jednym kliknięciem i zapisz w menedżerze haseł."
+    },
+    "password_generator": {
+      "page_title": "Generator Haseł – 99tool.in",
+      "meta_description": "Generuj silne i losowe hasła w mgnieniu oka. 100% bezpieczne i lokalne narzędzie od 99tool.in.",
+      "what_is_title": "Czym jest Bezpieczny Generator Haseł?",
+      "what_is_content": "Bezpieczny Generator Haseł tworzy kryptograficznie bezpieczne losowe hasła przy użyciu Web Crypto API (window.crypto.getRandomValues) Twojej przeglądarki. Daje to prawdziwie losowe wyniki w porównaniu ze standardowymi funkcjami. Cały proces odbywa się lokalnie w przeglądarce.\n\nUstaw długość hasła i zestawy znaków (wielkie litery, małe litery, cyfry, symbole), a narzędzie natychmiast wygeneruje bezpieczne hasło. Skopiuj je jednym kliknięciem i zapisz w menedżerze haseł.",
+      "how_to_use_title": "Jak używać Bezpiecznego Generatora Haseł",
+      "how_to_use_steps": [
+        "Ustaw żądaną długość hasła za pomocą suwaka (zalecane od 8 do 128 znaków).",
+        "Zaznacz opcje zestawów znaków: Wielkie litery (A-Z), małe litery (a-z), cyfry (0-9), symbole (!@#$...).",
+        "Kliknij \"Generuj hasło\", aby utworzyć losowe hasło zgodne z ustawieniami.",
+        "Sprawdź miernik siły, aby potwierdzić poziom bezpieczeństwa wygenerowanego hasła.",
+        "Kliknij \"Kopiuj\", aby skopiować hasło do schowka, a następnie wklej je do menedżera haseł.",
+        "Kliknij ponowne \"Generuj\", aby uzyskać inną opcję."
+      ],
+      "key_features_title": "Kluczowe funkcje",
+      "key_features": [
+        "<strong>Losowość Web Crypto API:</strong> Używa kryptograficznie bezpiecznego generatora liczb pseudolosowych.",
+        "<strong>Dostosowywalne opcje:</strong> Ustawiaj długość do 128 znaków i łącz 4 typy znaków.",
+        "<strong>Miernik siły:</strong> Pokazuje poziom bezpieczeństwa każdego wygenerowanego hasła w czasie rzeczywistym.",
+        "<strong>Kopiowanie jednym kliknięciem:</strong> Natychmiast kopiuje wygenerowane hasło do schowka."
+      ],
+      "common_use_cases_title": "Typowe zastosowania",
+      "common_use_cases": [
+        "<strong>Rejestracja nowych kont:</strong> Twórz unikalne i silne hasło za każdym razem, gdy rejestrujesz się w nowym serwisie.",
+        "<strong>Zmiana hasła:</strong> Generuj bezpieczny zamiennik, gdy witryna wymaga aktualizacji danych.",
+        "<strong>Klucze API i tokeny:</strong> Twórz losowe ciągi znaków jako klucze zabezpieczające w projektach."
+      ],
+      "faq_title": "Często zadawane pytania",
+      "faq": [
+        {
+          "question": "Czy wygenerowane hasło jest naprawdę losowe?",
+          "answer": "Tak. Narzędzie używa window.crypto.getRandomValues(), które pobiera losowość z generatora systemu operacyjnego (CSPRNG)."
+        },
+        {
+          "question": "Jaka jest zalecana długość hasła?",
+          "answer": "Minimum 16 znaków dla zwykłych kont oraz 20+ znaków dla kont krytycznych (e-mail, bankowość)."
+        },
+        {
+          "question": "Czy hasło jest wysyłane na serwer?",
+          "answer": "Nigdy. Całe generowanie odbywa się lokalnie w przeglądarce. Hasło nigdy nie opuszcza urządzenia."
+        },
+        {
+          "question": "Czy muszę zapamiętywać wygenerowane hasło?",
+          "answer": "Nie. Silne hasła są przeznaczone do zapisywania w menedżerze haseł (np. 1Password lub Bitwarden)."
+        }
+      ],
+      "privacy_note": "🔒 Bezpieczne kryptograficznie. 100% Lokalnie. Brak kontaktu z serwerem. Aktualizacja: kwiecień 2026.",
+      "schema_org": {
+        "name": "Bezpieczny Generator Haseł",
+        "description": "Generowanie losowych haseł, dostosowywalne zestawy znaków, test siły, 100% po stronie klienta."
+      }
+    },
+    "regex_tester": {
+      "page_title": "Tester Regex – 99tool.in",
+      "meta_description": "Testuj i debuguj wyrażenia regularne w czasie rzeczywistym. Darmowe narzędzie programistyczne od 99tool.in.",
+      "what_is_title": "Czym jest Tester i Debuger Regex?",
+      "what_is_content": "Tester i Debuger Regex to narzędzie programistyczne po stronie klienta przeznaczone do tworzenia, testowania i poprawiania wyrażeń regularnych (RegEx). Wprowadzając wzorzec i flagi, możesz sprawdzić w przeglądarce, jak wyrażenie dopasowuje tekst.\n\nTen debuger wykonuje wszystkie ewaluacje lokalnie przy użyciu natywnego silnika JavaScript RegExp przeglądarki. Żadne dane nie są przesyłane przez sieć."
+    },
+    "regex_tester": {
+      "page_title": "Tester Regex – 99tool.in",
+      "meta_description": "Testuj i debuguj wyrażenia regularne w czasie rzeczywistym. Darmowe narzędzie programistyczne od 99tool.in.",
+      "what_is_title": "Czym jest Tester i Debuger Regex?",
+      "what_is_content": "Tester i Debuger Regex to narzędzie programistyczne po stronie klienta przeznaczone do tworzenia, testowania i poprawiania wyrażeń regularnych (RegEx). Wprowadzając wzorzec i flagi, możesz sprawdzić w przeglądarce, jak wyrażenie dopasowuje tekst.\n\nTen debuger wykonuje wszystkie ewaluacje lokalnie przy użyciu natywnego silnika JavaScript RegExp przeglądarki. Żadne dane nie są przesyłane przez sieć.",
+      "how_to_use_title": "Jak używać Testera i Debugera Regex",
+      "how_to_use_steps": [
+        "<strong>Wprowadź wzorzec:</strong> Wpisz wyrażenie regularne (np. <code>[a-zA-Z0-9]+</code>) w polu wzorca.",
+        "<strong>Skonfiguruj flagi:</strong> Włącz flagi takie jak Globalna (g), Niewrażliwa na wielkość liter (i) lub Wielowierszowa (m).",
+        "<strong>Wklej tekst testowy:</strong> Wprowadź tekst próbny. Dopasowania zostaną natychmiast podświetlone.",
+        "<strong>Sprawdź przechwycone grupy:</strong> Przejrzyj panel wyników, aby zobaczyć szczegóły dopasowań i grup.",
+        "<strong>Popraw błędy składniowe:</strong> Jeśli wyrażenie jest niepoprawne, zobacz komunikat o błędzie."
+      ],
+      "key_features_title": "Kluczowe funkcje",
+      "key_features": [
+        "<strong>Podświetlanie w czasie rzeczywistym:</strong> Natychmiast podświetla dopasowania w polu tekstowym podczas pisania.",
+        "<strong>Interaktywne sterowanie flagami:</strong> Łatwo włączaj lub wyłączaj flagi g, i, m jednym kliknięciem.",
+        "<strong>Szczegóły przechwyconych grup:</strong> Pokazuje pozycje dopasowań i wartości przechwyconych grup.",
+        "<strong>Diagnostyka błędów:</strong> Wyświetla jasne komunikaty o błędach składniowych, ułatwiając ich naprawę.",
+        "<strong>100% Po stronie klienta:</strong> Testuje wyrażenia regularne offline, chroniąc Twoje dane."
+      ],
+      "common_use_cases_title": "Typowe zastosowania",
+      "common_use_cases": [
+        "<strong>Walidacja danych w formularzach:</strong> Testuj wzorce dla adresów e-mail, numerów telefonów i haseł.",
+        "<strong>Analiza logów serwera:</strong> Twórz wzorce do wyciągania adresów IP lub kodów błędów z logów.",
+        "<strong>Wyciąganie tekstu:</strong> Testuj wzorce do wyciągania określonych znaczników lub zmiennych z plików kodu.",
+        "<strong>Nauka wyrażeń regularnych:</strong> Ćwicz reguły Regex w środowisku wizualnym."
+      ],
+      "faq_title": "Często zadawane pytania",
+      "faq": [
+        {
+          "question": "Z jakiego silnika korzysta to narzędzie?",
+          "answer": "To narzędzie używa natywnego silnika JavaScript <code>RegExp</code>. Jest w pełni zgodne z Chrome, Firefox, Safari i Node.js."
+        },
+        {
+          "question": "Czy mój tekst testowy jest przesyłany na serwer?",
+          "answer": "Nie. 99tool.in przetwarza wszystkie ewaluacje lokalnie w pamięci Twojej przeglądarki."
+        },
+        {
+          "question": "Dlaczego widzę komunikat o błędzie składni?",
+          "answer": "Dzieje się tak, gdy wprowadzone wyrażenie jest niepoprawne, np. nieposiada domkniętego nawiasu <code>(</code>."
+        },
+        {
+          "question": "Czy debuger obsługuje Lookarounds?",
+          "answer": "Tak. Natywny silnik obsługuje nowoczesne funkcje ES2018+ (Lookahead i Lookbehind)."
+        }
+      ],
+      "privacy_note": "🔒 Uwaga dotycząca prywatności i danych: Ewaluacje Regex odbywają się lokalnie w przeglądarce. Dane nie są wysyłane.",
+      "schema_org": {
+        "name": "Tester Regex",
+        "description": "Testowanie Regex w czasie rzeczywistym, obsługa flag (g, i, m), podświetlanie dopasowań."
+      }
+    },
+    "word_counter": {
+      "page_title": "Licznik Słów – 99tool.in",
+      "meta_description": "Licz słowa, znaki, zdania i akapity w czasie rzeczywistym. Darmowe i bezpieczne narzędzie od 99tool.in.",
+      "what_is_title": "Czym jest Online Licznik Słów?",
+      "what_is_content": "Online Licznik Słów to narzędzie do analizy tekstu w czasie rzeczywistym, które liczy słowa, znaki, zdania i akapity podczas pisania lub wklejania. W przeciwieństwie do edytorów w chmurze, to narzędzie działa w pełni lokalnie w Twojej przeglądarce bez przesyłania danych.\n\nLicznik aktualizuje się natychmiast przy każdym naciśnięciu klawisza, pomagając kontrolować długość tekstu w artykułach, wpisach społecznościowych czy tekstach SEO."
+    },
+    "word_counter": {
+      "page_title": "Licznik Słów – 99tool.in",
+      "meta_description": "Licz słowa, znaki, zdania i akapity w czasie rzeczywistym. Darmowe i bezpieczne narzędzie od 99tool.in.",
+      "what_is_title": "Czym jest Online Licznik Słów?",
+      "what_is_content": "Online Licznik Słów to narzędzie do analizy tekstu w czasie rzeczywistym, które liczy słowa, znaki, zdania i akapity podczas pisania lub wklejania. W przeciwieństwie do edytorów w chmurze, to narzędzie działa w pełni lokalnie w Twojej przeglądarce bez przesyłania danych.\n\nLicznik aktualizuje się natychmiast przy każdym naciśnięciu klawisza, pomagając kontrolować długość tekstu w artykułach, wpisach społecznościowych czy tekstach SEO.",
+      "how_to_use_title": "Jak używać Online Licznika Słów",
+      "how_to_use_steps": [
+        "Wpisz lub wklej tekst bezpośrednio w polu edytora na górze strony.",
+        "Obserwuj, jak liczba słów, znaków, zdań i akapitów aktualizuje się na żywo.",
+        "Użyj wskaźnika \"Czas czytania\", aby oszacować, ile czasu zajmie przeczytanie tekstu.",
+        "Edytuj tekst w polu, aż osiągniesz docelową długość.",
+        "Kliknij \"Wyczyść\", aby zresetować edytor."
+      ],
+      "key_features_title": "Kluczowe funkcje",
+      "key_features": [
+        "<strong>Zliczanie w czasie rzeczywistym:</strong> Aktualizuje liczby słów, znaków i zdań przy każdym naciśnięciu klawisza.",
+        "<strong>Szacowanie czasu czytania:</strong> Oblicza średni czas czytania na podstawie normy dla dorosłych.",
+        "<strong>Licznik znaków (ze spacjami i bez):</strong> Pokazuje obie sumy dla potrzeb różnych platform.",
+        "<strong>100% Prywatności:</strong> Cała logika zliczania działa po stronie klienta; tekst nie jest wysyłany."
+      ],
+      "common_use_cases_title": "Typowe zastosowania",
+      "common_use_cases": [
+        "<strong>Prace akademickie:</strong> Sprawdzaj limity słów przed oddaniem prac domowych lub esejów.",
+        "<strong>Pisanie tekstów SEO:</strong> Kontroluj długość opisów meta, znaczników tytułu i artykułów.",
+        "<strong>Wpisy w mediach społecznościowych:</strong> Przestrzegaj limitów znaków na Twitterze/X lub LinkedInie.",
+        "<strong>Copywriting i pisanie:</strong> Kontroluj długość zleceń zgodnie z umową."
+      ],
+      "faq_title": "Często zadawane pytania",
+      "faq": [
+        {
+          "question": "Czy to narzędzie zapisuje to, co wpisuję?",
+          "answer": "Absolutnie nie. Twoja prywatność jest priorytetem. Wszystko odbywa się lokalnie w karcie przeglądarki. Po zamknięciu karty tekst znika."
+        },
+        {
+          "question": "Jak obliczany jest czas czytania?",
+          "answer": "Obliczenie opiera się na średniej prędkości czytania dorosłego człowieka (ok. 200–250 słów na minutę)."
+        },
+        {
+          "question": "Czy spacje są liczone jako znaki?",
+          "answer": "Tak. Narzędzie pokazuje zarówno \"znaki ze spacjami\", jak i \"bez spacji\"."
+        },
+        {
+          "question": "Co jest uważane za \"zdanie\"?",
+          "answer": "Każdy fragment tekstu kończący się kropką, wykrzyknikiem lub pytajnikiem jest liczony jako zdanie."
+        },
+        {
+          "question": "Czy to działa na telefonie?",
+          "answer": "Tak! Narzędzie jest w pełni responsywne i działa świetnie na smartfonach i tabletach."
+        }
+      ],
+      "privacy_note": "Uwaga dotycząca prywatności i danych: Wszystkie analizy tekstu i obliczenia czasu czytania odbywają się w przeglądarce. Twoja zawartość nie jest przechowywana ani przesyłana.",
+      "schema_org": {
+        "name": "Online Licznik Słów",
+        "description": "Zliczanie słów, znaków, zdań, szacowanie czasu czytania."
+      }
+    }
+  }
+}

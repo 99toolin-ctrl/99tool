@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Matrix Calculator – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/math/matrix-calculator.html"/>
+<meta property="og:title" content="Matrix Calculator – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/math/matrix-calculator.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Matrix Calculator \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/math/matrix-calculator.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .math-workspace {
+      max-width: 900px;
+      margin: 2rem auto;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      border-radius: 20px;
+    }
+    .matrix-container {
+       display: flex;
+       flex-wrap: wrap;
+       gap: 2rem;
+       justify-content: center;
+       margin-bottom: 2rem;
+    }
+    .matrix-block { text-align: center; }
+    .matrix-grid {
+       display: grid;
+       grid-template-columns: repeat(3, 1fr);
+       gap: 8px;
+       background: rgba(255,255,255,0.05);
+       padding: 10px;
+       border-radius: 12px;
+       border: 2px solid var(--border);
+     }
+     .matrix-grid input {
+        width: 60px;
+        height: 60px;
+        text-align: center;
+        background: var(--bg-secondary);
+        border: 1px solid var(--border);
+        color: var(--text);
+        border-radius: 4px;
+        font-size: 1.1rem;
+     }
+     .controls { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 2rem; }
+     
+     .result-section { border-top: 1px solid var(--border); padding-top: 2rem; display: none; }
+     .res-val { font-size: 1.5rem; font-weight: 700; color: var(--primary); text-align: center; }
+   </style>
+   <!-- Favicon -->
+   <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+   <link rel="manifest" href="../../favicon/site.webmanifest">
+ </head>
+ <body>
+   <div id="site-header"></div>
+ 
+   <main class="container py-5">
+     <div class="tool-header text-center">
+       <h1>Infinite Matrix Calculator</h1>
+       <p>High-fidelity linear algebra analyzer. Solve 3x3 matrices instantly.</p>
+     </div>
+ 
+     <div class="math-workspace">
+       <div class="matrix-container">
+          <div class="matrix-block">
+             <div class="mb-2 font-weight-bold">Matrix A</div>
+             <div class="matrix-grid" id="mat-a">
+                <input type="number" value="0"><input type="number" value="0"><input type="number" value="0">
+                <input type="number" value="0"><input type="number" value="0"><input type="number" value="0">
+                <input type="number" value="0"><input type="number" value="0"><input type="number" value="0">
+             </div>
+          </div>
+          <div class="matrix-block">
+             <div class="mb-2 font-weight-bold">Matrix B</div>
+             <div class="matrix-grid" id="mat-b">
+                <input type="number" value="0"><input type="number" value="0"><input type="number" value="0">
+                <input type="number" value="0"><input type="number" value="0"><input type="number" value="0">
+                <input type="number" value="0"><input type="number" value="0"><input type="number" value="0">
+             </div>
+          </div>
+       </div>
+ 
+       <div class="controls">
+          <button onclick="op('add')" class="btn btn-primary">A + B</button>
+          <button onclick="op('sub')" class="btn btn-primary">A - B</button>
+          <button onclick="op('mul')" class="btn btn-primary">A × B</button>
+          <button onclick="det('a')" class="btn btn-secondary">Det(A)</button>
+          <button onclick="det('b')" class="btn btn-secondary">Det(B)</button>
+          <button onclick="transpose('a')" class="btn btn-secondary">Transpose(A)</button>
+          <button onclick="transpose('b')" class="btn btn-secondary">Transpose(B)</button>
+       </div>
+ 
+       <div class="result-section" id="res-sec">
+          <div class="mb-3 text-muted text-center uppercase small font-weight-bold">Resulting Matrix / Value</div>
+          <div id="res-output"></div>
+       </div>
+ 
+       <!-- SEO CONTENT -->
+       <section class="seo-content mt-5 text-start">
+         <h2>What is a Matrix Calculator?</h2>
+         <p>Matrix algebra is a fundamental part of linear algebra used in computer science, physics, and data science. Our <strong>online matrix solver</strong> allows you to perform complex operations like **addition, subtraction, and multiplication** on 3x3 matrices with zero manual effort. Featuring a high-fidelity input grid, it simplifies structural engineering and graphics programming diagnostics. An automated <strong>linear algebra auditor</strong> is the first step toward optimizing multidimensional data sets.</p>
+ 
+         <h3 class="mt-4">Advanced Matrix Determinants</h2>
+         <p>The determinant is a scalar value that can be computed from the elements of a square matrix. It provides critical information about the matrix, such as whether it has an inverse. By using our <strong>matrix determinant tool</strong>, you can quickly analyze the properties of a transformation. A reliable <strong>algebra diagnostic auditor</strong> is essential for solving systems of linear equations and performing coordinate transformations.</p>
+ 
+         <h3 class="mt-4">Privacy and Pure Math</h2>
+         <p>At 99tool.in, all array operations are executed locally in your browser session. We do not store your matrix entries or results. This <strong>private matrix tool</strong> provides professional-grade results without any third-party telemetry. Whether you are a student or an engineer, our <strong>secure matrix calculator</strong> ensures your data remains purely yours.</p>
+       </section>
+     </div>
+   </main>
+ 
+   <div id="site-footer"></div>
+ 
+   <script src="../../assets/js/main.js"></script>
+   <script>
+     function getMatrix(id) {
+        const inputs = document.querySelectorAll(`#${id} input`);
+        const m = [];
+        for (let i=0; i<3; i++) {
+           m[i] = [
+              parseFloat(inputs[i*3].value || 0),
+              parseFloat(inputs[i*3+1].value || 0),
+              parseFloat(inputs[i*3+2].value || 0)
+           ];
+        }
+        return m;
+     }
+ 
+     function renderMatrix(m) {
+        let html = '<div class="matrix-grid" style="margin: 0 auto; max-width: 250px;">';
+        m.forEach(row => {
+           row.forEach(val => {
+              html += `<div style="padding: 15px; background: rgba(255,255,255,0.05); border: 1px solid var(--border); border-radius: 4px;">${val.toFixed(2)}</div>`;
+           });
+        });
+        html += '</div>';
+        return html;
+     }
+ 
+     function op(type) {
+        const a = getMatrix('mat-a');
+        const b = getMatrix('mat-b');
+        let res = [[0,0,0],[0,0,0],[0,0,0]];
+ 
+        if (type === 'add') {
+           for(let i=0; i<3; i++) for(let j=0; j<3; j++) res[i][j] = a[i][j] + b[i][j];
+        } else if (type === 'sub') {
+           for(let i=0; i<3; i++) for(let j=0; j<3; j++) res[i][j] = a[i][j] - b[i][j];
+        } else if (type === 'mul') {
+           for(let i=0; i<3; i++) {
+              for(let j=0; j<3; j++) {
+                 res[i][j] = a[i][0]*b[0][j] + a[i][1]*b[1][j] + a[i][2]*b[2][j];
+              }
+           }
+        }
+ 
+        showRes(renderMatrix(res));
+     }
+ 
+     function det(mId) {
+        const m = getMatrix(`mat-${mId}`);
+        // 3x3 Determinant
+        const val = m[0][0]*(m[1][1]*m[2][2] - m[1][2]*m[2][1]) 
+                  - m[0][1]*(m[1][0]*m[2][2] - m[1][2]*m[2][0])
+                  + m[0][2]*(m[1][0]*m[2][1] - m[1][1]*m[2][0]);
+        showRes('<div class="res-val">Determinant: ' + val.toFixed(2) + '</div>');
+     }
+ 
+     function transpose(mId) {
+        const m = getMatrix(`mat-${mId}`);
+        const res = [[0,0,0],[0,0,0],[0,0,0]];
+        for(let i=0; i<3; i++) for(let j=0; j<3; j++) res[i][j] = m[j][i];
+        showRes(renderMatrix(res));
+     }
+ 
+     function showRes(content) {
+        const sec = document.getElementById('res-sec');
+        const out = document.getElementById('res-output');
+        out.innerHTML = content;
+        sec.style.display = 'block';
+        sec.scrollIntoView({ behavior: 'smooth', block: 'end' });
+     }
+   </script>
+ </body>
+ </html>

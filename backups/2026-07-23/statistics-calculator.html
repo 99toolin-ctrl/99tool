@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Statistics Calculator – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/math/statistics-calculator.html"/>
+<meta property="og:title" content="Statistics Calculator – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/math/statistics-calculator.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Statistics Calculator \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/math/statistics-calculator.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    .math-workspace {
+      max-width: 700px;
+      margin: 2rem auto;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      border-radius: 20px;
+    }
+    .form-group { margin-bottom: 2rem; }
+    label { display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-muted); }
+    textarea {
+      width: 100%;
+      height: 120px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 1rem;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      font-family: 'JetBrains Mono', monospace;
+      resize: vertical;
+    }
+    .stats-grid {
+       display: grid;
+       grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+       gap: 15px;
+       margin-top: 2.5rem;
+       display: none;
+    }
+    .stat-box {
+       background: rgba(255,255,255,0.03);
+       padding: 1.2rem;
+       border-radius: 12px;
+       border: 1px solid var(--border);
+       text-align: center;
+    }
+    .stat-val { font-size: 1.6rem; font-weight: 800; color: var(--primary); }
+    .stat-lab { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; margin-top: 5px; }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Infinite Statistics Calculator</h1>
+      <p>Analyze numeric datasets instantly. Get Mean, Median, Mode, and Standard Deviation with high-fidelity accuracy.</p>
+    </div>
+
+    <div class="math-workspace">
+      <div class="form-group">
+        <label>Enter Dataset (Comma or space separated numbers)</label>
+        <textarea id="data-input" placeholder="e.g., 10, 20, 30, 40, 50"></textarea>
+      </div>
+      
+      <button onclick="calculateStats()" class="btn btn-primary btn-lg btn-full">Generate Statistical Report</button>
+
+      <div class="stats-grid" id="stats-grid">
+         <div class="stat-box">
+            <div class="stat-val" id="res-count">0</div>
+            <div class="stat-lab">Count (n)</div>
+         </div>
+         <div class="stat-box">
+            <div class="stat-val" id="res-mean">0</div>
+            <div class="stat-lab">Mean (μ)</div>
+         </div>
+         <div class="stat-box">
+            <div class="stat-val" id="res-median">0</div>
+            <div class="stat-lab">Median</div>
+         </div>
+         <div class="stat-box">
+            <div class="stat-val" id="res-mode">0</div>
+            <div class="stat-lab">Mode</div>
+         </div>
+         <div class="stat-box">
+            <div class="stat-val" id="res-var">0</div>
+            <div class="stat-lab">Variance (σ²)</div>
+         </div>
+         <div class="stat-box">
+            <div class="stat-val" id="res-std">0</div>
+            <div class="stat-lab">Std Dev (σ)</div>
+         </div>
+      </div>
+
+      <!-- SEO CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2>What are Descriptive Statistics?</h2>
+        <p>Descriptive statistics provide a summary of a numeric dataset, helping to describe the center and spread of the data. Our <strong>online statistics solver</strong> calculates the **Mean** (average), **Median** (middle value), and **Mode** (most frequent value) instantly. It also provides measures of dispersion like **Variance and Standard Deviation**, which are critical for scientific research and financial diagnostics. A consistent <strong>dataset diagnostic auditor</strong> is essential for optimizing machine learning and data science projects.</p>
+
+        <h3 class="mt-4">Understanding Variance & Std Deviation</h2>
+        <p>Variance ($σ²$) measures the average of the squared differences from the mean, while Standard Deviation ($σ$) is the square root of that variance, representing the average distance from the mean. By using our <strong>dispersion diagnostic tool</strong>, you can quickly analyze the volatility of your data points. This <strong>advanced stats auditor</strong> is a foundation for engineering diagnostics and academic research.</p>
+
+        <h3 class="mt-4">Privacy and Pure Analytics</h2>
+        <p>At 99tool.in, all data analysis is performed locally in your browser sandbox. We do not store your numeric datasets or the statistical results. This <strong>private stats tool</strong> provides professional-grade results without any third-party telemetry. Whether you are a student or a data professional, our <strong>secure statistics calculator</strong> ensures your data remains purely yours.</p>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    function calculateStats() {
+       const input = document.getElementById('data-input').value;
+       // Parse input: split by comma OR space, filter out non-numbers
+       const data = input.split(/[,\s]+/)
+                        .map(n => parseFloat(n))
+                        .filter(n => !isNaN(n));
+       
+       if (data.length === 0) return alert('Please enter at least one valid number.');
+
+       const n = data.length;
+       const sum = data.reduce((a, b) => a + b, 0);
+       const mean = sum / n;
+       
+       // Median
+       const sorted = [...data].sort((a,b) => a - b);
+       const mid = Math.floor(n / 2);
+       const median = (n % 2 !== 0) ? sorted[mid] : (sorted[mid - 1] + sorted[mid]) / 2;
+
+       // Mode
+       const counts = {};
+       data.forEach(x => counts[x] = (counts[x] || 0) + 1);
+       let maxCount = 0;
+       let modes = [];
+       for (let x in counts) {
+          if (counts[x] > maxCount) {
+             maxCount = counts[x];
+             modes = [x];
+          } else if (counts[x] === maxCount) {
+             modes.push(x);
+          }
+       }
+       const modeStr = (modes.length === n) ? "None" : modes.join(', ');
+
+       // Variance
+       const variance = data.reduce((a, b) => a + Math.pow(b - mean, 2), 0) / n;
+       const stdDev = Math.sqrt(variance);
+
+       // Render
+       document.getElementById('res-count').innerText = n;
+       document.getElementById('res-mean').innerText = mean.toFixed(2).replace(/\.00$/, "");
+       document.getElementById('res-median').innerText = median.toFixed(2).replace(/\.00$/, "");
+       document.getElementById('res-mode').innerText = modeStr;
+       document.getElementById('res-var').innerText = variance.toFixed(2).replace(/\.00$/, "");
+       document.getElementById('res-std').innerText = stdDev.toFixed(2).replace(/\.00$/, "");
+
+       document.getElementById('stats-grid').style.display = 'grid';
+    }
+  </script>
+</body>
+</html>

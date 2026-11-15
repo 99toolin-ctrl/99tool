@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Binary Calculator – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/developer/binary-calculator.html"/>
+<meta property="og:title" content="Binary Calculator – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/developer/binary-calculator.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Binary Calculator \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/developer/binary-calculator.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    .math-workspace {
+      max-width: 700px;
+      margin: 2rem auto;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      border-radius: 20px;
+    }
+    .input-group { margin-bottom: 1.5rem; }
+    label { display: block; margin-bottom: 0.5rem; color: var(--text-muted); font-size: 0.9rem; font-weight: 600; }
+    input {
+      width: 100%;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 1rem;
+      border-radius: 12px;
+      font-size: 1.25rem;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .ops-grid {
+       display: grid;
+       grid-template-columns: repeat(4, 1fr);
+       gap: 10px;
+       margin: 2rem 0;
+    }
+    .bitwise-grid {
+       display: grid;
+       grid-template-columns: repeat(3, 1fr);
+       gap: 10px;
+       margin-bottom: 2rem;
+    }
+    .btn-op {
+       background: rgba(255,255,255,0.05);
+       border: 1px solid var(--border);
+       padding: 12px;
+       border-radius: 8px;
+       font-weight: 700;
+       transition: all 0.2s;
+       color: var(--text);
+    }
+    .btn-op:hover { background: var(--gradient); border-color: transparent; color: white; }
+    
+    .result-panel {
+       background: rgba(0,0,0,0.2);
+       padding: 1.5rem;
+       border-radius: 12px;
+       border: 1px dashed var(--border);
+       display: none;
+       text-align: center;
+    }
+    .res-bin { font-size: 2rem; font-weight: 800; color: var(--primary); font-family: 'JetBrains Mono', monospace; word-break: break-all; }
+    .res-dec { font-size: 1rem; color: var(--text-muted); margin-top: 5px; }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Infinite Binary Calculator</h1>
+      <p>A professional bitwise engine for arithmetic and logic. Perfect for developers and CS students.</p>
+    </div>
+
+    <div class="math-workspace">
+      <div class="input-group">
+        <label>Binary Number A</label>
+        <input type="text" id="bin-a" placeholder="e.g., 10101" oninput="validate(this)">
+      </div>
+      <div class="input-group">
+        <label>Binary Number B</label>
+        <input type="text" id="bin-b" placeholder="e.g., 1100" oninput="validate(this)">
+      </div>
+
+      <div class="small text-muted mb-2 uppercase font-weight-bold">Arithmetic Operations</div>
+      <div class="ops-grid">
+         <button onclick="calc('+')" class="btn-op">+</button>
+         <button onclick="calc('-')" class="btn-op">-</button>
+         <button onclick="calc('*')" class="btn-op">×</button>
+         <button onclick="calc('/')" class="btn-op">÷</button>
+      </div>
+
+      <div class="small text-muted mb-2 uppercase font-weight-bold">Bitwise Logic</div>
+      <div class="bitwise-grid">
+         <button onclick="calc('&')" class="btn-op">AND</button>
+         <button onclick="calc('|')" class="btn-op">OR</button>
+         <button onclick="calc('^')" class="btn-op">XOR</button>
+      </div>
+
+      <div class="result-panel" id="result-panel">
+         <div class="small text-muted mb-2">Result (Base 2)</div>
+         <div class="res-bin" id="res-bin">0</div>
+         <div class="res-dec" id="res-dec">Decimal: 0</div>
+      </div>
+
+      <!-- SEO CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2>What is a Binary Calculator?</h2>
+        <p>A binary calculator is a tool designed to perform mathematical operations using the base-2 numeral system. Unlike standard calculators, it handles binary addition, subtraction, and bitwise logic which are essential for **computer architecture and low-level programming**. Our <strong>online binary solver</strong> provides a high-fidelity environment for students and developers to verify their manual bit manipulations instantly. An automated <strong>binary arithmetic auditor</strong> is the foundation of digital circuit analysis.</p>
+
+        <h3 class="mt-4">Arithmetic and Bitwise Logic</h2>
+        <p>Beyond simple addition, our tool supports bitwise operations like **AND, OR, and XOR**. These operations are critical for network masking, cryptography, and optimizing data storage. By using our <strong>bitwise diagnostic tool</strong>, you can quickly analyze how different bit patterns interact. A reliable <strong>base-2 math auditor</strong> is essential for understanding how processors execute instructions at the transistor level.</p>
+
+        <h3 class="mt-4">Privacy and Computer Science</h2>
+        <p>At 99tool.in, all binary computations are executed locally in your browser sandbox. We do not store your numeric inputs or calculation history. This <strong>private binary tool</strong> provides professional-grade results without any third-party telemetry. Whether you are debugging a buffer or studying for an OS exam, our <strong>secure binary calculator</strong> ensures your data remains purely yours.</p>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    function validate(input) {
+       input.value = input.value.replace(/[^01]/g, '');
+    }
+
+    function calc(op) {
+       const aStr = document.getElementById('bin-a').value;
+       const bStr = document.getElementById('bin-b').value;
+
+       if (!aStr || !bStr) return alert('Please enter two binary numbers.');
+
+       const a = parseInt(aStr, 2);
+       const b = parseInt(bStr, 2);
+       let res = 0;
+
+       switch(op) {
+          case '+': res = a + b; break;
+          case '-': res = a - b; break;
+          case '*': res = a * b; break;
+          case '/': res = Math.floor(a / b); break;
+          case '&': res = a & b; break;
+          case '|': res = a | b; break;
+          case '^': res = a ^ b; break;
+       }
+
+       if (isNaN(res)) return alert('Calculation error. Please check your inputs.');
+
+       const resBin = (res < 0) ? "signed: " + (res >>> 0).toString(2) : res.toString(2);
+       
+       document.getElementById('res-bin').innerText = resBin;
+       document.getElementById('res-dec').innerText = 'Decimal: ' + res;
+       document.getElementById('result-panel').style.display = 'block';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Local Backup – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/data-file/local-backup.html"/>
+<meta property="og:title" content="Local Backup – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/data-file/local-backup.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Local Backup \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/data-file/local-backup.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="local backup tool, browser storage backup, export localstorage, restore browser data, secure data backup" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Local Backup Tool",
+    "operatingSystem": "Any",
+    "applicationCategory": "DataApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Data Export, Configuration Import, Local Storage Migration, Secure JSON backup"
+  }
+  </script>
+
+  <style>
+    .backup-layout { display: grid; grid-template-columns: 1fr; gap: 30px; }
+
+    .backup-box { background: var(--dark-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 35px; text-align: center; }
+
+    .action-icon { font-size: 3rem; margin-bottom: 20px; }
+
+    .data-summary {
+       margin: 25px 0; background: var(--dark); border-radius: var(--radius-sm);
+       padding: 20px; border: 1px solid var(--border); text-align: left;
+    }
+
+    .stat-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .stat-row:last-child { border-bottom: none; }
+    .stat-label { color: var(--text-muted); font-size: 0.8rem; }
+    .stat-val { color: var(--white); font-weight: 700; font-size: 0.85rem; }
+
+    @media (min-width: 900px) {
+       .backup-layout { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#data">Data & File</a> <span>/</span> 
+        <span>Local Backup Tool</span>
+      </nav>
+      <h1>Local Backup Tool</h1>
+      <p>Securely transfer your tool configurations and local data between devices. Keep a private copy of your 99tool sanctuary without relying on external servers.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div class="backup-layout">
+         <!-- EXPORT -->
+         <div class="backup-box">
+            <div class="action-icon">📤</div>
+            <h3>Export Data</h3>
+            <p class="text-muted small">Save your current configurations and local storage to a secure JSON file.</p>
+            
+            <div class="data-summary">
+               <div class="stat-row">
+                  <span class="stat-label">Detected Tool Data:</span>
+                  <span class="stat-val" id="keys-count">0 items</span>
+               </div>
+               <div class="stat-row">
+                  <span class="stat-label">Estimated Size:</span>
+                  <span class="stat-val" id="data-size">0 KB</span>
+               </div>
+               <div class="stat-row">
+                  <span class="stat-label">Security:</span>
+                  <span class="stat-val" style="color: #4caf50;">LocalStorage Native</span>
+               </div>
+            </div>
+
+            <button class="btn btn-primary btn-full" id="export-btn">Create Backup File</button>
+         </div>
+
+         <!-- IMPORT -->
+         <div class="backup-box">
+            <div class="action-icon">📥</div>
+            <h3>Restore Data</h3>
+            <p class="text-muted small">Import a previously saved backup file to restore your settings and configurations.</p>
+            
+            <div class="upload-area mt-4" id="drop-zone" style="padding: 20px;">
+               <div class="upload-icon" style="font-size: 1.5rem;">📄</div>
+               <p style="font-size: 0.8rem;">Select .json backup file</p>
+               <input type="file" id="file-input" accept=".json" class="hidden">
+            </div>
+
+            <div id="import-preview" class="data-summary hidden">
+               <div class="stat-row">
+                  <span class="stat-label">Backup Source:</span>
+                  <span class="stat-val" id="import-name">-</span>
+               </div>
+            </div>
+
+            <button class="btn btn-secondary btn-full mt-4" id="import-btn" disabled>Restore Backup</button>
+         </div>
+      </div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5">
+        <h2>Securing Your Ecosystem in Private: The Freedom of Local Data Portability</h2>
+        <p>We’ve all been there: you’ve spent hours customizing your 99tool environment—perhaps you’ve built a curated list of tasks, stored secure password drafts, or configured complex calculator presets. You trust the nature of the site, but you work across multiple devices. You want to move your setup from your home laptop to your office workstation. You look for a "Sync Account" option, but then you remember why you chose an-first platform: privacy. Do you really want to share your project's "Internal Setup" and private tool data with an anonymous cloud server just for the sake of sync?</p>
+
+        <p>At 99tool.in, we built our <strong>local backup tool</strong> to give you total portability without the privacy trade-off. By utilizing native browser storage APIs and zero-cloud processing, we allow you to <strong>export browser data</strong> entirely within the secure sandbox of your machine. Whether you’re a developer migrating your setup to a new machine, a student backing up project notes, or a security-conscious user keeping an archival copy of your vault, our <strong>safe backup utility</strong> ensures that your data stays where it belongs: on your device, under your total sovereignty.</p>
+        
+        <div class="tool-preview-box mt-4 mb-4" style="text-align:center;">
+           <img src="../../assets/images/markdown-preview.png" alt="High-Performance Data Portability Dashboard featuring secure JSON export and local restore verified tools" class="tool-preview" id="tool-preview-img" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+        </div>
+
+        <h3 class="mt-4">The Logic of "Structural Sovereignty"</h3>
+        <p>Data management is about "Control and Continuity." Most modern platforms lock your data behind accounts and subscription models. Our <strong>professional backup tool</strong> takes a human-centric approach: we focus on **Transparent Export** and **Universal Logic**.</p>
+        
+        <p>We've engineered a deterministic engine that scans your browser's local memory for all 99tool-related records. Our <strong>safe storage validator</strong> bundles your keys—everything from task lists to theme preferences—into a clean, human-readable JSON file. This transparency transforms a technical browser constraint into a portable, personal archive, helping you maintain a "Zero-Cloud Repository" of your digital workspace.</p>
+
+        <h3 class="mt-4">Why Backup is the Power User’s Ethical Choice</h2>
+        <p>In the age of digital surveillance and platform-locked data, your configurations are a map of your work priorities and technical setup. Using a standard <strong>cloud backup service</strong> creates a digital record of what you are tracking and how you use your tools. Our 100% <strong>backup utility</strong> removes this "Transparency Risk" entirely from your data hygiene.</p>
+        
+        <p>Because the export and import happen in your browser's private memory, your data bundles are invisible to the outside world. No analytics are tracked, no personal records are harvested, and no proprietary setups are shared with trackers or AI platforms. At 99tool.in, we believe that <strong>having a backup</strong> should be an empowering utility, not a data-mining session. With us, you have a private, professional darkroom for your setup that fits in your browser tab.</p>
+
+        <h3 class="mt-4">How to Backup Your Setup (Step-by-Step)</h3>
+        <p>Migrating your configurations should be a high-speed, 5-second task. Here is how to use our <strong>local backup tool</strong>:</p>
+        <ul style="line-height: 1.8; margin-bottom: 20px;">
+          <li><strong>Step 1: Audit Your Data</strong> — View the dashboard to see how many data points are currently stored in your browser's local 99tool sanctuary.</li>
+          <li><strong>Step 2: Generate the Export</strong> — Click "Create Backup File." Our system locally compiles your data into a secure JSON file and triggers a direct download.</li>
+          <li><strong>Step 3: Transfer Securely</strong> — Move the file to your new device or storage medium. Since it's a standard text file, you can even inspect the content yourself.</li>
+          <li><strong>Step 4: Restore with Ease</strong> — On your new device, simply upload the backup file to the "Restore" pane. Your entire environment is reconstructed in seconds.</li>
+        </ul>
+
+        <h3 class="mt-4">Strategic Use Cases for Your Local Backup</h3>
+        <p>Our <strong>searchable backup tool</strong> is the essential companion for modern digital portability:</p>
+        
+        <p><strong>For Remote Professionals:</strong> Syncing your "Journal" or "Task List" between different workstations? Use our <strong>local backup</strong> to maintain continuity without a cloud middleman.</p>
+        
+        <p><strong>For Privacy Advocates:</strong> Keeping a month-end snapshot of your "Secure Vault" drafts? Use our <strong>safe data tool</strong> to archive your information on an encrypted physical drive.</p>
+        
+        <p><strong>For Tech Enthusiasts:</strong> Testing out a new browser or machine? Use our <strong>safe storage tool</strong> to move your entire 99tool experience in a single click.</p>
+
+        <h3 class="mt-5">Explore Your Complete Data Suite</h3>
+        <p>Once you’ve backed up your data, you might need to clean the source files. Check out our <strong><a href="data-cleaner.html">Data Cleaner Tool</a></strong>. Or, if you need to analyze the size of your files, use our <strong><a href="file-size-analyzer.html">File Size Analyzer</a></strong>. At 99tool.in, we are building a world-class, 100% private digital toolkit to give you total control over the future of your information.</p>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Does this backup my passwords?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. Any data stored by 99tool.in utilities (including the <strong>Password Vault</strong> drafts or calculator presets) is bundled into the backup. Since the backup is a raw JSON file, we recommend storing it in a secure, encrypted location.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I use this on a new browser?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Absolutely. You can export from Chrome and import into Firefox, or move from a Desktop machine to a Mobile device. The <strong>local backup format</strong> is universal across all browsers supported by 99tool.in.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Is my backup sent to 99tool servers?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. For your total security, all generation and restoration happen within your <strong>browser session's local memory</strong>. We do not track your data, nor do we store any copies of your backups. You are the sole curator of your information.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 Privacy-First. Local Storage Portability. 100% Secure. Last updated: April 10, 2026.</p>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const keysCount = document.getElementById('keys-count');
+    const dataSize = document.getElementById('data-size');
+    const exportBtn = document.getElementById('export-btn');
+    const dropZone = document.getElementById('drop-zone');
+    const fileInput = document.getElementById('file-input');
+    const importBtn = document.getElementById('import-btn');
+    const importPreview = document.getElementById('import-preview');
+
+    let importData = null;
+
+    function refreshStats() {
+       let count = 0;
+       let bytes = 0;
+       for (let i = 0; i < localStorage.length; i++) {
+          const key = localStorage.key(i);
+          if (key.includes('99tool')) {
+             count++;
+             bytes += (key.length + localStorage.getItem(key).length) * 2;
+          }
+       }
+       keysCount.textContent = `${count} items`;
+       dataSize.textContent = formatSize(bytes);
+    }
+
+    exportBtn.onclick = () => {
+       const backup = {};
+       for (let i = 0; i < localStorage.length; i++) {
+          const key = localStorage.key(i);
+          if (key.includes('99tool')) {
+             backup[key] = localStorage.getItem(key);
+          }
+       }
+       const blob = new Blob([JSON.stringify(backup, null, 2)], { type: 'application/json' });
+       const a = document.createElement('a');
+       a.href = URL.createObjectURL(blob);
+       a.download = `99tool-backup-${new Date().toISOString().split('T')[0]}.json`;
+       a.click();
+    };
+
+    dropZone.onclick = () => fileInput.click();
+    fileInput.onchange = (e) => handleImport(e.target.files[0]);
+
+    // Init Drag and Drop using global helper
+    setupDragDrop('drop-zone', (files) => {
+       handleImport(files[0]);
+    });
+
+    function handleImport(file) {
+       if (!file) return;
+       const reader = new FileReader();
+       reader.onload = (e) => {
+          try {
+             importData = JSON.parse(e.target.result);
+             document.getElementById('import-name').textContent = file.name;
+             importPreview.classList.remove('hidden');
+             importBtn.disabled = false;
+             importBtn.classList.remove('btn-secondary');
+             importBtn.classList.add('btn-primary');
+          } catch (err) {
+             alert('Invalid backup file.');
+          }
+       };
+       reader.readAsText(file);
+    }
+
+    importBtn.onclick = () => {
+       if (!importData) return;
+       if (confirm('This will append or overwrite your existing 99tool data with settings from this backup. Continue?')) {
+          Object.keys(importData).forEach(key => {
+             localStorage.setItem(key, importData[key]);
+          });
+          alert('Backup restored successfully! The page will now refresh.');
+          location.reload();
+       }
+    };
+
+    function formatSize(bytes) {
+       if (bytes === 0) return '0 KB';
+       if (bytes < 1024) return bytes + ' Bytes';
+       return (bytes / 1024).toFixed(2) + ' KB';
+    }
+
+    refreshStats();
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Json Formatter – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/developer/json-formatter.html"/>
+<meta property="og:title" content="Json Formatter – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/developer/json-formatter.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Json Formatter \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/developer/json-formatter.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="json formatter, json validator, format json online, json beautifier, minify json" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json" id="schema-org-data">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "JSON Formatter & Validator",
+    "operatingSystem": "Any",
+    "applicationCategory": "DeveloperApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "JSON Beautify, JSON Minify, Syntax Validation, Processing"
+  }
+  </script>
+
+  <style>
+    .json-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .editor-container {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      background: var(--dark-card);
+      padding: 12px 20px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+    }
+
+    .input-area {
+      min-height: 300px !important;
+      font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', monospace;
+      font-size: 0.85rem;
+      line-height: 1.5;
+      tab-size: 4;
+    }
+
+    .error-msg {
+      background: rgba(229, 57, 53, 0.1);
+      border: 1px solid var(--primary);
+      color: var(--primary);
+      padding: 12px 16px;
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      display: none;
+      margin-top: 10px;
+    }
+
+    #output-pre {
+      background: var(--dark);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 20px;
+      min-height: 100px;
+      max-height: 600px;
+      overflow: auto;
+      font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', monospace;
+      font-size: 0.85rem;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      color: var(--text);
+    }
+
+    /* Syntax Highlighting */
+    .json-key { color: var(--primary-light); }
+    .json-string { color: #a5d6af; }
+    .json-number { color: #81d4fa; }
+    .json-boolean { color: #ffcc80; }
+    .json-null { color: #ce93d8; }
+
+    @media (min-width: 900px) {
+      .json-layout { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/developer/json-formatter.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/developer/json-formatter.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/developer/json-formatter.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/developer/json-formatter.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/developer/json-formatter.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/developer/json-formatter.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/developer/json-formatter.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/developer/json-formatter.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/developer/json-formatter.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/developer/json-formatter.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/developer/json-formatter.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/developer/json-formatter.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/developer/json-formatter.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/developer/json-formatter.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/developer/json-formatter.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/developer/json-formatter.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/developer/json-formatter.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/developer/json-formatter.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/developer/json-formatter.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/developer/json-formatter.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/developer/json-formatter.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/developer/json-formatter.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#developer">Developer</a> <span>/</span> 
+        <span>JSON Formatter & Validator</span>
+      </nav>
+      <p>Clean up your JSON code, find errors, and minify with a single click. Private, local, and instant.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div class="json-layout">
+        <div class="editor-container">
+          <div class="toolbar">
+            <div class="form-group mb-0" style="flex: 1; min-width: 150px;">
+              <select id="indent-select" class="form-control" style="padding: 6px 36px 6px 14px;">
+                <option value="2">2 Spaces</option>
+                <option value="4" selected>4 Spaces</option>
+                <option value="\t">Tab</option>
+              </select>
+            </div>
+            <button class="btn btn-primary btn-sm" id="format-btn">Beautify</button>
+            <button class="btn btn-secondary btn-sm" id="minify-btn">Minify</button>
+            <button class="btn btn-secondary btn-sm" id="clear-btn">Clear</button>
+          </div>
+          
+          <div class="form-group">
+            <textarea id="json-input" class="form-control input-area" placeholder="Paste your dirty JSON here..."></textarea>
+            <div id="error-view" class="error-msg"></div>
+          </div>
+        </div>
+
+        <div class="result-container">
+          <div class="flex justify-between items-center mb-3">
+            <h3>Output</h3>
+            <button class="btn btn-primary btn-sm" id="copy-btn">Copy JSON</button>
+          </div>
+          <div id="output-wrapper">
+             <pre id="output-pre" class="result-area">Result will appear here...</pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTENT SECTION -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.json_formatter.what_is_title">What is the JSON Formatter?</h2>
+        <p>The JSON Formatter is an interactive client-side development tool designed to format, validate, and minify JSON data. By expanding raw or compressed JSON payloads into structured, color-coded blocks, developers can inspect hierarchy trees and debug syntax issues directly inside their web browser.</p>
+        <p>This formatter processes all syntax evaluations, structural spacing, and minify operations locally in your browser memory. Since no data parameters, payload arrays, or config settings are uploaded to our servers, your proprietary credentials and datasets remain secure.</p>
+
+        <h2 class="mt-4" data-i18n="tools.json_formatter.how_to_use_title">How to Use the JSON Formatter</h2>
+        <ol>
+          <li><strong>Paste Your JSON:</strong> Paste your compressed or raw JSON string into the "Input" textarea editor on the left.</li>
+          <li><strong>Set the Indentation:</strong> Choose your preferred indentation styling (such as 2 spaces, 4 spaces, or Tab spacing) from the dropdown list.</li>
+          <li><strong>Execute the Formatter:</strong> Click "Format JSON" to parse, indent, and color-code your JSON data in the right output panel.</li>
+          <li><strong>Minify for Compression:</strong> Click the "Minify" button to remove all indentation, whitespaces, and newlines to compress the payload.</li>
+          <li><strong>Copy and Clear:</strong> Click "Copy JSON" to save the formatted result to your clipboard. Click "Clear" to empty both editor panels.</li>
+        </ol>
+
+        <h2 class="mt-4" data-i18n="tools.json_formatter.key_features_title">Key Features</h2>
+        <ul>
+          <li><strong>Indentation Selections:</strong> Customize visual output hierarchies using 2 spaces, 4 spaces, or Tab configurations.</li>
+          <li><strong>Interactive Syntax Validation:</strong> Detects and flags parsing errors (such as missing commas or unmatched braces) with line descriptions.</li>
+          <li><strong>Dynamic Output Minifier:</strong> Compresses JSON data into a single line to minimize API payloads.</li>
+          <li><strong>High-Contrast Syntax Highlighting:</strong> Visualizes object keys, string values, booleans, and numbers in varying colors.</li>
+          <li><strong>100% Client-Side Compiler:</strong> Parses syntax trees offline in browser RAM to ensure data privacy.</li>
+        </ul>
+
+        <h2 class="mt-4" data-i18n="tools.json_formatter.common_use_cases_title">Common Use Cases</h2>
+        <ul>
+          <li><strong>Debugging API Payloads:</strong> Format raw, single-line API response strings to trace nested objects and data properties.</li>
+          <li><strong>Config File Auditing:</strong> Inspect and validate project files (like <code>package.json</code> or server settings) to locate structural bugs.</li>
+          <li><strong>Ecosystem Data Cleansing:</strong> Format database exports or webhook payloads to verify key-value definitions.</li>
+          <li><strong>Learning JSON Syntax:</strong> Study structured object architectures, brackets, and nested arrays in a visual layout.</li>
+        </ul>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2 data-i18n="tools.json_formatter.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Is my JSON data uploaded to the server?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. 99tool.in runs all validation checks, indentation structures, and color-coding logic locally in your browser. Your data never leaves your computer.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              What causes JSON parsing errors?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>JSON is highly sensitive to syntax. Common errors include missing commas between keys, trailing commas at the end of lists, or using single quotes instead of double quotes for strings.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can the formatter handle large JSON documents?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. The formatter handles files up to several megabytes. For extremely large files (e.g., over 20MB), syntax highlighting can cause browser slowdowns. If this occurs, we recommend minifying the text first.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Does the tool support JSON5 or comments?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>This tool follows the standard RFC 8259 JSON specifications, which do not support comments or trailing commas. If your input includes comments, the parser will flag it as invalid JSON.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 Privacy & Data Note: JSON formatting, syntax validations, and minifications occur locally in your browser. None of your data is sent to our servers.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const input = document.getElementById('json-input');
+    const output = document.getElementById('output-pre');
+    const formatBtn = document.getElementById('format-btn');
+    const minifyBtn = document.getElementById('minify-btn');
+    const clearBtn = document.getElementById('clear-btn');
+    const copyBtn = document.getElementById('copy-btn');
+    const indentSelect = document.getElementById('indent-select');
+    const errorView = document.getElementById('error-view');
+
+    function highlightJSON(json) {
+      if (typeof json !== 'string') {
+        json = JSON.stringify(json, null, 2);
+      }
+      json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
+        let cls = 'json-number';
+        if (/^"/.test(match)) {
+          if (/:$/.test(match)) {
+            cls = 'json-key';
+          } else {
+            cls = 'json-string';
+          }
+        } else if (/true|false/.test(match)) {
+          cls = 'json-boolean';
+        } else if (/null/.test(match)) {
+          cls = 'json-null';
+        }
+        return '<span class="' + cls + '">' + match + '</span>';
+      });
+    }
+
+    function processJSON(minify = false) {
+      const val = input.value.trim();
+      errorView.style.display = 'none';
+      
+      if (!val) {
+        output.textContent = 'Result will appear here...';
+        return;
+      }
+
+      try {
+        const obj = JSON.parse(val);
+        let result = '';
+        if (minify) {
+          result = JSON.stringify(obj);
+          output.textContent = result;
+        } else {
+          let indent = indentSelect.value;
+          if (indent !== '\\t') indent = parseInt(indent);
+          else indent = '\t';
+          
+          result = JSON.stringify(obj, null, indent);
+          output.innerHTML = highlightJSON(result);
+        }
+      } catch (e) {
+        errorView.textContent = '❌ ' + e.message;
+        errorView.style.display = 'block';
+        output.textContent = 'Invalid JSON structure.';
+      }
+    }
+
+    formatBtn.onclick = () => processJSON(false);
+    minifyBtn.onclick = () => processJSON(true);
+    clearBtn.onclick = () => {
+      input.value = '';
+      output.textContent = 'Result will appear here...';
+      errorView.style.display = 'none';
+    };
+
+    copyBtn.onclick = () => {
+      const text = output.innerText;
+      if (text === 'Result will appear here...' || text === 'Invalid JSON structure.') return;
+      copyToClipboard(text, copyBtn);
+    };
+
+    // Auto-process on input change if valid
+    input.addEventListener('input', () => {
+        if (input.value.length < 1000) processJSON(false); 
+    });
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

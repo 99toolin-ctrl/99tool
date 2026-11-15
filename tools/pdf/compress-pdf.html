@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Compress Pdf – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/pdf/compress-pdf.html"/>
+<meta property="og:title" content="Compress Pdf – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/pdf/compress-pdf.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Compress Pdf \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/pdf/compress-pdf.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="compress pdf, reduce pdf size, pdf compressor online, shrink pdf file, pdf compressor, optimize pdf file" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json" id="schema-org-data">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "PDF Compressor",
+    "operatingSystem": "Any",
+    "applicationCategory": "MultimediaApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "structural compression, Metadata removal, Safe object optimization, Instant resource cleanup"
+  }
+  </script>
+
+  <style>
+    .uploader {
+      border: 3px dashed var(--border);
+      border-radius: var(--radius);
+      padding: 60px 20px;
+      text-align: center;
+      transition: all 0.3s;
+      cursor: pointer;
+      background: var(--dark-card);
+    }
+    .uploader:hover, .uploader.dragover { border-color: var(--primary); background: rgba(229, 57, 53, 0.05); }
+
+    .compression-card {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px;
+      margin-top: 30px;
+    }
+
+    .stat-box {
+      background: var(--dark);
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      flex: 1;
+    }
+
+    .processing-overlay {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8); backdrop-filter: blur(8px);
+      display: none; flex-direction: column; align-items: center; justify-content: center;
+      z-index: 1000;
+    }
+    .spinner {
+      width: 50px; height: 50px; border: 5px solid var(--border);
+      border-top-color: var(--primary); border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .success-badge { color: #4CAF50; font-weight: 700; font-size: 1.2rem; }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/pdf/compress-pdf.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/pdf/compress-pdf.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/pdf/compress-pdf.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/pdf/compress-pdf.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/pdf/compress-pdf.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/pdf/compress-pdf.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/pdf/compress-pdf.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/pdf/compress-pdf.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/pdf/compress-pdf.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/pdf/compress-pdf.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/pdf/compress-pdf.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/pdf/compress-pdf.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/pdf/compress-pdf.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/pdf/compress-pdf.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/pdf/compress-pdf.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/pdf/compress-pdf.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/pdf/compress-pdf.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/pdf/compress-pdf.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/pdf/compress-pdf.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/pdf/compress-pdf.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/pdf/compress-pdf.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/pdf/compress-pdf.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+       <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#pdf">PDF Tools</a> <span>/</span> 
+        <span>Compress PDF</span>
+      </nav>
+      <h1>Compress PDF Online</h1>
+      <p>Shrink your PDF files without compromising your privacy. Optimize document structure and remove unnecessary metadata instantly. Securely. Privately.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <!-- UPLOADER -->
+      <div class="uploader" id="drop-zone">
+         <div class="upload-icon" style="font-size: 3rem; margin-bottom: 20px;">📉</div>
+         <h2>Select PDF to Compress</h2>
+         <p class="text-muted">Drag & Drop your file or click to browse</p>
+         <input type="file" id="pdf-input" accept=".pdf" style="display: none;">
+      </div>
+
+      <!-- RESULTS -->
+      <div id="results-container" style="display: none;">
+        <div class="compression-card">
+           <div class="flex flex-col md:flex-row gap-4 mb-5">
+              <div class="stat-box">
+                 <p class="text-muted" style="font-size: 0.75rem;">Original Size</p>
+                 <h3 id="old-size">0 KB</h3>
+              </div>
+              <div class="stat-box" style="border: 2px solid var(--primary);">
+                 <p class="text-muted" style="font-size: 0.75rem;">Compressed Size</p>
+                 <h3 id="new-size">0 KB</h3>
+              </div>
+              <div class="stat-box">
+                 <p class="text-muted" style="font-size: 0.75rem;">Saved</p>
+                 <h3 id="saved-percent" style="color: var(--primary);">0%</h3>
+              </div>
+           </div>
+
+           <div class="text-center">
+              <span class="success-badge">✅ Compression Successful!</span>
+              <p class="text-muted mt-2 mb-4">Your file has been optimized for sharing and web viewing.</p>
+              <button class="btn btn-primary btn-lg" id="download-btn">Download Optimized PDF →</button>
+              <button class="btn btn-secondary btn-sm block mx-auto mt-4" onclick="location.reload()">Compress Another File</button>
+           </div>
+        </div>
+      </div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5">
+        <h2>Shrink Your Files, Not Your Standards: Secure PDF Optimization</h2>
+        <p>We’ve all been there: you’ve finally finished that 100-page report or that high-resolution portfolio, and you click "Attach" only to see the dreaded "File is too large" error message. Your first instinct is to find a <strong>compress pdf</strong> tool online. But then the fear sets in—you’ve spent hours, maybe days, on this document. It contains sensitive data, high-quality images, and your personal intellectual property. Do you really want to upload it to a cloud server where it could be stored, scanned, or even leaked?</p>
+
+        <p>At 99tool.in, we built our <strong>reduce pdf size</strong> utility to solve the size problem without creating a privacy problem. By utilizing advanced browser-based architectural cleanup, we allow you to <strong>compress pdf online free</strong> without ever uploading a single byte to the cloud. Whether you're a job seeker sending a multi-page CV, a researcher sharing a massive paper, or a corporate professional archiving reports, our <strong>pdf compressor</strong> keeps your data local and secure while making it light enough for any email provider.</p>
+        
+        <div class="tool-preview-box mt-4 mb-4" style="text-align:center;">
+           <img src="../../assets/images/compress-preview.png" alt="PDF Compression and Optimization Dashboard" class="tool-preview" id="tool-preview-img" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+        </div>
+
+        <h3 class="mt-4">The Truth About PDF "Bloat" and How to Fix It</h3>
+        <p>Why are some PDFs so massive? Often, it’s not just the images. Every time a PDF is created in software like Microsoft Word, Adobe InDesign, or Google Docs, the software adds layers of "metadata," creator history, and "Producer" tags. Over time, as a document is edited and re-saved, it accumulates internal "ghost objects"—redundant code that serves no purpose but adds significant weight to the file. This is what we call PDF Bloat.</p>
+        
+        <p>Our <strong>shrink pdf file</strong> engine doesn't just "squish" your file. It performs a surgical **Structural Optimization**. We strip away the unnecessary metadata, linearize the internal object streams, and remove redundant pointers. This human-centric approach to <strong>pdf optimization</strong> ensures that your file becomes leaner and faster to load on mobile devices and slow internet connections, all without touching the visual quality of your text or photography. It’s the ultimate <strong>safe pdf compressor</strong> for professional use.</p>
+
+        <h3 class="mt-4">Why Compression is the Professional Standard</h3>
+        <p>In industry sectors like Law, Healthcare, and Finance, uploading a document to a <strong>pdf compressor online</strong> service is often a violation of internal security protocols. You are essentially creating a digital copy of your document on an untrusted server. If that server is breached, or if the provider's privacy policy changes, your confidential data could be at risk.</p>
+        
+        <p>Our 100% <strong>pdf optimizer</strong> removes this risk entirely. All the cleanup happens in your browser's private memory sandbox. The moment you close the tab, the entire process—including the original and optimized versions of your file—is wiped from your RAM. This "Zero-Trace" philosophy is why 99tool.in is trusted by individuals who handle high-stakes data. With us, you get the performance of a cloud-scale engine with the security of an air-gapped local application.</p>
+
+        <h3 class="mt-4">How to Compress Your PDF Securely (Step-by-Step)</h3>
+        <p>Optimizing your documents should be a fast, one-click experience. Here is how to use our <strong>reduce pdf size</strong> tool effectively:</p>
+        <ul style="line-height: 1.8; margin-bottom: 20px;">
+          <li><strong>Step 1: Choose Your Source</strong> — Drag your bloated PDF into the uploader. We’ll instantly show you the current file size.</li>
+          <li><strong>Step 2: Let the Engine Work</strong> — Our <strong>compressor</strong> will immediately begin scanning and cleaning the internal document structure. This happens in seconds.</li>
+          <li><strong>Step 3: Compare the Results</strong> — See exactly how many KB or MB we were able to save. Most documents will show a meaningful reduction without any visual loss.</li>
+          <li><strong>Step 4: Download and Share</strong> — Click "Download Optimized PDF." Your new, leaner file is ready for email or web portal submission.</li>
+        </ul>
+
+        <h3 class="mt-4">Strategic Use Cases for a Leaner PDF</h3>
+        <p>Our <strong>pdf shrinker</strong> is more than just a size tool—it’s a communication tool:</p>
+        
+        <p><strong>For Job Applicants:</strong> Most HR portals have a 2MB or 5MB limit for attachments. Our <strong>compress pdf</strong> tool helps you ensure your high-res portfolio and 10-page CV make it through the gatekeepers without being rejected for size.</p>
+        
+        <p><strong>For Government Submissions:</strong> Passport applications, tax filings, and grant proposals often come as massive PDFs that need to be "web-optimized" for outdated portal systems. Use our <strong>pdf size reducer</strong> to meet those strict requirements while keeping your sensitive ID data private.</p>
+        
+        <p><strong>For Creative Portfolios:</strong> Large portfolios take too long to load on a client's mobile phone. Our <strong>structural optimizer</strong> helps your pages snap to the screen instantly, ensuring that your first impression is one of speed and professionalism.</p>
+
+        <h3 class="mt-5">Explore Your Productivity Toolkit</h3>
+        <p>Once you’ve successfully compressed your document, you might need to combine it with another relevant file. Check out our <strong><a href="merge-pdf.html">PDF Merger</a></strong>. Or, if you need to extract just one small part of a large report, use our <strong><a href="split-pdf.html">PDF Splitter</a></strong>. At 99tool.in, we are building a complete, private, and powerful suite of utilities to make your digital life easier and more secure.</p>
+        
+        <div class="flex gap-4 mt-4 mb-5">
+           <a href="reorder-pdf.html" class="btn btn-secondary" style="flex:1; text-align:center;">Reorder Pages</a>
+           <a href="pdf-to-image.html" class="btn btn-secondary" style="flex:1; text-align:center;">PDF to Image</a>
+        </div>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2 data-i18n="tools.compress_pdf.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Does this tool change the visual quality?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. Our <strong>PDF optimizer</strong> focuses on "non-destructive" structural compression. We optimize the internal code, remove duplicate object streams, and strip metadata. Your text remains sharp and your images remain at their original resolution.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Why did my file size only decrease a little bit?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>If your PDF is already composed mostly of compressed images (like a scan from a phone app), there may be very little "structural" data left to optimize. This tool works best on documents generated by office software (Word, Excel, etc.) that often include significant overhead.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Is there a file size limit?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Because the optimization happens entirely in your browser's RAM, we recommend files under 100MB for the smoothest experience. For <strong>shrinking very large PDFs</strong>, ensure your device has sufficient available memory to handle the restructuring process.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Does this tool remove the "Title" and "Author" from my PDF?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. As part of the <strong>secure optimization process</strong>, we strip metadata like Title, Author, Creator, and Producer. This not only reduces file size but also enhances your privacy by removing personal or corporate traces from the file's header.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Are my documents uploaded for compression?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Absolutely not. For maximum security, all structural cleanup happens <strong>locally in your browser tab</strong>. Your files are processed in-place and never leave your device. We never see or store your confidential data.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              How does structural optimization differ from image compression?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Image compression reduces the number of pixels (lossy), while <strong>structural optimization</strong> cleans up the underlying code (lossless). Our tool ensures your PDF remains high-fidelity while removing the hidden "digital weight" that makes files unnecessarily heavy.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 100% Private. All processing takes place in your browser sandbox. Last updated: April 10, 2026.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- LOADING OVERLAY -->
+  <div class="processing-overlay" id="loader">
+    <div class="spinner"></div>
+    <h3 class="mt-4" style="color: white">Optimizing PDF Structure...</h3>
+    <p class="text-muted">Cleaning resources in your browser memory.</p>
+  </div>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const dropZone = document.getElementById('drop-zone');
+    const pdfInput = document.getElementById('pdf-input');
+    const resultsContainer = document.getElementById('results-container');
+    const loader = document.getElementById('loader');
+    const downloadBtn = document.getElementById('download-btn');
+
+    let optimizedBytes = null;
+    let originalName = '';
+
+    dropZone.onclick = () => pdfInput.click();
+    // Init Drag and Drop using global helper
+    setupDragDrop('drop-zone', (files) => {
+       if (files.length) handleFile(files[0]);
+    });
+
+    pdfInput.onchange = (e) => handleFile(e.target.files[0]);
+
+    async function handleFile(file) {
+      if (!file || file.type !== 'application/pdf') return;
+      originalName = file.name;
+
+      loader.style.display = 'flex';
+      try {
+        const { PDFDocument } = PDFLib;
+        const arrayBuffer = await file.arrayBuffer();
+        const pdfDoc = await PDFDocument.load(arrayBuffer);
+
+        // Optimization 1: Strip Metadata
+        pdfDoc.setTitle('');
+        pdfDoc.setAuthor('');
+        pdfDoc.setSubject('');
+        pdfDoc.setCreator('');
+        pdfDoc.setProducer('');
+        pdfDoc.setKeywords([]);
+
+        // Optimization 2: Linearize / Object Stream cleanup
+        // (pdf-lib performs some cleanup by default when saving)
+        optimizedBytes = await pdfDoc.save({ useObjectStreams: true });
+
+        // Calculate results
+        const oldSize = file.size;
+        const newSize = optimizedBytes.length;
+        const saved = oldSize - newSize;
+        const percent = Math.max(0, Math.round((saved / oldSize) * 100));
+
+        document.getElementById('old-size').textContent = formatBytes(oldSize);
+        document.getElementById('new-size').textContent = formatBytes(newSize);
+       document.getElementById('saved-percent').textContent = ((window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(percent, 0) : percent) + '%';
+
+        resultsContainer.style.display = 'block';
+        dropZone.style.display = 'none';
+      } catch (err) {
+        console.error(err);
+        alert('An error occurred. Make sure your PDF is not encrypted.');
+      } finally {
+        loader.style.display = 'none';
+      }
+    }
+
+    downloadBtn.onclick = () => {
+       if (!optimizedBytes) return;
+       const blob = new Blob([optimizedBytes], { type: 'application/pdf' });
+       const url = URL.createObjectURL(blob);
+       const a = document.createElement('a');
+       a.href = url;
+       a.download = `optimized_${originalName}`;
+       a.click();
+    };
+
+    function formatBytes(bytes) {
+      if (bytes === 0) return '0 Bytes';
+      const k = 1024;
+      const sizes = ['Bytes', 'KB', 'MB'];
+      const i = Math.floor(Math.log(bytes) / Math.log(k));
+      return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+    }
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

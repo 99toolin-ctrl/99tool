@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Dictionary – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/learning/dictionary.html"/>
+<meta property="og:title" content="Dictionary – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/learning/dictionary.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Dictionary \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/learning/dictionary.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .dictionary-workspace {
+      max-width: 800px;
+      margin: 2rem auto;
+    }
+    .search-box {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      padding: 10px 30px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+    .search-box input {
+      flex: 1;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.2rem;
+      outline: none;
+    }
+    
+    .result-pane {
+      margin-top: 2rem;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2.5rem;
+      display: none;
+      position: relative;
+    }
+    .word-header { display: flex; align-items: baseline; gap: 15px; margin-bottom: 1.5rem; }
+    .word-header h2 { font-size: 3rem; color: var(--primary); margin: 0; }
+    .phonetic { font-style: italic; color: var(--text-muted); font-size: 1.2rem; }
+    
+    .definition-block { margin-top: 2rem; }
+    .pos { display: inline-block; padding: 4px 12px; border-radius: 20px; background: rgba(229, 57, 53, 0.1); color: var(--primary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; }
+    .definition { font-size: 1.1rem; line-height: 1.6; margin-bottom: 10px; }
+    .example { font-style: italic; color: var(--text-muted); border-left: 3px solid var(--border); padding-left: 15px; }
+
+    .history-pane { margin-top: 3rem; opacity: 0.7; }
+    .history-list { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
+    .history-chip { padding: 6px 15px; background: var(--dark-card); border: 1px solid var(--border); border-radius: 20px; font-size: 0.85rem; cursor: pointer; }
+    .history-chip:hover { border-color: var(--primary); }
+
+    .no-result { text-align: center; padding: 3rem; color: var(--text-muted); font-style: italic; }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/learning/dictionary.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/learning/dictionary.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/learning/dictionary.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/learning/dictionary.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/learning/dictionary.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/learning/dictionary.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/learning/dictionary.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/learning/dictionary.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/learning/dictionary.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/learning/dictionary.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/learning/dictionary.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/learning/dictionary.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/learning/dictionary.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/learning/dictionary.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/learning/dictionary.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/learning/dictionary.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/learning/dictionary.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/learning/dictionary.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/learning/dictionary.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/learning/dictionary.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/learning/dictionary.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/learning/dictionary.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-hero text-center">
+      <nav class="breadcrumb justify-content-center">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#learning">Learning</a> <span>/</span> 
+        <span>Dictionary</span>
+      </nav>
+      <h1>Dictionary</h1>
+      <p>Instant access to thousands of word meanings without an internet connection.</p>
+    </div>
+
+    <div class="dictionary-workspace">
+      <div class="search-box">
+        <i>🔍</i>
+        <input type="text" id="dict-search" placeholder="Type a word to search..." autocomplete="off">
+        <button class="btn btn-primary btn-sm" onclick="searchWord()">Search</button>
+      </div>
+
+      <div id="result-pane" class="result-pane">
+        <div class="word-header">
+           <h2 id="res-word">Definition</h2>
+           <span class="phonetic" id="res-phonetic">/def.ɪ.nɪʃ.ən/</span>
+        </div>
+        
+        <div class="definition-block">
+            <span class="pos" id="res-pos">Noun</span>
+            <div class="definition" id="res-def">A statement of the exact meaning of a word, especially in a dictionary.</div>
+            <div class="example" id="res-example">"This dictionary has clear definitions."</div>
+        </div>
+
+        <button class="btn btn-secondary btn-sm mt-5" onclick="saveToVocab()" title="Save to Vocabulary Builder">Save to Vocabulary Builder +</button>
+      </div>
+
+      <div id="no-result" class="no-result" style="display: none;">
+         Word not found in database. Try a common root word.
+      </div>
+
+      <div class="history-pane">
+         <h4>Recent Searches</h4>
+         <div class="history-list" id="history-list"></div>
+      </div>
+    </div>
+
+    <!-- CONTENT SECTION -->
+    <section class="seo-content mt-5 text-start">
+      <h2 data-i18n="tools.dictionary.what_is_title">What is the Dictionary?</h2>
+      <p>The Dictionary is a client-side word definition utility developed to search and display word meanings instantly. By typing an English word, users can view parts of speech, phonetic transcriptions, definitions, and usage examples from a locally indexed word database.</p>
+      <p>This dictionary stores and processes your search queries locally in your browser memory. Since no network requests, remote API calls, or telemetry tasks are executed during search events, your lookup history and queries remain completely secure and private.</p>
+
+      <h2 class="mt-4" data-i18n="tools.dictionary.how_to_use_title">How to Use the Dictionary</h2>
+      <ol>
+        <li><strong>Enter Your Query:</strong> Type the word you want to search into the search input box (e.g., <code>agile</code> or <code>resilient</code>).</li>
+        <li><strong>Perform Search:</strong> Click the "Search" button or press Enter to load the definition.</li>
+        <li><strong>View Word Details:</strong> Review the results card showing parts of speech, phonetic notations, core meanings, and example sentences.</li>
+        <li><strong>Browse Recent Searches:</strong> Click on any chip in the "Recent Searches" history list to reload that word's definition instantly.</li>
+      </ol>
+
+      <h2 class="mt-4" data-i18n="tools.dictionary.key_features_title">Key Features</h2>
+      <ul>
+        <li><strong>Instant Meaning Lookups:</strong> Renders definitions, grammatical functions, and phonetic notation immediately.</li>
+        <li><strong>Contextual Usage Examples:</strong> Displays sample sentences to help you understand how the word is used in context.</li>
+        <li><strong>Automatic Search History:</strong> Saves recently searched words locally so you can click and review them during your study session.</li>
+        <li><strong>Minimalist Typography:</strong> Designed with clean fonts and distraction-free layouts to keep you focused on reading.</li>
+        <li><strong>100% Secure & Private:</strong> Operates entirely in browser cache without querying external databases.</li>
+      </ul>
+
+      <h2 class="mt-4" data-i18n="tools.dictionary.common_use_cases_title">Common Use Cases</h2>
+      <ul>
+        <li><strong>Reading Comprehension:</strong> Look up unfamiliar vocabulary words quickly while reading articles or documents.</li>
+        <li><strong>Writing and Copywriting:</strong> Verify word meanings, grammatical types, and spelling structures before adding them to your documents.</li>
+        <li><strong>Pronunciation Practice:</strong> Use the phonetic symbols to guide correct speech and vocabulary development.</li>
+        <li><strong>Offline Language Learning:</strong> Study core English vocabulary words without needing an active internet connection.</li>
+      </ul>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-section mt-5">
+      <h2 data-i18n="tools.dictionary.faq_title">Frequently Asked Questions</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <button class="faq-question">
+            Does this dictionary require an active internet connection?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>No. The dictionary utility utilizes a pre-indexed local database of common English terms, allowing you to search and find definitions offline.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Are my search terms tracked or shared with advertisers?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Never. Your search queries are processed locally in your browser memory and never leave your machine. We do not track or store your search history.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Where is my search history stored?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Your search history is saved locally in your browser's LocalStorage. You can clear this history simply by clearing your browser cache.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            What should I do if a word is not found?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Our offline dictionary features a hand-curated vocabulary list of common root words. If a word is not found, try searching for its root form (for example, search for "agile" instead of "agility").</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust-signal">
+      <p>🔒 Privacy & Data Note: Dictionary queries, definition lookups, and search history states are stored locally in your browser. No data is sent to our servers.</p>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    // Lightweight local database (Sample)
+    // In a real build, this would be a larger JSON or fetched once.
+    const dictionary = {
+      "agile": { p: "/ˈædʒ.aɪl/", pos: "Adj", def: "Able to move quickly and easily; thinking in a quick way.", ex: "He was too agile for the heavy defenders." },
+      "benevolent": { p: "/bəˈnev.əl.ənt/", pos: "Adj", def: "Kind and helpful; wanting to do good.", ex: "The company has a benevolent policy toward its retirees." },
+      "catalyst": { p: "/ˈkæt.əl.ɪst/", pos: "Noun", def: "Something that causes an event to happen quickly.", ex: "The new law was the catalyst for massive change." },
+      "diligent": { p: "/ˈdɪl.ɪ.dʒənt/", pos: "Adj", def: "Done in a careful and hard-working way.", ex: "A diligent student always reviews her notes." },
+      "ephemeral": { p: "/ɪˈfem.ər.əl/", pos: "Adj", def: "Lasting for a very short time.", ex: "Fame in the world of social media is often ephemeral." },
+      "fortitude": { p: "/ˈfɔː.tɪ.tjuːd/", pos: "Noun", def: "Strength of mind that enables one to endure adversity.", ex: "She showed great fortitude during the crisis." },
+      "gregarious": { p: "/ɡrɪˈɡeə.ri.əs/", pos: "Adj", def: "Liking to be with other people; sociable.", ex: "Most dolphins are gregarious animals." },
+      "hinder": { p: "/ˈhɪn.dər/", pos: "Verb", def: "To limit the ability of someone to do something.", ex: "High winds hindered the fire-fighting efforts." },
+      "innovate": { p: "/ˈɪn.ə.veɪt/", pos: "Verb", def: "To introduce changes and new ideas.", ex: "Small companies often innovate faster than giants." },
+      "juxtapose": { p: "/ˌdʒʌk.stəˈpəʊz/", pos: "Verb", def: "To put things side by side for comparison.", ex: "The exhibition juxtaposes modern and ancient art." }
+    };
+
+    let history = JSON.parse(localStorage.getItem('99tool_dict_history')) || [];
+
+    function searchWord() {
+      const q = document.getElementById('dict-search').value.trim().toLowerCase();
+      if (!q) return;
+
+      const result = dictionary[q];
+      const pane = document.getElementById('result-pane');
+      const noRes = document.getElementById('no-result');
+
+      if (result) {
+        pane.style.display = 'block';
+        noRes.style.display = 'none';
+        
+        document.getElementById('res-word').innerText = q;
+        document.getElementById('res-phonetic').innerText = result.p;
+        document.getElementById('res-pos').innerText = result.pos;
+        document.getElementById('res-def').innerText = result.def;
+        document.getElementById('res-example').innerText = `"${result.ex}"`;
+
+        addToHistory(q);
+      } else {
+        pane.style.display = 'none';
+        noRes.style.display = 'block';
+      }
+    }
+
+    function addToHistory(word) {
+      if (history.includes(word)) return;
+      history.unshift(word);
+      if (history.length > 10) history.pop();
+      localStorage.setItem('99tool_dict_history', JSON.stringify(history));
+      renderHistory();
+    }
+
+    function renderHistory() {
+      const list = document.getElementById('history-list');
+      list.innerHTML = "";
+      history.forEach(word => {
+        const chip = document.createElement('div');
+        chip.className = 'history-chip';
+        chip.innerText = word;
+        chip.onclick = () => {
+          document.getElementById('dict-search').value = word;
+          searchWord();
+        };
+        list.appendChild(chip);
+      });
+    }
+
+    function saveToVocab() {
+       const word = document.getElementById('res-word').innerText;
+       const def = document.getElementById('res-def').innerText;
+       const ex = document.getElementById('res-example').innerText;
+
+       let bank = JSON.parse(localStorage.getItem('99tool_vocab_bank')) || [];
+       bank.unshift({ word, meaning: def, example: ex, date: new Date().toLocaleDateString() });
+       localStorage.setItem('99tool_vocab_bank', JSON.stringify(bank));
+       alert(`"${word}" saved to your Vocabulary Builder!`);
+    }
+
+    // Trigger on Enter
+    document.getElementById('dict-search').onkeypress = (e) => { if (e.key === 'Enter') searchWord(); };
+
+    renderHistory();
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

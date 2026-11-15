@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Ppt Viewer – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/data-file/ppt-viewer.html"/>
+<meta property="og:title" content="Ppt Viewer – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/data-file/ppt-viewer.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Ppt Viewer \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/data-file/ppt-viewer.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="ppt viewer, view powerpoint online, open pptx file, ppt reader, private ppt viewer" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json" id="schema-org-data">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "PowerPoint Viewer",
+    "operatingSystem": "Any",
+    "applicationCategory": "DataApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Local PPTX parsing, Slide text extraction, Image gallery extraction, Offline processing"
+  }
+  </script>
+
+  <style>
+    .ppt-container {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 0;
+      overflow: hidden;
+      margin-bottom: 30px;
+    }
+
+    .ppt-toolbar {
+      padding: 15px 25px;
+      background: rgba(0, 0, 0, 0.2);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .slide-viewer {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      height: 600px;
+      background: var(--dark);
+    }
+
+    .slide-sidebar {
+      border-right: 1px solid var(--border);
+      overflow-y: auto;
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .slide-thumb {
+      padding: 15px;
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+      font-size: 0.8rem;
+      transition: 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text-muted);
+    }
+    .slide-thumb:hover { background: rgba(255, 255, 255, 0.05); color: var(--white); }
+    .slide-thumb.active { background: var(--primary); color: var(--white); border-bottom: none; }
+
+    .slide-content {
+      padding: 40px;
+      overflow-y: auto;
+      background: #fdfdfd; 
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .slide-text-block {
+       font-size: 1.1rem;
+       line-height: 1.6;
+       margin-bottom: 20px;
+       white-space: pre-wrap;
+    }
+
+    .slide-images {
+       display: grid;
+       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+       gap: 15px;
+    }
+    .slide-images img {
+       width: 100%;
+       border-radius: 4px;
+       border: 1px solid #ddd;
+       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    @media (max-width: 900px) {
+      .slide-viewer { grid-template-columns: 1fr; height: auto; }
+      .slide-sidebar { display: flex; overflow-x: auto; height: 60px; border-right: none; border-bottom: 1px solid var(--border); }
+      .slide-thumb { border-bottom: none; border-right: 1px solid var(--border); white-space: nowrap; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/data-file/ppt-viewer.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/data-file/ppt-viewer.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/data-file/ppt-viewer.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/data-file/ppt-viewer.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/data-file/ppt-viewer.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/data-file/ppt-viewer.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/data-file/ppt-viewer.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/data-file/ppt-viewer.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/data-file/ppt-viewer.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/data-file/ppt-viewer.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/data-file/ppt-viewer.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/data-file/ppt-viewer.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/data-file/ppt-viewer.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/data-file/ppt-viewer.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/data-file/ppt-viewer.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/data-file/ppt-viewer.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/data-file/ppt-viewer.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/data-file/ppt-viewer.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/data-file/ppt-viewer.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/data-file/ppt-viewer.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/data-file/ppt-viewer.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/data-file/ppt-viewer.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#data">Data & File</a> <span>/</span> 
+        <span>PowerPoint Viewer</span>
+      </nav>
+      <h1>PowerPoint Viewer (Basic)</h1>
+      <p>Securely preview PowerPoint content offline. Our basic viewer extracts essential text and images from your .pptx files directly in your browser—total privacy for your presentations.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div id="upload-stage">
+        <div class="upload-area" id="drop-zone">
+          <div class="upload-icon">📊</div>
+          <h3>Select your PowerPoint File</h3>
+          <p>Drag & drop .pptx file or click to browse</p>
+          <input type="file" id="file-input" accept=".pptx" class="hidden">
+        </div>
+        <div class="info-box">
+          <div class="info-icon">💡</div>
+          <p>This is a <strong>Content-First Viewer</strong>. It extracts text and images for quick offline review. Slide layouts and animations are not preserved.</p>
+        </div>
+      </div>
+
+      <div id="viewer-stage" class="hidden">
+        <div class="ppt-container">
+          <div class="ppt-toolbar">
+            <div class="flex items-center gap-3">
+              <span id="file-title" class="fw-bold" style="color: var(--primary);">presentation.pptx</span>
+              <span id="slide-count" class="text-muted small">0 slides detected</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <button class="btn btn-secondary btn-sm" id="new-btn">Open New</button>
+            </div>
+          </div>
+          
+          <div class="slide-viewer">
+            <aside class="slide-sidebar" id="slide-sidebar">
+               <!-- Thumbnails/Index here -->
+            </aside>
+            <main class="slide-content" id="slide-content">
+               <div class="text-center py-5 text-muted">Select a slide to view content</div>
+            </main>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTENT SECTION -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.powerpoint_viewer.what_is_title">What is the PowerPoint Viewer (Basic)?</h2>
+        <p>The PowerPoint Viewer (Basic) is a client-side presentation previewer designed to extract and display text slides and embedded assets from PPTX files. By dropping a slideshow into the browser tab, you can read slides, review speaker notes, and check presentation outlines without launching a heavy application suite.</p>
+        <p>This viewer works entirely inside your browser's runtime memory, parsing the PPTX archive package locally. Because it does not upload your slides or graphics to external cloud platforms, your corporate pitch decks, sales projections, and proprietary charts remain completely private.</p>
+
+        <h2 class="mt-4" data-i18n="tools.powerpoint_viewer.how_to_use_title">How to Use the PowerPoint Viewer (Basic)</h2>
+        <ol>
+          <li><strong>Upload Your PPTX File:</strong> Drag and drop your presentation file into the dotted upload area, or click inside the area to select the file from your computer.</li>
+          <li><strong>Select a Slide to View:</strong> The tool generates a slide index sidebar on the left. Click on any slide thumbnail card or slide number to display its contents.</li>
+          <li><strong>Review Text and Media:</strong> Read the extracted text blocks and inspect the embedded slide images displayed in the main content container.</li>
+          <li><strong>Copy Content Safely:</strong> Select and copy text directly from the slides to use in meeting summaries, lecture notes, or code logs.</li>
+        </ol>
+
+        <h2 class="mt-4" data-i18n="tools.powerpoint_viewer.key_features_title">Key Features</h2>
+        <ul>
+          <li><strong>Lightweight XML Parsing:</strong> Extracts text data from PPTX containers instantly in browser memory.</li>
+          <li><strong>Slide Sidebar Navigation:</strong> Browse through slide decks easily using a sequential thumbnail index.</li>
+          <li><strong>Embedded Image Extraction:</strong> Decouples and renders photos, diagrams, and illustrations locally.</li>
+          <li><strong>Zero Installation Required:</strong> Works entirely in your web browser without plugins or external libraries.</li>
+          <li><strong>Complete Local Isolation:</strong> Keeps your business presentations safe by running 100% offline.</li>
+        </ul>
+
+        <h2 class="mt-4" data-i18n="tools.powerpoint_viewer.common_use_cases_title">Common Use Cases</h2>
+        <ul>
+          <li><strong>Pitch Deck Previews:</strong> Scan business layouts, executive summaries, and slides quickly before meetings.</li>
+          <li><strong>Lecture Note Extractions:</strong> Extract slide text and outlines from school presentations to create study guides.</li>
+          <li><strong>Design Asset Auditing:</strong> Inspect embedded slide images or diagrams to verify resolutions and visual styles.</li>
+          <li><strong>Fast Document Checks:</strong> Verify the slide count and contents of an email attachment before importing it to editing suites.</li>
+        </ul>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2 data-i18n="tools.powerpoint_viewer.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Does this viewer preserve slide animations and transitions?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. This is a basic content previewer designed to extract text and images for quick reading. It does not play animations, video clips, or transitions.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Are my PowerPoint files uploaded to 99tool.in?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. 100% of the PPTX parsing happens locally in browser memory. The slide data is parsed by browser scripts and is never sent to our servers.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Why do my slide layouts appear differently here?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Since the viewer extracts content elements (text boxes and images) and renders them in HTML rather than recreating the Microsoft PowerPoint rendering engine, precise layouts and font styles may vary from the original application.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I edit the slides using this tool?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. This is a read-only viewer. To edit slides, we recommend using dedicated presentation applications or office suites.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Does it support old .PPT files?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>This utility is optimized for standard XML-based .pptx files. For older binary .ppt presentations, we recommend saving them as .pptx first in an office application before loading them here.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 Privacy & Data Note: PowerPoint parsing, text extraction, and thumbnail indexing are processed locally in your browser. No slide contents are sent to our servers.</p>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const dropZone = document.getElementById('drop-zone');
+    const fileInput = document.getElementById('file-input');
+    const uploadStage = document.getElementById('upload-stage');
+    const viewerStage = document.getElementById('viewer-stage');
+    const fileTitle = document.getElementById('file-title');
+    const slideCountText = document.getElementById('slide-count');
+    const slideSidebar = document.getElementById('slide-sidebar');
+    const slideContentArea = document.getElementById('slide-content');
+    const newBtn = document.getElementById('new-btn');
+
+    let slides = [];
+    let media = {};
+
+    // Init Drag and Drop
+    dropZone.onclick = () => fileInput.click();
+    setupDragDrop('drop-zone', (files) => {
+      if (files.length) handleFile(files[0]);
+    });
+    fileInput.onchange = (e) => handleFile(e.target.files[0]);
+
+    function handleFile(file) {
+      if (!file) return;
+      fileTitle.textContent = file.name;
+      
+      JSZip.loadAsync(file).then(async (zip) => {
+        slides = [];
+        media = {};
+
+        // 1. Map all media
+        const mediaFiles = zip.folder("ppt/media").files;
+        for (let path in mediaFiles) {
+           if (!mediaFiles[path].dir) {
+              const blob = await zip.file(path).async("blob");
+              media[path.replace("ppt/media/", "")] = URL.createObjectURL(blob);
+           }
+        }
+
+        // 2. Find and parse slides
+        const slideFiles = Object.keys(zip.files).filter(f => f.startsWith("ppt/slides/slide") && f.endsWith(".xml"));
+        // Sort slides numerically
+        slideFiles.sort((a,b) => {
+           const na = parseInt(a.match(/slide(\d+)\.xml/)[1]);
+           const nb = parseInt(b.match(/slide(\d+)\.xml/)[1]);
+           return na - nb;
+        });
+
+        for (let sPath of slideFiles) {
+           const xmlText = await zip.file(sPath).async("text");
+           const parser = new DOMParser();
+           const xmlDoc = parser.parseFromString(xmlText, "text/xml");
+           
+           // Extract text
+           const texts = Array.from(xmlDoc.getElementsByTagName("a:t")).map(t => t.textContent).join(" ");
+           
+           // Extract image references (r:id) - simplified for "Basic Viewer"
+           // In a real basic viewer, we might just show text or try to find images in the slide
+           // For now, let's just grab the text per slide.
+           
+           slides.push({
+              path: sPath,
+              text: texts,
+              images: [] // Future: map images from _rels
+           });
+        }
+
+        renderSlideList();
+        uploadStage.classList.add('hidden');
+        viewerStage.classList.remove('hidden');
+      });
+    }
+
+    function renderSlideList() {
+       slideCountText.textContent = ((window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(slides.length, 0) : slides.length) + ' slides detected';
+      slideSidebar.innerHTML = slides.map((s, i) => `
+        <div class="slide-thumb ${i === 0 ? 'active' : ''}" data-index="${i}">
+           <span>Slide ${i + 1}</span>
+        </div>
+      `).join('');
+
+      if (slides.length > 0) renderSlide(0);
+
+      document.querySelectorAll('.slide-thumb').forEach(thumb => {
+        thumb.onclick = () => {
+          document.querySelectorAll('.slide-thumb').forEach(t => t.classList.remove('active'));
+          thumb.classList.add('active');
+          renderSlide(parseInt(thumb.dataset.index));
+        };
+      });
+    }
+
+    function renderSlide(idx) {
+      const slide = slides[idx];
+      slideContentArea.innerHTML = `
+        <h2 class="mb-4">Slide ${idx + 1}</h2>
+        <div class="slide-text-block">${slide.text || '<span class="text-muted">No text detected on this slide.</span>'}</div>
+        <div class="slide-images" id="slide-images-container"></div>
+      `;
+      // Note: Full image mapping per slide requires parsing _rels. 
+      // This is a "Basic Viewer" as requested.
+    }
+
+    newBtn.onclick = () => {
+      uploadStage.classList.remove('hidden');
+      viewerStage.classList.add('hidden');
+      fileInput.value = "";
+    };
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>

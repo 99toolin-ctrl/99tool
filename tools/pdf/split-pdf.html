@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Split Pdf – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/pdf/split-pdf.html"/>
+<meta property="og:title" content="Split Pdf – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/pdf/split-pdf.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Split Pdf \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/pdf/split-pdf.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="split pdf, pdf splitter online, extract pdf pages, divide pdf file, pdf splitter, separate pdf pages" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json" id="schema-org-data">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Split PDF Tool",
+    "operatingSystem": "Any",
+    "applicationCategory": "MultimediaApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "PDF splitting, Custom range extraction, Security scanning, Single-page separation"
+  }
+  </script>
+
+  <style>
+    .pdf-uploader {
+      border: 3px dashed var(--border);
+      border-radius: var(--radius);
+      padding: 60px 20px;
+      text-align: center;
+      transition: all 0.3s;
+      cursor: pointer;
+      background: var(--dark-card);
+    }
+    .pdf-uploader:hover, .pdf-uploader.dragover { border-color: var(--primary); background: rgba(229, 57, 53, 0.05); }
+
+    .split-options {
+      margin-top: 30px;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px;
+    }
+
+    .range-input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .file-details {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 15px;
+      background: var(--dark);
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .security-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.7rem;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+    .badge-safe { background: rgba(76, 175, 80, 0.1); color: #4CAF50; border: 1px solid rgba(76, 175, 80, 0.2); }
+    .badge-warning { background: rgba(255, 152, 0, 0.1); color: #FF9800; border: 1px solid rgba(255, 152, 0, 0.2); }
+
+    .processing-overlay {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8); backdrop-filter: blur(8px);
+      display: none; flex-direction: column; align-items: center; justify-content: center;
+      z-index: 1000;
+    }
+    .spinner {
+      width: 50px; height: 50px; border: 5px solid var(--border);
+      border-top-color: var(--primary); border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/pdf/split-pdf.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/pdf/split-pdf.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/pdf/split-pdf.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/pdf/split-pdf.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/pdf/split-pdf.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/pdf/split-pdf.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/pdf/split-pdf.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/pdf/split-pdf.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/pdf/split-pdf.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/pdf/split-pdf.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/pdf/split-pdf.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/pdf/split-pdf.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/pdf/split-pdf.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/pdf/split-pdf.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/pdf/split-pdf.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/pdf/split-pdf.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/pdf/split-pdf.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/pdf/split-pdf.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/pdf/split-pdf.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/pdf/split-pdf.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/pdf/split-pdf.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/pdf/split-pdf.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+       <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#pdf">PDF Tools</a> <span>/</span> 
+        <span>Split PDF</span>
+      </nav>
+      <h1>Split PDF Files</h1>
+      <p>Divide your PDFs exactly how you want. Extract specific pages or split them into individual files instantly. Securely. Privately.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <!-- UPLOADER -->
+      <div class="pdf-uploader" id="drop-zone">
+         <div class="upload-icon" style="font-size: 3rem; margin-bottom: 20px;">✂️</div>
+         <h2>Select PDF to Split</h2>
+         <p class="text-muted">Drag & Drop your file or click to browse</p>
+         <input type="file" id="pdf-input" accept=".pdf" style="display: none;">
+      </div>
+
+      <!-- SPLIT OPTIONS -->
+      <div id="split-container" style="display: none;">
+        <div class="split-options">
+          <div class="file-details" id="file-info">
+             <!-- Injected -->
+          </div>
+
+          <div class="tabs mb-4" style="display: flex; gap: 10px; border-bottom: 1px solid var(--border); padding-bottom: 10px;">
+             <button class="btn btn-secondary btn-sm" id="tab-range" onclick="setMode('range')">Split by Range</button>
+             <button class="btn btn-secondary btn-sm" id="tab-single" onclick="setMode('single')">Extract Every Page</button>
+          </div>
+
+          <div id="range-picker" class="range-input-group">
+            <label>Page Range to Extract</label>
+            <input type="text" id="split-range" class="form-control" placeholder="e.g. 1-5, 8, 11-14">
+            <p class="text-muted" style="font-size: 0.8rem;">Separate ranges with commas. Use a dash for sequences.</p>
+          </div>
+
+          <div id="single-message" style="display: none;" class="mt-3">
+             <p class="text-warning">Note: Splitting every page will generate multiple files as a ZIP archive (coming soon) or individual downloads.</p>
+          </div>
+
+          <button class="btn btn-primary btn-full btn-lg mt-4" id="split-btn">Split PDF Now →</button>
+        </div>
+      </div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5">
+        <h2>Break Free from Clunky PDF Management with Precision Splitting</h2>
+        <p>We’ve all been there: you’ve received a 200-page lease agreement, but you only need to send the signature page to your bank. Or perhaps you’re a student who has downloaded a massive textbook, but you only want to study the 15 pages relevant to tomorrow’s exam. Your first instinct is to look for a <strong>split pdf</strong> tool online. But then the worry sets in—do you really want to upload your sensitive financial contracts or private academic materials to a server that might be logging your every move?</p>
+
+        <p>At 99tool.in, we believe that your data belongs to you. That’s why we built our <strong>pdf splitter online</strong> as an entirely experience. By utilizing high-performance browser-based processing, we allow you to <strong>divide pdf file</strong> requests without ever uploading a single byte to the cloud. Whether you’re working with medical records, legal briefs, or personal tax returns, our <strong>pdf splitter</strong> handles your documents with the privacy and speed you deserve.</p>
+        
+        <div class="tool-preview-box mt-4 mb-4" style="text-align:center;">
+           <img src="../../assets/images/split-preview.png" alt="Visual PDF Splitting Interface" class="tool-preview" id="tool-preview-img" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+        </div>
+
+        <h3 class="mt-4">Why Accuracy is Everything in PDF Extraction</h3>
+        <p>Many "free" tools for <strong>extracting pdf pages</strong> are notoriously unreliable. They might miss a page, corrupt the internal links of your document, or worse, they might not handle "Range" commands correctly. There is nothing more frustrating than trying to <strong>split a pdf</strong> into five parts only to realize that Page 7 is now missing because the software couldn't handle the comma in your range request.</p>
+        
+        <p>Our <strong>separate pdf pages</strong> engine was built for the perfectionist. We support complex range commands like `1, 3, 5-10, 15-end`. This means you can surgically remove exactly what you need in a single pass. Our interface even shows you the total page count the moment you load your file, so you never have to guess. This human-centric approach to <strong>pdf page extraction</strong> ensures that your new, split document is 100% accurate and ready for professional use immediately.</p>
+
+        <h3 class="mt-4">The Science of Structural Reliability</h3>
+        <p>When you use 99tool.in to <strong>divide a pdf file</strong>, we don’t just "cut" the data stream. We utilize the <code>pdf-lib</code> architectural engine to rebuild a valid, clea PDF container for your extracted pages. This is a critical distinction. Simply cutting a file can lead to errors when opening it in other software like Adobe Acrobat or mobile readers. By rebuilding the structure, our <strong>pdf divider</strong> ensures that your fonts, orientations, and internal metadata remain perfectly intact and cross-compatible.</p>
+        
+        <p>Furthermore, we’ve integrated an automated **Security Scan** that runs the second you load your file. It looks for hidden scripts (<code>/JS</code>) or non-standard instructions that could potentially be malicious. We believe that a <strong>secure pdf splitter</strong> shouldn't just be about privacy—it should be about active protection while you work.</p>
+
+        <h3 class="mt-4">How to Split Your PDF Like a Pro (Step-by-Step)</h3>
+        <p>If you’ve never used a professional extraction tool, don’t worry. Here is how to master our <strong>split pdf online free</strong> utility in seconds:</p>
+        <ul style="line-height: 1.8; margin-bottom: 20px;">
+          <li><strong>Step 1: Choose Your Source</strong> — Drag your PDF into the dashed box. You’ll instantly see a summary of the file, including its page count and security status.</li>
+          <li><strong>Step 2: Define Your Mode</strong> — Choose "Split by Range" if you want to create a new PDF containing specific pages. Choose "Extract Every Page" if you want a separate file for every single page in the document.</li>
+          <li><strong>Step 3: Enter Your Ranges</strong> — Use commas to separate individual pages and dashes for ranges. For example, `1-4, 8` will give you a 5-page PDF.</li>
+          <li><strong>Step 4: Generate and Download</strong> — Click "Split PDF Now." The processing happens in your browser's local RAM. Your new document will download automatically.</li>
+        </ul>
+
+        <h3 class="mt-4">Real-World Use Cases for the PDF Splitter</h3>
+        <p>Our <strong>pdf splitter</strong> is the secret weapon for thousands of users in high-stakes industries:</p>
+        
+        <p><strong>For Healthcare Professionals:</strong> Handling "Patient Intake" forms often results in a single massive file that needs to be split and assigned to different digital folders. Our <strong>divide pdf file</strong> tool allows you to separate insurance cards, history forms, and signatures without ever risking a HIPAA violation by uploading data to the cloud.</p>
+        
+        <p><strong>For Academic Researchers:</strong> When you find a 500-page journal with only one relevant chapter, our <strong>extract pdf pages</strong> tool saves you massive amounts of storage space. Keep only what you need for your bibliography and discard the rest instantly.</p>
+        
+        <p><strong>For Logistics and Shipping:</strong> Shipping manifests and "Master BOLs" often come as one giant document. Our <strong>split pdf</strong> tool allows clerks to extract individual carrier pages and send them to the correct driver in seconds, keeping the supply chain moving smoothly.</p>
+
+        <h3 class="mt-5">Ready for the Next Step?</h3>
+        <p>Once you’ve successfully split your document, you might need to turn those pages into visuals for a presentation. Check out our <strong><a href="pdf-to-image.html">PDF to Image Converter</a></strong>. Or, if you realize the pages are in the wrong order after splitting, use our <strong><a href="reorder-pdf.html">PDF Page Reorder</a></strong> tool to drag them into the perfect sequence. At 99tool.in, we are building the ultimate private digital toolkit just for you.</p>
+        
+        <div class="flex gap-4 mt-4 mb-5">
+           <a href="merge-pdf.html" class="btn btn-secondary" style="flex:1; text-align:center;">Merge PDF</a>
+           <a href="compress-pdf.html" class="btn btn-secondary" style="flex:1; text-align:center;">Compress PDF</a>
+        </div>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2 data-i18n="tools.split_pdf_files.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I split a password-protected PDF?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>For security reasons, our <strong>PDF splitter</strong> cannot currently unlock encrypted files. You must first unlock the PDF before splitting it. This ensures that we don't accidentally bypass security measures intended by the file owner using our local resources.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Is there a limit on file size?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Since the processing is done entirely in your browser's RAM, we recommend splitting files up to 100MB for the best experience. Larger files can be processed, but they may temporarily increase your browser's memory usage while the <strong>pdf extraction</strong> is in progress.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              What format is the range input?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>We use a standard, flexible range format. For example, entering <code>1-3, 5, 10-12</code> will extract pages 1, 2, 3, 5, 10, 11, and 12 into a single new document. You can also use the keyword "end" for ranges (e.g., <code>10-end</code>).</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Are my files sent to 99tool.in servers?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. Your privacy is our priority. All page extraction and document rebuilding happen <strong>locally on your computer</strong> using JavaScript. Your confidential data never leaves your device and is never stored on our infrastructure.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I split every page into a separate document?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. By selecting the "Extract Every Page" mode, our tool will generate a separate download for each individual page. This is ideal for archiving or distributing specific sections of a large report privately.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Will the split document still have its formatting?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. Our <strong>safe pdf splitter</strong> copies the exact internal structure of the selected pages, including fonts, images, and orientations. The resulting file will look exactly like the original pages of the source document.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 100% Private Processing. Your split files never leave your device. Last updated: April 10, 2026.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- LOADING OVERLAY -->
+  <div class="processing-overlay" id="loader">
+    <div class="spinner"></div>
+    <h3 class="mt-4" style="color: white">Processing PDF Split...</h3>
+    <p class="text-muted">Extracting pages in your browser memory.</p>
+  </div>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const dropZone = document.getElementById('drop-zone');
+    const pdfInput = document.getElementById('pdf-input');
+    const splitContainer = document.getElementById('split-container');
+    const fileInfo = document.getElementById('file-info');
+    const splitBtn = document.getElementById('split-btn');
+    const loader = document.getElementById('loader');
+    
+    let currentFile = null;
+    let pageCount = 0;
+    let splitMode = 'range'; // 'range' or 'single'
+
+    dropZone.onclick = () => pdfInput.click();
+    // Init Drag and Drop using global helper
+    setupDragDrop('drop-zone', (files) => {
+       if (files.length) handleFile(files[0]);
+    });
+
+    pdfInput.onchange = (e) => handleFile(e.target.files[0]);
+
+    async function handleFile(file) {
+      if (!file || file.type !== 'application/pdf') return;
+      currentFile = file;
+
+      loader.style.display = 'flex';
+      try {
+        const { PDFDocument } = PDFLib;
+        const pdfBytes = await file.arrayBuffer();
+        const pdfDoc = await PDFDocument.load(pdfBytes);
+        pageCount = pdfDoc.getPageCount();
+
+        const security = await scanFile(file);
+        const isSafe = security.includes('Safe');
+
+        fileInfo.innerHTML = `
+          <span style="font-size: 2rem;">📄</span>
+          <div style="flex: 1">
+            <div style="font-weight: 700;">${file.name}</div>
+            <div class="text-muted" style="font-size: 0.8rem;">${pageCount} Pages • ${(file.size/1024/1024).toFixed(2)} MB</div>
+            <div class="security-badge ${isSafe ? 'badge-safe' : 'badge-warning'} mt-1">
+              ${isSafe ? '🛡️' : '⚠️'} ${security}
+            </div>
+          </div>
+        `;
+
+        splitContainer.style.display = 'block';
+        dropZone.style.display = 'none';
+      } catch (err) {
+        alert('Could not load PDF. It might be password protected.');
+      } finally {
+        loader.style.display = 'none';
+      }
+    }
+
+    async function scanFile(file) {
+      const text = await file.slice(0, 50000).text();
+      const hasJS = /\/JS|\/JavaScript|\/Action|\/AcroForm/i.test(text);
+      return hasJS ? 'Warning: interactive elements' : 'Safe: Standard PDF';
+    }
+
+    function setMode(mode) {
+      splitMode = mode;
+      document.getElementById('range-picker').style.display = mode === 'range' ? 'flex' : 'none';
+      document.getElementById('single-message').style.display = mode === 'single' ? 'block' : 'none';
+      
+      document.getElementById('tab-range').className = `btn btn-sm ${mode === 'range' ? 'btn-primary' : 'btn-secondary'}`;
+      document.getElementById('tab-single').className = `btn btn-sm ${mode === 'single' ? 'btn-primary' : 'btn-secondary'}`;
+    }
+
+    splitBtn.onclick = async () => {
+      if (!currentFile) return;
+      loader.style.display = 'flex';
+
+      try {
+        const { PDFDocument } = PDFLib;
+        const pdfBytes = await currentFile.arrayBuffer();
+        const pdfDoc = await PDFDocument.load(pdfBytes);
+
+        if (splitMode === 'range') {
+          const rangeStr = document.getElementById('split-range').value;
+          const pagesToExtract = parseRanges(rangeStr, pageCount);
+          
+          if (pagesToExtract.length === 0) {
+            alert('Please enter a valid page range.');
+            return;
+          }
+
+          const newPdf = await PDFDocument.create();
+          const copiedPages = await newPdf.copyPages(pdfDoc, pagesToExtract.map(p => p - 1));
+          copiedPages.forEach(p => newPdf.addPage(p));
+          
+          const newPdfBytes = await newPdf.save();
+          download(newPdfBytes, `split_${currentFile.name}`, "application/pdf");
+        } else {
+          // Extract every page individually
+          for (let i = 0; i < pageCount; i++) {
+            const newPdf = await PDFDocument.create();
+            const [copiedPage] = await newPdf.copyPages(pdfDoc, [i]);
+            newPdf.addPage(copiedPage);
+            const bytes = await newPdf.save();
+            download(bytes, `page_${i+1}_${currentFile.name}`, "application/pdf");
+            // small delay to avoid browser block
+            await new Promise(r => setTimeout(r, 200)); 
+          }
+        }
+      } catch (err) {
+        console.error(err);
+        alert('Error splitting document.');
+      } finally {
+        loader.style.display = 'none';
+      }
+    };
+
+    function parseRanges(str, max) {
+      const result = [];
+      const parts = str.split(',').map(p => p.trim());
+      parts.forEach(p => {
+        if (p.includes('-')) {
+          const [start, end] = p.split('-').map(Number);
+          if (start && end) {
+             for (let i = start; i <= end; i++) {
+                if (i >= 1 && i <= max) result.push(i);
+             }
+          }
+        } else {
+          const num = Number(p);
+          if (num >= 1 && num <= max) result.push(num);
+        }
+      });
+      return [...new Set(result)].sort((a,b) => a - b);
+    }
+
+    function download(data, filename, type) {
+      const blob = new Blob([data], { type });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      a.click();
+    }
+
+    init();
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

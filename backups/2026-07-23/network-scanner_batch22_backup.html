@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Network Scanner – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/security/network-scanner.html"/>
+<meta property="og:title" content="Network Scanner – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/security/network-scanner.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Network Scanner \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/security/network-scanner.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    .network-workspace {
+      display: grid;
+      grid-template-columns: 350px 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+      height: 600px;
+    }
+    
+    .console-pane {
+      background: #000;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      color: #0f0;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      box-shadow: inset 0 0 20px rgba(0,255,0,0.1);
+    }
+    .console-pane::-webkit-scrollbar { width: 5px; }
+    .console-pane::-webkit-scrollbar-thumb { background: #333; }
+
+    .map-pane {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .node {
+        width: 60px; height: 60px; background: var(--dark); border: 2px solid var(--border); border-radius: 50%;
+        display: flex; align-items: center; justify-content: center; font-size: 1.5rem;
+        position: absolute; transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .node.active { border-color: #0f0; box-shadow: 0 0 15px rgba(0,255,0,0.3); }
+    .node.router { background: var(--primary); border-color: white; }
+
+    .control-box {
+        background: var(--dark-card); border: 1px solid var(--border); padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem;
+        display: flex; align-items: flex-end; gap: 20px;
+    }
+
+    svg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+    line { stroke: var(--border); stroke-width: 1; stroke-dasharray: 5,5; }
+    line.active { stroke: #0f0; stroke-dasharray: 0; stroke-width: 2; }
+
+    @media (max-width: 992px) {
+      .network-workspace { grid-template-columns: 1fr; height: auto; }
+      .map-pane { height: 400px; }
+      .console-pane { height: 300px; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-hero text-center">
+      <nav class="breadcrumb justify-content-center">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#security">Security</a> <span>/</span> 
+        <span>Network Scanner Simulator</span>
+      </nav>
+      <h1>Network Scanner Simulator</h1>
+      <p>Master the fundamentals of network discovery and port scanning in a safe, sandbox.</p>
+    </div>
+
+    <div class="control-box">
+        <div class="form-group flex-1">
+            <label>IP Range Simulator</label>
+            <input type="text" id="ip-range" value="192.168.1.1/24" readonly>
+        </div>
+        <button class="btn btn-primary" id="scan-btn" onclick="startSimulatedScan()">Run Simulated Scan</button>
+    </div>
+
+    <div class="network-workspace">
+      <div id="console" class="console-pane">
+        <div>[SYSTEM] Ready for network simulation...</div>
+        <div>[SYSTEM] Type: ARP-PUSH Discovery</div>
+      </div>
+      <div class="map-pane" id="map">
+          <svg id="svg-connections"></svg>
+          <div class="node router" style="top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2;">🌐</div>
+          <!-- Discovered nodes go here -->
+      </div>
+    </div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5">
+        <h2>Mapping the Invisible: The Logic of Network Discovery and Enumeration</h2>
+        <p>We’ve all been there: you’re trying to understand how your router manages a dozen different devices, or perhaps you're curious about who else is using the Wi-Fi at your local coffee shop. You know that ethical hackers use tools to "Map" a network, identifying every active IP and open port to find vulnerabilities. You want a way to visualize this "Digital Topology," so you look for a <strong>network scanner online</strong>. But then the realization hits—modern browsers are strictly sandboxed for your protection, and they cannot directly "Ping" or "Scan" your physical hardware. Do you really want to download an invasive, potentially malicious software just to learn the basics of networking?</p>
+
+        <p>At 99tool.in, we built our <strong>network scanner simulator</strong> to provide a professional educational laboratory without the security risk. By utilizing high-fidelity logic and random hardware generation, we allow you to <strong>visualize network scanning</strong> entirely within the secure sandbox of your browser. Whether you’re a student studying for your CompTIA Security+ exam, a curious user learning about local subnets, or a developer understanding port logic, our <strong>safe discovery tool</strong> ensures that you can master the concepts of enumeration without ever sending a single rogue packet across your real Wi-Fi.</p>
+        
+        <div class="tool-preview-box mt-4 mb-4" style="text-align:center;">
+           <img src="../../assets/images/markdown-preview.png" alt="Pro-Grade Network Discovery Dashboard featuring real-time IP mapping and device manufacturer visualization" class="tool-preview" id="tool-preview-img" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+        </div>
+
+        <h3 class="mt-4">The Logic of "Node Discovery"</h3>
+        <p>Infrastructure management is about "Sanitized Awareness." Most basic <strong>network tutorials</strong> use static images that don't capture the dynamic nature of discovery. Our <strong>professional scanner simulator</strong> takes a human-centric approach: we focus on **Relational Topology** and **Diagnostic Logging**.</p>
+        
+        <p>We've engineered a logic engine that replicates the real-world flow of an ARP-PUSH or ICMP Discovery scan. Our <strong>safe network validator</strong> generates random nodes, assigns them valid manufacturers (like Cisco, Apple, or Intel), and maps their relationship to the central gateway. This transparency transforms an abstract networking concept into a visual interactive map, helping you understand how "Digital Footprints" are formed before you ever touch a live terminal.</p>
+
+        <h3 class="mt-4">Why Simulation is the Ethical Professional’s Choice</h2>
+        <p>In the age of strict zero-trust networks, running an unauthorized scan on a corporate or public network can trigger security alerts or even legal consequences. Using a standard <strong>ip scanner</strong> on a network you don't own is a major ethical liability. Our 100% <strong>simulation utility</strong> removes this "Compliance Risk" entirely from your learning routine.</p>
+        
+        <p>Because the discovery logic happens in your browser's private memory and targets a "Virtual Range," no actual network data is harvested or shared. No analytics are tracked, no MAC addresses are actually sniffed, and no proprietary infrastructure is exposed to trackers. At 99tool.in, we believe that <strong>cybersecurity education</strong> should be an empowering utility, not a risk-filled exercise. With us, you have a private, professional training range that fits in your browser tab.</p>
+
+        <h3 class="mt-4">How to Map Your Virtual Network (Step-by-Step)</h3>
+        <p>Visualizing a local subnet should be a high-speed, interactive task. Here is how to use our <strong>network scanner</strong> simulator:</p>
+        <ul style="line-height: 1.8; margin-bottom: 20px;">
+          <li><strong>Step 1: Define the Range</strong> — Set your target IP range (e.g., 192.168.1.1/24). Our system immediately prepares the local simulation engine.</li>
+          <li><strong>Step 2: Trigger the Discovery</strong> — Click "Run Simulated Scan." Watch our diagnostic console as the system "probes" individual IP addresses for a response.</li>
+          <li><strong>Step 3: Analyze the Topology</strong> — Look at the visual map. New "Nodes" will appear as devices are discovered, complete with icons representing their predicted device type.</li>
+          <li><strong>Step 4: Audit the Details</strong> — Review the manufacturer data and connection lines. This help you understand the logical hierarchy between the devices and the internet gateway.</li>
+        </ul>
+
+        <h3 class="mt-4">Strategic Use Cases for Your Local Mapping Lab</h3>
+        <p>Our <strong>searchable security laboratory</strong> is the essential companion for varied professional life:</p>
+        
+        <p><strong>For Cybersecurity Students:</strong> Practicing for your first CTF? Use our <strong>network scanner</strong> to understand how discovery logs look and how to identify different hardware vendors by IP patterns.</p>
+        
+        <p><strong>For IT Teachers:</strong> Explaining subnets and gateways to a class? Use our <strong>private simulation tool</strong> to provide a visual aid that doesn't require setting up a real, vulnerable network lab.</p>
+        
+        <p><strong>For Curious Home Users:</strong> Ever wondered what "192.168.1.1" actually does? Use our <strong>safe discovery engine</strong> to learn how your gadgets communicate with your router in a private environment.</p>
+
+        <h3 class="mt-5">Explore Your Complete Security Suite</h3>
+        <p>Once you’ve mastered network mapping, you might need to secure your endpoints. Check out our <strong><a href="password-checker.html">Secure Password Auditor</a></strong>. Or, if you need to protect your private communications, use our <strong><a href="encryption-tool.html">AES Encryption Tool</a></strong>. At 99tool.in, we are building a world-class, 100% private digital toolkit to give you total control over your digital knowledge.</p>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section mt-5">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Is this scanning my actual local network?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. For your total security, this is a <strong>logical simulator</strong>. Modern browsers prevent websites from directly accessing your local network for privacy reasons. This tool helps you learn the concepts by simulating the behavior of real tools like Nmap without any risk to your actual network.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              What is an "IP Range" (e.g., /24)?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>In our <strong>network simulator</strong>, the "/24" notation refers to a "Subnet Mask." It indicates that the first 24 bits of the IP address are fixed, allowing for 256 possible host addresses (from .0 to .255). This is the most common setup for home and small business Wi-Fi networks.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Which devices is it showing on the map?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>The map generates a <strong>high-fidelity simulation</strong> of common devices you would find on a real network, such as laptops (Apple/Dell), smartphones (Samsung/iPhone), and networking gear (Cisco/TP-Link). This helps you learn to identify "OUI" (Organizationally Unique Identifiers) used in real security audits.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Are my results shared with 99tool.in?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Absolutely not. Your privacy is part of our core logic. All node generation and console logging happen within your <strong>browser session's local memory</strong>. No data is ever uploaded to a server, ensuring your "Discovery Lab" remains 100% private.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I use this to find my lost phone?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. This is a <strong>conceptual training tool</strong>. To find a real device on your real network, you would need to use your router's administration panel or a native application installed on your device that has permission to access your local hardware.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Does this tool use actual Nmap?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. Nmap is a powerful, low-level binary tool that runs in a terminal. Our <strong>safe network utility</strong> provides a visual, browser-friendly way to understand the *logic* behind what Nmap does, making it an ideal first step for cybersecurity beginners.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 100% Private Simulator. Educational Sandbox. No Network Access Required. Updated: April 11, 2026.</p>
+      </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const consoleEl = document.getElementById('console');
+    const map = document.getElementById('map');
+    const svg = document.getElementById('svg-connections');
+    
+    const manufacturers = ["Apple Inc.", "Intel Corp.", "TP-Link", "Xiaomi", "Samsung", "Cisco", "Dell"];
+    let nodes = [];
+
+    function log(msg, type = "info") {
+        const div = document.createElement('div');
+        div.innerText = `[${new Date().toLocaleTimeString()}] ${msg}`;
+        if (type === "success") div.style.color = "#0f0";
+        if (type === "warn") div.style.color = "#ff0";
+        consoleEl.appendChild(div);
+        consoleEl.scrollTop = consoleEl.scrollHeight;
+    }
+
+    async function startSimulatedScan() {
+        const btn = document.getElementById('scan-btn');
+        btn.disabled = true;
+        
+        // Clear previous
+        document.querySelectorAll('.node:not(.router)').forEach(n => n.remove());
+        svg.innerHTML = "";
+        nodes = [];
+
+        log("Initializing scan on 192.168.1.0/24...", "info");
+        await sleep(800);
+        log("Gateway detected at 192.168.1.1 (Cisco Router)", "warn");
+
+        for (let i = 0; i < 6; i++) {
+            const lastOctet = Math.floor(Math.random() * 254) + 2;
+            const ip = `192.168.1.${lastOctet}`;
+            const vendor = manufacturers[Math.floor(Math.random() * manufacturers.length)];
+            
+            log(`Probing ${ip}...`, "info");
+            await sleep(500 + Math.random() * 1000);
+            
+            if (Math.random() > 0.2) {
+                log(`Device found: ${ip} [${vendor}]`, "success");
+                createNode(ip, vendor);
+            } else {
+                log(`No response from ${ip}`, "info");
+            }
+        }
+
+        log("Scan complete. 7 total hosts active.", "warn");
+        btn.disabled = false;
+    }
+
+    function createNode(ip, vendor) {
+        const node = document.createElement('div');
+        node.className = 'node active';
+        const icon = vendor.includes("Apple") ? "💻" : vendor.includes("Samsung") ? "📱" : "🖥️";
+        node.innerHTML = `<span>${icon}</span>`;
+        
+        // Random position on map
+        const radius = 120 + Math.random() * 60;
+        const angle = Math.random() * Math.PI * 2;
+        const centerX = map.offsetWidth / 2;
+        const centerY = map.offsetHeight / 2;
+        
+        const x = centerX + radius * Math.cos(angle) - 30;
+        const y = centerY + radius * Math.sin(angle) - 30;
+        
+        node.style.left = x + 'px';
+        node.style.top = y + 'px';
+        node.title = `${ip} (${vendor})`;
+        
+        map.appendChild(node);
+        
+        // Draw line to router
+        const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+        line.setAttribute("x1", centerX);
+        line.setAttribute("y1", centerY);
+        line.setAttribute("x2", x + 30);
+        line.setAttribute("y2", y + 30);
+        line.setAttribute("class", "active");
+        svg.appendChild(line);
+    }
+
+    function sleep(ms) { return new Promise(resolve => setTimeout(resolve, ms)); }
+  </script>
+</body>
+</html>
+

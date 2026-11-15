@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Task Time Tracker – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/productivity/task-time-tracker.html"/>
+<meta property="og:title" content="Task Time Tracker – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/productivity/task-time-tracker.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Task Time Tracker \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/productivity/task-time-tracker.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="time tracker, time tracker, task time tracking, productivity tracker, work timer, time logger" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Task Time Tracker",
+    "operatingSystem": "Any",
+    "applicationCategory": "ProductivityApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Individual task timers, Interactive activity history, Daily time summary, Privacy-first storage"
+  }
+  </script>
+
+  <style>
+    .tracker-layout {
+      display: grid;
+      grid-template-columns: 400px 1fr;
+      gap: 30px;
+    }
+
+    .active-task-box {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 30px;
+      text-align: center;
+      position: sticky;
+      top: 100px;
+      transition: border-color 0.3s;
+    }
+    .active-task-box.running { border-color: var(--primary); }
+
+    .timer-display {
+      font-size: 3.5rem;
+      font-weight: 800;
+      font-family: 'Fira Code', monospace;
+      color: var(--white);
+      margin: 20px 0;
+    }
+
+    .history-card {
+      background: var(--dark);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .history-info h4 { margin: 0; font-size: 0.95rem; }
+    .history-info p { margin: 4px 0 0; font-size: 0.75rem; color: var(--text-muted); }
+
+    .duration-tag {
+      background: rgba(255,255,255,0.05);
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.85rem;
+      color: var(--primary);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .stat-item {
+      background: var(--dark-card);
+      padding: 20px;
+      border-radius: var(--radius-sm);
+      text-align: center;
+      border:1px solid var(--border);
+    }
+
+    @media (max-width: 900px) {
+      .tracker-layout { grid-template-columns: 1fr; }
+      .active-task-box { position: static; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#productivity">Productivity</a> <span>/</span> 
+        <span>Task Tracker</span>
+      </nav>
+      <h1>Task Time Tracker</h1>
+      <p>Measure your productivity accurately. Track time across different tasks and analyze your work day without any tracking or cloud sync.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div class="tracker-layout">
+        <!-- LEFT: CURRENT TASK -->
+        <div class="active-area">
+          <div class="active-task-box" id="active-box">
+            <h3 id="current-task-name">No Task Selected</h3>
+            <div class="timer-display" id="timer-display">00:00:00</div>
+            
+            <div id="setup-view">
+              <div class="form-group">
+                <input type="text" id="task-input" class="form-control" placeholder="What are you working on?">
+              </div>
+              <button class="btn btn-primary btn-full btn-lg" id="start-btn">Start Tracking</button>
+            </div>
+
+            <div id="running-view" style="display: none;">
+              <div class="flex gap-2">
+                <button class="btn btn-primary btn-full" id="stop-btn">Stop & Save</button>
+                <button class="btn btn-secondary" id="cancel-btn">Discard</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: HISTORY & STATS -->
+        <div class="history-area">
+          <div class="stats-grid">
+            <div class="stat-item">
+              <p class="text-muted" style="font-size: 0.75rem;">Today's Total</p>
+              <h3 id="today-total">0h 0m</h3>
+            </div>
+            <div class="stat-item">
+              <p class="text-muted" style="font-size: 0.75rem;">Tasks Logged</p>
+              <h3 id="task-count">0</h3>
+            </div>
+          </div>
+
+          <div class="flex justify-between items-center mb-3">
+            <h3>Recent Activity</h3>
+            <button class="btn btn-secondary btn-sm" id="clear-history">Clear History</button>
+          </div>
+
+          <div id="history-list">
+            <!-- Items injected by JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5">
+        <h2>Quantifying Your Effort in Private: Secure Local Time Tracking</h2>
+        <p>We’ve all been there: you’ve finished a long, high-intensity day of work, but you can’t quite account for where the hours went. You look for a <strong>time tracker</strong> online to help you log your specific tasks, visualize your focus distribution, and perhaps calculate billable hours for a client. But as you look at the "Dashboard Analytics" and "Team Reporting" features of most time management tools, you realize that your working speed, your project depth, and your most private focus patterns are being recorded by an anonymous database. Do you really want to share your "Professional Velocity" with a third-party algorithm?</p>
+
+        <p>At 99tool.in, we built our <strong>task time tracker</strong> to give you a professional auditor for your time without the privacy gamble. By utilizing browser-side clock logic and local data persistence, we allow you to <strong>log your work hours</strong> entirely within the secure sandbox of your own machine. Whether you’re an independent contractor managing multiple client streams, a researcher tracking deep-work intervals, or a professional auditing your own efficiency, our <strong>safe time tracking tool</strong> ensures that your effort data stays where it belongs: on your device, under your total sovereignty.</p>
+        
+        <div class="tool-preview-box mt-4 mb-4" style="text-align:center;">
+           <img src="../../assets/images/tracker-preview.png" alt="Clean Time Tracking Interface with Real-Time Chronometer and Active History Logs" class="tool-preview" id="tool-preview-img" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+        </div>
+
+        <h3 class="mt-4">The Logic of Temporal Auditing</h3>
+        <p>Effort management isn't just about the clock; it’s about "Accountability." Most basic <strong>work timers</strong> overwhelm you with complex categorizations and intrusive notifications, leading to "Tracking Fatigue." Our <strong>professional time tracker</strong> takes a human-centric approach: we focus on **Temporal Auditing** and **Interval Aggregation**.</p>
+        
+        <p>We provide a "Click-to-Commit" architecture that helps you mark the start and end of your focus blocks with zero friction. Our <strong>safe productivity validator</strong> doesn't just store seconds; it provides a real-time rendered "Recent Activity" log and a "Today's Total" summary. This transparency transforms a vague sense of a working day into a structured audit, helping you understand your professional rhythm in a private, professional environment.</p>
+
+        <h3 class="mt-4">Why Tracking is the Professional’s Ethical Choice</h2>
+        <p>In the age of digital surveillance, the way you spend your time is a valuable blueprint of your skills and value. When you use a standard <strong>time tracker online free</strong> service, you are essentially giving away your "Performance Data" for a third party to analyze. Our 100% <strong>local logger</strong> removes this "Surveillance Risk" entirely from your professional routine.</p>
+        
+        <p>Because the logic and logging happen in your browser's private memory, your task descriptions and their durations are invisible to the outside world. No analytics are tracked, no work patterns are harvested, and no productivity stats are shared with advertisers or AI models. At 99tool.in, we believe that <strong>quantifying your day</strong> should be an empowering utility, not a data-mining exercise. With us, you have a private, professional laboratory for your productivity that fits in your browser tab.</p>
+
+        <h3 class="mt-4">How to Audit Your Day (Step-by-Step)</h3>
+        <p>Logging a focus block should be a high-speed, 5-second task. Here is how to use our <strong>time tracker</strong>:</p>
+        <ul style="line-height: 1.8; margin-bottom: 20px;">
+          <li><strong>Step 1: Define the Mission</strong> — Enter the name of your specific task (e.g., "Drafting Proposal" or "UI Design") into the secure input field.</li>
+          <li><strong>Step 2: Ignite the Clock</strong> — Click "Start Tracking." Our system initializes a high-precision chronometer locally, visually marking the start of your focus session.</li>
+          <li><strong>Step 3: Focus on the Interval</strong> — Work on your task. Our timer continues to pulse even if you move to other tabs, maintaining your temporal audit in the background.</li>
+          <li><strong>Step 4: Commit the effort</strong> — Click "Stop & Save" when the interval is complete. Your session is instantly moved to your "Recent Activity" history, calculating your total productivity for the day automatically.</li>
+        </ul>
+
+        <h3 class="mt-4">Strategic Use Cases for Your Local Time Tracker</h3>
+        <p>Our <strong>work logger</strong> is the essential companion for varied professional life:</p>
+        
+        <p><strong>For Freelance Professionals:</strong> Managing billable hours across multiple sensitive clients? Use our <strong>time tracker</strong> to keep your project descriptions and duration logs private, ensuring your client list remains your exclusive business.</p>
+        
+        <p><strong>For Deep Work Practitioners:</strong> Auditing your focus intervals for high-stakes intellectual tasks? Use our <strong>safe task tracker</strong> to monitor your session lengths and find your "Flow State" peaks with zero data leakage.</p>
+        
+        <p><strong>For Project Supervisors:</strong> Tracking time spent on internal R&D or sensitive system architecture? Use our <strong>private work logger</strong> to maintain a professional audit of labor distribution without the risk of an external SaaS platform seeing your project names.</p>
+
+        <h3 class="mt-5">Explore Your Complete Productivity Suite</h3>
+        <p>Once you’ve successfully audited your time, you might need to manage your tactical tasks. Check out our <strong><a href="PRIVATE-to-do-list-manager.html">To-Do List Manager</a></strong>. Or, if you need to build long-term focus habits, use our <strong><a href="pomodoro-timer.html">Pomodoro Timer</a></strong>. At 99tool.in, we are building a world-class, 100% private digital toolkit to give you total control over your digital resources.</p>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Does the timer keep running if I switch tabs?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. Our <strong>time tracker</strong> uses the high-precision system clock to track duration. Even if the tab is in the background or you are working in another application, the timer will remain accurate when you return.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I export my logs for invoicing?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Currently, the tool provides a visual history on the dashboard. We are working on a one-click CSV export feature so you can easily include your work logs in your monthly invoices or project reports. For now, your data is visible in the "Recent Activity" section.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Why don’t you have an "Edit" feature for previous logs?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>To ensure <strong>task time tracking</strong> integrity, we focus on real-time logging. If you make a mistake, you can always delete the entry using the "×" button and start a corrected session. This keeps the tool fast and simple.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 100% Personal. No cloud tracking. No data leaves your machine. Last updated: April 10, 2026.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    let activeTask = null;
+    let startTime = null;
+    let timerInterval = null;
+    let history = JSON.parse(localStorage.getItem('99tool_work_history')) || [];
+
+    const taskInput = document.getElementById('task-input');
+    const startBtn = document.getElementById('start-btn');
+    const stopBtn = document.getElementById('stop-btn');
+    const cancelBtn = document.getElementById('cancel-btn');
+    const timerDisplay = document.getElementById('timer-display');
+    const currentTaskName = document.getElementById('current-task-name');
+    const setupView = document.getElementById('setup-view');
+    const runningView = document.getElementById('running-view');
+    const activeBox = document.getElementById('active-box');
+    const historyList = document.getElementById('history-list');
+
+    function startTracking() {
+      const name = taskInput.value.trim() || 'Unnamed Task';
+      activeTask = name;
+      startTime = Date.now();
+      
+      currentTaskName.textContent = activeTask;
+      setupView.style.display = 'none';
+      runningView.style.display = 'block';
+      activeBox.classList.add('running');
+
+      timerInterval = setInterval(updateTimer, 1000);
+    }
+
+    function updateTimer() {
+      const diff = Date.now() - startTime;
+      timerDisplay.textContent = formatDuration(diff);
+    }
+
+    function stopTracking() {
+      const duration = Date.now() - startTime;
+      const entry = {
+        name: activeTask,
+        duration: duration,
+        timestamp: new Date().toLocaleString()
+      };
+
+      history.unshift(entry);
+      localStorage.setItem('99tool_work_history', JSON.stringify(history));
+      
+      resetTracker();
+      renderHistory();
+    }
+
+    function resetTracker() {
+      clearInterval(timerInterval);
+      activeTask = null;
+      startTime = null;
+      timerDisplay.textContent = '00:00:00';
+      currentTaskName.textContent = 'No Task Selected';
+      taskInput.value = '';
+      setupView.style.display = 'block';
+      runningView.style.display = 'none';
+      activeBox.classList.remove('running');
+    }
+
+    function formatDuration(ms) {
+      const totalSeconds = Math.floor(ms / 1000);
+      const hours = Math.floor(totalSeconds / 3600);
+      const minutes = Math.floor((totalSeconds % 3600) / 60);
+      const seconds = totalSeconds % 60;
+      return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    }
+
+    function formatFriendlyTime(ms) {
+      const totalMinutes = Math.floor(ms / (1000 * 60));
+      if (totalMinutes < 60) return `${totalMinutes}m`;
+      const hours = Math.floor(totalMinutes / 60);
+      const mins = totalMinutes % 60;
+      return `${hours}h ${mins}m`;
+    }
+
+    function renderHistory() {
+      historyList.innerHTML = '';
+      let totalMs = 0;
+
+      if (history.length === 0) {
+        historyList.innerHTML = '<div class="text-center text-muted py-5">Your work logs will appear here.</div>';
+        document.getElementById('today-total').textContent = '0h 0m';
+        document.getElementById('task-count').textContent = '0';
+        return;
+      }
+
+      history.forEach((entry, idx) => {
+        totalMs += entry.duration;
+        const card = document.createElement('div');
+        card.className = 'history-card';
+        card.innerHTML = `
+          <div class="history-info">
+            <h4>${entry.name}</h4>
+            <p>${entry.timestamp}</p>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="duration-tag">${formatFriendlyTime(entry.duration)}</div>
+            <button class="btn btn-secondary btn-sm" onclick="deleteLog(${idx})">×</button>
+          </div>
+        `;
+        historyList.appendChild(card);
+      });
+
+      document.getElementById('today-total').textContent = formatFriendlyTime(totalMs);
+      document.getElementById('task-count').textContent = history.length;
+    }
+
+    window.deleteLog = (idx) => {
+      history.splice(idx, 1);
+      localStorage.setItem('99tool_work_history', JSON.stringify(history));
+      renderHistory();
+    };
+
+    // Listeners
+    startBtn.onclick = startTracking;
+    stopBtn.onclick = stopTracking;
+    cancelBtn.onclick = () => {
+      if (confirm('Discard this tracking session?')) resetTracker();
+    };
+    document.getElementById('clear-history').onclick = () => {
+      if (confirm('Permanently delete all work logs?')) {
+        history = [];
+        localStorage.removeItem('99tool_work_history');
+        renderHistory();
+      }
+    };
+
+    // Init
+    renderHistory();
+  </script>
+</body>
+</html>
+

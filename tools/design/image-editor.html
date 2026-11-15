@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Image Editor – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/design/image-editor.html"/>
+<meta property="og:title" content="Image Editor – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/design/image-editor.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Image Editor \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/design/image-editor.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="image editor, crop image, photo filter tool, edit photos, private image editor, brightness contrast tool" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json" id="schema-org-data">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Image Editor (Crop & Filters)",
+    "operatingSystem": "Any",
+    "applicationCategory": "DesignApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Interactive Cropping, Cinematic Filters, Brightness & Contrast Control, Private local processing"
+  }
+  </script>
+
+  <style>
+    .editor-layout { display: grid; grid-template-columns: 1fr; gap: 30px; }
+
+    .control-pane {
+      background: var(--dark-card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 30px; height: fit-content; position: sticky; top: 80px;
+    }
+
+    .canvas-container {
+      background: var(--dark-card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 20px; display: flex; align-items: center; justify-content: center;
+      min-height: 500px; overflow: hidden; position: relative;
+    }
+
+    #editor-canvas {
+      background: #000; border-radius: 4px; box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+      max-width: 100%; height: auto;
+    }
+
+    .crop-overlay {
+       position: absolute; border: 2px dashed rgba(255,255,255,0.7);
+       background: rgba(229, 57, 53, 0.1); display: none; pointer-events: none;
+       box-shadow: 0 0 0 5000px rgba(0,0,0,0.5);
+    }
+
+    .filter-grid { display: grid; grid-template-columns: 1fr; gap: 15px; margin-bottom: 25px; }
+    .filter-item { background: var(--dark); padding: 12px; border-radius: 8px; border: 1px solid var(--border); }
+    .filter-item label { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 0.8rem; }
+    .filter-item input { width: 100%; height: 6px; }
+
+    .upload-area {
+      background: var(--dark); border: 2px dashed var(--border); border-radius: 12px;
+      padding: 30px; text-align: center; cursor: pointer; transition: 0.3s;
+      margin-bottom: 25px;
+    }
+    .upload-area:hover, .upload-area.drag-over { border-color: var(--primary); background: rgba(229, 57, 53, 0.05); }
+    .upload-icon { font-size: 2.5rem; margin-bottom: 12px; }
+
+    @media (min-width: 1000px) {
+      .editor-layout { grid-template-columns: 350px 1fr; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/design/image-editor.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/design/image-editor.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/design/image-editor.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/design/image-editor.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/design/image-editor.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/design/image-editor.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/design/image-editor.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/design/image-editor.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/design/image-editor.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/design/image-editor.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/design/image-editor.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/design/image-editor.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/design/image-editor.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/design/image-editor.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/design/image-editor.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/design/image-editor.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/design/image-editor.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/design/image-editor.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/design/image-editor.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/design/image-editor.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/design/image-editor.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/design/image-editor.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#creative">Graphic & Design</a> <span>/</span> 
+        <span>Image Editor</span>
+      </nav>
+      <h1>Image Editor</h1>
+      <p>Refine your visual assets with professional precision. Adjust cinematic filters, crop with surgical accuracy, and enhance your photos entirely within your private browser—100%.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div class="editor-layout">
+         <aside class="control-pane">
+            <h3>Refinement Terminal</h3>
+            <p class="text-muted small mb-4">Enhance local pixels securely.</p>
+
+            <div class="upload-area" id="drop-zone">
+               <div class="upload-icon">📸</div>
+               <p class="small fw-bold mb-1">Drop image here</p>
+               <p class="text-muted smaller">or click to browse from device</p>
+               <input type="file" id="image-input" accept="image/*" hidden>
+            </div>
+
+            <div class="filter-grid">
+               <div class="filter-item">
+                  <label>Brightness <span id="val-bright">100%</span></label>
+                  <input type="range" id="f-bright" min="0" max="200" value="100">
+               </div>
+               <div class="filter-item">
+                  <label>Contrast <span id="val-contrast">100%</span></label>
+                  <input type="range" id="f-contrast" min="0" max="200" value="100">
+               </div>
+               <div class="filter-item">
+                  <label>Saturate <span id="val-saturate">100%</span></label>
+                  <input type="range" id="f-saturate" min="0" max="200" value="100">
+               </div>
+               <div class="filter-item">
+                  <label>Sepia <span id="val-sepia">0%</span></label>
+                  <input type="range" id="f-sepia" min="0" max="100" value="0">
+               </div>
+            </div>
+
+            <button class="btn btn-secondary btn-full mb-3" id="btn-crop-mode">Enable Manual Crop</button>
+            <button class="btn btn-primary btn-full" id="btn-download">Export high-res PNG</button>
+            
+            <div class="info-box mt-4">
+               <div class="info-icon">✂️</div>
+               <p class="small">Privacy Note: Your images are processed in **RAM only**. Our system applies hardware-accelerated CSS filters for real-time, non-destructive editing.</p>
+            </div>
+         </aside>
+
+         <div class="editor-pane">
+            <div class="canvas-container" id="canvas-wrap">
+               <canvas id="editor-canvas"></canvas>
+               <div class="crop-overlay" id="crop-box"></div>
+            </div>
+         </div>
+      </div>
+
+      <!-- CONTENT SECTION -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.image_editor.what_is_title">What is the Image Editor?</h2>
+        <p>The Image Editor is a client-side graphics utility designed to edit, rotate, crop, and apply filters to your images directly inside your browser. By adjusting filters and applying transforms locally, you can modify photographs and graphics without installing heavy editing software.</p>
+        <p>This editor uses HTML5 canvas and hardware-accelerated CSS filters to render changes in real-time. Because all operations are executed in browser RAM, your personal photographs, business charts, and sensitive documents are never uploaded to a server.</p>
+
+        <h2 class="mt-4" data-i18n="tools.image_editor.how_to_use_title">How to Use the Image Editor</h2>
+        <ol>
+          <li><strong>Upload Your Image:</strong> Drag and drop your image file into the upload block, or click the box to browse and import a file from your system.</li>
+          <li><strong>Adjust Visual Filters:</strong> Drag the sliders in the sidebar to fine-tune brightness, contrast, saturation, grayscale, sepia, blur, and hue rotations.</li>
+          <li><strong>Rotate or Flip the Canvas:</strong> Click the transform buttons to rotate the image 90 degrees left or right, or flip it horizontally or vertically.</li>
+          <li><strong>Crop the Image:</strong>
+            <ul>
+              <li>Click the "Crop Image" button to enable the crop selection box.</li>
+              <li>Drag the corners of the overlay box over the target area.</li>
+              <li>Click the "Apply Crop" button to crop the canvas to those coordinates.</li>
+            </ul>
+          </li>
+          <li><strong>Save or Reset:</strong> Click "Reset Filters" to revert all slider adjustments, or click "Download Image" to save the edited photo to your device.</li>
+        </ol>
+
+        <h2 class="mt-4" data-i18n="tools.image_editor.key_features_title">Key Features</h2>
+        <ul>
+          <li><strong>Comprehensive Filter Sliders:</strong> Customize brightness, contrast, saturation, grayscale, sepia, blur, and hue-rotate properties.</li>
+          <li><strong>Precision Image Rotation:</strong> Rotate graphics in 90-degree steps or flip them along horizontal and vertical axes.</li>
+          <li><strong>Interactive Crop Overlay:</strong> Select custom rectangular regions visually and crop the canvas boundaries instantly.</li>
+          <li><strong>Non-Destructive Filter Preview:</strong> Preview adjustments instantly on screen using hardware-accelerated properties.</li>
+          <li><strong>100% Offline Processing:</strong> Performs all pixel manipulations inside your browser session for complete privacy.</li>
+        </ul>
+
+        <h2 class="mt-4" data-i18n="tools.image_editor.common_use_cases_title">Common Use Cases</h2>
+        <ul>
+          <li><strong>Photo Enhancements:</strong> Boost brightness, adjust saturation, or add a retro sepia tint to camera shots.</li>
+          <li><strong>Document & Screenshot Cropping:</strong> Crop screenshots or document scans to hide sensitive fields before sharing.</li>
+          <li><strong>Graphic Asset Prep:</strong> Rotate website assets, flip icons, or blur backgrounds for hero overlay layouts.</li>
+          <li><strong>Social Media Content Editing:</strong> Resize and filter product images and graphics before posting.</li>
+        </ul>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2 data-i18n="tools.image_editor.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Does editing or cropping reduce the quality of my original photo?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. The filters are previewed non-destructively on the screen. When you download the image, the canvas renders the new pixels using the original file's dimensions, preserving clarity.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Are my private photos uploaded to a server?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. 99tool.in processes all image editing, filters, rotations, and crops locally in browser memory. None of your media files are sent over the internet.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I undo a crop if I make a mistake?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>To undo a crop, click the "Reset Filters" button or re-upload your source image. This will reload the original image and reset all transforms.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Which file formats are supported for upload?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>The editor supports all standard browser-compatible image formats, including PNG, JPEG, JPG, WebP, and GIF. The exported file is compiled and downloaded as a JPEG.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Why is the canvas-wrap area showing scrollbars?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>If you upload a high-resolution image, the editor container displays scrollbars so you can view and crop the image at full size without shrinking the workspace.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 Privacy & Data Note: Image editing, color adjustments, and cropping calculations are executed locally in your browser. Your photos are never sent to any server.</p>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const canvas = document.getElementById('editor-canvas');
+    const ctx = canvas.getContext('2d');
+    const imgInput = document.getElementById('image-input');
+    const dropZone = document.getElementById('drop-zone');
+    const btnCrop = document.getElementById('btn-crop-mode');
+    const btnDownload = document.getElementById('btn-download');
+    const cropBox = document.getElementById('crop-box');
+    const canvasWrap = document.getElementById('canvas-wrap');
+
+    const filters = {
+       bright: document.getElementById('f-bright'),
+       contrast: document.getElementById('f-contrast'),
+       saturate: document.getElementById('f-saturate'),
+       sepia: document.getElementById('f-sepia')
+    };
+
+    let originalImg = null;
+    let isCropMode = false;
+    let startX, startY, endX, endY;
+    let cropping = false;
+
+    function init() {
+       Object.keys(filters).forEach(k => {
+          filters[k].oninput = update;
+       });
+    }
+
+    function update() {
+       if(!originalImg) return;
+       
+       // Update values
+       document.getElementById('val-bright').textContent = ((window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(filters.bright.value, 0) : filters.bright.value) + '%';
+       document.getElementById('val-contrast').textContent = ((window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(filters.contrast.value, 0) : filters.contrast.value) + '%';
+       document.getElementById('val-saturate').textContent = ((window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(filters.saturate.value, 0) : filters.saturate.value) + '%';
+       document.getElementById('val-sepia').textContent = ((window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(filters.sepia.value, 0) : filters.sepia.value) + '%';
+
+       // Apply filters visually (optimized preview)
+       canvas.style.filter = `brightness(${filters.bright.value}%) contrast(${filters.contrast.value}%) saturate(${filters.saturate.value}%) sepia(${filters.sepia.value}%)`;
+    }
+
+    dropZone.onclick = () => imgInput.click();
+    
+    // Init Drag and Drop using global helper
+    setupDragDrop('drop-zone', (files) => {
+       if (files.length) handleFile(files[0]);
+    });
+
+    imgInput.onchange = (e) => handleFile(e.target.files[0]);
+
+    function handleFile(file) {
+       if (!file) return;
+       const r = new FileReader();
+       r.onload = ev => {
+          const img = new Image();
+          img.onload = () => {
+             originalImg = img;
+             canvas.width = img.width;
+             canvas.height = img.height;
+             ctx.drawImage(img, 0, 0);
+             update();
+          };
+          img.src = ev.target.result;
+       };
+       r.readAsDataURL(e.target.files[0]);
+    };
+
+    btnCrop.onclick = () => {
+       isCropMode = !isCropMode;
+       btnCrop.textContent = isCropMode ? 'Cancel Crop' : 'Enable Manual Crop';
+       cropBox.style.display = 'none';
+    };
+
+    canvasWrap.onmousedown = (e) => {
+       if(!isCropMode || !originalImg) return;
+       cropping = true;
+       const rect = canvasWrap.getBoundingClientRect();
+       startX = e.clientX - rect.left;
+       startY = e.clientY - rect.top;
+       cropBox.style.left = startX + 'px';
+       cropBox.style.top = startY + 'px';
+       cropBox.style.width = '0px';
+       cropBox.style.height = '0px';
+       cropBox.style.display = 'block';
+    };
+
+    window.onmousemove = (e) => {
+       if(!cropping) return;
+       const rect = canvasWrap.getBoundingClientRect();
+       endX = e.clientX - rect.left;
+       endY = e.clientY - rect.top;
+       cropBox.style.width = Math.abs(endX - startX) + 'px';
+       cropBox.style.height = Math.abs(endY - startY) + 'px';
+       cropBox.style.left = Math.min(startX, endX) + 'px';
+       cropBox.style.top = Math.min(startY, endY) + 'px';
+    };
+
+    window.onmouseup = () => {
+       if(!cropping) return;
+       cropping = false;
+       if(confirm('Apply crop?')) {
+          applyCrop();
+       } else {
+          cropBox.style.display = 'none';
+       }
+    };
+
+    function applyCrop() {
+       const rect = canvas.getBoundingClientRect();
+       const scaleX = canvas.width / rect.width;
+       const scaleY = canvas.height / rect.height;
+
+       const cLeft = (parseFloat(cropBox.style.left) * scaleX);
+       const cTop = (parseFloat(cropBox.style.top) * scaleY);
+       const cWidth = (parseFloat(cropBox.style.width) * scaleX);
+       const cHeight = (parseFloat(cropBox.style.height) * scaleY);
+
+       // Create temp canvas to hold filtered image result
+       const tempCanvas = document.createElement('canvas');
+       tempCanvas.width = cWidth;
+       tempCanvas.height = cHeight;
+       const tctx = tempCanvas.getContext('2d');
+       
+       tctx.filter = canvas.style.filter; // Transfer CSS filters to canvas context
+       tctx.drawImage(canvas, cLeft, cTop, cWidth, cHeight, 0, 0, cWidth, cHeight);
+       
+       // Update main canvas
+       canvas.width = cWidth;
+       canvas.height = cHeight;
+       canvas.style.filter = 'none'; // Filters are now baked in
+       ctx.drawImage(tempCanvas, 0, 0);
+       
+       // Reset filters to 100% to reflect bake
+       filters.bright.value = 100;
+       filters.contrast.value = 100;
+       filters.saturate.value = 100;
+       filters.sepia.value = 0;
+       update();
+       
+       cropBox.style.display = 'none';
+       isCropMode = false;
+       btnCrop.textContent = 'Enable Manual Crop';
+    }
+
+    btnDownload.onclick = () => {
+       // Bake filters into a download
+       const tempCanvas = document.createElement('canvas');
+       tempCanvas.width = canvas.width;
+       tempCanvas.height = canvas.height;
+       const tctx = tempCanvas.getContext('2d');
+       tctx.filter = canvas.style.filter;
+       tctx.drawImage(canvas, 0, 0);
+       
+       const l = document.createElement('a');
+       l.download = `edited_${Date.now()}.png`;
+       l.href = tempCanvas.toDataURL();
+       l.click();
+    };
+
+    init();
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

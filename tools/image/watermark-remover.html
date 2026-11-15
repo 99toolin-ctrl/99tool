@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Watermark Remover – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/image/watermark-remover.html"/>
+<meta property="og:title" content="Watermark Remover – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/image/watermark-remover.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Watermark Remover \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/image/watermark-remover.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .editor-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    @media (max-width: 992px) {
+      .editor-layout { grid-template-columns: 1fr; }
+    }
+    .canvas-container {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      min-height: 500px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    #main-canvas {
+      max-width: 100%;
+      height: auto;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      border-radius: 4px;
+      cursor: crosshair;
+    }
+
+    .tool-panel {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      height: fit-content;
+      position: sticky;
+      top: 80px;
+    }
+    .tool-section { margin-bottom: 2rem; }
+    .tool-section h4 { font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem; letter-spacing: 1px; }
+
+    .btn-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 1.5rem;
+    }
+    .btn-tool {
+       background: var(--dark);
+       border: 1px solid var(--border);
+       padding: 12px;
+       border-radius: 8px;
+       text-align: center;
+       cursor: pointer;
+       font-size: 0.8rem;
+       font-weight: 600;
+       transition: all 0.2s ease;
+    }
+    .btn-tool.active { border-color: var(--primary); color: var(--primary); background: rgba(229,57,53,0.1); }
+
+    .range-wrap { margin-bottom: 1.5rem; }
+    .range-wrap label { display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-muted); margin-bottom: 4px; }
+
+    .guide-box {
+       padding: 12px;
+       background: rgba(255,255,255,0.05);
+       border-radius: 8px;
+       font-size: 0.75rem;
+       color: var(--text-muted);
+       line-height: 1.5;
+    }
+    .guide-box b { color: var(--primary); }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/image/watermark-remover.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/image/watermark-remover.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/image/watermark-remover.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/image/watermark-remover.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/image/watermark-remover.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/image/watermark-remover.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/image/watermark-remover.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/image/watermark-remover.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/image/watermark-remover.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/image/watermark-remover.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/image/watermark-remover.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/image/watermark-remover.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/image/watermark-remover.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/image/watermark-remover.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/image/watermark-remover.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/image/watermark-remover.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/image/watermark-remover.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/image/watermark-remover.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/image/watermark-remover.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/image/watermark-remover.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/image/watermark-remover.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/image/watermark-remover.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Manual Watermark Remover</h1>
+      <p>Clean up unwanted logos or stamps with professional-grade clone tools. Securely. Privately.</p>
+    </div>
+
+    <div class="tool-container">
+      <div class="upload-area" id="drop-zone">
+        <div class="upload-icon">🧼</div>
+        <p>Drop image with Watermark or <span class="text-primary">browse files</span></p>
+        <p class="text-muted small">JPG, PNG, WEBP (No cloud involved)</p>
+        <input type="file" id="image-input" accept="image/*" hidden>
+      </div>
+
+      <div id="tool-workspace" class="hidden">
+        <div class="editor-layout">
+          <div class="canvas-container" id="canvas-container">
+             <canvas id="main-canvas"></canvas>
+          </div>
+
+          <div class="tool-panel">
+            <div class="tool-section">
+               <h4>Tool Mode</h4>
+               <div class="btn-group">
+                  <div class="btn-tool active" id="mode-source">Set Source</div>
+                  <div class="btn-tool" id="mode-paint">Paint Clone</div>
+               </div>
+               <div class="guide-box">
+                  <p id="guide-text">1. Select <b>Set Source</b>.<br>2. Click an area with textures you want to copy.<br>3. Switch to <b>Paint Clone</b> to remove the watermark.</p>
+               </div>
+            </div>
+
+            <div class="tool-section">
+               <h4>Brush Settings</h4>
+               <div class="range-wrap">
+                  <label>Brush Size: <span id="brush-size-val">30</span></label>
+                  <input type="range" id="brush-size" min="5" max="100" value="30" class="w-100">
+               </div>
+               <div class="range-wrap">
+                  <label>Softness: <span id="brush-blur-val">10</span></label>
+                  <input type="range" id="brush-blur" min="0" max="50" value="10" class="w-100">
+               </div>
+            </div>
+
+            <button id="download-btn" class="btn btn-primary w-100">Download Fixed Image</button>
+            <button id="reset-btn" class="btn btn-secondary w-100 mt-2">Reset Image</button>
+          </div>
+        </div>
+      </div>
+
+    <!-- HUMANIZED SEO CONTENT -->
+      <section class="seo-content mt-5">
+        <h2 data-i18n="tools.watermark_remover.what_is_title">What is Manual Watermark Remover</h2>
+        <p>The Manual Watermark Remover is a browser-based photo retouching utility that uses clone-stamping to erase watermarks, logos, timestamps, and other visual blemishes. By letting you define a clean source texture and paint it over the unwanted overlay, the tool directly modifies the canvas pixels to repair your image.</p>
+        <p>This cloning process happens entirely on the client-side within your browser's local sandbox memory. Because no data is transmitted to an external server, your proprietary photographs, business assets, and personal snapshots remain completely private.</p>
+
+        <h3 class="mt-4">How to Use Manual Watermark Remover</h3>
+        <ol style="line-height: 1.8; margin-bottom: 20px; padding-left: 20px;">
+          <li><strong>Upload your image:</strong> Click inside the dashed upload zone to choose an image from your device, or drag and drop a file.</li>
+          <li><strong>Select the source area:</strong> Click the <strong>Set Source</strong> button. On the preview canvas, click a clean, watermark-free area of your image that matches the background of the watermarked region.</li>
+          <li><strong>Switch to paint mode:</strong> Click the <strong>Paint Clone</strong> button to activate the clone brush.</li>
+          <li><strong>Configure the brush:</strong> Adjust the <strong>Brush Size</strong> slider to match the dimensions of the watermark, and use the <strong>Softness</strong> slider to control how much the brush edge feathers to blend with the surrounding area.</li>
+          <li><strong>Erase the watermark:</strong> Click and drag the brush cursor directly over the watermark. The tool will copy the texture from your set source and paint it over the watermark in real-time.</li>
+          <li><strong>Save your retouched image:</strong> Click the <strong>Download Fixed Image</strong> button to save the cleaned JPEG file to your local storage, or click <strong>Reset Image</strong> to revert all changes and start over.</li>
+        </ol>
+
+        <h3 class="mt-4">Key Features</h3>
+        <ul style="line-height: 1.8; margin-bottom: 20px; padding-left: 20px;">
+          <li><strong>Precision Clone-Stamping:</strong> Replaces watermarks using authentic textures sampled directly from your photo.</li>
+          <li><strong>Granular Brush Controls:</strong> Adjust the brush size and edge softness to ensure seamless blending without muddy smears.</li>
+          <li><strong>Two-Step Mode Architecture:</strong> Toggle easily between defining the source anchor point and painting over the overlay.</li>
+          <li><strong>Instant Local Preview:</strong> View your brush strokes instantly rendered on the canvas with immediate visual feedback.</li>
+          <li><strong>High-Quality Local Rendering:</strong> Saves the retouched output at high quality without server-side compression.</li>
+        </ul>
+
+        <h3 class="mt-4">Common Use Cases</h3>
+        <ul style="line-height: 1.8; margin-bottom: 20px; padding-left: 20px;">
+          <li><strong>Archivists:</strong> Restoring scanned historical photographs by removing handwritten annotations, stamps, or date marks.</li>
+          <li><strong>Content Designers:</strong> Removing distracting background icons, copyright texts, or timestamps from stock-like graphics.</li>
+          <li><strong>Photographers:</strong> Retouching dust spots, lens flares, or small visual blemishes from their landscapes or portraits.</li>
+          <li><strong>Presenters:</strong> Cleaning up cluttered presentation slides or diagrams to create a more professional visual delivery.</li>
+        </ul>
+
+        <h3 class="mt-4">Privacy & Data Note</h3>
+        <p>All pixel manipulation is executed locally in your browser tab. Your images are never sent to external servers, providing secure and private image restoration.</p>
+      </section>
+ 
+      <!-- FAQ SECTION -->
+      <section class="faq-section mt-5">
+        <h2 data-i18n="tools.watermark_remover.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              How does the clone-stamping technique work?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>When you set a source point, the tool calculates the offset coordinates between that source and where you paint. As you draw in Paint Clone mode, it copies pixels from the source area and overlays them onto the target canvas.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Are my photos uploaded to 99tool.in?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No, this tool operates entirely offline in your browser tab. Your files never leave your device, ensuring total privacy.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              What should I do if the cloned texture doesn't match?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>If the cloned area looks mismatched, click **Reset Image**, switch back to **Set Source**, choose a new reference point closer in color and pattern to the target area, and try painting again.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Does this tool work on complex watermarks over details?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes, but it requires patience. For complex areas, use a smaller brush size with high softness and sample from multiple nearby textures to build up the detail gradually.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I undo a single brush stroke?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Currently, there is no step-by-step undo button. If a stroke goes wrong, you can click the **Reset Image** button to start the retouching process fresh.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const imageInput = document.getElementById('image-input');
+    const dropZone = document.getElementById('drop-zone');
+    const workspace = document.getElementById('tool-workspace');
+    const canvas = document.getElementById('main-canvas');
+    const ctx = canvas.getContext('2d');
+    
+    // UI Elements
+    const btnSource = document.getElementById('mode-source');
+    const btnPaint = document.getElementById('mode-paint');
+    const brushSize = document.getElementById('brush-size');
+    const brushBlur = document.getElementById('brush-blur');
+    const downloadBtn = document.getElementById('download-btn');
+    const resetBtn = document.getElementById('reset-btn');
+
+    let originalImg = null;
+    let toolMode = 'source'; // 'source' or 'paint'
+    let sourceX = 0;
+    let sourceY = 0;
+    let isDrawing = false;
+
+    // Mode Toggle
+    btnSource.onclick = () => {
+       toolMode = 'source';
+       btnSource.classList.add('active');
+       btnPaint.classList.remove('active');
+    };
+    btnPaint.onclick = () => {
+       toolMode = 'paint';
+       btnPaint.classList.add('active');
+       btnSource.classList.remove('active');
+    };
+
+    dropZone.onclick = () => imageInput.click();
+    imageInput.onchange = (e) => handleFile(e.target.files[0]);
+    
+    // Init Drag and Drop using global helper
+    setupDragDrop('drop-zone', (files) => {
+       if (files.length) handleFile(files[0]);
+    });
+    
+    function handleFile(file) {
+      if (!file || !file.type.startsWith('image/')) return;
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        originalImg = new Image();
+        originalImg.onload = () => {
+          canvas.width = originalImg.width;
+          canvas.height = originalImg.height;
+          ctx.drawImage(originalImg, 0, 0);
+          workspace.classList.remove('hidden');
+        };
+        originalImg.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+
+    // Interaction
+    canvas.onmousedown = (e) => {
+       const pos = getMousePos(e);
+       if (toolMode === 'source') {
+          sourceX = pos.x;
+          sourceY = pos.y;
+          // Visual feedback for source? 
+          console.log("Source set at", sourceX, sourceY);
+       } else {
+          isDrawing = true;
+       }
+    };
+
+    window.onmouseup = () => isDrawing = false;
+
+    canvas.onmousemove = (e) => {
+       if (toolMode === 'paint' && isDrawing) {
+          const pos = getMousePos(e);
+          clonePaint(pos.x, pos.y);
+       }
+    };
+
+    function getMousePos(e) {
+       const rect = canvas.getBoundingClientRect();
+       const scaleX = canvas.width / rect.width;
+       const scaleY = canvas.height / rect.height;
+       return {
+          x: (e.clientX - rect.left) * scaleX,
+          y: (e.clientY - rect.top) * scaleY
+       };
+    }
+
+    function clonePaint(targetX, targetY) {
+       const size = parseInt(brushSize.value);
+       const blur = parseInt(brushBlur.value);
+       
+       // Calc relative offset from source start
+       const offsetX = targetX - sourceX;
+       const offsetY = targetY - sourceY;
+
+       ctx.save();
+       // Add brush softness
+       ctx.shadowBlur = blur;
+       ctx.shadowColor = 'black'; // Use shadow to create fake feathering or clip with gradient
+       
+       // clipping path for brush
+       ctx.beginPath();
+       ctx.arc(targetX, targetY, size / 2, 0, Math.PI * 2);
+       ctx.clip();
+       
+       // Draw the original image but offset 
+       // We offset the image so that the "Source" area lands on the "Target" area
+       ctx.drawImage(originalImg, -offsetX, -offsetY);
+       ctx.restore();
+    }
+
+    [brushSize, brushBlur].forEach(el => {
+       el.oninput = () => {
+          document.getElementById(el.id + '-val').innerText = el.value;
+       };
+    });
+
+    resetBtn.onclick = () => {
+       if (originalImg) ctx.drawImage(originalImg, 0, 0);
+    };
+
+    downloadBtn.onclick = () => {
+       const url = canvas.toDataURL('image/jpeg', 0.95);
+       const a = document.createElement('a');
+       a.href = url;
+       a.download = `retouched_${Date.now()}.jpg`;
+       a.click();
+    };
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

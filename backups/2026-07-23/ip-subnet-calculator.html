@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Ip Subnet Calculator – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/network/ip-subnet-calculator.html"/>
+<meta property="og:title" content="Ip Subnet Calculator – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/network/ip-subnet-calculator.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Ip Subnet Calculator \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/network/ip-subnet-calculator.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    .network-workspace {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+    .input-row { display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem; margin-bottom: 2rem; }
+    label { display: block; margin-bottom: 0.5rem; color: var(--text-muted); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; }
+    input, select {
+      width: 100%;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 1rem;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    
+    .report-grid {
+       display: grid;
+       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+       gap: 1.5rem;
+       margin-top: 2rem;
+       display: none;
+    }
+    .report-card {
+       background: rgba(255,255,255,0.03);
+       border: 1px solid var(--border);
+       padding: 1.5rem;
+       border-radius: 16px;
+    }
+    .val-block { margin-top: 10px; font-weight: 800; color: var(--primary); font-size: 1.25rem; font-family: 'JetBrains Mono', monospace; word-break: break-all; }
+    .label-block { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; font-weight: 700; }
+    
+    .binary-viz {
+       margin-top: 2rem;
+       padding: 1.5rem;
+       background: rgba(0,0,0,0.3);
+       border-radius: 12px;
+       font-family: 'JetBrains Mono', monospace;
+       font-size: 0.85rem;
+       display: none;
+       overflow-x: auto;
+    }
+    .bin-line { display: flex; gap: 10px; margin-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 4px; }
+    .bin-label { width: 140px; color: var(--text-muted); flex-shrink: 0; }
+    .bin-val { color: var(--primary); }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Infinite IP Subnet & CIDR Solver</h1>
+      <p>Precision network planning and diagnostic auditor. Calculate usable ranges and binary masks instantly.</p>
+    </div>
+
+    <div class="network-workspace">
+      <div class="input-row">
+         <div>
+            <label>IP Address</label>
+            <input type="text" id="ip-in" placeholder="e.g., 192.168.1.10">
+         </div>
+         <div>
+            <label>Subnet (CIDR)</label>
+            <select id="cidr-in">
+               <option value="32">/32 (Host)</option>
+               <option value="31">/31</option>
+               <option value="30">/30</option>
+               <option value="29">/29</option>
+               <option value="28">/28</option>
+               <option value="27">/27</option>
+               <option value="26">/26</option>
+               <option value="25">/25</option>
+               <option value="24" selected>/24 (Standard)</option>
+               <option value="23">/23</option>
+               <option value="22">/22</option>
+               <option value="21">/21</option>
+               <option value="20">/20</option>
+               <option value="19">/19</option>
+               <option value="18">/18</option>
+               <option value="17">/17</option>
+               <option value="16">/16 (Class B)</option>
+               <option value="8">/8 (Class A)</option>
+            </select>
+         </div>
+      </div>
+
+      <button onclick="calculate()" class="btn btn-primary btn-lg btn-full">Generate Network Report</button>
+
+      <div class="report-grid" id="report">
+         <div class="report-card">
+            <div class="label-block">Network Address</div>
+            <div class="val-block" id="res-net">0.0.0.0</div>
+         </div>
+         <div class="report-card">
+            <div class="label-block">Broadcast Address</div>
+            <div class="val-block" id="res-broad">0.0.0.0</div>
+         </div>
+         <div class="report-card">
+            <div class="label-block">Usable IP Range</div>
+            <div class="val-block" id="res-range">0.0.0.0 - 0.0.0.0</div>
+         </div>
+         <div class="report-card">
+            <div class="label-block">Subnet Mask</div>
+            <div class="val-block" id="res-mask">0.0.0.0</div>
+         </div>
+         <div class="report-card">
+            <div class="label-block">Total Usable Hosts</div>
+            <div class="val-block" id="res-hosts">0</div>
+         </div>
+         <div class="report-card">
+            <div class="label-block">Network Class</div>
+            <div class="val-block" id="res-class">C</div>
+         </div>
+      </div>
+
+      <div class="binary-viz" id="bin-viz">
+         <div class="bin-line"><span class="bin-label">IP Address:</span><span class="bin-val" id="bin-ip"></span></div>
+         <div class="bin-line"><span class="bin-label">Subnet Mask:</span><span class="bin-val" id="bin-mask"></span></div>
+         <div class="bin-line" style="border:none;"><span class="bin-label">Network:</span><span class="bin-val" id="bin-net"></span></div>
+      </div>
+
+      <!-- SEO CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2>What is IP Subnetting?</h2>
+        <p>IP Subnetting is the practice of dividing a network into two or more smaller networks. It improves routing efficiency, enhances security, and helps in better management of IP addresses. Our <strong>online IP subnet calculator</strong> provides an automated diagnostic tool for network administrators to calculate masks and ranges without manual bit-manipulation. A consistent <strong>CIDR diagnostic auditor</strong> is key to optimizing enterprise network performance.</p>
+
+        <h3 class="mt-4">Understanding CIDR Notation</h2>
+        <p>CIDR (Classless Inter-Domain Routing) notation like <code>/24</code> or <code>/16</code> represents the number of leading 1-bits in the subnet mask. By using our <strong>network range diagnostic tool</strong>, you can quickly find the first and last usable IP in any given subnet. This <strong>advanced network auditor</strong> is essential for configuring firewalls, load balancers, and internal routing tables.</p>
+
+        <h3 class="mt-4">Privacy and Pure Networking</h2>
+        <p>At 99tool.in, all IP calculations are performed locally in your browser sandbox. We do not store your IP addresses or network configurations. This <strong>private subnet tool</strong> provides professional-grade results without any data being transmitted to a server. Whether you are a student studying for CCNA or a professional engineer planning a VLAN, our <strong>secure network calculator</strong> ensures your configurations remain purely yours.</p>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    function calculate() {
+       const ipStr = document.getElementById('ip-in').value.trim();
+       const cidr = parseInt(document.getElementById('cidr-in').value);
+
+       if (!/^(\d{1,3}\.){3}\d{1,3}$/.test(ipStr)) {
+          return alert('Please enter a valid IP address (e.g., 192.168.1.1)');
+       }
+
+       const octets = ipStr.split('.').map(Number);
+       if (octets.some(o => o > 255)) return alert('Octets must be between 0 and 255.');
+
+       // 1. IP to 32-bit uint
+       const ipInt = (octets[0] << 24 | octets[1] << 16 | octets[2] << 8 | octets[3]) >>> 0;
+       
+       // 2. Subnet Mask
+       const maskInt = (cidr === 0) ? 0 : (~0 << (32 - cidr)) >>> 0;
+       
+       // 3. Network & Broadcast
+       const netInt = (ipInt & maskInt) >>> 0;
+       const broadInt = (netInt | ~maskInt) >>> 0;
+
+       // 4. Counts
+       let hostCount = (cidr >= 31) ? 0 : (Math.pow(2, 32 - cidr) - 2);
+       
+       // Classes
+       let netClass = 'E';
+       if (octets[0] < 128) netClass = 'A';
+       else if (octets[0] < 192) netClass = 'B';
+       else if (octets[0] < 224) netClass = 'C';
+       else if (octets[0] < 240) netClass = 'D';
+
+       // Display Report
+       document.getElementById('res-net').innerText = intToIp(netInt);
+       document.getElementById('res-broad').innerText = intToIp(broadInt);
+       document.getElementById('res-mask').innerText = intToIp(maskInt);
+       document.getElementById('res-hosts').innerText = hostCount.toLocaleString();
+       document.getElementById('res-class').innerText = netClass;
+       
+       if (cidr <= 30) {
+          document.getElementById('res-range').innerText = `${intToIp(netInt + 1)} - ${intToIp(broadInt - 1)}`;
+       } else {
+          document.getElementById('res-range').innerText = "N/A (Point-to-Point)";
+       }
+
+       // Binary Viz
+       document.getElementById('bin-ip').innerText = intToBin(ipInt);
+       document.getElementById('bin-mask').innerText = intToBin(maskInt);
+       document.getElementById('bin-net').innerText = intToBin(netInt);
+
+       document.getElementById('report').style.display = 'grid';
+       document.getElementById('bin-viz').style.display = 'block';
+    }
+
+    function intToIp(i) {
+       return [
+          (i >>> 24) & 0xFF,
+          (i >>> 16) & 0xFF,
+          (i >>> 8) & 0xFF,
+          i & 0xFF
+       ].join('.');
+    }
+
+    function intToBin(i) {
+       let s = (i >>> 0).toString(2).padStart(32, '0');
+       return s.replace(/(.{8})/g, '$1 ').trim();
+    }
+  </script>
+</body>
+</html>

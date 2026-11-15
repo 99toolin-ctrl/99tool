@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Flashcards – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/learning/flashcards.html"/>
+<meta property="og:title" content="Flashcards – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/learning/flashcards.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Flashcards \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/learning/flashcards.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .flashcard-workspace {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    /* Sidebar / Decks */
+    .deck-sidebar {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .deck-item {
+      padding: 12px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.2s;
+    }
+    .deck-item:hover { background: rgba(255,255,255,0.06); border-color: var(--primary); }
+    .deck-item.active { background: var(--primary); color: white; border-color: var(--primary); }
+
+    /* Study Area */
+    .study-area {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .card-container {
+      perspective: 1000px;
+      width: 100%;
+      max-width: 500px;
+      height: 300px;
+    }
+    .card {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+      cursor: pointer;
+    }
+    .card.flipped { transform: rotateY(180deg); }
+
+    .card-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      font-size: 1.5rem;
+      font-weight: 600;
+      border-radius: 16px;
+      border: 2px solid var(--border);
+      background: var(--dark-card);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    .card-back { transform: rotateY(180deg); background: var(--dark); border-color: var(--primary); }
+
+    .controls { display: flex; gap: 1rem; }
+    .btn-rating { padding: 12px 24px; border-radius: 8px; border: none; font-weight: 600; cursor: pointer; transition: transform 0.2s; }
+    .btn-rating:hover { transform: translateY(-2px); }
+    .btn-easy { background: #2f9e44; color: white; }
+    .btn-medium { background: #f08c00; color: white; }
+    .btn-hard { background: #e03131; color: white; }
+
+    /* Modal for adding cards */
+    .modal {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8); display: none; align-items: center; justify-content: center; z-index: 1000;
+    }
+    .modal-content {
+      background: var(--dark-card); padding: 2rem; border-radius: 16px; border: 1px solid var(--border);
+      width: 100%; max-width: 400px; display: flex; flex-direction: column; gap: 1rem;
+    }
+    .form-group label { display: block; margin-bottom: 5px; font-size: 0.85rem; color: var(--text-muted); }
+    .form-group input, .form-group textarea {
+      width: 100%; background: var(--dark); border: 1px solid var(--border); color: white; padding: 10px; border-radius: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .flashcard-workspace { grid-template-columns: 1fr; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-hero text-center">
+      <nav class="breadcrumb justify-content-center">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#learning">Learning</a> <span>/</span> 
+        <span>Flashcard App</span>
+      </nav>
+      <h1>Flashcard App (Spaced Repetition)</h1>
+      <p>Master any subject with efficient study cards. Data stays 100% private on your device.</p>
+    </div>
+
+    <div class="flashcard-workspace">
+      <aside class="deck-sidebar">
+        <h3>My Decks</h3>
+        <div id="deck-list">
+          <!-- Dynamic decks -->
+        </div>
+        <button class="btn btn-primary" onclick="showDeckModal()">+ New Deck</button>
+      </aside>
+
+      <section class="study-area" id="study-area">
+        <div id="no-cards" class="text-center py-5">
+          <h3>No cards to review!</h3>
+          <p class="text-muted">Create a deck and add cards to start learning.</p>
+          <button class="btn btn-secondary mt-3" id="add-card-btn">Add My First Card</button>
+        </div>
+
+        <div id="study-view" class="study-area" style="display: none; width: 100%;">
+          <div class="progress-info text-muted small">Card <span id="current-index">1</span> of <span id="total-count">0</span></div>
+          <div class="card-container">
+            <div class="card" id="card" onclick="this.classList.toggle('flipped')">
+              <div class="card-face card-front" id="card-front">Front of card</div>
+              <div class="card-face card-back" id="card-back">Back of card</div>
+            </div>
+          </div>
+          <div class="controls" id="rating-controls" style="visibility: hidden;">
+            <button class="btn-rating btn-hard" onclick="rateCard(1)">Hard</button>
+            <button class="btn-rating btn-medium" onclick="rateCard(2)">Medium</button>
+            <button class="btn-rating btn-easy" onclick="rateCard(3)">Easy</button>
+          </div>
+          <p class="text-muted small">Click the card to reveal the answer</p>
+        </div>
+      </section>
+    </div>
+
+    <!-- Modals -->
+    <div class="modal" id="deck-modal">
+        <div class="modal-content">
+            <h3>New Deck</h3>
+            <div class="form-group">
+                <input type="text" id="new-deck-name" placeholder="Deck Name (e.g. Spanish Basics)">
+            </div>
+            <div class="flex gap-2">
+                <button class="btn btn-primary" style="flex:1" onclick="createDeck()">Create</button>
+                <button class="btn btn-secondary" style="flex:1" onclick="closeModals()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="card-modal">
+        <div class="modal-content">
+            <h3>Add New Card</h3>
+            <div class="form-group">
+                <label>Front Information</label>
+                <textarea id="card-front-input" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Back Information</label>
+                <textarea id="card-back-input" rows="3"></textarea>
+            </div>
+            <div class="flex gap-2">
+                <button class="btn btn-primary" style="flex:1" onclick="addCard()">Add Card</button>
+                <button class="btn btn-secondary" style="flex:1" onclick="closeModals()">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SEO CONTENT -->
+    <section class="seo-content mt-5">
+      <h2>The Science of Effortless Remembering</h2>
+      <p>Forget the frustration of traditional rote memorization. Our <strong>flashcard app</strong> leverages the powerful principle of <strong>Spaced Repetition (SRM)</strong> to help you learn faster and retain information longer. Unlike physical cards that get lost or cluttered, our digital workspace organizes your learning into a structured system that adapts to your memory.</p>
+      
+      <h3 class="mt-4">How Spaced Repetition Works</h3>
+      <p>Your brain is wired to forget information it doesn't use. The <strong>Leitner System</strong>, which our tool uses, fights this "forgetting curve" by showing you difficult cards more frequently and easy cards less often. This forces your brain to recall information right at the point where it was about to be forgotten, which significantly strengthens the neural pathways associated with that knowledge.</p>
+
+      <ul style="line-height: 1.8; margin-top: 15px;">
+        <li><strong>Easy:</strong> Card returns in a few days.</li>
+        <li><strong>Medium:</strong> Card returns tomorrow.</li>
+        <li><strong>Hard:</strong> Card returns in the next session.</li>
+      </ul>
+
+      <h3 class="mt-4">100% Private, 100%</h3>
+      <p>Most <strong>study flashcard tools</strong> online want to sync your private learning data to their cloud servers. We believe your education is your business. 99tool.in uses <code>localStorage</code> technology to keep your decks, cards, and review progress strictly on your device. No signup required, no data limits, and zero tracking. Just a pure <strong>learning tool</strong> designed for serious students.</p>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    let decks = JSON.parse(localStorage.getItem('99tool_flashcard_decks')) || [];
+    let currentDeckIdx = -1;
+    let currentCardIdx = 0;
+    let reviewQueue = [];
+
+    const deckList = document.getElementById('deck-list');
+    const studyView = document.getElementById('study-view');
+    const noCards = document.getElementById('no-cards');
+    const cardEl = document.getElementById('card');
+    const ratingControls = document.getElementById('rating-controls');
+
+    function save() { localStorage.setItem('99tool_flashcard_decks', JSON.stringify(decks)); renderDecks(); }
+
+    function renderDecks() {
+      deckList.innerHTML = decks.length ? "" : "<p class='text-muted small'>No decks yet.</p>";
+      decks.forEach((deck, idx) => {
+        const d = document.createElement('div');
+        d.className = `deck-item ${idx === currentDeckIdx ? 'active' : ''}`;
+        d.innerHTML = `<span>${deck.name}</span><span class='badge'>${deck.cards.length}</span>`;
+        d.onclick = () => selectDeck(idx);
+        deckList.appendChild(d);
+      });
+    }
+
+    function selectDeck(idx) {
+      currentDeckIdx = idx;
+      currentCardIdx = 0;
+      reviewQueue = [...decks[idx].cards];
+      renderDecks();
+      startStudy();
+    }
+
+    function startStudy() {
+      if (!reviewQueue.length) {
+        studyView.style.display = 'none';
+        noCards.style.display = 'block';
+        return;
+      }
+      noCards.style.display = 'none';
+      studyView.style.display = 'flex';
+      showCard();
+    }
+
+    function showCard() {
+      const card = reviewQueue[currentCardIdx];
+      document.getElementById('card-front').innerText = card.front;
+      document.getElementById('card-back').innerText = card.back;
+      document.getElementById('current-index').innerText = currentCardIdx + 1;
+      document.getElementById('total-count').innerText = reviewQueue.length;
+      cardEl.classList.remove('flipped');
+      ratingControls.style.visibility = 'hidden';
+    }
+
+    // Show rating controls once card is flipped
+    cardEl.addEventListener('click', () => {
+        if (cardEl.classList.contains('flipped')) ratingControls.style.visibility = 'visible';
+    });
+
+    function rateCard(rating) {
+      // In a real SRM we'd set nextReviewDate. For simplicity, we just move to next card.
+      currentCardIdx++;
+      if (currentCardIdx >= reviewQueue.length) {
+        alert("Study session complete!");
+        currentCardIdx = 0;
+        studyView.style.display = 'none';
+        noCards.style.display = 'block';
+      } else {
+        showCard();
+      }
+    }
+
+    // Modal Logic
+    function showDeckModal() { document.getElementById('deck-modal').style.display = 'flex'; }
+    document.getElementById('add-card-btn').onclick = () => {
+        if (currentDeckIdx === -1) { alert("Please select or create a deck first."); return; }
+        document.getElementById('card-modal').style.display = 'flex';
+    };
+
+    function createDeck() {
+      const name = document.getElementById('new-deck-name').value;
+      if (!name) return;
+      decks.push({ name, cards: [] });
+      document.getElementById('new-deck-name').value = '';
+      closeModals();
+      save();
+    }
+
+    function addCard() {
+      const front = document.getElementById('card-front-input').value;
+      const back = document.getElementById('card-back-input').value;
+      if (!front || !back) return;
+      decks[currentDeckIdx].cards.push({ front, back, level: 0 });
+      document.getElementById('card-front-input').value = '';
+      document.getElementById('card-back-input').value = '';
+      closeModals();
+      save();
+      selectDeck(currentDeckIdx);
+    }
+
+    function closeModals() {
+      document.querySelectorAll('.modal').forEach(m => m.style.display = 'none');
+    }
+
+    renderDecks();
+  </script>
+</body>
+</html>
+

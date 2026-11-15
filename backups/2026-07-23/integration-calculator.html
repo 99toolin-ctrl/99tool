@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Integration Calculator – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/math/integration-calculator.html"/>
+<meta property="og:title" content="Integration Calculator – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/math/integration-calculator.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Integration Calculator \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/math/integration-calculator.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    .math-workspace {
+      max-width: 650px;
+      margin: 2rem auto;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      border-radius: 20px;
+    }
+    .form-group { margin-bottom: 1.5rem; }
+    label { display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-muted); }
+    input {
+      width: 100%;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.8rem;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .range-inputs { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    
+    .result-card {
+      background: rgba(33, 150, 243, 0.05);
+      padding: 2rem;
+      border-radius: 12px;
+      margin-top: 2rem;
+      text-align: center;
+      display: none;
+      border: 1px solid #2196f3;
+    }
+    .res-val { font-size: 3rem; font-weight: 800; color: #2196f3; }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Infinite Integration Calculator</h1>
+      <p>Analyze area under curves instantly. High-fidelity numerical integration for definite bounds.</p>
+    </div>
+
+    <div class="math-workspace">
+      <div class="form-group">
+        <label>Function $f(x)$</label>
+        <input type="text" id="func" placeholder="e.g., x*x" value="x*x">
+        <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 5px;">Use standard JS math symbols: +, -, *, /, Math.sin(x), etc.</div>
+      </div>
+      <div class="range-inputs">
+         <div class="form-group">
+            <label>Lower Bound ($a$)</label>
+            <input type="number" id="lower" value="0">
+         </div>
+         <div class="form-group">
+            <label>Upper Bound ($b$)</label>
+            <input type="number" id="upper" value="1">
+         </div>
+      </div>
+      
+      <button onclick="calculateIntegral()" class="btn btn-primary btn-lg btn-full">Compute Integral</button>
+
+      <div class="result-card" id="result-card">
+         <div class="small text-muted mb-2">Estimated Definite Integral $\int_a^b f(x) dx$</div>
+         <div class="res-val" id="res">0</div>
+         <p class="mt-3 text-muted small">Calculated using Simpson's Rule approximation with $n=1000$ intervals.</p>
+      </div>
+
+      <!-- SEO CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2>What is Numerical Integration?</h2>
+        <p>In calculus, the definite integral represent the area under a curve between two points. While finding exact symbols can be complex, **Numerical Integration** provides a high-fidelity estimation using algorithms like Simpson's Rule. Our <strong>online integration solver</strong> automates this process to provide precise results for students and engineering professionals. A reliable <strong>calculus diagnostic auditor</strong> is essential for calculating displacement, work-energy, and distribution probability.</p>
+
+        <h3 class="mt-4">Understanding Simpson's Rule</h2>
+        <p>Simpson's rule provides a more accurate approximation than simpler Riemann sums by using parabolic arcs to fit the function curve. By using our <strong>area diagnostic tool</strong>, you can find the integral of complex functions that oftern lack simple antiderivatives. This <strong>advanced math auditor</strong> is the foundation of structural engineering and physics motion diagnostics.</p>
+
+        <h3 class="mt-4">Privacy and Privacy Accuracy</h2>
+        <p>At 99tool.in, all mathematical computations are performed locally in your browser sandbox. We do not store your functions or the bounds you analyze. This <strong>private integration tool</strong> provides professional-grade results without any third-party telemetry. Whether you are solving for volumes or calculating cumulative distribution, our <strong>secure calculus calculator</strong> ensures your data remains purely yours.</p>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    function calculateIntegral() {
+       const fStr = document.getElementById('func').value;
+       const a = parseFloat(document.getElementById('lower').value);
+       const b = parseFloat(document.getElementById('upper').value);
+       
+       if (!fStr || isNaN(a) || isNaN(b)) return alert('Please enter a valid function and bounds.');
+
+       try {
+          const n = 1000; // Intervals
+          const h = (b - a) / n;
+          
+          const f = (val) => {
+             return (new Function('x', `return ${fStr}`))(val);
+          };
+
+          // Simpson's Rule: (h/3) * [f(x0) + 4f(x1) + 2f(x2) + ... + f(xn)]
+          let sum = f(a) + f(b);
+
+          for (let i = 1; i < n; i++) {
+             const x = a + i * h;
+             if (i % 2 === 0) sum += 2 * f(x);
+             else sum += 4 * f(x);
+          }
+
+          const result = (h / 3) * sum;
+          
+          document.getElementById('res').innerText = Number.isInteger(result) ? result : result.toFixed(6).replace(/\.?0+$/, "");
+          document.getElementById('result-card').style.display = 'block';
+       } catch (e) {
+          alert("Mathematical Error: Please ensure your function is valid (e.g., x*x or Math.sin(x))");
+       }
+    }
+  </script>
+</body>
+</html>

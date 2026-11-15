@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Data Cleaner – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/data-file/data-cleaner.html"/>
+<meta property="og:title" content="Data Cleaner – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/data-file/data-cleaner.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Data Cleaner \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/data-file/data-cleaner.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="data cleaner, clean data tool, remove duplicates online, trim whitespace, normalize text tool, data formatter" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json" id="schema-org-data">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Data Cleaner Tool",
+    "operatingSystem": "Any",
+    "applicationCategory": "DataApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Duplicate Removal, Whitespace Trimming, Text Normalization, Empty Line Filtering, Processing"
+  }
+  </script>
+
+  <style>
+    .cleaner-layout { display: grid; grid-template-columns: 1fr; gap: 30px; }
+
+    .input-pane, .settings-pane {
+      background: var(--dark-card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 30px;
+    }
+
+    #data-input {
+      width: 100%; height: 400px; background: var(--dark); border: 1px solid var(--border);
+      border-radius: var(--radius-sm); color: #e0e0e0; padding: 15px;
+      font-family: 'Fira Code', monospace; font-size: 0.85rem; resize: none; outline: none;
+    }
+    #data-input:focus { border-color: var(--primary); }
+
+    .action-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+    }
+
+    .check-group {
+       background: var(--dark); border: 1px solid var(--border); padding: 12px;
+       border-radius: 6px; display: flex; align-items: center; gap: 10px; cursor: pointer;
+    }
+    .check-group:hover { border-color: var(--primary); }
+    .check-group input { cursor: pointer; }
+    .check-label { font-size: 0.75rem; color: var(--text-muted); font-weight: 600; }
+
+    @media (min-width: 900px) {
+      .cleaner-layout { grid-template-columns: 1fr 350px; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/data-file/data-cleaner.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/data-file/data-cleaner.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/data-file/data-cleaner.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/data-file/data-cleaner.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/data-file/data-cleaner.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/data-file/data-cleaner.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/data-file/data-cleaner.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/data-file/data-cleaner.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/data-file/data-cleaner.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/data-file/data-cleaner.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/data-file/data-cleaner.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/data-file/data-cleaner.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/data-file/data-cleaner.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/data-file/data-cleaner.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/data-file/data-cleaner.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/data-file/data-cleaner.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/data-file/data-cleaner.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/data-file/data-cleaner.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/data-file/data-cleaner.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/data-file/data-cleaner.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/data-file/data-cleaner.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/data-file/data-cleaner.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#data">Data & File</a> <span>/</span> 
+        <span>Data Cleaner Tool</span>
+      </nav>
+      <h1>Data Cleaner Tool</h1>
+      <p>Transform messy datasets into clean, structured information instantly. Remove redundancies and fix formatting errors securely in your browser.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div class="cleaner-layout">
+        <div class="input-pane">
+           <div class="flex justify-between items-center mb-3">
+              <h3 class="mb-0">Input Data</h3>
+              <div class="flex gap-2">
+                 <button class="btn btn-secondary btn-sm" id="clear-btn">Clear</button>
+                 <button class="btn btn-secondary btn-sm" id="sample-btn">Load Sample</button>
+              </div>
+           </div>
+           <textarea id="data-input" placeholder="Paste your messy text, CSV, or list here..."></textarea>
+           <div class="flex justify-between items-center mt-3">
+              <span class="text-muted small" id="stats-info">Lines: 0 | Characters: 0</span>
+              <button class="btn btn-secondary btn-sm" id="download-btn" disabled>Download Cleaned</button>
+           </div>
+        </div>
+
+        <div class="settings-pane">
+           <h3>Cleaning Suite</h3>
+           <p class="text-muted small mb-4">Select the operations to perform on your dataset.</p>
+
+           <div class="flex flex-column gap-3 mb-4">
+              <div class="check-group">
+                 <input type="checkbox" id="dedup" checked>
+                 <span class="check-label">Remove Duplicate Lines</span>
+              </div>
+              <div class="check-group">
+                 <input type="checkbox" id="trim" checked>
+                 <span class="check-label">Trim Whitespace (Start/End)</span>
+              </div>
+              <div class="check-group">
+                 <input type="checkbox" id="empty" checked>
+                 <span class="check-label">Remove Empty Lines</span>
+              </div>
+              <div class="check-group">
+                 <input type="checkbox" id="lowercase">
+                 <span class="check-label">Convert to Lowercase</span>
+              </div>
+              <div class="check-group">
+                 <input type="checkbox" id="collapse">
+                 <span class="check-label">Collapse Multiple Spaces</span>
+              </div>
+           </div>
+
+           <button class="btn btn-primary btn-full" id="clean-btn">Clean & Format Data</button>
+        </div>
+      </div>
+
+      <!-- CONTENT SECTION -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.data_cleaner.what_is_title">What is the Data Cleaner Tool?</h2>
+        <p>The Data Cleaner Tool is a client-side text-formatting utility designed to clean, normalize, and deduplicate raw datasets. By pasting messy text directly into the input editor, you can apply rules like removing duplicate rows, collapsing spaces, and stripping empty lines to prepare your data for database inputs or spreadsheet imports.</p>
+        <p>Instead of relying on cloud processors, this tool performs all string modifications locally within your browser tab. Your customer lists, system logs, and private database dumps are never sent over the network, keeping your data confidential.</p>
+
+        <h2 class="mt-4" data-i18n="tools.data_cleaner.how_to_use_title">How to Use the Data Cleaner Tool</h2>
+        <ol>
+          <li><strong>Input Your Raw Data:</strong> Paste your unorganized text or list directly into the "Raw Data Input" textarea box.</li>
+          <li><strong>Select Cleaning Actions:</strong> Use the checklist panel to choose the formatting rules you want to apply:
+            <ul>
+              <li><em>Trim Whitespace:</em> Strips spaces from the beginning and end of each row.</li>
+              <li><em>Remove Empty Rows:</em> Deletes blank lines to close gaps in your list.</li>
+              <li><em>Remove Duplicate Rows:</em> Filters out repeating entries to produce a list of unique values.</li>
+              <li><em>Collapse Multiple Spaces:</em> Shrinks double or multiple spaces down to a single space.</li>
+              <li><em>Convert Case:</em> Convert all characters to lowercase or uppercase as needed.</li>
+            </ul>
+          </li>
+          <li><strong>Clean Your Data:</strong> Click the "Clean & Format Data" button to run the formatting engine.</li>
+          <li><strong>Inspect and Copy:</strong> Review the cleaned output in the right textarea panel and check the line-count statistics below the editor. Click inside the output box to copy your formatted dataset.</li>
+        </ol>
+
+        <h2 class="mt-4" data-i18n="tools.data_cleaner.key_features_title">Key Features</h2>
+        <ul>
+          <li><strong>One-Click Deduplication:</strong> Instantly remove repeating lines in massive lists with mathematical accuracy.</li>
+          <li><strong>Whitespace Normalization:</strong> Strip trailing and leading spaces and collapse multiple gaps between words.</li>
+          <li><strong>Formatting Preservation:</strong> Cleans text structures line-by-line without scrambling your remaining content.</li>
+          <li><strong>Instant Line Statistics:</strong> Displays original vs. cleaned line and character counts to verify data reductions.</li>
+          <li><strong>Offline-Ready Execution:</strong> Runs completely within browser RAM, allowing secure data cleaning without an internet connection.</li>
+        </ul>
+
+        <h2 class="mt-4" data-i18n="tools.data_cleaner.common_use_cases_title">Common Use Cases</h2>
+        <ul>
+          <li><strong>Mailing List Preparation:</strong> Strip blank lines and remove duplicate email entries from subscriber logs before importing them into marketing software.</li>
+          <li><strong>Code and Log File Sanitization:</strong> Collapse double spaces and remove trailing tabs in programming files or error reports.</li>
+          <li><strong>Database Ingestion Formatting:</strong> Normalize casing and trim spaces on raw text before uploading records to SQL databases.</li>
+          <li><strong>Social Media Handle Audits:</strong> Clean and deduplicate list structures containing usernames, tags, or phone numbers.</li>
+        </ul>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2 data-i18n="tools.data_cleaner.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Is there a line count limit for data cleaning?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>For the best performance, we recommend pasting datasets under 30,000 lines. Larger text blocks may cause short lags during rendering depending on your computer's CPU and RAM.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Does this tool support file uploads directly?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>This utility is optimized for quick copy-and-paste text cleaning. If your data is in a file, open it in any text editor, select all, copy, and paste it into the input area.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Are my pasted text blocks stored on your servers?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. 99tool.in runs all formatting scripts locally in your web browser. Your text, databases, and lists are processed in your local system's memory and are never uploaded or saved.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              What does "Collapse Multiple Spaces" do?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>This action replaces all instances of consecutive spaces (e.g., three or four spaces in a row) with a single space, helping clean up messy spacing in text documents.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Will this clean up CSV column separators?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. It is useful for cleaning CSV files by removing duplicate rows or blank lines. However, to modify column values directly, we recommend using our CSV Viewer & Editor.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 Privacy & Data Note: All text formatting and cleaning scripts execute locally. None of your inputs, text datasets, or stats are uploaded to our servers.</p>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const dataInput = document.getElementById('data-input');
+    const statsInfo = document.getElementById('stats-info');
+    const cleanBtn = document.getElementById('clean-btn');
+    const downloadBtn = document.getElementById('download-btn');
+    const clearBtn = document.getElementById('clear-btn');
+    const sampleBtn = document.getElementById('sample-btn');
+
+    dataInput.oninput = updateStats;
+
+    function updateStats() {
+       const text = dataInput.value;
+       const lines = text ? text.split('\n').length : 0;
+       const chars = text.length;
+       const formattedLines = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(lines, 0) : lines;
+       const formattedChars = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(chars, 0) : chars;
+       statsInfo.textContent = `Lines: ${formattedLines} | Characters: ${formattedChars}`;
+       downloadBtn.disabled = chars === 0;
+    }
+
+    cleanBtn.onclick = () => {
+       let lines = dataInput.value.split('\n');
+       
+       // Trim
+       if (document.getElementById('trim').checked) {
+          lines = lines.map(l => l.trim());
+       }
+
+       // Collapse Spaces
+       if (document.getElementById('collapse').checked) {
+          lines = lines.map(l => l.replace(/\s+/g, ' '));
+       }
+
+       // Normal Case
+       if (document.getElementById('lowercase').checked) {
+          lines = lines.map(l => l.toLowerCase());
+       }
+
+       // Remove Empty
+       if (document.getElementById('empty').checked) {
+          lines = lines.filter(l => l.length > 0);
+       }
+
+       // Dedup
+       if (document.getElementById('dedup').checked) {
+          lines = [...new Set(lines)];
+       }
+
+       dataInput.value = lines.join('\n');
+       updateStats();
+    };
+
+    downloadBtn.onclick = () => {
+       const blob = new Blob([dataInput.value], { type: 'text/plain' });
+       const a = document.createElement('a');
+       a.href = URL.createObjectURL(blob);
+       a.download = 'cleaned-data.txt';
+       a.click();
+    };
+
+    clearBtn.onclick = () => {
+       dataInput.value = '';
+       updateStats();
+    };
+
+    sampleBtn.onclick = () => {
+       dataInput.value = `  User_ID, Email , Status  \n101, admin@test.com, ACTIVE\n101, admin@test.com, ACTIVE \n102, guest@test.com, PENDING\n\n103, user@test.com, ACTIVE  `;
+       updateStats();
+    };
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

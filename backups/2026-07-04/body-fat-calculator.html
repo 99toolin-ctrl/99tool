@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Body Fat Calculator – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/health/body-fat-calculator.html"/>
+<meta property="og:title" content="Body Fat Calculator – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/health/body-fat-calculator.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Body Fat Calculator \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/health/body-fat-calculator.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .fat-workspace {
+      max-width: 600px;
+      margin: 2rem auto;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      border-radius: 20px;
+    }
+    .form-group { margin-bottom: 1.2rem; }
+    label { display: block; margin-bottom: 0.4rem; font-weight: 600; color: var(--text-muted); font-size: 0.9rem; }
+    input, select {
+      width: 100%;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.7rem;
+      border-radius: 8px;
+    }
+    .result-card {
+      background: var(--bg-secondary);
+      padding: 2rem;
+      border-radius: 12px;
+      margin-top: 2rem;
+      text-align: center;
+      display: none;
+      border: 2px solid var(--primary);
+    }
+    .fat-val { font-size: 3.5rem; font-weight: 900; color: var(--primary); }
+    .female-only { display: none; }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Infinite Body Fat Calculator</h1>
+      <p>Estimate your body composition using the standardized U.S. Navy Method.</p>
+    </div>
+
+    <div class="fat-workspace">
+      <div class="form-group">
+        <label>Gender</label>
+        <select id="gender" onchange="toggleGenderFields()">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Height (cm)</label>
+        <input type="number" id="height" placeholder="e.g. 175">
+      </div>
+      <div class="form-group">
+        <label>Neck (cm) - measured just below Adam's apple</label>
+        <input type="number" id="neck" placeholder="e.g. 38">
+      </div>
+      <div class="form-group">
+        <label>Waist (cm) - measured at navel for men, narrowest point for women</label>
+        <input type="number" id="waist" placeholder="e.g. 85">
+      </div>
+      <div class="form-group female-only" id="hip-group">
+        <label>Hips (cm) - measured at widest point</label>
+        <input type="number" id="hip" placeholder="e.g. 95">
+      </div>
+      
+      <button onclick="calculateFat()" class="btn btn-primary btn-lg btn-full">Estimate Body Fat</button>
+
+      <div class="result-card" id="result-card">
+         <div class="fat-val" id="fat-res">0%</div>
+         <div class="mt-2 font-weight-bold">Estimated Body Fat Percentage</div>
+         <p class="mt-3 text-muted small">This estimation is based on body circumference measurements and may vary by ±3% compared to DXA scans.</p>
+      </div>
+
+      <!-- SEO CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2>What is the Navy Body Fat Method?</h2>
+        <p>The U.S. Navy Method is a widely respected formula used to estimate body fat percentage without expensive clinical equipment. It relies on specific circumference measurements of the neck, waist, and (for women) hips. Our <strong>online body fat calculator</strong> provides a high-fidelity estimation of your body composition, which is often more useful than weight alone for tracking fitness progress.</p>
+
+        <h3 class="mt-4">Why Body Fat Percentage Matters</h2>
+        <p>Your weight on a scale doesn't distinguish between muscle, bone, and fat. By using our <strong>body composition auditor</strong>, you can ensure that your lifestyle changes are resulting in healthy fat loss rather than just muscle depletion. Athletes typically aim for 6-13% for men and 14-20% for women, while healthy fitness ranges fall between 14-24% for men and 21-31% for women.</p>
+
+        <h3 class="mt-4">Privacy and Privacy Accuracy</h2>
+        <p>At 99tool.in, your sensitive body data belongs to you. Our <strong>private body fat tool</strong> runs local calculations in your browser session. We do not store or transmit your measurements. This <strong>secure body metric checker</strong> provides professional insights while maintaining your absolute privacy.</p>
+
+        <div class="alert alert-info mt-4">
+           <strong>Disclaimer:</strong> This is a mathematical estimation. For clinical accuracy, consider professional DXA scans or air displacement plethysmography (Bod Pod).
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    function toggleGenderFields() {
+       const g = document.getElementById('gender').value;
+       document.getElementById('hip-group').style.display = (g === 'female') ? 'block' : 'none';
+    }
+
+    function calculateFat() {
+       const g = document.getElementById('gender').value;
+       const h = parseFloat(document.getElementById('height').value);
+       const n = parseFloat(document.getElementById('neck').value);
+       const w = parseFloat(document.getElementById('waist').value);
+       const hip = parseFloat(document.getElementById('hip').value);
+       
+       if (!h || !n || !w || (g === 'female' && !hip)) return alert('Please enter all required measurements.');
+
+       let fat = 0;
+       if (g === 'male') {
+          // Navy Men: 495 / (1.03248 - 0.19077 * log10(waist - neck) + 0.15456 * log10(height)) - 450
+          fat = 495 / (1.03248 - 0.19077 * Math.log10(w - n) + 0.15456 * Math.log10(h)) - 450;
+       } else {
+          // Navy Women: 495 / (1.29579 - 0.35004 * log10(waist + hip - neck) + 0.22100 * log10(height)) - 450
+          fat = 495 / (1.29579 - 0.35004 * Math.log10(w + hip - n) + 0.22100 * Math.log10(h)) - 450;
+       }
+
+       document.getElementById('fat-res').innerText = Math.max(0, fat).toFixed(1) + '%';
+       document.getElementById('result-card').style.display = 'block';
+    }
+  </script>
+</body>
+</html>

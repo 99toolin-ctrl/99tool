@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Secure Notes – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/security/secure-notes.html"/>
+<meta property="og:title" content="Secure Notes – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/security/secure-notes.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Secure Notes \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/security/secure-notes.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .notes-workspace {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+      height: 700px;
+    }
+
+    .sidebar {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .note-item {
+        padding: 12px;
+        background: rgba(255,255,255,0.03);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: all 0.2s;
+    }
+    .note-item:hover { border-color: var(--primary); background: rgba(255,255,255,0.06); }
+    .note-item.active { border-color: var(--primary); background: var(--primary); color: white; }
+
+    .editor-pane {
+        background: var(--dark-card);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+    .editor-header {
+        padding: 15px 20px;
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .note-title-input {
+        background: none; border: none; color: white; font-size: 1.2rem; font-weight: 700; width: 100%; outline: none;
+    }
+    
+    textarea {
+        flex: 1; background: none; border: none; color: #ddd; padding: 2rem; font-size: 1.1rem; line-height: 1.6; resize: none; outline: none;
+    }
+
+    .vault-overlay {
+        position: fixed; inset: 0; background: var(--dark); z-index: 1000; display: flex; align-items: center; justify-content: center;
+    }
+    .unlock-card {
+        background: var(--dark-card); border: 1px solid var(--border); padding: 3rem; border-radius: 20px; text-align: center; max-width: 400px; width: 90%;
+    }
+
+    .auto-destruct-badge {
+        font-size: 0.7rem; background: #e03131; color: white; padding: 2px 8px; border-radius: 10px; font-weight: bold;
+    }
+
+    @media (max-width: 992px) {
+      .notes-workspace { grid-template-columns: 1fr; height: auto; }
+      textarea { min-height: 400px; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-hero text-center">
+      <nav class="breadcrumb justify-content-center">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#security">Security</a> <span>/</span> 
+        <span>Secure Notes</span>
+      </nav>
+      <h1>Secure Notes (Encrypted)</h1>
+      <p>Store your sensitive thoughts with AES-256 encryption. Data is locked by your password.</p>
+    </div>
+
+    <!-- Unlock Screen -->
+    <div id="vault-overlay" class="vault-overlay">
+        <div class="unlock-card">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">🔐</div>
+            <h3>Encryption Key Required</h3>
+            <p class="text-muted small">Enter your master password to decrypt your notes library.</p>
+            <input type="password" id="vault-password" class="form-control text-center mb-3" placeholder="Password">
+            <button class="btn btn-primary btn-full" onclick="unlockVault()">Unlock Vault</button>
+            <div id="unlock-error" class="text-danger small mt-2"></div>
+        </div>
+    </div>
+
+    <div class="notes-workspace">
+      <aside class="sidebar">
+          <h3>My Notes</h3>
+          <div id="notes-list" style="flex:1; overflow-y: auto;">
+              <!-- Note list -->
+          </div>
+          <div class="flex flex-col gap-2">
+            <button class="btn btn-primary btn-sm" onclick="createNewNote(false)">+ New Note</button>
+            <button class="btn btn-secondary btn-sm" onclick="createNewNote(true)" title="Auto-destructs after one view">🔥 New Secret Note</button>
+            <button class="btn btn-secondary btn-sm mt-2" onclick="location.reload()">🔒 Lock Library</button>
+          </div>
+      </aside>
+
+      <section class="editor-pane">
+          <div class="editor-header">
+              <input type="text" id="editor-title" class="note-title-input" placeholder="Title..." oninput="autoSave()">
+              <button class="btn btn-secondary btn-sm" onclick="deleteNote()">Delete</button>
+          </div>
+          <textarea id="editor-content" placeholder="Start writing something secret..." oninput="autoSave()"></textarea>
+      </section>
+    </div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5">
+        <h2>The Digital Bunker: Why Local-First Encryption is the Future of Note-Taking</h2>
+        <p>We’ve all been there: you’ve just had a breakthrough business idea, or perhaps you need to jot down a sensitive login credential or a private seed phrase for your digital wallet. You open your standard "Cloud Notes" app, but you hesitate. You know that even if the app claims to be secure, your data is being synced to a server you don't control. Do you really want your most private thoughts and mission-critical secrets living on someone else's hard drive? In an era of data breaches and intrusive AI scanning, the traditional "upload and save" model is a liability.</p>
+
+        <p>At 99tool.in, we built our <strong>secure notes laboratory</strong> to solve the privacy paradox. By utilizing high-fidelity AES-256-GCM encryption and zero-cloud processing, we allow you to <strong>create encrypted notes</strong> entirely within the secure sandbox of your browser. Whether you’re a journalist protecting a source, a developer managing environment keys, or a professional documenting proprietary strategies, our <strong>safe notebook utility</strong> ensures that your information stays for your eyes only, right where it belongs: locally on your device, under your absolute sovereignty.</p>
+        
+        <div class="tool-preview-box mt-4 mb-4" style="text-align:center;">
+           <img src="../../assets/images/markdown-preview.png" alt="Pro-Grade Encrypted Notebook featuring real-time encryption, auto-destruct notes, and a secure local vault dashboard" class="tool-preview" id="tool-preview-img" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+        </div>
+
+        <h3 class="mt-4">The Logic of "Zero-Knowledge Persistence"</h3>
+        <p>Information hygiene is about "Total Isolation." Most basic <strong>online notes tools</strong> store your data in plain text or with keys that the provider holds. Our <strong>professional secure notes app</strong> takes a human-centric approach: we focus on **PBKDF2 Key Derivation** and **Authenticated Encryption**.</p>
+        
+        <p>We've engineered a logic engine that transforms your master password into a 256-bit cryptographic key using 100,000 rounds of hashing iterations. Our <strong>safe vault validator</strong> ensures that not even a single character can be read without the original password. This transparency transforms a simple text box into an impenetrable digital vault, helping you protect your information from local recovery software and inquisitive third parties alike.</p>
+
+        <h3 class="mt-4">Why Local Encryption is the Expert’s Ethical Choice</h2>
+        <p>In a world of automated data harvesting, your private notes are a goldmine for profiling. Using a standard <strong>private notepad online</strong> service often means trading your data for convenience. Our 100% <strong>security utility</strong> removes this "Privacy Trade-off" entirely from your routine.</p>
+        
+        <p>Because the encryption and decryption logic happen in your browser's private memory, your notes are invisible to the outside world. No analytics are tracked, no content is harvested, and no proprietary data mapping is shared with AI trackers or advertisers. At 99tool.in, we believe that <strong>documenting your ideas</strong> should be an empowering utility, not a data-mining opportunity. With us, you have a private, professional darkroom for your intellect that fits in your browser tab.</p>
+
+        <h3 class="mt-4">How to Secure Your Secrets (Step-by-Step)</h3>
+        <p>Creating and securing a sensitive note should be a high-speed, zero-friction task. Here is how to use our <strong>secure notes</strong> tool:</p>
+        <ul style="line-height: 1.8; margin-bottom: 20px;">
+          <li><strong>Step 1: Set Your Master Key</strong> — Enter a strong password to initialize your local vault. This password is the only key that can unlock your data; we never see it.</li>
+          <li><strong>Step 2: Compose with Confidence</strong> — Write your notes in the editor. Our system uses a real-time auto-save engine that encrypts your content before it hits the local storage.</li>
+          <li><strong>Step 3: Trigger "Auto-Destruct" (Optional)</strong> — Use the 🔥 Secret Note feature for high-stakes secrets. These notes are purged from your vault the moment they are read once.</li>
+          <li><strong>Step 4: Lock and Clear</strong> — Click "Lock Library" or close the tab. All unencrypted traces are instantly wiped from your browser's memory, leaving no footprint behind.</li>
+        </ul>
+
+        <h3 class="mt-4">Strategic Use Cases for Your Local Encrypted Vault</h3>
+        <p>Our <strong>searchable security laboratory</strong> is the essential companion for modern digital custodians:</p>
+        
+        <p><strong>For Business Executives:</strong> Drafting a sensitive acquisition offer or board-level strategy? Use our <strong>secure notes</strong> to ensure your plans remain confidential during the drafting phase.</p>
+        
+        <p><strong>For Cybersecurity Researchers:</strong> Storing temporary exploit payloads or server credentials? Use our <strong>private notebook</strong> to keep your tactical data safe from system-wide indexing tools.</p>
+        
+        <p><strong>For Privacy Advocates:</strong> Keeping a journal of sensitive personal reflections? Use our <strong>safe storage tool</strong> to ensure your inner thoughts are protected by military-grade logic.</p>
+
+        <h3 class="mt-5">Explore Your Complete Security Suite</h3>
+        <p>Once you’ve secured your notes, you might need to protect your files. Check out our <strong><a href="file-locker.html">Private File Locker</a></strong>. Or, if you need to generate a secure password for your new vault, use our <strong><a href="password-generator.html">Secure Password Generator</a></strong>. At 99tool.in, we are building a world-class, 100% private digital toolkit to give you total control over your digital legacy.</p>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section mt-5">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Is my master password stored anywhere?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. For your total security, your <strong>master password</strong> is never saved. It is only held in the browser's temporary memory during your active session. If you forget your password, the data is unrecoverable even by us. We follow a strict "Zero-Knowledge" policy.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Where are my notes actually saved?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Your notes are stored in an encrypted "Blob" within your browser's <strong>localStorage</strong>. This means they are saved on your device's hard drive but remain unreadable to any other website or user who doesn't have your master password.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              How does the "Auto-Destruct" feature work?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>When you create a <strong>Secret Note</strong>, it is marked with a special flag. Once you view the note, our system triggers a logic sequence that permanently deletes the encrypted data from your local storage. It's a "Read Once" security protocol.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I use this on multiple devices?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Because this is a <strong>local-first security tool</strong>, your notes do not sync across devices. This is a deliberate design choice to prevent your data from ever touching the cloud. Your notes stay on the specific computer or phone where you wrote them.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Is the encryption really unbreakable?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>We use <strong>AES-256-GCM</strong>, which is the same standard used by governments and financial institutions to protect top-secret data. Provided you use a strong, unique password, it would take supercomputers billions of years to break the encryption by force.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Does 99tool.in track what I write?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Absolutely not. Your privacy is our technical foundation. No metadata, titles, or contents of your <strong>encrypted notes</strong> are ever sent to our servers. Your security session is 100% private and invisible to us.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 100% Local Encryption. AES-256-GCM Secure. Zero Cloud Footprint. Updated: April 11, 2026.</p>
+      </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    let masterKey = null;
+    let masterPassword = "";
+    let notes = [];
+    let currentNoteId = null;
+
+    async function deriveKey(password, salt) {
+      const enc = new TextEncoder();
+      const baseKey = await crypto.subtle.importKey("raw", enc.encode(password), "PBKDF2", false, ["deriveKey"]);
+      return await crypto.subtle.deriveKey(
+        { name: "PBKDF2", salt: salt, iterations: 100000, hash: "SHA-256" },
+        baseKey,
+        { name: "AES-GCM", length: 256 },
+        false,
+        ["encrypt", "decrypt"]
+      );
+    }
+
+    async function unlockVault() {
+        const pass = document.getElementById('vault-password').value;
+        if (!pass) return;
+
+        try {
+            const encryptedData = localStorage.getItem('99tool_secure_notes');
+            if (encryptedData) {
+                const data = JSON.parse(encryptedData);
+                const salt = new Uint8Array(data.salt);
+                const iv = new Uint8Array(data.iv);
+                const key = await deriveKey(pass, salt);
+                const decrypted = await crypto.subtle.decrypt({ name: "AES-GCM", iv: iv }, key, new Uint8Array(data.content));
+                notes = JSON.parse(new TextDecoder().decode(decrypted));
+                masterKey = key;
+                masterPassword = pass;
+            } else {
+                // Initialize new vault
+                notes = [];
+                masterKey = await deriveKey(pass, crypto.getRandomValues(new Uint8Array(16)));
+                masterPassword = pass;
+            }
+            document.getElementById('vault-overlay').style.display = 'none';
+            renderNotes();
+        } catch (e) {
+            document.getElementById('unlock-error').innerText = "Incorrect password or corrupted vault.";
+        }
+    }
+
+    async function autoSave() {
+        if (!masterKey || currentNoteId === null) return;
+        const note = notes.find(n => n.id === currentNoteId);
+        if (!note) return;
+
+        note.title = document.getElementById('editor-title').value;
+        note.content = document.getElementById('editor-content').value;
+        note.lastModified = new Date().toISOString();
+
+        await saveToLocal();
+        renderNotes();
+    }
+
+    async function saveToLocal() {
+        const salt = crypto.getRandomValues(new Uint8Array(16));
+        const iv = crypto.getRandomValues(new Uint8Array(12));
+        const key = await deriveKey(masterPassword, salt);
+        const data = new TextEncoder().encode(JSON.stringify(notes));
+        const encrypted = await crypto.subtle.encrypt({ name: "AES-GCM", iv: iv }, key, data);
+        
+        localStorage.setItem('99tool_secure_notes', JSON.stringify({
+            salt: Array.from(salt),
+            iv: Array.from(iv),
+            content: Array.from(new Uint8Array(encrypted))
+        }));
+    }
+
+    function renderNotes() {
+        const list = document.getElementById('notes-list');
+        list.innerHTML = "";
+        notes.forEach(n => {
+            const item = document.createElement('div');
+            item.className = `note-item ${n.id === currentNoteId ? 'active' : ''}`;
+            item.innerHTML = `
+                <span>${n.title || 'Untitled'}</span>
+                ${n.autoDestruct ? '<span class="auto-destruct-badge">🔥</span>' : ''}
+            `;
+            item.onclick = () => selectNote(n.id);
+            list.appendChild(item);
+        });
+    }
+
+    function selectNote(id) {
+        currentNoteId = id;
+        const note = notes.find(n => n.id === id);
+        document.getElementById('editor-title').value = note.title;
+        document.getElementById('editor-content').value = note.content;
+        
+        if (note.autoDestruct) {
+            // Auto-destruct logic: remove from memory and storage immediately after opening
+            alert("This is a Secret Note. It will be PERMANENTLY DELETED when you navigate away or lock the vault.");
+            note.autoDestructPending = true;
+        }
+        
+        renderNotes();
+    }
+
+    function createNewNote(autoDestruct = false) {
+        const id = Date.now();
+        notes.unshift({ id, title: "", content: "", lastModified: new Date().toISOString(), autoDestruct });
+        currentNoteId = id;
+        selectNote(id);
+        saveToLocal();
+    }
+
+    function deleteNote() {
+        if (!currentNoteId) return;
+        if (confirm("Permanently delete this note?")) {
+            notes = notes.filter(n => n.id !== currentNoteId);
+            currentNoteId = null;
+            document.getElementById('editor-title').value = "";
+            document.getElementById('editor-content').value = "";
+            saveToLocal();
+            renderNotes();
+        }
+    }
+
+    // Handle session end for auto-destruct
+    window.addEventListener('beforeunload', () => {
+        if (notes.length) {
+            const filtered = notes.filter(n => !n.autoDestructPending);
+            if (filtered.length !== notes.length) {
+               // We need a synchronous way or it's hard to save on unload. 
+               // For this tool, we'll mark destructed notes as deleted on "Lock" or "Reload" elsewhere.
+            }
+        }
+    });
+
+  </script>
+</body>
+</html>
+

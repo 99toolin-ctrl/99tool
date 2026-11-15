@@ -1,0 +1,524 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Encryption Tool – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/security/encryption-tool.html"/>
+<meta property="og:title" content="Encryption Tool – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/security/encryption-tool.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Encryption Tool \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/security/encryption-tool.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="aes encryption tool, encrypt text online, secure message encryption, decrypt text, private encryption tool, aes-gcm" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json" id="schema-org-data">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "AES Encryption Tool",
+    "operatingSystem": "Any",
+    "applicationCategory": "SecurityApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "AES-GCM 256-bit Encryption, PBKDF2 Key Derivation, Random IV Generation, 100% Processing"
+  }
+  </script>
+
+  <style>
+    .enc-layout { display: grid; grid-template-columns: 1fr; gap: 30px; }
+
+    .input-pane, .output-pane {
+      background: var(--dark-card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 30px;
+    }
+
+    textarea {
+      width: 100%; height: 250px; background: var(--dark); border: 1px solid var(--border);
+      border-radius: var(--radius-sm); color: #e0e0e0; padding: 15px;
+      font-family: 'Fira Code', monospace; font-size: 0.85rem; resize: none; outline: none;
+    }
+    textarea:focus { border-color: var(--primary); }
+
+    .password-area {
+       background: var(--dark); padding: 20px; border-radius: 8px; border: 1px solid var(--border);
+       margin: 20px 0;
+    }
+
+    .mode-toggle {
+       display: flex; background: var(--dark); border: 1px solid var(--border); border-radius: 20px;
+       overflow: hidden; margin-bottom: 20px;
+    }
+    .mode-btn {
+       flex: 1; padding: 10px; border: none; background: transparent; color: var(--text-muted);
+       font-weight: 700; cursor: pointer; transition: 0.3s;
+    }
+    .mode-btn.active { background: var(--primary); color: white; }
+
+    @media (min-width: 900px) {
+       .enc-layout { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/security/encryption-tool.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/security/encryption-tool.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/security/encryption-tool.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/security/encryption-tool.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/security/encryption-tool.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/security/encryption-tool.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/security/encryption-tool.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/security/encryption-tool.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/security/encryption-tool.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/security/encryption-tool.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/security/encryption-tool.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/security/encryption-tool.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/security/encryption-tool.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/security/encryption-tool.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/security/encryption-tool.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/security/encryption-tool.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/security/encryption-tool.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/security/encryption-tool.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/security/encryption-tool.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/security/encryption-tool.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/security/encryption-tool.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/security/encryption-tool.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#security">Security Tools</a> <span>/</span> 
+        <span>AES Encryption Tool</span>
+      </nav>
+      <h1>AES Encryption Tool</h1>
+      <p>Armor your communications with battle-tested 256-bit security. Encrypt passwords, notes, or messages locally using industrial-grade AES-GCM logic—never sharing a single byte with the cloud.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div class="enc-layout">
+        <div class="input-pane">
+           <div class="mode-toggle">
+              <button class="mode-btn active" id="btn-encrypt">ENCRYPT</button>
+              <button class="mode-btn" id="btn-decrypt">DECRYPT</button>
+           </div>
+           
+           <h3 id="input-label">Plaintext Message</h3>
+           <textarea id="main-input" placeholder="Enter text to encrypt..."></textarea>
+
+           <div class="password-area">
+              <label class="text-white small fw-bold block mb-2">Encryption Password (Secret Key)</label>
+              <input type="password" id="pass-code" class="form-control" placeholder="Enter strong password...">
+              <p class="text-muted small mt-2">Required to generate the 256-bit AES key locally.</p>
+           </div>
+
+           <button class="btn btn-primary btn-full" id="run-btn">Encrypt Message</button>
+        </div>
+
+        <div class="output-pane">
+           <h3 id="output-label">Ciphertext (Encrypted)</h3>
+           <textarea id="main-output" readonly placeholder="Secure output will appear here..."></textarea>
+           
+           <div class="flex gap-3 mt-4">
+              <button class="btn btn-secondary btn-full" id="copy-btn">Copy Output</button>
+           </div>
+           <div class="info-box mt-4">
+              <div class="info-icon">🛡️</div>
+              <p class="small">We use **PBKDF2** for key derivation and **AES-GCM** for encryption. Each encrypted message contains a unique random IV and salt for maximum entropy.</p>
+           </div>
+        </div>
+      </div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.aes_encryption_tool.what_is_title">What is the AES Encryption Tool?</h2>
+        <p>The AES Encryption Tool lets you encrypt and decrypt text directly in your browser using the AES-256-GCM algorithm — one of the strongest symmetric encryption standards used by governments and financial institutions worldwide. Unlike server-side encryption services, this tool performs all cryptographic operations inside your browser using the Web Crypto API. No plaintext, keys, or ciphertext ever leave your device.</p>
+        <p>Enter your message, provide an encryption passphrase, and receive Base64-encoded ciphertext instantly. Share the ciphertext safely over any channel — only someone with your exact passphrase can decrypt it.</p>
+
+        <h3 class="mt-4">How to Use the AES Encryption Tool</h3>
+        <p>Encrypting and decrypting text involves these steps:</p>
+        <ol class="mt-2 mb-3">
+          <li>Type or paste the text you want to protect into the Message input field.</li>
+          <li>Enter a strong passphrase in the Key / Passphrase field. This passphrase is used to derive the AES-256 encryption key.</li>
+          <li>Click "Encrypt" to generate Base64-encoded ciphertext. Copy and store it securely.</li>
+          <li>To decrypt, paste the ciphertext into the Message field, enter the same passphrase, and click "Decrypt".</li>
+          <li>The decrypted plaintext appears instantly. If the passphrase is wrong, decryption fails with an error.</li>
+        </ol>
+
+        <h3 class="mt-4">Key Features</h3>
+        <ul class="mt-2 mb-3">
+          <li><strong>AES-256-GCM Algorithm:</strong> Uses authenticated encryption that protects both confidentiality and data integrity.</li>
+          <li><strong>Web Crypto API:</strong> Cryptographic operations run natively in the browser — no third-party JS libraries required.</li>
+          <li><strong>Zero Server Contact:</strong> All encryption and decryption happens entirely client-side. No data is transmitted.</li>
+          <li><strong>Base64 Output:</strong> Encrypted output is safely encoded for copying, emailing, or pasting into any text field.</li>
+        </ul>
+
+        <h3 class="mt-4">Common Use Cases</h3>
+        <p>This tool is helpful for the following tasks:</p>
+        <ul class="mt-2 mb-3">
+          <li><strong>Confidential Text Sharing:</strong> Encrypting sensitive messages before sending them over email, chat, or SMS.</li>
+          <li><strong>Secure Local Storage:</strong> Encrypting private notes or credentials before saving them to a plain-text file.</li>
+          <li><strong>Developer Testing:</strong> Testing encryption workflows and understanding AES-GCM output formats during development.</li>
+        </ul>
+
+        <h3 class="mt-4">Frequently Asked Questions</h3>
+        <div class="faq-section mt-3">
+          <p><strong>Is AES-256 truly secure?</strong><br>Yes. AES-256-GCM is used by the US government (NIST standard), financial institutions, and TLS 1.3. With a strong passphrase, brute-forcing is computationally infeasible.</p>
+          <p><strong>What happens if I forget my passphrase?</strong><br>There is no recovery mechanism. The ciphertext is mathematically unrecoverable without the exact passphrase. Store your passphrase securely.</p>
+          <p><strong>Can I encrypt files with this tool?</strong><br>This tool is designed for text. For file encryption, use the File Locker (AES-256) tool on this site.</p>
+          <p><strong>Is the passphrase stored anywhere?</strong><br>No. The passphrase is used only in memory during the cryptographic operation and is never stored, logged, or transmitted.</p>
+        </div>
+
+        <h3 class="mt-4">Privacy &amp; Data Note</h3>
+        <p>All encryption and decryption operations run entirely inside your browser using the Web Crypto API. Your plaintext, passphrase, and ciphertext never leave your device and are never transmitted to any server.</p>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2 data-i18n="tools.aes_encryption_tool.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">Is AES-256 truly secure?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>Yes. AES-256-GCM is used by governments, financial institutions, and all modern TLS connections. With a strong passphrase, the ciphertext is computationally infeasible to brute-force.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">What if I forget my passphrase?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>There is no recovery mechanism. AES encryption is a one-way lock with your passphrase as the key. Store it securely — a password manager is recommended.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">Is my data sent to your servers?<span class="faq-icon">+</span></button>
+            <div class="faq-answer"><p>Never. All cryptographic operations run locally in your browser via the Web Crypto API. No plaintext, key, or ciphertext is transmitted anywhere.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>&#128274; 100% Client-Side Encryption. No server contact. No data stored. Last updated: April 10, 2026.</p>
+      </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const btnEnc = document.getElementById('btn-encrypt');
+    const btnDec = document.getElementById('btn-decrypt');
+    const inputLabel = document.getElementById('input-label');
+    const outputLabel = document.getElementById('output-label');
+    const mainInput = document.getElementById('main-input');
+    const mainOutput = document.getElementById('main-output');
+    const passCode = document.getElementById('pass-code');
+    const runBtn = document.getElementById('run-btn');
+    const copyBtn = document.getElementById('copy-btn');
+
+    let isEncrypt = true;
+
+    btnEnc.onclick = () => setMode(true);
+    btnDec.onclick = () => setMode(false);
+
+    function setMode(encrypt) {
+       isEncrypt = encrypt;
+       btnEnc.classList.toggle('active', encrypt);
+       btnDec.classList.toggle('active', !encrypt);
+       inputLabel.textContent = encrypt ? 'Plaintext Message' : 'Ciphertext (Base64)';
+       outputLabel.textContent = encrypt ? 'Ciphertext (Encrypted)' : 'Decrypted Message';
+       mainInput.placeholder = encrypt ? 'Enter text to encrypt...' : 'Paste Base64 ciphertext here...';
+       runBtn.textContent = encrypt ? 'Encrypt Message' : 'Decrypt Message';
+       mainInput.value = '';
+       mainOutput.value = '';
+    }
+
+    runBtn.onclick = async () => {
+       const text = mainInput.value.trim();
+       const pass = passCode.value.trim();
+       if (!text || !pass) return alert('Input and Password are required.');
+
+       try {
+          if (isEncrypt) {
+             mainOutput.value = await encryptData(text, pass);
+          } else {
+             mainOutput.value = await decryptData(text, pass);
+          }
+       } catch (err) {
+          alert('Operation failed. Check password or ciphertext format.');
+          console.error(err);
+       }
+    };
+
+    copyBtn.onclick = () => copyToClipboard(mainOutput.value, copyBtn);
+
+    // CRYPTO HELPERS
+    async function deriveKey(password, salt) {
+       const enc = new TextEncoder();
+       const keyMaterial = await crypto.subtle.importKey(
+          "raw", enc.encode(password), "PBKDF2", false, ["deriveKey"]
+       );
+       return crypto.subtle.deriveKey(
+          {
+             name: "PBKDF2",
+             salt: salt,
+             iterations: 100000,
+             hash: "SHA-256",
+          },
+          keyMaterial,
+          { name: "AES-GCM", length: 256 },
+          false,
+          ["encrypt", "decrypt"]
+       );
+    }
+
+    async function encryptData(plaintext, password) {
+       const enc = new TextEncoder();
+       const salt = crypto.getRandomValues(new Uint8Array(16));
+       const iv = crypto.getRandomValues(new Uint8Array(12));
+       const key = await deriveKey(password, salt);
+
+       const encrypted = await crypto.subtle.encrypt(
+          { name: "AES-GCM", iv: iv },
+          key,
+          enc.encode(plaintext)
+       );
+
+       const bundle = new Uint8Array(salt.length + iv.length + encrypted.byteLength);
+       bundle.set(salt, 0);
+       bundle.set(iv, salt.length);
+       bundle.set(new Uint8Array(encrypted), salt.length + iv.length);
+
+       return btoa(String.fromCharCode(...bundle));
+    }
+
+    async function decryptData(ciphertext, password) {
+       const bundle = new Uint8Array(atob(ciphertext).split("").map(c => c.charCodeAt(0)));
+       const salt = bundle.slice(0, 16);
+       const iv = bundle.slice(16, 28);
+       const data = bundle.slice(28);
+
+       const key = await deriveKey(password, salt);
+       const decrypted = await crypto.subtle.decrypt(
+          { name: "AES-GCM", iv: iv },
+          key,
+          data
+       );
+
+       return new TextDecoder().decode(decrypted);
+    }
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

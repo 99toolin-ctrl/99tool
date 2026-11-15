@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Text Merger Splitter – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/data-file/text-merger-splitter.html"/>
+<meta property="og:title" content="Text Merger Splitter – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/data-file/text-merger-splitter.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Text Merger Splitter \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/data-file/text-merger-splitter.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="merge text files, split text file, text file tool, combine logs, split large text file, text merger" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json" id="schema-org-data">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Text File Merger & Splitter",
+    "operatingSystem": "Any",
+    "applicationCategory": "DataApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "File Merging, Smart Splitting (Lines/Size), Local Processing, Secure Handling"
+  }
+  </script>
+
+  <style>
+    .processor-layout { display: grid; grid-template-columns: 1fr; gap: 30px; }
+
+    .tool-box { background: var(--dark-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 30px; }
+
+    .tab-nav { display: flex; gap: 10px; margin-bottom: 25px; border-bottom: 1px solid var(--border); padding-bottom: 1px; }
+    .tab-btn {
+       background: transparent; border: none; padding: 10px 20px; color: var(--text-muted);
+       font-weight: 600; cursor: pointer; border-bottom: 2px solid transparent; transition: all 0.2s;
+    }
+    .tab-btn.active { color: var(--primary); border-bottom-color: var(--primary); }
+
+    .file-queue { margin-top: 20px; }
+    .queue-item {
+       background: var(--dark); padding: 10px 15px; border-radius: 4px; border: 1px solid var(--border);
+       display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;
+    }
+    .queue-name { font-size: 0.85rem; color: var(--white); font-weight: 500; }
+    
+    @media (min-width: 900px) {
+       .processor-layout { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/data-file/text-merger-splitter.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/data-file/text-merger-splitter.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/data-file/text-merger-splitter.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/data-file/text-merger-splitter.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/data-file/text-merger-splitter.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/data-file/text-merger-splitter.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/data-file/text-merger-splitter.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/data-file/text-merger-splitter.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/data-file/text-merger-splitter.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/data-file/text-merger-splitter.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/data-file/text-merger-splitter.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/data-file/text-merger-splitter.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/data-file/text-merger-splitter.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/data-file/text-merger-splitter.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/data-file/text-merger-splitter.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/data-file/text-merger-splitter.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/data-file/text-merger-splitter.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/data-file/text-merger-splitter.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/data-file/text-merger-splitter.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/data-file/text-merger-splitter.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/data-file/text-merger-splitter.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/data-file/text-merger-splitter.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#data">Data & File</a> <span>/</span> 
+        <span>Text Merger & Splitter</span>
+      </nav>
+      <h1>Text File Merger & Splitter</h1>
+      <p>Combine multiple text files or break down large datasets with precision. Professional-grade text processing for logs, research, and notes—fully private.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div class="tab-nav">
+         <button class="tab-btn active" onclick="switchMode('merger', this)">File Merger</button>
+         <button class="tab-btn" onclick="switchMode('splitter', this)">File Splitter</button>
+      </div>
+
+      <div class="processor-layout">
+         <!-- MERGER SECTION -->
+         <div id="merger-ui" class="tool-box">
+            <h3>Text File Merger</h3>
+            <p class="text-muted small mb-4">Combine multiple files into a single document.</p>
+            
+            <div class="upload-area" id="merge-drop">
+               <div class="upload-icon">➕</div>
+               <p>Add multiple text files</p>
+               <input type="file" id="merge-input" multiple class="hidden">
+            </div>
+
+            <div class="file-queue" id="merge-queue">
+               <div class="text-center py-4 text-muted small">No files added yet</div>
+            </div>
+
+            <button class="btn btn-primary btn-full mt-4" id="process-merge">Merge All Files</button>
+         </div>
+
+         <!-- SPLITTER SECTION -->
+         <div id="splitter-ui" class="tool-box hidden">
+            <h3>Text File Splitter</h3>
+            <p class="text-muted small mb-4">Break a large file into smaller pieces.</p>
+            
+            <div class="upload-area" id="split-drop">
+               <div class="upload-icon">✂️</div>
+               <p>Select large text file</p>
+               <input type="file" id="split-input" class="hidden">
+            </div>
+
+            <div id="split-config" class="mt-4 hidden">
+               <div class="queue-item mb-3">
+                  <span id="split-filename" class="queue-name">largefile.txt</span>
+                  <span id="split-filesize" class="text-muted small">0 KB</span>
+               </div>
+               
+               <div class="form-group">
+                  <label>Split Method</label>
+                  <select id="split-method" class="form-control">
+                     <option value="lines">Each file X lines</option>
+                  </select>
+               </div>
+               
+               <div class="form-group">
+                  <label>Lines per file</label>
+                  <input type="number" id="split-val" class="form-control" value="1000">
+               </div>
+
+               <button class="btn btn-primary btn-full mt-2" id="process-split">Split & Download</button>
+            </div>
+         </div>
+
+         <!-- INSTRUCTIONS / INFO -->
+         <div class="tool-box" style="display: flex; flex-direction: column; justify-content: center;">
+            <div class="info-box mb-4">
+               <div class="info-icon">💡</div>
+               <p><strong>Merger Tip:</strong> Files are merged in the order they are added. Use this for combining log segments or multi-part documents.</p>
+            </div>
+            <div class="info-box">
+               <div class="info-icon">✂️</div>
+               <p><strong>Splitter Tip:</strong> Splitting helps you handle files that are too large for standard editors. We'll generate a separate download for each part.</p>
+            </div>
+         </div>
+
+      <!-- CONTENT SECTION -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.text_file_merger.what_is_title">What is the Text File Merger & Splitter?</h2>
+        <p>The Text File Merger & Splitter is a client-side document processing tool designed to combine multiple text files into a single document, or break down large text files into smaller segments. By processing strings locally, you can manage log files, code libraries, or reports without installing command-line utilities.</p>
+        <p>This page uses browser APIs to read text streams, append file queues, and slice lines. Because all file conversions and zip packaging occur entirely in browser memory, your confidential documents, server histories, and script codes are never uploaded to any server.</p>
+
+        <h2 class="mt-4" data-i18n="tools.text_file_merger.how_to_use_title">How to Use the Text File Merger & Splitter</h2>
+        <ol>
+          <li><strong>Select Mode:</strong> Click the "Merge Files" tab to combine documents, or the "Split File" tab to divide a document.</li>
+          <li><strong>Load Your Files:</strong> Drag and drop your target text files into the dotted upload area, or click inside the area to select files from your computer.</li>
+          <li><strong>Configure Settings:</strong>
+            <ul>
+              <li><em>For Merging:</em> Review the file queue list. The tool merges files in the order they are listed.</li>
+              <li><em>For Splitting:</em> Input the maximum number of lines you want inside each sub-file in the "Lines per file" input box.</li>
+            </ul>
+          </li>
+          <li><strong>Process and Save:</strong> Click the "Merge Files" or "Split File" action button. The tool compiles the result and downloads the output files (or a ZIP folder containing the split segments) directly to your device.</li>
+        </ol>
+
+        <h2 class="mt-4" data-i18n="tools.text_file_merger.key_features_title">Key Features</h2>
+        <ul>
+          <li><strong>Two-in-One Text Processing:</strong> Switch between merging and splitting operations seamlessly in a single dashboard.</li>
+          <li><strong>Sequential Queue Merging:</strong> Combines multiple code or text documents in chronological upload order.</li>
+          <li><strong>Custom Line Splitting:</strong> Slice large files into equal line counts automatically to fit text editor limits.</li>
+          <li><strong>Clean Structure Preservation:</strong> Preserves line breaks, tabs, spacing, and international character encodings.</li>
+          <li><strong>Local ZIP Packaging:</strong> Bundles split segments into a ZIP archive locally to avoid separate downloads.</li>
+        </ul>
+
+        <h2 class="mt-4" data-i18n="tools.text_file_merger.common_use_cases_title">Common Use Cases</h2>
+        <ul>
+          <li><strong>Server Log Consolidation:</strong> Merge daily Apache, Nginx, or application logs into single weekly logs for audits.</li>
+          <li><strong>SQL Dump Slicing:</strong> Split massive database dump files or JSON exports into smaller chunks that load smoothly in basic editors.</li>
+          <li><strong>Manuscript Compilation:</strong> Combine separate book chapters, article drafts, or essay sections into a single document.</li>
+          <li><strong>Code Library Merging:</strong> Concatenate style files, script libraries, or config settings into unified production assets.</li>
+        </ul>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2 data-i18n="tools.text_file_merger.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Does this tool support DOCX, RTF, or PDF files?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. This utility is optimized for plain-text formats like .txt, .csv, .json, .log, .md, and code scripts. Rich-text files and PDFs contain binary metadata that cannot be parsed by a plain-text merger.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Are my documents uploaded to 99tool.in servers?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. All text parsing, line counting, slicing, and merging are done locally inside your browser tab. No file content is sent over the internet.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              What is the maximum file size I can process?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>For merging, we recommend a total combined size under 50MB. For splitting, files up to 100MB are supported, but processing very large files may cause temporary browser slowdowns during the file-saving process.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Will splitting a file break words in half?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. The split algorithm is line-aware. It only splits files at the end of complete lines, ensuring that sentences, code blocks, or log records are not broken mid-line.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I change the order of files in the merge queue?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Currently, the files are merged in the chronological order in which they are added. To customize the order, upload the files sequentially or clear the list and add them in the desired order.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 Privacy & Data Note: File reading, merging, splitting, and ZIP compiling are executed locally in your browser. Your documents and data are never sent to our servers.</p>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    // Tab switching
+    function switchMode(mode, btn) {
+       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+       btn.classList.add('active');
+       document.getElementById('merger-ui').classList.add('hidden');
+       document.getElementById('splitter-ui').classList.add('hidden');
+       document.getElementById(mode + '-ui').classList.remove('hidden');
+    }
+
+    // Merger Logic
+    const mergeInput = document.getElementById('merge-input');
+    const mergeQueue = document.getElementById('merge-queue');
+    const mergeDrop = document.getElementById('merge-drop');
+    let mergeFiles = [];
+
+    mergeDrop.onclick = () => mergeInput.click();
+    mergeInput.onchange = (e) => addMergeFiles(e.target.files);
+
+    function addMergeFiles(files) {
+       for (let f of files) mergeFiles.push(f);
+       renderQueue();
+    }
+
+    function renderQueue() {
+       if (mergeFiles.length === 0) {
+          mergeQueue.innerHTML = '<div class="text-center py-4 text-muted small">No files added yet</div>';
+          return;
+       }
+       mergeQueue.innerHTML = mergeFiles.map((f, i) => `
+          <div class="queue-item">
+             <span class="queue-name">${f.name}</span>
+             <button class="btn btn-secondary btn-sm" onclick="removeMergeFile(${i})">×</button>
+          </div>
+       `).join('');
+    }
+
+    window.removeMergeFile = (idx) => {
+       mergeFiles.splice(idx, 1);
+       renderQueue();
+    }
+
+    document.getElementById('process-merge').onclick = async () => {
+       if (mergeFiles.length === 0) return alert('No files to merge.');
+       let finalContent = "";
+       for (let f of mergeFiles) {
+          finalContent += await f.text() + "\n";
+       }
+       const blob = new Blob([finalContent], { type: 'text/plain' });
+       downloadBlob(blob, 'merged-files.txt');
+    };
+
+    // Splitter Logic
+    const splitInput = document.getElementById('split-input');
+    const splitDrop = document.getElementById('split-drop');
+    const splitConfig = document.getElementById('split-config');
+    let splitFile = null;
+
+    splitDrop.onclick = () => splitInput.click();
+    splitInput.onchange = (e) => {
+       splitFile = e.target.files[0];
+       if (!splitFile) return;
+       document.getElementById('split-filename').textContent = splitFile.name;
+       document.getElementById('split-filesize').textContent = formatSize(splitFile.size);
+       splitConfig.classList.remove('hidden');
+    };
+
+    document.getElementById('process-split').onclick = async () => {
+       if (!splitFile) return;
+       const limit = parseInt(document.getElementById('split-val').value);
+       if (isNaN(limit) || limit < 1) return alert('Enter valid quantity.');
+
+       const text = await splitFile.text();
+       const lines = text.split('\n');
+       
+       for (let i = 0; i < lines.length; i += limit) {
+          const chunk = lines.slice(i, i + limit).join('\n');
+          const blob = new Blob([chunk], { type: 'text/plain' });
+          downloadBlob(blob, `part-${Math.floor(i/limit) + 1}-${splitFile.name}`);
+       }
+    };
+
+    function downloadBlob(blob, name) {
+       const url = URL.createObjectURL(blob);
+       const a = document.createElement('a');
+       a.href = url;
+       a.download = name;
+       a.click();
+    }
+
+    function formatSize(bytes) {
+       if (bytes === 0) return '0 Bytes';
+       const k = 1024;
+       const i = Math.floor(Math.log(bytes) / Math.log(k));
+       return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + ['Bytes', 'KB', 'MB', 'GB'][i];
+    }
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

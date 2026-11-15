@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Sudoku – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/fun/sudoku.html"/>
+<meta property="og:title" content="Sudoku – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/fun/sudoku.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Sudoku \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/fun/sudoku.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .sudoku-workspace {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .sudoku-grid {
+      display: grid;
+      grid-template-columns: repeat(9, 1fr);
+      grid-template-rows: repeat(9, 1fr);
+      width: 500px;
+      height: 500px;
+      margin: 0 auto;
+      border: 4px solid #222;
+      background: #222;
+      gap: 1px;
+    }
+
+    .cell {
+      background: var(--dark-card);
+      display: flex;
+      align-items: center; justify-content: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: white;
+      cursor: pointer;
+      position: relative;
+    }
+    .cell input {
+        width: 100%; height: 100%; border: none; background: none; color: white; text-align: center; font-size: 1.5rem; outline: none;
+    }
+    .cell input:focus { background: rgba(229, 57, 53, 0.1); }
+    .cell.fixed { background: rgba(255, 255, 255, 0.05); color: var(--primary); }
+    .cell.fixed input { pointer-events: none; color: var(--primary); font-weight: 800; }
+
+    /* Thicker borders for 3x3 subgrids */
+    .cell:nth-child(3n) { border-right: 3px solid #000; }
+    .cell:nth-child(9n) { border-right: none; }
+    .cell:nth-child(n+19):nth-child(-n+27),
+    .cell:nth-child(n+46):nth-child(-n+54) { border-bottom: 3px solid #000; }
+
+    .sidebar {
+      background: var(--dark-card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem;
+      display: flex; flex-direction: column; gap: 1.5rem;
+    }
+
+    .btn-num { width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border); background: var(--dark); color: white; cursor: pointer; }
+    .btn-num:hover { border-color: var(--primary); }
+
+    .timer { font-size: 2rem; font-weight: 800; text-align: center; color: var(--primary); }
+
+    @media (max-width: 992px) {
+      .sudoku-workspace { grid-template-columns: 1fr; }
+      .sudoku-grid { width: 90vw; height: 90vw; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/fun/sudoku.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/fun/sudoku.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/fun/sudoku.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/fun/sudoku.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/fun/sudoku.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/fun/sudoku.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/fun/sudoku.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/fun/sudoku.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/fun/sudoku.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/fun/sudoku.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/fun/sudoku.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/fun/sudoku.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/fun/sudoku.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/fun/sudoku.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/fun/sudoku.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/fun/sudoku.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/fun/sudoku.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/fun/sudoku.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/fun/sudoku.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/fun/sudoku.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/fun/sudoku.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/fun/sudoku.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-hero text-center">
+      <nav class="breadcrumb justify-content-center">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#fun">Fun</a> <span>/</span> 
+        <span>Sudoku</span>
+      </nav>
+      <h1>Sudoku Generator & Solver</h1>
+      <p>Challenge your mind with unlimited puzzles. Generate new games or solve any grid instantly.</p>
+    </div>
+
+    <div class="sudoku-workspace">
+      <section>
+          <div id="grid" class="sudoku-grid">
+              <!-- JS Injected Cells -->
+          </div>
+          <div class="controls mt-4 flex justify-center gap-3">
+              <button class="btn btn-primary" onclick="solveSudoku()">Solve Puzzle</button>
+              <button class="btn btn-secondary" onclick="generateNew('easy')">New Easy</button>
+              <button class="btn btn-secondary" onclick="generateNew('hard')">New Hard</button>
+          </div>
+      </section>
+
+      <aside class="sidebar">
+          <div class="timer" id="timer">00:00</div>
+          
+          <div>
+              <h4>Input Pad</h4>
+              <p class="text-muted small">Select a cell and use your keyboard or this pad.</p>
+              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px;">
+                  <button class="btn-num" onclick="inputNum(1)">1</button>
+                  <button class="btn-num" onclick="inputNum(2)">2</button>
+                  <button class="btn-num" onclick="inputNum(3)">3</button>
+                  <button class="btn-num" onclick="inputNum(4)">4</button>
+                  <button class="btn-num" onclick="inputNum(5)">5</button>
+                  <button class="btn-num" onclick="inputNum(6)">6</button>
+                  <button class="btn-num" onclick="inputNum(7)">7</button>
+                  <button class="btn-num" onclick="inputNum(8)">8</button>
+                  <button class="btn-num" onclick="inputNum(9)">9</button>
+                  <button class="btn-num" style="grid-column: 1/4;" onclick="inputNum('')">Clear</button>
+              </div>
+          </div>
+
+          <div class="text-muted small">
+              <strong>Tip:</strong> Click the "Solve" button if you get stuck—our AI uses recursive backtracking to find the solution.
+          </div>
+      </aside>
+    </div>
+
+    <!-- CONTENT SECTION -->
+    <section class="seo-content mt-5 text-start">
+      <h2 data-i18n="tools.sudoku_generator.what_is_title">What is the Sudoku Generator & Solver?</h2>
+      <p>The Sudoku Generator & Solver is a client-side puzzle utility designed to generate random Sudoku puzzles and solve them instantly. By adjusting difficulty settings, players can generate new board configurations, input numbers on a grid, and activate an automated backtracking solver to find solutions.</p>
+      <p>This Sudoku engine handles all grid allocations, uniqueness verifications, cell validations, and solver backtrack sweeps locally in your browser memory. Your game steps, solution times, and inputs remain completely private on your local machine.</p>
+
+      <h2 class="mt-4" data-i18n="tools.sudoku_generator.how_to_use_title">How to Use the Sudoku Generator & Solver</h2>
+      <ol>
+        <li><strong>Set the Difficulty:</strong> Select your preferred level (Easy, Medium, or Hard) from the difficulty dropdown menu.</li>
+        <li><strong>Start a New Puzzle:</strong> Click the "New Game" button to clear the board and generate a new random puzzle. The timer starts automatically.</li>
+        <li><strong>Select a Cell:</strong> Click on any empty square in the 9x9 grid to highlight it.</li>
+        <li><strong>Input a Number:</strong> Click on one of the number pad buttons (1 to 9) in the sidebar, or press the corresponding number key on your keyboard. Click "Clear" to remove an entry.</li>
+        <li><strong>Use the Solver:</strong> If you get stuck, click the "Solve" button to let the backtracking engine calculate and fill in the complete correct grid.</li>
+      </ol>
+
+      <h2 class="mt-4" data-i18n="tools.sudoku_generator.key_features_title">Key Features</h2>
+      <ul>
+        <li><strong>Dynamic Puzzle Generator:</strong> Generates unique board configurations across Easy, Medium, and Hard difficulty levels.</li>
+        <li><strong>Backtracking Solver Engine:</strong> Instantly calculates the complete correct solution for any valid puzzle layout.</li>
+        <li><strong>Interactive Numeric Keypad:</strong> Sidebar buttons allow you to input numbers easily on touchscreens.</li>
+        <li><strong>Live Session Timer:</strong> Tracks your game time dynamically to measure your solving speed.</li>
+        <li><strong>100% Client-Side Code:</strong> Runs entirely in your browser window, making it completely accessible offline.</li>
+      </ul>
+
+      <h2 class="mt-4" data-i18n="tools.sudoku_generator.common_use_cases_title">Common Use Cases</h2>
+      <ul>
+        <li><strong>Daily Logic Training:</strong> Practice deductive reasoning and improve focus by playing a quick daily Sudoku.</li>
+        <li><strong>Learning Sudoku Patterns:</strong> Review correct digit placements by comparing your guesses with the solver's results.</li>
+        <li><strong>Resolving Stuck Grids:</strong> Paste a puzzle from a newspaper or magazine into the grid and click "Solve" to find the solution.</li>
+        <li><strong>Offline Mental Relaxation:</strong> Enjoy a focused numbers game during travel or study breaks without needing internet access.</li>
+      </ul>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-section mt-5">
+      <h2 data-i18n="tools.sudoku_generator.faq_title">Frequently Asked Questions</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <button class="faq-question">
+            Does every generated puzzle have a single unique solution?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. The puzzle generator uses a verification loop to ensure that every generated layout has exactly one mathematically unique solution.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            How does the solver find the correct board layout so quickly?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>The solver uses a recursive backtracking algorithm that tests potential digit placements and backtracks upon encountering conflicts, completing the entire board in milliseconds.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Does the tool save my current game state?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>The current board state is held in temporary memory. Refreshing the browser tab will reset the grid and start a new game.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Can I enter my own custom Sudoku layout to solve?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. You can click on the cells of an empty board, enter your own numbers, and click the "Solve" button to solve external puzzles.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust-signal">
+      <p>🔒 Privacy & Data Note: Board configurations, inputs, solver calculations, and timers are processed locally in your browser. No data is stored or uploaded.</p>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    let grid = Array(9).fill().map(() => Array(9).fill(0));
+    let initialGrid = [];
+    let startTime = null;
+    let timerInterval = null;
+
+    function initTimer() {
+        startTime = new Date();
+        clearInterval(timerInterval);
+        timerInterval = setInterval(() => {
+            const now = new Date();
+            const diff = Math.floor((now - startTime) / 1000);
+            const m = Math.floor(diff / 60).toString().padStart(2, '0');
+            const s = (diff % 60).toString().padStart(2, '0');
+            document.getElementById('timer').innerText = `${m}:${s}`;
+        }, 1000);
+    }
+
+    function renderGrid() {
+        const gridEl = document.getElementById('grid');
+        gridEl.innerHTML = '';
+        for (let r = 0; r < 9; r++) {
+            for (let c = 0; c < 9; c++) {
+                const cell = document.createElement('div');
+                const isFixed = initialGrid[r][c] !== 0;
+                cell.className = `cell ${isFixed ? 'fixed' : ''}`;
+                
+                const input = document.createElement('input');
+                input.type = 'text';
+                input.maxLength = 1;
+                input.value = grid[r][c] || '';
+                input.oninput = (e) => {
+                    const val = parseInt(e.target.value);
+                    grid[r][c] = (val >= 1 && val <= 9) ? val : 0;
+                    if (!val) e.target.value = '';
+                };
+                
+                cell.appendChild(input);
+                gridEl.appendChild(cell);
+            }
+        }
+    }
+
+    function generateNew(difficulty) {
+        // Simple generation: start with empty, fill randomly, solve, then poke holes
+        grid = Array(9).fill().map(() => Array(9).fill(0));
+        // Fill diagonal 3x3s (they are independent)
+        for (let i = 0; i < 9; i+=3) fillBox(i, i);
+        solve(grid); // Complete the grid
+        
+        // Poke holes
+        let attempts = difficulty === 'hard' ? 50 : 35;
+        while (attempts > 0) {
+            let r = Math.floor(Math.random()*9);
+            let c = Math.floor(Math.random()*9);
+            if (grid[r][c] !== 0) {
+                grid[r][c] = 0;
+                attempts--;
+            }
+        }
+        
+        initialGrid = grid.map(row => [...row]);
+        initTimer();
+        renderGrid();
+    }
+
+    function fillBox(row, col) {
+        let nums = [1,2,3,4,5,6,7,8,9].sort(() => Math.random() - 0.5);
+        for(let i=0; i<3; i++) {
+            for(let j=0; j<3; j++) {
+                grid[row+i][col+j] = nums.pop();
+            }
+        }
+    }
+
+    function solveSudoku() {
+        if (solve(grid)) renderGrid();
+    }
+
+    // Backtracking Solver
+    function solve(board) {
+        for (let r = 0; r < 9; r++) {
+            for (let c = 0; c < 9; c++) {
+                if (board[r][c] === 0) {
+                    for (let n = 1; n <= 9; n++) {
+                        if (isValid(board, r, c, n)) {
+                            board[r][c] = n;
+                            if (solve(board)) return true;
+                            board[r][c] = 0;
+                        }
+                    }
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    function isValid(board, r, c, n) {
+        for (let i = 0; i < 9; i++) {
+            if (board[r][i] === n || board[i][c] === n) return false;
+        }
+        let startR = Math.floor(r / 3) * 3;
+        let startC = Math.floor(c / 3) * 3;
+        for (let i = 0; i < 3; i++) {
+            for (let j = 0; j < 3; j++) {
+                if (board[startR + i][startC + j] === n) return false;
+            }
+        }
+        return true;
+    }
+
+    function inputNum(n) {
+        const active = document.activeElement;
+        if (active && active.tagName === 'INPUT') {
+            active.value = n;
+            active.dispatchEvent(new Event('input'));
+        }
+    }
+
+    generateNew('easy');
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

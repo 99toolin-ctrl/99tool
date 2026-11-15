@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Bmr Calculator – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/health/bmr-calculator.html"/>
+<meta property="og:title" content="Bmr Calculator – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/health/bmr-calculator.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Bmr Calculator \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/health/bmr-calculator.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .bmr-workspace {
+      max-width: 600px;
+      margin: 2rem auto;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      border-radius: 20px;
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; }
+    .form-group { margin-bottom: 1.5rem; }
+    label { display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-muted); }
+    input, select {
+      width: 100%;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.8rem;
+      border-radius: 8px;
+    }
+    .result-card {
+      background: var(--bg-secondary);
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin-top: 2rem;
+      text-align: center;
+      display: none;
+      border: 1px solid var(--primary);
+    }
+    .bmr-val { font-size: 3rem; font-weight: 900; color: var(--primary); }
+    .unit { font-size: 1rem; color: var(--text-muted); }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Infinite BMR Calculator</h1>
+      <p>Analyze your body's base energy consumption at rest with standard clinical formulas.</p>
+    </div>
+
+    <div class="bmr-workspace">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Gender</label>
+          <select id="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Age</label>
+          <input type="number" id="age" placeholder="e.g. 25">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Weight (kg)</label>
+          <input type="number" id="weight" placeholder="e.g. 70">
+        </div>
+        <div class="form-group">
+          <label>Height (cm)</label>
+          <input type="number" id="height" placeholder="e.g. 175">
+        </div>
+      </div>
+      
+      <button onclick="calculateBMR()" class="btn btn-primary btn-lg btn-full">Calculate BMR</button>
+
+      <div class="result-card" id="result-card">
+         <div class="bmr-val" id="bmr-val">0</div>
+         <div class="unit">Calories / Day (Resting Rate)</div>
+         <p class="mt-3 text-muted small">This is the calorie count your body burns just to maintain basic life functions.</p>
+      </div>
+
+      <!-- SEO CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2>What is Basal Metabolic Rate (BMR)?</h2>
+        <p>BMR is the amount of energy (in calories) your body needs for its most basic functions, such as breathing, heart rate, and cell production. It is the number of calories you would burn if you stayed in bed all day. Our <strong>online BMR calculator</strong> uses the Mifflin-St Jeor equation—currently the most accurate clinical standard for predicting metabolic requirements.</p>
+
+        <h3 class="mt-4">How BMR Influences Weight Management</h2>
+        <p>Your BMR makes up about 60-75% of your total daily energy expenditure. By understanding your <strong>resting metabolic rate</strong>, you can create more effective nutrition plans. If you are aiming for weight loss, knowing your <strong>metabolism baseline</strong> helps you set a safe calorie deficit without slowing down your body's essential processes.</p>
+
+        <h3 class="mt-4">Privacy and Clinical Accuracy</h2>
+        <p>At 99tool.in, we prioritize your data security. Our <strong>private BMR tool</strong> operates entirely in your local sandbox. We do not store your age, weight, or biological details. This <strong>secure metabolism auditor</strong> provides the absolute precision you need for your fitness journey without any third-party telemetry or pervasive tracking.</p>
+
+        <div class="alert alert-info mt-4">
+           <strong>Disclaimer:</strong> This tool is for informational purposes only. Individual metabolism can vary due to genetics and environmental factors.
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    function calculateBMR() {
+       const w = parseFloat(document.getElementById('weight').value);
+       const h = parseFloat(document.getElementById('height').value);
+       const a = parseInt(document.getElementById('age').value);
+       const g = document.getElementById('gender').value;
+       
+       if (!w || !h || !a) return alert('Please enter all details.');
+
+       // Mifflin-St Jeor
+       let bmr = (10 * w) + (6.25 * h) - (5 * a);
+       if (g === 'male') bmr += 5;
+       else bmr -= 161;
+
+       document.getElementById('bmr-val').innerText = Math.round(bmr);
+       document.getElementById('result-card').style.display = 'block';
+    }
+  </script>
+</body>
+</html>

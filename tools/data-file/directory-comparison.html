@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Directory Comparison – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/data-file/directory-comparison.html"/>
+<meta property="og:title" content="Directory Comparison – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/data-file/directory-comparison.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Directory Comparison \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/data-file/directory-comparison.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="directory comparison, compare folders online, file diff tool, check backup integrity, file compare, secure directory tool" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json" id="schema-org-data">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Directory Comparison Tool",
+    "operatingSystem": "Any",
+    "applicationCategory": "DataApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Recursive File Matching, Size Diff Detection, Missing File Analysis, Private local processing"
+  }
+  </script>
+
+  <style>
+    .comp-layout { display: grid; grid-template-columns: 1fr; gap: 30px; }
+
+    .selector-pane, .results-pane {
+      background: var(--dark-card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 30px;
+    }
+
+    .dir-input-group {
+       display: flex; flex-direction: column; gap: 15px; margin-bottom: 25px;
+    }
+
+    .mini-drop {
+       background: var(--dark); border: 1px dashed var(--border); border-radius: 8px;
+       padding: 15px; text-align: center; cursor: pointer; transition: 0.2s;
+    }
+    .mini-drop:hover { border-color: var(--primary); background: rgba(229, 57, 53, 0.05); }
+    .mini-drop.selected { border-style: solid; border-color: #4caf50; background: rgba(76, 175, 80, 0.05); }
+    .mini-drop h4 { font-size: 0.8rem; margin: 0; color: var(--white); }
+    .mini-drop p { font-size: 0.7rem; color: var(--text-muted); margin: 5px 0 0; }
+
+    .diff-table { width: 100%; border-collapse: collapse; font-size: 0.75rem; }
+    .diff-table th { text-align: left; color: var(--text-muted); padding: 10px; border-bottom: 1px solid var(--border); }
+    .diff-table td { padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.03); }
+
+    .tag { padding: 2px 8px; border-radius: 10px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; }
+    .tag-match { background: rgba(76, 175, 80, 0.1); color: #4caf50; }
+    .tag-diff { background: rgba(255, 152, 0, 0.1); color: #ff9800; }
+    .tag-missing { background: rgba(229, 57, 53, 0.1); color: var(--primary); }
+
+    @media (min-width: 900px) {
+       .comp-layout { grid-template-columns: 350px 1fr; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/data-file/directory-comparison.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/data-file/directory-comparison.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/data-file/directory-comparison.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/data-file/directory-comparison.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/data-file/directory-comparison.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/data-file/directory-comparison.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/data-file/directory-comparison.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/data-file/directory-comparison.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/data-file/directory-comparison.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/data-file/directory-comparison.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/data-file/directory-comparison.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/data-file/directory-comparison.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/data-file/directory-comparison.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/data-file/directory-comparison.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/data-file/directory-comparison.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/data-file/directory-comparison.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/data-file/directory-comparison.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/data-file/directory-comparison.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/data-file/directory-comparison.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/data-file/directory-comparison.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/data-file/directory-comparison.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/data-file/directory-comparison.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#data">Data & File</a> <span>/</span> 
+        <span>Directory Comparison</span>
+      </nav>
+      <h1>Directory Comparison Tool</h1>
+      <p>Audit your archives with mathematical precision. Match two sets of files, identify missing documents, and detect size discrepancies instantly without any cloud uploads.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div class="comp-layout">
+        <div class="selector-pane">
+           <h3>Source Selection</h3>
+           <p class="text-muted small mb-4">Select the two sets of files you want to compare.</p>
+           
+           <div class="dir-input-group">
+              <div class="mini-drop" id="drop-a">
+                 <h4>Directory / Set A</h4>
+                 <p id="label-a">0 files selected</p>
+                 <input type="file" id="input-a" multiple class="hidden">
+              </div>
+
+              <div class="mini-drop" id="drop-b">
+                 <h4>Directory / Set B</h4>
+                 <p id="label-b">0 files selected</p>
+                 <input type="file" id="input-b" multiple class="hidden">
+              </div>
+           </div>
+
+           <div class="form-group mb-4">
+              <label>Comparison Logic</label>
+              <select class="form-control" id="comp-mode">
+                 <option value="name-size">Name + Size (Standard)</option>
+                 <option value="name-only">Name Only (Basic)</option>
+              </select>
+           </div>
+
+           <button class="btn btn-primary btn-full" id="run-comp" disabled>Compare Files</button>
+           <button class="btn btn-secondary btn-full mt-3" onclick="location.reload()">Reset All</button>
+        </div>
+
+        <div class="results-pane">
+           <h3 class="mb-4">Comparison Results</h3>
+           <div class="results-body">
+              <table class="diff-table">
+                 <thead>
+                    <tr>
+                       <th>File Name</th>
+                       <th>Status</th>
+                       <th>Size (A)</th>
+                       <th>Size (B)</th>
+                    </tr>
+                 </thead>
+                 <tbody id="diff-body">
+                    <tr><td colspan="4" class="text-center py-5 text-muted">Awaiting file selection...</td></tr>
+                 </tbody>
+              </table>
+           </div>
+        </div>
+      </div>
+
+      <!-- CONTENT SECTION -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.directory_comparison.what_is_title">What is the Directory Comparison Tool?</h2>
+        <p>The Directory Comparison Tool is a client-side file auditing utility designed to compare the contents of two folders. By selecting your target directories, the tool scans filenames and file sizes to identify matches, omissions, and size differences across the datasets.</p>
+        <p>This comparison focuses on metadata audits, resolving disparities between backup drives or source folders without reading or copying actual file content. Because the indexing scripts execute locally in browser RAM, your file lists and data structures remain confidential and are never uploaded to a cloud server.</p>
+
+        <h2 class="mt-4" data-i18n="tools.directory_comparison.how_to_use_title">How to Use the Directory Comparison Tool</h2>
+        <ol>
+          <li><strong>Select Directory A:</strong> Click the file selector under "Directory A" and choose your first target folder. Your browser will prompt you to confirm read permissions for the folder contents.</li>
+          <li><strong>Select Directory B:</strong> Click the file selector under "Directory B" and choose your second target folder, confirming permissions as prompted.</li>
+          <li><strong>Run the Comparison:</strong> Click the "Compare Directories" button. The comparison engine will catalog the folder structures and compare the file listings.</li>
+          <li><strong>Analyze the Results Table:</strong> Review the results table. It highlights status changes:
+            <ul>
+              <li><strong>Match:</strong> The file exists in both directories with identical sizes.</li>
+              <li><strong>Only in A / Only in B:</strong> The file is missing from one of the directories.</li>
+              <li><strong>Size Mismatch:</strong> The file exists in both directories but has different file sizes.</li>
+            </ul>
+          </li>
+        </ol>
+
+        <h2 class="mt-4" data-i18n="tools.directory_comparison.key_features_title">Key Features</h2>
+        <ul>
+          <li><strong>Recursive Folder Auditing:</strong> Scans nested subfolders to verify complex directory structures.</li>
+          <li><strong>Visual Status Indicators:</strong> Color-coded badges highlight matches, missing items, or size discrepancies.</li>
+          <li><strong>Size Difference Reporting:</strong> Displays exact byte counts for both directories side-by-side to pinpoint changed files.</li>
+          <li><strong>High-Speed Local Scanning:</strong> Indexes and compares thousands of files in seconds without network bottlenecks.</li>
+          <li><strong>Offline Security:</strong> Operates entirely within your local browser sandbox to protect folder directories from exposure.</li>
+        </ul>
+
+        <h2 class="mt-4" data-i18n="tools.directory_comparison.common_use_cases_title">Common Use Cases</h2>
+        <ul>
+          <li><strong>File Copy Verification:</strong> Confirm that all photos, videos, or documents copied successfully from an SD card to an external backup drive.</li>
+          <li><strong>Build Artifact Auditing:</strong> Compare software build outputs or resource directories to verify code package consistency.</li>
+          <li><strong>Backup Verification:</strong> Cross-reference active project folders with older backup archives to find modified files.</li>
+          <li><strong>Website Deployment Checks:</strong> Inspect local web asset folders against server exports to identify files that need updating.</li>
+        </ul>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2 data-i18n="tools.directory_comparison.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Does this tool read or compare the contents of my files?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. To ensure speed and privacy, this tool compares file metadata (relatives paths and file sizes). It does not open, read, or compare the binary contents or hashes of the files themselves.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Why does my browser ask for permission to view the folders?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Modern browsers require explicit user permission before web applications can read the file list of local directories. This security feature ensures that websites cannot scan your hard drive without your consent.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Are my file lists or directory names sent to a server?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. 99tool.in processes all directory indexing locally. Your folder paths, file names, and byte counts remain inside your browser sandbox and are never sent over the internet.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              What does "Size Mismatch" indicate?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>This status means a file with the same path and name exists in both directories, but their sizes differ. This usually indicates that one of the files was edited, corrupted, or not copied completely.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I compare folders on different hard drives?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. You can select folders from internal drives, network storage, USB drives, or external SSDs. The comparison works as long as your operating system can access the files.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 Privacy & Data Note: Directory mapping and comparison occur locally in your browser. No directory structures or file data are uploaded to our servers.</p>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const dropA = document.getElementById('drop-a');
+    const inputA = document.getElementById('input-a');
+    const labelA = document.getElementById('label-a');
+    
+    const dropB = document.getElementById('drop-b');
+    const inputB = document.getElementById('input-b');
+    const labelB = document.getElementById('label-b');
+
+    const runBtn = document.getElementById('run-comp');
+    const diffBody = document.getElementById('diff-body');
+    const compMode = document.getElementById('comp-mode');
+
+    let filesA = {};
+    let filesB = {};
+
+    dropA.onclick = () => inputA.click();
+    dropB.onclick = () => inputB.click();
+
+    inputA.onchange = (e) => {
+       filesA = processFiles(e.target.files);
+       labelA.textContent = ((window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(Object.keys(filesA).length, 0) : Object.keys(filesA).length) + ' files selected';
+       dropA.classList.add('selected');
+       checkReady();
+    };
+
+    inputB.onchange = (e) => {
+       filesB = processFiles(e.target.files);
+       labelB.textContent = ((window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(Object.keys(filesB).length, 0) : Object.keys(filesB).length) + ' files selected';
+       dropB.classList.add('selected');
+       checkReady();
+    };
+
+    function processFiles(files) {
+       const map = {};
+       Array.from(files).forEach(f => {
+          map[f.name] = { name: f.name, size: f.size };
+       });
+       return map;
+    }
+
+    function checkReady() {
+       runBtn.disabled = !(Object.keys(filesA).length > 0 && Object.keys(filesB).length > 0);
+    }
+
+    runBtn.onclick = () => {
+       const mode = compMode.value;
+       const allNames = [...new Set([...Object.keys(filesA), ...Object.keys(filesB)])].sort();
+       
+       let html = '';
+       allNames.forEach(name => {
+          const inA = filesA[name];
+          const inB = filesB[name];
+
+          let status = '';
+          let statusClass = '';
+
+          if (inA && inB) {
+             if (mode === 'name-only' || inA.size === inB.size) {
+                status = 'Match';
+                statusClass = 'tag-match';
+             } else {
+                status = 'Diff Size';
+                statusClass = 'tag-diff';
+             }
+          } else if (inA) {
+             status = 'Missing in B';
+             statusClass = 'tag-missing';
+          } else {
+             status = 'Missing in A';
+             statusClass = 'tag-missing';
+          }
+
+          html += `
+             <tr>
+                <td>${name}</td>
+                <td><span class="tag ${statusClass}">${status}</span></td>
+                <td>${inA ? formatSize(inA.size) : '-'}</td>
+                <td>${inB ? formatSize(inB.size) : '-'}</td>
+             </tr>
+          `;
+       });
+
+       diffBody.innerHTML = html || '<tr><td colspan="4" class="text-center py-5 text-muted">No files found to compare.</td></tr>';
+    };
+
+    function formatSize(bytes) {
+       if (bytes === 0) return '0 B';
+       const k = 1024;
+       const i = Math.floor(Math.log(bytes) / Math.log(k));
+       return (bytes / Math.pow(k, i)).toFixed(1) + ' ' + ['B','KB','MB','GB'][i];
+    }
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

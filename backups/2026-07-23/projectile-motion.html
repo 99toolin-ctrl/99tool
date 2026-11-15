@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Projectile Motion – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/physics/projectile-motion.html"/>
+<meta property="og:title" content="Projectile Motion – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/physics/projectile-motion.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Projectile Motion \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/physics/projectile-motion.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .physics-workspace {
+      max-width: 700px;
+      margin: 2rem auto;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      border-radius: 20px;
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem; }
+    label { display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-muted); }
+    input {
+      width: 100%;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 1rem;
+      border-radius: 12px;
+      font-size: 1.1rem;
+    }
+    .result-grid {
+       display: grid;
+       grid-template-columns: repeat(3, 1fr);
+       gap: 1.5rem;
+       margin-top: 2rem;
+       display: none;
+    }
+    .stat-box {
+       background: rgba(255,255,255,0.03);
+       padding: 1.5rem;
+       border-radius: 12px;
+       border: 1px solid var(--border);
+       text-align: center;
+    }
+    .stat-val { font-size: 2rem; font-weight: 800; color: var(--primary); }
+    .stat-lab { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; margin-top: 5px; }
+
+    .trajectory-viz {
+       height: 150px;
+       border: 1px dashed var(--border);
+       border-radius: 12px;
+       margin-bottom: 2rem;
+       position: relative;
+       overflow: hidden;
+       background: rgba(0,0,0,0.2);
+    }
+    .projectile-trail {
+       position: absolute;
+       bottom: 10px; left: 10px;
+       width: 0%; height: 0%;
+       border: 2px solid var(--primary);
+       border-radius: 100% 100% 0 0;
+       border-bottom: 0;
+       transition: all 1s ease;
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Infinite Projectile Motion Predictor</h1>
+      <p>Analyze parabolic trajectories. Calculate Range, Height, and Time for any launch scenario.</p>
+    </div>
+
+    <div class="physics-workspace">
+      <div class="trajectory-viz">
+         <div class="projectile-trail" id="trail"></div>
+      </div>
+
+      <div class="form-row">
+         <div class="form-group">
+            <label>Initial Velocity (V₀) in m/s</label>
+            <input type="number" id="vel" placeholder="e.g., 20">
+         </div>
+         <div class="form-group">
+            <label>Launch Angle (θ) in Degrees</label>
+            <input type="number" id="ang" placeholder="e.g., 45">
+         </div>
+      </div>
+      
+      <button onclick="calculateMotion()" class="btn btn-primary btn-lg btn-full">Calculate Trajectory</button>
+
+      <div class="result-grid" id="res-grid">
+         <div class="stat-box">
+            <div class="stat-val" id="res-range">0.0</div>
+            <div class="stat-lab">Range (m)</div>
+         </div>
+         <div class="stat-box">
+            <div class="stat-val" id="res-height">0.0</div>
+            <div class="stat-lab">Max Height (m)</div>
+         </div>
+         <div class="stat-box">
+            <div class="stat-val" id="res-time">0.0</div>
+            <div class="stat-lab">Time (s)</div>
+         </div>
+      </div>
+
+      <!-- SEO CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2>What is Projectile Motion?</h2>
+        <p>Projectile motion occurs when an object is thrown or projected into the air and moves along a curved path under the influence of gravity ($g \approx 9.81\text{m/s}^2$). Our <strong>online trajectory calculator</strong> uses kinematics equations to predict its behavior. It accounts for both horizontal and vertical components of velocity to provide a high-fidelity estimation of its journey. This is a critical <strong>motion auditor tool</strong> for physics students and ballistic researchers.</p>
+
+        <h3 class="mt-4">Key Physics Parameters</h2>
+        <p>The **Range** is the horizontal distance traveled, the **Maximum Height** is the peak vertical point, and the **Time of Flight** is the total duration the object remains in the air. By using our <strong>parabolic motion auditor</strong>, you can visualize how launch angles affect distance. For example, a 45-degree angle typically provides the maximum range in a vacuum. A consistent <strong>motion diagnostic tool</strong> is essential for optimizing launch parameters in engineering and sports science.</p>
+
+        <h3 class="mt-4">Privacy and Privacy Accuracy</h2>
+        <p>At 99tool.in, we prioritize lightweight performance. Our <strong>private trajectory tool</strong> runs local calculations in your browser session. We do not store your velocity or angle data. This <strong>secure projectile auditor</strong> provides the absolute precision required for professional motion audits while maintaining your absolute data privacy.</p>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    function calculateMotion() {
+       const v0 = parseFloat(document.getElementById('vel').value);
+       const thetaDeg = parseFloat(document.getElementById('ang').value);
+       const g = 9.81;
+       
+       if (isNaN(v0) || isNaN(thetaDeg)) return alert('Please enter both velocity and angle.');
+
+       const theta = thetaDeg * (Math.PI / 180);
+
+       // Time of Flight: (2 * v0 * sin(theta)) / g
+       const time = (2 * v0 * Math.sin(theta)) / g;
+       
+       // Range: (v0^2 * sin(2*theta)) / g
+       const range = (Math.pow(v0, 2) * Math.sin(2 * theta)) / g;
+       
+       // Max Height: (v0^2 * sin(theta)^2) / (2*g)
+       const height = (Math.pow(v0, 2) * Math.pow(Math.sin(theta), 2)) / (2 * g);
+
+       document.getElementById('res-range').innerText = Math.max(0, range).toFixed(2);
+       document.getElementById('res-height').innerText = Math.max(0, height).toFixed(2);
+       document.getElementById('res-time').innerText = Math.max(0, time).toFixed(2);
+       
+       // Visualize
+       const trail = document.getElementById('trail');
+       trail.style.width = '100px';
+       trail.style.height = (height > 0 ? '50px' : '0');
+
+       document.getElementById('res-grid').style.display = 'grid';
+    }
+  </script>
+</body>
+</html>

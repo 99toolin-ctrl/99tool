@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Life Os – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/productivity/life-os.html"/>
+<meta property="og:title" content="Life Os – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/productivity/life-os.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Life Os \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/productivity/life-os.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    body { background: #0a0a0a; color: #eee; overflow: hidden; }
+    
+    .life-os-container {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      height: 100vh;
+      width: 100vw;
+    }
+
+    /* Sidebar Styles */
+    .os-sidebar {
+      background: #111;
+      border-right: 1px solid #222;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    
+    .os-logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.2rem; color: var(--primary); }
+
+    .nav-group { display: flex; flex-direction: column; gap: 10px; }
+    .nav-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: #444; font-weight: 700; }
+    
+    .nav-item {
+        padding: 12px 15px; border-radius: 10px; color: #888; cursor: pointer; transition: 0.2s; display: flex; align-items: center; gap: 12px;
+    }
+    .nav-item:hover { background: #1a1a1a; color: white; }
+    .nav-item.active { background: var(--primary); color: white; }
+
+    /* Main Content */
+    .os-main {
+      padding: 3rem;
+      overflow-y: auto;
+      background: linear-gradient(135deg, #0a0a0a 0%, #111 100%);
+    }
+
+    .os-header {
+        display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem;
+    }
+    .os-time { font-family: 'JetBrains Mono', monospace; font-size: 1.5rem; color: var(--primary); }
+
+    .os-card {
+        background: rgba(255,255,255,0.02);
+        border: 1px solid rgba(255,255,255,0.05);
+        border-radius: 20px;
+        padding: 2rem;
+        backdrop-filter: blur(10px);
+    }
+
+    .stat-bar {
+        height: 60px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem;
+    }
+    .stat-item { text-align: center; border-right: 1px solid #222; flex: 1; }
+    .stat-item:last-child { border-right: none; }
+    .stat-val { font-size: 1.5rem; font-weight: 800; color: white; }
+    .stat-lbl { font-size: 0.65rem; color: #555; text-transform: uppercase; }
+
+    .quick-tools {
+        display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 15px;
+    }
+    .tool-link {
+        background: #1a1a1a; border: 1px solid #222; border-radius: 12px; padding: 1rem; display: flex; align-items: center; gap: 10px; cursor: pointer; transition: 0.2s;
+    }
+    .tool-link:hover { border-color: var(--primary); transform: translateY(-3px); }
+
+    /* App-specific frames */
+    .app-frame { display: none; }
+    .app-frame.active { display: block; animation: slideUp 0.4s ease; }
+    
+    @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+    @media (max-width: 992px) {
+        .life-os-container { grid-template-columns: 1fr; }
+        .os-sidebar { display: none; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/productivity/life-os.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/productivity/life-os.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/productivity/life-os.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/productivity/life-os.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/productivity/life-os.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/productivity/life-os.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/productivity/life-os.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/productivity/life-os.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/productivity/life-os.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/productivity/life-os.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/productivity/life-os.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/productivity/life-os.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/productivity/life-os.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/productivity/life-os.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/productivity/life-os.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/productivity/life-os.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/productivity/life-os.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/productivity/life-os.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/productivity/life-os.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/productivity/life-os.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/productivity/life-os.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/productivity/life-os.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+
+  <div class="life-os-container">
+    <aside class="os-sidebar">
+      <div class="os-logo"><span>🧩</span> LIFE OS</div>
+      
+      <div class="nav-group">
+          <div class="nav-label">General</div>
+          <div class="nav-item active" onclick="switchTab('dashboard')">🏠 Overview</div>
+          <div class="nav-item" onclick="switchTab('habits')">🔥 Habits</div>
+          <div class="nav-item" onclick="switchTab('knowledge')">📚 Knowledge</div>
+      </div>
+
+      <div class="nav-group">
+          <div class="nav-label">Utilities</div>
+          <div class="nav-item" onclick="location.href='../security/secure-notes.html'">🔐 Secure Notes</div>
+          <div class="nav-item" onclick="location.href='../fun/chess.html'">♟️ Relax</div>
+      </div>
+
+      <div class="mt-auto">
+          <button class="btn btn-primary btn-full btn-sm" onclick="exportOS()">Export OS Data</button>
+      </div>
+    </aside>
+
+    <main class="os-main">
+      <header class="os-header">
+          <div>
+              <h1 id="greeting">Good Morning, Explorer</h1>
+              <p class="text-muted small">Your life is 100% and encrypted.</p>
+          </div>
+          <div class="os-time" id="os-clock">00:00:00</div>
+      </header>
+
+      <!-- Dashboard Tab -->
+      <section id="tab-dashboard" class="app-frame active">
+          <div class="stat-bar os-card">
+              <div class="stat-item"><div class="stat-val" id="os-streak">0</div><div class="stat-lbl">Days Streak</div></div>
+              <div class="stat-item"><div class="stat-val" id="os-tasks">0</div><div class="stat-lbl">Open Tasks</div></div>
+              <div class="stat-item"><div class="stat-val" id="os-notes">0</div><div class="stat-lbl">Stored Notes</div></div>
+          </div>
+
+          <h3>Quick Access Tools</h3>
+          <div class="quick-tools mt-3">
+              <div class="tool-link" onclick="location.href='../productivity/habit-tracker.html'"><span>📈</span> Habits</div>
+              <div class="tool-link" onclick="location.href='../productivity/dashboard.html'"><span>🧱</span> Dashboard</div>
+              <div class="tool-link" onclick="location.href='../security/file-locker.html'"><span>🔒</span> File Locker</div>
+              <div class="tool-link" onclick="location.href='../fun/sudoku.html'"><span>🧩</span> Sudoku</div>
+          </div>
+
+          <div class="os-card mt-5">
+              <h3>Daily Focus</h3>
+              <textarea id="os-focus" style="width:100%; height:150px; background:none; border:none; color:#bbb; padding:10px; font-size:1.1rem; outline:none;" placeholder="What is the one thing you must accomplish today?"></textarea>
+          </div>
+      </section>
+
+      <!-- Habits Tab -->
+      <section id="tab-habits" class="app-frame">
+          <div class="os-card" style="text-align:center;">
+              <div style="font-size: 3rem;">🔥</div>
+              <h3>Habit Tracking Integrated</h3>
+              <p class="text-muted">Life OS connects directly to your local habit database.</p>
+              <button class="btn btn-primary" onclick="location.href='../productivity/habit-tracker.html'">Launch Detailed Tracker</button>
+          </div>
+      </section>
+
+      <!-- Knowledge Tab -->
+      <section id="tab-knowledge" class="app-frame">
+          <div class="os-card">
+              <h3>Personal Knowledge Base</h3>
+              <p class="text-muted">Your second brain is stored locally. No cloud, no leaks.</p>
+              <textarea style="width:100%; height:400px; background:rgba(0,0,0,0.2); border:1px solid #333; color:#ccc; padding:20px; border-radius:12px; outline:none;" placeholder="Capture long-term wisdom here..."></textarea>
+          </div>
+      </section>
+
+      <!-- HUMANIZED SEO CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.life_os.what_is_title">What is Life OS?</h2>
+        <p>Life OS is a local personal organizer and dashboard utility designed to consolidate your tasks, habits, and knowledge notes into a single interface. Managing productivity often involves dispersing your data across multiple applications and third-party servers. This tool provides an offline cockpit that keeps your daily schedules and notes secure.</p>
+        <p>By operating locally, Life OS integrates statistics from your habits, tasks, and notes on one screen. Your entries are saved securely in your browser's private local storage, eliminating the risk of data leaks or server downtime.</p>
+
+        <h3 class="mt-4">How to Use Life OS</h3>
+        <p>Managing your unified dashboard involves the following steps:</p>
+        <ol class="mt-2 mb-3">
+          <li>Use the side menu buttons (Dashboard, Habits, Knowledge) to toggle between different modules.</li>
+          <li>Type your primary target for the day inside the "Daily Focus" text box on the Dashboard.</li>
+          <li>Click the quick-access links under "Quick Access Tools" to open specialized utilities like the Habit Tracker or File Locker.</li>
+          <li>Use the "Knowledge" tab to type, review, and organize long-term notes in your local scratchpad.</li>
+          <li>Click the "Export OS Data" button in the sidebar to download a backup file of your productivity database.</li>
+        </ol>
+
+        <h3 class="mt-4">Key Features of the Command Center</h3>
+        <ul class="mt-2 mb-3">
+          <li><strong>Integrated Stats Panel:</strong> Displays real-time counts of your days streak, open tasks, and stored notes.</li>
+          <li><strong>Context Switch Tabs:</strong> Organizes your workflow into clean frames for daily focus, habit logs, and note entries.</li>
+          <li><strong>Offline Data Backup:</strong> Features an export engine to download your full database configuration as a JSON file.</li>
+          <li><strong>Live Header Stats:</strong> Features a system-synced clock and dynamic greeting based on the hour of the day.</li>
+        </ul>
+
+        <h3 class="mt-4">Common Use Cases</h3>
+        <p>This personal OS is helpful for the following tasks:</p>
+        <ul class="mt-2 mb-3">
+          <li><strong>Private Daily Journaling:</strong> Keeping sensitive personal reflections, business ideas, and daily achievements safe in a local sandbox.</li>
+          <li><strong>Central Habit Monitoring:</strong> Observing streak counts and checklist progression across your local tools.</li>
+          <li><strong>Workflow Backup Control:</strong> Exporting daily backup records to maintain full ownership of your data files.</li>
+        </ul>
+
+        <h3 class="mt-4">Frequently Asked Questions</h3>
+        <div class="faq-section mt-3">
+          <p><strong>Where is my Life OS database stored?</strong><br>Your notes, tasks, and habit data are stored locally in your browser's private local storage space. No data is sent to external servers.</p>
+          <p><strong>Will clearing my browser cache delete my data?</strong><br>Yes. Clearing your browser's site cookies and site data will clear your local storage. We recommend using the "Export OS Data" button to save backups regularly.</p>
+          <p><strong>How do I import my data on a new device?</strong><br>The export engine downloads your data as a JSON file. A dedicated import tool will be added in a future update to help you restore your files instantly.</p>
+          <p><strong>Is there a limit to the length of notes I can store?</strong><br>The note container is limited only by your browser's local storage capacity. You can log thousands of words without performance lag.</p>
+        </div>
+
+        <h3 class="mt-4">Privacy & Data Note</h3>
+        <p>All focus items, dashboard statistics, personal notes, and tab configurations are processed locally on your computer. Your organizer data is stored securely in your browser's local storage and is never uploaded to remote servers.</p>
+      </section>
+
+    </main>
+  </div>
+
+  <script>
+    function switchTab(tabId) {
+        document.querySelectorAll('.app-frame').forEach(f => f.classList.remove('active'));
+        document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+        
+        document.getElementById('tab-' + tabId).classList.add('active');
+        event.currentTarget.classList.add('active');
+    }
+
+    function updateOSClock() {
+        const now = new Date();
+        document.getElementById('os-clock').innerText = now.toLocaleTimeString();
+        
+        const hour = now.getHours();
+        const greeting = hour < 12 ? "Good Morning" : hour < 18 ? "Good Afternoon" : "Good Evening";
+        document.getElementById('greeting').innerText = `${greeting}, Explorer`;
+    }
+
+    function loadOSStats() {
+        // Simple mock of integrated stats from other tool keys
+        const habits = JSON.parse(localStorage.getItem('99tool_habits') || "[]");
+        const dashboard = JSON.parse(localStorage.getItem('99tool_dashboard') || "[]");
+        
+        document.getElementById('os-streak').innerText = habits.reduce((max, h) => Math.max(max, h.streak || 0), 0);
+        document.getElementById('os-tasks').innerText = dashboard.find(w => w.type === 'tasks')?.items.filter(i => !i.done).length || 0;
+        document.getElementById('os-notes').innerText = JSON.parse(localStorage.getItem('99tool_secure_notes') || "{}").length || 0;
+    }
+
+    function exportOS() {
+        const data = {
+            habits: localStorage.getItem('99tool_habits'),
+            dashboard: localStorage.getItem('99tool_dashboard'),
+            notes: localStorage.getItem('99tool_secure_notes')
+        };
+        const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "life-os-full-backup.json";
+        a.click();
+    }
+
+    setInterval(updateOSClock, 1000);
+    updateOSClock();
+    loadOSStats();
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

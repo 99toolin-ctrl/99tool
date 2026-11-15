@@ -1,0 +1,603 @@
+{
+  "common": {
+    "privacy_note": "🔒 Gizlilik ve Veri Notu: Tüm işlemler yerel olarak tarayıcınızda gerçekleşir. Verileriniz asla cihazınızdan ayrılmaz ve sunuculara gönderilmez.",
+    "no_signup_required": "Kayıt, yükleme veya ödeme gerekmez.",
+    "offline_ready": "Sayfa yüklendikten sonra tamamen çevrimdışı çalışır."
+  },
+  "tools": {
+    "age_calculator": {
+      "page_title": "Yaş Hesaplama – 99tool.in",
+      "meta_description": "99tool.in ücretsiz çevrimiçi araç: Yaşınızı yıl, ay ve gün cinsinden tam olarak hesaplayın. Hızlı ve güvenli.",
+      "what_is_title": "Sonsuz Yaş Hesaplama Aracı Nedir?",
+      "what_is_content": "Sonsuz Yaş Hesaplama Aracı, doğum tarihinizden şu ana kadarki tam yaşınızı hesaplamak için tasarlanmış istemci tarafı bir takvim aracıdır. Basit bir tahminde bulunmak yerine, araç yaşınızı yıl, ay ve gün cinsinden detaylandırır. Bu, resmi belgeler, planlamalar veya gelişim takibi için yüksek hassasiyet sağlar.\n\nAyrıca hesaplayıcı, yaşadığınız toplam ay, hafta, gün ve saat gibi diğer birimlerdeki toplam ömrünüzü göstermek için ek hesaplamalar yapar ve bir sonraki doğum gününüze kadar olan geri sayımı sunar. Tüm işlemler cihazınızda yerel olarak gerçekleşir ve doğum tarihiniz asla bir sunucuya gönderilmez.",
+      "how_to_use_title": "Sonsuz Yaş Hesaplama Aracı Nasıl Kullanılır?",
+      "how_to_use_steps": [
+        "<strong>Doğum Tarihinizi Seçin:</strong> Takvim arayüzünden doğum gününüzü, ayınızı ve yılınızı seçmek için \"Doğum Tarihi Seçin\" altındaki tarih seçiciye tıklayın.",
+        "<strong>Ana Yaşınızı İnceleyin:</strong> Tarih seçildikten sonra, yaşınızı Yıl, Ay ve Gün olarak gösteren ana metrikler otomatik olarak görüntülenir.",
+        "<strong>Doğum Günü Geri Sayımını Kontrol Edin:</strong> Yaşınızın hemen altındaki vurgulanan afişe bakın. Bir sonraki doğum gününüze kalan tam gün sayısını gösterir.",
+        "<strong>Detaylı Yaşam İstatistiklerini İnceleyin:</strong> Toplam Yaşanan Ay, Toplam Hafta, Toplam Gün ve Toplam Saat cinsinden ifade edilen toplam yaşam sürenizi görmek için istatistik listesine kaydırın."
+      ],
+      "key_features_title": "Temel Özellikler",
+      "key_features": [
+        "<strong>Ayrıntılı Yaş Dökümü:</strong> Artık yılları ve farklı ay uzunluklarını doğru şekilde ayarlayarak tam yaşınızı yıl, ay ve gün olarak gösterir.",
+        "<strong>Sonraki Doğum Günü Geri Sayımı:</strong> Dinamik bir gün sayacı, bir sonraki doğum günü dönüm noktanıza ne kadar yakın olduğunuzu tam olarak gösterir.",
+        "<strong>Çok Birimli Yaşam İstatistikleri:</strong> Yaşınızı birikmiş toplam ay, hafta, gün ve saate dönüştürür.",
+        "<strong>Otomatik Yerel Hesaplama:</strong> Sayfayı yeniden yüklemeye gerek kalmadan tarih seçiminde hesaplamalar anında çalışır.",
+        "<strong>İstemci Tarafı İşleme:</strong> Tüm hesaplamalar doğrudan tarayıcınızın RAM belleğinde çalışarak kişisel bilgilerinizi korur."
+      ],
+      "common_use_cases_title": "Yaygın Kullanım Alanları",
+      "common_use_cases": [
+        "<strong>Form ve Başvuru Doğrulama:</strong> Sigorta poliçeleri, yasal evraklar veya vize başvuruları için yıl ve ay cinsinden tam yaşları doğrulayın.",
+        "<strong>Bebek ve Çocuk Gelişim Takibi:</strong> Bebeklerin ve çocukların büyüme aşamalarını kesin ay ve gün cinsinden takip edin.",
+        "<strong>Etkinlik ve Doğum Günü Planlaması:</strong> Rezervasyonları ve davetleri zamanında yönetmek için yıldönümlerine kalan günleri takip edin.",
+        "<strong>Merak ve Eğlence:</strong> Toplamda kaç gün veya saat yaşadığınızı öğrenin."
+      ],
+      "faq_title": "Sıkça Sorulan Sorulan Sorular",
+      "faq": [
+        {
+          "question": "Bu araç artık yılları nasıl hesaba katıyor?",
+          "answer": "Hesaplayıcı, artık yılları (29 Şubat dahil) ve farklı ay uzunluklarını (28, 30 veya 31 gün) otomatik ve doğru bir şekilde hesaba katan JavaScript'in yerel Date nesnesini kullanır."
+        },
+        {
+          "question": "Doğum tarihim 99tool.in tarafından saklanıyor mu veya yükleniyor mu?",
+          "answer": "Hayır. 99tool.in tamamen istemci tarafı kod ile çalışır. Doğum tarihiniz yerel tarayıcınızda işlenir ve asla bir sunucuya veya veritabanına aktarılmaz."
+        },
+        {
+          "question": "Geçmiş veya gelecekteki bir tarihe göre yaş hesaplayabilir miyim?",
+          "answer": "Bu özel araç, yaşınızı bugünün tarihine göre hesaplar. İki tarih arasındaki farkı bulmak istiyorsanız, lütfen 'Tarih Farkı Hesaplayıcı' aracımızı kullanın."
+        },
+        {
+          "question": "Gelecek bir tarih seçersem araç neden uyarı gösteriyor?",
+          "answer": "Yaş hesaplamaları doğumdan bu yana geçen süreyi temsil eder. Gelecek bir tarih seçmek negatif bir yaşla sonuçlanacağından, araç bu girdiyi engeller."
+        },
+        {
+          "question": "Toplam saat hesaplamasına yaz saati uygulaması değişiklikleri dahil mi?",
+          "answer": "Toplam saat istatistiği, geçen toplam günün 24 saat ile çarpılmasıyla hesaplanır. Yerel yaz saati değişikliklerine göre ayarlanmayan standart bir matematiksel dönüştürmedir."
+        }
+      ],
+      "privacy_note": "🔒 Gizlilik ve Veri Notu: Doğum tarihiniz tarayıcınızda yerel olarak işlenir. Hiçbir kişisel veri toplanmaz, izlenmez veya sunucularımıza gönderilmez.",
+      "schema_org": {
+        "name": "Yaş Hesaplama – 99tool.in",
+        "description": "99tool.in ücretsiz çevrimiçi araç: Hızlı, güvenli, kayıt gerekmez."
+      }
+    },
+    "audio_recorder": {
+      "page_title": "Ses Kaydedici – 99tool.in",
+      "meta_description": "Ses kayıtlarını doğrudan tarayıcınızda yapın ve düzenleyin. 99tool.in ücretsiz, özel ve kayıtsız ses aracı.",
+      "what_is_title": "Ses Kaydedici ve Düzenleyici Nedir?",
+      "what_is_content": "Bu web tabanlı ses kaydetme ve düzenleme aracı, sesli notları, sesleri ve konuşmaları doğrudan tarayıcınızdan yüksek kalitede kaydetmenize olanak tanır. Mutlak gizlilik göz önünde bulundurularak tasarlanmış olup cihazınızın tarayıcısını güvenli bir kayıt stüdyosuna dönüştürür. Hesap oluşturma veya kayıt gerektirmez.\n\nYerel tarayıcı API'lerinden yararlanan araç, tüm ses verilerini yerel olarak işler. Bu, ister bir ses klibi kaydediyor olun ister bir notu kırpıyor olun, dosyanızın yerel cihazınızda kaldığı anlamına gelir. Ses akışı asla uzak sunuculara gönderilmez ve gizli ses kayıtlarınız için tam gizlilik sağlar.",
+      "how_to_use_title": "Ses Kaydedici ve Düzenleyici Nasıl Kullanılır?",
+      "how_to_use_steps": [
+        "<strong>Dışa Aktarma Formatını Seçin:</strong> Açılır menüden WebM (küçük dosyalar ve hızlı işlem için ideal) veya WAV (yüksek kaliteli kayıpsız ses için mükemmel) seçin.",
+        "<strong>Mikrofonu Başlatın:</strong> \"Mikrofonu Başlat\" butonuna tıklayın. Tarayıcınız mikrofon erişim izni isteyecektir.",
+        "<strong>Kaydı Başlatın:</strong> Ses yakalamaya başlamak için kırmızı dairesel butona tıklayın. Zamanlayıcı çalışmaya başlayacak ve dalga formu ekranı canlı ses seviyelerini gösterecektir.",
+        "<strong>Kayıt Oturumunu Durdurun:</strong> Kaydı tamamlamak için kare durdurma butonuna tıklayın. Araç sesi otomatik olarak işleyecek ve listenize ekleyecektir.",
+        "<strong>Dinleyin ve Kaydedin:</strong> Parçanızı dinlemek için \"OYNAT\" butonuna veya doğrudan cihazınıza indirmek için \"KAYDET\" butonuna tıklayın."
+      ],
+      "key_features_title": "Temel Özellikler",
+      "key_features": [
+        "<strong>Kayıpsız ve Sıkıştırılmış Çıktılar:</strong> Ses dosyalarınızı ham WAV formatında veya son derece optimize edilmiş WebM formatında dışa aktarın.",
+        "<strong>Gerçek Zamanlı Dalga Formu Görselleştirme:</strong> Tuval osiloskobu, giriş seviyeleri ve mikrofon etkinliği hakkında anında görsel geri bildirim sağlar.",
+        "<strong>Güvenli RAM Depolaması:</strong> Kayıtlar sunucu depolaması yerine sistem belleği (Blob URL'leri) kullanılarak geçici olarak kaydedilir.",
+        "<strong>Çoklu Oturum Geçmişi:</strong> Tek bir oturumda birden fazla kayıt yapın ve bunları gerektiğinde ayrı ayrı dinleyin veya indirin.",
+        "<strong>Duyarlı Kayıt Düzeni:</strong> Akıllı telefonlarda, tabletlerde veya bilgisayarlarda not kaydetmeyi kolaylaştıran mobil uyumlu arayüz."
+      ],
+      "common_use_cases_title": "Yaygın Kullanım Alanları",
+      "common_use_cases": [
+        "<strong>İçerik Üreticileri ve Yayıncılar:</strong> Ağır masaüstü yazılımlarına ihtiyaç duymadan seslendirmeler, intros veya taslaklar kaydedin.",
+        "<strong>Öğrenciler ve Araştırmacılar:</strong> Ders notlarını, çalışma hatırlatıcılarını veya röportaj kayıtlarını güvenli bir ortamda saklayın.",
+        "<strong>Müzisyenler ve Ses Tasarımcıları:</strong> Hızlı müzik fikirlerini, vokal denemelerini veya ses efektlerini anında kaydedip ham dosya olarak saklayın.",
+        "<strong>Özel Sesli Notlar:</strong> Bulut veri sızıntısı korkusu olmadan gizli notlar veya günlükler yazdırın."
+      ],
+      "faq_title": "Sıkça Sorulan Sorular",
+      "faq": [
+        {
+          "question": "Ses kaydım sunucularınıza kaydediliyor mu?",
+          "answer": "Hayır. 99tool.in tüm ses verilerini tamamen yerel tarayıcı sekmenizin belleğinde (RAM) bir Blob olarak işler. Kayıtlarınız sunucularımıza ulaşmaz ve sekme kapatıldığında silinir."
+        },
+        {
+          "question": "Neden mikrofon izni vermem gerekiyor?",
+          "answer": "Tarayıcınızın cihazınızın ses giriş donanımına erişmek için açık izne ihtiyacı vardır. Bu izin yerel olarak yönetilir ve yalnızca kayıt için kullanılır."
+        },
+        {
+          "question": "Bu aracı çevrimdışı kullanabilir miyim?",
+          "answer": "Evet. Arayüz tamamen yerel Web API'lerine dayandığından, sayfa yüklendikten sonra internet olmadan kayıt yapabilir ve indirebilirsiniz."
+        },
+        {
+          "question": "WebM ve WAV arasındaki fark nedir?",
+          "answer": "WAV dosyaları sıkıştırılmamış ve kayıpsızdır, en yüksek kaliteyi sunar ancak dosya boyutu büyüktür. WebM dosyaları sıkıştırılmış ve web için optimize edilmiştir."
+        },
+        {
+          "question": "Kayıt süresi sınırı var mı?",
+          "answer": "Araç tarafından belirlenmiş bir süre sınırı yoktur. Kayıt süresi yalnızca cihazınızda kullanılabilir durumdaki sistem belleği (RAM) ile sınırlıdır."
+        }
+      ],
+      "privacy_note": "🔒 Gizlilik ve Veri Notu: Tüm ses yakalama ve işleme işlemleri tamamen tarayıcınızın içinde gerçekleşir. Sunucularımıza hiçbir dosya yüklenmez.",
+      "schema_org": {
+        "name": "Ses Kaydedici ve Düzenleyici",
+        "description": "Yüksek kaliteli ses kaydı, gerçek zamanlı dalga formu görselleştirme, ses kırpma, oynatma kontrolü, yerel güvenli işleme."
+      }
+    },
+    "bmi_calculator": {
+      "page_title": "BMI Hesaplama – 99tool.in",
+      "meta_description": "Vücut Kitle İndeksinizi (BMI) doğru şekilde hesaplayın. 99tool.in ücretsiz, güvenli ve hızlı sağlık aracı.",
+      "what_is_title": "Sonsuz BMI Hesaplama Aracı Nedir?",
+      "what_is_content": "Sonsuz BMI Hesaplama Aracı, boy ve kilo değerlerini kullanarak Vücut Kitle İndeksini (BMI) hesaplamak için tasarlanmış istemci tarafı bir sağlık aracıdır. Metrik parametreleri girerek kullanıcılar vücut ağırlığı kategorilerini belirleyebilir ve standart vücut kitle göstergelerini kontrol edebilirler.\n\nBu hesaplayıcı tüm sayısal çarpanları, kategori eşleme mantığını ve gösterge ayarlamalarını tarayıcınızın belleğinde yerel olarak işler. Hiçbir boy, kilo veya hesaplanan BMI değeri saklanmaz veya yüklenmez."
+    },
+    "bmi_calculator": {
+      "page_title": "BMI Hesaplama – 99tool.in",
+      "meta_description": "Vücut Kitle İndeksinizi (BMI) doğru şekilde hesaplayın. 99tool.in ücretsiz, güvenli ve hızlı sağlık aracı.",
+      "what_is_title": "Sonsuz BMI Hesaplama Aracı Nedir?",
+      "what_is_content": "Sonsuz BMI Hesaplama Aracı, boy ve kilo değerlerini kullanarak Vücut Kitle İndeksini (BMI) hesaplamak için tasarlanmış istemci tarafı bir sağlık aracıdır. Metrik parametreleri girerek kullanıcılar vücut ağırlığı kategorilerini belirleyebilir ve standart vücut kitle göstergelerini kontrol edebilirler.\n\nBu hesaplayıcı tüm sayısal çarpanları, kategori eşleme mantığını ve gösterge ayarlamalarını tarayıcınızın belleğinde yerel olarak işler. Hiçbir boy, kilo veya hesaplanan BMI değeri saklanmaz veya yüklenmez.",
+      "how_to_use_title": "Sonsuz BMI Hesaplama Aracı Nasıl Kullanılır?",
+      "how_to_use_steps": [
+        "<strong>Kilonuzu Girin:</strong> Kilo giriş kutusuna kilogram (kg) cinsinden vücut ağırlığınızı girin.",
+        "<strong>Boyunuzu Girin:</strong> Boy giriş kutusuna santimetre (cm) cinsinden boyunuzu girin.",
+        "<strong>Hesapla Butonuna Tıklayın:</strong> Yerel hesaplama motorunu çalıştırmak için \"BMI Hesapla\" butonuna basın.",
+        "<strong>Sonucunuzu İnceleyin:</strong> Sayısal BMI değerinizi, ağırlık kategorinizi ve göstergenin konumunu görmek için sonuç kartını kontrol edin."
+      ],
+      "key_features_title": "Temel Özellikler",
+      "key_features": [
+        "<strong>Metrik Birim Desteği:</strong> Kilo (kg) ve boy (cm) için standart değerleri doğrudan girin.",
+        "<strong>Görsel Gösterge Çubuğu:</strong> Kilo sınıflandırmanızı görüntülemek için renkli bir çubuk üzerinde göstergeyi hareket ettirir.",
+        "<strong>Standart BMI Aralıkları:</strong> DSÖ (WHO) referanslarına göre girdileri değerlendirir (Zayıf, Normal, Fazla Kilolu, Obez).",
+        "<strong>Anında Sonuç Paneli:</strong> Sayısal puanları ve kategori adlarını vurgulanan bir kartta net bir şekilde gösterir.",
+        "<strong>100% İstemci Tarafı Motor:</strong> Tıbbi verilerinizi korumak için tüm matematiksel işlemleri tarayıcı içinde yerel olarak çalıştırır."
+      ],
+      "common_use_cases_title": "Yaygın Kullanım Alanları",
+      "common_use_cases": [
+        "<strong>Kilo Yönetimi Takibi:</strong> Diyet veya egzersiz programları sırasında vücut kitle eğilimlerini düzenli olarak izleyin.",
+        "<strong>Sağlık ve Form Kontrolleri:</strong> Tıbbi formlar veya sigorta için genel vücut kitle kategorinizi hızlıca kontrol edin.",
+        "<strong>Yaşam Tarzı Hedef Belirleme:</strong> Gerçekçi fiziksel sağlık hedefleri belirlemek için bir temel BMI oluşturun.",
+        "<strong>Okul ve Eğitim Faaliyetleri:</strong> Öğrencilere insan vücudu ölçümleri ve BMI formülleri hakkında bilgi verin."
+      ],
+      "faq_title": "Sıkça Sorulan Sorular",
+      "faq": [
+        {
+          "question": "Standart BMI aralıkları nelerdir?",
+          "answer": "Resmi DSÖ sınıflandırmaları şunlardır: Zayıf (18.5'ten küçük), Normal kilo (18.5 - 24.9), Fazla kilolu (25 - 29.9) ve Obez (30 veya daha büyük)."
+        },
+        {
+          "question": "Bu hesaplayıcı kas kütlesini veya kemik yoğunluğunu hesaba katıyor mu?",
+          "answer": "Hayır. BMI yalnızca boy ve kiloyu kullanan genel bir değerlendirme indeksidir. Kas, yağ veya kemik kütlesi arasında ayrım yapmaz."
+        },
+        {
+          "question": "Sağlık verilerim paylaşılıyor mu yoksa yükleniyor mu?",
+          "answer": "Hayır. Tüm hesaplamalar yerel JavaScript ile cihazınızda yapılır. 99tool.in verilerinizi toplamaz veya saklamaz."
+        },
+        {
+          "question": "Bu hesaplamada yaş veya cinsiyet ayarlamaları var mı?",
+          "answer": "Bu araç yetişkinler için standart BMI indeksini hesaplar. Çocuklar ve hamile kadınlar için doktorlar özel persentil tabloları kullanırlar."
+        }
+      ],
+      "privacy_note": "🔒 Gizlilik ve Veri Notu: Boy, kilo ve BMI hesaplamaları tarayıcınızda yerel olarak işlenir. Hiçbir kişisel sağlık verisi yüklenmez.\nSorumluluk Reddi: Bu araç yalnızca bilgilendirme amaçlıdır ve profesyonel tıbbi tavsiyenin yerini almaz.",
+      "schema_org": {
+        "name": "BMI Hesaplama – 99tool.in",
+        "description": "99tool.in ücretsiz çevrimiçi araç: Hızlı, güvenli, kayıt gerekmez."
+      }
+    },
+    "csv_editor": {
+      "page_title": "CSV Düzenleyici – 99tool.in",
+      "meta_description": "CSV dosyalarını tarayıcınızda açın, düzenleyin ve dışa aktarın. 99tool.in ücretsiz ve güvenli veri aracı.",
+      "what_is_title": "CSV Görüntüleyici ve Düzenleyici Nedir?",
+      "what_is_content": "CSV Görüntüleyici ve Düzenleyici, virgülle ayrılmış değerler (CSV) dosyalarını açmak, incelemek ve değiştirmek için tasarlanmış hafif bir web tabanlı hesap tablosu aracıdır. Ağır ofis yazılımlarının açılmasını beklemek yerine veri setinizi doğrudan tarayıcı sekmesine sürükleyip bırakabilirsiniz.\n\nBu araç hücre değerlerini düzenlemenize, sütunları sıralamanıza, belirli kayıtları aramanıza ve güncellenmiş dosyaları dışa aktarmanıza olanak tanır. Tüm dosya ayrıştırma ve tablo görüntüleme işlemleri tarayıcınızın RAM belleğinde yerel olarak gerçekleştiğinden hassas verileriniz dış sunuculara asla sızmaz."
+    },
+    "csv_editor": {
+      "page_title": "CSV Düzenleyici – 99tool.in",
+      "meta_description": "CSV dosyalarını tarayıcınızda açın, düzenleyin ve dışa aktarın. 99tool.in ücretsiz ve güvenli veri aracı.",
+      "what_is_title": "CSV Görüntüleyici ve Düzenleyici Nedir?",
+      "what_is_content": "CSV Görüntüleyici ve Düzenleyici, virgülle ayrılmış değerler (CSV) dosyalarını açmak, incelemek ve değiştirmek için tasarlanmış hafif bir web tabanlı hesap tablosu aracıdır. Ağır ofis yazılımlarının açılmasını beklemek yerine veri setinizi doğrudan tarayıcı sekmesine sürükleyip bırakabilirsiniz.\n\nBu araç hücre değerlerini düzenlemenize, sütunları sıralamanıza, belirli kayıtları aramanıza ve güncellenmiş dosyaları dışa aktarmanıza olanak tanır. Tüm dosya ayrıştırma ve tablo görüntüleme işlemleri tarayıcınızın RAM belleğinde yerel olarak gerçekleştiğinden hassas verileriniz dış sunuculara asla sızmaz.",
+      "how_to_use_title": "CSV Görüntüleyici ve Düzenleyici Nasıl Kullanılır?",
+      "how_to_use_steps": [
+        "<strong>Veri Setinizi İçe Aktarın:</strong> CSV dosyanızı sürükleyip bırakma alanına bırakın veya bilgisayarınızdan seçmek için \"Dosyalara Göz At\" butonuna tıklayın.",
+        "<strong>Hücre Değerlerini Düzenleyin:</strong> İçeriği değiştirmek için doğrudan herhangi bir hücreye tıklayın. Değişikliklerinizi yazın ve yerel olarak kaydetmek için hücrenin dışına tıklayın.",
+        "<strong>Filtreleyin ve Arayın:</strong> Belirli satırları aramak veya sonuçları gerçek zamanlı olarak filtrelemek için arama kutusunu kullanın.",
+        "<strong>Sütunlara Göre Sıralayın:</strong> Tablo satırlarını alfabetik veya sayısal olarak artan veya azalan düzende düzenlemek için sütun başlıklarına tıklayın.",
+        "<strong>Değişiklikleri Dışa Aktarın:</strong> Güncellenmiş dosyayı indirmek için \"CSV Dışa Aktar\" butonuna tıklayın."
+      ],
+      "key_features_title": "Temel Özellikler",
+      "key_features": [
+        "<strong>Gerçek Zamanlı Düzenleme:</strong> Hücre değerlerini doğrudan tablo içinde düzenleyin ve anında yerel olarak kaydedin.",
+        "<strong>Sütun Sıralama ve Arama:</strong> Kayıtları sıralayarak veya kelimelere göre filtreleyerek verileri hızla analiz edin.",
+        "<strong>Yüksek Hızlı İstemci Ayrıştırıcısı:</strong> Sunucu gecikmesi olmadan binlerce veri noktasını milisaniyeler içinde görüntüleyin.",
+        "<strong>UTF-8 Karakter Desteği:</strong> İçe ve dışa aktarma sırasında özel karakterleri ve Türkçe harfleri (ğ, ş, ı, ö, ç, ü) korur.",
+        "<strong>Çevrimdışı Veri İzolasyonu:</strong> Dosyalarınızın güvende kalmasını sağlamak için tamamen çevrimdışı çalışır."
+      ],
+      "common_use_cases_title": "Yaygın Kullanım Alanları",
+      "common_use_cases": [
+        "<strong>E-ticaret Envanter Güncellemeleri:</strong> Ürün listelerini mağazanıza aktarmadan önce açıklamaları, fiyatları veya stok miktarlarını düzenleyin.",
+        "<strong>Kişi Listesi Temizleme:</strong> Yinelenen girişleri arayın veya e-posta listelerindeki biçimlendirme hatalarını düzeltin.",
+        "<strong>Lütfen İnceleme ve Raporlama:</strong> Sunucu günlüklerini veya finansal raporları düzenli bir tablo biçiminde görün.",
+        "<strong>Veritabanı Aktarım Doğrulaması:</strong> SQL veritabanlarına yüklemeden önce sütun düzenini doğrulayın."
+      ],
+      "faq_title": "Sıkça Sorulan Sorular",
+      "faq": [
+        {
+          "question": "Dosya boyutu yükleme sınırı var mı?",
+          "answer": "En iyi deneyim için 10-15 MB'a kadar olan CSV dosyalarını kullanmanızı öneririz. Yüz binlerce satır içeren çok büyük dosyalar tarayıcıyı yavaşlatabilir."
+        },
+        {
+          "question": "Bir hücreyi düzenlemek bilgisayarımdaki orijinal dosyayı değiştirir mi?",
+          "answer": "Hayır. Güvenlik kısıtlamaları nedeniyle tarayıcılar yerel dosyaların üzerine doğrudan yazamaz. Değişiklikleri kaydetmek için \"CSV Dışa Aktar\" butonuna tıklayarak yeni bir kopya indirin."
+        },
+        {
+          "question": "Tablo verilerim yükleniyor mu veya izleniyor mu?",
+          "answer": "Hayır. 99tool.in tüm dosyaları yerel olarak işler. Verileriniz tarayıcınızın içinde güvenli bir şekilde kalır."
+        },
+        {
+          "question": "Bu araç noktalı virgül veya sekme ayırıcılarını destekliyor mu?",
+          "answer": "Bu sürüm standart virgülle ayrılmış dosyalar (.csv) için optimize edilmiştir. Noktalı virgül kullanımı sütunların yanlış hizalanmasına neden olabilir."
+        },
+        {
+          "question": "Yeni satırlar veya sütunlar ekleyebilir miyim?",
+          "answer": "Bu araç mevcut tablolar için bir görüntüleyici ve değer düzenleyici olarak tasarlanmıştır. Yeni sütunlar eklemek için tam kapsamlı bir hesap tablosu yazılımı kullanmanızı öneririz."
+        }
+      ],
+      "privacy_note": "🔒 Gizlilik ve Veri Notu: CSV veri ayrıştırma ve tablo görüntüleme tarayıcınızda gerçekleşir. Sunucularımıza hiçbir dosya gönderilmez.",
+      "schema_org": {
+        "name": "CSV Görüntüleyici ve Düzenleyici",
+        "description": "CSV ayrıştırma, tablo görünümü, hücre düzenleme, sütun sıralama, veri dışa aktarma."
+      }
+    },
+    "image_compressor": {
+      "page_title": "Görsel Sıkıştırma – 99tool.in",
+      "meta_description": "Kaliteden ödün vermeden görsellerinizin dosya boyutunu küçültün. 99tool.in ücretsiz ve hızlı görsel sıkıştırma aracı.",
+      "what_is_title": "Akıllı Görsel Sıkıştırma Aracı Nedir?",
+      "what_is_content": "Akıllı Görsel Sıkıştırma Aracı, görsel detayları korurken görsel dosyalarınızın boyutunu küçültmek için tasarlanmış istemci tarafı bir optimizasyon aracıdır. Tarayıcı tuval işleme ve dinamik kalite ayarlamasını kullanarak, web sitesi yükleme hızlarını artırmak için büyük görselleri kolayca küçültebilirsiniz.\n\nTüm optimizasyon işlemleri tamamen tarayıcınızın yerel belleğinde gerçekleşir. Dış sunuculara hiçbir dosya yüklenmediğinden, orijinal yüksek çözünürlüklü fotoğraflarınız ve tasarımlarınız tamamen gizli kalır."
+    },
+    "image_compressor": {
+      "page_title": "Görsel Sıkıştırma – 99tool.in",
+      "meta_description": "Kaliteden ödün vermeden görsellerinizin dosya boyutunu küçültün. 99tool.in ücretsiz ve hızlı görsel sıkıştırma aracı.",
+      "what_is_title": "Akıllı Görsel Sıkıştırma Aracı Nedir?",
+      "what_is_content": "Akıllı Görsel Sıkıştırma Aracı, görsel detayları korurken görsel dosyalarınızın boyutunu küçültmek için tasarlanmış istemci tarafı bir optimizasyon aracıdır. Tarayıcı tuval işleme ve dinamik kalite ayarlamasını kullanarak, web sitesi yükleme hızlarını artırmak için büyük görselleri kolayca küçültebilirsiniz.\n\nTüm optimizasyon işlemleri tamamen tarayıcınızın yerel belleğinde gerçekleşir. Dış sunuculara hiçbir dosya yüklenmediğinden, orijinal yüksek çözünürlüklü fotoğraflarınız ve tasarımlarınız tamamen gizli kalır.",
+      "how_to_use_title": "Akıllı Görsel Sıkıştırma Aracı Nasıl Kullanılır?",
+      "how_to_use_steps": [
+        "<strong>Görsel Yükleyin:</strong> Kutu alanına tıklayın veya görsel dosyanızı (JPG, PNG veya WEBP) tarayıcıya sürükleyip bırakın.",
+        "<strong>Orijinal Boyutu Kontrol Edin:</strong> Başlangıç dosya boyutunuzu görmek için karşılaştırma tablosundaki <strong>Orijinal</strong> sütununa bakın.",
+        "<strong>Sıkıştırma Seviyesini Seçin:</strong> Kalite yüzdesini ayarlamak için <strong>Sıkıştırma Seviyesi</strong> kaydırıcısını sürükleyin. Sola kaydırmak boyutu daha fazla küçültür, sağa kaydırmak detayları korur.",
+        "<strong>Format Seçin:</strong> Orijinal formatı korumak veya JPEG ya da WEBP'ye dönüştürmek için <strong>Format Dönüştür</strong> menüsünü kullanın.",
+        "<strong>Tasarrufu Değerlendirin:</strong> <strong>Orijinal</strong> ve <strong>Sıkıştırılmış</strong> önizlemeleri yan yana karşılaştırın. Yeşil rozet tasarruf edilen boyutu yüzde olarak gösterir.",
+        "<strong>Sıkıştırılmış Görseli İndirin:</strong> Optimize edilmiş dosyayı cihazınıza kaydetmek için <strong>Sıkıştırılmış Görseli İndir</strong> butonuna tıklayın."
+      ],
+      "key_features_title": "Temel Özellikler",
+      "key_features": [
+        "<strong>Yan Yana Kalite Karşılaştırması:</strong> Metinlerin ve ayrıntıların net kaldığından emin olmak için orijinal ve sıkıştırılmış önizlemeleri karşılaştırın.",
+        "<strong>Hassas Kalite Kontrolü:</strong> Depolama ihtiyaçlarınıza göre sıkıştırma seviyesini %10'dan %100'e kadar ayarlayın.",
+        "<strong>Anında Format Dönüştürücü:</strong> Dosyalarınızı WEBP veya JPEG gibi formatlara anında dönüştürün.",
+        "<strong>Gerçek Zamanlı Tasarruf Hesaplayıcı:</strong> Kaydırıcı ayarlamaları sırasında tasarruf edilen dosya boyutu yüzdesini anında hesaplar.",
+        "<strong>Tamamen Yerel Çalışma:</strong> Sıfır veri günlüğü sağlamak için her şeyi yerel JavaScript aracılığıyla işler."
+      ],
+      "common_use_cases_title": "Yaygın Kullanım Alanları",
+      "common_use_cases": [
+        "<strong>Web Geliştiricileri:</strong> Yükleme hızlarını artırmak ve SEO sıralamalarını iyileştirmek için web sitesi görsellerini sıkıştırın.",
+        "<strong>Sosyal Medya Yöneticileri:</strong> Yükleme sınırlarına uymak için fotoğrafların boyutunu kaliteyi bozmadan küçültün.",
+        "<strong>Ofis Çalışanları:</strong> E-posta ek sınırlarını aşmamak için taranmış belgelerin boyutunu küçültün.",
+        "<strong>Blog Yazarları:</strong> Mobil okuyucular için yükleme deneyimini iyileştirmek üzere hafif görseller oluşturun."
+      ],
+      "faq_title": "Sıkça Sorulan Sorular",
+      "faq": [
+        {
+          "question": "Sıkıştırma sırasında görselim kalite kaybeder mi?",
+          "answer": "Kaydırıcıyı %80 ile %90 arasında tutmanızı öneririz. Bu aralıkta dosya boyutu önemli ölçüde azalırken görsel farkı fark etmek zordur."
+        },
+        {
+          "question": "Özel fotoğraflarım bir bulut sunucusuna yükleniyor mu?",
+          "answer": "Kesinlikle hayır. Tüm işleme, yeniden boyutlandırma ve dönüştürme işlemleri tarayıcınızın yerel belleğinde gerçekleşir."
+        },
+        {
+          "question": "WEBP formatına dönüştürmenin avantajı nedir?",
+          "answer": "WEBP, JPEG ve PNG'ye kıyasla daha üstün sıkıştırma sağlayan modern bir görsel formatıdır ve daha küçük dosya boyutları sunar."
+        },
+        {
+          "question": "Saydam arka plana sahip PNG görsellerini sıkıştırabilir miyim?",
+          "answer": "Evet. Saydamlığı korumak için \"Orijinal Formatı Koru\" seçeneğini veya \"WEBP\"yi seçin. JPEG'e dönüştürmek saydam alanları beyaza dönüştürür."
+        },
+        {
+          "question": "Sıkıştırmadan sonra dosya boyutum neden arttı?",
+          "answer": "Orijinal görsel zaten oldukça optimize edilmişse veya sıkıştırılmış bir formatı %100 kalitede daha az verimli bir formata dönüştürüyorsanız bu durum gerçekleşebilir. Kaydırıcıyı biraz düşürün."
+        }
+      ],
+      "privacy_note": "Gizlilik ve Veri Notu: Sıkıştırma ve dönüştürme işlemlerinin her adımı bilgisayarınızda yerel olarak gerçekleştirilir. Dosyalarınız dış sunucularda saklanmaz.",
+      "schema_org": {
+        "name": "Görsel Sıkıştırma – 99tool.in",
+        "description": "99tool.in ücretsiz çevrimiçi araç: Hızlı, güvenli, kayıt gerekmez."
+      }
+    },
+    "markdown_previewer": {
+      "page_title": "Markdown Önizleme – 99tool.in",
+      "meta_description": "Markdown yazın, düzenleyin ve gerçek zamanlı olarak HTML'e dönüştürün. 99tool.in ücretsiz geliştirici aracı.",
+      "what_is_title": "Markdown Önizleyici Nedir?",
+      "what_is_content": "Markdown Önizleyici, Markdown sözdizimini gerçek zamanlı olarak yazmak, biçimlendirmek ve önizlemek için tasarlanmış tarayıcı tabanlı bir düzenleyicidir. Solda kod yazıp sağda biçimlendirilmiş sonucu görerek README dosyalarını ve makaleleri inceleyebilirsiniz.\n\nBu düzenleyici tüm Markdown-HTML dönüştürme işlemlerini bilgisayarınızda yerel olarak gerçekleştirir. Hiçbir taslak dış veritabanlarına yüklenmediğinden belgeleriniz tamamen güvende kalır.",
+      "how_to_use_title": "Markdown Önizleyici Nasıl Kullanılır?",
+      "how_to_use_steps": [
+        "<strong>Markdown Girin:</strong> Sol taraftaki \"Düzenleyici\" alanına ham Markdown sözdiziminizi yazın veya yapıştırın.",
+        "<strong>Canlı Önizlemeyi İzleyin:</strong> Başlıkların, listelerin ve kod bloklarının biçimlendirmesini anında incelemek için sağdaki \"Canlı Önizleme\" panelini izleyin.",
+        "<strong>HTML Kodunu Kopyalayın:</strong> Derlenmiş HTML kodunu panonuza kopyalamak için \"HTML Kopyala\" butonuna tıklayın.",
+        "<strong>Dosyanızı İndirin:</strong> Çalışmanızı standart bir Markdown belgesi olarak cihazınıza kaydetmek için \".md İndir\" butonuna tıklayın.",
+        "<strong>Temizleyin:</strong> Düzenleyiciyi sıfırlamak için \"Tümünü Temizle\" butonuna tıklayın."
+      ],
+      "key_features_title": "Temel Özellikler",
+      "key_features": [
+        "<strong>Canlı Bölünmüş Ekran Önizlemesi:</strong> Siz yazarken ham sözdizimini anında görsel HTML biçimlendirmesine dönüştürür.",
+        "<strong>GFM Uyumluluğu:</strong> Tablolar, koyu metinler ve kod blokları için standart GitHub Flavored Markdown kurallarını destekler.",
+        "<strong>HTML Çıktı Kopyalama:</strong> Derlenmiş HTML öğelerini doğrudan web sitenize eklemek için panoya kaydeder.",
+        "<strong>Yerel Dosya Dışa Aktarma:</strong> Tamamlanan taslaklarınızı bağımsız bir <code>.md</code> dosyası olarak indirin.",
+        "<strong>100% İstemci Tarafı Derleyici:</strong> Metinlerinizi korumak için stilleri tarayıcı önbelleğinde çevrimdışı olarak işler."
+      ],
+      "common_use_cases_title": "Yaygın Kullanım Alanları",
+      "common_use_cases": [
+        "<strong>README Dosyaları Yazma:</strong> Kod göndermeden önce proje açıklama dosyalarını biçimlendirin.",
+        "<strong>API Dokümantasyonu Önizleme:</strong> API özelliklerini ve kod örneklerini yazın ve önizleyin.",
+        "<strong>Teknik Blog Taslakları:</strong> Markdown ile makaleler hazırlayın ve yayınlamadan önce başlık yapısını kontrol edin.",
+        "<strong>Markdown Sözdizimi Öğrenme:</strong> Etkileşimli bir düzenleyicide Markdown kısayollarını uygulayın."
+      ],
+      "faq_title": "Sıkça Sorulan Sorular",
+      "faq": [
+        {
+          "question": "Bu düzenleyici GitHub Flavored Markdown ile uyumlu mu?",
+          "answer": "Evet. Önizleyici, görev listeleri, tablolar ve kod blokları dahil olmak üzere standart GFM öğelerini destekler."
+        },
+        {
+          "question": "Taslaklarım bir sunucuya gönderiliyor mu?",
+          "answer": "Hayır. 99tool.in tüm Markdown derleme işlemlerini tarayıcınızın belleğinde yerel olarak işler."
+        },
+        {
+          "question": "Canlı önizlemede görselleri nasıl görüntüleyebilirim?",
+          "answer": "Standart sözdizimini (<code>![](gorsel_url)</code>) kullanarak çevrimiçi bir görsele bağlantı verebilirsiniz."
+        },
+        {
+          "question": "İndirilen .md dosyası HTML kodunu içeriyor mu?",
+          "answer": "Hayır. \".md İndir\" butonu düzenlenebilir Markdown kaynak kodunu kaydeder. HTML için \"HTML Kopyala\" butonunu kullanın."
+        }
+      ],
+      "privacy_note": "🔒 Gizlilik ve Veri Notu: Markdown işleme, kopyalama ve dışa aktarma işlemleri tarayıcınızda yerel olarak gerçekleşir.",
+      "schema_org": {
+        "name": "Markdown Önizleme",
+        "description": "Canlı çıktı önizleme, GFM desteği, HTML dışa aktarma, bölünmüş ekran."
+      }
+    },
+    "pdf_merger": {
+      "page_title": "PDF Birleştirme – 99tool.in",
+      "meta_description": "Birden fazla PDF dosyasını tarayıcınızda saniyeler içinde birleştirin. 99tool.in %100 ücretsiz ve güvenli araç.",
+      "what_is_title": "Dijital Gizliliğinize Saygı Duyan Bir PDF Birleştirme Aracı",
+      "what_is_content": "Hepimiz bu durumu yaşadık: Birden fazla raporu, taranmış belgeyi ve bir kapak mektubunu profesyonel bir PDF dosyasında birleştirmeniz gerekir. İlk düşünce çevrimiçi \"<strong>ücretsiz PDF birleştirme</strong>\" aramaktır. Ancak gizli sözleşmelerinizi veya kişisel belgelerinizi bilinmeyen sunuculara yüklemek konusunda endişelenirsiniz.\n\n99tool.in olarak bu gizlilik sorununu çözmek için <strong>PDF birleştirme aracımızı</strong> geliştirdik. Dosyalarınızı uzak sunucularda işleyen sitelerin aksine, aracımız tüm işlemleri cihazınızda gerçekleştirir. Tarayıcı tabanlı <code>pdf-lib</code> teknolojisini kullanarak birleştirme tamamen bilgisayarınızın RAM belleğinde çalışır. Dosyalarınız cihazınızdan asla ayrılmaz."
+    },
+    "pdf_merger": {
+      "page_title": "PDF Birleştirme – 99tool.in",
+      "meta_description": "Birden fazla PDF dosyasını tarayıcınızda saniyeler içinde birleştirin. 99tool.in %100 ücretsiz ve güvenli araç.",
+      "what_is_title": "Dijital Gizliliğinize Saygı Duyan Bir PDF Birleştirme Aracı",
+      "what_is_content": "Hepimiz bu durumu yaşadık: Birden fazla raporu, taranmış belgeyi ve bir kapak mektubunu profesyonel bir PDF dosyasında birleştirmeniz gerekir. İlk düşünce çevrimiçi \"<strong>ücretsiz PDF birleştirme</strong>\" aramaktır. Ancak gizli sözleşmelerinizi veya kişisel belgelerinizi bilinmeyen sunuculara yüklemek konusunda endişelenirsiniz.\n\n99tool.in olarak bu gizlilik sorununu çözmek için <strong>PDF birleştirme aracımızı</strong> geliştirdik. Dosyalarınızı uzak sunucularda işleyen sitelerin aksine, aracımız tüm işlemleri cihazınızda gerçekleştirir. Tarayıcı tabanlı <code>pdf-lib</code> teknolojisini kullanarak birleştirme tamamen bilgisayarınızın RAM belleğinde çalışır. Dosyalarınız cihazınızdan asla ayrılmaz.",
+      "how_to_use_title": "99tool.in Üzerinde PDF Dosyaları Nasıl Birleştirilir? (Adım Adım)",
+      "how_to_use_steps": [
+        "<strong>1. Adım: Dosyalarınızı Seçin</strong> — \"PDF Seç\" kutusuna tıklayın veya dosyalarınızı doğrudan sayfaya sürükleyip bırakın.",
+        "<strong>2. Adım: Güvenlik Durumunu Kontrol Edin</strong> — Şüpheli kod bulunmadığını doğrulayan yeşil güvenlik kalkanını kontrol edin.",
+        "<strong>3. Adım: Sırayı Düzenleyin</strong> — Sayfa sırasını ayarlamak için dosya kartlarını yukarı veya aşağı sürükleyin.",
+        "<strong>4. Adım: Birleştirin ve İndirin</strong> — \"Dosyaları Birleştir\" butonuna tıklayın. İşlem yerel olarak saniyeler içinde tamamlanır ve indirme başlar."
+      ],
+      "key_features_title": "Yerel PDF Birleştirici Neden Daha İyidir?",
+      "key_features": [
+        "<strong>Görsel Çalışma Alanı:</strong> Dosyaları tam ihtiyacınız olan sırada kolayca sürükleyip bırakın.",
+        "<strong>Aktif Güvenlik Taraması:</strong> Birleştirmeden önce gizli betikler için belgenin iç yapısını tarar.",
+        "<strong>Saf Tarayıcı Montajı:</strong> pdf-lib ve WebAssembly kullanarak %100 RAM belleği içinde çalışır.",
+        "<strong>Sıfır Dosya Yükleme:</strong> Gizli sözleşmeler ve kişisel belgeler için tam gizlilik koruması."
+      ],
+      "common_use_cases_title": "Gerçek Birleştirme Senaryoları",
+      "common_use_cases": [
+        "<strong>Hukukçular ve Danışmanlar İçin:</strong> Veri sızıntısı riski olmadan dava dosyalarını ve belgeleri birleştirme.",
+        "<strong>Öğrenciler ve Akademisyenler İçin:</strong> Tez, kapak sayfası ve kaynakçayı tek bir dosyada toplama.",
+        "<strong>Gayrimenkul ve Finans Uzmanları İçin:</strong> Müşteri gizliliğini koruyarak başvuru formlarını birleştirme."
+      ],
+      "faq_title": "Sıkça Sorulan Sorular",
+      "faq": [
+        {
+          "question": "Kaç tane PDF dosyasını birleştirebilirim?",
+          "answer": "Sınır cihazınızın RAM belleğine bağlıdır. Çoğu modern bilgisayar 50'den fazla orta boyuttaki PDF dosyasını kolayca birleştirebilir."
+        },
+        {
+          "question": "Birleştirme görsellerin kalitesini etkiler mi?",
+          "answer": "Hayır. Aracımız pdf-lib kütüphanesi aracılığıyla her sayfanın orijinal verilerini korur. Sayfalar yeniden sıkıştırılmaz."
+        },
+        {
+          "question": "Neden bazı dosyalarda 'Güvenlik Uyarısı' görünüyor?",
+          "answer": "Bazı PDF'ler etkileşimli öğeler veya JavaScript içerebilir. Sistemimiz şeffaflık sağlamak için sizi bilgilendirir."
+        },
+        {
+          "question": "Belgelerim bir sunucuya yükleniyor mu?",
+          "answer": "Kesinlikle hayır. Tüm işlemler tarayıcınızda doğrudan gerçekleştirilir. Sunucularımıza hiçbir veri iletilmez."
+        },
+        {
+          "question": "Parola korumalı PDF'leri birleştirebilir miyim?",
+          "answer": "Parolayla korunan dosyaların birleştirilmeden önce parolalarının kaldırılması gerekir."
+        },
+        {
+          "question": "Bu araç mobil cihazlarda çalışıyor mu?",
+          "answer": "Evet. Mobil tarayıcınız modern JavaScript API'lerini desteklediği sürece iPhone, iPad veya Android'de PDF birleştirebilirsiniz."
+        }
+      ],
+      "privacy_note": "🔒 Oturum tabanlı yerel işleme. Yükleme yok. İzleme yok. Nisan 2026 güncellemesi.",
+      "schema_org": {
+        "name": "PDF Birleştirme Aracı",
+        "description": "PDF birleştirme, görsel dosya sıralama, güvenlik taraması, güvenli yerel işleme."
+      }
+    },
+    "password_generator": {
+      "page_title": "Şifre Oluşturucu – 99tool.in",
+      "meta_description": "Güçlü ve rastgele şifreleri anında oluşturun. 99tool.in %100 güvenli ve yerel araç.",
+      "what_is_title": "Güvenli Şifre Oluşturucu Nedir?",
+      "what_is_content": "Güvenli Şifre Oluşturucu, tarayıcınızın Web Crypto API (window.crypto.getRandomValues) özelliğini kullanarak kriptografik olarak güvenli rastgele şifreler oluşturur. Bu, standart rastgele fonksiyonlara kıyasla gerçek anlamda rastgele sonuçlar üretir. Tüm süreç tarayıcınızda yerel olarak gerçekleşir.\n\nŞifre uzunluğunu ve karakter türlerini (büyük harfler, küçük harfler, sayılar, özel semboller) ayarlayın; araç anında gereksinimlerinize uygun güvenli bir şifre oluşturacaktır. Tek tıkla kopyalayın ve şifre yöneticinize kaydedin."
+    },
+    "password_generator": {
+      "page_title": "Şifre Oluşturucu – 99tool.in",
+      "meta_description": "Güçlü ve rastgele şifreleri anında oluşturun. 99tool.in %100 güvenli ve yerel araç.",
+      "what_is_title": "Güvenli Şifre Oluşturucu Nedir?",
+      "what_is_content": "Güvenli Şifre Oluşturucu, tarayıcınızın Web Crypto API (window.crypto.getRandomValues) özelliğini kullanarak kriptografik olarak güvenli rastgele şifreler oluşturur. Bu, standart rastgele fonksiyonlara kıyasla gerçek anlamda rastgele sonuçlar üretir. Tüm süreç tarayıcınızda yerel olarak gerçekleşir.\n\nŞifre uzunluğunu ve karakter türlerini (büyük harfler, küçük harfler, sayılar, özel semboller) ayarlayın; araç anında gereksinimlerinize uygun güvenli bir şifre oluşturacaktır. Tek tıkla kopyalayın ve şifre yöneticinize kaydedin.",
+      "how_to_use_title": "Güvenli Şifre Oluşturucu Nasıl Kullanılır?",
+      "how_to_use_steps": [
+        "Kaydırıcıyı kullanarak istediğiniz şifre uzunluğunu ayarlayın (8 ila 128 karakter önerilir).",
+        "Karakter seti seçeneklerini belirleyin: Büyük harfler (A-Z), küçük harfler (a-z), sayılar (0-9), özel semboller (!@#$...).",
+        "Rastgele bir şifre oluşturmak için \"Şifre Oluştur\" butonuna tıklayın.",
+        "Güvenlik seviyesini doğrulamak için güç ölçeri kontrol edin.",
+        "Şifreyi panoya kopyalamak için \"Kopyala\" butonuna tıklayın ve şifre yöneticinize yapıştırın.",
+        "Yeni bir şifre seçeneği oluşturmak için tekrar \"Oluştur\" butonuna tıklayın."
+      ],
+      "key_features_title": "Temel Özellikler",
+      "key_features": [
+        "<strong>Web Crypto API Rastgeleliği:</strong> Kriptografik olarak güvenli rastgele sayı üreteci kullanır.",
+        "<strong>Özelleştirilebilir Seçenekler:</strong> 128 karaktere kadar uzunluk ayarlayın ve 4 karakter türünü birleştirin.",
+        "<strong>Güç Ölçer:</strong> Oluşturulan her şifrenin güvenlik seviyesini gerçek zamanlı olarak gösterir.",
+        "<strong>Tek Tıkla Kopyalama:</strong> Oluşturulan şifreyi görsel onay ile anında panoya kopyalar."
+      ],
+      "common_use_cases_title": "Yaygın Kullanım Alanları",
+      "common_use_cases": [
+        "<strong>Yeni Hesap Kaydı:</strong> Yeni bir çevrimiçi hesap oluştururken benzersiz ve güçlü bir şifre oluşturun.",
+        "<strong>Şifre Değiştirme:</strong> Bir web sitesi kimlik bilgilerini güncellemenizi istediğinde güvenli bir şifre oluşturun.",
+        "<strong>API Anahtarları ve Belirteçler:</strong> Geliştirme projelerinde güvenlik anahtarları olarak kullanılacak rastgele dizeler oluşturun."
+      ],
+      "faq_title": "Sıkça Sorulan Sorular",
+      "faq": [
+        {
+          "question": "Oluşturulan şifre gerçekten rastgele mi?",
+          "answer": "Evet. Araç, işletim sisteminin güvenli rastgele sayı üretecinden (CSPRNG) rastgelelik sağlayan window.crypto.getRandomValues() metodunu kullanır."
+        },
+        {
+          "question": "Önerilen şifre uzunluğu ne olmalıdır?",
+          "answer": "Standart hesaplar için en az 16 karakter, önemli hesaplar (e-posta, banka) için 20+ karakter önerilir."
+        },
+        {
+          "question": "Şifre sunucularınıza gönderiliyor mu?",
+          "answer": "Kesinlikle hayır. Tüm oluşturma işlemleri yerel olarak gerçekleşir. Şifre cihazınızdan asla ayrılmaz."
+        },
+        {
+          "question": "Oluşturulan şifreyi ezberlemeli miyim?",
+          "answer": "Hayır. Güçlü şifreler ezberlemek için değil, bir şifre yöneticisinde (1Password veya Bitwarden gibi) saklanmak üzere tasarlanmıştır."
+        }
+      ],
+      "privacy_note": "🔒 Kriptografik olarak güvenli. %100 Yerel. Sunucu teması yok. Nisan 2026 güncellemesi.",
+      "schema_org": {
+        "name": "Güvenli Şifre Oluşturucu",
+        "description": "Rastgele şifre oluşturma, özelleştirilebilir karakter setleri, güç testi, %100 istemci tarafı."
+      }
+    },
+    "regex_tester": {
+      "page_title": "Regex Test Aracı – 99tool.in",
+      "meta_description": "Düzenli ifadeleri (Regex) gerçek zamanlı olarak test edin ve hata ayıklayın. 99tool.in ücretsiz geliştirici aracı.",
+      "what_is_title": "Regex Test ve Hata Ayıklama Aracı Nedir?",
+      "what_is_content": "Regex Test ve Hata Ayıklama Aracı, düzenli ifadeleri (RegEx) oluşturmak, test etmek ve düzeltmek için tasarlanmış istemci tarafı bir geliştirici aracıdır. Bir desen ve bayraklar girerek, ifadenin metinle nasıl eşleştiğini tarayıcınızda canlı olarak görebilirsiniz.\n\nBu araç, tüm doğrulamaları tarayıcınızın yerel JavaScript RegExp motorunu kullanarak gerçekleştirir. Ağ üzerinden hiçbir metin gönderilmediğinden verileriniz gizli kalır."
+    },
+    "regex_tester": {
+      "page_title": "Regex Test Aracı – 99tool.in",
+      "meta_description": "Düzenli ifadeleri (Regex) gerçek zamanlı olarak test edin ve hata ayıklayın. 99tool.in ücretsiz geliştirici aracı.",
+      "what_is_title": "Regex Test ve Hata Ayıklama Aracı Nedir?",
+      "what_is_content": "Regex Test ve Hata Ayıklama Aracı, düzenli ifadeleri (RegEx) oluşturmak, test etmek ve düzeltmek için tasarlanmış istemci tarafı bir geliştirici aracıdır. Bir desen ve bayraklar girerek, ifadenin metinle nasıl eşleştiğini tarayıcınızda canlı olarak görebilirsiniz.\n\nBu araç, tüm doğrulamaları tarayıcınızın yerel JavaScript RegExp motorunu kullanarak gerçekleştirir. Ağ üzerinden hiçbir metin gönderilmediğinden verileriniz gizli kalır.",
+      "how_to_use_title": "Regex Test ve Hata Ayıklama Aracı Nasıl Kullanılır?",
+      "how_to_use_steps": [
+        "<strong>Desen Girin:</strong> Düzenli ifadenizi (örneğin: <code>[a-zA-Z0-9]+</code>) desen çubuğuna yazın.",
+        "<strong>Bayrakları Yapılandırın:</strong> Küresel (g), büyük/küçük harf duyarsız (i) veya çok satırlı (m) gibi bayrakları etkinleştirin.",
+        "<strong>Test Metnini Yapıştırın:</strong> Örnek metninizi girin. Eşleşmeler anında vurgulanacaktır.",
+        "<strong>Yakalama Gruplarını İnceleyin:</strong> Eşleşmeler ve gruplar hakkındaki ayrıntıları görmek için sonuçlar panelini kontrol edin.",
+        "<strong>Sözdizimi Hatalarını Düzeltin:</strong> İfadeniz geçersizse, nedeni öğrenmek için hata mesajına bakın."
+      ],
+      "key_features_title": "Temel Özellikler",
+      "key_features": [
+        "<strong>Gerçek Zamanlı Vurgulama:</strong> Siz yazarken metin kutusundaki eşleşmeleri anında vurgular.",
+        "<strong>Etkileşimli Bayrak Kontrolü:</strong> g, i, m bayraklarını tek tıkla kolayca açın veya kapatın.",
+        "<strong>Yakalama Grubu Detayları:</strong> Tam eşleşme konumlarını ve yakalanan grup değerlerini listeler.",
+        "<strong>Sözdizimi Hata Teşhisi:</strong> Kapatılmamış parantezler gibi sorunları çözmeye yardımcı olacak açık uyarılar gösterir.",
+        "<strong>100% İstemci Tarafı:</strong> Veri gizliliğini korumak için düzenli ifadeleri çevrimdışı olarak test eder."
+      ],
+      "common_use_cases_title": "Yaygın Kullanım Alanları",
+      "common_use_cases": [
+        "<strong>Form Giriş Doğrulaması:</strong> E-posta, telefon numarası ve şifre alanları için desenleri test edin.",
+        "<strong>Günlük (Log) Analizi:</strong> Sunucu günlüklerinden IP adreslerini veya hata kodlarını ayıklamak için desenler oluşturun.",
+        "<strong>Metin Çıkarma İş Akışları:</strong> Kod dosyalarından belirli etiketleri veya değişkenleri ayıklamak için desenleri test edin.",
+        "<strong>Düzenli İfadeleri Öğrenme:</strong> Görsel bir ortamda Regex kurallarını uygulayın."
+      ],
+      "faq_title": "Sıkça Sorulan Sorular",
+      "faq": [
+        {
+          "question": "Bu araç hangi düzenli ifade motorunu kullanıyor?",
+          "answer": "Bu araç, yerel JavaScript <code>RegExp</code> motorunu kullanır. Chrome, Firefox, Safari, Edge ve Node.js ortamlarıyla tam uyumludur."
+        },
+        {
+          "question": "Test metnim bir sunucuya yükleniyor mu?",
+          "answer": "Hayır. 99tool.in tüm değerlendirmeleri yerel olarak tarayıcınızın belleğinde işler."
+        },
+        {
+          "question": "Neden sözdizimi hatası uyarısı alıyorum?",
+          "answer": "Bu durum, kapatılmamış parantez <code>(</code> gibi matematiksel olarak geçersiz bir ifade girildiğinde oluşur."
+        },
+        {
+          "question": "Hata ayıklayıcı Lookaround özelliğini destekliyor mu?",
+          "answer": "Evet. Yerel motor, ES2018+ modern Regex özelliklerini (Lookahead ve Lookbehind) destekler."
+        }
+      ],
+      "privacy_note": "🔒 Gizlilik ve Veri Notu: Regex değerlendirmeleri yerel olarak tarayıcınızda gerçekleşir. Sunuculara veri gönderilmez.",
+      "schema_org": {
+        "name": "Regex Test Aracı",
+        "description": "Gerçek zamanlı Regex testi, bayrak desteği (g, i, m), eşleşme vurgulama."
+      }
+    },
+    "word_counter": {
+      "page_title": "Kelime Sayacı – 99tool.in",
+      "meta_description": "Kelimeleri, karakterleri, cümleleri ve paragrafları gerçek zamanlı olarak sayın. 99tool.in ücretsiz ve güvenli araç.",
+      "what_is_title": "Çevrimiçi Kelime Sayacı Nedir?",
+      "what_is_content": "Çevrimiçi Kelime Sayacı, siz metin yazarken veya yapıştırırken kelimeleri, karakterleri, cümleleri ve paragrafları sayan gerçek zamanlı bir metin analizi aracıdır. Bulut tabanlı düzenleyicilerin aksine, bu araç hiçbir veri aktarımı olmadan tamamen tarayıcınızda çalışır.\n\nSayaç, her tuş vuruşunda anında güncellenerek makaleler, sosyal medya gönderileri veya SEO içerikleri için metin uzunluğunu hassas bir şekilde kontrol etmenizi sağlar."
+    },
+    "word_counter": {
+      "page_title": "Kelime Sayacı – 99tool.in",
+      "meta_description": "Kelimeleri, karakterleri, cümleleri ve paragrafları gerçek zamanlı olarak sayın. 99tool.in ücretsiz ve güvenli araç.",
+      "what_is_title": "Çevrimiçi Kelime Sayacı Nedir?",
+      "what_is_content": "Çevrimiçi Kelime Sayacı, siz metin yazarken veya yapıştırırken kelimeleri, karakterleri, cümleleri ve paragrafları sayan gerçek zamanlı bir metin analizi aracıdır. Bulut tabanlı düzenleyicilerin aksine, bu araç hiçbir veri aktarımı olmadan tamamen tarayıcınızda çalışır.\n\nSayaç, her tuş vuruşunda anında güncellenerek makaleler, sosyal medya gönderileri veya SEO içerikleri için metin uzunluğunu hassas bir şekilde kontrol etmenizi sağlar.",
+      "how_to_use_title": "Çevrimiçi Kelime Sayacı Nasıl Kullanılır?",
+      "how_to_use_steps": [
+        "Metninizi doğrudan sayfanın üst kısmındaki düzenleyici kutusuna yazın veya yapıştırın.",
+        "Kelime, karakter, cümle ve paragraf sayılarının gerçek zamanlı olarak güncellenmesini izleyin.",
+        "Bir okuyucunun içeriğinizi okumasının ne kadar süreceğini tahmin etmek için \"Okuma Süresi\" göstergesini kullanın.",
+        "Hedefinize ulaşana kadar metninizi doğrudan kutu içinde düzenleyin.",
+        "Düzenleyiciyi sıfırlamak ve yeni bir analize başlamak için \"Temizle\" butonuna tıklayın."
+      ],
+      "key_features_title": "Temel Özellikler",
+      "key_features": [
+        "<strong>Gerçek Zamanlı Sayım:</strong> Her tuş vuruşunda kelime, karakter ve cümle sayılarını anında günceller.",
+        "<strong>Okuma Süresi Tahmini:</strong> Ortalama bir yetişkinin okuma hızına göre yaklaşık okuma süresini hesaplar.",
+        "<strong>Karakter Sayacı (Boşluklu ve Boşluksuz):</strong> Farklı platformların ihtiyaçları için her iki toplamı da gösterir.",
+        "<strong>%100 Gizlilik:</strong> Tüm sayım mantığı istemci tarafında çalışır; metniniz asla bir sunucuya gönderilmez."
+      ],
+      "common_use_cases_title": "Yaygın Kullanım Alanları",
+      "common_use_cases": [
+        "<strong>Akademik Ödevler:</strong> Teslim etmeden önce ödevleriniz için kelime sınırlarını kontrol edin.",
+        "<strong>SEO İçerik Yazımı:</strong> Açıklama, başlık etiketleri ve makale uzunluğu için karakter sınırlarını tam olarak koruyun.",
+        "<strong>Sosyal Medya Paylaşımları:</strong> Yayınlamadan önce Twitter/X veya LinkedIn karakter sınırlarına uyun.",
+        "<strong>Serbest Yazarlık:</strong> Sözleşmeli kelime sayısı özelliklerine göre teslimatların uzunluğunu kontrol edin."
+      ],
+      "faq_title": "Sıkça Sorulan Sorular",
+      "faq": [
+        {
+          "question": "Bu araç yazdıklarımı kaydediyor mu?",
+          "answer": "Kesinlikle hayır. Gizliliğiniz önceliğimizdir. Her şey yerel olarak tarayıcı sekmenizde gerçekleşir. Sekmeyi kapattığınızda metniniz silinir."
+        },
+        {
+          "question": "Okuma süresi nasıl hesaplanıyor?",
+          "answer": "Hesaplama, yetişkinlerin ortalama okuma hızına (dakikada yaklaşık 200 ila 250 kelime) dayanmaktadır."
+        },
+        {
+          "question": "Boşluklar karakter olarak sayılıyor mu?",
+          "answer": "Evet. Araç hem \"boşluklu toplam karakter\" hem de \"boşluksuz toplam karakter\" değerlerini gösterir."
+        },
+        {
+          "question": "Ne bir \"cümle\" olarak kabul edilir?",
+          "answer": "Nokta, ünlem veya soru işareti ile biten her metin bölümü bir cümle olarak sayılır."
+        },
+        {
+          "question": "Mobil cihazımda çalışıyor mu?",
+          "answer": "Evet! Araç tamamen duyarlıdır ve akıllı telefonlarda ve tabletlerde sorunsuz çalışır."
+        }
+      ],
+      "privacy_note": "Gizlilik ve Veri Notu: Tüm metin analizi ve okuma süresi hesaplamaları tarayıcınızda gerçekleşir. İçeriğiniz saklanmaz veya aktarılmaz.",
+      "schema_org": {
+        "name": "Çevrimiçi Kelime Sayacı",
+        "description": "Kelime sayımı, karakter sayımı, cümle sayımı, okuma süresi tahmini."
+      }
+    }
+  }
+}

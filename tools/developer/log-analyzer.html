@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Log Analyzer – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/developer/log-analyzer.html"/>
+<meta property="og:title" content="Log Analyzer – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/developer/log-analyzer.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Log Analyzer \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/developer/log-analyzer.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="log analyzer, analyze log files, log viewer, log parser, log filter" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json" id="schema-org-data">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Log Analyzer",
+    "operatingSystem": "Any",
+    "applicationCategory": "DeveloperApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Log File Upload, Real-time Search, Error Highlighting, Semantic Filtering"
+  }
+  </script>
+
+  <style>
+    .log-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    .controls-panel {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+
+    .log-view {
+      background: var(--dark);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 20px;
+      height: 600px;
+      overflow: auto;
+      font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', monospace;
+      font-size: 0.82rem;
+      white-space: pre-wrap;
+      line-height: 1.6;
+    }
+
+    .log-line {
+      display: block;
+      padding: 0 4px;
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+    }
+
+    .log-line:hover { background: rgba(255,255,255,0.05); }
+
+    /* Levels */
+    .lvl-error { color: #ff5252; background: rgba(255, 82, 82, 0.1); font-weight: 700; }
+    .lvl-warn { color: #ffb74d; background: rgba(255, 183, 77, 0.1); }
+    .lvl-info { color: #81d4fa; }
+    .lvl-debug { color: #999; }
+
+    .search-match { background: rgba(255, 235, 59, 0.3); color: #fff; border-bottom: 1px solid #ffeb3b; }
+
+    .filter-pills {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+      flex-wrap: wrap;
+    }
+
+    .filter-pill {
+       cursor: pointer;
+       padding: 4px 12px;
+       border-radius: 20px;
+       font-size: 0.75rem;
+       font-weight: 600;
+       border: 1px solid var(--border);
+       background: var(--dark-card);
+       color: var(--text-muted);
+       transition: all 0.2s;
+    }
+
+    .filter-pill.active {
+       background: var(--primary);
+       color: #fff;
+       border-color: var(--primary);
+    }
+
+    .upload-zone {
+      border: 2px dashed var(--border);
+      padding: 40px;
+      text-align: center;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: border-color 0.3s;
+      margin-bottom: 20px;
+    }
+
+    .upload-zone:hover { border-color: var(--primary); }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/developer/log-analyzer.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/developer/log-analyzer.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/developer/log-analyzer.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/developer/log-analyzer.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/developer/log-analyzer.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/developer/log-analyzer.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/developer/log-analyzer.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/developer/log-analyzer.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/developer/log-analyzer.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/developer/log-analyzer.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/developer/log-analyzer.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/developer/log-analyzer.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/developer/log-analyzer.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/developer/log-analyzer.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/developer/log-analyzer.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/developer/log-analyzer.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/developer/log-analyzer.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/developer/log-analyzer.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/developer/log-analyzer.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/developer/log-analyzer.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/developer/log-analyzer.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/developer/log-analyzer.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#developer">Developer</a> <span>/</span> 
+        <span>Log Analyzer</span>
+      </nav>
+      <h1>Log Analyzer & Viewer</h1>
+      <p>Analyze production logs privately. Filter by level, search for keywords, and find errors instantly. 100% local.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div class="log-layout">
+        <div class="controls-panel">
+          <div id="drop-zone" class="upload-zone">
+             <div style="font-size: 1.5rem; margin-bottom: 8px;">📄</div>
+             <p>Drop a log file here or <strong>Click to Upload</strong></p>
+             <input type="file" id="file-input" hidden accept=".log,.txt">
+          </div>
+
+          <div class="grid" style="grid-template-columns: 1fr auto; gap: 15px; align-items: end;">
+             <div class="form-group mb-0">
+                <label>Search / Filter Keywords</label>
+                <input type="text" id="search-input" class="form-control" placeholder="Enter keyword to filter lines...">
+             </div>
+             <button class="btn btn-secondary" id="clear-btn">Clear All</button>
+          </div>
+
+          <div class="filter-pills" id="level-filters">
+             <span class="filter-pill active" data-lvl="all">ALL</span>
+             <span class="filter-pill" data-lvl="ERROR">ERROR</span>
+             <span class="filter-pill" data-lvl="WARN">WARN</span>
+             <span class="filter-pill" data-lvl="INFO">INFO</span>
+             <span class="filter-pill" data-lvl="DEBUG">DEBUG</span>
+          </div>
+        </div>
+
+        <div id="log-display" class="log-view">
+           <div class="text-center py-5 text-muted">Awaiting log data. Upload a file or paste text below.</div>
+        </div>
+
+        <div class="form-group mt-2">
+           <label>Paste Log Text (Alternative to Upload)</label>
+           <textarea id="paste-input" class="form-control" style="min-height: 100px;" placeholder="Paste log contents here..."></textarea>
+           <button class="btn btn-primary btn-sm mt-2" id="process-paste-btn">Process Paste</button>
+        </div>
+      </div>
+
+      <!-- CONTENT SECTION -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.log_analyzer.what_is_title">What is the Log Analyzer & Viewer?</h2>
+        <p>The Log Analyzer & Viewer is a client-side log auditing dashboard designed to view, parse, and filter large application log files. By parsing raw text streams in browser memory, developers can inspect stack traces, analyze status codes, and separate errors from standard debug records.</p>
+        <p>This analyzer manages all file reads, line-by-line matches, and keyword filters locally on your computer. Because no log files, system paths, or pasted transaction strings are transmitted to remote servers, your system architectures and diagnostic details remain private.</p>
+
+        <h2 class="mt-4" data-i18n="tools.log_analyzer.how_to_use_title">How to Use the Log Analyzer & Viewer</h2>
+        <ol>
+          <li><strong>Upload Your Log File:</strong> Click the "Choose File" button or drag-and-drop a <code>.log</code> or <code>.txt</code> file into the file input area.</li>
+          <li><strong>Or Paste Raw Logs:</strong> Alternatively, paste log text strings directly into the "Paste Log Text" box and click "Process Paste".</li>
+          <li><strong>Filter by Severity:</strong> Use the log level dropdown to filter and view specific categories (All, Info, Warn, Error, Debug).</li>
+          <li><strong>Query Specific Keywords:</strong> Type terms (like transaction IDs, IP addresses, or method names) into the search bar to isolate matching entries.</li>
+          <li><strong>Audit Outputs:</strong> Inspect the high-contrast parsed logs list to trace application heartbeats and identify warning states.</li>
+        </ol>
+
+        <h2 class="mt-4" data-i18n="tools.log_analyzer.key_features_title">Key Features</h2>
+        <ul>
+          <li><strong>Client-Side File Parsing:</strong> Opens and parses local text files using browser-side readers without uploading files.</li>
+          <li><strong>Log Level Filtering:</strong> Sorts logs by typical level strings (INFO, WARN, ERROR, DEBUG) instantly.</li>
+          <li><strong>Interactive Search Filter:</strong> Refines displayed records as you type to speed up troubleshooting.</li>
+          <li><strong>Flexible Input Methods:</strong> Supports both local file uploads and direct copy-pasting of raw console dumps.</li>
+          <li><strong>100% Secure Auditing:</strong> Isolates log parsing inside a local browser sandbox to prevent data leaks.</li>
+        </ul>
+
+        <h2 class="mt-4" data-i18n="tools.log_analyzer.common_use_cases_title">Common Use Cases</h2>
+        <ul>
+          <li><strong>Debugging Server Crashes:</strong> Search production server logs for fatal errors and inspect stack traces to identify crashes.</li>
+          <li><strong>Access Log Audits:</strong> Scan web access logs (like Nginx or Apache) for unauthorized IP access, brute-force attempts, and 404 links.</li>
+          <li><strong>API Transaction Checks:</strong> Filter transaction IDs to track request-response cycles across services.</li>
+          <li><strong>Local Build Inspections:</strong> Audit build tool console outputs to debug compiling warnings.</li>
+        </ul>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section mt-5">
+        <h2 data-i18n="tools.log_analyzer.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Is there a limit on log file size?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>The parser handles files up to 100MB in browser memory. For massive logs (e.g., gigabyte-scale logs), we recommend using command-line filters (like <code>grep</code>) before uploading logs to this tool.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Are my system log files uploaded to 99tool.in?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. 99tool.in processes all log streams locally in your browser tab. Your files, system paths, and errors are never uploaded, stored, or analyzed on our servers.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Does the analyzer support JSON-formatted logs?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. Paste or load your JSON logs. While the tool renders them as raw strings, the search bar allows you to search and filter by JSON keys (e.g., <code>"level": "error"</code>).</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I use regular expressions to search logs?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>This version uses standard case-insensitive keyword searches for optimal performance. For regex queries, check out our specialized <a href="regex-tester.html">Regex Tester</a> tool.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 Privacy & Data Note: Log uploads, processing, and keyword searches occur locally in your browser. None of your data is sent to our servers.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const logDisplay = document.getElementById('log-display');
+    const searchInput = document.getElementById('search-input');
+    const fileInput = document.getElementById('file-input');
+    const dropZone = document.getElementById('drop-zone');
+    const pasteInput = document.getElementById('paste-input');
+    const processPasteBtn = document.getElementById('process-paste-btn');
+    const filters = document.querySelectorAll('.filter-pill');
+    
+    let rawLines = [];
+    let currentFilter = 'all';
+
+    function setLines(text) {
+      rawLines = text.split(/\r?\n/).filter(l => l.trim().length > 0);
+      render();
+    }
+
+    function render() {
+      const q = searchInput.value.toLowerCase().trim();
+      logDisplay.innerHTML = '';
+      
+      let filtered = rawLines;
+      
+      // Filter by Level
+      if (currentFilter !== 'all') {
+         filtered = filtered.filter(line => line.toUpperCase().includes(currentFilter));
+      }
+
+      // Filter by Search Query
+      if (q) {
+         filtered = filtered.filter(line => line.toLowerCase().includes(q));
+      }
+
+      if (filtered.length === 0) {
+        logDisplay.innerHTML = `<div class="text-center py-5 text-muted">No lines match your current filters.</div>`;
+        return;
+      }
+
+      const fragment = document.createDocumentFragment();
+      
+      // Limit to 5000 lines for performance
+      const displayLines = filtered.slice(0, 5000);
+
+      displayLines.forEach(line => {
+        const div = document.createElement('span');
+        div.className = 'log-line';
+        
+        // Severity Class
+        const upLine = line.toUpperCase();
+        if (upLine.includes('ERROR') || upLine.includes('CRITICAL')) div.classList.add('lvl-error');
+        else if (upLine.includes('WARN')) div.classList.add('lvl-warn');
+        else if (upLine.includes('INFO')) div.classList.add('lvl-info');
+        else if (upLine.includes('DEBUG')) div.classList.add('lvl-debug');
+
+        // Search Highlight
+        if (q) {
+           const regex = new RegExp(`(${q})`, 'gi');
+           div.innerHTML = escapeHTML(line).replace(regex, '<span class="search-match">$1</span>');
+        } else {
+           div.textContent = line;
+        }
+        
+        fragment.appendChild(div);
+      });
+
+      logDisplay.appendChild(fragment);
+      
+      if (filtered.length > 5000) {
+         const note = document.createElement('div');
+         note.style.textAlign = 'center';
+         note.style.padding = '10px';
+         note.style.color = 'var(--text-muted)';
+         note.textContent = `Showing first 5,000 of ${filtered.length} matching lines.`;
+         logDisplay.appendChild(note);
+      }
+    }
+
+    function escapeHTML(str) {
+      const div = document.createElement('div');
+      div.textContent = str;
+      return div.innerHTML;
+    }
+
+    // Handlers
+    dropZone.onclick = () => fileInput.click();
+    fileInput.onchange = (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      handleFile(file);
+    };
+
+    // Init Drag and Drop using global helper
+    setupDragDrop('drop-zone', (files) => {
+       handleFile(files[0]);
+    });
+
+    function handleFile(file) {
+      const reader = new FileReader();
+      reader.onload = (re) => setLines(re.target.result);
+      reader.readAsText(file);
+    }
+
+    processPasteBtn.onclick = () => {
+       if (pasteInput.value.trim()) setLines(pasteInput.value);
+    };
+
+    searchInput.oninput = render;
+
+    filters.forEach(pill => {
+       pill.onclick = () => {
+          filters.forEach(p => p.classList.remove('active'));
+          pill.classList.add('active');
+          currentFilter = pill.getAttribute('data-lvl');
+          render();
+       };
+    });
+
+    document.getElementById('clear-btn').onclick = () => {
+       rawLines = [];
+       pasteInput.value = '';
+       searchInput.value = '';
+       render();
+    };
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>
+

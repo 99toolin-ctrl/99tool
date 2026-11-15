@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Log Analyzer – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/developer/log-analyzer.html"/>
+<meta property="og:title" content="Log Analyzer – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/developer/log-analyzer.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Log Analyzer \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/developer/log-analyzer.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="log analyzer, analyze log files, log viewer, log parser, log filter" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Log Analyzer",
+    "operatingSystem": "Any",
+    "applicationCategory": "DeveloperApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Log File Upload, Real-time Search, Error Highlighting, Semantic Filtering"
+  }
+  </script>
+
+  <style>
+    .log-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    .controls-panel {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+
+    .log-view {
+      background: var(--dark);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 20px;
+      height: 600px;
+      overflow: auto;
+      font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', monospace;
+      font-size: 0.82rem;
+      white-space: pre-wrap;
+      line-height: 1.6;
+    }
+
+    .log-line {
+      display: block;
+      padding: 0 4px;
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+    }
+
+    .log-line:hover { background: rgba(255,255,255,0.05); }
+
+    /* Levels */
+    .lvl-error { color: #ff5252; background: rgba(255, 82, 82, 0.1); font-weight: 700; }
+    .lvl-warn { color: #ffb74d; background: rgba(255, 183, 77, 0.1); }
+    .lvl-info { color: #81d4fa; }
+    .lvl-debug { color: #999; }
+
+    .search-match { background: rgba(255, 235, 59, 0.3); color: #fff; border-bottom: 1px solid #ffeb3b; }
+
+    .filter-pills {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+      flex-wrap: wrap;
+    }
+
+    .filter-pill {
+       cursor: pointer;
+       padding: 4px 12px;
+       border-radius: 20px;
+       font-size: 0.75rem;
+       font-weight: 600;
+       border: 1px solid var(--border);
+       background: var(--dark-card);
+       color: var(--text-muted);
+       transition: all 0.2s;
+    }
+
+    .filter-pill.active {
+       background: var(--primary);
+       color: #fff;
+       border-color: var(--primary);
+    }
+
+    .upload-zone {
+      border: 2px dashed var(--border);
+      padding: 40px;
+      text-align: center;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: border-color 0.3s;
+      margin-bottom: 20px;
+    }
+
+    .upload-zone:hover { border-color: var(--primary); }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#developer">Developer</a> <span>/</span> 
+        <span>Log Analyzer</span>
+      </nav>
+      <h1>Log Analyzer & Viewer</h1>
+      <p>Analyze production logs privately. Filter by level, search for keywords, and find errors instantly. 100% local.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div class="log-layout">
+        <div class="controls-panel">
+          <div id="drop-zone" class="upload-zone">
+             <div style="font-size: 1.5rem; margin-bottom: 8px;">📄</div>
+             <p>Drop a log file here or <strong>Click to Upload</strong></p>
+             <input type="file" id="file-input" hidden accept=".log,.txt">
+          </div>
+
+          <div class="grid" style="grid-template-columns: 1fr auto; gap: 15px; align-items: end;">
+             <div class="form-group mb-0">
+                <label>Search / Filter Keywords</label>
+                <input type="text" id="search-input" class="form-control" placeholder="Enter keyword to filter lines...">
+             </div>
+             <button class="btn btn-secondary" id="clear-btn">Clear All</button>
+          </div>
+
+          <div class="filter-pills" id="level-filters">
+             <span class="filter-pill active" data-lvl="all">ALL</span>
+             <span class="filter-pill" data-lvl="ERROR">ERROR</span>
+             <span class="filter-pill" data-lvl="WARN">WARN</span>
+             <span class="filter-pill" data-lvl="INFO">INFO</span>
+             <span class="filter-pill" data-lvl="DEBUG">DEBUG</span>
+          </div>
+        </div>
+
+        <div id="log-display" class="log-view">
+           <div class="text-center py-5 text-muted">Awaiting log data. Upload a file or paste text below.</div>
+        </div>
+
+        <div class="form-group mt-2">
+           <label>Paste Log Text (Alternative to Upload)</label>
+           <textarea id="paste-input" class="form-control" style="min-height: 100px;" placeholder="Paste log contents here..."></textarea>
+           <button class="btn btn-primary btn-sm mt-2" id="process-paste-btn">Process Paste</button>
+        </div>
+      </div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5">
+        <h2>Infrastructure Truths in Private: Secure Local Log Analysis</h2>
+        <p>We’ve all been there: a server crashes in the middle of the night, or a security alert triggers a critical incident response. You’re left staring at a 50MB <code>.log</code> file that looks like an incomprehensible wall of text. Your first instinct is to find a <strong>log analyzer</strong> online to help you filter through the noise and find the root cause. But as you hover over the "Upload" button, you realize that your logs contain IP addresses, internal system paths, database queries, and perhaps even sensitive session tokens. Do you really want to send your infrastructure’s "Black Box" to an anonymous cloud server?</p>
+
+        <p>At 99tool.in, we built our <strong>log viewer</strong> to give you a professional analytics command center without the privacy risk. By utilizing high-performance browser-side parsing, we allow you to <strong>analyze log files</strong> entirely within the secure sandbox of your machine. Whether you’re a DevOps engineer debugging a production crash, a security analyst hunting for anomalies, or a developer perfecting local error handling, our <strong>log tool</strong> ensures that your system’s diagnostic data never leaves your device.</p>
+        
+        <div class="tool-preview-box mt-4 mb-4" style="text-align:center;">
+           <img src="../../assets/images/markdown-preview.png" alt="Clean Log Analysis Dashboard" class="tool-preview" id="tool-preview-img" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+        </div>
+
+        <h3 class="mt-4">The Logic of Semantic Pattern Recognition</h3>
+        <p>A log file isn't just text; it’s a chronological heartbeat of your application. Most basic <strong>log parser</strong> tools simply act as an glorified text editor, leaving you to do the heavy lifting of identification. Our <strong>professional log analyzer</strong> takes a human-centric approach: we focus on **Severity Prioritization** and **Pattern Highlighting**.</p>
+        
+        <p>We automatically scan your log stream for standard levels like ERROR, WARNING, and DEBUG. Our <strong>safe log validator</strong> doesn't just display the lines; it semantically highlights them, making the "Critical Failures" pop out visually against the background noise. This transparency allows you to see the "Logic of the Crash" in seconds, helping you move from diagnosis to resolution without the eyestrain of manual searching.</p>
+
+        <h3 class="mt-4">Why Analysis is the SecOps Standard</h3>
+        <p>In a professional environment, uploading production logs to a standard <strong>log analyzer online free</strong> service is a major compliance violation. You are essentially creating a permanent record of your system's vulnerabilities on a third-party server. Our 100% <strong>log utility</strong> removes this "Compliance Debt" entirely.</p>
+        
+        <p>Because the processing happens in your browser's private memory, your logs are invisible to the outside world. No analytics are tracked, no system paths are harvested, and no diagnostic data is shared with AI training sets. At 99tool.in, we believe that <strong>diagnosing system errors</strong> should be an empowering utility, not a data-harvesting trap. With us, you have a private, professional forensic lab that fits in your browser tab.</p>
+
+        <h3 class="mt-4">How to Analyze Your Logs Like a Pro (Step-by-Step)</h3>
+        <p>Isolating a server error should be a high-speed, frictionless experience. Here is how to use our <strong>log analyzer</strong> utility:</p>
+        <ul style="line-height: 1.8; margin-bottom: 20px;">
+          <li><strong>Step 1: Securely Load Your Logs</strong> — Drag your <code>.log</code> or <code>.txt</code> file into the dashboard. Our system immediately begins local parsing without any server upload.</li>
+          <li><strong>Step 2: Filter by Severity</strong> — Use our "Level Pills" to instantly hide everything except your ERRORS or WARNINGS, narrowing your focus to what matters most.</li>
+          <li><strong>Step 3: Hunt for Patterns</strong> — Use the real-time search bar to filter by specific keywords like "NullPointer", "Timeout", or a specific transaction ID.</li>
+          <li><strong>Step 4: Analyze and Correct</strong> — Use the high-contrast highlighting to read the stack traces or event data, copy the relevant lines, and get back to your IDE to fix the bug.</li>
+        </ul>
+
+        <h3 class="mt-4">Strategic Use Cases for Safe Log Analysis</h3>
+        <p>Our <strong>log tool</strong> is the essential companion for high-stakes infrastructure management:</p>
+        
+        <p><strong>For DevOps Engineers:</strong> Investigating a sudden spike in 5xx errors? Use our <strong>log analyzer</strong> to quickly find the timestamp where the errors began and identify the failing service privately.</p>
+        
+        <p><strong>For Security Analysts:</strong> Reviewing access logs for a suspected brute-force attempt? Use our <strong>log parser</strong> to filter for "Login Failure" patterns and identify offending IP addresses without risking a further leak.</p>
+        
+        <p><strong>For Frontend Developers:</strong> Debugging a client-side issue from a user's browser console log? Paste the text into our <strong>log viewer</strong> to make sense of the minified stack traces and find the line that broke.</p>
+
+        <h3 class="mt-5">Expand Your Developer Toolkit</h3>
+        <p>Once you’ve successfully analyzed your logs, you might need to compare them with another state. Check out our <strong><a href="diff-checker.html">Diff Checker</a></strong>. Or, if you’re fixing a config issue, use our <strong><a href="json-formatter.html">JSON Formatter</a></strong>. At 99tool.in, we are building a world-class, 100% private digital toolkit to give you total control over your code.</p>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section mt-5">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Is there a limit to the log file size?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>For optimal performance, our <strong>log analyzer</strong> handles files up to 100MB directly in your browser. For massive gigabyte-scale logs, we recommend using command-line tools like <code>grep</code> or <code>awk</code> locally before using our visual viewer for a final high-fidelity audit.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Does this tool support JSON-formatted logs?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. You can paste <strong>JSON logs</strong> into the viewer. While we currently render them as high-contrast text strings, you can use our built-in search to filter for specific JSON keys or values (e.g., <code>"status": 500</code>) just as easily as standard flat logs.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Are my logs uploaded to 99tool.in?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Absolutely not. Your privacy is our core technical standard. Your logs are processed entirely within your <strong>browser session's local memory</strong>. No data is sent over the network, and everything is permanently cleared as soon as you refresh the page or close the tab.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              How does the "Level Filter" work?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Our <strong>log parser</strong> semantically identifies common severity markers like ERROR, WARN, and INFO. When you click a filter pill, we utilize a logic engine to hide all lines that don't match that specific severity, allowing you to isolate critical failures in seconds.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I use RegEx for searching?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Currently, our <strong>high-speed search</strong> utilizes standard keyword matching for maximum performance. We are exploring a "Power Mode" feature that will enable full Regular Expression support for complex infrastructure auditing in a future update.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Does it highlight stack traces?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. By identifying ERROR-level prefixes, our <strong>visual viewer</strong> naturally groups and highlights the surrounding context. This makes it significantly easier to identify the start and end of complex multi-line stack traces within a dense production log.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 100% Local Forensics. 99tool.in never harvests your diagnostic data. Updated: April 11, 2026.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const logDisplay = document.getElementById('log-display');
+    const searchInput = document.getElementById('search-input');
+    const fileInput = document.getElementById('file-input');
+    const dropZone = document.getElementById('drop-zone');
+    const pasteInput = document.getElementById('paste-input');
+    const processPasteBtn = document.getElementById('process-paste-btn');
+    const filters = document.querySelectorAll('.filter-pill');
+    
+    let rawLines = [];
+    let currentFilter = 'all';
+
+    function setLines(text) {
+      rawLines = text.split(/\r?\n/).filter(l => l.trim().length > 0);
+      render();
+    }
+
+    function render() {
+      const q = searchInput.value.toLowerCase().trim();
+      logDisplay.innerHTML = '';
+      
+      let filtered = rawLines;
+      
+      // Filter by Level
+      if (currentFilter !== 'all') {
+         filtered = filtered.filter(line => line.toUpperCase().includes(currentFilter));
+      }
+
+      // Filter by Search Query
+      if (q) {
+         filtered = filtered.filter(line => line.toLowerCase().includes(q));
+      }
+
+      if (filtered.length === 0) {
+        logDisplay.innerHTML = `<div class="text-center py-5 text-muted">No lines match your current filters.</div>`;
+        return;
+      }
+
+      const fragment = document.createDocumentFragment();
+      
+      // Limit to 5000 lines for performance
+      const displayLines = filtered.slice(0, 5000);
+
+      displayLines.forEach(line => {
+        const div = document.createElement('span');
+        div.className = 'log-line';
+        
+        // Severity Class
+        const upLine = line.toUpperCase();
+        if (upLine.includes('ERROR') || upLine.includes('CRITICAL')) div.classList.add('lvl-error');
+        else if (upLine.includes('WARN')) div.classList.add('lvl-warn');
+        else if (upLine.includes('INFO')) div.classList.add('lvl-info');
+        else if (upLine.includes('DEBUG')) div.classList.add('lvl-debug');
+
+        // Search Highlight
+        if (q) {
+           const regex = new RegExp(`(${q})`, 'gi');
+           div.innerHTML = escapeHTML(line).replace(regex, '<span class="search-match">$1</span>');
+        } else {
+           div.textContent = line;
+        }
+        
+        fragment.appendChild(div);
+      });
+
+      logDisplay.appendChild(fragment);
+      
+      if (filtered.length > 5000) {
+         const note = document.createElement('div');
+         note.style.textAlign = 'center';
+         note.style.padding = '10px';
+         note.style.color = 'var(--text-muted)';
+         note.textContent = `Showing first 5,000 of ${filtered.length} matching lines.`;
+         logDisplay.appendChild(note);
+      }
+    }
+
+    function escapeHTML(str) {
+      const div = document.createElement('div');
+      div.textContent = str;
+      return div.innerHTML;
+    }
+
+    // Handlers
+    dropZone.onclick = () => fileInput.click();
+    fileInput.onchange = (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      handleFile(file);
+    };
+
+    // Init Drag and Drop using global helper
+    setupDragDrop('drop-zone', (files) => {
+       handleFile(files[0]);
+    });
+
+    function handleFile(file) {
+      const reader = new FileReader();
+      reader.onload = (re) => setLines(re.target.result);
+      reader.readAsText(file);
+    }
+
+    processPasteBtn.onclick = () => {
+       if (pasteInput.value.trim()) setLines(pasteInput.value);
+    };
+
+    searchInput.oninput = render;
+
+    filters.forEach(pill => {
+       pill.onclick = () => {
+          filters.forEach(p => p.classList.remove('active'));
+          pill.classList.add('active');
+          currentFilter = pill.getAttribute('data-lvl');
+          render();
+       };
+    });
+
+    document.getElementById('clear-btn').onclick = () => {
+       rawLines = [];
+       pasteInput.value = '';
+       searchInput.value = '';
+       render();
+    };
+  </script>
+</body>
+</html>
+

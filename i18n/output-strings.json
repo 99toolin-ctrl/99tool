@@ -1,0 +1,433 @@
+{
+  "common_units": {
+    "time": {
+      "year_singular": {
+        "en": "year", "es": "año", "fr": "an", "de": "Jahr", "it": "anno", "pt": "ano", "ru": "год", "ja": "年", "zh": "年", "ko": "년", "ar": "سنة", "hi": "वर्ष", "tr": "yıl", "nl": "jaar", "pl": "rok", "sv": "år", "vi": "năm", "th": "ปี", "id": "tahun", "fa": "سال", "uk": "рік"
+      },
+      "year_plural": {
+        "en": "years", "es": "años", "fr": "ans", "de": "Jahre", "it": "anni", "pt": "anos", "ru": "лет", "ja": "年", "zh": "年", "ko": "년", "ar": "سنوات", "hi": "वर्ष", "tr": "yıl", "nl": "jaar", "pl": "lat", "sv": "år", "vi": "năm", "th": "ปี", "id": "tahun", "fa": "سال", "uk": "років"
+      },
+      "month_singular": {
+        "en": "month", "es": "mes", "fr": "mois", "de": "Monat", "it": "mese", "pt": "mês", "ru": "месяц", "ja": "ヶ月", "zh": "个月", "ko": "개월", "ar": "شهر", "hi": "महीना", "tr": "ay", "nl": "maand", "pl": "miesiąc", "sv": "månad", "vi": "tháng", "th": "เดือน", "id": "bulan", "fa": "ماه", "uk": "місяць"
+      },
+      "month_plural": {
+        "en": "months", "es": "meses", "fr": "mois", "de": "Monate", "it": "mesi", "pt": "meses", "ru": "месяцев", "ja": "ヶ月", "zh": "个月", "ko": "개월", "ar": "أشهر", "hi": "महीने", "tr": "ay", "nl": "maanden", "pl": "miesięcy", "sv": "månader", "vi": "tháng", "th": "เดือน", "id": "bulan", "fa": "ماه", "uk": "місяців"
+      },
+      "week_singular": {
+        "en": "week", "es": "semana", "fr": "semaine", "de": "Woche", "it": "settimana", "pt": "semana", "ru": "неделя", "ja": "週間", "zh": "周", "ko": "주", "ar": "أسبوع", "hi": "सप्ताह", "tr": "hafta", "nl": "week", "pl": "tydzień", "sv": "vecka", "vi": "tuần", "th": "สัปดาห์", "id": "minggu", "fa": "هفته", "uk": "тиждень"
+      },
+      "week_plural": {
+        "en": "weeks", "es": "semanas", "fr": "semaines", "de": "Wochen", "it": "settimane", "pt": "semanas", "ru": "недель", "ja": "週間", "zh": "周", "ko": "주", "ar": "أسابيع", "hi": "सप्ताह", "tr": "hafta", "nl": "weken", "pl": "tygodni", "sv": "veckor", "vi": "tuần", "th": "สัปดาห์", "id": "minggu", "fa": "هفته", "uk": "тижнів"
+      },
+      "day_singular": {
+        "en": "day", "es": "día", "fr": "jour", "de": "Tag", "it": "giorno", "pt": "dia", "ru": "день", "ja": "日", "zh": "天", "ko": "일", "ar": "يوم", "hi": "दिन", "tr": "gün", "nl": "dag", "pl": "dzień", "sv": "dag", "vi": "ngày", "th": "วัน", "id": "hari", "fa": "روز", "uk": "день"
+      },
+      "day_plural": {
+        "en": "days", "es": "días", "fr": "jours", "de": "Tage", "it": "giorni", "pt": "dias", "ru": "дней", "ja": "日", "zh": "天", "ko": "일", "ar": "أيام", "hi": "दिन", "tr": "gün", "nl": "dagen", "pl": "dni", "sv": "dagar", "vi": "ngày", "th": "วัน", "id": "hari", "fa": "روز", "uk": "днів"
+      },
+      "hour_singular": {
+        "en": "hour", "es": "hora", "fr": "heure", "de": "Stunde", "it": "ora", "pt": "hora", "ru": "час", "ja": "時間", "zh": "小时", "ko": "시간", "ar": "ساعة", "hi": "घंटा", "tr": "saat", "nl": "uur", "pl": "godzina", "sv": "timme", "vi": "giờ", "th": "ชั่วโมง", "id": "jam", "fa": "ساعت", "uk": "година"
+      },
+      "hour_plural": {
+        "en": "hours", "es": "horas", "fr": "heures", "de": "Stunden", "it": "ore", "pt": "horas", "ru": "часов", "ja": "時間", "zh": "小时", "ko": "시간", "ar": "ساعات", "hi": "घंटे", "tr": "saat", "nl": "uur", "pl": "godzin", "sv": "timmar", "vi": "giờ", "th": "ชั่วโมง", "id": "jam", "fa": "ساعت", "uk": "годин"
+      },
+      "minute_singular": {
+        "en": "minute", "es": "minuto", "fr": "minute", "de": "Minute", "it": "minuto", "pt": "minuto", "ru": "минута", "ja": "分", "zh": "分钟", "ko": "분", "ar": "دقيقة", "hi": "मिनट", "tr": "dakika", "nl": "minuut", "pl": "minuta", "sv": "minut", "vi": "phút", "th": "นาที", "id": "menit", "fa": "دقیقه", "uk": "хвилина"
+      },
+      "minute_plural": {
+        "en": "minutes", "es": "minutos", "fr": "minutes", "de": "Minuten", "it": "minuti", "pt": "minutos", "ru": "минут", "ja": "分", "zh": "分钟", "ko": "분", "ar": "دقائق", "hi": "मिनट", "tr": "dakika", "nl": "minuten", "pl": "minut", "sv": "minuter", "vi": "phút", "th": "นาที", "id": "menit", "fa": "دقیقه", "uk": "хвилин"
+      },
+      "second_singular": {
+        "en": "second", "es": "segundo", "fr": "seconde", "de": "Sekunde", "it": "secondo", "pt": "segundo", "ru": "секунда", "ja": "秒", "zh": "秒", "ko": "초", "ar": "ثانية", "hi": "सेकंड", "tr": "saniye", "nl": "seconde", "pl": "sekunda", "sv": "sekund", "vi": "giây", "th": "วินาที", "id": "detik", "fa": "ثانیه", "uk": "секунда"
+      },
+      "second_plural": {
+        "en": "seconds", "es": "segundos", "fr": "secondes", "de": "Sekunden", "it": "secondi", "pt": "segundos", "ru": "секунд", "ja": "秒", "zh": "秒", "ko": "초", "ar": "ثواني", "hi": "सेकंड", "tr": "saniye", "nl": "seconden", "pl": "sekund", "sv": "sekunder", "vi": "giây", "th": "วินาที", "id": "detik", "fa": "ثانیه", "uk": "секунд"
+      }
+    },
+    "weight": {
+      "kilogram_singular": {
+        "en": "kg", "es": "kg", "fr": "kg", "de": "kg", "it": "kg", "pt": "kg", "ru": "кг", "ja": "kg", "zh": "公斤", "ko": "kg", "ar": "كجم", "hi": "किग्रा", "tr": "kg", "nl": "kg", "pl": "kg", "sv": "kg", "vi": "kg", "th": "กก.", "id": "kg", "fa": "کیلوگرم", "uk": "кг"
+      },
+      "kilogram_plural": {
+        "en": "kg", "es": "kg", "fr": "kg", "de": "kg", "it": "kg", "pt": "kg", "ru": "кг", "ja": "kg", "zh": "公斤", "ko": "kg", "ar": "كجم", "hi": "किग्रा", "tr": "kg", "nl": "kg", "pl": "kg", "sv": "kg", "vi": "kg", "th": "กก.", "id": "kg", "fa": "کیلوگرم", "uk": "кг"
+      },
+      "pound_singular": {
+        "en": "lb", "es": "lb", "fr": "lb", "de": "lb", "it": "lb", "pt": "lb", "ru": "фунт", "ja": "lb", "zh": "磅", "ko": "lb", "ar": "رطل", "hi": "पाउंड", "tr": "lb", "nl": "lb", "pl": "funt", "sv": "lb", "vi": "lb", "th": "ปอนด์", "id": "lb", "fa": "پوند", "uk": "фунт"
+      },
+      "pound_plural": {
+        "en": "lbs", "es": "lbs", "fr": "lbs", "de": "lbs", "it": "lbs", "pt": "lbs", "ru": "фунтов", "ja": "lbs", "zh": "磅", "ko": "lbs", "ar": "أرطال", "hi": "पाउंड", "tr": "lbs", "nl": "lbs", "pl": "funtów", "sv": "lbs", "vi": "lbs", "th": "ปอนด์", "id": "lbs", "fa": "پوند", "uk": "фунтів"
+      },
+      "gram_singular": {
+        "en": "g", "es": "g", "fr": "g", "de": "g", "it": "g", "pt": "g", "ru": "г", "ja": "g", "zh": "克", "ko": "g", "ar": "جم", "hi": "ग्राम", "tr": "g", "nl": "g", "pl": "g", "sv": "g", "vi": "g", "th": "กรัม", "id": "g", "fa": "گرم", "uk": "г"
+      },
+      "gram_plural": {
+        "en": "g", "es": "g", "fr": "g", "de": "g", "it": "g", "pt": "g", "ru": "г", "ja": "g", "zh": "克", "ko": "g", "ar": "جم", "hi": "ग्राम", "tr": "g", "nl": "g", "pl": "g", "sv": "g", "vi": "g", "th": "กรัม", "id": "g", "fa": "گرم", "uk": "г"
+      },
+      "milligram_singular": {
+        "en": "mg", "es": "mg", "fr": "mg", "de": "mg", "it": "mg", "pt": "mg", "ru": "мг", "ja": "mg", "zh": "毫克", "ko": "mg", "ar": "ملجم", "hi": "मिग्रा", "tr": "mg", "nl": "mg", "pl": "mg", "sv": "mg", "vi": "mg", "th": "มก.", "id": "mg", "fa": "میلی‌گرم", "uk": "мг"
+      },
+      "milligram_plural": {
+        "en": "mg", "es": "mg", "fr": "mg", "de": "mg", "it": "mg", "pt": "mg", "ru": "мг", "ja": "mg", "zh": "毫克", "ko": "mg", "ar": "ملجم", "hi": "मिग्रा", "tr": "mg", "nl": "mg", "pl": "mg", "sv": "mg", "vi": "mg", "th": "มก.", "id": "mg", "fa": "میلی‌گرم", "uk": "мг"
+      },
+      "ounce_singular": {
+        "en": "oz", "es": "oz", "fr": "oz", "de": "oz", "it": "oz", "pt": "oz", "ru": "унция", "ja": "oz", "zh": "盎司", "ko": "oz", "ar": "أونصة", "hi": "औंस", "tr": "oz", "nl": "oz", "pl": "uncja", "sv": "oz", "vi": "oz", "th": "ออนซ์", "id": "oz", "fa": "انس", "uk": "унція"
+      },
+      "ounce_plural": {
+        "en": "oz", "es": "oz", "fr": "oz", "de": "oz", "it": "oz", "pt": "oz", "ru": "унций", "ja": "oz", "zh": "盎司", "ko": "oz", "ar": "أونصات", "hi": "औंस", "tr": "oz", "nl": "oz", "pl": "uncji", "sv": "oz", "vi": "oz", "th": "ออนซ์", "id": "oz", "fa": "انس", "uk": "унцій"
+      }
+    },
+    "distance": {
+      "kilometer_singular": {
+        "en": "km", "es": "km", "fr": "km", "de": "km", "it": "km", "pt": "km", "ru": "км", "ja": "km", "zh": "公里", "ko": "km", "ar": "كم", "hi": "किमी", "tr": "km", "nl": "km", "pl": "km", "sv": "km", "vi": "km", "th": "กม.", "id": "km", "fa": "کیلومتر", "uk": "км"
+      },
+      "kilometer_plural": {
+        "en": "km", "es": "km", "fr": "km", "de": "km", "it": "km", "pt": "km", "ru": "км", "ja": "km", "zh": "公里", "ko": "km", "ar": "كم", "hi": "किमी", "tr": "km", "nl": "km", "pl": "km", "sv": "km", "vi": "km", "th": "กม.", "id": "km", "fa": "کیلومتر", "uk": "км"
+      },
+      "meter_singular": {
+        "en": "m", "es": "m", "fr": "m", "de": "m", "it": "m", "pt": "m", "ru": "м", "ja": "m", "zh": "米", "ko": "m", "ar": "م", "hi": "मीटर", "tr": "m", "nl": "m", "pl": "m", "sv": "m", "vi": "m", "th": "ม.", "id": "m", "fa": "متر", "uk": "м"
+      },
+      "meter_plural": {
+        "en": "m", "es": "m", "fr": "m", "de": "m", "it": "m", "pt": "m", "ru": "м", "ja": "m", "zh": "米", "ko": "m", "ar": "م", "hi": "मीटर", "tr": "m", "nl": "m", "pl": "m", "sv": "m", "vi": "m", "th": "ม.", "id": "m", "fa": "متر", "uk": "м"
+      },
+      "mile_singular": {
+        "en": "mi", "es": "mi", "fr": "mi", "de": "mi", "it": "mi", "pt": "mi", "ru": "миля", "ja": "マイル", "zh": "英里", "ko": "마일", "ar": "ميل", "hi": "मील", "tr": "mil", "nl": "mi", "pl": "mila", "sv": "mi", "vi": "dặm", "th": "ไมล์", "id": "mil", "fa": "مایل", "uk": "миля"
+      },
+      "mile_plural": {
+        "en": "mi", "es": "mi", "fr": "mi", "de": "mi", "it": "mi", "pt": "mi", "ru": "миль", "ja": "マイル", "zh": "英里", "ko": "마일", "ar": "أميال", "hi": "मील", "tr": "mil", "nl": "mi", "pl": "mil", "sv": "mi", "vi": "dặm", "th": "ไมล์", "id": "mil", "fa": "مایل", "uk": "миль"
+      },
+      "foot_singular": {
+        "en": "ft", "es": "ft", "fr": "ft", "de": "ft", "it": "ft", "pt": "ft", "ru": "фут", "ja": "ft", "zh": "英尺", "ko": "ft", "ar": "قدم", "hi": "फिट", "tr": "ft", "nl": "ft", "pl": "stopa", "sv": "ft", "vi": "ft", "th": "ฟุต", "id": "ft", "fa": "فوت", "uk": "фут"
+      },
+      "foot_plural": {
+        "en": "ft", "es": "ft", "fr": "ft", "de": "ft", "it": "ft", "pt": "ft", "ru": "футов", "ja": "ft", "zh": "英尺", "ko": "ft", "ar": "أقدام", "hi": "फिट", "tr": "ft", "nl": "ft", "pl": "stóp", "sv": "ft", "vi": "ft", "th": "ฟุต", "id": "ft", "fa": "فوت", "uk": "футів"
+      }
+    },
+    "data_size": {
+      "byte_singular": {
+        "en": "byte", "es": "byte", "fr": "octet", "de": "Byte", "it": "byte", "pt": "byte", "ru": "байт", "ja": "バイト", "zh": "字节", "ko": "바이트", "ar": "بايت", "hi": "बाइट", "tr": "bayt", "nl": "byte", "pl": "bajt", "sv": "byte", "vi": "byte", "th": "ไบต์", "id": "byte", "fa": "بایت", "uk": "байт"
+      },
+      "byte_plural": {
+        "en": "bytes", "es": "bytes", "fr": "octets", "de": "Bytes", "it": "byte", "pt": "bytes", "ru": "байтов", "ja": "バイト", "zh": "字节", "ko": "바이트", "ar": "بايت", "hi": "बाइट", "tr": "bayt", "nl": "bytes", "pl": "bajtów", "sv": "bytes", "vi": "bytes", "th": "ไบต์", "id": "bytes", "fa": "بایت", "uk": "байтів"
+      },
+      "kilobyte_singular": {
+        "en": "KB", "es": "KB", "fr": "Ko", "de": "KB", "it": "KB", "pt": "KB", "ru": "КБ", "ja": "KB", "zh": "KB", "ko": "KB", "ar": "ك.ب", "hi": "केबी", "tr": "KB", "nl": "KB", "pl": "KB", "sv": "KB", "vi": "KB", "th": "KB", "id": "KB", "fa": "کیلوبایت", "uk": "КБ"
+      },
+      "kilobyte_plural": {
+        "en": "KB", "es": "KB", "fr": "Ko", "de": "KB", "it": "KB", "pt": "KB", "ru": "КБ", "ja": "KB", "zh": "KB", "ko": "KB", "ar": "ك.ب", "hi": "केबी", "tr": "KB", "nl": "KB", "pl": "KB", "sv": "KB", "vi": "KB", "th": "KB", "id": "KB", "fa": "کیلوبایت", "uk": "КБ"
+      },
+      "megabyte_singular": {
+        "en": "MB", "es": "MB", "fr": "Mo", "de": "MB", "it": "MB", "pt": "MB", "ru": "МБ", "ja": "MB", "zh": "MB", "ko": "MB", "ar": "م.ب", "hi": "एमबी", "tr": "MB", "nl": "MB", "pl": "MB", "sv": "MB", "vi": "MB", "th": "MB", "id": "MB", "fa": "مگابایت", "uk": "МБ"
+      },
+      "megabyte_plural": {
+        "en": "MB", "es": "MB", "fr": "Mo", "de": "MB", "it": "MB", "pt": "MB", "ru": "МБ", "ja": "MB", "zh": "MB", "ko": "MB", "ar": "م.ب", "hi": "एमबी", "tr": "MB", "nl": "MB", "pl": "MB", "sv": "MB", "vi": "MB", "th": "MB", "id": "MB", "fa": "مگابایت", "uk": "МБ"
+      },
+      "gigabyte_singular": {
+        "en": "GB", "es": "GB", "fr": "Go", "de": "GB", "it": "GB", "pt": "GB", "ru": "ГБ", "ja": "GB", "zh": "GB", "ko": "GB", "ar": "ج.ب", "hi": "जीबी", "tr": "GB", "nl": "GB", "pl": "GB", "sv": "GB", "vi": "GB", "th": "GB", "id": "GB", "fa": "گیگابایت", "uk": "ГБ"
+      },
+      "gigabyte_plural": {
+        "en": "GB", "es": "GB", "fr": "Go", "de": "GB", "it": "GB", "pt": "GB", "ru": "ГБ", "ja": "GB", "zh": "GB", "ko": "GB", "ar": "ج.ب", "hi": "जीबी", "tr": "GB", "nl": "GB", "pl": "GB", "sv": "GB", "vi": "GB", "th": "GB", "id": "GB", "fa": "گیگابایت", "uk": "ГБ"
+      },
+      "terabyte_singular": {
+        "en": "TB", "es": "TB", "fr": "To", "de": "TB", "it": "TB", "pt": "TB", "ru": "ТБ", "ja": "TB", "zh": "TB", "ko": "TB", "ar": "ت.ب", "hi": "टीबी", "tr": "TB", "nl": "TB", "pl": "TB", "sv": "TB", "vi": "TB", "th": "TB", "id": "TB", "fa": "ترابایت", "uk": "ТБ"
+      },
+      "terabyte_plural": {
+        "en": "TB", "es": "TB", "fr": "To", "de": "TB", "it": "TB", "pt": "TB", "ru": "ТБ", "ja": "TB", "zh": "TB", "ko": "TB", "ar": "ت.ب", "hi": "टीबी", "tr": "TB", "nl": "TB", "pl": "TB", "sv": "TB", "vi": "TB", "th": "TB", "id": "TB", "fa": "ترابایت", "uk": "ТБ"
+      }
+    },
+    "speed": {
+      "kmh": {
+        "en": "km/h", "es": "km/h", "fr": "km/h", "de": "km/h", "it": "km/h", "pt": "km/h", "ru": "км/ч", "ja": "km/h", "zh": "公里/小时", "ko": "km/h", "ar": "كم/س", "hi": "किमी/घंटा", "tr": "km/s", "nl": "km/u", "pl": "km/h", "sv": "km/h", "vi": "km/h", "th": "กม./ชม.", "id": "km/jam", "fa": "کیلومتر بر ساعت", "uk": "км/год"
+      },
+      "mph": {
+        "en": "mph", "es": "mph", "fr": "mph", "de": "mph", "it": "mph", "pt": "mph", "ru": "миль/ч", "ja": "mph", "zh": "英里/小时", "ko": "mph", "ar": "ميل/س", "hi": "मील/घंटा", "tr": "mph", "nl": "mph", "pl": "mph", "sv": "mph", "vi": "mph", "th": "ไมล์/ชม.", "id": "mph", "fa": "مایل بر ساعت", "uk": "миль/год"
+      },
+      "ms": {
+        "en": "m/s", "es": "m/s", "fr": "m/s", "de": "m/s", "it": "m/s", "pt": "m/s", "ru": "м/с", "ja": "m/s", "zh": "米/秒", "ko": "m/s", "ar": "م/ث", "hi": "मी/से", "tr": "m/s", "nl": "m/s", "pl": "m/s", "sv": "m/s", "vi": "m/s", "th": "ม./วินาที", "id": "m/s", "fa": "متر بر ثانیه", "uk": "м/с"
+      },
+      "knots": {
+        "en": "knots", "es": "nudos", "fr": "nœuds", "de": "Knoten", "it": "nodi", "pt": "nós", "ru": "узлов", "ja": "ノット", "zh": "节", "ko": "노트", "ar": "عقدة", "hi": "नॉट्स", "tr": "düğüm", "nl": "knopen", "pl": "węzłów", "sv": "knop", "vi": "hải lý/giờ", "th": "นอต", "id": "knot", "fa": "گره", "uk": "вузлів"
+      }
+    },
+    "temperature": {
+      "celsius": {
+        "en": "°C", "es": "°C", "fr": "°C", "de": "°C", "it": "°C", "pt": "°C", "ru": "°C", "ja": "°C", "zh": "°C", "ko": "°C", "ar": "°م", "hi": "°C", "tr": "°C", "nl": "°C", "pl": "°C", "sv": "°C", "vi": "°C", "th": "°C", "id": "°C", "fa": "°C", "uk": "°C"
+      },
+      "fahrenheit": {
+        "en": "°F", "es": "°F", "fr": "°F", "de": "°F", "it": "°F", "pt": "°F", "ru": "°F", "ja": "°F", "zh": "°F", "ko": "°F", "ar": "°ف", "hi": "°F", "tr": "°F", "nl": "°F", "pl": "°F", "sv": "°F", "vi": "°F", "th": "°F", "id": "°F", "fa": "°F", "uk": "°F"
+      },
+      "kelvin": {
+        "en": "K", "es": "K", "fr": "K", "de": "K", "it": "K", "pt": "K", "ru": "К", "ja": "K", "zh": "K", "ko": "K", "ar": "ك", "hi": "K", "tr": "K", "nl": "K", "pl": "K", "sv": "K", "vi": "K", "th": "K", "id": "K", "fa": "کلوین", "uk": "К"
+      }
+    }
+  },
+  "output_templates": {
+    "age_calculator": {
+      "result_full": {
+        "en": "Your exact age is {years} {year_unit}, {months} {month_unit}, {weeks} {week_unit}, {days} {day_unit}, {hours} {hour_unit}, {minutes} {minute_unit}, and {seconds} {second_unit}.",
+        "es": "Tu edad exacta es {years} {year_unit}, {months} {month_unit}, {weeks} {week_unit}, {days} {day_unit}, {hours} {hour_unit}, {minutes} {minute_unit} y {seconds} {second_unit}.",
+        "fr": "Votre âge exact est {years} {year_unit}, {months} {month_unit}, {weeks} {week_unit}, {days} {day_unit}, {hours} {hour_unit}, {minutes} {minute_unit} et {seconds} {second_unit}.",
+        "de": "Ihr genaues Alter beträgt {years} {year_unit}, {months} {month_unit}, {weeks} {week_unit}, {days} {day_unit}, {hours} {hour_unit}, {minutes} {minute_unit} und {seconds} {second_unit}.",
+        "it": "La tua età esatta è {years} {year_unit}, {months} {month_unit}, {weeks} {week_unit}, {days} {day_unit}, {hours} {hour_unit}, {minutes} {minute_unit} e {seconds} {second_unit}.",
+        "pt": "Sua idade exata é {years} {year_unit}, {months} {month_unit}, {weeks} {week_unit}, {days} {day_unit}, {hours} {hour_unit}, {minutes} {minute_unit} e {seconds} {second_unit}.",
+        "ru": "Ваш точный возраст: {years} {year_unit}, {months} {month_unit}, {weeks} {week_unit}, {days} {day_unit}, {hours} {hour_unit}, {minutes} {minute_unit} и {seconds} {second_unit}.",
+        "ja": "あなたの正確な年齢は {years} {year_unit} {months} {month_unit} {weeks} {week_unit} {days} {day_unit} {hours} {hour_unit} {minutes} {minute_unit} {seconds} {second_unit} です。",
+        "zh": "您的准确年龄是 {years} {year_unit} {months} {month_unit} {weeks} {week_unit} {days} {day_unit} {hours} {hour_unit} {minutes} {minute_unit} {seconds} {second_unit}。",
+        "ko": "당신의 정확한 나이는 {years} {year_unit} {months} {month_unit} {weeks} {week_unit} {days} {day_unit} {hours} {hour_unit} {minutes} {minute_unit} {seconds} {second_unit} 입니다.",
+        "ar": "عمرك الدقيق هو {years} {year_unit} و {months} {month_unit} و {weeks} {week_unit} و {days} {day_unit} و {hours} {hour_unit} و {minutes} {minute_unit} و {seconds} {second_unit}.",
+        "hi": "आपकी सटीक आयु {years} {year_unit}, {months} {month_unit}, {weeks} {week_unit}, {days} {day_unit}, {hours} {hour_unit}, {minutes} {minute_unit}, और {seconds} {second_unit} है।",
+        "tr": "Tam yaşınız {years} {year_unit}, {months} {month_unit}, {weeks} {week_unit}, {days} {day_unit}, {hours} {hour_unit}, {minutes} {minute_unit} ve {seconds} {second_unit}.",
+        "nl": "Uw exacte leeftijd is {years} {year_unit}, {months} {month_unit}, {weeks} {week_unit}, {days} {day_unit}, {hours} {hour_unit}, {minutes} {minute_unit} en {seconds} {second_unit}.",
+        "pl": "Twój dokładny wiek to {years} {year_unit}, {months} {month_unit}, {weeks} {week_unit}, {days} {day_unit}, {hours} {hour_unit}, {minutes} {minute_unit} i {seconds} {second_unit}.",
+        "sv": "Din exakta ålder är {years} {year_unit}, {months} {month_unit}, {weeks} {week_unit}, {days} {day_unit}, {hours} {hour_unit}, {minutes} {minute_unit} och {seconds} {second_unit}.",
+        "vi": "Tuổi chính xác của bạn là {years} {year_unit}, {months} {month_unit}, {weeks} {week_unit}, {days} {day_unit}, {hours} {hour_unit}, {minutes} {minute_unit}, và {seconds} {second_unit}.",
+        "th": "อายุที่แม่นยำของคุณคือ {years} {year_unit} {months} {month_unit} {weeks} {week_unit} {days} {day_unit} {hours} {hour_unit} {minutes} {minute_unit} และ {seconds} {second_unit}",
+        "id": "Usia tepat Anda adalah {years} {year_unit}, {months} {month_unit}, {weeks} {week_unit}, {days} {day_unit}, {hours} {hour_unit}, {minutes} {minute_unit}, dan {seconds} {second_unit}.",
+        "fa": "سن دقیق شما {years} {year_unit}، {months} {month_unit}، {weeks} {week_unit}، {days} {day_unit}، {hours} {hour_unit}، {minutes} {minute_unit} و {seconds} {second_unit} است.",
+        "uk": "Ваш точний вік: {years} {year_unit}, {months} {month_unit}, {weeks} {week_unit}, {days} {day_unit}, {hours} {hour_unit}, {minutes} {minute_unit} та {seconds} {second_unit}."
+      },
+      "result_short": {
+        "en": "{years}y {months}m {days}d", "es": "{years}a {months}m {days}d", "fr": "{years}a {months}m {days}j", "de": "{years}J {months}M {days}T", "it": "{years}a {months}m {days}g", "pt": "{years}a {months}m {days}d", "ru": "{years}л {months}м {days}д", "ja": "{years}年 {months}ヶ月 {days}日", "zh": "{years}岁 {months}月 {days}天", "ko": "{years}세 {months}개월 {days}일", "ar": "{years}س {months}ش {days}ي", "hi": "{years}व {months}म {days}दि", "tr": "{years}y {months}a {days}g", "nl": "{years}j {months}m {days}d", "pl": "{years}l {months}m {days}d", "sv": "{years}år {months}m {days}d", "vi": "{years}n {months}t {days}n", "th": "{years}ปี {months}ด {days}ว", "id": "{years}th {months}bln {days}hr", "fa": "{years}سال {months}ماه {days}روز", "uk": "{years}р {months}м {days}д"
+      },
+      "birth_day_of_week": {
+        "en": "You were born on a {day_name}.", "es": "Naciste en un {day_name}.", "fr": "Vous êtes né un {day_name}.", "de": "Sie wurden an einem {day_name} geboren.", "it": "Sei nato di {day_name}.", "pt": "Você nasceu em um {day_name}.", "ru": "Вы родились в {day_name}.", "ja": "あなたは{day_name}に生まれました。", "zh": "您出生于{day_name}。", "ko": "당신은 {day_name}에 태어났습니다.", "ar": "لقد ولدت في يوم {day_name}.", "hi": "आपका जन्म {day_name} को हुआ था।", "tr": "{day_name} günü doğdunuz.", "nl": "U bent geboren op een {day_name}.", "pl": "Urodziłeś się w {day_name}.", "sv": "Du föddes på en {day_name}.", "vi": "Bạn sinh vào {day_name}.", "th": "คุณเกิดในวัน{day_name}", "id": "Anda lahir pada hari {day_name}.", "fa": "شما در روز {day_name} متولد شدید.", "uk": "Ви народилися у {day_name}."
+      },
+      "zodiac_sign": {
+        "en": "Your zodiac sign is {sign}.", "es": "Tu signo zodiacal es {sign}.", "fr": "Votre signe du zodiaque est {sign}.", "de": "Ihr Sternzeichen ist {sign}.", "it": "Il tuo segno zodiacale è {sign}.", "pt": "Seu signo do zodíaco é {sign}.", "ru": "Ваш знак зодиака — {sign}.", "ja": "あなたの星座は{sign}です。", "zh": "您的星座是{sign}。", "ko": "당신의 별자리는 {sign}입니다.", "ar": "برجك الفلكي هو {sign}.", "hi": "आपकी राशि {sign} है।", "tr": "Burcunuz {sign}.", "nl": "Uw sterrenbeeld is {sign}.", "pl": "Twój znak zodiaku to {sign}.", "sv": "Ditt stjärntecken är {sign}.", "vi": "Cung hoàng đạo của bạn là {sign}.", "th": "ราศีของคุณคือ {sign}", "id": "Zodiak Anda adalah {sign}.", "fa": "برج فلكی شما {sign} است.", "uk": "Ваш знак зодіаку — {sign}."
+      }
+    },
+    "bmi_calculator": {
+      "result_underweight": {
+        "en": "Your BMI is {bmi} — Underweight", "es": "Tu IMC es {bmi} — Bajo peso", "fr": "Votre IMC est {bmi} — Insuffisance pondérale", "de": "Ihr BMI beträgt {bmi} — Untergewicht", "it": "Il tuo IMC è {bmi} — Sottopeso", "pt": "Seu IMC é {bmi} — Abaixo do peso", "ru": "Ваш ИМТ: {bmi} — Дефицит массы тела", "ja": "あなたのBMIは {bmi} です — 低体重", "zh": "您的BMI是 {bmi} — 体重偏轻", "ko": "당신의 BMI는 {bmi} 입니다 — 저체중", "ar": "مؤشر كتلة جسمك هو {bmi} — نقص الوزن", "hi": "आपका BMI {bmi} है — कम वजन (Underweight)", "tr": "BMI değeriniz {bmi} — Zayıf", "nl": "Uw BMI is {bmi} — Ondergewicht", "pl": "Twój BMI wynosi {bmi} — Niedowaga", "sv": "Ditt BMI är {bmi} — Undervikt", "vi": "Chỉ số BMI của bạn là {bmi} — Nhẹ cân", "th": "ค่า BMI ของคุณคือ {bmi} — น้ำหนักน้อย", "id": "BMI Anda adalah {bmi} — Kurus", "fa": "شاخص BMI شما {bmi} است — کمبود وزن", "uk": "Ваш ІМТ: {bmi} — Дефіцит маси тіла"
+      },
+      "result_normal": {
+        "en": "Your BMI is {bmi} — Normal weight", "es": "Tu IMC es {bmi} — Peso normal", "fr": "Votre IMC est {bmi} — Poids normal", "de": "Ihr BMI beträgt {bmi} — Normalgewicht", "it": "Il tuo IMC è {bmi} — Normopeso", "pt": "Seu IMC é {bmi} — Peso normal", "ru": "Ваш ИМТ: {bmi} — Нормальный вес", "ja": "あなたのBMIは {bmi} です — 普通体重", "zh": "您的BMI是 {bmi} — 体重正常", "ko": "당신의 BMI는 {bmi} 입니다 — 정상 체중", "ar": "مؤشر كتلة جسمك هو {bmi} — وزن طبيعي", "hi": "आपका BMI {bmi} है — सामान्य वजन (Normal)", "tr": "BMI değeriniz {bmi} — Normal kilo", "nl": "Uw BMI is {bmi} — Normaal gewicht", "pl": "Twój BMI wynosi {bmi} — Waga prawidłowa", "sv": "Ditt BMI är {bmi} — Normalvikt", "vi": "Chỉ số BMI của bạn là {bmi} — Bình thường", "th": "ค่า BMI ของคุณคือ {bmi} — น้ำหนักปกติ", "id": "BMI Anda adalah {bmi} — Normal", "fa": "شاخص BMI شما {bmi} است — وزن نرمال", "uk": "Ваш ІМТ: {bmi} — Нормальна вага"
+      },
+      "result_overweight": {
+        "en": "Your BMI is {bmi} — Overweight", "es": "Tu IMC es {bmi} — Sobrepeso", "fr": "Votre IMC est {bmi} — Surpoids", "de": "Ihr BMI beträgt {bmi} — Übergewicht", "it": "Il tuo IMC è {bmi} — Sovrappeso", "pt": "Seu IMC é {bmi} — Sobrepeso", "ru": "Ваш ИМТ: {bmi} — Избыточный вес", "ja": "あなたのBMIは {bmi} です — 肥満(1度)", "zh": "您的BMI是 {bmi} — 体重超重", "ko": "당신의 BMI는 {bmi} 입니다 — 과체중", "ar": "مؤشر كتلة جسمك هو {bmi} — زيادة الوزن", "hi": "आपका BMI {bmi} है — अधिक वजन (Overweight)", "tr": "BMI değeriniz {bmi} — Fazla kilolu", "nl": "Uw BMI is {bmi} — Overgewicht", "pl": "Twój BMI wynosi {bmi} — Nadwaga", "sv": "Ditt BMI är {bmi} — Övervikt", "vi": "Chỉ số BMI của bạn là {bmi} — Thừa cân", "th": "ค่า BMI ของคุณคือ {bmi} — น้ำหนักเกิน", "id": "BMI Anda adalah {bmi} — Kelebihan berat badan", "fa": "شاخص BMI شما {bmi} است — اضافه وزن", "uk": "Ваш ІМТ: {bmi} — Надлишкова вага"
+      },
+      "result_obese": {
+        "en": "Your BMI is {bmi} — Obese", "es": "Tu IMC es {bmi} — Obesidad", "fr": "Votre IMC est {bmi} — Obésité", "de": "Ihr BMI beträgt {bmi} — Adipositas", "it": "Il tuo IMC è {bmi} — Obesità", "pt": "Seu IMC é {bmi} — Obesidade", "ru": "Ваш ИМТ: {bmi} — Ожирение", "ja": "あなたのBMIは {bmi} です — 肥満", "zh": "您的BMI是 {bmi} — 肥胖", "ko": "당신의 BMI는 {bmi} 입니다 — 비만", "ar": "مؤشر كتلة جسمك هو {bmi} — سمنة", "hi": "आपका BMI {bmi} है — मोटापा (Obese)", "tr": "BMI değeriniz {bmi} — Obez", "nl": "Uw BMI is {bmi} — Obesitas", "pl": "Twój BMI wynosi {bmi} — Otyłość", "sv": "Ditt BMI är {bmi} — Fetma", "vi": "Chỉ số BMI của bạn là {bmi} — Béo phì", "th": "ค่า BMI ของคุณคือ {bmi} — อ้วน", "id": "BMI Anda adalah {bmi} — Obesitas", "fa": "شاخص BMI شما {bmi} است — چاقی", "uk": "Ваш ІМТ: {bmi} — Ожиріння"
+      }
+    },
+    "audio_recorder": {
+      "recording_in_progress": {
+        "en": "Recording... {duration}", "es": "Grabando... {duration}", "fr": "Enregistrement... {duration}", "de": "Aufnahme... {duration}", "it": "Registrazione... {duration}", "pt": "Gravando... {duration}", "ru": "Запись... {duration}", "ja": "録音中... {duration}", "zh": "正在录音... {duration}", "ko": "녹음 중... {duration}", "ar": "جاري التسجيل... {duration}", "hi": "रिकॉर्डिंग जारी... {duration}", "tr": "Kaydediliyor... {duration}", "nl": "Opnemen... {duration}", "pl": "Nagrywanie... {duration}", "sv": "Spelar in... {duration}", "vi": "Đang ghi âm... {duration}", "th": "กำลังบันทึก... {duration}", "id": "Merekam... {duration}", "fa": "در حال ضبط... {duration}", "uk": "Запис... {duration}"
+      },
+      "recording_paused": {
+        "en": "Paused — {duration}", "es": "Pausado — {duration}", "fr": "En pause — {duration}", "de": "Pausiert — {duration}", "it": "In pausa — {duration}", "pt": "Pausado — {duration}", "ru": "Пауза — {duration}", "ja": "一時停止中 — {duration}", "zh": "已暂停 — {duration}", "ko": "일시 정지됨 — {duration}", "ar": "موقوف مؤقتاً — {duration}", "hi": "रुका हुआ — {duration}", "tr": "Duraklatıldı — {duration}", "nl": "Gepauzeerd — {duration}", "pl": "Wstrzymano — {duration}", "sv": "Pausad — {duration}", "vi": "Đã tạm dừng — {duration}", "th": "หยุดชั่วคราว — {duration}", "id": "Diedit — {duration}", "fa": "متوقف شده — {duration}", "uk": "Пауза — {duration}"
+      },
+      "recording_complete": {
+        "en": "Recording complete: {duration}", "es": "Grabación completada: {duration}", "fr": "Enregistrement terminé : {duration}", "de": "Aufnahme abgeschlossen: {duration}", "it": "Registrazione completata: {duration}", "pt": "Gravação concluída: {duration}", "ru": "Запись завершена: {duration}", "ja": "録音完了: {duration}", "zh": "录音完成: {duration}", "ko": "녹음 완료: {duration}", "ar": "اكتمل التسجيل: {duration}", "hi": "रिकॉर्डिंग पूर्ण: {duration}", "tr": "Kayıt tamamlandı: {duration}", "nl": "Opname voltooid: {duration}", "pl": "Nagrywanie zakończone: {duration}", "sv": "Inspelning klar: {duration}", "vi": "Ghi âm hoàn tất: {duration}", "th": "บันทึกเสร็จสิ้น: {duration}", "id": "Perekaman selesai: {duration}", "fa": "ضبط کامل شد: {duration}", "uk": "Запис завершено: {duration}"
+      },
+      "file_size": {
+        "en": "File size: {size}", "es": "Tamaño del archivo: {size}", "fr": "Taille du fichier : {size}", "de": "Dateigröße: {size}", "it": "Dimensione file: {size}", "pt": "Tamanho do arquivo: {size}", "ru": "Размер файла: {size}", "ja": "ファイルサイズ: {size}", "zh": "文件大小: {size}", "ko": "파일 크기: {size}", "ar": "حجم الملف: {size}", "hi": "फ़ाइल का आकार: {size}", "tr": "Dosya boyutu: {size}", "nl": "Bestandsgrootte: {size}", "pl": "Rozmiar pliku: {size}", "sv": "Filstorlek: {size}", "vi": "Dung lượng tệp: {size}", "th": "ขนาดไฟล์: {size}", "id": "Ukuran file: {size}", "fa": "حجم فایل: {size}", "uk": "Розмір файлу: {size}"
+      }
+    },
+    "csv_viewer": {
+      "rows_count": {
+        "en": "{count} rows", "es": "{count} filas", "fr": "{count} lignes", "de": "{count} Zeilen", "it": "{count} righe", "pt": "{count} linhas", "ru": "{count} строк", "ja": "{count} 行", "zh": "{count} 行", "ko": "{count} 행", "ar": "{count} صفوف", "hi": "{count} पंक्तियाँ", "tr": "{count} satır", "nl": "{count} rijen", "pl": "{count} wierszy", "sv": "{count} rader", "vi": "{count} hàng", "th": "{count} แถว", "id": "{count} baris", "fa": "{count} سطر", "uk": "{count} рядків"
+      },
+      "columns_count": {
+        "en": "{count} columns", "es": "{count} columnas", "fr": "{count} colonnes", "de": "{count} Spalten", "it": "{count} colonne", "pt": "{count} colunas", "ru": "{count} столбцов", "ja": "{count} 列", "zh": "{count} 列", "ko": "{count} 열", "ar": "{count} أعمدة", "hi": "{count} कॉलम", "tr": "{count} sütun", "nl": "{count} kolommen", "pl": "{count} kolumn", "sv": "{count} kolumner", "vi": "{count} cột", "th": "{count} คอลัมน์", "id": "{count} kolom", "fa": "{count} ستون", "uk": "{count} стовпчиків"
+      }
+    },
+    "image_compressor": {
+      "original_size": {
+        "en": "Original size: {size}", "es": "Tamaño original: {size}", "fr": "Taille originale : {size}", "de": "Originalgröße: {size}", "it": "Dimensione originale: {size}", "pt": "Tamanho original: {size}", "ru": "Исходный размер: {size}", "ja": "元のサイズ: {size}", "zh": "原始大小: {size}", "ko": "원본 크기: {size}", "ar": "الحجم الأصلي: {size}", "hi": "मूल आकार: {size}", "tr": "Orijinal boyut: {size}", "nl": "Originele grootte: {size}", "pl": "Rozmiar oryginalny: {size}", "sv": "Originalstorlek: {size}", "vi": "Kích thước gốc: {size}", "th": "ขนาดต้นฉบับ: {size}", "id": "Ukuran asli: {size}", "fa": "حجم اصلی: {size}", "uk": "Початковий розмір: {size}"
+      },
+      "compressed_size": {
+        "en": "Compressed size: {size}", "es": "Tamaño comprimido: {size}", "fr": "Taille comprimée : {size}", "de": "Komprimierte Größe: {size}", "it": "Dimensione compressa: {size}", "pt": "Tamanho comprimido: {size}", "ru": "Сжатый размер: {size}", "ja": "圧縮後のサイズ: {size}", "zh": "压缩后大小: {size}", "ko": "압축된 크기: {size}", "ar": "الحجم المضغوط: {size}", "hi": "कंप्रेस आकार: {size}", "tr": "Sıkıştırılmış boyut: {size}", "nl": "Gecomprimeerde grootte: {size}", "pl": "Rozmiar skompresowany: {size}", "sv": "Komprimerad storlek: {size}", "vi": "Kích thước đã nén: {size}", "th": "ขนาดหลังบีบอัด: {size}", "id": "Ukuran terkompresi: {size}", "fa": "حجم فشرده‌شده: {size}", "uk": "Стиснений розмір: {size}"
+      },
+      "compression_ratio": {
+        "en": "Saved: {ratio}%", "es": "Ahorrado: {ratio}%", "fr": "Économisé : {ratio}%", "de": "Eingespart: {ratio}%", "it": "Risparmiato: {ratio}%", "pt": "Economizado: {ratio}%", "ru": "Сэкономлено: {ratio}%", "ja": "削減率: {ratio}%", "zh": "已节省: {ratio}%", "ko": "절약됨: {ratio}%", "ar": "تم توفير: {ratio}%", "hi": "बचत: {ratio}%", "tr": "Tasarruf: %{ratio}", "nl": "Bespaard: {ratio}%", "pl": "Zaoszczędzono: {ratio}%", "sv": "Sparat: {ratio}%", "vi": "Đã tiết kiệm: {ratio}%", "th": "ประหยัดได้: {ratio}%", "id": "Dihemat: {ratio}%", "fa": "صرفه‌جویی شده: {ratio}%", "uk": "Збережено: {ratio}%"
+      }
+    }
+  },
+  "number_formatting": {
+    "en": { "decimal_separator": ".", "thousands_separator": ",", "currency_symbol": "$", "currency_position": "before" },
+    "es": { "decimal_separator": ",", "thousands_separator": ".", "currency_symbol": "€", "currency_position": "after" },
+    "fr": { "decimal_separator": ",", "thousands_separator": " ", "currency_symbol": "€", "currency_position": "after" },
+    "de": { "decimal_separator": ",", "thousands_separator": ".", "currency_symbol": "€", "currency_position": "after" },
+    "it": { "decimal_separator": ",", "thousands_separator": ".", "currency_symbol": "€", "currency_position": "after" },
+    "pt": { "decimal_separator": ",", "thousands_separator": ".", "currency_symbol": "R$", "currency_position": "before" },
+    "ru": { "decimal_separator": ",", "thousands_separator": " ", "currency_symbol": "₽", "currency_position": "after" },
+    "ja": { "decimal_separator": ".", "thousands_separator": ",", "currency_symbol": "¥", "currency_position": "before" },
+    "zh": { "decimal_separator": ".", "thousands_separator": ",", "currency_symbol": "¥", "currency_position": "before" },
+    "ko": { "decimal_separator": ".", "thousands_separator": ",", "currency_symbol": "₩", "currency_position": "before" },
+    "ar": { "decimal_separator": "٫", "thousands_separator": "٬", "currency_symbol": "﷼", "currency_position": "after" },
+    "hi": { "decimal_separator": ".", "thousands_separator": ",", "currency_symbol": "₹", "currency_position": "before" },
+    "tr": { "decimal_separator": ",", "thousands_separator": ".", "currency_symbol": "₺", "currency_position": "after" },
+    "nl": { "decimal_separator": ",", "thousands_separator": ".", "currency_symbol": "€", "currency_position": "after" },
+    "pl": { "decimal_separator": ",", "thousands_separator": " ", "currency_symbol": "zł", "currency_position": "after" },
+    "sv": { "decimal_separator": ",", "thousands_separator": " ", "currency_symbol": "kr", "currency_position": "after" },
+    "vi": { "decimal_separator": ",", "thousands_separator": ".", "currency_symbol": "₫", "currency_position": "after" },
+    "th": { "decimal_separator": ".", "thousands_separator": ",", "currency_symbol": "฿", "currency_position": "before" },
+    "id": { "decimal_separator": ",", "thousands_separator": ".", "currency_symbol": "Rp", "currency_position": "before" },
+    "fa": { "decimal_separator": "٫", "thousands_separator": "٬", "currency_symbol": "﷼", "currency_position": "after" },
+    "uk": { "decimal_separator": ",", "thousands_separator": " ", "currency_symbol": "₴", "currency_position": "after" }
+  },
+  "date_formatting": {
+    "en": {
+      "date_format": "MM/DD/YYYY", "time_format": "HH:mm:ss", "datetime_format": "MM/DD/YYYY HH:mm:ss",
+      "day_names": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "month_names": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+    },
+    "es": {
+      "date_format": "DD/MM/YYYY", "time_format": "HH:mm:ss", "datetime_format": "DD/MM/YYYY HH:mm:ss",
+      "day_names": ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"],
+      "month_names": ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
+    },
+    "fr": {
+      "date_format": "DD/MM/YYYY", "time_format": "HH:mm:ss", "datetime_format": "DD/MM/YYYY HH:mm:ss",
+      "day_names": ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"],
+      "month_names": ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"]
+    },
+    "de": {
+      "date_format": "DD.MM.YYYY", "time_format": "HH:mm:ss", "datetime_format": "DD.MM.YYYY HH:mm:ss",
+      "day_names": ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"],
+      "month_names": ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"]
+    },
+    "it": {
+      "date_format": "DD/MM/YYYY", "time_format": "HH:mm:ss", "datetime_format": "DD/MM/YYYY HH:mm:ss",
+      "day_names": ["Domenica", "Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato"],
+      "month_names": ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"]
+    },
+    "pt": {
+      "date_format": "DD/MM/YYYY", "time_format": "HH:mm:ss", "datetime_format": "DD/MM/YYYY HH:mm:ss",
+      "day_names": ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"],
+      "month_names": ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]
+    },
+    "ru": {
+      "date_format": "DD.MM.YYYY", "time_format": "HH:mm:ss", "datetime_format": "DD.MM.YYYY HH:mm:ss",
+      "day_names": ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"],
+      "month_names": ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"]
+    },
+    "ja": {
+      "date_format": "YYYY年MM月DD日", "time_format": "HH:mm:ss", "datetime_format": "YYYY年MM月DD日 HH:mm:ss",
+      "day_names": ["日曜日", "月曜日", "火曜日", "水曜日", "木曜日", "金曜日", "土曜日"],
+      "month_names": ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"]
+    },
+    "zh": {
+      "date_format": "YYYY年MM月DD日", "time_format": "HH:mm:ss", "datetime_format": "YYYY年MM月DD日 HH:mm:ss",
+      "day_names": ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"],
+      "month_names": ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"]
+    },
+    "ko": {
+      "date_format": "YYYY년 MM월 DD일", "time_format": "HH:mm:ss", "datetime_format": "YYYY년 MM월 DD일 HH:mm:ss",
+      "day_names": ["일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일"],
+      "month_names": ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"]
+    },
+    "ar": {
+      "date_format": "DD/MM/YYYY", "time_format": "HH:mm:ss", "datetime_format": "DD/MM/YYYY HH:mm:ss",
+      "day_names": ["الأحد", "الاثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت"],
+      "month_names": ["يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر"]
+    },
+    "hi": {
+      "date_format": "DD/MM/YYYY", "time_format": "HH:mm:ss", "datetime_format": "DD/MM/YYYY HH:mm:ss",
+      "day_names": ["रविवार", "सोमवार", "मंगलवार", "बुधवार", "गुरुवार", "शुक्रवार", "शनिवार"],
+      "month_names": ["जनवरी", "फरवरी", "मार्च", "अप्रैल", "मई", "जून", "जुलाई", "अगस्त", "सितंबर", "अक्टूबर", "नवंबर", "दिसंबर"]
+    },
+    "tr": {
+      "date_format": "DD.MM.YYYY", "time_format": "HH:mm:ss", "datetime_format": "DD.MM.YYYY HH:mm:ss",
+      "day_names": ["Pazar", "Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi"],
+      "month_names": ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"]
+    },
+    "nl": {
+      "date_format": "DD-MM-YYYY", "time_format": "HH:mm:ss", "datetime_format": "DD-MM-YYYY HH:mm:ss",
+      "day_names": ["Zondag", "Maandag", "Dinsdag", "Woensdag", "Donderdag", "Vrijdag", "Zaterdag"],
+      "month_names": ["Januari", "Februari", "Maart", "April", "Mei", "Juni", "Juli", "Augustus", "September", "Oktober", "November", "December"]
+    },
+    "pl": {
+      "date_format": "DD.MM.YYYY", "time_format": "HH:mm:ss", "datetime_format": "DD.MM.YYYY HH:mm:ss",
+      "day_names": ["Niedziela", "Poniedziałek", "Wtorek", "Środa", "Czwartek", "Piątek", "Sobota"],
+      "month_names": ["Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec", "Lipiec", "Sierpień", "Wrzesień", "Październik", "Listopad", "Grudzień"]
+    },
+    "sv": {
+      "date_format": "YYYY-MM-DD", "time_format": "HH:mm:ss", "datetime_format": "YYYY-MM-DD HH:mm:ss",
+      "day_names": ["Söndag", "Måndag", "Tisdag", "Onsdag", "Torsdag", "Fredag", "Lördag"],
+      "month_names": ["Januari", "Februari", "Mars", "April", "Maj", "Juni", "Juli", "Augusti", "September", "Oktober", "November", "December"]
+    },
+    "vi": {
+      "date_format": "DD/MM/YYYY", "time_format": "HH:mm:ss", "datetime_format": "DD/MM/YYYY HH:mm:ss",
+      "day_names": ["Chủ Nhật", "Thứ Hai", "Thứ Ba", "Thứ Tư", "Thứ Năm", "Thứ Sáu", "Thứ Bảy"],
+      "month_names": ["Tháng 1", "Tháng 2", "Tháng 3", "Tháng 4", "Tháng 5", "Tháng 6", "Tháng 7", "Tháng 8", "Tháng 9", "Tháng 10", "Tháng 11", "Tháng 12"]
+    },
+    "th": {
+      "date_format": "DD/MM/YYYY", "time_format": "HH:mm:ss", "datetime_format": "DD/MM/YYYY HH:mm:ss",
+      "day_names": ["วันอาทิตย์", "วันจันทร์", "วันอังคาร", "วันพุธ", "วันพฤหัสบดี", "วันศุกร์", "วันเสาร์"],
+      "month_names": ["มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน", "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม"]
+    },
+    "id": {
+      "date_format": "DD/MM/YYYY", "time_format": "HH:mm:ss", "datetime_format": "DD/MM/YYYY HH:mm:ss",
+      "day_names": ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"],
+      "month_names": ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"]
+    },
+    "fa": {
+      "date_format": "DD/MM/YYYY", "time_format": "HH:mm:ss", "datetime_format": "DD/MM/YYYY HH:mm:ss",
+      "day_names": ["یکشنبه", "دوشنبه", "سهشنبه", "چهارشنبه", "پنجشنبه", "جمعه", "شنبه"],
+      "month_names": ["ژانویه", "فوریه", "مارس", "آوریل", "مه", "ژوئن", "ژوئیه", "اوت", "سپتامبر", "اکتبر", "نوامبر", "دسامبر"]
+    },
+    "uk": {
+      "date_format": "DD.MM.YYYY", "time_format": "HH:mm:ss", "datetime_format": "DD.MM.YYYY HH:mm:ss",
+      "day_names": ["Неділя", "Понеділок", "Вівторок", "Середа", "Четвер", "П'ятниця", "Субота"],
+      "month_names": ["Січень", "Лютий", "Березень", "Квітень", "Травень", "Червень", "Липень", "Серпень", "Вересень", "Жовтень", "Листопад", "Грудень"]
+    }
+  },
+  "zodiac_signs": {
+    "en": ["Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius", "Capricorn", "Aquarius", "Pisces"],
+    "es": ["Aries", "Tauro", "Géminis", "Cáncer", "Leo", "Virgo", "Libra", "Escorpio", "Sagitario", "Capricornio", "Acuario", "Piscis"],
+    "fr": ["Bélier", "Taureau", "Gémeaux", "Cancer", "Lion", "Vierge", "Balance", "Scorpion", "Sagittaire", "Capricorne", "Verseau", "Poissons"],
+    "de": ["Widder", "Stier", "Zwillinge", "Krebs", "Löwe", "Jungfrau", "Waage", "Skorpion", "Schütze", "Steinbock", "Wassermann", "Fische"],
+    "it": ["Ariete", "Toro", "Gemelli", "Cancro", "Leone", "Vergine", "Bilancia", "Scorpione", "Sagittario", "Capricorno", "Acquario", "Pesci"],
+    "pt": ["Áries", "Touro", "Gêmeos", "Câncer", "Leão", "Virgem", "Libra", "Escorpião", "Sagitário", "Capricórnio", "Aquário", "Peixes"],
+    "ru": ["Овен", "Телец", "Близнецы", "Рак", "Лев", "Дева", "Весы", "Скорпион", "Стрелец", "Козерог", "Водолей", "Рыбы"],
+    "ja": ["牡羊座", "牡牛座", "双子座", "蟹座", "獅子座", "乙女座", "天秤座", "蠍座", "射手座", "山羊座", "水瓶座", "魚座"],
+    "zh": ["白羊座", "金牛座", "双子座", "巨蟹座", "狮子座", "处女座", "天秤座", "天蝎座", "射手座", "摩羯座", "水瓶座", "双鱼座"],
+    "ko": ["양자리", "황소자리", "쌍둥이자리", "게자리", "사자자리", "처녀자리", "천칭자리", "전갈자리", "궁수자리", "염소자리", "물병자리", "물고기자리"],
+    "ar": ["برج الحمل", "برج الثور", "برج الجوزاء", "برج السرطان", "برج الأسد", "برج العذراء", "برج الميزان", "برج العقرب", "برج القوس", "برج الجدي", "برج الدلو", "برج الحوت"],
+    "hi": ["मेष", "वृष", "मिथुन", "कर्क", "सिंह", "कन्या", "तुला", "वृश्चिक", "धनु", "मकर", "कुंभ", "मीन"],
+    "tr": ["Koç", "Boğa", "İkizler", "Yengeç", "Aslan", "Başak", "Terazi", "Akrep", "Yay", "Oğlak", "Kova", "Balık"],
+    "nl": ["Ram", "Stier", "Tweelingen", "Kreeft", "Leeuw", "Maagd", "Weegschaal", "Schorpioen", "Boogschutter", "Steenbok", "Waterman", "Vissen"],
+    "pl": ["Baran", "Byk", "Bliźnięta", "Rak", "Lew", "Panna", "Waga", "Skorpion", "Strzelec", "Kozioł", "Wodnik", "Ryby"],
+    "sv": ["Väduren", "Tjuren", "Tvillingarna", "Kräftan", "Lejonet", "Jungfrun", "Vågen", "Skorpionen", "Bågskytten", "Stenbocken", "Vattumännen", "Fiskarna"],
+    "vi": ["Bạch Dương", "Kim Ngưu", "Song Tử", "Cự Giải", "Sư Tử", "Xử Nữ", "Thiên Bình", "Bọ Cạp", "Nhân Mã", "Ma Kết", "Bảo Bình", "Song Ngư"],
+    "th": ["ราศีเมษ", "ราศีพฤษภ", "ราศีเมถุน", "ราศีกรกฎ", "ราศีสิงห์", "ราศีกันย์", "ราศีตุลย์", "ราศีพิจิก", "ราศีธนู", "ราศีมังกร", "ราศีกุมภ์", "ราศีมีน"],
+    "id": ["Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagitarius", "Capricorn", "Aquarius", "Pisces"],
+    "fa": ["برج حمل", "برج ثور", "برج جوزا", "برج سرطان", "برج اسد", "برج سنبله", "برج ترازو", "برج عقرب", "برج قوس", "برج جدی", "برج دلو", "برج حوت"],
+    "uk": ["Овен", "Телець", "Близнюки", "Рак", "Лев", "Діва", "Терези", "Скорпіон", "Стрілець", "Козеріг", "Водолій", "Риби"]
+  },
+  "error_messages": {
+    "invalid_input": {
+      "en": "Invalid input. Please check your values and try again.",
+      "es": "Entrada inválida. Por favor, verifica tus valores e intenta de nuevo.",
+      "fr": "Entrée invalide. Veuillez vérifier vos valeurs et réessayer.",
+      "de": "Ungültige Eingabe. Bitte überprüfen Sie Ihre Werte und versuchen Sie es erneut.",
+      "it": "Input non valido. Controlla i tuoi valori e riprova.",
+      "pt": "Entrada inválida. Verifique seus valores e tente novamente.",
+      "ru": "Неверный ввод. Пожалуйста, проверьте данные и попробуйте снова.",
+      "ja": "無効な入力です。値を確認してやり直してください。",
+      "zh": "输入无效。请检查您的数值并重试。",
+      "ko": "잘못된 입력입니다. 값을 확인하고 다시 시도하세요.",
+      "ar": "إدخال غير صالحة. يرجى التحقق من القيم والمحاولة مرة أخرى.",
+      "hi": "अमान्य इनपुट। कृपया अपने मानों की जांच करें और पुनः प्रयास करें।",
+      "tr": "Geçersiz giriş. Lütfen değerlerinizi kontrol edip tekrar deneyin.",
+      "nl": "Ongeldige invoer. Controleer uw waarden en probeer het opnieuw.",
+      "pl": "Nieprawidłowe данные. Sprawdź wartości i spróbuj ponownie.",
+      "sv": "Ogiltig inmatning. Kontrollera dina värden och försök igen.",
+      "vi": "Đầu vào không hợp lệ. Vui lòng kiểm tra lại giá trị và thử lại.",
+      "th": "ข้อมูลไม่ถูกต้อง โปรดตรวจสอบค่าของคุณแล้วลองอีกครั้ง",
+      "id": "Input tidak valid. Silakan periksa nilai Anda dan coba lagi.",
+      "fa": "ورودی نامعتبر است. لطفاً مقادیر خود را بررسی کرده و دوباره امتحان کنید.",
+      "uk": "Невірне введення. Будь ласка, перевірте дані та спробуйте знову."
+    },
+    "no_results": {
+      "en": "No results found.", "es": "No se encontraron resultados.", "fr": "Aucun résultat trouvé.", "de": "Keine Ergebnisse gefunden.", "it": "Nessun risultato trovato.", "pt": "Nenhum resultado encontrado.", "ru": "Результатов не найдено.", "ja": "結果が見つかりませんでした。", "zh": "未找到结果。", "ko": "결과를 찾을 수 없습니다.", "ar": "لم يتم العثور على نتائج.", "hi": "कोई परिणाम नहीं मिला।", "tr": "Sonuç bulunamadı.", "nl": "Geen resultaten gevonden.", "pl": "Brak wyników.", "sv": "Inga resultat hittades.", "vi": "Không tìm thấy kết quả.", "th": "ไม่พบผลลัพธ์", "id": "Tidak ada hasil ditemukan.", "fa": "نتیجه‌ای یافت نشد.", "uk": "Результатів не знайдено."
+    },
+    "file_too_large": {
+      "en": "File is too large. Maximum size: {max_size}", "es": "El archivo es demasiado grande. Tamaño máximo: {max_size}", "fr": "Le fichier est trop volumineux. Taille maximale : {max_size}", "de": "Datei ist zu groß. Maximale Größe: {max_size}", "it": "File troppo grande. Dimensione massima: {max_size}", "pt": "Arquivo muito grande. Tamanho máximo: {max_size}", "ru": "Файл слишком большой. Максимальный размер: {max_size}", "ja": "ファイルが大きすぎます。最大サイズ: {max_size}", "zh": "文件过大。最大允许大小: {max_size}", "ko": "파일이 너무큽니다. 최대 크기: {max_size}", "ar": "حجم الملف كبير جداً. الحد الأقصى: {max_size}", "hi": "फ़ाइल बहुत बड़ी है। अधिकतम आकार: {max_size}", "tr": "Dosya çok büyük. Maksimum boyut: {max_size}", "nl": "Bestand is te groot. Maximale grootte: {max_size}", "pl": "Plik jest zbyt duży. Maksymalny rozmiar: {max_size}", "sv": "Filen är för stor. Maximal storlek: {max_size}", "vi": "Tệp quá lớn. Dung lượng tối đa: {max_size}", "th": "ไฟล์มีขนาดใหญ่เกินไป ขนาดสูงสุด: {max_size}", "id": "Ukuran file terlalu besar. Ukuran maksimum: {max_size}", "fa": "فایل خیلی بزرگ است. حداکثر حجم: {max_size}", "uk": "Файл занадто великий. Максимальний розмір: {max_size}"
+    },
+    "copied_to_clipboard": {
+      "en": "Copied to clipboard!", "es": "¡Copiado al portapapeles!", "fr": "Copié dans le presse-papiers !", "de": "In die Zwischenablage kopiert!", "it": "Copiato negli appunti!", "pt": "Copiado para a área de transferência!", "ru": "Скопировано в буфер обмена!", "ja": "クリップボードにコピーしました！", "zh": "已复制到剪贴板！", "ko": "클립보드에 복사되었습니다!", "ar": "تم النسخ إلى الحافظة!", "hi": "क्लिपबोर्ड पर कॉपी किया गया!", "tr": "Panoya kopyalandı!", "nl": "Gekopieerd naar klembord!", "pl": "Skopiowano do schowka!", "sv": "Kopierat till urklipp!", "vi": "Đã sao chép vào khay nhớ tạm!", "th": "คัดลอกไปยังคลิปบอร์ดแล้ว!", "id": "Disalin ke papan klip!", "fa": "در حافظه کپی شد!", "uk": "Скопійовано в буфер обміну!"
+    }
+  }
+}

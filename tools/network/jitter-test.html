@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Jitter Test – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/network/jitter-test.html"/>
+<meta property="og:title" content="Jitter Test – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/network/jitter-test.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Jitter Test \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/network/jitter-test.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    .jitter-workspace {
+      max-width: 600px;
+      margin: 2rem auto;
+      text-align: center;
+    }
+    .jitter-area {
+      width: 100%;
+      height: 300px;
+      background: var(--bg-secondary);
+      border: 3px solid #ff9f43;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.05s;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 2rem;
+      box-shadow: 0 0 20px rgba(255, 159, 67, 0.1);
+    }
+    .jitter-area:active {
+      transform: scale(0.99) rotate(0.2deg);
+      background: rgba(255, 159, 67, 0.05);
+    }
+    .jitter-hint {
+       font-size: 1.5rem;
+       font-weight: 800;
+       color: #ff9f43;
+       text-transform: uppercase;
+       letter-spacing: 2px;
+    }
+    .stats-main {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .stat-box {
+      background: var(--dark-card);
+      padding: 1rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+    .stat-val { font-size: 1.5rem; font-weight: 800; color: #ff9f43; display: block; }
+    .stat-label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; }
+
+    .jitter-vibration {
+       position: absolute;
+       inset: 0;
+       background: radial-gradient(circle, rgba(255,159,67,0.1) 0%, transparent 70%);
+       opacity: 0;
+       pointer-events: none;
+    }
+    .active .jitter-vibration {
+       animation: vibrate 0.1s infinite;
+       opacity: 1;
+    }
+    @keyframes vibrate {
+       0% { transform: translate(1px, 1px); }
+       25% { transform: translate(-1px, -1px); }
+       50% { transform: translate(1px, -1px); }
+       75% { transform: translate(-1px, 1px); }
+       100% { transform: translate(1px, 1px); }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/network/jitter-test.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/network/jitter-test.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/network/jitter-test.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/network/jitter-test.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/network/jitter-test.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/network/jitter-test.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/network/jitter-test.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/network/jitter-test.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/network/jitter-test.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/network/jitter-test.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/network/jitter-test.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/network/jitter-test.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/network/jitter-test.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/network/jitter-test.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/network/jitter-test.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/network/jitter-test.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/network/jitter-test.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/network/jitter-test.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/network/jitter-test.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/network/jitter-test.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/network/jitter-test.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/network/jitter-test.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Infinite Jitter Click Test</h1>
+      <p>Analyze your finger vibration frequency and specialized high-speed clicking throughput.</p>
+    </div>
+
+    <div class="jitter-workspace">
+      <div class="stats-main">
+        <div class="stat-box">
+          <span class="stat-val" id="time-left">10.0</span>
+          <span class="stat-label">Seconds</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-val" id="click-count">0</span>
+          <span class="stat-label">Clicks</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-val" id="cps-val">0.0</span>
+          <span class="stat-label">Jitter CPS</span>
+        </div>
+      </div>
+
+      <div class="jitter-area" id="jitter-area">
+         <div class="jitter-vibration"></div>
+         <div class="jitter-hint">Hold & Vibrate</div>
+      </div>
+
+      <button onclick="resetTest()" class="btn btn-secondary btn-lg">Reset Workout</button>
+
+      <!-- SEO CONTENT -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.jitter_click_test.what_is_title">What is the Infinite Jitter Click Test?</h2>
+        <p>The Infinite Jitter Click Test is a high-frequency speed diagnostic tool built to measure clicks-per-second (CPS) using the specialized "jitter clicking" technique. Jitter clicking involves tensing your forearm and hand muscles to generate controlled vibrations, translating muscle tremors into rapid, successive finger clicks. This clicking technique is widely utilized in gaming communities where high-speed reaction and action rates are crucial.</p>
+        <p>This utility isolates your click timing to accurately record micro-second interval inputs, providing a precise diagnostic environment. It tracks both total inputs and your real-time speed average, making it an excellent benchmark for both training speed and evaluating mouse button sensitivity.</p>
+
+        <h3 class="mt-4">How to Use the Jitter Speed Tester</h3>
+        <p>Follow these steps to analyze your clicking speed:</p>
+        <ol class="mt-2 mb-3">
+          <li>Hover your cursor over the designated "Hold & Vibrate" target box.</li>
+          <li>Begin clicking or tapping rapidly to start the automated 10-second countdown timer.</li>
+          <li>Apply the jitter clicking technique, vibrating your hand and keeping the cursor inside the target area.</li>
+          <li>Watch the live clicks counter and the real-time clicks-per-second (CPS) graph updates.</li>
+          <li>Analyze your final score, total inputs, and average click stability once the session finishes.</li>
+          <li>Click the "Reset Workout" button to clear metrics and restart the diagnostic.</li>
+        </ol>
+
+        <h3 class="mt-4">Key Features of the Jitter Trainer</h3>
+        <ul class="mt-2 mb-3">
+          <li><strong>Vibrational Target Box:</strong> Custom interactive panel that changes visual states dynamically as rapid inputs are registered.</li>
+          <li><strong>Live Speed Gauging:</strong> Calculates and updates your active clicks-per-second (CPS) rating instantly.</li>
+          <li><strong>Fixed Countdown Mechanism:</strong> Employs a standardized 10-second timing interval for consistent benchmark runs.</li>
+          <li><strong>Dynamic Touch Integration:</strong> Fully supports desktop mouse microswitches and mobile touch screens.</li>
+        </ul>
+
+        <h3 class="mt-4">Common Use Cases</h3>
+        <p>This testing setup is helpful for gamers and hardware hobbyists:</p>
+        <ul class="mt-2 mb-3">
+          <li><strong>Competitive Gaming Practice:</strong> Training hand muscles to sustain higher clicking rates for games like Minecraft PvP.</li>
+          <li><strong>Debounce Configuration Testing:</strong> Adjusting double-click thresholds on custom mouse firmware to ensure every click registers.</li>
+          <li><strong>Endurance Auditing:</strong> Monitoring muscle fatigue rates by comparing performance across successive testing trials.</li>
+        </ul>
+
+        <h3 class="mt-4">Frequently Asked Questions</h3>
+        <div class="faq-section mt-3">
+          <p><strong>Is jitter clicking safe for my hand?</strong><br>Yes, provided you do not overexert yourself. Squeezing or vibrating your muscles for extended periods can lead to strain. Take frequent breaks and stretch your hands regularly.</p>
+          <p><strong>What is a good score on a jitter click test?</strong><br>Standard clicking averages 5 to 7 CPS. Experienced jitter clickers can consistently maintain between 10 to 14 CPS over a 10-second run.</p>
+          <p><strong>Can my mouse bottleneck my jitter test score?</strong><br>Yes. Mechanical switches with high debounce delay or heavy spring resistance can ignore rapid double-taps. Light switches or optical microswitches are better suited for high speeds.</p>
+          <p><strong>How does this test differ from a standard CPS test?</strong><br>This test features a localized interactive zone designed to keep your cursor focused while your hand vibrates, simulating actual game control scenarios.</p>
+        </div>
+
+        <h3 class="mt-4">Privacy & Data Note</h3>
+        <p>All click logging events, interval timestamps, and local best scores are processed locally in your browser session. No inputs are stored, tracked, or transmitted to any server.</p>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    const area = document.getElementById('jitter-area');
+    const clicksDisp = document.getElementById('click-count');
+    const timeDisp = document.getElementById('time-left');
+    const cpsDisp = document.getElementById('cps-val');
+
+    let clicks = 0;
+    let timer = 10;
+    let startTime = 0;
+    let isActive = false;
+    let interval = null;
+
+    function resetTest() {
+       clearInterval(interval);
+       isActive = false;
+       clicks = 0;
+       timer = 10;
+       clicksDisp.innerText = '0';
+       timeDisp.innerText = '10.0';
+       cpsDisp.innerText = '0.0';
+       area.classList.remove('active');
+       area.querySelector('.jitter-hint').innerText = 'Hold & Vibrate';
+    }
+
+    area.addEventListener('mousedown', (e) => {
+       if (timer <= 0) return;
+       if (!isActive) startTest();
+       clicks++;
+       clicksDisp.innerText = clicks;
+       calculateCPS();
+    });
+
+    // Touch support for mobile jittering
+    area.addEventListener('touchstart', (e) => {
+       e.preventDefault();
+       if (timer <= 0) return;
+       if (!isActive) startTest();
+       clicks++;
+       clicksDisp.innerText = clicks;
+       calculateCPS();
+    });
+
+    function startTest() {
+       isActive = true;
+       startTime = performance.now();
+       area.classList.add('active');
+       area.querySelector('.jitter-hint').innerText = 'JITTERING...';
+       
+       interval = setInterval(() => {
+          const elapsed = (performance.now() - startTime) / 1000;
+          const remaining = Math.max(0, 10 - elapsed);
+          timeDisp.innerText = remaining.toFixed(1);
+          
+          if (remaining <= 0) {
+             clearInterval(interval);
+             isActive = false;
+             area.classList.remove('active');
+             area.querySelector('.jitter-hint').innerText = 'Workout Complete';
+             calculateCPS(true);
+          }
+       }, 50);
+    }
+
+    function calculateCPS(final = false) {
+       const elapsed = final ? 10 : Math.max(0.1, (performance.now() - startTime) / 1000);
+       const cps = (clicks / elapsed).toFixed(1);
+       cpsDisp.innerText = (window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(clicks / elapsed, 1) : (clicks / elapsed).toFixed(1);
+    }
+
+    resetTest();
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>

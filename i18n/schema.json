@@ -1,0 +1,66 @@
+{
+  "structure": {
+    "common": "Shared strings used across multiple tools (privacy note, no signup text, offline ready, etc.)",
+    "tools": {
+      "[tool_id]": {
+        "page_title": "Translatable page <title> tag value",
+        "meta_description": "Translatable meta description tag value",
+        "what_is_title": "Heading for What Is section (keep under 60 chars)",
+        "what_is_content": "Full explanation text (can contain line breaks \\n and HTML tags)",
+        "how_to_use_title": "Heading for How to Use section",
+        "how_to_use_steps": [
+          "Step 1 text (preserves <strong> tags if present)",
+          "Step 2 text",
+          "..."
+        ],
+        "key_features_title": "Heading for Key Features section",
+        "key_features": [
+          "Feature 1 text",
+          "Feature 2 text",
+          "..."
+        ],
+        "common_use_cases_title": "Heading for Common Use Cases section",
+        "common_use_cases": [
+          "Use case 1 text",
+          "Use case 2 text",
+          "..."
+        ],
+        "faq_title": "Heading for FAQ section",
+        "faq": [
+          {
+            "question": "Question string",
+            "answer": "Answer string"
+          }
+        ],
+        "privacy_note": "Privacy and trust disclaimer note text",
+        "schema_org": {
+          "name": "Tool name for Schema.org JSON-LD",
+          "description": "Tool short description for Schema.org JSON-LD"
+        }
+      }
+    }
+  },
+  "translation_rules": {
+    "page_title": "Keep under 60 characters for SEO; preserve brand name 99tool.in.",
+    "meta_description": "Keep under 160 characters; maintain natural phrasing in target language.",
+    "what_is_content": "Preserve all HTML markup (<strong>, <code>, <a>) exactly; keep tone professional and helpful.",
+    "how_to_use_steps": "Keep steps ordered and clear; translate lead action words accurately inside <strong> tags.",
+    "key_features": "Preserve feature titles in <strong> tags; ensure concise technical terminology.",
+    "common_use_cases": "Translate scenarios into natural context for target region/language.",
+    "faq": "Translate both questions and answers naturally (do not literally word-swap); preserve technical code samples verbatim.",
+    "privacy_note": "Maintain strict security/privacy accuracy; do not alter legal guarantees.",
+    "schema_org": "Translate name and description while ensuring JSON-LD compliance."
+  },
+  "tools_included": [
+    "age_calculator",
+    "audio_recorder",
+    "bmi_calculator",
+    "csv_editor",
+    "image_compressor",
+    "markdown_previewer",
+    "pdf_merger",
+    "password_generator",
+    "regex_tester",
+    "word_counter"
+  ]
+}

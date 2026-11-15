@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Focus Mode – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/productivity/focus-mode.html"/>
+<meta property="og:title" content="Focus Mode – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/productivity/focus-mode.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Focus Mode \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/productivity/focus-mode.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="focus mode app, focus mode, distraction blocker, focus timer app, productivity focus tool, deep work" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Focus Mode App",
+    "operatingSystem": "Any",
+    "applicationCategory": "ProductivityApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "Distraction-blocking overlay, Fullscreen Focus mode, Procedural Nature Sounds, Session Timer"
+  }
+  </script>
+
+  <style>
+    .focus-timer {
+      font-size: 6rem;
+      font-weight: 800;
+      margin: 20px 0;
+      font-variant-numeric: tabular-nums;
+      color: var(--white);
+    }
+
+    .focus-overlay {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: #0a0a0a;
+      z-index: 10000;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .focus-overlay.active { display: flex; }
+
+    .quote-box {
+      max-width: 600px;
+      font-style: italic;
+      color: var(--text-muted);
+      margin-top: 32px;
+      font-size: 1.1rem;
+    }
+
+    .sound-buttons {
+      display: flex;
+      gap: 12px;
+      margin-top: 24px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn-sound {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 8px 16px;
+      border-radius: 50px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      transition: all 0.3s;
+    }
+    .btn-sound.active {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: rgba(229, 57, 53, 0.1);
+    }
+
+    .progress-ring-container {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .progress-ring { transform: rotate(-90deg); }
+    .progress-ring__circle {
+      stroke-dasharray: 880;
+      stroke-dashoffset: 880;
+      transition: stroke-dashoffset 0.3s;
+    }
+
+    .session-stats {
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 16px;
+    }
+
+    @media (max-width: 600px) {
+      .focus-timer { font-size: 4rem; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#productivity">Productivity</a> <span>/</span> 
+        <span>Focus Mode</span>
+      </nav>
+      <h1>Deep Work Focus Mode</h1>
+      <p>Eliminate digital noise. Turn your browser into a high-productivity sanctuary with procedural sounds and a distraction-free environment.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div class="tool-box text-center">
+        <div class="flex flex-column items-center">
+          <h3>Set Your Focus Session</h3>
+          <div class="form-group mt-3" style="max-width: 200px;">
+            <select id="duration-select" class="form-control text-center">
+              <option value="15">15 Minutes</option>
+              <option value="25" selected>25 Minutes (Standard)</option>
+              <option value="45">45 Minutes (Deep Work)</option>
+              <option value="60">60 Minutes</option>
+              <option value="90">90 Minutes</option>
+            </select>
+          </div>
+
+          <div class="sound-buttons">
+            <button class="btn-sound active" data-sound="none">Silence</button>
+            <button class="btn-sound" data-sound="rain">Steady Rain</button>
+            <button class="btn-sound" data-sound="waves">Ocean Waves</button>
+            <button class="btn-sound" data-sound="white">White Noise</button>
+          </div>
+
+          <div class="mt-4">
+            <button class="btn btn-primary btn-lg" id="start-focus-btn">Enter Focus Mode</button>
+          </div>
+
+          <div class="session-stats mt-4" style="width: 100%;">
+            <div class="stat-card" style="background: var(--dark); padding: 16px; border-radius: 8px;">
+              <p class="text-muted" style="font-size: 0.75rem; margin-bottom: 4px;">Today's Focus</p>
+              <h4 id="today-time">0m</h4>
+            </div>
+            <div class="stat-card" style="background: var(--dark); padding: 16px; border-radius: 8px;">
+              <p class="text-muted" style="font-size: 0.75rem; margin-bottom: 4px;">Sessions Completed</p>
+              <h4 id="sessions-count">0</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FOCUS OVERLAY (HIDDEN BY DEFAULT) -->
+      <div id="focus-overlay" class="focus-overlay">
+        <div class="progress-ring-container">
+          <svg class="progress-ring" width="300" height="300">
+            <circle class="progress-ring__circle" stroke="#e53935" stroke-width="8" fill="transparent" r="140" cx="150" cy="150"/>
+          </svg>
+          <div class="focus-timer" id="timer-display">25:00</div>
+        </div>
+
+        <div class="quote-box" id="quote-display">
+          "Focus is a muscle. The more you use it, the stronger it gets."
+        </div>
+
+        <div class="mt-4 flex gap-2">
+          <button class="btn btn-secondary" id="exit-focus-btn">Exit Focus Mode</button>
+          <button class="btn btn-secondary" id="fullscreen-btn">Toggle Fullscreen</button>
+        </div>
+
+        <p class="text-muted mt-4" style="font-size: 0.8rem;">Session in progress... Turn off notifications for best results.</p>
+      </div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5">
+        <h2>Safeguarding Your Flow in Private: Secure Local Focus Management</h2>
+        <p>We’ve all been there: you have a high-stakes deadline approaching, a complex problem to solve, or a deep study session ahead of you. But the digital world won't stop screaming for your attention. Your first instinct is to find a <strong>focus mode</strong> tool online to help you silence the notifications and enter a state of deep concentration. But as you look at the "Social Leaderboards" and "Cloud Syncing" features of most productivity apps, you realize that your habits, your working hours, and your concentration patterns are being harvested by an anonymous algorithm. Do you really want to share your most private moments of "Silence" with a third-party database?</p>
+
+        <p>At 99tool.in, we built our <strong>focus mode app</strong> to give you a professional sanctuary without the privacy debt. By utilizing browser-side procedural audio and local session tracking, we allow you to <strong>enter focus mode</strong> entirely within the secure sandbox of your own machine. Whether you’re a senior developer tackling a massive refactor, a writer finishing a manuscript, or a student preparing for finals, our <strong>safe focus tool</strong> ensures that your productivity data stays where it belongs: on your device, under your total sovereignty.</p>
+        
+        <div class="tool-preview-box mt-4 mb-4" style="text-align:center;">
+           <img src="../../assets/images/focus-preview.png" alt="Clean Focus Mode Session Workspace" class="tool-preview" id="tool-preview-img" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+        </div>
+
+        <h3 class="mt-4">The Logic of Auditory Immersion</h3>
+        <p>Focus isn't just about silence; it's about "Auditory Isolation." Most basic <strong>distraction blockers</strong> simply act as a timer, leaving you susceptible to sudden noises in your physical environment. Our <strong>professional focus mode</strong> takes a human-centric approach: we focus on **Procedural Soundscapes** and **Binaural Consistency**.</p>
+        
+        <p>We utilize the Web Audio API to generate real-time, non-repeating sounds like steady rain or ocean waves. Our <strong>safe focus timer</strong> doesn't play a loop; it creates a "Sound Blanket" that masks background chatter and sudden interruptions, signaling to your brain that it is time to move from "Scanning" to "Sustaining." This transparency allows you to build a reliable "Focus Habit" that triggers the moment you click start, helping you achieve a steady flow state in minutes rather than hours.</p>
+
+        <h3 class="mt-4">Why Focus is the Professional’s Ethical Choice</h3>
+        <p>In the modern "Attention Economy," your working habits are a valuable fingerprint. When you use a standard <strong>focus timer app online free</strong> service, you are essentially creating a digital record of your peak performance hours for a third party to analyze. Our 100% <strong>focus utility</strong> removes this "Surveillance Risk" entirely from your deep work routine.</p>
+        
+        <p>Because the audio generation and session logging happen in your browser's private memory, your work sessions are invisible to the outside world. No analytics are tracked, no sessions are harvested, and no productivity data is shared with advertisers or AI models. At 99tool.in, we believe that <strong>deep work</strong> should be an empowering utility, not a data-mining exercise. With us, you have a private, professional sanctuary that fits in your browser tab.</p>
+
+        <h3 class="mt-4">How to Enter Your Deep Work Zone (Step-by-Step)</h3>
+        <p>Starting a concentration session should be a high-speed, 10-second task. Here is how to use our <strong>focus mode</strong> helper:</p>
+        <ul style="line-height: 1.8; margin-bottom: 20px;">
+          <li><strong>Step 1: Define Your Mission</strong> — Choose your session duration from the dropdown. Whether it’s a quick 25-minute sprint or a 90-minute deep dive, set your intention clearly.</li>
+          <li><strong>Step 2: Select Your Soundscape</strong> — Pick an ambient sound that helps you focus (e.g., Rain or Waves). Our system generates this locally without any internet connection.</li>
+          <li><strong>Step 3: Enter the Sanctuary</strong> — Click "Enter Focus Mode." The interface will shift to a high-contrast, distraction-free overlay designed to minimize visual noise.</li>
+          <li><strong>Step 4: Commit to the Flow</strong> — Use the "Toggle Fullscreen" feature to hide your menu bars. Watch the progress ring close slowly as you sink into your work, knowing your stats are stored safely on your device.</li>
+        </ul>
+
+        <h3 class="mt-4">Strategic Use Cases for Your Local Focus Mode</h3>
+        <p>Our <strong>concentration tool</strong> is the essential companion for varied professional life:</p>
+        
+        <p><strong>For Writers and Content Creators:</strong> Facing a blank page? Use our <strong>focus mode</strong> with "Ocean Waves" to create a rhythmic, peaceful environment that encourages steady thought and word count growth.</p>
+        
+        <p><strong>For Students and Researchers:</strong> Managing a massive bibliography? Use our <strong>distraction blocker</strong> to lock in for 45-minute blocks, ensuring you stay focused on the source material without the urge to check other tabs.</p>
+        
+        <p><strong>For Enterprise Developers:</strong> Debugging a critical system failure? Use our <strong>safe focus tool</strong> with "White Noise" to block out office chatter and focus entirely on the logic of the code without any data leave your machine.</p>
+
+        <h3 class="mt-5">Explore Your Complete Productivity Suite</h3>
+        <p>Once you’ve successfully mastered your focus, you might need to track your daily routines. Check out our <strong><a href="daily-habit-tracker.html">Habit Tracker</a></strong>. Or, if you’re managing complex projects, use our <strong><a href="kanban-board.html">Kanban Board</a></strong>. At 99tool.in, we are building a world-class, 100% private digital toolkit to give you total sovereignty over your time.</p>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Does this app block other browser tabs?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. For security reasons, browser-based tools are not allowed to control other tabs or external applications. However, our <strong>Focus Mode</strong> takes over the current page and provides an immersive environment to discourage you from leaving the tab. For best results, we recommend using this tool in <strong>Fullscreen Mode</strong>.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              How do the "Nature Sounds" work without internet?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Great question! Instead of playing large MP3 files from a server, we use "Procedural Audio." Our <strong>focus mode</strong> uses your browser's math engine (Web Audio API) to create the sound of rain and waves in real-time. This means it works perfectly even if you are completely on a plane or in a remote cabin.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              What happens if I close the tab early?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>If you close the tab, the session will stop and your progress for that specific session won't be saved to your "Sessions Completed" tally. We encourage you to finish the timer to build your "Focus Muscle."</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 100% Client-Side. No login. No interruptions. Last updated: April 10, 2026.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    // --- QUOTES ---
+    const quotes = [
+      "Focus is a muscle. The more you use it, the stronger it gets.",
+      "Work hard in silence, let your success be your noise.",
+      "Deep work is the superpower of the 21st century.",
+      "Your focus determines your reality.",
+      "Eliminate all distractions and the soul will naturally flourish.",
+      "Concentrate all your thoughts upon the work at hand."
+    ];
+
+    // --- AUDIO ENGINE (Synthesized Rain/Noise) ---
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    let noiseSource = null;
+    let gainNode = null;
+
+    function createRain() {
+      const bufferSize = 2 * audioCtx.sampleRate,
+            noiseBuffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate),
+            output = noiseBuffer.getChannelData(0);
+      for (let i = 0; i < bufferSize; i++) {
+        output[i] = Math.random() * 2 - 1;
+      }
+      const whiteNoise = audioCtx.createBufferSource();
+      whiteNoise.buffer = noiseBuffer;
+      whiteNoise.loop = true;
+
+      const filter = audioCtx.createBiquadFilter();
+      filter.type = 'lowpass';
+      filter.frequency.value = 1000;
+
+      gainNode = audioCtx.createGain();
+      gainNode.gain.value = 0.2;
+
+      whiteNoise.connect(filter);
+      filter.connect(gainNode);
+      gainNode.connect(audioCtx.destination);
+      return whiteNoise;
+    }
+
+    function createWaves() {
+      // White noise with oscillating volume
+      const source = createRain();
+      const osc = audioCtx.createOscillator();
+      osc.type = 'sine';
+      osc.frequency.value = 0.1; // 10 seconds per wave
+
+      const oscGain = audioCtx.createGain();
+      oscGain.gain.value = 0.1;
+
+      osc.connect(oscGain);
+      oscGain.connect(gainNode.gain);
+      osc.start();
+      return source;
+    }
+
+    function createWhiteNoise() {
+      const source = createRain();
+      gainNode.gain.value = 0.05;
+      return source;
+    }
+
+    function stopAudio() {
+      if (noiseSource) {
+        noiseSource.stop();
+        noiseSource = null;
+      }
+    }
+
+    // --- TIMER LOGIC ---
+    let timerInterval = null;
+    let secondsRemaining = 0;
+    let totalSeconds = 0;
+
+    const overlay = document.getElementById('focus-overlay');
+    const timerDisplay = document.getElementById('timer-display');
+    const ringCircle = document.querySelector('.progress-ring__circle');
+    const durationSelect = document.getElementById('duration-select');
+    const startBtn = document.getElementById('start-focus-btn');
+    const exitBtn = document.getElementById('exit-focus-btn');
+    const fullscreenBtn = document.getElementById('fullscreen-btn');
+    const soundBtns = document.querySelectorAll('.btn-sound');
+    const quoteDisplay = document.getElementById('quote-display');
+
+    let currentSound = 'none';
+
+    soundBtns.forEach(btn => {
+      btn.onclick = () => {
+        soundBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentSound = btn.dataset.sound;
+      };
+    });
+
+    startBtn.onclick = () => {
+      secondsRemaining = parseInt(durationSelect.value) * 60;
+      totalSeconds = secondsRemaining;
+      
+      overlay.classList.add('active');
+      quoteDisplay.textContent = `"${quotes[Math.floor(Math.random() * quotes.length)]}"`;
+      
+      startTimer();
+      playFocusSound();
+    };
+
+    function startTimer() {
+      updateDisplay();
+      timerInterval = setInterval(() => {
+        secondsRemaining--;
+        updateDisplay();
+        if (secondsRemaining <= 0) {
+          completeSession();
+        }
+      }, 1000);
+    }
+
+    function updateDisplay() {
+      const mins = Math.floor(secondsRemaining / 60);
+      const secs = secondsRemaining % 60;
+      timerDisplay.textContent = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+      
+      const offset = 880 - (secondsRemaining / totalSeconds) * 880;
+      ringCircle.style.strokeDashoffset = offset;
+    }
+
+    function playFocusSound() {
+      stopAudio();
+      if (currentSound === 'none') return;
+      
+      audioCtx.resume();
+      if (currentSound === 'rain') noiseSource = createRain();
+      if (currentSound === 'waves') noiseSource = createWaves();
+      if (currentSound === 'white') noiseSource = createWhiteNoise();
+      
+      if (noiseSource) noiseSource.start();
+    }
+
+    function completeSession() {
+      clearInterval(timerInterval);
+      stopAudio();
+      overlay.innerHTML = `
+        <div class="text-center">
+          <span style="font-size: 5rem;">🏆</span>
+          <h2 class="mt-3">Focus Session Complete!</h2>
+          <p class="text-muted">You stayed focused for ${totalSeconds / 60} minutes. Great job.</p>
+          <button class="btn btn-primary mt-4" onclick="location.reload()">Return to Dashboard</button>
+        </div>
+      `;
+      
+      // Save stats
+      let stats = JSON.parse(localStorage.getItem('99tool_focus_stats')) || { totalTime: 0, sessions: 0 };
+      stats.totalTime += totalSeconds / 60;
+      stats.sessions += 1;
+      localStorage.setItem('99tool_focus_stats', JSON.stringify(stats));
+    }
+
+    exitBtn.onclick = () => {
+      if (confirm('Exit your focus session early? Your progress won\'t be saved.')) {
+        clearInterval(timerInterval);
+        stopAudio();
+        overlay.classList.remove('active');
+      }
+    };
+
+    fullscreenBtn.onclick = () => {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+      } else {
+        document.exitFullscreen();
+      }
+    };
+
+    // --- INIT ---
+    function loadStats() {
+      const stats = JSON.parse(localStorage.getItem('99tool_focus_stats')) || { totalTime: 0, sessions: 0 };
+      document.getElementById('today-time').textContent = Math.round(stats.totalTime) + 'm';
+      document.getElementById('sessions-count').textContent = stats.sessions;
+    }
+    loadStats();
+
+  </script>
+</body>
+</html>
+

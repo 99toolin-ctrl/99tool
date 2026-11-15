@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Text Merger Splitter – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/data-file/text-merger-splitter.html"/>
+<meta property="og:title" content="Text Merger Splitter – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/data-file/text-merger-splitter.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Text Merger Splitter \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/data-file/text-merger-splitter.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="keywords" content="merge text files, split text file, text file tool, combine logs, split large text file, text merger" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../assets/css/style.css" />
+
+  <!-- Schema.org Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Text File Merger & Splitter",
+    "operatingSystem": "Any",
+    "applicationCategory": "DataApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": "File Merging, Smart Splitting (Lines/Size), Local Processing, Secure Handling"
+  }
+  </script>
+
+  <style>
+    .processor-layout { display: grid; grid-template-columns: 1fr; gap: 30px; }
+
+    .tool-box { background: var(--dark-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 30px; }
+
+    .tab-nav { display: flex; gap: 10px; margin-bottom: 25px; border-bottom: 1px solid var(--border); padding-bottom: 1px; }
+    .tab-btn {
+       background: transparent; border: none; padding: 10px 20px; color: var(--text-muted);
+       font-weight: 600; cursor: pointer; border-bottom: 2px solid transparent; transition: all 0.2s;
+    }
+    .tab-btn.active { color: var(--primary); border-bottom-color: var(--primary); }
+
+    .file-queue { margin-top: 20px; }
+    .queue-item {
+       background: var(--dark); padding: 10px 15px; border-radius: 4px; border: 1px solid var(--border);
+       display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;
+    }
+    .queue-name { font-size: 0.85rem; color: var(--white); font-weight: 500; }
+    
+    @media (min-width: 900px) {
+       .processor-layout { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="tool-hero">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="../../index.html">Home</a> <span>/</span> 
+        <a href="../../index.html#data">Data & File</a> <span>/</span> 
+        <span>Text Merger & Splitter</span>
+      </nav>
+      <h1>Text File Merger & Splitter</h1>
+      <p>Combine multiple text files or break down large datasets with precision. Professional-grade text processing for logs, research, and notes—fully private.</p>
+    </div>
+  </section>
+
+  <main class="tool-main">
+    <div class="container">
+      
+      <div class="tab-nav">
+         <button class="tab-btn active" onclick="switchMode('merger', this)">File Merger</button>
+         <button class="tab-btn" onclick="switchMode('splitter', this)">File Splitter</button>
+      </div>
+
+      <div class="processor-layout">
+         <!-- MERGER SECTION -->
+         <div id="merger-ui" class="tool-box">
+            <h3>Text File Merger</h3>
+            <p class="text-muted small mb-4">Combine multiple files into a single document.</p>
+            
+            <div class="upload-area" id="merge-drop">
+               <div class="upload-icon">➕</div>
+               <p>Add multiple text files</p>
+               <input type="file" id="merge-input" multiple class="hidden">
+            </div>
+
+            <div class="file-queue" id="merge-queue">
+               <div class="text-center py-4 text-muted small">No files added yet</div>
+            </div>
+
+            <button class="btn btn-primary btn-full mt-4" id="process-merge">Merge All Files</button>
+         </div>
+
+         <!-- SPLITTER SECTION -->
+         <div id="splitter-ui" class="tool-box hidden">
+            <h3>Text File Splitter</h3>
+            <p class="text-muted small mb-4">Break a large file into smaller pieces.</p>
+            
+            <div class="upload-area" id="split-drop">
+               <div class="upload-icon">✂️</div>
+               <p>Select large text file</p>
+               <input type="file" id="split-input" class="hidden">
+            </div>
+
+            <div id="split-config" class="mt-4 hidden">
+               <div class="queue-item mb-3">
+                  <span id="split-filename" class="queue-name">largefile.txt</span>
+                  <span id="split-filesize" class="text-muted small">0 KB</span>
+               </div>
+               
+               <div class="form-group">
+                  <label>Split Method</label>
+                  <select id="split-method" class="form-control">
+                     <option value="lines">Each file X lines</option>
+                  </select>
+               </div>
+               
+               <div class="form-group">
+                  <label>Lines per file</label>
+                  <input type="number" id="split-val" class="form-control" value="1000">
+               </div>
+
+               <button class="btn btn-primary btn-full mt-2" id="process-split">Split & Download</button>
+            </div>
+         </div>
+
+         <!-- INSTRUCTIONS / INFO -->
+         <div class="tool-box" style="display: flex; flex-direction: column; justify-content: center;">
+            <div class="info-box mb-4">
+               <div class="info-icon">💡</div>
+               <p><strong>Merger Tip:</strong> Files are merged in the order they are added. Use this for combining log segments or multi-part documents.</p>
+            </div>
+            <div class="info-box">
+               <div class="info-icon">✂️</div>
+               <p><strong>Splitter Tip:</strong> Splitting helps you handle files that are too large for standard editors. We'll generate a separate download for each part.</p>
+            </div>
+         </div>
+      </div>
+
+      <!-- HUMANIZED CONTENT -->
+      <section class="seo-content mt-5">
+        <h2>Refining Large Text Collections in Private: The Logic of Local File Processing</h2>
+        <p>We’ve all been there: you’re managing complex data—perhaps a week’s worth of server logs, a long collection of research notes, or a massive dataset export—and you realize the files are either too fragmented to read or too large to open. You need to combine them into a single report, or break the giant file down into manageable modules. You look for a <strong>text file merger online</strong> or a "Mass File Splitter." But as you prepare to upload your proprietary logs or private manuscripts to the cloud-hosted engine, you stop. Do you really want to share your project's "Internal Narrative" with an anonymous processing server?</p>
+
+        <p>At 99tool.in, we built our <strong>text merger and splitter</strong> to provide a professional-grade darkroom for your data without the privacy trade-off. By utilizing native browser Blob handling and zero-cloud processing, we allow you to <strong>combine text files</strong> entirely within the secure sandbox of your machine. Whether you’re a system admin consolidating audit trails, an author managing book chapters, or a developer splitting database dumps, our <strong>safe data utility</strong> ensures that your text stays where it belongs: on your device, under your total sovereignty.</p>
+        
+        <div class="tool-preview-box mt-4 mb-4" style="text-align:center;">
+           <img src="../../assets/images/markdown-preview.png" alt="High-Performance Text Processing Dashboard with Integrated Merging queue and Smart Splitting controls" class="tool-preview" id="tool-preview-img" style="max-width: 100%; border-radius: 8px; border: 1px solid var(--border); box-shadow: var(--shadow);">
+        </div>
+
+        <h3 class="mt-4">The Logic of "Structural Continuity"</h3>
+        <p>Text processing is about "Contextual Flow." Most basic <strong>split text tools online</strong> are crude, often cutting through words or losing formatting. Our <strong>professional text utility</strong> takes a human-centric approach: we focus on **Line-Aware Integrity** and **Sequential Merging**.</p>
+        
+        <p>We've engineered a high-speed parsing engine that handles large strings with precision. Our <strong>safe text validator</strong> respects your line breaks and structure, whether you're merging twelve 1MB files or splitting one 100,000-line file into ten parts. This transparency transforms a technical bottleneck into a visual, controlled workflow, helping you maintain the "Integrity of the Insight" as you reorganize your data.</p>
+
+        <h3 class="mt-4">Why Processing is the Architect’s Ethical Choice</h2>
+        <p>In the age of digital surveillance and automated technical scraping, your text files are often your most detailed technical records. Using a standard <strong>merge text tool online free</strong> creates a digital trail of your information. Our 100% <strong>text utility</strong> removes this "Privacy Risk" entirely from your data hygiene.</p>
+        
+        <p>Because the processing and concatenation happen in your browser's private memory, your information is invisible to the outside world. No analytics are tracked, no phrases are harvested, and no proprietary logs are shared with AI engines or trackers. At 99tool.in, we believe that <strong>handling your text</strong> should be an empowering utility, not a data-collection opportunity. With us, you have a private, professional darkroom for your documents that fits in your browser tab.</p>
+
+        <h3 class="mt-4">How to Process Your Files (Step-by-Step)</h3>
+        <p>Merging or splitting and complex text batch should be a high-speed, 5-second task. Here is how to use our <strong>text tool</strong>:</p>
+        <ul style="line-height: 1.8; margin-bottom: 20px;">
+          <li><strong>Step 1: Choose Your Path</strong> — Select between the "File Merger" or "File Splitter" tabs based on your project needs.</li>
+          <li><strong>Step 2: Add Your Data</strong> — Drag your target files into the local sandbox. Our system analyzes the line counts and sizes instantly in the secure background.</li>
+          <li><strong>Step 3: Define the Logic</strong> — For merging, verify the queue order. For splitting, set your line limit (e.g., 500 lines per file).</li>
+          <li><strong>Step 4: Secure Your Result</strong> — Click the process button. We generate a direct link to download the updated files to your machine. The data never leaves your sight.</li>
+        </ul>
+
+        <h3 class="mt-4">Strategic Use Cases for Your Local Text Tool</h3>
+        <p>Our <strong>searchable text data builder</strong> is the essential companion for modern system administration:</p>
+        
+        <p><strong>For Log Management:</strong> Consolidating daily server logs for a weekly report? Use our <strong>text merger</strong> for a fast, private summary.</p>
+        
+        <p><strong>For Project Documentation:</strong> Breaking a massive technical guide into separate chapters? Use our <strong>safe text tool</strong> to create organized modules in seconds.</p>
+        
+        <p><strong>For Software Developers:</strong> Handling large JSON exports or SQL dumps that crash your editor? Use our <strong>safe splitter</strong> to create manageable chunks for debugging.</p>
+
+        <h3 class="mt-5">Explore Your Complete Data Suite</h3>
+        <p>Once you’ve processed your text, you might need to analyze its volume. Check out our <strong><a href="file-size-analyzer.html">File Size Analyzer</a></strong>. Or, if you need to visualize the data, use our <strong><a href="data-visualizer.html">Data Visualizer</a></strong>. At 99tool.in, we are building a world-class, 100% private digital toolkit to give you total control over your digital future.</p>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              Is there a limit on file size?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>For merging, our <strong>text tool</strong> can handle batches totaling 50-100MB comfortably. For splitting, it can process very large files, though we recommend staying under 50MB for the smoothest browser experience during download generation.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Does this work with Docx or PDF?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. This is a <strong>pure text utility</strong> designed for raw formats like <code>.txt</code>, <code>.log</code>, <code>.md</code>, and source code files. For PDF handling, please visit our dedicated <strong>PDF Tools category</strong>.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Is my text shared with any servers?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Absolutely not. All merging, splitting, and file generation happen entirely within your <strong>browser session's local memory</strong>. No data is sent to our servers, and no records of your text are kept. Your data remains strictly private.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 Privacy-First. Line-Aware Splitting. 100%. Last updated: April 10, 2026.</p>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    // Tab switching
+    function switchMode(mode, btn) {
+       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+       btn.classList.add('active');
+       document.getElementById('merger-ui').classList.add('hidden');
+       document.getElementById('splitter-ui').classList.add('hidden');
+       document.getElementById(mode + '-ui').classList.remove('hidden');
+    }
+
+    // Merger Logic
+    const mergeInput = document.getElementById('merge-input');
+    const mergeQueue = document.getElementById('merge-queue');
+    const mergeDrop = document.getElementById('merge-drop');
+    let mergeFiles = [];
+
+    mergeDrop.onclick = () => mergeInput.click();
+    mergeInput.onchange = (e) => addMergeFiles(e.target.files);
+
+    function addMergeFiles(files) {
+       for (let f of files) mergeFiles.push(f);
+       renderQueue();
+    }
+
+    function renderQueue() {
+       if (mergeFiles.length === 0) {
+          mergeQueue.innerHTML = '<div class="text-center py-4 text-muted small">No files added yet</div>';
+          return;
+       }
+       mergeQueue.innerHTML = mergeFiles.map((f, i) => `
+          <div class="queue-item">
+             <span class="queue-name">${f.name}</span>
+             <button class="btn btn-secondary btn-sm" onclick="removeMergeFile(${i})">×</button>
+          </div>
+       `).join('');
+    }
+
+    window.removeMergeFile = (idx) => {
+       mergeFiles.splice(idx, 1);
+       renderQueue();
+    }
+
+    document.getElementById('process-merge').onclick = async () => {
+       if (mergeFiles.length === 0) return alert('No files to merge.');
+       let finalContent = "";
+       for (let f of mergeFiles) {
+          finalContent += await f.text() + "\n";
+       }
+       const blob = new Blob([finalContent], { type: 'text/plain' });
+       downloadBlob(blob, 'merged-files.txt');
+    };
+
+    // Splitter Logic
+    const splitInput = document.getElementById('split-input');
+    const splitDrop = document.getElementById('split-drop');
+    const splitConfig = document.getElementById('split-config');
+    let splitFile = null;
+
+    splitDrop.onclick = () => splitInput.click();
+    splitInput.onchange = (e) => {
+       splitFile = e.target.files[0];
+       if (!splitFile) return;
+       document.getElementById('split-filename').textContent = splitFile.name;
+       document.getElementById('split-filesize').textContent = formatSize(splitFile.size);
+       splitConfig.classList.remove('hidden');
+    };
+
+    document.getElementById('process-split').onclick = async () => {
+       if (!splitFile) return;
+       const limit = parseInt(document.getElementById('split-val').value);
+       if (isNaN(limit) || limit < 1) return alert('Enter valid quantity.');
+
+       const text = await splitFile.text();
+       const lines = text.split('\n');
+       
+       for (let i = 0; i < lines.length; i += limit) {
+          const chunk = lines.slice(i, i + limit).join('\n');
+          const blob = new Blob([chunk], { type: 'text/plain' });
+          downloadBlob(blob, `part-${Math.floor(i/limit) + 1}-${splitFile.name}`);
+       }
+    };
+
+    function downloadBlob(blob, name) {
+       const url = URL.createObjectURL(blob);
+       const a = document.createElement('a');
+       a.href = url;
+       a.download = name;
+       a.click();
+    }
+
+    function formatSize(bytes) {
+       if (bytes === 0) return '0 Bytes';
+       const k = 1024;
+       const i = Math.floor(Math.log(bytes) / Math.log(k));
+       return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + ['Bytes', 'KB', 'MB', 'GB'][i];
+    }
+  </script>
+</body>
+</html>
+

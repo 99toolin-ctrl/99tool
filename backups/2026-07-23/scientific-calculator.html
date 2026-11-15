@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title>Scientific Calculator – 99tool.in</title>
+<meta name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/math/scientific-calculator.html"/>
+<meta property="og:title" content="Scientific Calculator – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/math/scientific-calculator.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Scientific Calculator \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/math/scientific-calculator.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    .math-workspace {
+      max-width: 900px;
+      margin: 2rem auto;
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 1.5rem;
+    }
+    @media (max-width: 850px) {
+       .math-workspace { grid-template-columns: 1fr; }
+    }
+    .calculator-frame {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+    .screen {
+      background: rgba(0,0,0,0.3);
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+      text-align: right;
+      min-height: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      border: 1px solid var(--border);
+    }
+    .prev-val { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 5px; }
+    .curr-val { font-size: 2.2rem; font-weight: 700; color: var(--primary); font-family: 'JetBrains Mono', monospace; word-break: break-all; }
+    
+    .key-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+    }
+    .key {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      padding: 1rem 0;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.2s;
+      color: var(--text);
+    }
+    .key:hover { background: rgba(255,255,255,0.1); border-color: var(--primary); }
+    .key.op { color: var(--primary); background: rgba(229, 57, 53, 0.05); }
+    .key.eq { grid-column: span 2; background: var(--gradient); color: white; border: none; }
+    .key.cl { color: #ff5252; }
+
+    .history-panel {
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 1.5rem;
+      max-height: 520px;
+      overflow-y: auto;
+    }
+    .history-title { font-weight: 700; margin-bottom: 1rem; color: var(--text-muted); text-transform: uppercase; font-size: 0.8rem; }
+    .history-item {
+       padding: 8px 0;
+       border-bottom: 1px solid var(--border);
+       font-size: 0.9rem;
+    }
+    .hist-calc { color: var(--text-muted); }
+    .hist-res { font-weight: 700; color: var(--primary); }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Infinite Scientific Calculator</h1>
+      <p>A professional-grade math engine for trigonometry, logarithms, and advanced computation.</p>
+    </div>
+
+    <div class="math-workspace">
+      <div class="calculator-frame">
+        <div class="screen">
+          <div class="prev-val" id="display-prev"></div>
+          <div class="curr-val" id="display-curr">0</div>
+        </div>
+        <div class="key-grid">
+          <!-- Row 1 -->
+          <button class="key op" onclick="appendFunc('sin(')">sin</button>
+          <button class="key op" onclick="appendFunc('cos(')">cos</button>
+          <button class="key op" onclick="appendFunc('tan(')">tan</button>
+          <button class="key cl" onclick="clearAll()">AC</button>
+          <button class="key cl" onclick="backspace()">DEL</button>
+          
+          <!-- Row 2 -->
+          <button class="key op" onclick="appendFunc('log(')">log</button>
+          <button class="key op" onclick="appendFunc('ln(')">ln</button>
+          <button class="key op" onclick="appendVal('(')">(</button>
+          <button class="key op" onclick="appendVal(')')">)</button>
+          <button class="key op" onclick="appendVal('/')">/</button>
+
+          <!-- Row 3 -->
+          <button class="key op" onclick="appendVal('^')">xʸ</button>
+          <button class="key" onclick="appendVal('7')">7</button>
+          <button class="key" onclick="appendVal('8')">8</button>
+          <button class="key" onclick="appendVal('9')">9</button>
+          <button class="key op" onclick="appendVal('*')">×</button>
+
+          <!-- Row 4 -->
+          <button class="key op" onclick="appendFunc('sqrt(')">√</button>
+          <button class="key" onclick="appendVal('4')">4</button>
+          <button class="key" onclick="appendVal('5')">5</button>
+          <button class="key" onclick="appendVal('6')">6</button>
+          <button class="key op" onclick="appendVal('-')">-</button>
+
+          <!-- Row 5 -->
+          <button class="key op" onclick="appendVal('PI')">π</button>
+          <button class="key" onclick="appendVal('1')">1</button>
+          <button class="key" onclick="appendVal('2')">2</button>
+          <button class="key" onclick="appendVal('3')">3</button>
+          <button class="key op" onclick="appendVal('+')">+</button>
+
+          <!-- Row 6 -->
+          <button class="key op" onclick="appendVal('E')">e</button>
+          <button class="key" onclick="appendVal('0')">0</button>
+          <button class="key" onclick="appendVal('.')">.</button>
+          <button class="key eq" onclick="solve()">=</button>
+        </div>
+      </div>
+
+      <div class="history-panel">
+        <div class="history-title">Computation History</div>
+        <div id="history-content"></div>
+      </div>
+    </div>
+
+    <!-- SEO CONTENT -->
+    <section class="seo-content mt-5 text-start">
+      <h2>Why use an Online Scientific Calculator?</h2>
+      <p>Scientific calculators are essential for complex mathematical tasks involving **trigonometry, calculus, and engineering logic**. Our <strong>advanced online calculator</strong> provides a high-fidelity environment for students and professionals to perform these tasks without physical hardware. Featuring <strong>keyboard support</strong> and a <strong>history panel</strong>, it optimizes productivity for extended research and study sessions.</p>
+
+      <h3 class="mt-4">Advanced Mathematical Features</h2>
+      <p>Beyond basic arithmetic, this tool supports logarithmic functions ($log_{10}$ and $ln$), exponential powers ($x^y$), and square roots. By providing a clean interface for <strong>trigonometry diagnostics</strong> (Sine, Cosine, Tangent), we ensure that your geometric and physics calculations are accurate down to the last decimal. A reliable <strong>scientific math auditor</strong> is the foundation of any precise academic project.</p>
+
+      <h3 class="mt-4">Privacy and Accuracy</h2>
+      <p>At 99tool.in, all mathematical computations are performed locally in your browser sandbox. We do not store your values or calculation history on our servers. This <strong>private scientific tool</strong> provides professional-grade accuracy while maintaining absolute data security. Whether you are solving for roots or graphing complex equations, our <strong>secure math calculator</strong> is designed for privacy-first performance.</p>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    let currentInput = "0";
+    let lastCalc = "";
+
+    const displayCurr = document.getElementById('display-curr');
+    const displayPrev = document.getElementById('display-prev');
+    const historyList = document.getElementById('history-content');
+
+    function updateDisplay() {
+      displayCurr.innerText = currentInput;
+      displayPrev.innerText = lastCalc;
+    }
+
+    function appendVal(v) {
+      if (currentInput === "0" && v !== ".") {
+        currentInput = v;
+      } else {
+        currentInput += v;
+      }
+      updateDisplay();
+    }
+
+    function appendFunc(f) {
+      if (currentInput === "0") currentInput = f;
+      else currentInput += f;
+      updateDisplay();
+    }
+
+    function clearAll() {
+      currentInput = "0";
+      lastCalc = "";
+      updateDisplay();
+    }
+
+    function backspace() {
+      if (currentInput.length > 1) {
+        currentInput = currentInput.slice(0, -1);
+      } else {
+        currentInput = "0";
+      }
+      updateDisplay();
+    }
+
+    function solve() {
+      try {
+        let expression = currentInput;
+        lastCalc = expression + " =";
+        
+        // Advanced Math Mapping
+        expression = expression.replace(/sin\(/g, 'Math.sin(');
+        expression = expression.replace(/cos\(/g, 'Math.cos(');
+        expression = expression.replace(/tan\(/g, 'Math.tan(');
+        expression = expression.replace(/ln\(/g, 'Math.log(');
+        expression = expression.replace(/log\(/g, 'Math.log10(');
+        expression = expression.replace(/sqrt\(/g, 'Math.sqrt(');
+        expression = expression.replace(/\^/g, '**');
+        expression = expression.replace(/PI/g, 'Math.PI');
+        expression = expression.replace(/E/g, 'Math.E');
+
+        const result = eval(expression);
+        const resStr = Number.isInteger(result) ? result : result.toFixed(8).replace(/\.?0+$/, "");
+        
+        addToHistory(currentInput, resStr);
+        currentInput = resStr;
+        updateDisplay();
+      } catch (e) {
+        displayCurr.innerText = "Error";
+        setTimeout(() => (displayCurr.innerText = currentInput), 1000);
+      }
+    }
+
+    function addToHistory(calc, res) {
+       const div = document.createElement('div');
+       div.className = 'history-item';
+       div.innerHTML = `<div class="hist-calc">${calc}</div><div class="hist-res">${res}</div>`;
+       historyList.prepend(div);
+    }
+
+    // Keyboard support
+    window.addEventListener('keydown', (e) => {
+      const k = e.key;
+      if (/[0-9]/.test(k)) appendVal(k);
+      else if (k === '.') appendVal('.');
+      else if (k === '+') appendVal('+');
+      else if (k === '-') appendVal('-');
+      else if (k === '*') appendVal('*');
+      else if (k === '/') appendVal('/');
+      else if (k === '(') appendVal('(');
+      else if (k === ')') appendVal(')');
+      else if (k === '^') appendVal('^');
+      else if (k === 'Enter') { e.preventDefault(); solve(); }
+      else if (k === 'Escape') clearAll();
+      else if (k === 'Backspace') backspace();
+    });
+  </script>
+</body>
+</html>

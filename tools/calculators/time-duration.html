@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- SEO START -->
+<title id="page-title">Time Duration – 99tool.in</title>
+<meta id="page-description" name="description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<link rel="canonical" href="https://99tool.in/tools/calculators/time-duration.html"/>
+<meta property="og:title" content="Time Duration – 99tool.in"/>
+<meta property="og:description" content="Free online tool from 99tool.in – fast, private, no signup required."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://99tool.in/tools/calculators/time-duration.html"/>
+<meta property="og:image" content="https://99tool.in/assets/images/preview.png"/>
+<script type="application/ld+json" id="schema-org-data">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Time Duration \u2013 99tool.in",
+  "description": "Free online tool from 99tool.in \u2013 fast, private, no signup required.",
+  "url": "https://99tool.in/tools/calculators/time-duration.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "99tool.in",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://99tool.in/favicon/favicon-32x32.png"
+    }
+  }
+}
+</script>
+<!-- SEO END -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8WF7LH2366"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8WF7LH2366');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    .math-workspace {
+      max-width: 650px;
+      margin: 2rem auto;
+      background: var(--dark-card);
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      border-radius: 20px;
+    }
+    .input-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem; }
+    label { display: block; margin-bottom: 0.5rem; color: var(--text-muted); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; }
+    input[type="time"] {
+      width: 100%;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 1rem;
+      border-radius: 12px;
+      font-size: 1.5rem;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    
+    .result-panel {
+       background: rgba(var(--primary-rgb), 0.1);
+       border: 1px solid var(--primary);
+       padding: 2rem;
+       border-radius: 16px;
+       text-align: center;
+       display: none;
+       margin-top: 2rem;
+    }
+    .res-val { font-size: 3.5rem; font-weight: 800; color: var(--primary); font-family: 'JetBrains Mono', monospace; line-height: 1; }
+    .res-lab { font-size: 1rem; color: var(--text-muted); margin-top: 5px; text-transform: uppercase; letter-spacing: 0.05em; }
+    
+    .secondary-info {
+       margin-top: 1.5rem;
+       display: flex;
+       justify-content: center;
+       gap: 20px;
+       color: var(--text-muted);
+       font-size: 0.9rem;
+    }
+  </style>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+  <link rel="manifest" href="../../favicon/site.webmanifest">
+
+<!-- i18n Framework -->
+<script src="/i18n/pluralization-rules.js"></script>
+<script src="/i18n/format-helpers.js"></script>
+<script src="/i18n/i18n.js"></script>
+<script src="/i18n/dom-translator.js"></script>
+
+
+<!-- Phase 7: Meta & Schema Translation Injector -->
+<script>
+(function() {
+  function updateMetaTags() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(updateMetaTags, 100);
+      return;
+    }
+    
+    const pathParts = window.location.pathname.split('/');
+    const toolPath = pathParts[pathParts.length - 1];
+    const toolId = toolPath.replace('.html', '').replace(/-/g, '_');
+    const lang = window.i18n.getLanguage();
+    
+    let pageTitle = window.i18n.translate(`tools.${toolId}.page_title`);
+    let metaDesc = window.i18n.translate(`tools.${toolId}.meta_description`);
+    if (pageTitle && pageTitle.startsWith('tools.')) pageTitle = null;
+    if (metaDesc && metaDesc.startsWith('tools.')) metaDesc = null;
+    const schemaName = window.i18n.translate(`tools.${toolId}.schema_org.name`) || pageTitle;
+    const schemaDesc = window.i18n.translate(`tools.${toolId}.schema_org.description`) || metaDesc;
+    
+    if (pageTitle && typeof pageTitle === 'string' && !pageTitle.startsWith('tools.')) {
+      document.title = pageTitle;
+      const titleEl = document.getElementById('page-title');
+      if (titleEl) titleEl.textContent = pageTitle;
+    }
+    
+    if (metaDesc) {
+      let metaEl = document.querySelector('meta[name="description"]');
+      if (metaEl) metaEl.setAttribute('content', metaDesc);
+    }
+    
+    ['og:title', 'og:description'].forEach(property => {
+      let ogEl = document.querySelector(`meta[property="${property}"]`);
+      if (ogEl) {
+        if (property === 'og:title' && pageTitle) ogEl.setAttribute('content', pageTitle);
+        if (property === 'og:description' && metaDesc) ogEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    ['twitter:title', 'twitter:description'].forEach(name => {
+      let twitterEl = document.querySelector(`meta[name="${name}"]`);
+      if (twitterEl) {
+        if (name === 'twitter:title' && pageTitle) twitterEl.setAttribute('content', pageTitle);
+        if (name === 'twitter:description' && metaDesc) twitterEl.setAttribute('content', metaDesc);
+      }
+    });
+    
+    if (schemaName || schemaDesc) {
+      const schemaEl = document.getElementById('schema-org-data') || document.querySelector('script[type="application/ld+json"]');
+      if (schemaEl) {
+        try {
+          const schema = JSON.parse(schemaEl.textContent);
+          if (schemaName) schema.name = schemaName;
+          if (schemaDesc) schema.description = schemaDesc;
+          schemaEl.textContent = JSON.stringify(schema, null, 2);
+        } catch (e) {}
+      }
+    }
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateMetaTags);
+  } else {
+    updateMetaTags();
+  }
+})();
+</script>
+
+<!-- hreflang tags for multilingual SEO (Phase 8) -->
+<link rel="alternate" hreflang="en" href="https://99tool.in/en/tools/calculators/time-duration.html">
+<link rel="alternate" hreflang="es" href="https://99tool.in/es/tools/calculators/time-duration.html">
+<link rel="alternate" hreflang="fr" href="https://99tool.in/fr/tools/calculators/time-duration.html">
+<link rel="alternate" hreflang="de" href="https://99tool.in/de/tools/calculators/time-duration.html">
+<link rel="alternate" hreflang="it" href="https://99tool.in/it/tools/calculators/time-duration.html">
+<link rel="alternate" hreflang="pt" href="https://99tool.in/pt/tools/calculators/time-duration.html">
+<link rel="alternate" hreflang="ru" href="https://99tool.in/ru/tools/calculators/time-duration.html">
+<link rel="alternate" hreflang="ja" href="https://99tool.in/ja/tools/calculators/time-duration.html">
+<link rel="alternate" hreflang="zh" href="https://99tool.in/zh/tools/calculators/time-duration.html">
+<link rel="alternate" hreflang="ko" href="https://99tool.in/ko/tools/calculators/time-duration.html">
+<link rel="alternate" hreflang="ar" href="https://99tool.in/ar/tools/calculators/time-duration.html">
+<link rel="alternate" hreflang="hi" href="https://99tool.in/hi/tools/calculators/time-duration.html">
+<link rel="alternate" hreflang="tr" href="https://99tool.in/tr/tools/calculators/time-duration.html">
+<link rel="alternate" hreflang="nl" href="https://99tool.in/nl/tools/calculators/time-duration.html">
+<link rel="alternate" hreflang="pl" href="https://99tool.in/pl/tools/calculators/time-duration.html">
+<link rel="alternate" hreflang="sv" href="https://99tool.in/sv/tools/calculators/time-duration.html">
+<link rel="alternate" hreflang="vi" href="https://99tool.in/vi/tools/calculators/time-duration.html">
+<link rel="alternate" hreflang="th" href="https://99tool.in/th/tools/calculators/time-duration.html">
+<link rel="alternate" hreflang="id" href="https://99tool.in/id/tools/calculators/time-duration.html">
+<link rel="alternate" hreflang="fa" href="https://99tool.in/fa/tools/calculators/time-duration.html">
+<link rel="alternate" hreflang="uk" href="https://99tool.in/uk/tools/calculators/time-duration.html">
+<link rel="alternate" hreflang="x-default" href="https://99tool.in/en/tools/calculators/time-duration.html">
+
+<!-- Phase 8: Canonical & Language Declaration Injector -->
+<script>
+(function() {
+  function updateCanonicalAndLang() {
+    if (!window.i18n || !window.i18n.getLanguage) return;
+    const lang = window.i18n.getLanguage() || 'en';
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ['ar', 'fa'].includes(lang) ? 'rtl' : 'ltr';
+    
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    const cleanPath = window.location.pathname.replace(/^\/(en|es|fr|de|it|pt|ru|ja|zh|ko|ar|hi|tr|nl|pl|sv|vi|th|id|fa|uk)\//, '/');
+    canonical.setAttribute('href', `https://99tool.in/${lang}${cleanPath}`);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateCanonicalAndLang);
+  } else {
+    updateCanonicalAndLang();
+  }
+})();
+</script>
+
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="container py-5">
+    <div class="tool-header text-center">
+      <h1>Infinite Time Duration Solver</h1>
+      <p>Analyze clock intervals with professional-grade precision. Perfect for timesheet verification and event planning.</p>
+    </div>
+
+    <div class="math-workspace">
+      <div class="input-grid">
+         <div>
+            <label>Start Time</label>
+            <input type="time" id="start-time" value="09:00" onchange="calc()">
+         </div>
+         <div>
+            <label>End Time</label>
+            <input type="time" id="end-time" value="17:00" onchange="calc()">
+         </div>
+      </div>
+
+      <div class="result-panel" id="res-panel">
+         <div class="res-lab">Total Duration</div>
+         <div class="res-val" id="res-main">0h 0m</div>
+         <div class="secondary-info">
+            <span id="res-total-m">0 Minutes</span>
+            <span id="res-total-s">0 Seconds</span>
+         </div>
+      </div>
+
+      <!-- CONTENT SECTION -->
+      <section class="seo-content mt-5 text-start">
+        <h2 data-i18n="tools.time_duration.what_is_title">What is the Infinite Time Duration Solver?</h2>
+        <p>The Infinite Time Duration Solver is a clock-arithmetic tool that computes the exact time elapsed between two selected times. The utility handles calculations in standard clock format and converts the time gap into total elapsed minutes and total seconds. This provides sub-minute level detail for logs and billing sheets.</p>
+        <p>A common issue with manual time calculations is handling overnight shifts where the end time crosses midnight. This tool automatically detects when the end time occurs on the following day and adjusts the math to ensure accuracy. All operations execute locally in your browser sandbox, keeping your personal schedules and work shifts completely confidential.</p>
+
+        <h2 class="mt-4" data-i18n="tools.time_duration.how_to_use_title">How to Use the Infinite Time Duration Solver</h2>
+        <ol>
+          <li><strong>Define the Start Time:</strong> Use the "Start Time" input field to select your starting hour and minutes.</li>
+          <li><strong>Define the End Time:</strong> Select your target completion hour and minutes in the "End Time" input field.</li>
+          <li><strong>Review the Primary Duration:</strong> Look at the results panel, which updates automatically upon any time input. The main value shows the total time formatted as hours and minutes (e.g., 8h 30m).</li>
+          <li><strong>Examine Cumulative Sub-Units:</strong> Check the secondary metrics below the main total to view the exact duration expressed as cumulative Total Minutes and Total Seconds.</li>
+        </ol>
+
+        <h2 class="mt-4" data-i18n="tools.time_duration.key_features_title">Key Features</h2>
+        <ul>
+          <li><strong>Overnight Shift Calculator:</strong> Automatically detects when the end time crosses midnight and adds 24 hours to keep the duration positive and accurate.</li>
+          <li><strong>Multi-Unit Outputs:</strong> Displays elapsed time in hours-minutes format, total minutes, and total seconds.</li>
+          <li><strong>Live Input Auditing:</strong> Recalculates durations instantly as you adjust hours or minutes without requiring manual submits.</li>
+          <li><strong>Responsive Input Integration:</strong> Utilizes your browser's native time selectors for clean mobile and desktop compatibility.</li>
+          <li><strong>100% Client-Side Privacy:</strong> Executes all clock operations in local memory, keeping your shift sheets and schedules secure.</li>
+        </ul>
+
+        <h2 class="mt-4" data-i18n="tools.time_duration.common_use_cases_title">Common Use Cases</h2>
+        <ul>
+          <li><strong>Work Shift and Timesheet Tracking:</strong> Calculate daily labor hours or freelancing durations to prepare billing summaries.</li>
+          <li><strong>Exercise and Sports Timing:</strong> Measure training periods, running sessions, or athletic drill durations.</li>
+          <li><strong>Travel and Commute Planning:</strong> Estimate travel times between departure and arrival clock positions.</li>
+          <li><strong>Industrial Process Timing:</strong> Track machine operational windows or manufacturing stages to audit efficiency.</li>
+        </ul>
+      </section>
+
+      <!-- FAQ SECTION -->
+      <section class="faq-section">
+        <h2 data-i18n="tools.time_duration.faq_title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question">
+              How does the tool handle shifts that cross midnight?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>If the selected end time is chronologically earlier than the start time (e.g., Start at 22:00 and End at 06:00), the underlying script automatically adds 24 hours to the end time to calculate the correct overnight duration (8 hours).</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Is my shift schedule or timesheet details uploaded to a server?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. 99tool.in runs entirely client-side. All time inputs and duration results are processed locally in your browser's RAM and are never uploaded or shared.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I calculate durations over multiple days?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>This widget is designed for single-day or overnight shifts up to 24 hours. For calculations spanning multiple days or weeks, please use our Date Difference Solver.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Does this tool support AM/PM format?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>The time input fields use your browser's native time widget. If your operating system is configured for a 12-hour clock, the inputs will show AM/PM. If configured for a 24-hour clock, it will display 24-hour values. The calculations function correctly in both formats.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Why does the tool calculate values on startup?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>The solver runs an initial calculation on load using the default times (9:00 AM to 5:00 PM) to show how the results are displayed.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="trust-signal">
+        <p>🔒 Privacy & Data Note: All duration calculations occur inside your browser. Your start times, end times, and shift schedules are never tracked or saved.</p>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    function calc() {
+       const sStr = document.getElementById('start-time').value;
+       const eStr = document.getElementById('end-time').value;
+       if (!sStr || !eStr) return;
+
+       const sParts = sStr.split(':').map(Number);
+       const eParts = eStr.split(':').map(Number);
+
+       let sSec = (sParts[0] * 3600) + (sParts[1] * 60);
+       let eSec = (eParts[0] * 3600) + (eParts[1] * 60);
+
+       // Overnight logic
+       if (eSec < sSec) {
+          eSec += 24 * 3600;
+       }
+
+       const diffSec = eSec - sSec;
+       const h = Math.floor(diffSec / 3600);
+       const m = Math.floor((diffSec % 3600) / 60);
+
+       document.getElementById('res-main').innerText = `${h}h ${m}m`;
+       document.getElementById('res-total-m').innerText = ((window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(diffSec / 60, 0) : (diffSec / 60).toLocaleString()) + ' Minutes';
+       document.getElementById('res-total-s').innerText = ((window.i18n && window.i18n.formatNumber) ? window.i18n.formatNumber(diffSec, 0) : (diffSec).toLocaleString()) + ' Seconds';
+       
+       document.getElementById('res-panel').style.display = 'block';
+    }
+
+    // Run once
+    window.onload = calc;
+  </script>
+
+<!-- Universal i18n Translation Injector -->
+<script>
+(function() {
+  function initializeTranslations() {
+    if (!window.i18n || !window.i18n.translations) {
+      setTimeout(initializeTranslations, 100);
+      return;
+    }
+    translateDataElements();
+    document.documentElement.lang = window.i18n.getLanguage();
+    document.documentElement.dir = ['ar', 'fa'].includes(window.i18n.getLanguage()) ? 'rtl' : 'ltr';
+  }
+  
+  function translateDataElements() {
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      const translated = getTranslationValue(key);
+      if (translated) {
+        if (element.hasAttribute('data-i18n-html')) {
+          element.innerHTML = translated;
+        } else {
+          element.textContent = translated;
+        }
+      }
+    });
+  }
+  
+  function getTranslationValue(key) {
+    let value = window.i18n.translations;
+    const parts = key.split('.');
+    for (let part of parts) {
+      if (part.includes('[')) {
+        const matches = part.match(/^(\w+)\[(\d+)\]$/);
+        if (matches) {
+          const fieldName = matches[1];
+          const index = parseInt(matches[2]);
+          value = value ? value[fieldName] : null;
+          if (Array.isArray(value)) {
+            value = value[index];
+          }
+        }
+      } else {
+        if (value && typeof value === 'object' && part in value) {
+          value = value[part];
+        } else {
+          return null;
+        }
+      }
+    }
+    return (typeof value === 'string') ? value : null;
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeTranslations);
+  } else {
+    initializeTranslations();
+  }
+  document.addEventListener('i18n:ready', initializeTranslations);
+})();
+</script>
+
+</body>
+</html>

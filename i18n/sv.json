@@ -1,0 +1,609 @@
+{
+  "common": {
+    "privacy_note": "🔒 Sekretess- och datameddelande: All bearbetning sker lokalt i din webbläsare. Dina data lämnar aldrig din enhet och skickas inte till någon server.",
+    "no_signup_required": "Ingen registrering, installation eller betalning krävs.",
+    "offline_ready": "Fungerar helt offline när sidan väl har laddats."
+  },
+  "tools": {
+    "age_calculator": {
+      "page_title": "Åldersräknare – 99tool.in",
+      "meta_description": "Gratis onlineverktyg från 99tool.in: beräkna din exakta ålder i år, månader och dagar. Snabbt och säkert.",
+      "what_is_title": "Vad är Den Oändliga Åldersräknaren?",
+      "what_is_content": "Den Oändliga Åldersräknaren är ett kalenderverktyg på klientsidan utformat för att beräkna din exakta ålder från ditt födelsedatum till nuvarande stund. Istället för att ge en enkel uppskattning specificerar verktyget din ålder i år, månader och dagar. Detta ger hög precision för dokument, schemaläggning eller utvecklingsuppföljning.\n\nDessutom utför räknaren delberäkningar för att visa din totala livslängd i andra enheter, såsom totala månader, veckor, dagar och timmar du har levt, tillsammans med en nedräkning till din nästa födelsedag. All bearbetning sker lokalt på din enhet, vilket garanterar att ditt födelsedatum aldrig skickas till en server.",
+      "how_to_use_title": "Hur man använder Den Oändliga Åldersräknaren",
+      "how_to_use_steps": [
+        "<strong>Välj ditt födelsedatum:</strong> Klicka på datumväljarfältet under \"Välj födelsedatum\" för att välja din födelsedag, månad och år i kalendern.",
+        "<strong>Granska din huvudålder:</strong> När datumet har valts visas huvudmåtten automatiskt i År, Månader och Dagar.",
+        "<strong>Kontrollera födelsedagsnedräkningen:</strong> Titta på den markerade banderollen direkt under din ålder. Den visar det exakta antalet dagar som återstår till din nästa födelsedag.",
+        "<strong>Granska detaljerad livsstatistik:</strong> Scrolla ner till statistiklistan för att se din totala livslängd uttryckt i Totala månader, Totala veckor, Totala dagar och Totala timmar."
+      ],
+      "key_features_title": "Huvudfunktioner",
+      "key_features": [
+        "<strong>Detaljerad åldersuppdelning:</strong> Visar din exakta ålder uppdelad i år, månader och dagar, med korrekt justering för skottår och olika månadslängder.",
+        "<strong>Nedräkning till nästa födelsedag:</strong> En dynamisk dagräknare visar exakt hur nära du är din nästa födelsedagsmilstolpe.",
+        "<strong>Livsstatistik i flera enheter:</strong> Omvandlar din ålder till ackumulerade månader, veckor, dagar och timmar.",
+        "<strong>Automatisk lokal beräkning:</strong> Beräkningar körs omedelbart vid datumval utan att sidan behöver laddas om.",
+        "<strong>Bearbetning på klientsidan:</strong> Alla beräkningar körs direkt i din webbläsares RAM-minne för att skydda din integritet."
+      ],
+      "common_use_cases_title": "Vanliga användningsområden",
+      "common_use_cases": [
+        "<strong>Formulär- och ansökningsverifiering:</strong> Bekräfta exakt ålder i år och månader för försäkringsbrev, juridiska handlingar eller visumansökningar.",
+        "<strong>Barns utvecklingsmilstolpar:</strong> Följ spädbarns och barns tillväxtstadier i exakta månader och dagar.",
+        "<strong>Evenemang- och födelsedagsplanering:</strong> Spåra återstående dagar till jubileer för att hantera bokningar och inbjudningar i tid.",
+        "<strong>Nyfikenhet och nöje:</strong> Ta reda på hur många dagar eller timmar du har levt totalt."
+      ],
+      "faq_title": "Vanliga frågor",
+      "faq": [
+        {
+          "question": "Hur hanterar detta verktyg skottår?",
+          "answer": "Räknaren använder JavaScripts inbyggda Date-objekt, som automatiskt och exakt tar hänsyn till skottår (inklusive 29 februari) och olika månadslängder (28, 30 eller 31 dagar)."
+        },
+        {
+          "question": "Spars eller laddas mitt födelsedatum upp av 99tool.in?",
+          "answer": "Nej. 99tool.in fungerar helt via kod på klientsidan. Ditt födelsedatum bearbetas lokalt i din webbläsare och skickas aldrig till någon server eller databas."
+        },
+        {
+          "question": "Kan jag beräkna ålder i förhållande till ett datum i det förflutna eller framtiden?",
+          "answer": "Detta verktyg beräknar din ålder i förhållande till dagens datum. Om du behöver hitta skillnaden mellan två valfria datum, använd vår Datumskillnadsräknare."
+        },
+        {
+          "question": "Varför visar verktyget en varning om jag väljer ett framtida datum?",
+          "answer": "Åldersberäkningar representerar den tid som förflutit sedan födseln. Att välja ett framtida datum skulle resultera i en negativ ålder, så verktyget blockerar denna inmatning."
+        },
+        {
+          "question": "Inkluderar beräkningen av totala timmar sommartidsändringar?",
+          "answer": "Statistiken över totala timmar beräknas genom att multiplicera totala förflutna dagar med 24 timmar. Det är en standardiserad matematikisk omvandling."
+        }
+      ],
+      "privacy_note": "🔒 Sekretess- och datameddelande: Ditt födelsedatum bearbetas lokalt i din webbläsare. Inga personuppgifter samlas in, spåras eller skickas till våra servrar.",
+      "schema_org": {
+        "name": "Åldersräknare – 99tool.in",
+        "description": "Gratis onlineverktyg från 99tool.in: snabbt, säkert, ingen registrering krävs."
+      }
+    },
+    "audio_recorder": {
+      "page_title": "Ljudinspelare – 99tool.in",
+      "meta_description": "Spela in och redigera ljud direkt i din webbläsare. Gratis, privat verktyg utan registrering från 99tool.in.",
+      "what_is_title": "Vad är Ljudinspelaren & Redigeraren?",
+      "what_is_content": "Med detta webbaserade ljudinspelnings- och redigeringsverktyg kan du spela in röstanteckningar, ljud och tal i hög kvalitet direkt från din webbläsare. Utformat med absolut integritet i åtanke förvandlar det din enhets webbläsare till en säker inspelningsstudio. Inget konto eller registrering krävs.\n\nGenom att använda inbyggda webbläsar-API:er bearbetar verktyget all ljuddata lokalt. Det innebär att oavsett om du spelar in ett röstklipp eller beskär en anteckning, stannar din fil kvar på din lokala enhet. Ljudströmmen skickas aldrig till fjärrservrar."
+    },
+    "audio_recorder": {
+      "page_title": "Ljudinspelare – 99tool.in",
+      "meta_description": "Spela in och redigera ljud direkt i din webbläsare. Gratis, privat verktyg utan registrering från 99tool.in.",
+      "what_is_title": "Vad är Ljudinspelaren & Redigeraren?",
+      "what_is_content": "Med detta webbaserade ljudinspelnings- och redigeringsverktyg kan du spela in röstanteckningar, ljud och tal i hög kvalitet direkt från din webbläsare. Utformat med absolut integritet i åtanke förvandlar det din enhets webbläsare till en säker inspelningsstudio. Inget konto eller registrering krävs.\n\nGenom att använda inbyggda webbläsar-API:er bearbetar verktyget all ljuddata lokalt. Det innebär att oavsett om du spelar in ett röstklipp eller beskär en anteckning, stannar din fil kvar på din lokala enhet. Ljudströmmen skickas aldrig till fjärrservrar.",
+      "how_to_use_title": "Hur man använder Ljudinspelaren & Redigeraren",
+      "how_to_use_steps": [
+        "<strong>Välj exportformat:</strong> Välj mellan WebM (idealiskt för mindre filer och snabb bearbetning) eller WAV (perfekt för förlustfritt ljud i hög kvalitet) i rullgardinsmenyn.",
+        "<strong>Initialisera mikrofonen:</strong> Klicka på knappen \"Initialisera mikrofon\". Din webbläsare kommer att be om tillåtelse att använda mikrofonen.",
+        "<strong>Starta inspelningen:</strong> Klicka på den röda runda knappen för att börja spela in ljud. Timern startar och en vågform visas i realtid.",
+        "<strong>Stoppa sessionen:</strong> Klicka på den fyrkantiga stoppknappen för att slutföra inspelningen. Verktyget bearbetar automatiskt ljudet och lägger till det i din lista.",
+        "<strong>Lyssna och spara:</strong> Klicka på knappen \"SPELA\" för att lyssna på ditt spår, eller knappen \"SPARA\" för att ladda ner det direkt till din enhet."
+      ],
+      "key_features_title": "Huvudfunktioner",
+      "key_features": [
+        "<strong>Förlustfri och komprimerad utmatning:</strong> Exportera dina ljudfiler i antingen rått WAV-format eller optimerat WebM-format.",
+        "<strong>Visualisering av vågform i realtid:</strong> Ett oscilloskop ger omedelbar visuell feedback om ingångsnivåer och mikrofonaktivitet.",
+        "<strong>Säker RAM-lagring:</strong> Inspelningar sparas tillfälligt i systemminnet (Blob-URL:er) istället för serverlagring.",
+        "<strong>Historik över flera sessioner:</strong> Gör flera inspelningar under en session och lyssna på eller ladda ner dem individuellt vid behov.",
+        "<strong>Responsiv inspelningslayout:</strong> Ett mobilanpassat gränssnitt gör det enkelt att spela in anteckningar på mobiler, surfplattor eller datorer."
+      ],
+      "common_use_cases_title": "Vanliga användningsområden",
+      "common_use_cases": [
+        "<strong>Innehållsskapare och poddare:</strong> Spela in speakerröster, intron eller utkast utan att installera tung programvara.",
+        "<strong>Studenter och forskare:</strong> Spela in föreläsningsanteckningar, studiememon eller intervjuer i en säker miljö.",
+        "<strong>Musiker och ljuddesigners:</strong> Spela in snabba musikidéer, sångövningar eller ljudeffekter direkt.",
+        "<strong>Privata diktamen:</strong> Diktera konfidentiella anteckningar eller dagböcker utan rädsla för dataläckor i molnet."
+      ],
+      "faq_title": "Vanliga frågor",
+      "faq": [
+        {
+          "question": "Sparas min ljudinspelning på era servrar?",
+          "answer": "Nej. 99tool.in bearbetar all ljuddata helt i din lokala webbläsarfliks minne (RAM) som en Blob. Dina inspelningar når aldrig våra servrar och raderas när du stänger fliken."
+        },
+        {
+          "question": "Varför måste jag ge mikrofonbehörighet?",
+          "answer": "Din webbläsare behöver uttryckligt tillstånd för att komma åt din enhets ljudingång. Denna behörighet hanteras lokalt och används endast för inspelning."
+        },
+        {
+          "question": "Kan jag använda detta verktyg offline?",
+          "answer": "Ja. Eftersom gränssnittet helt beror på inbyggda webb-APIer och lokal bearbetning kan du spela in och ladda ner ljud utan internetanslutning när sidan laddats."
+        },
+        {
+          "question": "Vad är skillnaden mellan WebM och WAV?",
+          "answer": "WAV-filer är okomprimerade och förlustfria, vilket ger högsta ljudkvalitet men större filstorlek. WebM-filer är komprimerade och webboptimerade."
+        },
+        {
+          "question": "Finns det en tidsgräns för inspelning?",
+          "answer": "Det finns ingen godtycklig tidsgräns. Inspelningstiden begränsas endast av det tillgängliga systemminnet (RAM) på din enhet."
+        }
+      ],
+      "privacy_note": "🔒 Sekretess- och datameddelande: All ljudinspelning och bearbetning sker i din webbläsare. Inga filer laddas upp till våra servrar.",
+      "schema_org": {
+        "name": "Ljudinspelare & Redigerare",
+        "description": "Högkvalitativ ljudinspelning, vågforms visualisering i realtid, ljudbeskärning, uppspelningskontroll, säker lokal bearbetning."
+      }
+    },
+    "bmi_calculator": {
+      "page_title": "BMI-räknare – 99tool.in",
+      "meta_description": "Beräkna ditt Body Mass Index (BMI) exakt. Gratis, säkert och snabbt hälsoverktyg från 99tool.in.",
+      "what_is_title": "Vad är Den Oändliga BMI-räknaren?",
+      "what_is_content": "Den Oändliga BMI-räknaren är ett hälsoverktyg på klientsidan utformat för att beräkna Body Mass Index (BMI) med hjälp av längd- och viktvärden. Genom att ange metriska parametrar kan användare bestämma sin kroppsviktskategori och kontrollera standardindikatorer.\n\nDenna räknare bearbetar alla beräkningar, kategorimatchningar och visarkontroller lokalt i din webbläsares minne. Inga längd-, vikt- eller beräknade BMI-värden sparas eller laddas upp."
+    },
+    "bmi_calculator": {
+      "page_title": "BMI-räknare – 99tool.in",
+      "meta_description": "Beräkna ditt Body Mass Index (BMI) exakt. Gratis, säkert och snabbt hälsoverktyg från 99tool.in.",
+      "what_is_title": "Vad är Den Oändliga BMI-räknaren?",
+      "what_is_content": "Den Oändliga BMI-räknaren är ett hälsoverktyg på klientsidan utformat för att beräkna Body Mass Index (BMI) med hjälp av längd- och viktvärden. Genom att ange metriska parametrar kan användare bestämma sin kroppsviktskategori och kontrollera standardindikatorer.\n\nDenna räknare bearbetar alla beräkningar, kategorimatchningar och visarkontroller lokalt i din webbläsares minne. Inga längd-, vikt- eller beräknade BMI-värden sparas eller laddas upp.",
+      "how_to_use_title": "Hur man använder Den Oändliga BMI-räknaren",
+      "how_to_use_steps": [
+        "<strong>Ange din vikt:</strong> Fyll i din kroppsvikt i kilogram (kg) i viktfältet.",
+        "<strong>Ange din längd:</strong> Fyll i din längd i centimeter (cm) i längdfältet.",
+        "<strong>Klicka på Beräkna:</strong> Tryck på knappen \"Beräkna BMI\" för att köra den lokala beräkningen.",
+        "<strong>Granska ditt resultat:</strong> Kontrollera resultatpanelen för att se ditt numeriska BMI-värde, viktkategori och visarens position."
+      ],
+      "key_features_title": "Huvudfunktioner",
+      "key_features": [
+        "<strong>Stöd för metriska enheter:</strong> Ange standardvärden för vikt (kg) och längd (cm) direkt.",
+        "<strong>Visuell indikator:</strong> Flyttar en visare dynamiskt över en färgad stapel för att visa din viktklassificering.",
+        "<strong>Standard BMI-intervall:</strong> Utvärderar inmatningar baserat på WHO-referenser (Undervikt, Normalvikt, Övervikt, Fetma).",
+        "<strong>Omedelbar resultatpanel:</strong> Visar numeriska poäng och kategorinamn tydligt på ett markerat kort.",
+        "<strong>100% Klientsidesmotor:</strong> Utför alla matematiska beräkningar lokalt i webbläsaren för att skydda dina hälsodata."
+      ],
+      "common_use_cases_title": "Vanliga användningsområden",
+      "common_use_cases": [
+        "<strong>Viktkontrolluppföljning:</strong> Övervaka kroppsmassatrender regelbundet under viktminsknings- eller träningsprogram.",
+        "<strong>Hälso- och konditionskontroller:</strong> Kontrollera snabbt din allmänna kroppsmassakategori för medicinska formulär eller försäkringar.",
+        "<strong>Livsstilsmålsättning:</strong> Upprätta ett utgångs-BMI för att sätta realistiska fysiska hälsomål.",
+        "<strong>Skol- och utbildningsaktiviteter:</strong> Lär elever om mänskliga kroppsmått, biologiska konstanter och BMI-formler."
+      ],
+      "faq_title": "Vanliga frågor",
+      "faq": [
+        {
+          "question": "Vilka är standardintervallen för BMI?",
+          "answer": "De officiella WHO-klassificeringarna är: Undervikt (mindre än 18,5), Normalvikt (18,5 till 24,9), Övervikt (25 till 29,9) och Fetma (30 eller högre)."
+        },
+        {
+          "question": "Tar denna räknare hänsyn till muskelmassa eller bendensitet?",
+          "answer": "Nej. BMI är ett allmänt bedömningsindex som endast använder längd och vikt. Det skiljer inte på muskler, fett eller benmassa och kan visa högre värden för muskulösa idrottare."
+        },
+        {
+          "question": "Delas eller laddas mina hälsodata upp?",
+          "answer": "Nej. Alla beräkningar utförs på din enhet via lokal JavaScript. 99tool.in sparar inte och samlar inte in dina kroppsmått."
+        },
+        {
+          "question": "Finns det ålders- eller könsjusteringar i denna beräkning?",
+          "answer": "Detta verktyg beräknar standard-BMI-indexet för vuxna. För barn, ungdomar och gravida använder läkare specialiserade percentildiagram."
+        }
+      ],
+      "privacy_note": "🔒 Sekretess- och datameddelande: Längd-, vikt- och BMI-beräkningar bearbetas lokalt i din webbläsare. Inga personliga hälsodata laddas upp.\nAnsvarsfriskrivning: Detta verktyg är endast avsett för informationssyfte och ersätter inte professionell medicinsk rådgivning.",
+      "schema_org": {
+        "name": "BMI-räknare – 99tool.in",
+        "description": "Gratis onlineverktyg från 99tool.in: snabbt, säkert, ingen registrering krävs."
+      }
+    },
+    "csv_editor": {
+      "page_title": "CSV-redigerare – 99tool.in",
+      "meta_description": "Öppna, redigera och exportera CSV-filer i din webbläsare. Säkert och gratis dataverktyg från 99tool.in.",
+      "what_is_title": "Vad är CSV-visaren & Redigeraren?",
+      "what_is_content": "CSV-visaren & Redigeraren är ett lättsamt webbaserat kalkylbladsverktyg utformat för att öppna, granska och ändra kommaseparerade värdefiler (CSV). Istället för att vänta på att tung kontorsprogramvara ska starta kan du dra och släppa din datamängd direkt i webbläsarfliken.\n\nDetta verktyg gör det möjligt att redigera cellvärden, sortera kolumner, söka efter poster och exportera uppdaterade filer. Eftersom all filanalys och tabellvisning sker lokalt i RAM-minnet exponeras dina känsliga uppgifter aldrig för externa servrar."
+    },
+    "csv_editor": {
+      "page_title": "CSV-redigerare – 99tool.in",
+      "meta_description": "Öppna, redigera och exportera CSV-filer i din webbläsare. Säkert och gratis dataverktyg från 99tool.in.",
+      "what_is_title": "Vad är CSV-visaren & Redigeraren?",
+      "what_is_content": "CSV-visaren & Redigeraren är ett lättsamt webbaserat kalkylbladsverktyg utformat för att öppna, granska och ändra kommaseparerade värdefiler (CSV). Istället för att vänta på att tung kontorsprogramvara ska starta kan du dra och släppa din datamängd direkt i webbläsarfliken.\n\nDetta verktyg gör det möjligt att redigera cellvärden, sortera kolumner, söka efter poster och exportera uppdaterade filer. Eftersom all filanalys och tabellvisning sker lokalt i RAM-minnet exponeras dina känsliga uppgifter aldrig för externa servrar.",
+      "how_to_use_title": "Hur man använder CSV-visaren & Redigeraren",
+      "how_to_use_steps": [
+        "<strong>Importera din datamängd:</strong> Dra och släpp din CSV-fil direkt i släppområdet, eller klicka på \"Bläddra bland filer\" för att välja en.",
+        "<strong>Redigera cellvärden:</strong> Klicka direkt på valfri tabellcell för att ändra innehållet. Typa dina ändringar och klicka utanför cellen för att spara lokalt.",
+        "<strong>Filtrera och sök:</strong> Använd sökrutan ovanför tabellen för att söka efter specifik information i realtid.",
+        "<strong>Sortera efter kolumner:</strong> Klicka på kolumnrubrikerna för att sortera tabellrader alfabetiskt eller numeriskt i stigande eller fallande ordning.",
+        "<strong>Exportera ändringar:</strong> Klicka på \"Exportera CSV\" för att ladda ner det uppdaterate kalkylbladet till din dator."
+      ],
+      "key_features_title": "Huvudfunktioner",
+      "key_features": [
+        "<strong>Realtidsredigering av tabeller:</strong> Redigera cellvärden direkt i den interaktiva tabellen med omedelbar lokal sparfunktion.",
+        "<strong>Kolonnsortering och sökning:</strong> Analysera data snabbt genom att sortera poster eller filtrera rader baserat på nyckelord.",
+        "<strong>Snabb klientsideparser:</strong> Visa tusentals datapunkter lokalt på millisekunder utan serverfördröjning.",
+        "<strong>UTF-8-teckenstöd:</strong> Bevarar svenska tecken (å, ä, ö) och specialsymboler vid import och export.",
+        "<strong>Offline-dataisolering:</strong> Fungerar helt offline för att säkerställa att dina filer förblir säkra."
+      ],
+      "common_use_cases_title": "Vanliga användningsområden",
+      "common_use_cases": [
+        "<strong>Lageruppdateringar för e-handel:</strong> Redigera produktbeskrivningar, priser eller lagersaldon innan du importerar dem till din butik.",
+        "<strong>Rensning av kontaktlistor:</strong> Sök efter dubbletter eller korrigera formateringsfel i e-postlistor.",
+        "<strong>Inspektion av loggar och rapporter:</strong> Visa serverloggar eller finansiella rapporter i en organiserad tabell.",
+        "<strong>Validering av databasimport:</strong> Kontrollera och formatera kolumnstrukturer innan du laddar upp data till SQL-databaser."
+      ],
+      "faq_title": "Vanliga frågor",
+      "faq": [
+        {
+          "question": "Finns det en gräns för filstorlek vid uppladdning?",
+          "answer": "För bästa upplevelse rekommenderar vi att du använder denna redigerare för CSV-filer upp till 10-15 MB. Mycket stora filer kan göra webbläsaren långsam."
+        },
+        {
+          "question": "Uppdaterar redigering av en cell originalfilen på min dator?",
+          "answer": "Nej. Webbläsare kan inte skriv över lokala filer direkt av säkerhetsskäl. Klicka på \"Exportera CSV\" för att ladda ner en ny kopia."
+        },
+        {
+          "question": "Laddas mina data upp eller spåras de?",
+          "answer": "Nej. 99tool.in bearbetar alla filer lokalt. Dina data och cellvärden förblir säkra i din webbläsare."
+        },
+        {
+          "question": "Stödjer detta verktyg semikolon eller tabbtecken som avgränsare?",
+          "answer": "Denna version är optimerad för standard kommaseparerade filer (.csv). Semikolon kan göra att kolumner hamnar fel."
+        },
+        {
+          "question": "Kan jag lägga till nya rader eller kolumner?",
+          "answer": "Detta verktyg är utformat som en visare och värderedigerare för befintliga tabeller. För att lägga till nya kolumner rekommenderar vi ett fullständigt kalkylbladsprogram."
+        }
+      ],
+      "privacy_note": "🔒 Sekretess- och datameddelande: CSV-dataanalys och tabellvisning sker i din webbläsare. Inga filer eller cellvärden skickas till våra servrar.",
+      "schema_org": {
+        "name": "CSV-visare & Redigerare",
+        "description": "CSV-analys, tabellvisning, cellredigering, kolumnsortering, dataexport."
+      }
+    },
+    "image_compressor": {
+      "page_title": "Bildkomprimering – 99tool.in",
+      "meta_description": "Minska filstorleken på dina bilder utan att förlora kvalitet. Gratis och snabbt bildverktyg från 99tool.in.",
+      "what_is_title": "Vad är Den Smarta Bildkomprimeraren?",
+      "what_is_content": "Den Smarta Bildkomprimeraren är ett optimeringsverktyg på klientsidan utformat för att minska filstorleken på dina bilder med bibehållna visuella detaljer. Genom att använda canvas-rendering i webbläsaren och dynamisk kvalitetsjustering kan du enkelt förminska stora bildfiler för att förbättra webbplatsens laddningstid.\n\nAlla optimeringar sker helt i din webbläsares lokala minne. Eftersom inga filer laddas upp till externa servrar förblir dina originalfoton och designer helt privata och säkra."
+    },
+    "image_compressor": {
+      "page_title": "Bildkomprimering – 99tool.in",
+      "meta_description": "Minska filstorleken på dina bilder utan att förlora kvalitet. Gratis och snabbt bildverktyg från 99tool.in.",
+      "what_is_title": "Vad är Den Smarta Bildkomprimeraren?",
+      "what_is_content": "Den Smarta Bildkomprimeraren är ett optimeringsverktyg på klientsidan utformat för att minska filstorleken på dina bilder med bibehållna visuella detaljer. Genom att använda canvas-rendering i webbläsaren och dynamisk kvalitetsjustering kan du enkelt förminska stora bildfiler för att förbättra webbplatsens laddningstid.\n\nAlla optimeringar sker helt i din webbläsares lokala minne. Eftersom inga filer laddas upp till externa servrar förblir dina originalfoton och designer helt privata och säkra.",
+      "how_to_use_title": "Hur man använder Den Smarta Bildkomprimeraren",
+      "how_to_use_steps": [
+        "<strong>Ladda upp en bild:</strong> Klicka i rutan eller dra och släpp din bildfil (JPG, PNG eller WEBP) i webbläsaren.",
+        "<strong>Kontrollera originalstorleken:</strong> Se kolumnen <strong>Original</strong> i jämförelsetabellen för att se den initiala filstorleken.",
+        "<strong>Välj komprimeringsnivå:</strong> Dra skjutreglaget för <strong>Komprimeringsnivå</strong> för att justera kvalitetsprocenten. Dra till vänster för mindre fil, till höger för högre kvalitet.",
+        "<strong>Välj målformat:</strong> Välj i menyn <strong>Konvertera till format</strong> om du vill behålla originalformatet eller konvertera till JPEG eller WEBP.",
+        "<strong>Utvärdera besparingen:</strong> Jämför förhandsvisningarna för <strong>Original</strong> och <strong>Komprimerad</strong> sida vid sida. Den gröna symbolen visar sparad procent.",
+        "<strong>Ladda ner den optimerade bilden:</strong> Klicka på knappen <strong>Ladda ner komprimerad bild</strong> för att spara filen på din enhet."
+      ],
+      "key_features_title": "Huvudfunktioner",
+      "key_features": [
+        "<strong>Jämförelse sida vid sida:</strong> Jämför original och komprimerad förhandsvisning sida vid sida för att säkerställa att text och detaljer förblir skarpa.",
+        "<strong>Exakt kvalitetskontroll:</strong> Finjustera komprimeringsnivån från 10% till 100% baserat på dina lagringsbehov.",
+        "<strong>Direkt formatkonvertering:</strong> Konvertera dina filer direkt till moderna format som WEBP eller kompatibla JPEG.",
+        "<strong>Realtidskalkylator för besparingar:</strong> Beräknar direkt den sparade procentenheten när du drar i reglaget.",
+        "<strong>Helt lokal körning:</strong> Bearbetar allt via lokal JavaScript utan dataloggning på servrar."
+      ],
+      "common_use_cases_title": "Vanliga användningsområden",
+      "common_use_cases": [
+        "<strong>Webbutvecklare:</strong> Komprimera webbplatsbilder för att förbättra laddningstider och SEO-rankning.",
+        "<strong>Sociala medier-ansvariga:</strong> Minska bildstorlekar för att passa uppladdningsgränser utan kvalitetsförlust.",
+        "<strong>Kontorsarbetare:</strong> Minska storleken på skannade dokument eller skärmdumpar för e-postbilagor.",
+        "<strong>Bloggare:</strong> Skapa optimerade bilder för mobila läsare för att förbättra laddningsupplevelsen."
+      ],
+      "faq_title": "Vanliga frågor",
+      "faq": [
+        {
+          "question": "Förlorar min bild kvalitet vid komprimering?",
+          "answer": "Vi rekommenderar att du håller reglaget mellan 80% och 90%. I detta intervall minskar filstorleken avsevärt medan den visuella skillnaden knappt märks."
+        },
+        {
+          "question": "Laddas mina privata foton upp till en server?",
+          "answer": "Absolut inte. All bearbetning, storleksändring och konvertering sker lokalt i din webbläsares minne."
+        },
+        {
+          "question": "Vad är fördelen med att konvertera till WEBP?",
+          "answer": "WEBP är ett modernt bildformat som ger överlägsen komprimering jämfört med JPEG och PNG, vilket ger mindre filer med bibehållen kvalitet."
+        },
+        {
+          "question": "Kan jag komprimera transparenta PNG-bilder?",
+          "answer": "Ja. För att behålla transparens väljer du \"Behåll originalformat\" eller konverterar till \"WEBP\". Konvertering till JPEG gör transparenta delar vita."
+        },
+        {
+          "question": "Varför blev min fil större efter komprimering?",
+          "answer": "Detta kan hända om originalfilen redan var starkt optimerad. Dra reglaget lite lägre för att lösa detta."
+        }
+      ],
+      "privacy_note": "Sekretess- och datameddelande: Varje steg i komprimeringen utförs lokalt på din dator. Dina filer behandlas inte på externa servrar.",
+      "schema_org": {
+        "name": "Bildkomprimering – 99tool.in",
+        "description": "Gratis onlineverktyg från 99tool.in: snabbt, säkert, ingen registrering krävs."
+      }
+    },
+    "markdown_previewer": {
+      "page_title": "Markdown-förhandsvisning – 99tool.in",
+      "meta_description": "Skriv, redigera och konvertera Markdown till HTML i realtid. Gratis utvecklarverktyg från 99tool.in.",
+      "what_is_title": "Vad är Markdown-förhandsvisaren?",
+      "what_is_content": "Markdown-förhandsvisaren är en webbläsarbaserad redigerare som gör det möjligt att skriva, formatera och förhandsgranska Markdown-syntax i realtid. Genom att skriva till vänster och se resultatet till höger kan du kontrollera README-filer och dokument innan publicering.\n\nDenna redigerare utför alla konverteringar lokalt på din dator. Eftersom inga utkast skickas till externa databaser förblir dina dokument säkra.",
+      "how_to_use_title": "Hur man använder Markdown-förhandsvisaren",
+      "how_to_use_steps": [
+        "<strong>Ange Markdown:</strong> Skriv eller klistra in din Markdown-syntax i den vänstra redigeringspanelen.",
+        "<strong>Se liveförhandsvisningen:</strong> I den högra panelen ser du direkt formateringen av rubriker, listor och tabeller.",
+        "<strong>Kopiera HTML-kod:</strong> Klicka på \"Kopiera HTML\" för att kopiera den kompilerade HTML-koden till ditt urklipp.",
+        "<strong>Ladda ner filen:</strong> Klicka på \"Ladda ner .md\" för att spara ditt arbete som ett Markdown-dokument.",
+        "<strong>Rensa allt:</strong> Klicka på \"Rensa allt\" för att återställa redigeraren."
+      ],
+      "key_features_title": "Huvudfunktioner",
+      "key_features": [
+        "<strong>Live delad skärm:</strong> Omvandlar rå syntax direkt till visuella HTML-element medan du skriver.",
+        "<strong>GFM-kompatibilitet:</strong> Stödjer GitHub Flavored Markdown-regler för tabeller, fetstil och listor.",
+        "<strong>Kopiera HTML-kod:</strong> Sparar kompilerade HTML-element på urklipp för direkt användning.",
+        "<strong>Lokal filexport:</strong> Ladda ner dina färdiga utkast som en fristående <code>.md</code>-fil.",
+        "<strong>100% Klientsidekompilar:</strong> Renderar stilar offline i webbläsarens cache för att skydda din text."
+      ],
+      "common_use_cases_title": "Vanliga användningsområden",
+      "common_use_cases": [
+        "<strong>Skriva README för projekt:</strong> Formatera projektbeskrivningar och kontrollera bildlänkar innan du laddar upp kod.",
+        "<strong>API-dokumentation:</strong> Skriv och granska API-specifikationer och kodexempel.",
+        "<strong>Tekniska bloggutkast:</strong> Förbered artiklar i Markdown och kontrollera rubrikstrukturen.",
+        "<strong>Lära sig Markdown:</strong> Öva på Markdown-genvägar i en interaktiv redigerare."
+      ],
+      "faq_title": "Vanliga frågor",
+      "faq": [
+        {
+          "question": "Är denna redigerare kompatibel med GitHub Flavored Markdown?",
+          "answer": "Ja. Förhandsvisaren stödjer standard GFM-element som checklistor, tabeller och kodblock."
+        },
+        {
+          "question": "Skickas mina utkast till en server?",
+          "answer": "Nej. 99tool.in bearbetar all konvertering lokalt i din webbläsares minne."
+        },
+        {
+          "question": "Hur visar jag bilder i liveförhandsvisningen?",
+          "answer": "Du kan referera till valfri bild med standarsyntaxen (<code>![](bild_url)</code>)."
+        },
+        {
+          "question": "Innehåller den nedladdade .md-filen HTML-kod?",
+          "answer": "Nej. \"Ladda ner .md\" sparar den redigerbara Markdown-källkoden. Använd \"Kopiera HTML\" för HTML-koden."
+        }
+      ],
+      "privacy_note": "🔒 Sekretess- och datameddelande: Markdown-rendering och filexport sker lokalt i din webbläsare.",
+      "schema_org": {
+        "name": "Markdown-förhandsvisning",
+        "description": "Realtidsförhandsvisning, GFM-stöd, HTML-export, delad skärm."
+      }
+    },
+    "pdf_merger": {
+      "page_title": "Slå ihop PDF – 99tool.in",
+      "meta_description": "Slå ihop flera PDF-filer på några sekunder i din webbläsare. 100% gratis och säkert verktyg från 99tool.in.",
+      "what_is_title": "Ett Verktyg för att Slå ihop PDF Som Respekterar Din Integritet",
+      "what_is_content": "Vi har alla varit där: du har flera rapporter, skannade dokument och ett personligt brev som behöver slås ihop till en PDF-fil. Första impulsen är att söka efter \"<strong>gratis slå ihop PDF online</strong>\". Men du tvekar inför att ladda upp konfidentiella avtal till okända servrar.\n\nPå 99tool.in utvecklade vi vårt verktyg för att <strong>slå ihop PDF-filer</strong> för att lösa detta integritetsproblem. Till skillnad från webbplatser som bearbetar filer på fjärrservrar utför vårt verktyg beräkningen på din egen enhet. Med hjälp av <code>pdf-lib</code>-teknik i webbläsaren sker ihopslagningen helt i din dators RAM-minne. Dina filer lämnar aldrig din enhet."
+    },
+    "pdf_merger": {
+      "page_title": "Slå ihop PDF – 99tool.in",
+      "meta_description": "Slå ihop flera PDF-filer på några sekunder i din webbläsare. 100% gratis och säkert verktyg från 99tool.in.",
+      "what_is_title": "Ett Verktyg för att Slå ihop PDF Som Respekterar Din Integritet",
+      "what_is_content": "Vi har alla varit där: du har flera rapporter, skannade dokument och ett personligt brev som behöver slås ihop till en PDF-fil. Första impulsen är att söka efter \"<strong>gratis slå ihop PDF online</strong>\". Men du tvekar inför att ladda upp konfidentiella avtal till okända servrar.\n\nPå 99tool.in utvecklade vi vårt verktyg för att <strong>slå ihop PDF-filer</strong> för att lösa detta integritetsproblem. Till skillnad från webbplatser som bearbetar filer på fjärrservrar utför vårt verktyg beräkningen på din egen enhet. Med hjälp av <code>pdf-lib</code>-teknik i webbläsaren sker ihopslagningen helt i din dators RAM-minne. Dina filer lämnar aldrig din enhet.",
+      "how_to_use_title": "Hur man slår ihop PDF-filer på 99tool.in (Steg för Steg)",
+      "how_to_use_steps": [
+        "<strong>Steg 1: Välj dina filer</strong> — Klicka på rutan \"Välj PDF\" eller dra och släpp dina filer till sidan.",
+        "<strong>Steg 2: Kontrollera säkerheten</strong> — Se den gröna skölden bredvid varje fil som bekräftar säkerheten.",
+        "<strong>Steg 3: Justera ordningen</strong> — Dra filkort uppåt eller nedåt för att ändra sidordningen.",
+        "<strong>Steg 4: Slå ihop och ladda ner</strong> — Klicka på \"Slå ihop filer\". Ihopslagningen tar några sekunder varpå nedladdningen startar."
+      ],
+      "key_features_title": "Varför Lokal PDF-ihopslagning Är Bättre",
+      "key_features": [
+        "<strong>Visuell arbetsyta:</strong> Dra och släpp filer enkelt i exakt den ordning du vill ha dem.",
+        "<strong>Aktiv säkerhetsskanning:</strong> Skannar filen efter dolda skript innan ihopslagning.",
+        "<strong>Ren webbläsarmontering:</strong> Körs helt i RAM-minnet via pdf-lib och WebAssembly.",
+        "<strong>Noll filuppladdningar:</strong> Fullständigt integritetsskydd för kontrakt och medicinska dokument."
+      ],
+      "common_use_cases_title": "Praktiska Användningsområden",
+      "common_use_cases": [
+        "<strong>För jurister och rådgivare:</strong> Samla bevis och akter utan risk för dataläckor.",
+        "<strong>För studenter och lärare:</strong> Slå ihop uppsatser, försättsblad och källförteckningar till ett dokument.",
+        "<strong>För finansinspektörer:</strong> Samla ansökningar och rapporter med bibehållen kundintegritet."
+      ],
+      "faq_title": "Vanliga frågor",
+      "faq": [
+        {
+          "question": "Finns det en gräns för hur många PDF-filer jag kan slå ihop?",
+          "answer": "Gränsen beror på din dators RAM-minne. De flesta moderna datorer kan enkelt slå ihop 50+ medelstora PDF-filer."
+        },
+        {
+          "question": "Paverkar ihopslagningen bildkvaliteten?",
+          "answer": "Nej. Vårt verktyg behåller originaldata för varje sida via pdf-lib utan omkomprimering."
+        },
+        {
+          "question": "Varför ser jag en säkerhetsvarning på vissa filer?",
+          "answer": "Vissa PDF-filer innehåller interaktiva element som JavaScript. Vårt system meddelar detta för full transparens."
+        },
+        {
+          "question": "Laddas mina dokument upp till en server?",
+          "answer": "Absolut inte. All bearbetning sker lokalt via WASM och JavaScript i din webbläsare."
+        },
+        {
+          "question": "Kan jag slå ihop lösenordsskyddade PDF-filer?",
+          "answer": "Skyddade filer måste låsas upp först. Vårt verktyg kan inte kringgå lösenordsskydd."
+        },
+        {
+          "question": "Fungerar detta verktyg på mobiltelefoner?",
+          "answer": "Ja. Så länge din mobila webbläsare stödjer modern JavaScript kan du slå ihop PDF-filer på iPhone, iPad eller Android."
+        }
+      ],
+      "privacy_note": "🔒 Lokal bearbetning per session. Inga uppladdningar. Ingen spårning. Uppdaterad april 2026.",
+      "schema_org": {
+        "name": "PDF Birleştirme Aracı",
+        "description": "Slå ihop PDF, visuell sidordning, säkerhetsskanning, säker lokal bearbetning."
+      }
+    },
+    "password_generator": {
+      "page_title": "Lösenordsgenerator – 99tool.in",
+      "meta_description": "Skapa starka och slumpmässiga lösenord direkt. 100% säkert och lokalt verktyg från 99tool.in.",
+      "what_is_title": "Vad är Den Säkra Lösenordsgeneratorn?",
+      "what_is_content": "Den Säkra Lösenordsgeneratorn skapar kryptografiskt säkra slumpmässiga lösenord med hjälp av din webbläsares Web Crypto API (window.crypto.getRandomValues). Detta ger genuint slumpmässiga resultat jämfört med standardfunktioner. Hela processen sker lokalt i din webbläsare.\n\nStäll in lösenordslängd och teckenuppsättningar (stora bokstäver, små bokstäver, siffror, specialtecken) så genererar verktyget direkt ett säkert lösenord. Kopiera med ett klick och spara i din lösenordshanterare."
+    },
+    "password_generator": {
+      "page_title": "Lösenordsgenerator – 99tool.in",
+      "meta_description": "Skapa starka och slumpmässiga lösenord direkt. 100% säkert och lokalt verktyg från 99tool.in.",
+      "what_is_title": "Vad är Den Säkra Lösenordsgeneratorn?",
+      "what_is_content": "Den Säkra Lösenordsgeneratorn skapar kryptografiskt säkra slumpmässiga lösenord med hjälp av din webbläsares Web Crypto API (window.crypto.getRandomValues). Detta ger genuint slumpmässiga resultat jämfört med standardfunktioner. Hela processen sker lokalt i din webbläsare.\n\nStäll in lösenordslängd och teckenuppsättningar (stora bokstäver, små bokstäver, siffror, specialtecken) så genererar verktyget direkt ett säkert lösenord. Kopiera med ett klick och spara i din lösenordshanterare.",
+      "how_to_use_title": "Hur man använder Den Säkra Lösenordsgeneratorn",
+      "how_to_use_steps": [
+        "Ställ in önskad lösenordslängd med skjutreglaget (8 till 128 tecken rekommenderas).",
+        "Välj teckenuppsättningar: Stora bokstäver (A-Z), små bokstäver (a-z), siffror (0-9), specialtecken (!@#$...).",
+        "Klicka på \"Generera lösenord\" för att skapa ett slumpmässigt lösenord.",
+        "Kontrollera styrkemätaren för att verifiera säkerhetsnivån.",
+        "Klicka på \"Kopiera\" för att kopiera lösenordet till ditt urklipp och klistra in det i din lösenordshanterare.",
+        "Klicka på \"Generera\" igen för ett nytt alternativ."
+      ],
+      "key_features_title": "Huvudfunktioner",
+      "key_features": [
+        "<strong>Web Crypto API Slumpmässighet:</strong> Använder en kryptografiskt säker slumptalsgenerator.",
+        "<strong>Anpassningsbara alternativ:</strong> Ställ in längder upp till 128 tecken och kombinerar 4 teckentyper.",
+        "<strong>Styrkemätare:</strong> Visar säkerhetsnivån för varje genererat lösenord i realtid.",
+        "<strong>Kopiera med ett klick:</strong> Kopierar det genererade lösenordet direkt till urklipp."
+      ],
+      "common_use_cases_title": "Vanliga användningsområden",
+      "common_use_cases": [
+        "<strong>Ny kontoregistrering:</strong> Skapa ett unikt och starkt lösenord varje gång du registrerar dig på en ny webbplats.",
+        "<strong>Lösenordsbyte:</strong> Generera en säker ersättning när en webbplats ber dig uppdatera dina uppgifter.",
+        "<strong>API-nycklar och tokens:</strong> Skapa slumpmässiga strängar för användning som säkerhetsnycklar i projekt."
+      ],
+      "faq_title": "Vanliga frågor",
+      "faq": [
+        {
+          "question": "Är det genererade lösenordet verkligen slumpmässigt?",
+          "answer": "Ja. Verktyget använder window.crypto.getRandomValues(), som hämtar slumpmässighet från operativsystemets säkra generator (CSPRNG)."
+        },
+        {
+          "question": "Vad är den rekommenderade lösenordslängden?",
+          "answer": "Minst 16 tecken för vanliga konton, och 20+ tecken för viktiga konton (e-post, banker)."
+        },
+        {
+          "question": "Skickas lösenordet till en server?",
+          "answer": "Absolut inte. All generering sker lokalt i din webbläsare. Lösenordet lämnar aldrig din enhet."
+        },
+        {
+          "question": "Bör jag komma ihåg det genererade lösenordet?",
+          "answer": "Nej. Starka lösenord är utformade för att sparas i en lösenordshanterare (t.ex. 1Password eller Bitwarden)."
+        }
+      ],
+      "privacy_note": "🔒 Kryptografiskt säkert. 100% Lokalt. Ingen serverkontakt. Uppdaterad april 2026.",
+      "schema_org": {
+        "name": "Säker Lösenordsgenerator",
+        "description": "Slumpmässig lösenordsgenerering, anpassningsbara teckenuppsättningar, styrketest, 100% på klientsidan."
+      }
+    },
+    "regex_tester": {
+      "page_title": "Regex-testare – 99tool.in",
+      "meta_description": "Testa och felsök reguljära uttryck i realtid. Gratis utvecklarverktyg från 99tool.in.",
+      "what_is_title": "Vad är Regex-testaren & Felsökaren?",
+      "what_is_content": "Regex-testaren & Felsökaren är ett utvecklarverktyg på klientsidan utformat för att skapa, testa och korrigera reguljära uttryck (RegEx). Genom att ange ett mönster och flaggor kan du kontrollera hur uttrycket matchar text i din webbläsare.\n\nDenna felsökare utför alla utvärderingar lokalt med hjälp av din webbläsares inbyggda JavaScript RegExp-motor. Inga data skickas över nätverket."
+    },
+    "regex_tester": {
+      "page_title": "Regex-testare – 99tool.in",
+      "meta_description": "Testa och felsök reguljära uttryck i realtid. Gratis utvecklarverktyg från 99tool.in.",
+      "what_is_title": "Vad är Regex-testaren & Felsökaren?",
+      "what_is_content": "Regex-testaren & Felsökaren är ett utvecklarverktyg på klientsidan utformat för att skapa, testa och korrigera reguljära uttryck (RegEx). Genom att ange ett mönster och flaggor kan du kontrollera hur uttrycket matchar text i din webbläsare.\n\nDenna felsökare utför alla utvärderingar lokalt med hjälp av din webbläsares inbyggda JavaScript RegExp-motor. Inga data skickas över nätverket.",
+      "how_to_use_title": "Hur man använder Regex-testaren & Felsökaren",
+      "how_to_use_steps": [
+        "<strong>Ange ett mönster:</strong> Skriv ditt reguljära uttryck (t.ex. <code>[a-zA-Z0-9]+</code>) i mönsterfältet.",
+        "<strong>Konfigurera flaggor:</strong> Aktivera flaggor som Global (g), Case-Insensitive (i) eller Multiline (m).",
+        "<strong>Klistra in testtext:</strong> Fyll i din exempeltext. Matchningar markeras direkt.",
+        "<strong>Granska fångade grupper:</strong> Se resultatpanelen för detaljer om matchningar och fångade grupper.",
+        "<strong>Korrigera syntaxfel:</strong> Om uttrycket är ogiltigt visas ett felmeddelande som hjälper dig att lösa problemet."
+      ],
+      "key_features_title": "Huvudfunktioner",
+      "key_features": [
+        "<strong>Realtidsmarkering:</strong> Markerar matchningar i textrutan direkt medan du skriver.",
+        "<strong>Interaktiv flaggkontroll:</strong> Slå enkelt på eller av g, i, m-flaggorna med ett klick.",
+        "<strong>Detaljerad gruppvy:</strong> Visar matchningspositioner och fångade gruppvärden.",
+        "<strong>Syntaxfeldiagnostik:</strong> Visar tydliga meddelanden vid syntaxfel för snabb felsökning.",
+        "<strong>100% Klientsida:</strong> Testar reguljära uttryck offline för att skydda dina data."
+      ],
+      "common_use_cases_title": "Vanliga användningsområden",
+      "common_use_cases": [
+        "<strong>Validera formulärdata:</strong> Testa mönster för e-postadresser, telefonnummer och lösenordsfält.",
+        "<strong>Analysera loggar:</strong> Skapa mönster för att hämta IP-adresser eller felkoder från serverloggar.",
+        "<strong>Textextraktion:</strong> Testa mönster för att hämta specifik kod eller variabler.",
+        "<strong>Lära sig Regex:</strong> Öva på reguljära uttryck i en visuell miljö."
+      ],
+      "faq_title": "Vanliga frågor",
+      "faq": [
+        {
+          "question": "Vilken regex-motor använder detta verktyg?",
+          "answer": "Detta verktyg använder den inbyggda JavaScript <code>RegExp</code>-motorn. Den är helt kompatibel med Chrome, Firefox, Safari och Node.js."
+        },
+        {
+          "question": "Laddas min testtext upp till en server?",
+          "answer": "Nej. 99tool.in bearbetar alla utvärderingar lokalt i din webbläsares minne."
+        },
+        {
+          "question": "Varför ser jag ett syntaxfelmeddelande?",
+          "answer": "Detta händer när ett ogiltigt uttryck anges, t.ex. oavslutade parenteser <code>(</code>."
+        },
+        {
+          "question": "Stödjer felsökaren Lookarounds?",
+          "answer": "Ja. Den inbyggda motorn stödjer moderna ES2018+ funktioner (Lookahead och Lookbehind)."
+        }
+      ],
+      "privacy_note": "🔒 Sekretess- och datameddelande: Regex-utvärderingar sker lokalt i din webbläsare. Inga data skickas.",
+      "schema_org": {
+        "name": "Regex-testare",
+        "description": "Realtids Regex-testning, flaggstöd (g, i, m), matchningsmarkering."
+      }
+    },
+    "word_counter": {
+      "page_title": "Ordräknare – 99tool.in",
+      "meta_description": "Räkna ord, tecken, meningar och stycken i realtid. Gratis och säkert verktyg från 99tool.in.",
+      "what_is_title": "Vad är Den Online Ordräknaren?",
+      "what_is_content": "Den Online Ordräknaren är ett textanalysverktyg i realtid som räknar ord, tecken, meningar och stycken medan du skriver eller klistrar in. Till skillnad från molneditorer fungerar detta verktyg helt lokalt i din webbläsare utan dataöverföring.\n\nRäknaren uppdateras direkt vid varje tangenttryckning, vilket hjälper dig att hålla koll på textlängden för artiklar, inlägg eller SEO-texter."
+    },
+    "word_counter": {
+      "page_title": "Ordräknare – 99tool.in",
+      "meta_description": "Räkna ord, tecken, meningar och stycken i realtid. Gratis och säkert verktyg från 99tool.in.",
+      "what_is_title": "Vad är Den Online Ordräknaren?",
+      "what_is_content": "Den Online Ordräknaren är ett textanalysverktyg i realtid som räknar ord, tecken, meningar och stycken medan du skriver eller klistrar in. Till skillnad från molneditorer fungerar detta verktyg helt lokalt i din webbläsare utan dataöverföring.\n\nRäknaren uppdateras direkt vid varje tangenttryckning, vilket hjälper dig att hålla koll på textlängden för artiklar, inlägg eller SEO-texter.",
+      "how_to_use_title": "Hur man använder Den Online Ordräknaren",
+      "how_to_use_steps": [
+        "Skriv eller klistra in din text direkt i redigeringsrutan högst upp på sidan.",
+        "Se hur antalet ord, tecken, meningar och stycken uppdateras i realtid.",
+        "Använd indikatorn \"Lästid\" för att uppskatta hur lång tid det tar att läsa din text.",
+        "Redigera din text i rutan tills du når önskat antal.",
+        "Klicka på \"Rensa\" för att återställa redigeraren."
+      ],
+      "key_features_title": "Huvudfunktioner",
+      "key_features": [
+        "<strong>Realtidsräkning:</strong> Uppdaterar antal ord, tecken och meningar vid varje tangenttryckning.",
+        "<strong>Lästidsuppskattning:</strong> Beräknar genomsnittlig lästid baserat på normal läshastighet för vuxna.",
+        "<strong>Teckenräknare (med och utan mellanslag):</strong> Visar båda summorna för plattformar som Twitter.",
+        "<strong>100% Integritet:</strong> All räknelogik körs på klientsidan; din text skickas aldrig."
+      ],
+      "common_use_cases_title": "Vanliga användningsområden",
+      "common_use_cases": [
+        "<strong>Akademiska uppsatser:</strong> Kontrollera ordgränser för skoluppgifter och essäer.",
+        "<strong>SEO-textskrivning:</strong> Hantera längden på metabeskrivningar, titeltaggar och artiklar.",
+        "<strong>Sociala medier-inlägg:</strong> Håll dig inom teckengränserna för Twitter/X eller LinkedIn.",
+        "<strong>Frilansskrivande:</strong> Kontrollera längden på leveranser enligt avtalade specifikationer."
+      ],
+      "faq_title": "Vanliga frågor",
+      "faq": [
+        {
+          "question": "Sparar detta verktyg vad jag skriver?",
+          "answer": "Absolut inte. Din integritet är viktigast. Allt sker lokalt i din webbläsarflik. När du stänger fliken raderas din text."
+        },
+        {
+          "question": "Hur beräknas lästiden?",
+          "answer": "Beräkningen baseras på en genomsnittlig läshastighet på 200 till 250 ord per minut."
+        },
+        {
+          "question": "Räknas mellanslag som tecken?",
+          "answer": "Ja. Verktyget visar både \"totalt antal tecken inklusive mellanslag\" och \"exklusive mellanslag\"."
+        },
+        {
+          "question": "Vad räknas som en \"mening\"?",
+          "answer": "Varje textavsnitt som slutar med punkt, utropstecken eller frågetecken räknas som en mening."
+        },
+        {
+          "question": "Fungerar det på min mobil?",
+          "answer": "Ja! Verktyget är helt responsivt och fungerar utmärkt på mobiler och surfplattor."
+        }
+      ],
+      "privacy_note": "Sekretess- och datameddelande: Alla textanalyser och lästidsberäkningar sker i din webbläsare. Ditt innehåll sparas inte.",
+      "schema_org": {
+        "name": "Online Ordräknare",
+        "description": "Räkna ord, räkna tecken, räkna meningar, uppskatta lästid."
+      }
+    }
+  }
+}
